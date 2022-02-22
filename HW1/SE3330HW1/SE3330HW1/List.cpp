@@ -35,3 +35,13 @@ int List::Length()
 	}
 	return length;
 }
+
+void List::AddToTail(int item)
+{
+
+}
+
+int List::GetTail()
+{
+	return tail->value;
+}

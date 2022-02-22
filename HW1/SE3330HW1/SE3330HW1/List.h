@@ -16,11 +16,14 @@ private:
 		}
 	};
 	Node* head;
+	Node* tail;
 
 public:
 	List();
 	bool IsEmpty();
 	void AddToHead(int item);
 	int Length();
+	void AddToTail(int item);
+	int GetTail();
 };
 

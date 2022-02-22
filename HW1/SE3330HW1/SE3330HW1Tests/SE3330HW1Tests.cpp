@@ -65,5 +65,35 @@ namespace SE3330HW1Tests
 		TEST_METHOD(testFindNumber_NOTFOUND) 
 		{
 		}
+
+
+		//Add To Tail Tests
+
+		TEST_METHOD(testAddToTail_LISTEMPTY)
+		{
+			// Create the list
+			List testList;
+
+			// Create the test conditions
+			testList.AddToTail(5);
+			int expected = 5;
+
+			// Check the test conditions
+			Assert::AreEqual(testList.GetTail(), expected);
+		}
+
+		TEST_METHOD(testAddToTail_LISTSIZEONE)
+		{
+			// Create the list
+			List testList;
+
+			// Create the test conditions
+			testList.AddToHead(1);
+			testList.AddToTail(5);
+			int expected = 5;
+
+			// Check the test conditions
+			Assert::AreEqual(testList.GetTail(), expected);
+		}
 	};
 }
