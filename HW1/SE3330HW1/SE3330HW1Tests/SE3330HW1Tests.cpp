@@ -56,5 +56,14 @@ namespace SE3330HW1Tests
 			// Check the test conditions
 			Assert::AreEqual(testList.Length(), expected);
 		}
+
+		TEST_METHOD(testFindNumber_FOUND)
+		{
+
+		}
+
+		TEST_METHOD(testFindNumber_NOTFOUND) 
+		{
+		}
 	};
 }
