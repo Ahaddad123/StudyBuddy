@@ -26,5 +26,6 @@ public:
 	void AddToTail(int item);
 	int GetTail();
 	int GetHead();
+	int Find(int goal);
 };
 

@@ -47,6 +47,20 @@ void List::AddToTail(int item)
 
 }
 
+int List::Find(int goal) 
+{
+	int index = 0;
+	Node* temp = head;
+	while (temp != nullptr) {
+		if (temp->value = goal) 
+		{
+			return index;
+		}
+	}
+
+	return -1;
+}
+
 int List::GetTail()
 {
 	return tail->value;

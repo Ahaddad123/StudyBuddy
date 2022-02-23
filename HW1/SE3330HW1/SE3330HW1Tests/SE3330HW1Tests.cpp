@@ -59,14 +59,51 @@ namespace SE3330HW1Tests
 
 		TEST_METHOD(testFindNumber_FOUND)
 		{
+			List testList;
+			testList.AddToHead(5);
+			testList.AddToHead(18);
+			testList.AddToHead(6);
+			testList.AddToHead(18);
 
+			int goal = 18;
+			int expected = 0;
+			Assert::AreEqual(testList.Find(goal), expected);
 		}
 
 		TEST_METHOD(testFindNumber_NOTFOUND) 
 		{
+			List testList;
+			testList.AddToHead(5);
+			testList.AddToHead(18);
+			testList.AddToHead(6);
+			testList.AddToHead(18);
+
+			int goal = 9;
+			int expected = 0;
+			Assert::AreEqual(testList.Find(goal), expected);
 		}
 
+		TEST_METHOD(testFindNumber_EMPTY)
+		{
+			List testList;
 
+			int expected = -1;
+			int goal = 10;
+
+			Assert::AreEqual(testList.Find(goal), expected);
+		}
+
+		TEST_METHOD(testFindNumber_MULTIPLESAMENUMBER) {
+			List testList;
+			testList.AddToHead(5);
+			testList.AddToHead(18);
+			testList.AddToHead(6);
+			testList.AddToHead(18);
+
+			int goal = 18;
+			int expected = 0;
+			Assert::AreEqual(testList.Find(goal), expected);
+		}
 		//Add To Tail Tests
 
 		TEST_METHOD(testAddToTail_LISTEMPTY)
