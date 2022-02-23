@@ -39,6 +39,9 @@ int List::Length()
 void List::AddToTail(int item)
 {
 
+	Node* temp = new Node(item);
+	tail = temp;
+
 }
 
 int List::GetTail()
