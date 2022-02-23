@@ -25,5 +25,6 @@ public:
 	int Length();
 	void AddToTail(int item);
 	int GetTail();
+	int GetHead();
 };
 

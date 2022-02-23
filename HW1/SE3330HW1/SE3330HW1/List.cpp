@@ -17,7 +17,10 @@ bool List::IsEmpty()
 
 void List::AddToHead(int item)
 {
+	Node* temp;
+	temp = head;
 	head = new Node(item);
+	head->next = temp;
 }
 
 int List::Length()
@@ -47,4 +50,9 @@ void List::AddToTail(int item)
 int List::GetTail()
 {
 	return tail->value;
+}
+
+int List::GetHead()
+{
+	return head->value;
 }

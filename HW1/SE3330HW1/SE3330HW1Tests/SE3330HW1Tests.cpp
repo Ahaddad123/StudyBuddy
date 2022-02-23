@@ -95,5 +95,32 @@ namespace SE3330HW1Tests
 			// Check the test conditions
 			Assert::AreEqual(testList.GetTail(), expected);
 		}
+
+		TEST_METHOD(testAddToHEAD_Empty)
+		{
+			// Create the list
+			List testList;
+
+			// Create the test conditions
+			testList.AddToHead(5);
+			int expected = 5;
+
+			// Check the test conditions
+			Assert::AreEqual(testList.GetHead(), expected);
+		}
+
+		TEST_METHOD(testAddToHEAD_WithData)
+		{
+			// Create the list
+			List testList;
+
+			// Create the test conditions
+			testList.AddToHead(5);
+			testList.AddToHead(10);
+			int expected = 10;
+
+			// Check the test conditions
+			Assert::AreEqual(testList.GetHead(), expected);
+		}
 	};
 }
