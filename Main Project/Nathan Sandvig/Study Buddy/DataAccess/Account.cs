@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Study_Buddy.DataAccess
 {
-    internal class Class1
+    internal class Account
     {
     }
 }

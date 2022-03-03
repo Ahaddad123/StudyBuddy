@@ -46,6 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLogic\AccountController.cs" />
+    <Compile Include="BusinessLogic\Notifications.cs" />
+    <Compile Include="BusinessLogic\SystemController.cs" />
+    <Compile Include="DataAccess\Account.cs" />
+    <Compile Include="DataAccess\Assignment.cs" />
+    <Compile Include="DataAccess\Calendar.cs" />
+    <Compile Include="DataAccess\Course.cs" />
+    <Compile Include="DataAccess\Day,cs.cs" />
+    <Compile Include="DataAccess\Event.cs" />
+    <Compile Include="DataAccess\Settings.cs" />
+    <Compile Include="DataAccess\StudyLog.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +86,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Presentation\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
