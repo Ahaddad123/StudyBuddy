@@ -16,5 +16,10 @@ namespace Study_Buddy.DataAccess
         {
             InitializeComponent();
         }
+
+        private void addCourseForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
