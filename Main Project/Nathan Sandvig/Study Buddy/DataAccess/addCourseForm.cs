@@ -21,5 +21,10 @@ namespace Study_Buddy.DataAccess
         {
 
         }
+
+        private void butAddCourse_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

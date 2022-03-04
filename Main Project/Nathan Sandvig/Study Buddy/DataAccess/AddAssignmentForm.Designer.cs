@@ -119,6 +119,7 @@
             this.butAddAssig.TabIndex = 6;
             this.butAddAssig.Text = "Add Assignment";
             this.butAddAssig.UseVisualStyleBackColor = true;
+            this.butAddAssig.Click += new System.EventHandler(this.butAddAssig_Click);
             // 
             // label4
             // 
