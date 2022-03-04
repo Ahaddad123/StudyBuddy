@@ -80,6 +80,9 @@
     <EmbeddedResource Include="DataAccess\AddAssignmentForm.resx">
       <DependentUpon>AddAssignmentForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DataAccess\addCourseForm.resx">
+      <DependentUpon>addCourseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
