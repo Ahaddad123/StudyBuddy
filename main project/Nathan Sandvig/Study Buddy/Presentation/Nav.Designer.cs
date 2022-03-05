@@ -218,9 +218,9 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.panelSubMenu);
             this.Margin = new System.Windows.Forms.Padding(0);
-            this.MaximumSize = new System.Drawing.Size(315, 1080);
+            this.MaximumSize = new System.Drawing.Size(315, 768);
             this.Name = "Nav";
-            this.Size = new System.Drawing.Size(315, 1080);
+            this.Size = new System.Drawing.Size(315, 768);
             this.panelSubMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 

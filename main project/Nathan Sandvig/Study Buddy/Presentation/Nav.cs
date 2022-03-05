@@ -15,8 +15,10 @@ namespace Study_Buddy.Presentation
         public Nav()
         {
             InitializeComponent();
-            this.MaximumSize = new System.Drawing.Size(315, 1080);
-            this.Size = new System.Drawing.Size(315, 1080);
+            this.MaximumSize = new System.Drawing.Size(1366, 768);
+            this.Size = new System.Drawing.Size(1366, 768);
+            this.panelSubMenu.MaximumSize = new System.Drawing.Size(1366, 768);
+            this.panelSubMenu.Size = new System.Drawing.Size(1366, 768);
         }
 
 

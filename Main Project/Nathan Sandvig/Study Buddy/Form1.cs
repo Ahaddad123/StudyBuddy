@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace Study_Buddy
 {
-    public partial class Form1 : Presentation.StuddyBuddyFormTemplate
+    public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
-            this.MaximumSize = new System.Drawing.Size(1920, 1080);
-            this.Size = new System.Drawing.Size(1920, 1080);
+            this.MaximumSize = new System.Drawing.Size(1366, 768);
+            this.Size = new System.Drawing.Size(1366, 768);
         }
     }
 }
