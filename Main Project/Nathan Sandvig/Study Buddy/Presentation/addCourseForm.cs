@@ -24,7 +24,10 @@ namespace Study_Buddy.DataAccess
 
         private void butAddCourse_Click(object sender, EventArgs e)
         {
-
+            string courseName = txtCourseTitle.Text;
+            string courseCode = txtCourseCode.Text;
+            int coursePriority = Int32.Parse(txtCoursePriority.Text);
+            int courseCredit = Int32.Parse(txtCourseCredits.Text);
         }
     }
 }
