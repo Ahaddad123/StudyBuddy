@@ -10,21 +10,19 @@ using System.Windows.Forms;
 
 namespace Study_Buddy.Presentation
 {
-    public partial class CourseInfoForm : Presentation.StuddyBuddyFormTemplate
+    public partial class Nav : UserControl
     {
-        public CourseInfoForm()
+        public Nav()
         {
             InitializeComponent();
+            this.MaximumSize = new System.Drawing.Size(315, 1080);
+            this.Size = new System.Drawing.Size(315, 1080);
         }
 
-        private void label1_Click(object sender, EventArgs e)
+
+        private void btnVisualizeMyData_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void butAddAssig_Click(object sender, EventArgs e)
-        {
-
+            //Call formController to change form
         }
     }
 }
