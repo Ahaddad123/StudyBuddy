@@ -24,7 +24,11 @@ namespace Study_Buddy.DataAccess
 
         private void butAddAssig_Click(object sender, EventArgs e)
         {
+            string assignmentName = txtNameAssign.Text;
+            int assignmentPoints = Int32.Parse(txtPointsAssign.Text);
+            int assignmentPriority = Int32.Parse(txtPriority.Text);
 
+            //call command to 
         }
     }
 }
