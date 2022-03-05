@@ -54,16 +54,16 @@
     <Compile Include="BusinessLogic\Notifications.cs" />
     <Compile Include="BusinessLogic\SystemController.cs" />
     <Compile Include="DataAccess\Account.cs" />
-    <Compile Include="DataAccess\AddAssignmentForm.cs">
+    <Compile Include="Presentation\AddAssignmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DataAccess\AddAssignmentForm.Designer.cs">
+    <Compile Include="Presentation\AddAssignmentForm.Designer.cs">
       <DependentUpon>AddAssignmentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataAccess\addCourseForm.cs">
+    <Compile Include="Presentation\addCourseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DataAccess\addCourseForm.Designer.cs">
+    <Compile Include="Presentation\addCourseForm.Designer.cs">
       <DependentUpon>addCourseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\Assignment.cs" />
@@ -87,10 +87,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="DataAccess\AddAssignmentForm.resx">
+    <EmbeddedResource Include="Presentation\AddAssignmentForm.resx">
       <DependentUpon>AddAssignmentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataAccess\addCourseForm.resx">
+    <EmbeddedResource Include="Presentation\addCourseForm.resx">
       <DependentUpon>addCourseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\CourseInfoForm.resx">
