@@ -28,47 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelPageInfoHeader = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panelMain = new System.Windows.Forms.Panel();
+            this.mainPanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.nav1 = new Study_Buddy.Presentation.Nav();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // labelPageInfoHeader
+            // mainPanel
             // 
-            this.labelPageInfoHeader.AutoSize = true;
-            this.labelPageInfoHeader.BackColor = System.Drawing.Color.Transparent;
-            this.labelPageInfoHeader.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPageInfoHeader.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelPageInfoHeader.Location = new System.Drawing.Point(436, 55);
-            this.labelPageInfoHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelPageInfoHeader.Name = "labelPageInfoHeader";
-            this.labelPageInfoHeader.Size = new System.Drawing.Size(257, 67);
-            this.labelPageInfoHeader.TabIndex = 7;
-            this.labelPageInfoHeader.Text = "Header1";
-            this.labelPageInfoHeader.Click += new System.EventHandler(this.label4_Click);
+            this.mainPanel.BackColor = System.Drawing.Color.White;
+            this.mainPanel.Location = new System.Drawing.Point(383, 143);
+            this.mainPanel.MaximumSize = new System.Drawing.Size(1080, 720);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(815, 498);
+            this.mainPanel.TabIndex = 1;
             // 
-            // label2
+            // label1
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(451, 140);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 45);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "label5";
-            // 
-            // panelMain
-            // 
-            this.panelMain.BackColor = System.Drawing.Color.White;
-            this.panelMain.Location = new System.Drawing.Point(448, 220);
-            this.panelMain.Margin = new System.Windows.Forms.Padding(4);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1382, 752);
-            this.panelMain.TabIndex = 11;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(374, 71);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(268, 51);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Main Header";
             // 
             // nav1
             // 
@@ -80,18 +64,31 @@
             this.nav1.Size = new System.Drawing.Size(315, 1080);
             this.nav1.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(108)))), ((int)(((byte)(221)))));
+            this.button1.Location = new System.Drawing.Point(996, 71);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(202, 52);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // StuddyBuddyFormTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(150)))), ((int)(((byte)(231)))));
-            this.ClientSize = new System.Drawing.Size(1902, 1033);
+            this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.nav1);
-            this.Controls.Add(this.panelMain);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.labelPageInfoHeader);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximumSize = new System.Drawing.Size(1920, 1080);
+            this.MaximumSize = new System.Drawing.Size(1280, 720);
             this.Name = "StuddyBuddyFormTemplate";
             this.Text = "Form Template";
             this.ResumeLayout(false);
@@ -100,9 +97,9 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label labelPageInfoHeader;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panelMain;
         private Nav nav1;
+        private System.Windows.Forms.Panel mainPanel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }

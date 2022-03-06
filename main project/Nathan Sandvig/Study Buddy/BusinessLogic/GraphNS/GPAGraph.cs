@@ -8,5 +8,6 @@ namespace Study_Buddy.BusinessLogic.GraphNS
 {
     class GPAGraph : Graph
     {
+
     }
 }

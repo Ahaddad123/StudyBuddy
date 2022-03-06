@@ -15,8 +15,8 @@ namespace Study_Buddy
         public Form1()
         {
             InitializeComponent();
-            this.MaximumSize = new System.Drawing.Size(1366, 768);
-            this.Size = new System.Drawing.Size(1366, 768);
+            this.MaximumSize = new System.Drawing.Size(1366, 780);
+            this.Size = new System.Drawing.Size(1366, 780);
         }
     }
 }

@@ -8,7 +8,7 @@ namespace Study_Buddy.BusinessLogic.GraphNS
 {
     internal class Graph
     {
-
+        
         public void CreateGraph()
         {
 
