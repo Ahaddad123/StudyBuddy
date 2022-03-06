@@ -8,23 +8,27 @@ namespace Spike1_GraphUI
 {
     internal class GraphController
     {
-        private Dictionary<DateTime, int> hoursStudied;
-        public Dictionary<DateTime, int> HoursStudied
+        private GraphData graphData;
+        private GraphData GraphData
         {
-            get
-            {
-                return hoursStudied;
-            }
-        }
-
-        public void setHoursStudied(DateTime date, int hours)
-        {
-            hoursStudied.Add(date, hours);
+            get { return graphData; }
+            set { graphData = value; }
         }
 
         public GraphController()
         {
-            hoursStudied = new Dictionary<DateTime, int>();
+            graphData = new GraphData();
+        }
+
+        //Return the value of weeks at the specified weekID
+        public Dictionary<DayOfWeek, int> getDataByWeek(int weekID)
+        {
+            return graphData.getDataByWeek(weekID);
+        }
+
+        public void setGraphData()
+        {
+            graphData.insertTestData();
         }
 
         public void drawGraph()
