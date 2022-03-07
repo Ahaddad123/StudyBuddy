@@ -25,9 +25,9 @@ namespace Study_Buddy.DataAccess
         // credits: The number of credits the course is worth
         //---------------------------------------------------------------------
         private List<Assignment> assignments;
-        public String name { get; set; }
+        public string name { get; set; }
         public double grade { get; set; }
-        public String code { get; set; }
+        public string code { get; set; }
         public double priority { get; set; }
         public double credits { get; set; }
 
@@ -62,15 +62,13 @@ namespace Study_Buddy.DataAccess
         //---------------------------------------------------------------------
         // Adds an assignment to the list of assignments
         // name: The name of the assignment
-        // points: The point value of the assignment
-        // priority: The priority of the assignment
+        // totalPoints: The point value of the assignment
+        // weight: The weight of the assignment
         // v1: Created the method - Andrew V, 3-5-22
         //---------------------------------------------------------------------
-        public void AddAssigment(string name, int points, int priority)
+        public void AddAssigment(string name, int totalPoints, int weight)
         {
-            Assignment temp = new Assignment(points, name, priority);
-            //wip add assignments based on priority
-            assignments.Add(temp);
+            assignments.Add(new Assignment(totalPoints, name, weight));
         }
 
         //---------------------------------------------------------------------
@@ -78,6 +76,7 @@ namespace Study_Buddy.DataAccess
         // name: The name of the assignment
         // retrn: True if the assignment was removed, false if not
         // v1: Created the method - Andrew V, 3-5-22
+        // v2: Converted to remove-by-name - Nathan S, 3-6-22
         //---------------------------------------------------------------------
         public bool RemoveAssignment(string assignmentName)
         {
@@ -103,20 +102,46 @@ namespace Study_Buddy.DataAccess
         }
 
         //---------------------------------------------------------------------
+        // Adds a grade to an assignment
+        // name: The name of the assignment
+        // points: The points achieved on the assignment
+        // v1: Created the method - Nathan S, 3-6-22
+        //---------------------------------------------------------------------
+        public void GradeAssignment(string name, double points)
+        {
+            int index = -1;
+            for (int i = 0; i < assignments.Count; i++)
+            {
+                if (assignments[i].name == name)
+                    index = i;
+            }
+            if(index != -1)
+            {
+                assignments[index].addGrade(points);
+            }
+        }
+
+        //---------------------------------------------------------------------
         // Calculates the user's current grade in the course
         // return: The current grade as a double
         // v1: Created the method - Nathan S, 3-6-22
         //---------------------------------------------------------------------
         public double CalculateGrade()
         {
-            double points = 0.0;
+            // Initialize variables
+            double grade = 0.0;
             double totalPoints = 0.0;
+
+            // Add the grade and weight of each assignment
             for(int i = 0; i < assignments.Count; i++)
             {
-                points += assignments[i].gradePoints;
-                totalPoints += assignments[i].points;
+                grade += assignments[i].grade * assignments[i].weight;
+                totalPoints += assignments[i].weight;
             }
-            grade = 100.0 * points / totalPoints;
+
+            // Calculate the final grade
+            grade /= totalPoints;
+
             return grade;
         }
     }

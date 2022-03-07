@@ -21,9 +21,9 @@ namespace Study_Buddy.DataAccess
         // priority: How important the course is
         // credits: The number of credits the course is worth
         //-----------------------------------------------------------------
-        public String name;
+        public string name;
         public double grade;
-        public String code;
+        public string code;
         public double priority;
         public double credits;
 
@@ -42,7 +42,7 @@ namespace Study_Buddy.DataAccess
         // return: The builder for build chains
         // v1: Created the method - Nathan S, 3-6-22
         //-----------------------------------------------------------------
-        public CourseBuilder WithName(String name)
+        public CourseBuilder WithName(string name)
         {
             this.name = name;
             return this;
@@ -66,7 +66,7 @@ namespace Study_Buddy.DataAccess
         // return: The builder for build chains
         // v1: Created the method - Nathan S, 3-6-22
         //-----------------------------------------------------------------
-        public CourseBuilder WithCode(String code)
+        public CourseBuilder WithCode(string code)
         {
             this.code = code;
             return this;
