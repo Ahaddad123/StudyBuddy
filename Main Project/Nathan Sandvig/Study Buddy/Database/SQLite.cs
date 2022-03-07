@@ -17,7 +17,6 @@ namespace Study_Buddy.Database
          try
             {
                 sqlite_connection.Open();
-                Console.WriteLine("Connection opened?");
             }
             catch (Exception ex)
             {
@@ -25,6 +24,24 @@ namespace Study_Buddy.Database
             }
             return sqlite_connection;
         }
+
+        public void CreateAccountTable() { }
+
+        public void InsertAccountData() { }
+
+        public void CheckAccountData() { }
+
+        public void InsertAssignment() { }
+
+        public void InsertGrade() { }
+
+        public void InsertCourse() { }
+
+        public void RemoveCourse() { }
+
+        public void RemoveCourseData() { }
+
+
 
     }
 }
