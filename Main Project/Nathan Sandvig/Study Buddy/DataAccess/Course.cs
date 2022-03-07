@@ -140,7 +140,10 @@ namespace Study_Buddy.DataAccess
             }
 
             // Calculate the final grade
-            grade /= totalPoints;
+            if (totalPoints > 0)
+                grade /= totalPoints;
+            else
+                grade = 100;
 
             return grade;
         }
