@@ -26,5 +26,11 @@ namespace Nathans_Unit_Test
             Assert.AreEqual(course.priority, 1.0);
             Assert.AreEqual(course.credits, 3.0);
         }
+
+        [TestMethod]
+        public void AddAssignmentTest()
+        {
+
+        }
     }
 }
