@@ -66,7 +66,7 @@ namespace Study_Buddy.DataAccess
         // weight: The weight of the assignment
         // v1: Created the method - Andrew V, 3-5-22
         //---------------------------------------------------------------------
-        public void AddAssigment(string name, int totalPoints, int weight)
+        public void AddAssignment(string name, int totalPoints, int weight)
         {
             assignments.Add(new Assignment(totalPoints, name, weight));
         }
@@ -124,12 +124,12 @@ namespace Study_Buddy.DataAccess
         //---------------------------------------------------------------------
         // Calculates the user's current grade in the course
         // return: The current grade as a double
-        // v1: Created the method - Nathan S, 3-6-22
+        // v1: Created the method - Makenna H, 3-6-22
         //---------------------------------------------------------------------
         public double CalculateGrade()
         {
             // Initialize variables
-            double grade = 0.0;
+            grade = 0.0;
             double totalPoints = 0.0;
 
             // Add the grade and weight of each assignment
@@ -140,7 +140,10 @@ namespace Study_Buddy.DataAccess
             }
 
             // Calculate the final grade
-            grade /= totalPoints;
+            if (totalPoints > 0)
+                grade /= totalPoints;
+            else
+                grade = 100;
 
             return grade;
         }

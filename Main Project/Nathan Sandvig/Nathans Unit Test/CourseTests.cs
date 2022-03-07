@@ -30,7 +30,90 @@ namespace Nathans_Unit_Test
         [TestMethod]
         public void AddAssignmentTest()
         {
+            Course course = new Course();
+            course.AddAssignment("testAssignment", 100, 30);
 
+            Assert.IsTrue(course.RemoveAssignment("testAssignment"));
+        }
+
+        [TestMethod]
+        public void RemoveAssignmentTest()
+        {
+            Course course = new Course();
+            course.AddAssignment("testAssignment", 100, 30);
+            course.RemoveAssignment("testAssignment");
+
+            Assert.IsFalse(course.RemoveAssignment("testAssignment"));
+        }
+
+        [TestMethod]
+        public void GradeAssignmentTest()
+        {
+            Course course = new Course();
+            course.AddAssignment("testAssignment", 100, 100);
+
+            course.GradeAssignment("testAssignment", 70);
+
+            Assert.AreEqual(70.0, course.CalculateGrade());
+        }
+
+        [TestMethod]
+        public void CalculateGradeTest_Empty()
+        {
+            Course course = new Course();
+            Assert.AreEqual(100.0, course.CalculateGrade());
+        }
+
+        [TestMethod]
+        public void CalculateGradeTest_Negative()
+        {
+            Course course = new Course();
+            course.AddAssignment("testAssignment1", 100, 50);
+            course.AddAssignment("testAssignment2", 100, 50);
+
+            course.GradeAssignment("testAssignment1", -10);
+            course.GradeAssignment("testAssignment2", -28);
+
+            Assert.IsTrue(Math.Abs(-19.0 - course.CalculateGrade()) < 0.00000000000001);
+        }
+
+        [TestMethod]
+        public void CalculateGradeTest_Zero()
+        {
+            Course course = new Course();
+            course.AddAssignment("testAssignment1", 100, 50);
+            course.AddAssignment("testAssignment2", 100, 50);
+
+            course.GradeAssignment("testAssignment1", 10);
+            course.GradeAssignment("testAssignment2", -10);
+
+            Assert.AreEqual(0, course.CalculateGrade());
+        }
+
+        [TestMethod]
+        public void CalculateGradeTest_Positive()
+        {
+            Course course = new Course();
+            course.AddAssignment("testAssignment1", 100, 50);
+            course.AddAssignment("testAssignment2", 100, 50);
+
+            course.GradeAssignment("testAssignment1", 20);
+            course.GradeAssignment("testAssignment2", 28);
+
+            Assert.IsTrue(Math.Abs(24.0 - course.CalculateGrade()) < 0.00000000000001);
+        }
+
+        [TestMethod]
+        public void CalculateGradeTest_Over100()
+        {
+            Course course = new Course();
+            course.AddAssignment("testAssignment1", 100, 50);
+            course.AddAssignment("testAssignment2", 100, 50);
+
+            course.GradeAssignment("testAssignment1", 100);
+            course.GradeAssignment("testAssignment2", 230);
+
+            Assert.IsTrue(Math.Abs(165.0 - course.CalculateGrade()) < 0.00000000000001);
         }
     }
 }
