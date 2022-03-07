@@ -65,6 +65,7 @@
     <Compile Include="BusinessLogic\Notifications.cs" />
     <Compile Include="BusinessLogic\SystemController.cs" />
     <Compile Include="DataAccess\Account.cs" />
+    <Compile Include="DataAccess\CourseBuilder.cs" />
     <Compile Include="Presentation\AddAssignmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
