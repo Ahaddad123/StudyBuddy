@@ -7,64 +7,67 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Spike1_GraphUI
 {
     public partial class StudyHoursForm : Form
     {
+        const int DAYS_IN_WEEK = 7;
         private GraphController graphController;
+        private string[] daysOfWeek;
+        private int[] hours;
 
         public StudyHoursForm()
         {
             InitializeComponent();
+            daysOfWeek = new string[DAYS_IN_WEEK];
+            hours = new int[DAYS_IN_WEEK];
+
             this.MaximumSize = new System.Drawing.Size(1366, 780);
             this.Size = new System.Drawing.Size(1366, 780);
             this.studdyBuddyNav11.MinimumSize = new System.Drawing.Size(245, 780);
             this.studdyBuddyNav11.MaximumSize = new System.Drawing.Size(245, 780);
-            fillChartDefault();
+            chart1.Titles.Add("Hours Studied");
+           
 
             graphController = new GraphController();
+            graphController.setGraphData();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            updateData();
-            fillChartDefault();
+            //testData();
+            //fillChartDefault();
         }
-        private void updateData()
+        private void graphDataBtn_Click(object sender, EventArgs e)
         {
-            //Get input from form
-            DateTime date= dateTimePicker1.Value;
-            int hoursStudied = Convert.ToInt32(labelHoursStudied.Text);
+            chart1.Series.Clear();
 
-            //Pass to graphController
-            graphController.setHoursStudied(date, hoursStudied);
-            //string hoursString = graphController.HoursStudied.TryGetValue(3).ToString();
-            //string hoursString = graphController.HoursStudied.;
-            MessageBox.Show("Studied " + hoursStudied.ToString() + " hours on " + date.Date.ToString("yyyy - MM - dd"));
+            //Set default values in GraphData
+            int weekId = this.WeekComboBox.SelectedIndex;
+            Dictionary<DayOfWeek, int> studyHoursPerDay = graphController.getDataByWeek(weekId);
 
-            updateChart();
+            int intID = WeekComboBox.SelectedIndex;
+            for (int i = 0; i < DAYS_IN_WEEK; i++)
+            {
+                //Iterate through days of week 0 - 6
+                DayOfWeek dayOfWeek = (DayOfWeek)i;
+                //Store day of week in days of week
+                this.daysOfWeek[i] = dayOfWeek.ToString();
+                //Store hours according to day of week
+                this.hours[i] = studyHoursPerDay[dayOfWeek];
+            }
 
+            //Edit labels
+            string seriesID = "Week " + weekId;
+            chart1.Series.Add(seriesID);
+            chart1.Series[seriesID].AxisLabel = "Week" + weekId;
+
+            for (int i = 0; i < daysOfWeek.Length; i++)
+            {
+                chart1.Series[seriesID].Points.AddXY(daysOfWeek[i], hours[i]);
+            }
         }
-
-        private void fillChartDefault()
-        {
-            //Get default values to display- should come from DB.
-            chart1.Series["Hours Studied"].Points.AddXY("Sunday", "2");
-            chart1.Series["Hours Studied"].Points.AddXY("Monday", "5");
-            chart1.Series["Hours Studied"].Points.AddXY("Tuesday", "8");
-            chart1.Series["Hours Studied"].Points.AddXY("Wednesday", "0");
-            chart1.Series["Hours Studied"].Points.AddXY("Thursday", "1");
-            chart1.Series["Hours Studied"].Points.AddXY("Friday", "3");
-            chart1.Series["Hours Studied"].Points.AddXY("Saturday", "2");
-        }
-
-        private void updateChart()
-        {
-            for (int i = 0; i < chart1.Series.Count; i++)
-                chart1.Series["Hours Studied"].Points.RemoveAt(i);
-        }
-
-
     }
 }

@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace Study_Buddy.DataAccess
 {
-    internal class Assignment
+    public class Assignment
     {
-        internal int points;         //total point value of assignment
-        internal string name;        //name of assignment
-        internal int priority;       //priority points of assignments
-        internal double gradePoints; //gade user got for assignment
+        public int totalPoints { get; set; }   //total point value of assignment
+        public string name { get; set; }        //name of assignment
+        public double weight { get; set; }       //weight of assignment
+        public double grade { get; set; } //gade user got for assignment
 
-        public Assignment(int newPoints, string newName, int newPriority)
+        public Assignment(int newPoints, string newName, int newWeight)
         {
-            points = newPoints;
+            totalPoints = newPoints;
             name = newName;
-            priority = newPriority;
+            weight = newWeight;
         }
 
-        void gradeAssignment(double percentGrade)
+        public void addGrade(double points)
         {
-            gradePoints = points * (0.01 * percentGrade);
+            grade = points / totalPoints;
         }
         
     }

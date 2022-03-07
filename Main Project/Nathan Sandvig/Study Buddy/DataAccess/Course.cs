@@ -13,7 +13,7 @@ namespace Study_Buddy.DataAccess
     // This class manages course objects within an account
     // v1: Created the class - Nathan S, 3-6-22
     //-------------------------------------------------------------------------
-    internal class Course
+    public class Course
     {
         //---------------------------------------------------------------------
         // Private data members
@@ -25,118 +25,33 @@ namespace Study_Buddy.DataAccess
         // credits: The number of credits the course is worth
         //---------------------------------------------------------------------
         private List<Assignment> assignments;
-        private String name;
-        private double grade;
-        private String code;
-        private double priority;
-        private double credits;
-
-        //---------------------------------------------------------------------
-        // This class is a builder class for Courses
-        // v1: Created the class - Nathan S, 3-6-22
-        //---------------------------------------------------------------------
-        public class CourseBuilder
-        {
-            //-----------------------------------------------------------------
-            // Private data members
-            // name: The name of the course
-            // grade: The grade the user currently has in the course
-            // code: The code of the course
-            // priority: How important the course is
-            // credits: The number of credits the course is worth
-            //-----------------------------------------------------------------
-            public String name;
-            public double grade;
-            public String code;
-            public double priority;
-            public double credits;
-
-            //-----------------------------------------------------------------
-            // Default constructor for the CourseBuilder class
-            // v1: Created the constructor - Nathan S, 3-6-22
-            //-----------------------------------------------------------------
-            public CourseBuilder()
-            {
-
-            }
-
-            //-----------------------------------------------------------------
-            // Wither method for the name attribute
-            // name: The name being set in the builder
-            // return: The builder for build chains
-            // v1: Created the method - Nathan S, 3-6-22
-            //-----------------------------------------------------------------
-            public CourseBuilder WithName(String name)
-            {
-                this.name = name;
-                return this;
-            }
-
-            //-----------------------------------------------------------------
-            // Wither method for the grade attribute
-            // grade: The grade being set in the builder
-            // return: The builder for build chains
-            // v1: Created the method - Nathan S, 3-6-22
-            //-----------------------------------------------------------------
-            public CourseBuilder WithGrade(double grade)
-            {
-                this.grade = grade;
-                return this;
-            }
-
-            //-----------------------------------------------------------------
-            // Wither method for the code attribute
-            // code: The code being set in the builder
-            // return: The builder for build chains
-            // v1: Created the method - Nathan S, 3-6-22
-            //-----------------------------------------------------------------
-            public CourseBuilder WithCode(String code)
-            {
-                this.code = code;
-                return this;
-            }
-
-            //-----------------------------------------------------------------
-            // Wither method for the priority attribute
-            // priority: The priority being set in the builder
-            // return: The builder for build chains
-            // v1: Created the method - Nathan S, 3-6-22
-            //-----------------------------------------------------------------
-            public CourseBuilder WithPriority(double priority)
-            {
-                this.priority = priority;
-                return this;
-            }
-
-            //-----------------------------------------------------------------
-            // Wither method for the credits attribute
-            // credits: The credits being set in the builder
-            // return: The builder for build chains
-            // v1: Created the method - Nathan S, 3-6-22
-            //-----------------------------------------------------------------
-            public CourseBuilder WithCredits(double credits)
-            {
-                this.credits = credits;
-                return this;
-            }
-
-            //-----------------------------------------------------------------
-            // Build method for the builder
-            // return: The course which was built
-            // v1: Created the method - Nathan S, 3-6-22
-            //-----------------------------------------------------------------
-            public Course Build()
-            {
-                return new Course(this);
-            }
-        }
+        public string name { get; set; }
+        public double grade { get; set; }
+        public string code { get; set; }
+        public double priority { get; set; }
+        public double credits { get; set; }
 
         //---------------------------------------------------------------------
         // Default constructor for the Course class
         // v1: Created the method - Nathan S, 3-6-22
         //---------------------------------------------------------------------
-        private Course(CourseBuilder builder)
+        public Course()
         {
+            assignments = new List<Assignment>();
+            this.name = "CourseName";
+            this.grade = 100.0;
+            this.code = "CourseCode";
+            this.priority = -1.0;
+            this.credits = 3.0;
+        }
+
+        //---------------------------------------------------------------------
+        // Builder constructor for the Course class
+        // v1: Created the method - Nathan S, 3-6-22
+        //---------------------------------------------------------------------
+        public Course(CourseBuilder builder)
+        {
+            assignments = new List<Assignment>();
             this.name = builder.name;
             this.grade = builder.grade;
             this.code = builder.code;
@@ -144,18 +59,90 @@ namespace Study_Buddy.DataAccess
             this.credits = builder.credits;
         }
 
-        public void AddAssigment(string assignName, int assignPoint, int assignPriority)
+        //---------------------------------------------------------------------
+        // Adds an assignment to the list of assignments
+        // name: The name of the assignment
+        // totalPoints: The point value of the assignment
+        // weight: The weight of the assignment
+        // v1: Created the method - Andrew V, 3-5-22
+        //---------------------------------------------------------------------
+        public void AddAssigment(string name, int totalPoints, int weight)
         {
-            Assignment temp = new Assignment(assignPoint, assignName, assignPriority);
-            //wip add assignments based on priority
-            assignments.Add(temp);
+            assignments.Add(new Assignment(totalPoints, name, weight));
         }
 
-        public void RemoveAssignment(string assignName, int assignPoint, int assignPriority)
+        //---------------------------------------------------------------------
+        // Removes an assignment from the list of assignments
+        // name: The name of the assignment
+        // retrn: True if the assignment was removed, false if not
+        // v1: Created the method - Andrew V, 3-5-22
+        // v2: Converted to remove-by-name - Nathan S, 3-6-22
+        //---------------------------------------------------------------------
+        public bool RemoveAssignment(string assignmentName)
         {
-            Assignment temp = new Assignment(assignPoint, assignName, assignPriority);
+            // Initialize variables
+            int index = -1;
+            bool removed = false;
 
-            assignments.Remove(temp);
+            // Find the index of the assignment
+            for(int i = 0; i < assignments.Count; i++)
+            {
+                if (assignments[i].name == assignmentName)
+                    index = i;
+            }
+
+            // Remove the assignment if it exists
+            if(index != -1)
+            {
+                assignments.RemoveAt(index);
+                removed = true;
+            }
+
+            return removed;
+        }
+
+        //---------------------------------------------------------------------
+        // Adds a grade to an assignment
+        // name: The name of the assignment
+        // points: The points achieved on the assignment
+        // v1: Created the method - Nathan S, 3-6-22
+        //---------------------------------------------------------------------
+        public void GradeAssignment(string name, double points)
+        {
+            int index = -1;
+            for (int i = 0; i < assignments.Count; i++)
+            {
+                if (assignments[i].name == name)
+                    index = i;
+            }
+            if(index != -1)
+            {
+                assignments[index].addGrade(points);
+            }
+        }
+
+        //---------------------------------------------------------------------
+        // Calculates the user's current grade in the course
+        // return: The current grade as a double
+        // v1: Created the method - Nathan S, 3-6-22
+        //---------------------------------------------------------------------
+        public double CalculateGrade()
+        {
+            // Initialize variables
+            double grade = 0.0;
+            double totalPoints = 0.0;
+
+            // Add the grade and weight of each assignment
+            for(int i = 0; i < assignments.Count; i++)
+            {
+                grade += assignments[i].grade * assignments[i].weight;
+                totalPoints += assignments[i].weight;
+            }
+
+            // Calculate the final grade
+            grade /= totalPoints;
+
+            return grade;
         }
     }
 }

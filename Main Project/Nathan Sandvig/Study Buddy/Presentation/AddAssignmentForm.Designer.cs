@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtNameAssign = new System.Windows.Forms.TextBox();
-            this.txtPointsAssign = new System.Windows.Forms.TextBox();
-            this.txtPriority = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.butAddAssig = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPriority = new System.Windows.Forms.TextBox();
+            this.txtPointsAssign = new System.Windows.Forms.TextBox();
+            this.txtNameAssign = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.lblCourseNameCode = new System.Windows.Forms.Label();
             this.lblClasscode = new System.Windows.Forms.Label();
@@ -58,58 +58,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // txtNameAssign
-            // 
-            this.txtNameAssign.Location = new System.Drawing.Point(74, 29);
-            this.txtNameAssign.Name = "txtNameAssign";
-            this.txtNameAssign.Size = new System.Drawing.Size(248, 20);
-            this.txtNameAssign.TabIndex = 0;
-            // 
-            // txtPointsAssign
-            // 
-            this.txtPointsAssign.Location = new System.Drawing.Point(74, 64);
-            this.txtPointsAssign.Name = "txtPointsAssign";
-            this.txtPointsAssign.Size = new System.Drawing.Size(100, 20);
-            this.txtPointsAssign.TabIndex = 1;
-            // 
-            // txtPriority
-            // 
-            this.txtPriority.Location = new System.Drawing.Point(74, 101);
-            this.txtPriority.Name = "txtPriority";
-            this.txtPriority.Size = new System.Drawing.Size(100, 20);
-            this.txtPriority.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(33, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Name";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(33, 71);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Points";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(30, 108);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Priority";
-            // 
             // butAddAssig
             // 
             this.butAddAssig.ForeColor = System.Drawing.SystemColors.ActiveCaption;
@@ -120,6 +68,57 @@
             this.butAddAssig.Text = "Add Assignment";
             this.butAddAssig.UseVisualStyleBackColor = true;
             this.butAddAssig.Click += new System.EventHandler(this.butAddAssig_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label3.Location = new System.Drawing.Point(30, 108);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Weight";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(8, 67);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Total Points";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(33, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Name";
+            // 
+            // txtPriority
+            // 
+            this.txtPriority.Location = new System.Drawing.Point(74, 101);
+            this.txtPriority.Name = "txtPriority";
+            this.txtPriority.Size = new System.Drawing.Size(100, 20);
+            this.txtPriority.TabIndex = 2;
+            // 
+            // txtPointsAssign
+            // 
+            this.txtPointsAssign.Location = new System.Drawing.Point(74, 64);
+            this.txtPointsAssign.Name = "txtPointsAssign";
+            this.txtPointsAssign.Size = new System.Drawing.Size(100, 20);
+            this.txtPointsAssign.TabIndex = 1;
+            // 
+            // txtNameAssign
+            // 
+            this.txtNameAssign.Location = new System.Drawing.Point(74, 29);
+            this.txtNameAssign.Name = "txtNameAssign";
+            this.txtNameAssign.Size = new System.Drawing.Size(248, 20);
+            this.txtNameAssign.TabIndex = 0;
             // 
             // label4
             // 
