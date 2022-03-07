@@ -13,7 +13,7 @@ namespace Study_Buddy.DataAccess
     // This class manages course objects within an account
     // v1: Created the class - Nathan S, 3-6-22
     //-------------------------------------------------------------------------
-    internal class Course
+    public class Course
     {
         //---------------------------------------------------------------------
         // Private data members
@@ -25,11 +25,11 @@ namespace Study_Buddy.DataAccess
         // credits: The number of credits the course is worth
         //---------------------------------------------------------------------
         private List<Assignment> assignments;
-        private String name;
-        private double grade;
-        private String code;
-        private double priority;
-        private double credits;
+        public String name { get; set; }
+        public double grade { get; set; }
+        public String code { get; set; }
+        public double priority { get; set; }
+        public double credits { get; set; }
 
         //---------------------------------------------------------------------
         // Default constructor for the Course class
@@ -37,6 +37,7 @@ namespace Study_Buddy.DataAccess
         //---------------------------------------------------------------------
         public Course()
         {
+            assignments = new List<Assignment>();
             this.name = "CourseName";
             this.grade = 100.0;
             this.code = "CourseCode";
@@ -50,6 +51,7 @@ namespace Study_Buddy.DataAccess
         //---------------------------------------------------------------------
         public Course(CourseBuilder builder)
         {
+            assignments = new List<Assignment>();
             this.name = builder.name;
             this.grade = builder.grade;
             this.code = builder.code;

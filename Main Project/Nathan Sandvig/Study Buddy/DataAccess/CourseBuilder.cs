@@ -11,7 +11,7 @@ namespace Study_Buddy.DataAccess
     // This class is a builder class for Courses
     // v1: Created the class - Nathan S, 3-6-22
     //---------------------------------------------------------------------
-    internal class CourseBuilder
+    public class CourseBuilder
     {
         //-----------------------------------------------------------------
         // Private data members
