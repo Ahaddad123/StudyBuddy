@@ -17,18 +17,47 @@ namespace Study_Buddy.DataAccess
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void butAddAssig_Click(object sender, EventArgs e)
         {
-            string assignmentName = txtNameAssign.Text;
-            int assignmentPoints = Int32.Parse(txtPointsAssign.Text);
-            int assignmentPriority = Int32.Parse(txtPriority.Text);
+            Boolean valid = true;
+            int points = 0;
+            double weight = 0;
+            if (txtNameAssign.Text.Equals(""))
+            {
+                MessageBox.Show("Invalid Name");
+                valid = false;
+            }
+            try
+            {
+                points = Int32.Parse(txtPointsAssign.Text);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Invalid Total Points");
+                valid = false;
+            }
+            try
+            {
+                weight = Double.Parse(txtPriority.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Invalid Weight");
+                valid = false;
+            }
+            if (points < 0)
+            {
+                MessageBox.Show("Invalid Total Points");
+            }
+            if (weight < 0)
+            {
+                MessageBox.Show("Invalid Weight");
+            }
 
-            //call command to 
+            if(valid)
+            {
+                // Add assignment
+            }
         }
     }
 }
