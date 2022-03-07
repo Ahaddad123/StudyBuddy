@@ -12,7 +12,7 @@ namespace Nathans_Unit_Test
         {
             Assignment assignment = new Assignment(100, "Exam 1", 20);
             assignment.addGrade(50);
-            Assert.AreEqual(0.5, assignment.grade);
+            Assert.AreEqual(50, assignment.grade);
         }
 
         [TestMethod]
@@ -20,7 +20,7 @@ namespace Nathans_Unit_Test
         {
             Assignment assignment = new Assignment(100, "Exam 1", 20);
             assignment.addGrade(-5);
-            Assert.AreEqual(-0.05, assignment.grade);
+            Assert.AreEqual(-5, assignment.grade);
         }
 
         [TestMethod]

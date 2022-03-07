@@ -124,7 +124,7 @@ namespace Study_Buddy.DataAccess
         //---------------------------------------------------------------------
         // Calculates the user's current grade in the course
         // return: The current grade as a double
-        // v1: Created the method - Nathan S, 3-6-22
+        // v1: Created the method - Makenna H, 3-6-22
         //---------------------------------------------------------------------
         public double CalculateGrade()
         {

@@ -22,7 +22,7 @@ namespace Study_Buddy.DataAccess
 
         public void addGrade(double points)
         {
-            grade = points / totalPoints;
+            grade = points / totalPoints * 100;
         }
         
     }
