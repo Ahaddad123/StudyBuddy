@@ -30,7 +30,31 @@ namespace Nathans_Unit_Test
         [TestMethod]
         public void AddAssignmentTest()
         {
+            Course course = new Course();
+            course.AddAssignment("testAssignment", 100, 30);
 
+            Assert.IsTrue(course.RemoveAssignment("testAssignment"));
+        }
+
+        [TestMethod]
+        public void RemoveAssignmentTest()
+        {
+            Course course = new Course();
+            course.AddAssignment("testAssignment", 100, 30);
+            course.RemoveAssignment("testAssignment");
+
+            Assert.IsFalse(course.RemoveAssignment("testAssignment"));
+        }
+
+        [TestMethod]
+        public void GradeAssignmentTest()
+        {
+            Course course = new Course();
+            course.AddAssignment("testAssignment", 100, 100);
+
+            course.GradeAssignment("testAssignment", 70);
+
+            Assert.AreEqual(70.0, course.CalculateGrade());
         }
     }
 }
