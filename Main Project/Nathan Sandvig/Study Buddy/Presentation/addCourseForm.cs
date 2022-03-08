@@ -57,16 +57,19 @@ namespace Study_Buddy.Presentation
             if (coursePriority < 0)
             {
                 MessageBox.Show("Invalid Priority");
+                valid = false;
             }
             if (courseCredit < 0)
             {
                 MessageBox.Show("Invalid Credits");
+                valid = false;
             }
 
             if (valid)
             {
                 Course course = new CourseBuilder().WithName(txtCourseTitle.Text).WithCode(txtCourseCode.Text).WithCredits(courseCredit).WithPriority(coursePriority).Build();
                 FormController.addCourse(course);
+                this.Close();
             }
         }
     }
