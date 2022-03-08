@@ -92,23 +92,11 @@
     <Compile Include="Presentation\AddAssignmentForm.Designer.cs">
       <DependentUpon>AddAssignmentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\AddAssignmentForms.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentation\AddAssignmentForms.Designer.cs">
-      <DependentUpon>AddAssignmentForms.cs</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\AddCourseForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentation\AddCourseForm.Designer.cs">
       <DependentUpon>AddCourseForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\addCourseForms.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentation\addCourseForms.Designer.cs">
-      <DependentUpon>addCourseForms.cs</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\Assignment.cs" />
     <Compile Include="DataAccess\Calendar.cs" />
@@ -156,14 +144,8 @@
     <EmbeddedResource Include="Presentation\AddAssignmentForm.resx">
       <DependentUpon>AddAssignmentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\AddAssignmentForms.resx">
-      <DependentUpon>AddAssignmentForms.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\AddCourseForm.resx">
       <DependentUpon>AddCourseForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\addCourseForms.resx">
-      <DependentUpon>addCourseForms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\HomePageForm.resx">
       <DependentUpon>HomePageForm.cs</DependentUpon>

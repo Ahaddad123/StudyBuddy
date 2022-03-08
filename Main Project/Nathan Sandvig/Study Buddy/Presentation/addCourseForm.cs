@@ -66,7 +66,7 @@ namespace Study_Buddy.Presentation
             if (valid)
             {
                 Course course = new CourseBuilder().WithName(txtCourseTitle.Text).WithCode(txtCourseCode.Text).WithCredits(courseCredit).WithPriority(coursePriority).Build();
-                AccountController.account.courses.Add(course);
+                FormController.addCourse(course);
             }
         }
     }
