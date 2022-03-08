@@ -25,21 +25,65 @@ namespace Study_Buddy.Database
             return sqlite_connection;
         }
 
-        public void CreateAccountTable() { }
 
-        public void InsertAccountData() { }
+        public Boolean InsertAccountData(String username, String password) {
+            Boolean result = false;
 
-        public void CheckAccountData() { }
+            // Insert username and password into table for account information, potentially add more needed information later on
 
-        public void InsertAssignment() { }
+            return result;
+        }
 
-        public void InsertGrade() { }
+        public Boolean CheckAccountUsername(String username) {
+            Boolean result = false;
 
-        public void InsertCourse() { }
+            // Query username data against database to see if it exists / is the right username
 
-        public void RemoveCourse() { }
+            return result;
+        }
 
-        public void RemoveCourseData() { }
+        public Boolean CheckAccountPassword(String password) {
+            Boolean result = false;
+
+            // Query password data against database to see if it is the right password
+
+            return result;
+        }
+
+        public Boolean InsertAssignment() {
+            Boolean result = false;
+
+            return result;
+        }
+
+        public Boolean InsertGrade() {
+            Boolean result = false;
+
+            return result;
+        }
+
+        public Boolean InsertCourse() { 
+            Boolean result = false;
+
+            return result;
+        }
+
+        public Boolean RemoveCourse() {
+            Boolean result = false;
+
+            // Remove course from the course table
+
+            result = RemoveCourseData();
+            return result;
+        }
+
+        public Boolean RemoveCourseData() {
+            Boolean result = false;
+
+            // Add code to remove the course data from all the tables
+
+            return result;
+        }
 
 
 
