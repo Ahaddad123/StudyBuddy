@@ -92,11 +92,23 @@
     <Compile Include="Presentation\AddAssignmentForm.Designer.cs">
       <DependentUpon>AddAssignmentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\addCourseForm.cs">
+    <Compile Include="Presentation\AddAssignmentForms.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\addCourseForm.Designer.cs">
-      <DependentUpon>addCourseForm.cs</DependentUpon>
+    <Compile Include="Presentation\AddAssignmentForms.Designer.cs">
+      <DependentUpon>AddAssignmentForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\AddCourseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\AddCourseForm.Designer.cs">
+      <DependentUpon>AddCourseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\addCourseForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\addCourseForms.Designer.cs">
+      <DependentUpon>addCourseForms.cs</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\Assignment.cs" />
     <Compile Include="DataAccess\Calendar.cs" />
@@ -124,17 +136,17 @@
     <Compile Include="Presentation\Nav.Designer.cs">
       <DependentUpon>Nav.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\StuddyBuddyFormTemplate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentation\StuddyBuddyFormTemplate.Designer.cs">
-      <DependentUpon>StuddyBuddyFormTemplate.cs</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\CourseInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentation\CourseInfoForm.Designer.cs">
       <DependentUpon>CourseInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\StuddyBuddyFormTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\StuddyBuddyFormTemplate.Designer.cs">
+      <DependentUpon>StuddyBuddyFormTemplate.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -144,8 +156,14 @@
     <EmbeddedResource Include="Presentation\AddAssignmentForm.resx">
       <DependentUpon>AddAssignmentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\addCourseForm.resx">
-      <DependentUpon>addCourseForm.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\AddAssignmentForms.resx">
+      <DependentUpon>AddAssignmentForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\AddCourseForm.resx">
+      <DependentUpon>AddCourseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\addCourseForms.resx">
+      <DependentUpon>addCourseForms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\HomePageForm.resx">
       <DependentUpon>HomePageForm.cs</DependentUpon>
@@ -153,11 +171,11 @@
     <EmbeddedResource Include="Presentation\Nav.resx">
       <DependentUpon>Nav.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\StuddyBuddyFormTemplate.resx">
-      <DependentUpon>StuddyBuddyFormTemplate.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\CourseInfoForm.resx">
       <DependentUpon>CourseInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\StuddyBuddyFormTemplate.resx">
+      <DependentUpon>StuddyBuddyFormTemplate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

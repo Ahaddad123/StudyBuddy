@@ -31,22 +31,13 @@ namespace Study_Buddy.Presentation
         // Add Course Button
         private void button3_Click(object sender, EventArgs e)
         {
-            FormController.openForm(new addCourseForm());
+            FormController.openForm(new AddCourseForm());
         }
 
         // Visualize My Data Button
         private void button4_Click(object sender, EventArgs e)
         {
             FormController.openForm(new CourseInfoForm());
-        }
-
-        private void nav1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("bloop");
-            Point cursor = PointToClient(new Point(Cursor.Position.X, Cursor.Position.Y));
-            Control control = (Control)sender;   // Sender gives you which control is clicked.
-            Control child = control.GetChildAtPoint(cursor);
-            MessageBox.Show(child.Name.ToString());
         }
     }
 }

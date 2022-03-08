@@ -7,14 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Study_Buddy.DataAccess;
+using Study_Buddy.BusinessLogic;
 
-namespace Study_Buddy.DataAccess
+namespace Study_Buddy.Presentation
 {
     public partial class AddAssignmentForm : Form
     {
         public AddAssignmentForm()
         {
             InitializeComponent();
+            this.MaximumSize = new System.Drawing.Size(1366, 768);
+            this.Size = new System.Drawing.Size(1366, 768);
+            this.mainPanel.MaximumSize = new System.Drawing.Size(1080, 720);
+            this.mainPanel.Size = new System.Drawing.Size(1080, 720);
         }
 
         private void butAddAssig_Click(object sender, EventArgs e)
@@ -31,7 +37,7 @@ namespace Study_Buddy.DataAccess
             {
                 points = Int32.Parse(txtPointsAssign.Text);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Invalid Total Points");
                 valid = false;
@@ -54,7 +60,7 @@ namespace Study_Buddy.DataAccess
                 MessageBox.Show("Invalid Weight");
             }
 
-            if(valid)
+            if (valid)
             {
                 // Add assignment
             }
