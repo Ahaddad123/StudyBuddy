@@ -41,11 +41,14 @@ namespace Study_Buddy.DataAccess
         //---------------------------------------------------------------------
         public void AddTimeToLog(double newTime, int day)
         {
-            if(log[day] != 0)
+            if(log.ContainsKey(day))
             {
-                newTime = newTime + log[day];
+                log[day] = newTime + log[day];
             }
-            log.Add(day, newTime);
+            else
+            {
+                log.Add(day, newTime);
+            }
         }
 
         //---------------------------------------------------------------------
@@ -55,7 +58,14 @@ namespace Study_Buddy.DataAccess
         //---------------------------------------------------------------------
         public double GetHours(int day)
          {
-            return log[day];
+            if(log.ContainsKey(day))
+            {
+                return log[day];
+            }
+            else
+            {
+                return 0.0;
+            }
          }
          
     }

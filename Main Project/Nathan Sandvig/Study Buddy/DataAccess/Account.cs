@@ -50,7 +50,36 @@ namespace Study_Buddy.DataAccess
             return isCorrect;
         }
 
+        //---------------------------------------------------------------------
+        // Adds a course to the account
+        // course: The course data being passed from the controller
+        // v1: Created the method - Nathan S, 3-7-22
+        //---------------------------------------------------------------------
+        public void addCourse(Course course) 
+        {
+            courses.Add(course);
+        }
 
+        //---------------------------------------------------------------------
+        // Removes a course from the account
+        // courseName: The name of the course being removed
+        // return: True if the course was removed, false if not
+        // v1: Created the method - Nathan S, 3-7-22
+        //---------------------------------------------------------------------
+        public bool removeCourse(string courseName) 
+        {
+            // Initialize variables
+            int index = -1;
+            bool removed = false;
+
+            // Find the index of the assignment
+            for (int i = 0; i < courses.Count; i++)
+            {
+                if (courses[i].name == courseName)
+                    index = i;
+            }
+
+<<<<<<< HEAD
         public Boolean addCourse() {
             Boolean courseAdded = false;
             courseAdded = database.InsertCourse();
@@ -69,6 +98,16 @@ namespace Study_Buddy.DataAccess
             // Add conditionals for if the course was removed from the database or not
 
             return courseRemoved;
+=======
+            // Remove the assignment if it exists
+            if (index != -1)
+            {
+                courses.RemoveAt(index);
+                removed = true;
+            }
+
+            return removed;
+>>>>>>> f0ff79aa856a821d8a46f6532007105d494114b9
         }
     }
 }
