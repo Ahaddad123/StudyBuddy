@@ -31,7 +31,7 @@ namespace Study_Buddy.Presentation
         // Add Course Button
         private void button3_Click(object sender, EventArgs e)
         {
-            FormController.openForm(new addCourseForm());
+            FormController.openForm(new AddCourseForm());
         }
 
         // Visualize My Data Button

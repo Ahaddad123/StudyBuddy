@@ -11,6 +11,7 @@ namespace Study_Buddy.DataAccess
         internal String username; //Login username
         internal String password; //Login password
         internal int userID; //This is the ID for the database to track accounts
+        public List<Course> courses { get; set; } = new List<Course>();
 
         public Account(String newUsername, String newPassword, int newUserID){
             username = newUsername;
