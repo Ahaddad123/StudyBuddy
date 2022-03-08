@@ -150,7 +150,17 @@ namespace Nathans_Unit_Test
         }
 
         [TestMethod]
-        public void GetHoursStudiedTest()
+        public void GetHoursStudiedTest_Empty()
+        {
+            Course course = new Course();
+
+            int date = DateTime.Now.Year * 10000 + DateTime.Now.Month * 100 + DateTime.Now.Day;
+
+            Assert.AreEqual(0.0, course.GetHoursStudied(date));
+        }
+
+        [TestMethod]
+        public void GetHoursStudiedTest_Filled()
         {
             Course course = new Course();
             course.LogHours(4.2);

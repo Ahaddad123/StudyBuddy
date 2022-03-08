@@ -32,8 +32,15 @@ namespace Study_Buddy.DataAccess
             return isCorrect;
         }
 
-
-        public void addCourse() { }
+        //---------------------------------------------------------------------
+        // Adds a course to the account
+        // course: The course data being passed from the controller
+        // v1: Created the method - Nathan S, 3-7-22
+        //---------------------------------------------------------------------
+        public void addCourse(Course course) 
+        {
+            courses.Add(course);
+        }
 
         public void removeCourse() { }
     }

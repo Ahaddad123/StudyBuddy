@@ -17,7 +17,7 @@ namespace Study_Buddy.Presentation
 
         public static void addCourse(Course course)
         {
-            AccountController.account.courses.Add(course);
+            AccountController.account.addCourse(course);
         }
 
         public static List<Course> getCourses()
