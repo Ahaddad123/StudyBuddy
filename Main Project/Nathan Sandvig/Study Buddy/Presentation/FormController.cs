@@ -19,5 +19,10 @@ namespace Study_Buddy.Presentation
         {
             AccountController.account.courses.Add(course);
         }
+
+        public static List<Course> getCourses()
+        {
+            return AccountController.account.courses;
+        }
     }
 }

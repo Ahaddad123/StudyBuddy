@@ -39,5 +39,10 @@ namespace Study_Buddy.Presentation
         {
             FormController.openForm(new CourseInfoForm());
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            FormController.openForm(new AddGradeForm());
+        }
     }
 }
