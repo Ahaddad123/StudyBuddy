@@ -18,6 +18,7 @@ namespace Study_Buddy.DataAccess
         //---------------------------------------------------------------------
         // Private data members
         // assignments: The assignments contained within the course
+        // hourLog: The log of the hours studied for the course
         // name: The name of the course
         // grade: The grade the user currently has in the course
         // code: The code of the course
@@ -25,6 +26,7 @@ namespace Study_Buddy.DataAccess
         // credits: The number of credits the course is worth
         //---------------------------------------------------------------------
         private List<Assignment> assignments;
+        private StudyLog hourLog;
         public string name { get; set; }
         public double grade { get; set; }
         public string code { get; set; }
@@ -38,6 +40,7 @@ namespace Study_Buddy.DataAccess
         public Course()
         {
             assignments = new List<Assignment>();
+            hourLog = new StudyLog();
             this.name = "CourseName";
             this.grade = 100.0;
             this.code = "CourseCode";
@@ -52,6 +55,7 @@ namespace Study_Buddy.DataAccess
         public Course(CourseBuilder builder)
         {
             assignments = new List<Assignment>();
+            hourLog = new StudyLog();
             this.name = builder.name;
             this.grade = builder.grade;
             this.code = builder.code;
@@ -146,6 +150,31 @@ namespace Study_Buddy.DataAccess
                 grade = 100;
 
             return grade;
+        }
+
+        //---------------------------------------------------------------------
+        // Adds more hours to the study log
+        // time: The time spent studying in hours
+        // v1: Created the method - Nathan S, 3-7-22
+        //---------------------------------------------------------------------
+        public void LogHours(double time)
+        {
+            if(time > 0)
+            {
+                int date = DateTime.Now.Year * 10000 + DateTime.Now.Month * 100 + DateTime.Now.Day;
+                hourLog.AddTimeToLog(time, date);
+            }
+        }
+
+        //---------------------------------------------------------------------
+        // Finds the number of hours studied on a given day
+        // day: The date being checked for hours studied
+        // return: The number of hours studied that day
+        // v1: Created the method - Nathan S, 3-7-22
+        //---------------------------------------------------------------------
+        public double GetHoursStudied(int day)
+        {
+            return hourLog.GetHours(day);
         }
     }
 }

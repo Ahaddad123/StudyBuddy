@@ -115,5 +115,50 @@ namespace Nathans_Unit_Test
 
             Assert.IsTrue(Math.Abs(165.0 - course.CalculateGrade()) < 0.00000000000001);
         }
+
+        [TestMethod]
+        public void LogHoursTest_Negative()
+        {
+            Course course = new Course();
+            course.LogHours(-3.5);
+
+            int date = DateTime.Now.Year * 10000 + DateTime.Now.Month * 100 + DateTime.Now.Day;
+
+            Assert.AreEqual(0.0, course.GetHoursStudied(date));
+        }
+
+        [TestMethod]
+        public void LogHoursTest_Zero()
+        {
+            Course course = new Course();
+            course.LogHours(0.0);
+
+            int date = DateTime.Now.Year * 10000 + DateTime.Now.Month * 100 + DateTime.Now.Day;
+
+            Assert.AreEqual(0.0, course.GetHoursStudied(date));
+        }
+
+        [TestMethod]
+        public void LogHoursTest_Positive()
+        {
+            Course course = new Course();
+            course.LogHours(4.2);
+
+            int date = DateTime.Now.Year * 10000 + DateTime.Now.Month * 100 + DateTime.Now.Day;
+
+            Assert.AreEqual(4.2, course.GetHoursStudied(date));
+        }
+
+        [TestMethod]
+        public void GetHoursStudiedTest()
+        {
+            Course course = new Course();
+            course.LogHours(4.2);
+            course.LogHours(5.1);
+
+            int date = DateTime.Now.Year * 10000 + DateTime.Now.Month * 100 + DateTime.Now.Day;
+
+            Assert.AreEqual(9.3, course.GetHoursStudied(date));
+        }
     }
 }
