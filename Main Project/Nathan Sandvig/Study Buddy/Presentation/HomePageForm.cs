@@ -39,14 +39,5 @@ namespace Study_Buddy.Presentation
         {
             FormController.openForm(new CourseInfoForm());
         }
-
-        private void nav1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("bloop");
-            Point cursor = PointToClient(new Point(Cursor.Position.X, Cursor.Position.Y));
-            Control control = (Control)sender;   // Sender gives you which control is clicked.
-            Control child = control.GetChildAtPoint(cursor);
-            MessageBox.Show(child.Name.ToString());
-        }
     }
 }
