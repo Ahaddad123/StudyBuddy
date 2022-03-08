@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Study_Buddy.DataAccess
 {
-    internal class Account
+    public class Account
     {
         internal String username; //Login username
         internal String password; //Login password
@@ -42,6 +42,33 @@ namespace Study_Buddy.DataAccess
             courses.Add(course);
         }
 
-        public void removeCourse() { }
+        //---------------------------------------------------------------------
+        // Removes a course from the account
+        // courseName: The name of the course being removed
+        // return: True if the course was removed, false if not
+        // v1: Created the method - Nathan S, 3-7-22
+        //---------------------------------------------------------------------
+        public bool removeCourse(string courseName) 
+        {
+            // Initialize variables
+            int index = -1;
+            bool removed = false;
+
+            // Find the index of the assignment
+            for (int i = 0; i < courses.Count; i++)
+            {
+                if (courses[i].name == courseName)
+                    index = i;
+            }
+
+            // Remove the assignment if it exists
+            if (index != -1)
+            {
+                courses.RemoveAt(index);
+                removed = true;
+            }
+
+            return removed;
+        }
     }
 }
