@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -79,6 +79,26 @@ namespace Study_Buddy.DataAccess
                     index = i;
             }
 
+<<<<<<< HEAD
+        public Boolean addCourse() {
+            Boolean courseAdded = false;
+            courseAdded = database.InsertCourse();
+
+            // Add conditionals for if the course was added to the database or not
+            
+            return courseAdded;
+
+        }
+
+        public Boolean removeCourse() {
+            Boolean courseRemoved = false;
+
+            courseRemoved = database.RemoveCourse();
+
+            // Add conditionals for if the course was removed from the database or not
+
+            return courseRemoved;
+=======
             // Remove the assignment if it exists
             if (index != -1)
             {
@@ -87,6 +107,7 @@ namespace Study_Buddy.DataAccess
             }
 
             return removed;
+>>>>>>> f0ff79aa856a821d8a46f6532007105d494114b9
         }
     }
 }
