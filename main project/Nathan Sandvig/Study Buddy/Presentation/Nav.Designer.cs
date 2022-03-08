@@ -210,6 +210,7 @@
             this.btnLogHours.Text = "Log Hours";
             this.btnLogHours.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogHours.UseVisualStyleBackColor = false;
+            this.btnLogHours.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnLogHours_MouseClick);
             // 
             // Nav
             // 

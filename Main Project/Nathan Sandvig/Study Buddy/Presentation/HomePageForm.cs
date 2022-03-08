@@ -44,5 +44,6 @@ namespace Study_Buddy.Presentation
         {
             FormController.openForm(new AddGradeForm());
         }
+
     }
 }

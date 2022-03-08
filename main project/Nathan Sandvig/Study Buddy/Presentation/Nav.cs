@@ -26,5 +26,10 @@ namespace Study_Buddy.Presentation
         {
             //Call formController to change form
         }
+
+        private void btnLogHours_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
     }
 }

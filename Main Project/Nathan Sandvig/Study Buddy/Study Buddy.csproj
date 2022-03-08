@@ -83,9 +83,14 @@
     <Compile Include="BusinessLogic\GraphNS\StudyLogGraph.cs" />
     <Compile Include="BusinessLogic\Notifications.cs" />
     <Compile Include="BusinessLogic\SystemController.cs" />
+    <Compile Include="Presentation\Controller.cs" />
+    <Compile Include="Presentation\CourseInfoFormController.cs" />
     <Compile Include="DataAccess\Account.cs" />
     <Compile Include="DataAccess\CourseBuilder.cs" />
     <Compile Include="Database\SQLite.cs" />
+    <Compile Include="Presentation\GradeGraph.cs" />
+    <Compile Include="Presentation\Graph.cs" />
+    <Compile Include="Presentation\GraphView.cs" />
     <Compile Include="Presentation\AddAssignmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +147,7 @@
     <Compile Include="Presentation\StuddyBuddyFormTemplate.Designer.cs">
       <DependentUpon>StuddyBuddyFormTemplate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\StudyLogGraph.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
