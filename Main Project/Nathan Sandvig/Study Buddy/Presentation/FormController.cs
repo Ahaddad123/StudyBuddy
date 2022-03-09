@@ -12,6 +12,17 @@ namespace Study_Buddy.Presentation
     {
         public static void openForm(System.Windows.Forms.Form form)
         {
+            //Eventually, all forms should implement some sort of View interface for MVC
+            if (typeof(CourseInfoForm).IsInstanceOfType(form))
+            {
+                CourseInfoForm form1 = ((CourseInfoForm)form);
+                //TODO, pass in actual course and studyLog
+                CourseInfoFormController controller = new CourseInfoFormController(form1, new DataAccess.Course(), new DataAccess.StudyLog());
+                ((CourseInfoForm)form).SetController(controller);
+                controller.DrawGradeGraph();
+                controller.DrawStudyLogGraph();
+            }
+            form.ShowDialog();
             form.ShowDialog();
         }
 
