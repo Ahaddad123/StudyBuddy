@@ -6,16 +6,39 @@ using System.Threading.Tasks;
 
 namespace Study_Buddy.Presentation
 {
+
+    //---------------------------------------------------------------------
+    // This class is the model for a graph of study hours in a week for
+    // a given course.  Currently only graphs default values as the backend
+    // is not yet implemented.
+    // v1: Created the class - Peter H, 3-7-22
+    //---------------------------------------------------------------------
     internal class StudyLogGraph
     {
-        const int DAYS_IN_WEEK = 7;
+
+        //---------------------------------------------------------------------
+        // Private data members
+        // DAYS_IN_WEEK : the number of days in a week
+        // studyLog : The studyLog which is being modeled
+        // weeks : A dictionary with a int key corresponding to the weekID
+        // and a value that is a dictionary representing the day of the week
+        // (key) and hours studied in a day (value).
+        // hours : a list of hours to be graphed
+        // daysOfWeek : a list of Days of the week to be graphed, represented
+        // as a string
+        //---------------------------------------------------------------------
+        private const int DAYS_IN_WEEK = 7;
         private DataAccess.StudyLog studyLog;
         private Dictionary<int, Dictionary<DayOfWeek, int>> weeks;
-
         private List<int> hours;
         private List<string> daysOfWeek;
 
 
+        //---------------------------------------------------------------------
+        // Parameterized constructor.  Initializes members and sets default 
+        // week to week 0.
+        // v1: Created the method - Peter H, 3-7-22
+        //---------------------------------------------------------------------
         public StudyLogGraph(DataAccess.StudyLog studyLog)
         {
             weeks = new Dictionary<int, Dictionary<DayOfWeek, int>>();
@@ -26,17 +49,33 @@ namespace Study_Buddy.Presentation
             SelectWeek(0);
         }
 
-        //Return the value of weeks at the specified weekID
+        //---------------------------------------------------------------------
+        // Return the value of weeks at the specified weekID 
+        // weekID : the specified week for which study data corresponds to
+        // v1: Created the method - Peter H, 3-7-22
+        //---------------------------------------------------------------------
         private Dictionary<DayOfWeek, int> getDataByWeek(int weekID)
         {
             return weeks[weekID];
         }
 
+
+        //---------------------------------------------------------------------
+        // Returns the number of weeks for which data is logged
+        // v1: Created the method - Peter H, 3-7-22
+        //---------------------------------------------------------------------
         public int GetNumWeeks()
         {
             return weeks.Count;
         }
 
+        //---------------------------------------------------------------------
+        // Copies data for a given week from the overall dictionary, weeks,
+        // into the lists, hours and days of week for easier and
+        // better formatted access.
+        // weekID : the specified week for which study data corresponds to
+        // v1: Created the method - Peter H, 3-7-22
+        //---------------------------------------------------------------------
         public void SelectWeek(int weekID)
         {
             if (weekID < weeks.Count && weekID >= 0)
@@ -57,16 +96,31 @@ namespace Study_Buddy.Presentation
             }
         }
 
+        //---------------------------------------------------------------------
+        // Returns the days of weeks to be displayed as X values on a chart
+        // v1: Created the method - Peter H, 3-7-22
+        //---------------------------------------------------------------------
         public List<string> GetXValues()
         {
-            return daysOfWeek;   
+            return daysOfWeek;
         }
 
+        //---------------------------------------------------------------------
+        // Returns the hours studied to be displayed as Y values on a chart
+        // v1: Created the method - Peter H, 3-7-22
+        //---------------------------------------------------------------------
         public List<int> GetYValues()
         {
             return hours;
         }
 
+        //---------------------------------------------------------------------
+        // Generates default study hours data to fill in 2 weeks of data.
+        // This method exists primarily for demonstration purposes and will be 
+        // eliminated once the backend is fully implemented, so that we may 
+        // graph actual data.
+        // v1: Created the method - Peter H, 3-7-22
+        //---------------------------------------------------------------------
         public void GenerateTestData()
         {
             Random random = new Random();
