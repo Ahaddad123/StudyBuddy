@@ -23,7 +23,6 @@ namespace Study_Buddy.Presentation
                 controller.DrawStudyLogGraph();
             }
             form.ShowDialog();
-            form.ShowDialog();
         }
 
         public static void addCourse(Course course)
