@@ -141,12 +141,6 @@
     <Compile Include="Presentation\CourseInfoForm.Designer.cs">
       <DependentUpon>CourseInfoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\StuddyBuddyFormTemplate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentation\StuddyBuddyFormTemplate.Designer.cs">
-      <DependentUpon>StuddyBuddyFormTemplate.cs</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\StudyLogGraph.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -170,9 +164,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\CourseInfoForm.resx">
       <DependentUpon>CourseInfoForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\StuddyBuddyFormTemplate.resx">
-      <DependentUpon>StuddyBuddyFormTemplate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
