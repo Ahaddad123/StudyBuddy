@@ -12,5 +12,6 @@ namespace Study_Buddy.Presentation
     //-------------------------------------------------------------------------
     public class Controller
     {
+        protected IView view;
     }
 }

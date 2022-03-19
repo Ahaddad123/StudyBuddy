@@ -9,7 +9,7 @@ namespace Study_Buddy.Presentation
     internal class GraphController : Controller
     {
         //---------------------------------------------------------------------
-        // private data members:
+        // protected data members:
         // view : the display that is being controlled
         //---------------------------------------------------------------------
         //-------------------------------------------------------------------------

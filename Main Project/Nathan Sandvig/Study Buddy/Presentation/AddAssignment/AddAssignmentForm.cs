@@ -12,8 +12,9 @@ using Study_Buddy.BusinessLogic;
 
 namespace Study_Buddy.Presentation
 {
-    public partial class AddAssignmentForm : Form
+    public partial class AddAssignmentForm : Form, IView
     {
+        private AddAssignmentFormController controller;
         public AddAssignmentForm()
         {
             InitializeComponent();
@@ -21,6 +22,11 @@ namespace Study_Buddy.Presentation
             this.Size = new System.Drawing.Size(1366, 768);
             this.mainPanel.MaximumSize = new System.Drawing.Size(1080, 720);
             this.mainPanel.Size = new System.Drawing.Size(1080, 720);
+        }
+
+        public void SetController(Controller controller)
+        {
+            this.controller = (AddAssignmentFormController)controller;
         }
 
         private void butAddAssig_Click(object sender, EventArgs e)
@@ -63,6 +69,7 @@ namespace Study_Buddy.Presentation
             if (valid)
             {
                 // Add assignment
+                controller.AddAssignment();
             }
         }
     }

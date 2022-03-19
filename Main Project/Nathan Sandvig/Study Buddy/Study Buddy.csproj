@@ -79,6 +79,9 @@
     <Compile Include="BusinessLogic\AccountController.cs" />
     <Compile Include="BusinessLogic\Notifications.cs" />
     <Compile Include="BusinessLogic\SystemController.cs" />
+    <Compile Include="Presentation\AddAssignment\AddAssignmentFormController.cs" />
+    <Compile Include="Presentation\AddCourse\AddCourseFormController.cs" />
+    <Compile Include="Presentation\AddGrade\AddGradeFormController.cs" />
     <Compile Include="Presentation\Controller.cs" />
     <Compile Include="Presentation\CourseInfo\CourseInfoFormController.cs" />
     <Compile Include="DataAccess\Account.cs" />

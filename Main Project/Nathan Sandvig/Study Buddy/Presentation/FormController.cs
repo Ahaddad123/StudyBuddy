@@ -11,6 +11,8 @@ namespace Study_Buddy.Presentation
 {
     //---------------------------------------------------------------------
     // This class controls the switching of forms in the application.
+    // NOTE that this class does not extend Controller and is confusingly 
+    // named.
     // v2: Modified - Peter H. 3-19-22
     //---------------------------------------------------------------------
     internal static class FormController
@@ -33,6 +35,8 @@ namespace Study_Buddy.Presentation
             currentForm.Hide();
             AddAssignmentForm form = new AddAssignmentForm();
             form.StartPosition = FormStartPosition.Manual;
+            AddAssignmentFormController controller = new AddAssignmentFormController(form);
+            form.SetController(controller);
             form.ShowDialog();
             currentForm.Close();
         }
@@ -41,6 +45,8 @@ namespace Study_Buddy.Presentation
             currentForm.Hide();
             AddCourseForm form = new AddCourseForm();
             form.StartPosition = FormStartPosition.Manual;
+            AddCourseFormController controller = new AddCourseFormController(form);
+            form.SetController(controller);
             form.ShowDialog();
             currentForm.Close();
         }
@@ -57,15 +63,10 @@ namespace Study_Buddy.Presentation
             currentForm.Hide();
             HomePageForm form = new HomePageForm();
             form.StartPosition = FormStartPosition.Manual;
+            HomePageFormController controller = new HomePageFormController(form);
+            form.SetController(controller);
             form.ShowDialog();
             currentForm.Close();
         }
-
-        //TODO: This functionality needs to be moved to a controller class for the AddCourseForm
-        public static void addCourse(Course course)
-        {
-            AccountController.account.addCourse(course);
-        }
-
     }
 }

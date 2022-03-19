@@ -11,8 +11,9 @@ using Study_Buddy.DataAccess;
 
 namespace Study_Buddy.Presentation
 {
-    public partial class AddGradeForm : Form
+    public partial class AddGradeForm : Form, IView
     {
+        private AddGradeFormController controller;
         public AddGradeForm()
         {
             InitializeComponent();
@@ -20,6 +21,11 @@ namespace Study_Buddy.Presentation
             this.Size = new System.Drawing.Size(1366, 768);
             this.mainPanel.MaximumSize = new System.Drawing.Size(1080, 720);
             this.mainPanel.Size = new System.Drawing.Size(1080, 720);
+        }
+        
+        public void SetController(Controller controller)
+        {
+            this.controller = (AddGradeFormController)controller;
         }
 
         private void butAddAssig_Click(object sender, EventArgs e)
@@ -43,6 +49,7 @@ namespace Study_Buddy.Presentation
             if (valid)
             {
                 // add grade
+                controller.AddGrade();
             }
         }
     }
