@@ -19,6 +19,7 @@ namespace Study_Buddy.Presentation
         {
             currentForm.Hide();
             CourseInfoForm form = new CourseInfoForm();
+            form.StartPosition = FormStartPosition.Manual;
             //TODO, pass in actual course and studyLog
             CourseInfoFormController controller = new CourseInfoFormController(form, new DataAccess.Course(), new DataAccess.StudyLog());
             form.SetController(controller);
@@ -31,6 +32,7 @@ namespace Study_Buddy.Presentation
         {
             currentForm.Hide();
             AddAssignmentForm form = new AddAssignmentForm();
+            form.StartPosition = FormStartPosition.Manual;
             form.ShowDialog();
             currentForm.Close();
         }
@@ -38,6 +40,7 @@ namespace Study_Buddy.Presentation
         {
             currentForm.Hide();
             AddCourseForm form = new AddCourseForm();
+            form.StartPosition = FormStartPosition.Manual;
             form.ShowDialog();
             currentForm.Close();
         }
@@ -45,6 +48,7 @@ namespace Study_Buddy.Presentation
         {
             currentForm.Hide();
             AddGradeForm form = new AddGradeForm();
+            form.StartPosition = FormStartPosition.Manual;
             form.ShowDialog();
             currentForm.Close();
         }
@@ -52,6 +56,7 @@ namespace Study_Buddy.Presentation
         {
             currentForm.Hide();
             HomePageForm form = new HomePageForm();
+            form.StartPosition = FormStartPosition.Manual;
             form.ShowDialog();
             currentForm.Close();
         }

@@ -55,7 +55,7 @@ namespace Study_Buddy.Presentation
 
         private void btnAddDropCourse_Click(object sender, EventArgs e)
         {
-            FormController.OpenAddAssignmentForm(currentForm);
+            FormController.OpenAddCourseForm(currentForm);
         }
 
         private void btnImport_Click(object sender, EventArgs e)
