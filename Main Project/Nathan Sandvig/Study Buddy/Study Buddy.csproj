@@ -82,7 +82,7 @@
     <Compile Include="Presentation\AddAssignment\AddAssignmentFormController.cs" />
     <Compile Include="Presentation\AddCourse\AddCourseFormController.cs" />
     <Compile Include="Presentation\AddGrade\AddGradeFormController.cs" />
-    <Compile Include="Presentation\Controller.cs" />
+    <Compile Include="Presentation\FormController.cs" />
     <Compile Include="Presentation\CourseInfo\CourseInfoFormController.cs" />
     <Compile Include="DataAccess\Account.cs" />
     <Compile Include="DataAccess\CourseBuilder.cs" />
@@ -122,7 +122,7 @@
     <Compile Include="Presentation\AddGrade\AddGradeForm.Designer.cs">
       <DependentUpon>AddGradeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\FormController.cs" />
+    <Compile Include="Presentation\FormSwitcher.cs" />
     <Compile Include="Presentation\HomePage\HomePageForm.cs">
       <SubType>Form</SubType>
     </Compile>

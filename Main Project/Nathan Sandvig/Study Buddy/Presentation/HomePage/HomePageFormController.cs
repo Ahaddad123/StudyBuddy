@@ -8,10 +8,8 @@ using Study_Buddy.BusinessLogic;
 
 namespace Study_Buddy.Presentation
 {
-    internal class HomePageFormController : Controller
+    internal class HomePageFormController : FormController
     {
-        private IView view;
-
         public HomePageFormController(HomePageForm form)
         {
             this.view = form;

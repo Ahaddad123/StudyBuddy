@@ -27,7 +27,7 @@ namespace Study_Buddy.Presentation
         // Sets the form's controller
         // v1: Created the method - Peter H, 3-19-22
         //---------------------------------------------------------------------
-        public void SetController(Controller controller)
+        public void SetController(FormController controller)
         {
             this.controller = (HomePageFormController)controller;
         }

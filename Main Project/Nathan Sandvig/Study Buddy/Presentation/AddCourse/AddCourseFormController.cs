@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Study_Buddy.Presentation
 {
-    internal class AddCourseFormController : Controller
+    internal class AddCourseFormController : FormController
     {
         public AddCourseFormController(AddCourseForm form)
         {

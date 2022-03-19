@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Study_Buddy.Presentation
 {
-    internal class GraphController : Controller
+    public class GraphController 
     {
         //---------------------------------------------------------------------
         // protected data members:

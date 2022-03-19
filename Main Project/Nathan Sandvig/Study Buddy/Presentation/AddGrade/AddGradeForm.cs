@@ -23,7 +23,7 @@ namespace Study_Buddy.Presentation
             this.mainPanel.Size = new System.Drawing.Size(1080, 720);
         }
         
-        public void SetController(Controller controller)
+        public void SetController(FormController controller)
         {
             this.controller = (AddGradeFormController)controller;
         }

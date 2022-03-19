@@ -9,6 +9,6 @@ namespace Study_Buddy.Presentation
     public interface IView
     {
         //Sets the controller
-        void SetController(Controller controller);
+        void SetController(FormController controller);
     }
 }

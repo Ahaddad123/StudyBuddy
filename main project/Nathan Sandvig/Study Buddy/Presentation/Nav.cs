@@ -24,12 +24,12 @@ namespace Study_Buddy.Presentation
         }
         private void buttonHome_Click(object sender, EventArgs e)
         {
-            FormController.OpenHomePageForm(currentForm);
+            FormSwitcher.OpenHomePageForm(currentForm);
         }
 
         private void btnAddAssignment_Click_1(object sender, EventArgs e)
         {
-            FormController.OpenAddAssignmentForm(currentForm);
+            FormSwitcher.OpenAddAssignmentForm(currentForm);
         }
 
         private void btnLogHours_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace Study_Buddy.Presentation
 
         private void btnVisualizeMyData_Click(object sender, EventArgs e)
         {
-            FormController.OpenCourseInfoForm(currentForm);
+            FormSwitcher.OpenCourseInfoForm(currentForm);
         }
 
         private void btnMySchedule_Click(object sender, EventArgs e)
@@ -55,7 +55,7 @@ namespace Study_Buddy.Presentation
 
         private void btnAddDropCourse_Click(object sender, EventArgs e)
         {
-            FormController.OpenAddCourseForm(currentForm);
+            FormSwitcher.OpenAddCourseForm(currentForm);
         }
 
         private void btnImport_Click(object sender, EventArgs e)

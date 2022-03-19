@@ -12,7 +12,6 @@ namespace Study_Buddy.Presentation
     //---------------------------------------------------------------------
     internal class CourseInfoFormController : GraphController
     {
-
         //---------------------------------------------------------------------
         // private data members:
         // course : The current course being displayed.
@@ -41,7 +40,6 @@ namespace Study_Buddy.Presentation
             view.SetController(this);
             weekID = 0;
         }
-
 
         //---------------------------------------------------------------------
         // Draws a graph of grades in the course against time.

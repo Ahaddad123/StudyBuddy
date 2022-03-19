@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Study_Buddy.Presentation
 {
-    internal class AddAssignmentFormController : Controller
+    internal class AddAssignmentFormController : FormController
     {
         public AddAssignmentFormController(AddAssignmentForm form)
         {
