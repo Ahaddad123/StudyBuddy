@@ -80,24 +80,24 @@
     <Compile Include="BusinessLogic\Notifications.cs" />
     <Compile Include="BusinessLogic\SystemController.cs" />
     <Compile Include="Presentation\Controller.cs" />
-    <Compile Include="Presentation\CourseInfoFormController.cs" />
+    <Compile Include="Presentation\CourseInfo\CourseInfoFormController.cs" />
     <Compile Include="DataAccess\Account.cs" />
     <Compile Include="DataAccess\CourseBuilder.cs" />
     <Compile Include="Database\SQLite.cs" />
-    <Compile Include="Presentation\GradeGraph.cs" />
-    <Compile Include="Presentation\Graph.cs" />
-    <Compile Include="Presentation\GraphController.cs" />
-    <Compile Include="Presentation\IGraphView.cs" />
-    <Compile Include="Presentation\AddAssignmentForm.cs">
+    <Compile Include="Presentation\CourseInfo\GradeGraph.cs" />
+    <Compile Include="Presentation\CourseInfo\Graph.cs" />
+    <Compile Include="Presentation\CourseInfo\GraphController.cs" />
+    <Compile Include="Presentation\CourseInfo\IGraphView.cs" />
+    <Compile Include="Presentation\AddAssignment\AddAssignmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\AddAssignmentForm.Designer.cs">
+    <Compile Include="Presentation\AddAssignment\AddAssignmentForm.Designer.cs">
       <DependentUpon>AddAssignmentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\AddCourseForm.cs">
+    <Compile Include="Presentation\AddCourse\AddCourseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\AddCourseForm.Designer.cs">
+    <Compile Include="Presentation\AddCourse\AddCourseForm.Designer.cs">
       <DependentUpon>AddCourseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\Assignment.cs" />
@@ -113,55 +113,55 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\AddGradeForm.cs">
+    <Compile Include="Presentation\AddGrade\AddGradeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\AddGradeForm.Designer.cs">
+    <Compile Include="Presentation\AddGrade\AddGradeForm.Designer.cs">
       <DependentUpon>AddGradeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\FormController.cs" />
-    <Compile Include="Presentation\HomePageForm.cs">
+    <Compile Include="Presentation\HomePage\HomePageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\HomePageForm.Designer.cs">
+    <Compile Include="Presentation\HomePage\HomePageForm.Designer.cs">
       <DependentUpon>HomePageForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\HomePageFormController.cs" />
+    <Compile Include="Presentation\HomePage\HomePageFormController.cs" />
     <Compile Include="Presentation\Nav.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Presentation\Nav.Designer.cs">
       <DependentUpon>Nav.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\CourseInfoForm.cs">
+    <Compile Include="Presentation\CourseInfo\CourseInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\CourseInfoForm.Designer.cs">
+    <Compile Include="Presentation\CourseInfo\CourseInfoForm.Designer.cs">
       <DependentUpon>CourseInfoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\StudyLogGraph.cs" />
+    <Compile Include="Presentation\CourseInfo\StudyLogGraph.cs" />
     <Compile Include="Presentation\IView.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\AddAssignmentForm.resx">
+    <EmbeddedResource Include="Presentation\AddAssignment\AddAssignmentForm.resx">
       <DependentUpon>AddAssignmentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\AddCourseForm.resx">
+    <EmbeddedResource Include="Presentation\AddCourse\AddCourseForm.resx">
       <DependentUpon>AddCourseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\AddGradeForm.resx">
+    <EmbeddedResource Include="Presentation\AddGrade\AddGradeForm.resx">
       <DependentUpon>AddGradeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\HomePageForm.resx">
+    <EmbeddedResource Include="Presentation\HomePage\HomePageForm.resx">
       <DependentUpon>HomePageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Nav.resx">
       <DependentUpon>Nav.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\CourseInfoForm.resx">
+    <EmbeddedResource Include="Presentation\CourseInfo\CourseInfoForm.resx">
       <DependentUpon>CourseInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
