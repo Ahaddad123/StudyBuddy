@@ -17,19 +17,19 @@ namespace Study_Buddy.Presentation
     // graphs of study hours and grades in that course.
     // v1: Created the class - Peter H, 3-7-22
     //---------------------------------------------------------------------
-    public partial class CourseInfoForm : Form, GraphView
+    public partial class CourseInfoForm : Form, IGraphView
     {
 
         //---------------------------------------------------------------------
         // Private data members:
-        // course : the course whose information is being displayed
         // controller : the form's controller 
+        // course : the course whose information is being displayed
         // gradeSeriesID : the seriesID of the series on the gradesChart
         // hoursSeriesID : the seriesID of the current series being
         // displayed on the hoursLogged chart
         //---------------------------------------------------------------------
-        private DataAccess.Course course;
         private CourseInfoFormController controller;
+        private DataAccess.Course course;
         private string gradesSeriesID;
         private string hoursSeriesID;
 

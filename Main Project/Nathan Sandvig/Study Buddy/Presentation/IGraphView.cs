@@ -11,10 +11,8 @@ namespace Study_Buddy.Presentation
     // containing a graph.
     // v1: Created class - Peter H., 3-7-22
     //---------------------------------------------------------------------
-    public interface GraphView
+    public interface IGraphView : IView
     {
-        //Sets the controller
-        void SetController(Controller controller);
         //Draws a graph of grades vs time
         void DrawGradeGraph(List<DateTime> xValues, List<double> yValues);
         //Draws a graph of hours studied for a course in a given week

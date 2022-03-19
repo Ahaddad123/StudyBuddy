@@ -12,24 +12,55 @@ namespace Study_Buddy.Presentation
 {
     public partial class Nav : UserControl
     {
-        public Nav()
+        private Form currentForm { get; set; }
+        public Nav(Form currentForm)
         {
             InitializeComponent();
+            this.currentForm = currentForm;
             this.MaximumSize = new System.Drawing.Size(315, 780);
             this.Size = new System.Drawing.Size(315, 780);
             this.panelSubMenu.MaximumSize = new System.Drawing.Size(315, 780);
             this.panelSubMenu.Size = new System.Drawing.Size(315, 780);
         }
+        private void buttonHome_Click(object sender, EventArgs e)
+        {
+            FormController.OpenHomePageForm(currentForm);
+        }
 
+        private void btnAddAssignment_Click_1(object sender, EventArgs e)
+        {
+            FormController.OpenAddAssignmentForm(currentForm);
+        }
+
+        private void btnLogHours_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnCalendar_Click(object sender, EventArgs e)
+        {
+        }
 
         private void btnVisualizeMyData_Click(object sender, EventArgs e)
         {
-            //Call formController to change form
+            FormController.OpenCourseInfoForm(currentForm);
         }
 
-        private void btnLogHours_MouseClick(object sender, MouseEventArgs e)
+        private void btnMySchedule_Click(object sender, EventArgs e)
         {
-
         }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnAddDropCourse_Click(object sender, EventArgs e)
+        {
+            FormController.OpenAddAssignmentForm(currentForm);
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+        }
+
     }
 }

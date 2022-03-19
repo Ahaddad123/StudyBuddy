@@ -68,6 +68,7 @@ namespace Study_Buddy.Presentation
             if (valid)
             {
                 Course course = new CourseBuilder().WithName(txtCourseTitle.Text).WithCode(txtCourseCode.Text).WithCredits(courseCredit).WithPriority(coursePriority).Build();
+                //TODO: Call this in the AddCourseFormController
                 FormController.addCourse(course);
                 this.Close();
             }

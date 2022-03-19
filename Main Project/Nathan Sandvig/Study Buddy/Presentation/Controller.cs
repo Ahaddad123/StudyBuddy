@@ -12,11 +12,5 @@ namespace Study_Buddy.Presentation
     //-------------------------------------------------------------------------
     public class Controller
     {
-        //-------------------------------------------------------------------------
-        // Private data members:
-        // view : the display that is being controlled
-        // v1: Created the class - Peter H., 3/7/2022
-        //-------------------------------------------------------------------------
-        protected GraphView view;
     }
 }

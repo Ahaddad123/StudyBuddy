@@ -11,8 +11,9 @@ using Study_Buddy.DataAccess;
 
 namespace Study_Buddy.Presentation
 {
-    public partial class HomePageForm : Form
+    public partial class HomePageForm : Form, IView
     {
+        private HomePageFormController controller;
         public HomePageForm()
         {
             InitializeComponent();
@@ -22,27 +23,13 @@ namespace Study_Buddy.Presentation
             this.mainPanel.Size = new System.Drawing.Size(1080, 720);
         }
 
-        // Add Assignment Button
-        private void button2_Click(object sender, EventArgs e)
+        //---------------------------------------------------------------------
+        // Sets the form's controller
+        // v1: Created the method - Peter H, 3-19-22
+        //---------------------------------------------------------------------
+        public void SetController(Controller controller)
         {
-            FormController.openForm(new AddAssignmentForm());
-        }
-
-        // Add Course Button
-        private void button3_Click(object sender, EventArgs e)
-        {
-            FormController.openForm(new AddCourseForm());
-        }
-
-        // Visualize My Data Button
-        private void button4_Click(object sender, EventArgs e)
-        {
-            FormController.openForm(new CourseInfoForm());
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            FormController.openForm(new AddGradeForm());
+            this.controller = (HomePageFormController)controller;
         }
 
     }

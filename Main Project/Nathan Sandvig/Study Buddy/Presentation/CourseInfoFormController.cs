@@ -10,7 +10,7 @@ namespace Study_Buddy.Presentation
     // This class controls a CourseInfoForm.  
     // v1: Created class - Peter H., 3-7-22
     //---------------------------------------------------------------------
-    internal class CourseInfoFormController : Controller
+    internal class CourseInfoFormController : GraphController
     {
 
         //---------------------------------------------------------------------
@@ -20,6 +20,7 @@ namespace Study_Buddy.Presentation
         // gradeGraph : The graph of grades in the course.
         // weekID : the current week for which study data is being viewed.
         //---------------------------------------------------------------------
+        //-------------------------------------------------------------------------
         private DataAccess.Course course;
         private DataAccess.StudyLog studyLog;
         private GradeGraph gradeGraph;
@@ -37,7 +38,7 @@ namespace Study_Buddy.Presentation
             this.view = form;
             this.gradeGraph = new GradeGraph(this.course);
             this.studyLogGraph = new StudyLogGraph(this.studyLog);
-            form.SetController(this);
+            view.SetController(this);
             weekID = 0;
         }
 

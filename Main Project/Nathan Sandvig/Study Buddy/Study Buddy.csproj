@@ -86,7 +86,8 @@
     <Compile Include="Database\SQLite.cs" />
     <Compile Include="Presentation\GradeGraph.cs" />
     <Compile Include="Presentation\Graph.cs" />
-    <Compile Include="Presentation\GraphView.cs" />
+    <Compile Include="Presentation\GraphController.cs" />
+    <Compile Include="Presentation\IGraphView.cs" />
     <Compile Include="Presentation\AddAssignmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +126,7 @@
     <Compile Include="Presentation\HomePageForm.Designer.cs">
       <DependentUpon>HomePageForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\HomePageFormController.cs" />
     <Compile Include="Presentation\Nav.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -138,6 +140,7 @@
       <DependentUpon>CourseInfoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\StudyLogGraph.cs" />
+    <Compile Include="Presentation\IView.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
