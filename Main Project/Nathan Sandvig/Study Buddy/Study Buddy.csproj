@@ -77,10 +77,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLogic\AccountController.cs" />
-    <Compile Include="BusinessLogic\GraphNS\GPAGraph.cs" />
-    <Compile Include="BusinessLogic\GraphNS\GradeGraph.cs" />
-    <Compile Include="BusinessLogic\GraphNS\Graph.cs" />
-    <Compile Include="BusinessLogic\GraphNS\StudyLogGraph.cs" />
     <Compile Include="BusinessLogic\Notifications.cs" />
     <Compile Include="BusinessLogic\SystemController.cs" />
     <Compile Include="Presentation\Controller.cs" />
