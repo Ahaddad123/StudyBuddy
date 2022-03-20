@@ -124,7 +124,7 @@ namespace Nathans_Unit_Test
 
             int date = DateTime.Now.Year * 10000 + DateTime.Now.Month * 100 + DateTime.Now.Day;
 
-            Assert.AreEqual(0.0, course.GetHoursStudied(date));
+            Assert.AreEqual(0.0, course.GetHoursStudied(date, 1));
         }
 
         [TestMethod]
@@ -135,7 +135,7 @@ namespace Nathans_Unit_Test
 
             int date = DateTime.Now.Year * 10000 + DateTime.Now.Month * 100 + DateTime.Now.Day;
 
-            Assert.AreEqual(0.0, course.GetHoursStudied(date));
+            Assert.AreEqual(0.0, course.GetHoursStudied(date, 1));
         }
 
         [TestMethod]
@@ -146,7 +146,7 @@ namespace Nathans_Unit_Test
 
             int date = DateTime.Now.Year * 10000 + DateTime.Now.Month * 100 + DateTime.Now.Day;
 
-            Assert.AreEqual(4.2, course.GetHoursStudied(date));
+            Assert.AreEqual(4.2, course.GetHoursStudied(date, 1));
         }
 
         [TestMethod]
@@ -156,7 +156,7 @@ namespace Nathans_Unit_Test
 
             int date = DateTime.Now.Year * 10000 + DateTime.Now.Month * 100 + DateTime.Now.Day;
 
-            Assert.AreEqual(0.0, course.GetHoursStudied(date));
+            Assert.AreEqual(0.0, course.GetHoursStudied(date, 1));
         }
 
         [TestMethod]
@@ -168,7 +168,7 @@ namespace Nathans_Unit_Test
 
             int date = DateTime.Now.Year * 10000 + DateTime.Now.Month * 100 + DateTime.Now.Day;
 
-            Assert.AreEqual(9.3, course.GetHoursStudied(date));
+            Assert.AreEqual(9.3, course.GetHoursStudied(date, 1));
         }
     }
 }
