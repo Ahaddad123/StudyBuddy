@@ -17,8 +17,8 @@ namespace Nathans_Unit_Test
         [TestMethod]
         public void GetHours_nonZero()
         {
-            StudyLog testLog = new StudyLog(1,3);
-            Assert.AreEqual(3, testLog.GetHours(1));
+            //StudyLog testLog = new StudyLog(1,3);
+            //Assert.AreEqual(3, testLog.GetHours(1));
         }
 
         [TestMethod]
