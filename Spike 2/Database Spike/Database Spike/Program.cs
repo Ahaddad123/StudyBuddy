@@ -41,13 +41,17 @@ namespace SQLiteDemo
         {
 
             SQLiteCommand sqlite_cmd;
-            string Createsql = "CREATE TABLE SampleTable(Col1 VARCHAR(20), Col2 INT)";
-           string Createsql1 = "CREATE TABLE SampleTable1(Col1 VARCHAR(20), Col2 INT)";
+           // string Createsql = "CREATE TABLE SampleTable(Col1 VARCHAR(20), Col2 INT)";
+           //string Createsql1 = "CREATE TABLE SampleTable1(Col1 VARCHAR(20), Col2 INT)";
+            string Createsql2 = "CREATE TABLE Teachers(Col1 VARCHAR(20), Col2 INT)";
            sqlite_cmd = conn.CreateCommand();
-            sqlite_cmd.CommandText = Createsql;
+            //sqlite_cmd.CommandText = Createsql;
+            //sqlite_cmd.ExecuteNonQuery();
+            //sqlite_cmd.CommandText = Createsql1;
+            //sqlite_cmd.ExecuteNonQuery();
+            sqlite_cmd.CommandText = Createsql2;
             sqlite_cmd.ExecuteNonQuery();
-            sqlite_cmd.CommandText = Createsql1;
-            sqlite_cmd.ExecuteNonQuery();
+
 
         }
 
@@ -62,9 +66,13 @@ namespace SQLiteDemo
             sqlite_cmd.CommandText = "INSERT INTO SampleTable(Col1, Col2) VALUES('Test2 Text2 ', 3); ";
            sqlite_cmd.ExecuteNonQuery();
 
-
             sqlite_cmd.CommandText = "INSERT INTO SampleTable1(Col1, Col2) VALUES('Test3 Text3 ', 3); ";
            sqlite_cmd.ExecuteNonQuery();
+
+            sqlite_cmd.CommandText = "INSERT INTO Teachers(Col1, Col2) VALUES('Yan Shi', 1)";
+            sqlite_cmd.ExecuteNonQuery();
+            sqlite_cmd.CommandText = "INSERT INTO Teachers(Col1, Col2) VALUES('Yanwei Wu', 2)";
+            sqlite_cmd.ExecuteNonQuery();
 
         }
 
@@ -73,7 +81,7 @@ namespace SQLiteDemo
             SQLiteDataReader sqlite_datareader;
             SQLiteCommand sqlite_cmd;
             sqlite_cmd = conn.CreateCommand();
-            sqlite_cmd.CommandText = "SELECT * FROM SampleTable";
+            sqlite_cmd.CommandText = "SELECT * FROM Teachers";
 
             sqlite_datareader = sqlite_cmd.ExecuteReader();
             while (sqlite_datareader.Read())
