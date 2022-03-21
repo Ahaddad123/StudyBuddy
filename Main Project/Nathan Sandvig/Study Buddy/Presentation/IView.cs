@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Study_Buddy.Presentation
 {
-    public class Controller
+    public interface IView
     {
-        protected GraphView view;
+        //Sets the controller
+        void SetController(FormController controller);
     }
 }

@@ -74,6 +74,7 @@
             this.buttonHome.TabIndex = 9;
             this.buttonHome.Text = "Studdy Buddy";
             this.buttonHome.UseVisualStyleBackColor = false;
+            this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
             // 
             // btnImport
             // 
@@ -91,6 +92,7 @@
             this.btnImport.Text = "Import";
             this.btnImport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnImport.UseVisualStyleBackColor = false;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // btnAddAssignment
             // 
@@ -108,6 +110,7 @@
             this.btnAddAssignment.Text = "Add Assignment";
             this.btnAddAssignment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddAssignment.UseVisualStyleBackColor = false;
+            this.btnAddAssignment.Click += new System.EventHandler(this.btnAddAssignment_Click_1);
             // 
             // btnAddDropCourse
             // 
@@ -125,6 +128,7 @@
             this.btnAddDropCourse.Text = "Add/Drop Course";
             this.btnAddDropCourse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddDropCourse.UseVisualStyleBackColor = false;
+            this.btnAddDropCourse.Click += new System.EventHandler(this.btnAddDropCourse_Click);
             // 
             // btnSettings
             // 
@@ -142,6 +146,7 @@
             this.btnSettings.Text = "Settings";
             this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSettings.UseVisualStyleBackColor = false;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // btnMySchedule
             // 
@@ -159,6 +164,7 @@
             this.btnMySchedule.Text = "My Schedule";
             this.btnMySchedule.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMySchedule.UseVisualStyleBackColor = false;
+            this.btnMySchedule.Click += new System.EventHandler(this.btnMySchedule_Click);
             // 
             // btnVisualizeMyData
             // 
@@ -176,6 +182,7 @@
             this.btnVisualizeMyData.Text = "Visualize My Data";
             this.btnVisualizeMyData.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVisualizeMyData.UseVisualStyleBackColor = false;
+            this.btnVisualizeMyData.Click += new System.EventHandler(this.btnVisualizeMyData_Click);
             // 
             // btnCalendar
             // 
@@ -193,6 +200,7 @@
             this.btnCalendar.Text = "Calendar";
             this.btnCalendar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCalendar.UseVisualStyleBackColor = false;
+            this.btnCalendar.Click += new System.EventHandler(this.btnCalendar_Click);
             // 
             // btnLogHours
             // 
@@ -210,7 +218,7 @@
             this.btnLogHours.Text = "Log Hours";
             this.btnLogHours.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogHours.UseVisualStyleBackColor = false;
-            this.btnLogHours.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnLogHours_MouseClick);
+            this.btnLogHours.Click += new System.EventHandler(this.btnLogHours_Click);
             // 
             // Nav
             // 

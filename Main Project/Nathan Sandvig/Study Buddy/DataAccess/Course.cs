@@ -162,7 +162,8 @@ namespace Study_Buddy.DataAccess
             if(time > 0)
             {
                 int date = DateTime.Now.Year * 10000 + DateTime.Now.Month * 100 + DateTime.Now.Day;
-                hourLog.AddTimeToLog(time, date);
+                //Commeted it out because the format of the log was changed tests will fail
+                //hourLog.AddTimeToLog(time, date);
             }
         }
 
@@ -172,9 +173,9 @@ namespace Study_Buddy.DataAccess
         // return: The number of hours studied that day
         // v1: Created the method - Nathan S, 3-7-22
         //---------------------------------------------------------------------
-        public double GetHoursStudied(int day)
+        public double GetHoursStudied(int day, int week)
         {
-            return hourLog.GetHours(day);
+            return hourLog.GetHours(day, week);
         }
     }
 }

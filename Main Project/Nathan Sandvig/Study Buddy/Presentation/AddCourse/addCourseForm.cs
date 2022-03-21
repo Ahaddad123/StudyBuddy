@@ -12,8 +12,9 @@ using Study_Buddy.BusinessLogic;
 
 namespace Study_Buddy.Presentation
 {
-    public partial class AddCourseForm : Form
+    public partial class AddCourseForm : Form, IView
     {
+        private AddCourseFormController controller;
         public AddCourseForm()
         {
             InitializeComponent();
@@ -21,6 +22,15 @@ namespace Study_Buddy.Presentation
             this.Size = new System.Drawing.Size(1366, 768);
             this.mainPanel.MaximumSize = new System.Drawing.Size(1080, 720);
             this.mainPanel.Size = new System.Drawing.Size(1080, 720);
+        }
+
+        //---------------------------------------------------------------------
+        // Sets the form's controller
+        // v1: Created the method - Peter H, 3-19-22
+        //---------------------------------------------------------------------
+        public void SetController(FormController controller)
+        {
+            this.controller = (AddCourseFormController)controller;
         }
 
         private void butAddCourse_Click(object sender, EventArgs e)
@@ -68,8 +78,9 @@ namespace Study_Buddy.Presentation
             if (valid)
             {
                 Course course = new CourseBuilder().WithName(txtCourseTitle.Text).WithCode(txtCourseCode.Text).WithCredits(courseCredit).WithPriority(coursePriority).Build();
-                FormController.addCourse(course);
-                this.Close();
+                //TODO: Call this in the AddCourseFormController
+                controller.addCourse(course);
+                MessageBox.Show("Succesfully added " + course.name);
             }
         }
     }

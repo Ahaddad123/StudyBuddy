@@ -22,7 +22,9 @@ namespace Study_Buddy
             sqlite_connection = db.CreateConnection();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HomePageForm());
+            HomePageForm form = new HomePageForm();
+            form.StartPosition = FormStartPosition.Manual;
+            Application.Run(form);
         }
     }
 }
