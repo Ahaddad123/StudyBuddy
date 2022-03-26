@@ -34,6 +34,7 @@ namespace Study_Buddy.Presentation
 
         private void btnLogHours_Click(object sender, EventArgs e)
         {
+            FormSwitcher.OpenStudyLogForm(currentForm);
         }
 
         private void btnCalendar_Click(object sender, EventArgs e)

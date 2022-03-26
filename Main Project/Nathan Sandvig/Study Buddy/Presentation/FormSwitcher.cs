@@ -68,5 +68,15 @@ namespace Study_Buddy.Presentation
             form.ShowDialog();
             currentForm.Close();
         }
+        public static void OpenStudyLogForm(Form currentForm)
+        {
+            currentForm.Hide();
+            StudyLogForm form = new StudyLogForm();
+            form.StartPosition = FormStartPosition.Manual;
+            StudyLogFormController controller = new StudyLogFormController(form);
+            form.SetController(controller);
+            form.ShowDialog();
+            currentForm.Close();
+        }
     }
 }
