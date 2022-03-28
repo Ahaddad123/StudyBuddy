@@ -73,7 +73,7 @@
             this.bubAddHours.TabIndex = 3;
             this.bubAddHours.Text = "Add Hours";
             this.bubAddHours.UseVisualStyleBackColor = true;
-            this.bubAddHours.Click += new System.EventHandler(this.bubAddHours_Click);
+            //this.bubAddHours.Click += new System.EventHandler(this.bubAddHours_Click);
             // 
             // txtDateDay
             // 

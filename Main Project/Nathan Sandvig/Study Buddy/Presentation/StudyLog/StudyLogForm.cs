@@ -28,10 +28,5 @@ namespace Study_Buddy.Presentation
         {
             this.controller = (StudyLogFormController)controller;
         }
-
-        private void bubAddHours_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

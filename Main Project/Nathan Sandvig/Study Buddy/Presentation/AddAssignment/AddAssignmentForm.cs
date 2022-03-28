@@ -33,7 +33,8 @@ namespace Study_Buddy.Presentation
         {
             Boolean valid = true;
             int points = 0;
-            double weight = 0;
+            int weight = 0;
+            Course courseName;
             if (txtNameAssign.Text.Equals(""))
             {
                 MessageBox.Show("Invalid Name");
@@ -50,26 +51,48 @@ namespace Study_Buddy.Presentation
             }
             try
             {
-                weight = Double.Parse(txtPriority.Text);
+                weight = Int32.Parse(txtPriority.Text);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Invalid Weight");
                 valid = false;
             }
+
+            if(comCourses.SelectedIndex > 1)
+            {
+                try
+                {
+                    courseName = (Course)comCourses.SelectedItem;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error choosing Course");
+                    valid = false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("No Course was selected");
+                valid = false;
+            }
+
             if (points < 0)
             {
                 MessageBox.Show("Invalid Total Points");
+                valid = false;
             }
             if (weight < 0)
             {
                 MessageBox.Show("Invalid Weight");
+                valid = false;
             }
 
             if (valid)
             {
                 // Add assignment
-                controller.AddAssignment();
+                // wip does not like courseName
+                //controller.AddAssignment(courseName, txtNameAssign.Text,points,weight);
             }
         }
     }
