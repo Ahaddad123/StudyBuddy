@@ -84,8 +84,8 @@
     <Compile Include="Presentation\Controller\AddGradeFormController.cs" />
     <Compile Include="Presentation\FormController.cs" />
     <Compile Include="Presentation\Controller\CourseInfoFormController.cs" />
-    <Compile Include="DataAccess\Account.cs" />
-    <Compile Include="DataAccess\CourseBuilder.cs" />
+    <Compile Include="BusinessLogic\Account.cs" />
+    <Compile Include="BusinessLogic\CourseBuilder.cs" />
     <Compile Include="Database\SQLite.cs" />
     <Compile Include="Presentation\Model\GradeGraph.cs" />
     <Compile Include="Presentation\Model\Graph.cs" />
@@ -109,13 +109,13 @@
     <Compile Include="Presentation\View\AddCourseForm.Designer.cs">
       <DependentUpon>AddCourseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataAccess\Assignment.cs" />
-    <Compile Include="DataAccess\Calendar.cs" />
-    <Compile Include="DataAccess\Course.cs" />
-    <Compile Include="DataAccess\Day,cs.cs" />
-    <Compile Include="DataAccess\Event.cs" />
-    <Compile Include="DataAccess\Settings.cs" />
-    <Compile Include="DataAccess\StudyLog.cs" />
+    <Compile Include="BusinessLogic\Assignment.cs" />
+    <Compile Include="BusinessLogic\Calendar.cs" />
+    <Compile Include="BusinessLogic\Course.cs" />
+    <Compile Include="BusinessLogic\Day,cs.cs" />
+    <Compile Include="BusinessLogic\Event.cs" />
+    <Compile Include="BusinessLogic\Settings.cs" />
+    <Compile Include="BusinessLogic\StudyLog.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
