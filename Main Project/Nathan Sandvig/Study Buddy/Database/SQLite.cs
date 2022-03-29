@@ -12,7 +12,7 @@ namespace Study_Buddy.Database
         public SQLiteConnection CreateConnection() {
             SQLiteConnection sqlite_connection;
             // Create a new database connection:
-            sqlite_connection = new SQLiteConnection("Data Source=database.db; Version = 3; New = True; Compress = True; ");
+            sqlite_connection = new SQLiteConnection("Data Source=NathansData.db; Version = 3; New = True; Compress = True; ");
          // Open the connection:
          try
             {

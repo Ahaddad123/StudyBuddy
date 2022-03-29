@@ -20,10 +20,10 @@ namespace Algorithms
         static void Main(string[] args)
         {
             Algorithm1 algorithm = new Algorithm1();
-            algorithm.AddAssignment(90.0, 4.0);
-            algorithm.AddAssignment(80.0, 1.0);
-            algorithm.AddAssignment(70.0, 0.0);
-            Console.WriteLine(algorithm.HoursForGrade(60.0));
+            algorithm.AddAssignment(4.0, 90.0);
+            algorithm.AddAssignment(3.0, 80.0);
+            algorithm.AddAssignment(2.0, 70.0);
+            Console.WriteLine(algorithm.HoursForGrade(85.0));
         }
     }
 }
