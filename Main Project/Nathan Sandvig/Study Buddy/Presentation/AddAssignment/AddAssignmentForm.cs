@@ -35,7 +35,7 @@ namespace Study_Buddy.Presentation
             Boolean valid = true;
             int points = 0;
             int weight = 0;
-            Course courseName;
+            Course courseName = new Course();
             Course testC = new Course();
             Account test = new Account("","",1);
             test.addCourse(testC);
@@ -63,7 +63,7 @@ namespace Study_Buddy.Presentation
                 valid = false;
             }
 
-            if(comCourses.SelectedIndex > 1)
+            if(comCourses.SelectedIndex < 1)
             {
                 try
                 {
@@ -98,7 +98,8 @@ namespace Study_Buddy.Presentation
                 // Add assignment
                 // wip does not like courseName
                 //controller.AddAssignment(courseName, txtNameAssign.Text,points,weight);
-
+                MessageBox.Show("Assignment added");
+                controller.AddAssignment(courseName, txtNameAssign.Text, points, weight);
             }
         }
     }
