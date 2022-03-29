@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Study_Buddy.DataAccess;
+using Study_Buddy.BusinessLogic;
 
 namespace Study_Buddy.Presentation
 {
@@ -33,5 +34,10 @@ namespace Study_Buddy.Presentation
             this.controller = (HomePageFormController)controller;
         }
 
+        private void HomePageForm_Load(object sender, EventArgs e)
+        {
+            this.name.Text = AccountController.account.username;
+
+        }
     }
 }
