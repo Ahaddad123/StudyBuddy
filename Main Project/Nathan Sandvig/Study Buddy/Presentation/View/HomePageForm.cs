@@ -36,7 +36,9 @@ namespace Study_Buddy.Presentation
 
         private void HomePageForm_Load(object sender, EventArgs e)
         {
-            this.name.Text = AccountController.account.username;
+            Account account = AccountController.account;
+            //this.name.Text = account.name;
+            //this.gpa.Text = account.gpa;
 
         }
     }
