@@ -9,7 +9,6 @@ namespace Study_Buddy.DataAccess
 {
     public class StudyLog
     {
-        //wip find out how to impliment map
         Dictionary<int , Dictionary<int , double>> Log = new Dictionary<int , Dictionary<int, double>>();
 
         //---------------------------------------------------------------------
@@ -48,16 +47,6 @@ namespace Study_Buddy.DataAccess
         //---------------------------------------------------------------------
         public void AddTimeToLog(double newTime, int day, int week)
         {
-            /*
-            if(log.ContainsKey(day))
-            {
-                log[day] = newTime + log[day];
-            }
-            else
-            {
-                log.Add(day, newTime);
-            }
-            */
             if(Log.ContainsKey(week))
             {
                 Dictionary<int, double> checkLog = Log[week];
@@ -88,16 +77,6 @@ namespace Study_Buddy.DataAccess
         //---------------------------------------------------------------------
         public double GetHours(int day, int week)
          {
-            /*
-            if(log.ContainsKey(day))
-            {
-                return log[day];
-            }
-            else
-            {
-                return 0.0;
-            }
-            */
             if (Log.ContainsKey(week))
             {
                 Dictionary<int, double> checkLog = Log[week];

@@ -36,6 +36,9 @@ namespace Study_Buddy.Presentation
             int points = 0;
             int weight = 0;
             Course courseName;
+            Course testC = new Course();
+            Account test = new Account("","",1);
+            test.addCourse(testC);
             if (txtNameAssign.Text.Equals(""))
             {
                 MessageBox.Show("Invalid Name");
@@ -64,7 +67,8 @@ namespace Study_Buddy.Presentation
             {
                 try
                 {
-                    courseName = (Course)comCourses.SelectedItem;
+                    List<Course> testCourses = test.courses;
+                    courseName = testCourses[0];
                 }
                 catch (Exception ex)
                 {
@@ -94,6 +98,7 @@ namespace Study_Buddy.Presentation
                 // Add assignment
                 // wip does not like courseName
                 //controller.AddAssignment(courseName, txtNameAssign.Text,points,weight);
+
             }
         }
     }
