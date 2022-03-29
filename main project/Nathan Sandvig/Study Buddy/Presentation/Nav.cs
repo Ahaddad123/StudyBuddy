@@ -13,7 +13,7 @@ namespace Study_Buddy.Presentation
     public partial class Nav : UserControl
     {
         private Form currentForm { get; set; }
-        public Nav(Form currentForm)
+        public Nav()
         {
             InitializeComponent();
             this.currentForm = currentForm;
@@ -22,6 +22,12 @@ namespace Study_Buddy.Presentation
             this.panelSubMenu.MaximumSize = new System.Drawing.Size(315, 780);
             this.panelSubMenu.Size = new System.Drawing.Size(315, 780);
         }
+
+        public void SetCurrentForm(Form currentForm)
+        {
+            this.currentForm = currentForm;
+        }
+
         private void buttonHome_Click(object sender, EventArgs e)
         {
             FormSwitcher.OpenHomePageForm(currentForm);

@@ -22,6 +22,7 @@ namespace Study_Buddy.Presentation
             this.Size = new System.Drawing.Size(1366, 768);
             this.mainPanel.MaximumSize = new System.Drawing.Size(1080, 720);
             this.mainPanel.Size = new System.Drawing.Size(1080, 720);
+            this.nav1.SetCurrentForm(this);
         }
 
         public void SetController(FormController controller)

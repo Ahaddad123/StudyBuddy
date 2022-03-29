@@ -18,6 +18,7 @@ namespace Study_Buddy.Presentation
         public StudyLogForm()
         {
             InitializeComponent();
+            this.nav1.SetCurrentForm(this);
             this.MaximumSize = new System.Drawing.Size(1366, 768);
             this.Size = new System.Drawing.Size(1366, 768);
             this.mainPanel.MaximumSize = new System.Drawing.Size(1080, 720);

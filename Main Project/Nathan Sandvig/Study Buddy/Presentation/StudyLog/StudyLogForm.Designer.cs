@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.nav1 = new Study_Buddy.Presentation.Nav(this);
+            this.nav1 = new Study_Buddy.Presentation.Nav();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.bubAddHours = new System.Windows.Forms.Button();
             this.txtDateDay = new System.Windows.Forms.TextBox();

@@ -31,7 +31,7 @@
             this.mainPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.nav1 = new Study_Buddy.Presentation.Nav(this);
+            this.nav1 = new Study_Buddy.Presentation.Nav();
             this.SuspendLayout();
             // 
             // mainPanel

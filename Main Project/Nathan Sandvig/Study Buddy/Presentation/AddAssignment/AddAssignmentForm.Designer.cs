@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.nav1 = new Study_Buddy.Presentation.Nav(this);
+            this.nav1 = new Study_Buddy.Presentation.Nav();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.butAddAssig = new System.Windows.Forms.Button();
