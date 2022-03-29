@@ -30,14 +30,20 @@
         {
             this.mainPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.nav1 = new Study_Buddy.Presentation.Nav();
             this.name = new System.Windows.Forms.Label();
+            this.nav1 = new Study_Buddy.Presentation.Nav();
+            this.gpa = new System.Windows.Forms.Label();
+            this.couses = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainPanel
             // 
             this.mainPanel.BackColor = System.Drawing.Color.White;
+            this.mainPanel.Controls.Add(this.label2);
+            this.mainPanel.Controls.Add(this.couses);
+            this.mainPanel.Controls.Add(this.gpa);
             this.mainPanel.Controls.Add(this.name);
             this.mainPanel.Location = new System.Drawing.Point(287, 116);
             this.mainPanel.Margin = new System.Windows.Forms.Padding(2);
@@ -58,6 +64,16 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Home Page";
             // 
+            // name
+            // 
+            this.name.AutoSize = true;
+            this.name.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name.Location = new System.Drawing.Point(31, 21);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(125, 55);
+            this.name.TabIndex = 0;
+            this.name.Text = "label";
+            // 
             // nav1
             // 
             this.nav1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -68,15 +84,37 @@
             this.nav1.Size = new System.Drawing.Size(236, 878);
             this.nav1.TabIndex = 0;
             // 
-            // name
+            // gpa
             // 
-            this.name.AutoSize = true;
-            this.name.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name.Location = new System.Drawing.Point(42, 35);
-            this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(62, 26);
-            this.name.TabIndex = 0;
-            this.name.Text = "label";
+            this.gpa.AutoSize = true;
+            this.gpa.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpa.Location = new System.Drawing.Point(35, 76);
+            this.gpa.Name = "gpa";
+            this.gpa.Size = new System.Drawing.Size(84, 33);
+            this.gpa.TabIndex = 1;
+            this.gpa.Text = "GPA:";
+            // 
+            // couses
+            // 
+            this.couses.ColumnCount = 2;
+            this.couses.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.couses.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.couses.Location = new System.Drawing.Point(41, 187);
+            this.couses.Name = "couses";
+            this.couses.RowCount = 1;
+            this.couses.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.couses.Size = new System.Drawing.Size(478, 192);
+            this.couses.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(37, 132);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(235, 24);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Your study hours this week";
             // 
             // HomePageForm
             // 
@@ -103,5 +141,8 @@
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label name;
+        private System.Windows.Forms.Label gpa;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TableLayoutPanel couses;
     }
 }
