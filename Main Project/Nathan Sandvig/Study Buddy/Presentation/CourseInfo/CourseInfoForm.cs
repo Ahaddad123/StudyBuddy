@@ -45,6 +45,7 @@ namespace Study_Buddy.Presentation
             this.Size = new System.Drawing.Size(1366, 768);
             this.gradesChart.Width = (800);
             this.hoursLoggedChart.Width = (800);
+            this.nav1.SetCurrentForm(this);
             //Default for now, need to pass actual data
             this.course = new DataAccess.Course();
             this.courseName.Text = course.name;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Study_Buddy.DataAccess;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,10 @@ namespace Study_Buddy.Presentation
         {
             this.view = form;
         }
-        public void AddAssignment()
+        public void AddAssignment(Course info, string name, int totalPoints, int weight)
         {
             //Add the assignment
+            info.AddAssignment(name, totalPoints, weight);
         }
     }
 }

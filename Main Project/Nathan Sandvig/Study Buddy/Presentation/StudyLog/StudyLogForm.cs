@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Study_Buddy.DataAccess;
+using Study_Buddy.BusinessLogic;
 
 namespace Study_Buddy.Presentation
 {
-    public partial class HomePageForm : Form, IView
+    public partial class StudyLogForm : Form, IView
     {
-        private HomePageFormController controller;
-        public HomePageForm()
+        private StudyLogFormController controller;
+        public StudyLogForm()
         {
             InitializeComponent();
             this.nav1.SetCurrentForm(this);
@@ -24,14 +25,9 @@ namespace Study_Buddy.Presentation
             this.mainPanel.Size = new System.Drawing.Size(1080, 720);
         }
 
-        //---------------------------------------------------------------------
-        // Sets the form's controller
-        // v1: Created the method - Peter H, 3-19-22
-        //---------------------------------------------------------------------
         public void SetController(FormController controller)
         {
-            this.controller = (HomePageFormController)controller;
+            this.controller = (StudyLogFormController)controller;
         }
-
     }
 }

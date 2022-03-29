@@ -35,7 +35,7 @@
             this.courseName = new System.Windows.Forms.Label();
             this.hoursLoggedChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.gradesChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.nav1 = new Study_Buddy.Presentation.Nav(this);
+            this.nav1 = new Study_Buddy.Presentation.Nav();
             this.WeekMinus = new System.Windows.Forms.Button();
             this.WeekPlus = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.hoursLoggedChart)).BeginInit();
