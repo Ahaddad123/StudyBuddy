@@ -9,6 +9,6 @@ namespace Study_Buddy.BusinessLogic
 {
     internal static class AccountController
     {
-        public static Account account { get; set; } = new Account("","",0);
+        public static Account account { get; set; } = new Account("name","",0);
     }
 }
