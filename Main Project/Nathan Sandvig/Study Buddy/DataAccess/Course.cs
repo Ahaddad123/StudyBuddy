@@ -157,13 +157,13 @@ namespace Study_Buddy.DataAccess
         // time: The time spent studying in hours
         // v1: Created the method - Nathan S, 3-7-22
         //---------------------------------------------------------------------
-        public void LogHours(double time)
+        public void LogHours(double time, int day, int week)
         {
             if(time > 0)
             {
                 int date = DateTime.Now.Year * 10000 + DateTime.Now.Month * 100 + DateTime.Now.Day;
                 //Commeted it out because the format of the log was changed tests will fail
-                //hourLog.AddTimeToLog(time, date);
+                hourLog.AddTimeToLog(time, day, week);
             }
         }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Study_Buddy.DataAccess;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,11 @@ namespace Study_Buddy.Presentation
         public StudyLogFormController(StudyLogForm form)
         {
             this.view = form;
+        }
+
+        public void AddHours(Course info,int week,int day, double hours)
+        {
+            info.LogHours(hours,day,week);
         }
     }
 }

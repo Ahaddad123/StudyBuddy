@@ -34,8 +34,95 @@ namespace Study_Buddy.Presentation
             this.controller = (StudyLogFormController)controller;
         }
 
-        private void butAddCourse_Click(object sender, EventArgs e)
+        private void butAddHours_Click(object sender, EventArgs e)
         {
+            Boolean valid = true;
+            double hours = 0;
+            int week = 0;
+            int day = 0;
+            Course course = new Course();
+            Account test = new Account("","",0);
+
+            if (cmbCourses.SelectedIndex < 1)
+            {
+                /*
+                try
+                {
+                    List<Course> testCourses = test.courses;
+                    course = testCourses[0];
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error choosing Course");
+                    valid = false;
+                }
+                */
+            }
+            else
+            {
+                MessageBox.Show("No Course was selected");
+                valid = false;
+            }
+
+            try
+            {
+                week = Int32.Parse(txtWeekNum.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Invalid week value");
+                valid = false;
+            }
+
+            try
+            {
+                day = Int32.Parse(txtDayDate.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Invalid day value");
+                valid = false;
+            }
+
+            try
+            {
+                hours = Double.Parse(txtHours.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Invalid Hours");
+                valid = false;
+            }
+
+            if(week < 0)
+            {
+                MessageBox.Show("Invalid week value");
+                valid = false;
+            }
+            else if(day < 0)
+            {
+                MessageBox.Show("Invalid day value");
+                valid = false;
+            }
+            else if(hours < 0)
+            {
+                MessageBox.Show("Invalid Hours");
+                valid = false;
+            }
+
+            if (valid)
+            {
+                // Add assignment
+                // wip does not like courseName
+                //controller.AddAssignment(courseName, txtNameAssign.Text,points,weight);
+                MessageBox.Show("hours added");
+                controller.AddHours(course,day,week,hours);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
