@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using Study_Buddy.BusinessLogic;
+using Study_Buddy.Presentation;
 
-namespace Study_Buddy.Presentation
+namespace Study_Buddy.Presentation.View
 {
-
     //---------------------------------------------------------------------
     // This form displays information pertinent to a course, including
     // graphs of study hours and grades in that course.
     // v1: Created the class - Peter H, 3-7-22
     //---------------------------------------------------------------------
-    public partial class CourseInfoForm : Form, IGraphView
+    public partial class CourseInfoForm : BaseForm, IGraphView
     {
 
         //---------------------------------------------------------------------
@@ -42,14 +42,18 @@ namespace Study_Buddy.Presentation
         public CourseInfoForm()
         {
             InitializeComponent();
-            this.MaximumSize = new System.Drawing.Size(1366, 768);
+            //this.gradesChart.Width = (800);
+            //this.hoursLoggedChart.Width = (800);
             this.Size = new System.Drawing.Size(1366, 768);
-            this.gradesChart.Width = (800);
-            this.hoursLoggedChart.Width = (800);
-            this.nav1.SetCurrentForm(this);
+
+
             //Default for now, need to pass actual data
             this.course = new Course();
             this.courseName.Text = course.name;
+            this.title = course.name;
+            this.Text = title;
+            this.mainHeader.Text = title;
+            this.nav1.SetCurrentForm(this);
             gradesSeriesID = "Your grades for " + course.name;
             hoursSeriesID = "Your study hours for week 0";
             gradesChart.Series.Add(gradesSeriesID);
@@ -139,8 +143,26 @@ namespace Study_Buddy.Presentation
         //---------------------------------------------------------------------
         private void WeekMinus_Click(object sender, EventArgs e)
         {
-
             controller.ChangeCurrentWeekID(-1);
+        }
+
+        public void DrawGPAGraph(List<DateTime> xValues, List<double> yValues)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void nav1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void mainTableLayoutPanel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
