@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Study_Buddy.BusinessLogic;
 
 namespace Study_Buddy.Presentation
 {
@@ -13,10 +14,18 @@ namespace Study_Buddy.Presentation
         {
             this.view = form;
         }
-        public void AddAssignment(Course info, string name, int totalPoints, int weight)
+        public void AddAssignment(String courseName, string name, int totalPoints, int weight)
         {
             //Add the assignment
-            info.AddAssignment(name, totalPoints, weight);
+            Course course = null;
+            foreach(Course c in AccountController.account.courses)
+            {
+                if(c.name == courseName)
+                {
+                    course = c;
+                }
+            }
+            course.AddAssignment(name, totalPoints, weight);
         }
     }
 }

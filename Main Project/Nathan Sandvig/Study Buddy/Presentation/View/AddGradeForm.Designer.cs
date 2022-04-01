@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.nav1 = new Study_Buddy.Presentation.Nav();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.butAddAssig = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPointsAssign = new System.Windows.Forms.TextBox();
-            this.txtNameAssign = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.nav1 = new Study_Buddy.Presentation.Nav();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtNameAssign = new System.Windows.Forms.ComboBox();
             this.mainPanel.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -47,56 +47,20 @@
             this.mainPanel.BackColor = System.Drawing.Color.White;
             this.mainPanel.Controls.Add(this.groupBox1);
             this.mainPanel.Location = new System.Drawing.Point(287, 116);
-            this.mainPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(2);
             this.mainPanel.MaximumSize = new System.Drawing.Size(810, 585);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(611, 405);
             this.mainPanel.TabIndex = 1;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(280, 58);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(183, 39);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Add Grade";
-            // 
-            // nav1
-            // 
-            this.nav1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.nav1.Location = new System.Drawing.Point(0, -1);
-            this.nav1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.nav1.MaximumSize = new System.Drawing.Size(236, 878);
-            this.nav1.Name = "nav1";
-            this.nav1.Size = new System.Drawing.Size(236, 878);
-            this.nav1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(108)))), ((int)(((byte)(221)))));
-            this.button1.Location = new System.Drawing.Point(747, 58);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(152, 42);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.groupBox1.Controls.Add(this.txtNameAssign);
             this.groupBox1.Controls.Add(this.butAddAssig);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtPointsAssign);
-            this.groupBox1.Controls.Add(this.txtNameAssign);
             this.groupBox1.Location = new System.Drawing.Point(115, 105);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(353, 149);
@@ -141,12 +105,49 @@
             this.txtPointsAssign.Size = new System.Drawing.Size(100, 20);
             this.txtPointsAssign.TabIndex = 1;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(280, 58);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(183, 39);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Add Grade";
+            // 
+            // nav1
+            // 
+            this.nav1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.nav1.Location = new System.Drawing.Point(0, -1);
+            this.nav1.Margin = new System.Windows.Forms.Padding(2);
+            this.nav1.MaximumSize = new System.Drawing.Size(236, 878);
+            this.nav1.Name = "nav1";
+            this.nav1.Size = new System.Drawing.Size(236, 878);
+            this.nav1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(108)))), ((int)(((byte)(221)))));
+            this.button1.Location = new System.Drawing.Point(747, 58);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(152, 42);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // txtNameAssign
             // 
+            this.txtNameAssign.FormattingEnabled = true;
             this.txtNameAssign.Location = new System.Drawing.Point(113, 29);
             this.txtNameAssign.Name = "txtNameAssign";
-            this.txtNameAssign.Size = new System.Drawing.Size(209, 20);
-            this.txtNameAssign.TabIndex = 0;
+            this.txtNameAssign.Size = new System.Drawing.Size(209, 21);
+            this.txtNameAssign.TabIndex = 4;
             // 
             // AddGradeForm
             // 
@@ -161,6 +162,7 @@
             this.MaximumSize = new System.Drawing.Size(964, 592);
             this.Name = "AddGradeForm";
             this.Text = "Form Template";
+            this.Load += new System.EventHandler(this.AddGradeForm_Load);
             this.mainPanel.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -179,6 +181,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtPointsAssign;
-        private System.Windows.Forms.TextBox txtNameAssign;
+        private System.Windows.Forms.ComboBox txtNameAssign;
     }
 }

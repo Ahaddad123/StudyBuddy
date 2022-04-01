@@ -10,7 +10,7 @@ namespace Study_Buddy.Presentation
 {
     internal class AddGradeFormController : FormController
     {
-        private Course course;
+        public Course course { get; set; }
         public AddGradeFormController(AddGradeForm form, Course course)
         {
             this.view = form;

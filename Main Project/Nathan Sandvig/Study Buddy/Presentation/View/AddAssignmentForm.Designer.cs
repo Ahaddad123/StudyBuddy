@@ -31,6 +31,8 @@
             this.nav1 = new Study_Buddy.Presentation.Nav();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comCourses = new System.Windows.Forms.ComboBox();
             this.butAddAssig = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,11 +42,19 @@
             this.txtNameAssign = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.comCourses = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.mainPanel.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // nav1
+            // 
+            this.nav1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.nav1.Location = new System.Drawing.Point(0, -1);
+            this.nav1.Margin = new System.Windows.Forms.Padding(2);
+            this.nav1.MaximumSize = new System.Drawing.Size(236, 878);
+            this.nav1.Name = "nav1";
+            this.nav1.Size = new System.Drawing.Size(236, 878);
+            this.nav1.TabIndex = 0;
             // 
             // mainPanel
             // 
@@ -74,6 +84,24 @@
             this.groupBox1.Size = new System.Drawing.Size(353, 149);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(28, 99);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Course";
+            // 
+            // comCourses
+            // 
+            this.comCourses.FormattingEnabled = true;
+            this.comCourses.Location = new System.Drawing.Point(74, 96);
+            this.comCourses.Name = "comCourses";
+            this.comCourses.Size = new System.Drawing.Size(121, 21);
+            this.comCourses.TabIndex = 7;
             // 
             // butAddAssig
             // 
@@ -149,16 +177,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Add Assignment";
             // 
-            // nav1
-            // 
-            this.nav1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.nav1.Location = new System.Drawing.Point(0, -1);
-            this.nav1.Margin = new System.Windows.Forms.Padding(2);
-            this.nav1.MaximumSize = new System.Drawing.Size(236, 878);
-            this.nav1.Name = "nav1";
-            this.nav1.Size = new System.Drawing.Size(236, 878);
-            this.nav1.TabIndex = 0;
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.White;
@@ -173,24 +191,6 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // comCourses
-            // 
-            this.comCourses.FormattingEnabled = true;
-            this.comCourses.Location = new System.Drawing.Point(74, 96);
-            this.comCourses.Name = "comCourses";
-            this.comCourses.Size = new System.Drawing.Size(121, 21);
-            this.comCourses.TabIndex = 7;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(28, 99);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Course";
-            // 
             // AddAssignmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,6 +204,7 @@
             this.MaximumSize = new System.Drawing.Size(964, 592);
             this.Name = "AddAssignmentForm";
             this.Text = "Form Template";
+            this.Load += new System.EventHandler(this.AddAssignmentForm_Load);
             this.mainPanel.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

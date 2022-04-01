@@ -53,5 +53,14 @@ namespace Study_Buddy.Presentation
                 MessageBox.Show("Successfully added grade");
             }
         }
+
+        private void AddGradeForm_Load(object sender, EventArgs e)
+        {
+            Course course = controller.course;
+            foreach(Assignment assignment in course.assignments)
+            {
+                txtNameAssign.Items.Add(assignment.name);
+            }
+        }
     }
 }

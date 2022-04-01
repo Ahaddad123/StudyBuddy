@@ -35,10 +35,10 @@ namespace Study_Buddy.Presentation
             Boolean valid = true;
             int points = 0;
             int weight = 0;
-            Course courseName = new Course();
-            Course testC = new Course();
-            Account test = new Account("","",1);
-            test.addCourse(testC);
+            //Course courseName = new Course();
+            //Course testC = new Course();
+            //Account test = new Account("","",1);
+            //test.addCourse(testC);
             if (txtNameAssign.Text.Equals(""))
             {
                 MessageBox.Show("Invalid Name");
@@ -63,12 +63,12 @@ namespace Study_Buddy.Presentation
                 valid = false;
             }
 
-            if(comCourses.SelectedIndex < 1)
+            /*if(comCourses.SelectedIndex < 1)
             {
                 try
                 {
-                    List<Course> testCourses = test.courses;
-                    courseName = testCourses[0];
+                    //List<Course> testCourses = test.courses;
+                    //courseName = testCourses[0];
                 }
                 catch (Exception ex)
                 {
@@ -80,7 +80,7 @@ namespace Study_Buddy.Presentation
             {
                 MessageBox.Show("No Course was selected");
                 valid = false;
-            }
+            }*/
 
             if (points < 0)
             {
@@ -99,7 +99,15 @@ namespace Study_Buddy.Presentation
                 // wip does not like courseName
                 //controller.AddAssignment(courseName, txtNameAssign.Text,points,weight);
                 MessageBox.Show("Assignment added");
-                controller.AddAssignment(courseName, txtNameAssign.Text, points, weight);
+                controller.AddAssignment(comCourses.Text, txtNameAssign.Text, points, weight);
+            }
+        }
+
+        private void AddAssignmentForm_Load(object sender, EventArgs e)
+        {
+            foreach (Course c in AccountController.account.courses)
+            {
+                comCourses.Items.Add(c.name);
             }
         }
     }

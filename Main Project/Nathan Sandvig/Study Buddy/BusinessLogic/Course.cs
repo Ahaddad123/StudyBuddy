@@ -25,7 +25,7 @@ namespace Study_Buddy.DataAccess
         // priority: How important the course is
         // credits: The number of credits the course is worth
         //---------------------------------------------------------------------
-        private List<Assignment> assignments;
+        public List<Assignment> assignments { get; set; }
         private StudyLog hourLog;
         public string name { get; set; }
         public double grade { get; set; }
