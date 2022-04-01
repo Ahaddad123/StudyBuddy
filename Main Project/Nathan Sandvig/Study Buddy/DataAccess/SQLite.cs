@@ -12,6 +12,12 @@ namespace Study_Buddy.DataAccess
 {
     public class SQLite
     {
+        public static void main() 
+        {
+            SQLite db = new SQLite();
+            SQLiteConnection sqlite_connection;
+            sqlite_connection = db.CreateConnection();
+        }
         public static List<BusinessLogic.Account> LoadAccount() 
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString())) 
