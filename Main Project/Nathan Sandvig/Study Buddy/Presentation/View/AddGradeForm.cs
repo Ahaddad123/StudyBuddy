@@ -22,9 +22,6 @@ namespace Study_Buddy.Presentation
             this.Size = new System.Drawing.Size(1366, 768);
             this.mainPanel.MaximumSize = new System.Drawing.Size(1080, 720);
             this.mainPanel.Size = new System.Drawing.Size(1080, 720);
-            this.title = "Add Grade";
-            this.Text = title;
-            this.mainHeader.Text = title;
             this.nav1.SetCurrentForm(this);
         }
         
@@ -65,6 +62,9 @@ namespace Study_Buddy.Presentation
             {
                 txtNameAssign.Items.Add(assignment.name);
             }
+            this.title = "Add Grade for " + course.name;
+            this.Text = title;
+            this.mainHeader.Text = title;
         }
     }
 }
