@@ -86,7 +86,6 @@
     <Compile Include="Presentation\Controller\CourseInfoFormController.cs" />
     <Compile Include="BusinessLogic\Account.cs" />
     <Compile Include="BusinessLogic\CourseBuilder.cs" />
-    <Compile Include="Database\SQLite.cs" />
     <Compile Include="Presentation\GraphUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

@@ -49,7 +49,6 @@ namespace Study_Buddy.Presentation.View
 
             //Default for now, need to pass actual data
             this.course = new Course();
-            this.courseName.Text = course.name;
             this.title = course.name;
             this.Text = title;
             this.mainHeader.Text = title;

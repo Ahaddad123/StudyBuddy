@@ -21,6 +21,24 @@ namespace Study_Buddy.DataAccess
             }
         }
 
+        public SQLiteConnection CreateConnection()
+        {
+
+            SQLiteConnection sqlite_conn;
+            // Create a new database connection:
+            sqlite_conn = new SQLiteConnection("Data Source=database.db; Version = 3; New = True; Compress = True; ");
+            // Open the connection:
+            try
+            {
+                sqlite_conn.Open();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return sqlite_conn;
+        }
+
         public static void addAccount(BusinessLogic.Account account1) 
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
