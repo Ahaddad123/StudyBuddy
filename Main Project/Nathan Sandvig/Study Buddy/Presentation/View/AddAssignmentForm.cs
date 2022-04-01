@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Study_Buddy.DataAccess;
 using Study_Buddy.BusinessLogic;
+using Study_Buddy.Presentation.View;
 
 namespace Study_Buddy.Presentation
 {
-    public partial class AddAssignmentForm : Form, IView
+    public partial class AddAssignmentForm : BaseForm, IView
     {
         private AddAssignmentFormController controller;
         public AddAssignmentForm()
@@ -22,6 +23,9 @@ namespace Study_Buddy.Presentation
             this.Size = new System.Drawing.Size(1366, 768);
             this.mainPanel.MaximumSize = new System.Drawing.Size(1080, 720);
             this.mainPanel.Size = new System.Drawing.Size(1080, 720);
+            this.title = "Add Assignment";
+            this.Text = title;
+            this.mainHeader.Text = title;
             this.nav1.SetCurrentForm(this);
         }
 
