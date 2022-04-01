@@ -39,7 +39,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.nav1 = new Study_Buddy.Presentation.Nav();
             this.button1 = new System.Windows.Forms.Button();
             this.cmbCourses = new System.Windows.Forms.ComboBox();
             this.mainPanel.SuspendLayout();
@@ -160,16 +159,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Add Hours";
             // 
-            // nav1
-            // 
-            this.nav1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.nav1.Location = new System.Drawing.Point(0, -1);
-            this.nav1.Margin = new System.Windows.Forms.Padding(2);
-            this.nav1.MaximumSize = new System.Drawing.Size(236, 878);
-            this.nav1.Name = "nav1";
-            this.nav1.Size = new System.Drawing.Size(236, 878);
-            this.nav1.TabIndex = 0;
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.White;
@@ -201,7 +190,6 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.mainPanel);
-            this.Controls.Add(this.nav1);
             this.MaximumSize = new System.Drawing.Size(964, 592);
             this.Name = "StudyLogForm";
             this.Text = "Form Template";
@@ -214,7 +202,6 @@
         }
 
         #endregion
-        private Nav nav1;
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;

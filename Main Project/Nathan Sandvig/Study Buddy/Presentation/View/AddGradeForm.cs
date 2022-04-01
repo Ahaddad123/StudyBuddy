@@ -8,10 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Study_Buddy.BusinessLogic;
+using Study_Buddy.Presentation.View;
 
 namespace Study_Buddy.Presentation
 {
-    public partial class AddGradeForm : Form, IView
+    public partial class AddGradeForm : BaseForm, IView
     {
         private AddGradeFormController controller;
         public AddGradeForm()
@@ -61,6 +62,9 @@ namespace Study_Buddy.Presentation
             {
                 txtNameAssign.Items.Add(assignment.name);
             }
+            this.title = "Add Grade for " + course.name;
+            this.Text = title;
+            this.mainHeader.Text = title;
         }
     }
 }
