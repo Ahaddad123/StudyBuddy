@@ -82,14 +82,27 @@
     <Compile Include="Presentation\Controller\AddAssignmentFormController.cs" />
     <Compile Include="Presentation\Controller\AddCourseFormController.cs" />
     <Compile Include="Presentation\Controller\AddGradeFormController.cs" />
+    <Compile Include="Presentation\Controller\UserInfoFormController.cs" />
     <Compile Include="Presentation\FormController.cs" />
     <Compile Include="Presentation\Controller\CourseInfoFormController.cs" />
     <Compile Include="BusinessLogic\Account.cs" />
     <Compile Include="BusinessLogic\CourseBuilder.cs" />
-    <Compile Include="DataAccess\SQLite.cs" />
+    <Compile Include="Database\SQLite.cs" />
+    <Compile Include="Presentation\GraphUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\GraphUserControl.Designer.cs">
+      <DependentUpon>GraphUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Model\GradeGraph.cs" />
     <Compile Include="Presentation\Model\Graph.cs" />
     <Compile Include="Presentation\Model\GraphController.cs" />
+    <Compile Include="Presentation\View\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\View\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\View\StudyLogForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,13 +164,25 @@
     <Compile Include="Presentation\Model\StudyLogGraph.cs" />
     <Compile Include="Presentation\IView.cs" />
     <Compile Include="Presentation\Controller\StudyLogFormController.cs" />
+    <Compile Include="Presentation\View\UserInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\View\UserInfoForm.Designer.cs">
+      <DependentUpon>UserInfoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\GraphUserControl.resx">
+      <DependentUpon>GraphUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\View\AddAssignmentForm.resx">
       <DependentUpon>AddAssignmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\View\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\View\StudyLogForm.resx">
       <DependentUpon>StudyLogForm.cs</DependentUpon>
@@ -177,6 +202,9 @@
     <EmbeddedResource Include="Presentation\View\CourseInfoForm.resx">
       <DependentUpon>CourseInfoForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\View\UserInfoForm.resx">
+      <DependentUpon>UserInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -185,6 +213,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -200,7 +229,39 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\StuddyBuddyLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\studyBuddyLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-assignment-icon-07.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-drop-course-icon-06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\import-icon-08.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\my-courses-icon-03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\my-schedule-icon-04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings-icon-05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\study-hours-icon-02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar-icon-01-01.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

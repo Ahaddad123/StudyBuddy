@@ -12,62 +12,73 @@ namespace Study_Buddy.Presentation
 {
     public partial class Nav : UserControl
     {
+        //Nav is 315 x 737 px (Forms are 1266 x 768px but have to account for 31px being stolen by the stupid titlebar...)
         private Form currentForm { get; set; }
         public Nav()
         {
-            InitializeComponent();
             this.currentForm = currentForm;
-            this.MaximumSize = new System.Drawing.Size(315, 780);
-            this.Size = new System.Drawing.Size(315, 780);
-            this.panelSubMenu.MaximumSize = new System.Drawing.Size(315, 780);
-            this.panelSubMenu.Size = new System.Drawing.Size(315, 780);
+            //this.MaximumSize = new System.Drawing.Size(315, 768);
+            //this.Size = new System.Drawing.Size(315, 768);
+            InitializeComponent();
         }
-
+        
         public void SetCurrentForm(Form currentForm)
         {
             this.currentForm = currentForm;
         }
 
-        private void buttonHome_Click(object sender, EventArgs e)
-        {
+        private void btnHome_Click(object sender, EventArgs e)
+        { 
             FormSwitcher.OpenHomePageForm(currentForm);
         }
 
-        private void btnAddAssignment_Click_1(object sender, EventArgs e)
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-            FormSwitcher.OpenAddAssignmentForm(currentForm);
+
         }
 
         private void btnLogHours_Click(object sender, EventArgs e)
         {
+
             FormSwitcher.OpenStudyLogForm(currentForm);
         }
 
         private void btnCalendar_Click(object sender, EventArgs e)
         {
+
         }
 
         private void btnVisualizeMyData_Click(object sender, EventArgs e)
         {
             FormSwitcher.OpenCourseInfoForm(currentForm);
+
         }
 
         private void btnMySchedule_Click(object sender, EventArgs e)
         {
+
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
+            FormSwitcher.OpenUserInfoForm(currentForm);
         }
 
         private void btnAddDropCourse_Click(object sender, EventArgs e)
         {
+
             FormSwitcher.OpenAddCourseForm(currentForm);
+        }
+
+        private void btnAddAssignment_Click(object sender, EventArgs e)
+        {
+            FormSwitcher.OpenAddAssignmentForm(currentForm);
+
         }
 
         private void btnImport_Click(object sender, EventArgs e)
         {
-        }
 
+        }
     }
 }
