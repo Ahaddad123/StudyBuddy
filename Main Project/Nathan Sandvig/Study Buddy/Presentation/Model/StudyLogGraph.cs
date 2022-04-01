@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Study_Buddy.BusinessLogic;
 
 namespace Study_Buddy.Presentation
 {
@@ -28,7 +29,7 @@ namespace Study_Buddy.Presentation
         // as a string
         //---------------------------------------------------------------------
         private const int DAYS_IN_WEEK = 7;
-        private DataAccess.StudyLog studyLog;
+        private StudyLog studyLog;
         private Dictionary<int, Dictionary<DayOfWeek, int>> weeks;
         private List<int> hours;
         private List<string> daysOfWeek;
@@ -39,7 +40,7 @@ namespace Study_Buddy.Presentation
         // week to week 0.
         // v1: Created the method - Peter H, 3-7-22
         //---------------------------------------------------------------------
-        public StudyLogGraph(DataAccess.StudyLog studyLog)
+        public StudyLogGraph(StudyLog studyLog)
         {
             weeks = new Dictionary<int, Dictionary<DayOfWeek, int>>();
             this.studyLog = studyLog;

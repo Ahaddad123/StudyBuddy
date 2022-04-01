@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 
 // The namespace the class is in
-namespace Study_Buddy.DataAccess
+namespace Study_Buddy.BusinessLogic
 {
     //-------------------------------------------------------------------------
     // This class manages course objects within an account

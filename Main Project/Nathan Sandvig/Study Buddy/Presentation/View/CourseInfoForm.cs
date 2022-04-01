@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using Study_Buddy.BusinessLogic;
 
 namespace Study_Buddy.Presentation
 {
@@ -29,7 +30,7 @@ namespace Study_Buddy.Presentation
         // displayed on the hoursLogged chart
         //---------------------------------------------------------------------
         private CourseInfoFormController controller;
-        private DataAccess.Course course;
+        private Course course;
         private string gradesSeriesID;
         private string hoursSeriesID;
 
@@ -47,7 +48,7 @@ namespace Study_Buddy.Presentation
             this.hoursLoggedChart.Width = (800);
             this.nav1.SetCurrentForm(this);
             //Default for now, need to pass actual data
-            this.course = new DataAccess.Course();
+            this.course = new Course();
             this.courseName.Text = course.name;
             gradesSeriesID = "Your grades for " + course.name;
             hoursSeriesID = "Your study hours for week 0";

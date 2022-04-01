@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Study_Buddy.BusinessLogic;
 
 namespace Study_Buddy.Presentation
 {
@@ -25,7 +26,7 @@ namespace Study_Buddy.Presentation
         // averageGradesY : a list of avg grades to be graphed on the Y axis
         //---------------------------------------------------------------------
         //private Dictionary<DateTime, double> datesAndAverageGrades;
-        private DataAccess.Course course;
+        private Course course;
         private List<DateTime> datesX;
         private List<double> averageGradesY;
 
@@ -34,7 +35,7 @@ namespace Study_Buddy.Presentation
         // creates default data to graph.
         // v1: Created the method - Peter H, 3-7-22
         //---------------------------------------------------------------------
-        public GradeGraph(DataAccess.Course course)
+        public GradeGraph(Course course)
         {
             this.course = course;
             datesX = new List<DateTime>();

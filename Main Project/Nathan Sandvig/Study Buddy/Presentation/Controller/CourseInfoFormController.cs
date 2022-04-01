@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Study_Buddy.BusinessLogic;
 
 namespace Study_Buddy.Presentation
 {
@@ -20,8 +21,8 @@ namespace Study_Buddy.Presentation
         // weekID : the current week for which study data is being viewed.
         //---------------------------------------------------------------------
         //-------------------------------------------------------------------------
-        private DataAccess.Course course;
-        private DataAccess.StudyLog studyLog;
+        private Course course;
+        private StudyLog studyLog;
         private GradeGraph gradeGraph;
         private StudyLogGraph studyLogGraph;
         private int weekID;
@@ -30,7 +31,7 @@ namespace Study_Buddy.Presentation
         // Parameterized Constructor.  Sets the form, course, studyLog and
         // creates graphs for the course.
         //---------------------------------------------------------------------
-        public CourseInfoFormController(CourseInfoForm form, DataAccess.Course course, DataAccess.StudyLog studyLog)
+        public CourseInfoFormController(CourseInfoForm form, Course course, StudyLog studyLog)
         {
             this.course = course;
             this.studyLog = studyLog;

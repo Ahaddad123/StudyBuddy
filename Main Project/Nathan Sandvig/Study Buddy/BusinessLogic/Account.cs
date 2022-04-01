@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Study_Buddy.Database;
+using Study_Buddy.DataAccess;
 
-namespace Study_Buddy.DataAccess
+namespace Study_Buddy.BusinessLogic
 {
     public class Account
     {

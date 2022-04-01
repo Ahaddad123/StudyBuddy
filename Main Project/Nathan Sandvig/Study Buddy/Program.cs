@@ -5,7 +5,7 @@ using System.Data.SQLite;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Study_Buddy.Presentation;
-using Study_Buddy.Database;
+using Study_Buddy.DataAccess;
 
 namespace Study_Buddy
 {

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Study_Buddy.DataAccess;
 
-namespace Study_Buddy.DataAccess
+namespace Study_Buddy.BusinessLogic
 {
     //---------------------------------------------------------------------
     // This class is a builder class for Courses

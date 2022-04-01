@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using Study_Buddy.DataAccess;
+using Study_Buddy.BusinessLogic;
 
 namespace Nathans_Unit_Test
 {

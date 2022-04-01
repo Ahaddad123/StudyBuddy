@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Study_Buddy.DataAccess;
 using Study_Buddy.BusinessLogic;
 using System.Windows.Forms;
 
@@ -23,7 +22,7 @@ namespace Study_Buddy.Presentation
             CourseInfoForm form = new CourseInfoForm();
             form.StartPosition = FormStartPosition.Manual;
             //TODO, pass in actual course and studyLog
-            CourseInfoFormController controller = new CourseInfoFormController(form, new DataAccess.Course(), new DataAccess.StudyLog());
+            CourseInfoFormController controller = new CourseInfoFormController(form, new Course(), new StudyLog());
             form.SetController(controller);
             controller.DrawGradeGraph();
             controller.DrawStudyLogGraph();

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Study_Buddy.DataAccess;
+using Study_Buddy.BusinessLogic;
 
 namespace Study_Buddy.Presentation
 {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Study_Buddy.DataAccess
+namespace Study_Buddy.BusinessLogic
 {
     public class StudyLog
     {
