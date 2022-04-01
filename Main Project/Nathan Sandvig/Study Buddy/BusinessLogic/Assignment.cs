@@ -12,12 +12,14 @@ namespace Study_Buddy.BusinessLogic
         public string name { get; set; }        //name of assignment
         public double weight { get; set; }       //weight of assignment
         public double grade { get; set; } //gade user got for assignment
+        public DateTime dueDate { get; set; }    //due date of isignment
 
-        public Assignment(int newPoints, string newName, int newWeight)
+        public Assignment(int newPoints, string newName, int newWeight, DateTime date)
         {
             totalPoints = newPoints;
             name = newName;
             weight = newWeight;
+            dueDate = date;
         }
 
         public void addGrade(double points)

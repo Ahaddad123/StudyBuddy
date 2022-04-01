@@ -36,8 +36,7 @@ namespace Study_Buddy.Presentation
         {
             Boolean valid = true;
             double hours = 0;
-            int week = 0;
-            int day = 0;
+            DateTime date;
             Course course = new Course();
             Account test = new Account("","",0);
 
@@ -62,25 +61,7 @@ namespace Study_Buddy.Presentation
                 valid = false;
             }
 
-            try
-            {
-                week = Int32.Parse(txtWeekNum.Text);
-            }
-            catch
-            {
-                MessageBox.Show("Invalid week value");
-                valid = false;
-            }
-
-            try
-            {
-                day = Int32.Parse(txtDayDate.Text);
-            }
-            catch
-            {
-                MessageBox.Show("Invalid day value");
-                valid = false;
-            }
+            date = DTPhourDate.Value;
 
             try
             {
@@ -92,17 +73,7 @@ namespace Study_Buddy.Presentation
                 valid = false;
             }
 
-            if(week < 0)
-            {
-                MessageBox.Show("Invalid week value");
-                valid = false;
-            }
-            else if(day < 0)
-            {
-                MessageBox.Show("Invalid day value");
-                valid = false;
-            }
-            else if(hours < 0)
+            if(hours < 0)
             {
                 MessageBox.Show("Invalid Hours");
                 valid = false;
@@ -114,7 +85,7 @@ namespace Study_Buddy.Presentation
                 // wip does not like courseName
                 //controller.AddAssignment(courseName, txtNameAssign.Text,points,weight);
                 MessageBox.Show("hours added");
-                controller.AddHours(course,day,week,hours);
+                //controller.AddHours(course,day,week,hours);
             }
         }
 

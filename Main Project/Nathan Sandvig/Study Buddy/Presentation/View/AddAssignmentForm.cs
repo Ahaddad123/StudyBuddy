@@ -39,6 +39,7 @@ namespace Study_Buddy.Presentation
             Boolean valid = true;
             int points = 0;
             int weight = 0;
+            DateTime duedate;
             //Course courseName = new Course();
             //Course testC = new Course();
             //Account test = new Account("","",1);

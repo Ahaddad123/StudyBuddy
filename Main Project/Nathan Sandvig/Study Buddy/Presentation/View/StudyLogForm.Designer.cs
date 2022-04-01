@@ -42,7 +42,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.DTPhourDate = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.mainPanel.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -67,7 +67,7 @@
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
+            this.groupBox1.Controls.Add(this.DTPhourDate);
             this.groupBox1.Controls.Add(this.cmbCourses);
             this.groupBox1.Controls.Add(this.butAddHours);
             this.groupBox1.Controls.Add(this.txtHours);
@@ -193,21 +193,22 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 3;
             // 
-            // dateTimePicker2
+            // DTPhourDate
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(66, 88);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 13;
+            this.DTPhourDate.Location = new System.Drawing.Point(66, 88);
+            this.DTPhourDate.Name = "DTPhourDate";
+            this.DTPhourDate.Size = new System.Drawing.Size(200, 20);
+            this.DTPhourDate.TabIndex = 13;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 94);
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label4.Location = new System.Drawing.Point(24, 94);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.Size = new System.Drawing.Size(30, 13);
             this.label4.TabIndex = 14;
-            this.label4.Text = "label4";
+            this.label4.Text = "Date";
             // 
             // StudyLogForm
             // 
@@ -252,7 +253,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbCourses;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker DTPhourDate;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

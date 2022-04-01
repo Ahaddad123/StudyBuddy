@@ -39,6 +39,8 @@
             this.txtPriority = new System.Windows.Forms.TextBox();
             this.txtPointsAssign = new System.Windows.Forms.TextBox();
             this.txtNameAssign = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.DTPassignDate = new System.Windows.Forms.DateTimePicker();
             this.mainPanel.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +59,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.groupBox1.Controls.Add(this.DTPassignDate);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.comCourses);
             this.groupBox1.Controls.Add(this.butAddAssig);
@@ -68,7 +72,7 @@
             this.groupBox1.Controls.Add(this.txtNameAssign);
             this.groupBox1.Location = new System.Drawing.Point(132, 114);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(353, 149);
+            this.groupBox1.Size = new System.Drawing.Size(353, 205);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -78,7 +82,7 @@
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label5.Location = new System.Drawing.Point(28, 99);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 15);
+            this.label5.Size = new System.Drawing.Size(40, 13);
             this.label5.TabIndex = 8;
             this.label5.Text = "Course";
             // 
@@ -93,7 +97,7 @@
             // butAddAssig
             // 
             this.butAddAssig.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.butAddAssig.Location = new System.Drawing.Point(217, 101);
+            this.butAddAssig.Location = new System.Drawing.Point(229, 126);
             this.butAddAssig.Name = "butAddAssig";
             this.butAddAssig.Size = new System.Drawing.Size(105, 30);
             this.butAddAssig.TabIndex = 6;
@@ -107,7 +111,7 @@
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label3.Location = new System.Drawing.Point(30, 126);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 15);
+            this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Weight";
             // 
@@ -117,7 +121,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label2.Location = new System.Drawing.Point(8, 67);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 15);
+            this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Total Points";
             // 
@@ -127,7 +131,7 @@
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label4.Location = new System.Drawing.Point(33, 36);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 15);
+            this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Name";
             // 
@@ -152,12 +156,29 @@
             this.txtNameAssign.Size = new System.Drawing.Size(248, 20);
             this.txtNameAssign.TabIndex = 0;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(17, 166);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Due date";
+            // 
+            // DTPassignDate
+            // 
+            this.DTPassignDate.Location = new System.Drawing.Point(74, 159);
+            this.DTPassignDate.Name = "DTPassignDate";
+            this.DTPassignDate.Size = new System.Drawing.Size(180, 20);
+            this.DTPassignDate.TabIndex = 10;
+            // 
             // AddAssignmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(150)))), ((int)(((byte)(231)))));
-            this.ClientSize = new System.Drawing.Size(946, 545);
+            this.ClientSize = new System.Drawing.Size(948, 553);
             this.Controls.Add(this.mainPanel);
             this.MaximumSize = new System.Drawing.Size(964, 592);
             this.MinimumSize = new System.Drawing.Size(964, 592);
@@ -185,5 +206,7 @@
         private System.Windows.Forms.TextBox txtNameAssign;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comCourses;
+        private System.Windows.Forms.DateTimePicker DTPassignDate;
+        private System.Windows.Forms.Label label1;
     }
 }
