@@ -1,30 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SQLite;
+using System.Data;
+using System.Configuration;
+using Dapper;
 
 namespace Study_Buddy.DataAccess
 {
-    internal class SQLite
+    public class SQLite
     {
-        public SQLiteConnection CreateConnection() {
-            SQLiteConnection sqlite_connection;
-            // Create a new database connection:
-            sqlite_connection = new SQLiteConnection("Data Source=NathansData.db; Version = 3; New = True; Compress = True; ");
-         // Open the connection:
-         try
+        public static List<BusinessLogic.Account> LoadAccount() 
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString())) 
             {
-                sqlite_connection.Open();
+                var output = cnn.Query<BusinessLogic.Account>("SELECT * FROM AccountData", new DynamicParameters());
+                return output.ToList();
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Connection Failed.");
-            }
-            return sqlite_connection;
         }
 
+        public static void addAccount(BusinessLogic.Account account1) 
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Execute("INSERT INTO AccountData (Username, Password, UserID) values (@Username, @Password, @UserID)", account1);
+            }
+        }
+
+        private static string LoadConnectionString(string id = "Default") 
+        {
+            return System.Configuration.ConfigurationManager.ConnectionStrings[id].ConnectionString;
+        }
 
         public Boolean InsertAccountData(String username, String password) {
             Boolean result = false;
