@@ -9,20 +9,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Study_Buddy.DataAccess;
 using Study_Buddy.BusinessLogic;
+using Study_Buddy.Presentation.View;
 
 namespace Study_Buddy.Presentation
 {
-    public partial class HomePageForm : Form, IView
+    public partial class HomePageForm : BaseForm, IView
     {
         private HomePageFormController controller;
         public HomePageForm()
         {
             InitializeComponent();
-            this.nav1.SetCurrentForm(this);
             this.MaximumSize = new System.Drawing.Size(1366, 768);
             this.Size = new System.Drawing.Size(1366, 768);
             this.mainPanel.MaximumSize = new System.Drawing.Size(1080, 720);
             this.mainPanel.Size = new System.Drawing.Size(1080, 720);
+            this.title = "Home Page";
+            this.Text = title;
+            this.mainHeader.Text = title;
+            this.nav1.SetCurrentForm(this);
         }
 
         //---------------------------------------------------------------------

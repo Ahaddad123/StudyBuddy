@@ -8,10 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Study_Buddy.BusinessLogic;
+using Study_Buddy.Presentation.View;
 
 namespace Study_Buddy.Presentation
 {
-    public partial class AddGradeForm : Form, IView
+    public partial class AddGradeForm : BaseForm, IView
     {
         private AddGradeFormController controller;
         public AddGradeForm()
@@ -21,6 +22,9 @@ namespace Study_Buddy.Presentation
             this.Size = new System.Drawing.Size(1366, 768);
             this.mainPanel.MaximumSize = new System.Drawing.Size(1080, 720);
             this.mainPanel.Size = new System.Drawing.Size(1080, 720);
+            this.title = "Add Grade";
+            this.Text = title;
+            this.mainHeader.Text = title;
             this.nav1.SetCurrentForm(this);
         }
         
