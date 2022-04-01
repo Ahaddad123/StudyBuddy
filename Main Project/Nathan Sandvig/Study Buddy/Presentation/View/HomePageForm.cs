@@ -47,10 +47,9 @@ namespace Study_Buddy.Presentation
             {
                 //Course course = controller.getCourses()[i];
                 Course course = account.courses[i];
-                //this.courseNames.Items.Add(course.name);
                 Label label = new Label();
                 label.Text = course.name;
-                label.BackColor = Color.FromArgb(red, green, blue); //133 - 228
+                label.BackColor = Color.FromArgb(red, green, blue);
                 label.Location = new Point(40, locationindex);
                 label.Size = new Size(250, 25);
                 label.Font = new Font("Microsoft Sans Serif", 13);
@@ -68,7 +67,19 @@ namespace Study_Buddy.Presentation
                 label2.Font = new Font("Microsoft Sans Serif", 13);
                 label2.TextAlign = ContentAlignment.TopRight;
                 this.mainPanel.Controls.Add(label2);
-                locationindex += 25;
+
+                Button button = new Button();
+                button.BackColor = Color.LightGray;
+                button.Location = new Point(550, locationindex);
+                button.Size = new Size(200, 25);
+                button.Text = "Add grade for this course";
+                button.Font = new Font("Microsoft Sans Serif", 10);
+                button.Click += new EventHandler(this.addGradeButton_Click);
+                button.Tag = course;
+                button.Margin = new Padding(0);
+                this.mainPanel.Controls.Add(button);
+
+                locationindex += 27;
                 if(i%3 == 0)
                 {
                     green = red;
@@ -80,14 +91,12 @@ namespace Study_Buddy.Presentation
                     blue = green;
                 }
             }
-
-            
-
         }
 
         private void addGradeButton_Click(object sender, EventArgs e)
         {
-            FormSwitcher.OpenAddGradeForm(this);
+            Button button = (Button)sender;
+            FormSwitcher.OpenAddGradeForm(this, (Course)button.Tag);
         }
     }
 }

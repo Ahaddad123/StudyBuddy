@@ -33,7 +33,6 @@
             this.gpa = new System.Windows.Forms.Label();
             this.name = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.addGradeButton = new System.Windows.Forms.Button();
             this.nav1 = new Study_Buddy.Presentation.Nav();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
@@ -41,7 +40,6 @@
             // mainPanel
             // 
             this.mainPanel.BackColor = System.Drawing.Color.White;
-            this.mainPanel.Controls.Add(this.addGradeButton);
             this.mainPanel.Controls.Add(this.label2);
             this.mainPanel.Controls.Add(this.gpa);
             this.mainPanel.Controls.Add(this.name);
@@ -94,16 +92,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Home Page";
             // 
-            // addGradeButton
-            // 
-            this.addGradeButton.Location = new System.Drawing.Point(384, 38);
-            this.addGradeButton.Name = "addGradeButton";
-            this.addGradeButton.Size = new System.Drawing.Size(148, 45);
-            this.addGradeButton.TabIndex = 5;
-            this.addGradeButton.Text = "Add Grade";
-            this.addGradeButton.UseVisualStyleBackColor = true;
-            this.addGradeButton.Click += new System.EventHandler(this.addGradeButton_Click);
-            // 
             // nav1
             // 
             this.nav1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -141,6 +129,5 @@
         private System.Windows.Forms.Label name;
         private System.Windows.Forms.Label gpa;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button addGradeButton;
     }
 }

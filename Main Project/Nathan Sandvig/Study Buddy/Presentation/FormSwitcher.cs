@@ -50,11 +50,13 @@ namespace Study_Buddy.Presentation
             form.ShowDialog();
             currentForm.Close();
         }
-        public static void OpenAddGradeForm(Form currentForm)
+        public static void OpenAddGradeForm(Form currentForm, Course course)
         {
             currentForm.Hide();
             AddGradeForm form = new AddGradeForm();
             form.StartPosition = FormStartPosition.Manual;
+            AddGradeFormController controller = new AddGradeFormController(form, course);
+            form.SetController(controller);
             form.ShowDialog();
             currentForm.Close();
         }

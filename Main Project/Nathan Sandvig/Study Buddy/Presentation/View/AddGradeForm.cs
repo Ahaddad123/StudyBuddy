@@ -49,8 +49,8 @@ namespace Study_Buddy.Presentation
             }
             if (valid)
             {
-                // add grade
-                controller.AddGrade();
+                controller.AddGrade(txtNameAssign.Text, points);
+                MessageBox.Show("Successfully added grade");
             }
         }
     }
