@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Study_Buddy.BusinessLogic;
 using System.Windows.Forms;
+using Study_Buddy.Presentation.View;
+using Study_Buddy.Presentation.Controller;
 
 namespace Study_Buddy.Presentation
 {
@@ -75,6 +77,16 @@ namespace Study_Buddy.Presentation
             StudyLogForm form = new StudyLogForm();
             form.StartPosition = FormStartPosition.Manual;
             StudyLogFormController controller = new StudyLogFormController(form);
+            form.SetController(controller);
+            form.ShowDialog();
+            currentForm.Close();
+        }
+        public static void OpenUserInfoForm(Form currentForm)
+        {
+            currentForm.Hide();
+            UserInfoForm form = new UserInfoForm();
+            form.StartPosition = FormStartPosition.Manual;
+            UserInfoFormController controller = new UserInfoFormController(form);
             form.SetController(controller);
             form.ShowDialog();
             currentForm.Close();
