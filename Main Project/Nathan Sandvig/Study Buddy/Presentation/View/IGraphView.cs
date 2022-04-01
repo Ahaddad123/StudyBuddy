@@ -18,5 +18,8 @@ namespace Study_Buddy.Presentation
         void DrawGradeGraph(List<DateTime> xValues, List<double> yValues);
         //Draws a graph of hours studied for a course in a given week
         void DrawStudyLogGraph(int weekID, List<string> xValues, List<int> yValues);
+
+        //Draws a graph of grades vs time
+        void DrawGPAGraph(List<DateTime> xValues, List<double> yValues);
     }
 }
