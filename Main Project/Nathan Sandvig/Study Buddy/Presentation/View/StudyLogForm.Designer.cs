@@ -30,6 +30,7 @@
         {
             this.mainPanel = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbCourses = new System.Windows.Forms.ComboBox();
             this.butAddHours = new System.Windows.Forms.Button();
             this.txtHours = new System.Windows.Forms.TextBox();
             this.txtDayDate = new System.Windows.Forms.TextBox();
@@ -40,7 +41,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.cmbCourses = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
             this.mainPanel.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -49,6 +52,10 @@
             // 
             this.mainPanel.BackColor = System.Drawing.Color.White;
             this.mainPanel.Controls.Add(this.groupBox1);
+            this.mainPanel.Controls.Add(this.txtWeekNum);
+            this.mainPanel.Controls.Add(this.txtDayDate);
+            this.mainPanel.Controls.Add(this.label5);
+            this.mainPanel.Controls.Add(this.label3);
             this.mainPanel.Location = new System.Drawing.Point(287, 116);
             this.mainPanel.Margin = new System.Windows.Forms.Padding(2);
             this.mainPanel.MaximumSize = new System.Drawing.Size(810, 585);
@@ -59,20 +66,26 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.dateTimePicker2);
             this.groupBox1.Controls.Add(this.cmbCourses);
             this.groupBox1.Controls.Add(this.butAddHours);
             this.groupBox1.Controls.Add(this.txtHours);
-            this.groupBox1.Controls.Add(this.txtDayDate);
-            this.groupBox1.Controls.Add(this.txtWeekNum);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(119, 75);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(340, 223);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
+            // 
+            // cmbCourses
+            // 
+            this.cmbCourses.FormattingEnabled = true;
+            this.cmbCourses.Location = new System.Drawing.Point(66, 44);
+            this.cmbCourses.Name = "cmbCourses";
+            this.cmbCourses.Size = new System.Drawing.Size(121, 21);
+            this.cmbCourses.TabIndex = 10;
             // 
             // butAddHours
             // 
@@ -95,14 +108,14 @@
             // 
             // txtDayDate
             // 
-            this.txtDayDate.Location = new System.Drawing.Point(66, 99);
+            this.txtDayDate.Location = new System.Drawing.Point(478, 297);
             this.txtDayDate.Name = "txtDayDate";
             this.txtDayDate.Size = new System.Drawing.Size(100, 20);
             this.txtDayDate.TabIndex = 7;
             // 
             // txtWeekNum
             // 
-            this.txtWeekNum.Location = new System.Drawing.Point(66, 74);
+            this.txtWeekNum.Location = new System.Drawing.Point(392, 333);
             this.txtWeekNum.Name = "txtWeekNum";
             this.txtWeekNum.Size = new System.Drawing.Size(100, 20);
             this.txtWeekNum.TabIndex = 6;
@@ -121,7 +134,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(25, 102);
+            this.label5.Location = new System.Drawing.Point(362, 340);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(26, 13);
             this.label5.TabIndex = 3;
@@ -131,7 +144,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(15, 77);
+            this.label3.Location = new System.Drawing.Point(436, 301);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 13);
             this.label3.TabIndex = 1;
@@ -173,27 +186,50 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // cmbCourses
+            // dateTimePicker1
             // 
-            this.cmbCourses.FormattingEnabled = true;
-            this.cmbCourses.Location = new System.Drawing.Point(66, 44);
-            this.cmbCourses.Name = "cmbCourses";
-            this.cmbCourses.Size = new System.Drawing.Size(121, 21);
-            this.cmbCourses.TabIndex = 10;
+            this.dateTimePicker1.Location = new System.Drawing.Point(0, 0);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 3;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(66, 88);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker2.TabIndex = 13;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(19, 94);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "label4";
             // 
             // StudyLogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(150)))), ((int)(((byte)(231)))));
-            this.ClientSize = new System.Drawing.Size(946, 547);
+            this.ClientSize = new System.Drawing.Size(948, 553);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.mainPanel);
             this.MaximumSize = new System.Drawing.Size(964, 592);
+            this.MinimumSize = new System.Drawing.Size(964, 592);
             this.Name = "StudyLogForm";
             this.Text = "Form Template";
+            this.Controls.SetChildIndex(this.mainPanel, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.button1, 0);
+            this.Controls.SetChildIndex(this.nav1, 0);
+            this.Controls.SetChildIndex(this.dateTimePicker1, 0);
             this.mainPanel.ResumeLayout(false);
+            this.mainPanel.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -215,5 +251,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbCourses;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

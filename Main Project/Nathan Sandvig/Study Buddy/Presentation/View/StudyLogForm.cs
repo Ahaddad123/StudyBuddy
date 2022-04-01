@@ -20,6 +20,7 @@ namespace Study_Buddy.Presentation
             this.title = "Study Log Form";
             this.Text = title;
             this.mainHeader.Text = title;
+            this.nav1.SetCurrentForm(this);
         }
 
         //---------------------------------------------------------------------
