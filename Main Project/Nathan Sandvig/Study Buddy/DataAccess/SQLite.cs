@@ -12,7 +12,7 @@ namespace Study_Buddy.DataAccess
 {
     public class SQLite
     {
-        public static void main() 
+        static void main() 
         {
             SQLite db = new SQLite();
             SQLiteConnection sqlite_connection;
