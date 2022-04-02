@@ -86,7 +86,7 @@ namespace Study_Buddy.Presentation
                 MessageBox.Show("No Course was selected");
                 valid = false;
             }*/
-
+            duedate = dtpAssignDate.Value;
             if (points < 0)
             {
                 MessageBox.Show("Invalid Total Points");
@@ -104,7 +104,7 @@ namespace Study_Buddy.Presentation
                 // wip does not like courseName
                 //controller.AddAssignment(courseName, txtNameAssign.Text,points,weight);
                 MessageBox.Show("Assignment added");
-                controller.AddAssignment(comCourses.Text, txtNameAssign.Text, points, weight);
+                controller.AddAssignment(comCourses.Text, txtNameAssign.Text, points, weight, duedate);
             }
         }
 

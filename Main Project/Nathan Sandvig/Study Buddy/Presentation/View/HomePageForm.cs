@@ -61,7 +61,8 @@ namespace Study_Buddy.Presentation
                 double hoursStudied = 0;
                 for (int j = 0; j <= (int)DateTime.Today.DayOfWeek; j++)
                 {
-                    hoursStudied += course.GetHoursStudied(j, 0);
+                    //added dummy value
+                    hoursStudied += course.GetHoursStudied(DateTime.Now);
                 }
                 Label label2 = new Label();
                 label2.Text = hoursStudied + "/" + "study goal";

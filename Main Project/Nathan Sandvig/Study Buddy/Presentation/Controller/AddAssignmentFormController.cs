@@ -14,7 +14,7 @@ namespace Study_Buddy.Presentation
         {
             this.view = form;
         }
-        public void AddAssignment(String courseName, string name, int totalPoints, int weight)
+        public void AddAssignment(String courseName, string name, int totalPoints, int weight, DateTime date)
         {
             //Add the assignment
             Course course = null;
@@ -25,7 +25,7 @@ namespace Study_Buddy.Presentation
                     course = c;
                 }
             }
-            course.AddAssignment(name, totalPoints, weight);
+            course.AddAssignment(name, totalPoints, weight, date);
         }
     }
 }

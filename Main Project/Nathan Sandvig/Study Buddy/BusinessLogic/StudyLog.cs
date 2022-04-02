@@ -9,7 +9,7 @@ namespace Study_Buddy.BusinessLogic
 {
     public class StudyLog
     {
-        Dictionary<int , Dictionary<int , double>> Log = new Dictionary<int , Dictionary<int, double>>();
+        Dictionary<DateTime, double> Log = new Dictionary<DateTime, double>();
 
         //---------------------------------------------------------------------
         // default constructor for studylog
@@ -18,7 +18,7 @@ namespace Study_Buddy.BusinessLogic
         //---------------------------------------------------------------------
         public StudyLog()
         {
-            Log = new Dictionary<int ,Dictionary<int, double>>();
+            Log = new Dictionary<DateTime, double>();
         }
 
         //---------------------------------------------------------------------
@@ -26,16 +26,9 @@ namespace Study_Buddy.BusinessLogic
         // v1: Created the method - Andrew V, 3-7-22
         // v2: Modified for new log structure - Andrew V, 3-19-22
         //---------------------------------------------------------------------
-        public StudyLog(int week, int day, double hours)
+        public StudyLog(DateTime date, double hours)
         {
-            Dictionary<int, double> dayLog = new Dictionary<int, double>()
-            {
-                {day, hours},
-            };
-            Log = new Dictionary<int , Dictionary<int, double>>()
-            {
-                {week,dayLog},
-            };
+            Log = new Dictionary<DateTime, double>();
         }
 
         //---------------------------------------------------------------------
@@ -45,27 +38,15 @@ namespace Study_Buddy.BusinessLogic
         // v1: Created the method - Andrew V, 3-7-22
         // v2: Modified for new log structure - Andrew V, 3-19-22
         //---------------------------------------------------------------------
-        public void AddTimeToLog(double newTime, int day, int week)
+        public void AddTimeToLog(double newTime, DateTime date)
         {
-            if(Log.ContainsKey(week))
+            if(Log.ContainsKey(date))
             {
-                Dictionary<int, double> checkLog = Log[week];
-                if(checkLog.ContainsKey(day))
-                {
-                    checkLog[day] = newTime + checkLog[day];
-                    Log[week] = checkLog;
-                }
-                else
-                {
-                    checkLog.Add(day, newTime);
-                    Log[week] = checkLog;
-                }
+                Log[date] = Log[date] + newTime;
             }
             else
             {
-                Dictionary<int, double> checkLog = new Dictionary<int, double>();
-                checkLog.Add(day, newTime);
-                Log.Add(week, checkLog);
+                Log.Add(date, newTime);
             }
         }
 
@@ -75,16 +56,11 @@ namespace Study_Buddy.BusinessLogic
         // v1: Created the method - Andrew V, 3-7-22
         // v2: Modified for new log structure - Andrew V, 3-20-22
         //---------------------------------------------------------------------
-        public double GetHours(int day, int week)
+        public double GetHours(DateTime date)
          {
-            if (Log.ContainsKey(week))
+            if (Log.ContainsKey(date))
             {
-                Dictionary<int, double> checkLog = Log[week];
-                if (checkLog.ContainsKey(day))
-                {
-                    return checkLog[day];
-                }
-                else { return 0.0; }
+                return Log[date];
             }
             else { return 0.0; }
          }

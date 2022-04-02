@@ -15,9 +15,9 @@ namespace Study_Buddy.Presentation
             this.view = form;
         }
 
-        public void AddHours(Course info,int week,int day, double hours)
+        public void AddHours(Course info,DateTime date, double hours)
         {
-            info.LogHours(hours,day,week);
+            info.LogHours(hours,date);
         }
     }
 }

@@ -30,6 +30,8 @@
         {
             this.mainPanel = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpAssignDate = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.comCourses = new System.Windows.Forms.ComboBox();
             this.butAddAssig = new System.Windows.Forms.Button();
@@ -39,8 +41,6 @@
             this.txtPriority = new System.Windows.Forms.TextBox();
             this.txtPointsAssign = new System.Windows.Forms.TextBox();
             this.txtNameAssign = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.DTPassignDate = new System.Windows.Forms.DateTimePicker();
             this.mainPanel.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -59,7 +59,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.groupBox1.Controls.Add(this.DTPassignDate);
+            this.groupBox1.Controls.Add(this.dtpAssignDate);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.comCourses);
@@ -75,6 +75,23 @@
             this.groupBox1.Size = new System.Drawing.Size(353, 205);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
+            // 
+            // dtpAssignDate
+            // 
+            this.dtpAssignDate.Location = new System.Drawing.Point(74, 159);
+            this.dtpAssignDate.Name = "dtpAssignDate";
+            this.dtpAssignDate.Size = new System.Drawing.Size(180, 20);
+            this.dtpAssignDate.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(17, 166);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Due date";
             // 
             // label5
             // 
@@ -156,23 +173,6 @@
             this.txtNameAssign.Size = new System.Drawing.Size(248, 20);
             this.txtNameAssign.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(17, 166);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Due date";
-            // 
-            // DTPassignDate
-            // 
-            this.DTPassignDate.Location = new System.Drawing.Point(74, 159);
-            this.DTPassignDate.Name = "DTPassignDate";
-            this.DTPassignDate.Size = new System.Drawing.Size(180, 20);
-            this.DTPassignDate.TabIndex = 10;
-            // 
             // AddAssignmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -206,7 +206,7 @@
         private System.Windows.Forms.TextBox txtNameAssign;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comCourses;
-        private System.Windows.Forms.DateTimePicker DTPassignDate;
+        private System.Windows.Forms.DateTimePicker dtpAssignDate;
         private System.Windows.Forms.Label label1;
     }
 }

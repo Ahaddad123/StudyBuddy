@@ -70,9 +70,9 @@ namespace Study_Buddy.BusinessLogic
         // weight: The weight of the assignment
         // v1: Created the method - Andrew V, 3-5-22
         //---------------------------------------------------------------------
-        public void AddAssignment(string name, int totalPoints, int weight)
+        public void AddAssignment(string name, int totalPoints, int weight, DateTime date)
         {
-            assignments.Add(new Assignment(totalPoints, name, weight));
+            assignments.Add(new Assignment(totalPoints, name, weight, date));
         }
 
         //---------------------------------------------------------------------
@@ -157,14 +157,13 @@ namespace Study_Buddy.BusinessLogic
         // time: The time spent studying in hours
         // v1: Created the method - Nathan S, 3-7-22
         //---------------------------------------------------------------------
-        public void LogHours(double time, int day, int week)
+        public void LogHours(double time, DateTime date)
         {
-            if(time > 0)
-            {
-                int date = DateTime.Now.Year * 10000 + DateTime.Now.Month * 100 + DateTime.Now.Day;
+            
+                
                 //Commeted it out because the format of the log was changed tests will fail
-                hourLog.AddTimeToLog(time, day, week);
-            }
+                hourLog.AddTimeToLog(time, date);
+            
         }
 
         //---------------------------------------------------------------------
@@ -173,9 +172,9 @@ namespace Study_Buddy.BusinessLogic
         // return: The number of hours studied that day
         // v1: Created the method - Nathan S, 3-7-22
         //---------------------------------------------------------------------
-        public double GetHoursStudied(int day, int week)
+        public double GetHoursStudied(DateTime date)
         {
-            return hourLog.GetHours(day, week);
+            return hourLog.GetHours(date);
         }
     }
 }
