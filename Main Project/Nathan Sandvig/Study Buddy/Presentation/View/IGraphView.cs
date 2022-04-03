@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Study_Buddy.Presentation.Model;
 
 namespace Study_Buddy.Presentation
 {
@@ -21,5 +22,7 @@ namespace Study_Buddy.Presentation
 
         //Draws a graph of grades vs time
         void DrawGPAGraph(List<DateTime> xValues, List<double> yValues);
+
+        void SetUserInfo(string name, string school, double gpa);
     }
 }

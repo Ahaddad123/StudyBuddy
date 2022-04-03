@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Study_Buddy.Presentation.Model;
 
 namespace Study_Buddy.Presentation
 {
-    public partial class GraphUserControl : UserControl, IGraphView
+    public partial class GraphUserControl : UserControl//, IGraphView
     {
         private GraphController controller;
         public GraphUserControl()

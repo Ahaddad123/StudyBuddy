@@ -103,5 +103,10 @@ namespace Study_Buddy.Presentation
             Button button = (Button)sender;
             FormSwitcher.OpenAddGradeForm(this, (Course)button.Tag);
         }
+
+        private void btnViewMyInfo_Click(object sender, EventArgs e)
+        {
+            FormSwitcher.OpenUserInfoForm(this);
+        }
     }
 }

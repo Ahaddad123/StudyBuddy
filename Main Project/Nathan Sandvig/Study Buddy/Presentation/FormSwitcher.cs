@@ -86,7 +86,31 @@ namespace Study_Buddy.Presentation
             currentForm.Hide();
             UserInfoForm form = new UserInfoForm();
             form.StartPosition = FormStartPosition.Manual;
-            UserInfoFormController controller = new UserInfoFormController(form);
+            UserInfoFormController controller = new UserInfoFormController(form, new Account("Billy Bob", "BillyBobsPassword", 666));
+            controller.DrawGPAGraph();
+            controller.SetUserInfo();
+            form.SetController(controller);
+            form.ShowDialog();
+            currentForm.Close();
+        }
+
+        //Below methods used for opening forms that do not inherit BaseForm
+        public static void OpenRegistrationForm(Form currentForm)
+        {
+            currentForm.Hide();
+            RegistrationForm form = new RegistrationForm();
+            form.StartPosition = FormStartPosition.Manual;
+            RegistrationFormController controller = new RegistrationFormController(form);
+            form.SetController(controller);
+            form.ShowDialog();
+            currentForm.Close();
+        }
+        public static void OpenInitialSetupForm(Form currentForm)
+        {
+            currentForm.Hide();
+            InitialSetupForm form = new InitialSetupForm();
+            form.StartPosition = FormStartPosition.Manual;
+            InitialSetupFormController controller = new InitialSetupFormController(form);
             form.SetController(controller);
             form.ShowDialog();
             currentForm.Close();

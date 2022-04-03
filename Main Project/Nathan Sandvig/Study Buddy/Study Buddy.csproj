@@ -81,6 +81,9 @@
     <Compile Include="Presentation\Controller\AddAssignmentFormController.cs" />
     <Compile Include="Presentation\Controller\AddCourseFormController.cs" />
     <Compile Include="Presentation\Controller\AddGradeFormController.cs" />
+    <Compile Include="Presentation\Controller\InitialSetupFormController.cs" />
+    <Compile Include="Presentation\Controller\RegistrationFormController.cs" />
+    <Compile Include="Presentation\Controller\LoginFormController.cs" />
     <Compile Include="Presentation\Controller\UserInfoFormController.cs" />
     <Compile Include="Presentation\FormController.cs" />
     <Compile Include="Presentation\Controller\CourseInfoFormController.cs" />
@@ -92,9 +95,28 @@
     <Compile Include="Presentation\GraphUserControl.Designer.cs">
       <DependentUpon>GraphUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Model\GPAGraph.cs" />
     <Compile Include="Presentation\Model\GradeGraph.cs" />
     <Compile Include="Presentation\Model\Graph.cs" />
     <Compile Include="Presentation\Model\GraphController.cs" />
+    <Compile Include="Presentation\View\InitialSetupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\View\InitialSetupForm.Designer.cs">
+      <DependentUpon>InitialSetupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\View\RegistrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\View\RegistrationForm.Designer.cs">
+      <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\View\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\View\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\View\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +200,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\View\AddAssignmentForm.resx">
       <DependentUpon>AddAssignmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\View\InitialSetupForm.resx">
+      <DependentUpon>InitialSetupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\View\RegistrationForm.resx">
+      <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\View\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\View\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
