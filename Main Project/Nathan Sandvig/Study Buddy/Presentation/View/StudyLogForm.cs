@@ -38,7 +38,7 @@ namespace Study_Buddy.Presentation
             double hours = 0;
             DateTime date;
             Course course = new Course();
-            Account test = new Account("","",0);
+            Account test = new Account("","");
 
             if (cmbCourses.SelectedIndex < 1)
             {

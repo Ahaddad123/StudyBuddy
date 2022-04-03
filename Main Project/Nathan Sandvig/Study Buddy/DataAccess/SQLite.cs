@@ -46,6 +46,20 @@ namespace Study_Buddy.DataAccess
             return sqlite_conn;
         }
 
+        public static int checkAccount(String username, String password, int userid) 
+        {
+            using (SQLiteConnection sqlite_conn = new SQLiteConnection(LoadConnectionString())) 
+            { 
+                SQLiteCommand checkAccounts;
+                checkAccounts = sqlite_conn.CreateCommand();
+
+                String command = "SELECT * FROM AccountData WHERE(Username = @username)";
+                checkAccounts.CommandText = command;
+                int UserExists = (int)checkAccounts.ExecuteScalar();
+                return UserExists;
+            }
+        }
+
         public static void InsertAccountData(SQLiteConnection sqlite_conn, String username, String password, int userid) 
         {
             SQLiteCommand insertAccountDataa;
@@ -53,6 +67,7 @@ namespace Study_Buddy.DataAccess
 
             String command = "INSERT INTO AccountData(Username, Password, userid) VALUES (@username, @password, @userid)";
             insertAccountDataa.CommandText = command;
+            insertAccountDataa.ExecuteNonQuery();
         }
 
         

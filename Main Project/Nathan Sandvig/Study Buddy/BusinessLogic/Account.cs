@@ -11,43 +11,20 @@ namespace Study_Buddy.BusinessLogic
     {
         internal String username; //Login username
         internal String password; //Login password
-        internal int userID; //This is the ID for the database to track accounts
+        //internal int userID; //This is the ID for the database to track accounts
         SQLite database = new SQLite();
 
         public List<Course> courses { get; set; } = new List<Course>();
 
-        public Account(String newUsername, String newPassword, int newUserID){
+        public Account(String newUsername, String newPassword){
             username = newUsername;
             password = newPassword;
-            userID = newUserID;
         }
 
-        public Boolean CheckCreateAccount(String username, String password) {
-
-            Boolean AccountCreated = database.CheckAccountUsername(username);
-            
-            if (!AccountCreated) {
-                database.InsertAccountData(username, password);
-            }
-
-            return AccountCreated;
-        }
-
-        public Boolean Login(String username, String password)
+        public int accountCreated(String username, String password)
         {
-            Boolean isCorrect = false;
-            Boolean isUserCorrect = database.CheckAccountUsername(username);
-            Boolean isPassCorrect = false;
-
-            if (isUserCorrect) {
-                isPassCorrect = database.CheckAccountPassword(password);
-            }
-
-            if (isPassCorrect) {
-                isCorrect = true;
-            }
-
-            return isCorrect;
+            int acc = 1;
+            return acc;
         }
 
         //---------------------------------------------------------------------

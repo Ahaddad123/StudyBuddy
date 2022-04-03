@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Study_Buddy.Presentation;
 using Study_Buddy.Presentation.Controller;
+using Study_Buddy.BusinessLogic;
 
 namespace Study_Buddy.Presentation.View
 {
@@ -116,6 +117,22 @@ namespace Study_Buddy.Presentation.View
         private void btnCreateNewAccount_Click(object sender, EventArgs e)
         {
             FormSwitcher.OpenRegistrationForm(this);
+        }
+
+        private void btn_login(object sender, EventArgs e)
+        {
+            String newUsername = textBox2.Text;
+            String newPassword = textBox1.Text;
+            Account acc = new Account(newUsername, newPassword);
+
+            int valid = acc.accountCreated(newUsername, newPassword);
+
+            if (valid == 0)
+            {
+                MessageBox.Show("Invalid Username/Password or Account Does Not Exist.");
+            }
+            else
+                FormSwitcher.OpenHomePageForm(this);
         }
     }
 }
