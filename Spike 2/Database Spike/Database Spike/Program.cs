@@ -15,7 +15,7 @@ namespace SQLiteDemo
             SQLiteConnection sqlite_conn;
             sqlite_conn = CreateConnection();
             //CreateTable(sqlite_conn);
-            InsertData(sqlite_conn);
+            //InsertData(sqlite_conn);
             ReadData(sqlite_conn);
         }
 

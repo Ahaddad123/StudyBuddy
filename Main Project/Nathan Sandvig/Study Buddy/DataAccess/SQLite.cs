@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.SqlClient;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
@@ -32,7 +33,7 @@ namespace Study_Buddy.DataAccess
 
             SQLiteConnection sqlite_conn;
             // Create a new database connection:
-            sqlite_conn = new SQLiteConnection("Data Source=database.db; Version = 3; New = True; Compress = True; ");
+            sqlite_conn = new SQLiteConnection("Data Source=NathansData.db; Version = 3; New = True; Compress = True; ");
             // Open the connection:
             try
             {
@@ -45,6 +46,16 @@ namespace Study_Buddy.DataAccess
             return sqlite_conn;
         }
 
+        public static void InsertAccountData(SQLiteConnection sqlite_conn, String username, String password, int userid) 
+        {
+            SQLiteCommand insertAccountDataa;
+            insertAccountDataa = sqlite_conn.CreateCommand();
+
+            String command = "INSERT INTO AccountData(Username, Password, userid) VALUES (@username, @password, @userid)";
+            insertAccountDataa.CommandText = command;
+        }
+
+        
         public static void addAccount(BusinessLogic.Account account1) 
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
@@ -58,66 +69,26 @@ namespace Study_Buddy.DataAccess
             return System.Configuration.ConfigurationManager.ConnectionStrings[id].ConnectionString;
         }
 
-        public Boolean InsertAccountData(String username, String password) {
-            Boolean result = false;
+        public static void addAccount()
+        {
+            try
+            {
+                var cb = new SqlConnectionStringBuilder();
+                cb.DataSource = "studybuddyserverintermediate2022.database.windows.net";
+                cb.UserID = "ahaddad123";
+                cb.Password = "Jiddo123";
+                cb.InitialCatalog = "StudyBuddyDatabase";
 
-            // Insert username and password into table for account information, potentially add more needed information later on
+                using (var connection = new SqlConnection(cb.ConnectionString))
+                {
+                    connection.Open();
 
-            return result;
+                }
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.ToString());
+            }
         }
-
-        public Boolean CheckAccountUsername(String username) {
-            Boolean result = false;
-
-            // Query username data against database to see if it exists / is the right username
-
-            return result;
-        }
-
-        public Boolean CheckAccountPassword(String password) {
-            Boolean result = false;
-
-            // Query password data against database to see if it is the right password
-
-            return result;
-        }
-
-        public Boolean InsertAssignment() {
-            Boolean result = false;
-
-            return result;
-        }
-
-        public Boolean InsertGrade() {
-            Boolean result = false;
-
-            return result;
-        }
-
-        public Boolean InsertCourse() { 
-            Boolean result = false;
-
-            return result;
-        }
-
-        public Boolean RemoveCourse() {
-            Boolean result = false;
-
-            // Remove course from the course table
-
-            result = RemoveCourseData();
-            return result;
-        }
-
-        public Boolean RemoveCourseData() {
-            Boolean result = false;
-
-            // Add code to remove the course data from all the tables
-
-            return result;
-        }
-
-
-
     }
 }

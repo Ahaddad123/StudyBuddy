@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SqlClient;
 using System.Collections.Generic;
 using System.Linq;
 using System.Data.SQLite;
@@ -17,14 +18,19 @@ namespace Study_Buddy
         [STAThread]
         static void Main()
         {
-            SQLite db = new SQLite();
-            SQLiteConnection sqlite_connection;
-            sqlite_connection = db.CreateConnection();
+
+            //Launching GUI application
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             HomePageForm form = new HomePageForm();
             form.StartPosition = FormStartPosition.Manual;
             Application.Run(form);
+
+
+            //SQLite version connection
+            //SQLite db = new SQLite();
+            //SQLiteConnection sqlite_connection;
+            //sqlite_connection = db.CreateConnection();
         }
     }
 }
