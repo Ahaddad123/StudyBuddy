@@ -32,12 +32,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.gpa = new System.Windows.Forms.Label();
             this.name = new System.Windows.Forms.Label();
+            this.btnViewMyInfo = new System.Windows.Forms.Button();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainPanel
             // 
             this.mainPanel.BackColor = System.Drawing.Color.White;
+            this.mainPanel.Controls.Add(this.btnViewMyInfo);
             this.mainPanel.Controls.Add(this.label2);
             this.mainPanel.Controls.Add(this.gpa);
             this.mainPanel.Controls.Add(this.name);
@@ -78,9 +80,19 @@
             this.name.TabIndex = 0;
             this.name.Text = "label";
             // 
+            // btnViewMyInfo
+            // 
+            this.btnViewMyInfo.Location = new System.Drawing.Point(430, 61);
+            this.btnViewMyInfo.Name = "btnViewMyInfo";
+            this.btnViewMyInfo.Size = new System.Drawing.Size(75, 23);
+            this.btnViewMyInfo.TabIndex = 5;
+            this.btnViewMyInfo.Text = "View My info";
+            this.btnViewMyInfo.UseVisualStyleBackColor = true;
+            this.btnViewMyInfo.Click += new System.EventHandler(this.btnViewMyInfo_Click);
+            // 
             // HomePageForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(150)))), ((int)(((byte)(231)))));
             this.ClientSize = new System.Drawing.Size(945, 544);
@@ -103,5 +115,6 @@
         private System.Windows.Forms.Label name;
         private System.Windows.Forms.Label gpa;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnViewMyInfo;
     }
 }
