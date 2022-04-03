@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Study_Buddy.Presentation
+namespace Study_Buddy.Presentation.Model
 {
     public class GraphController 
     {

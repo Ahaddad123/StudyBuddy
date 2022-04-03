@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using Study_Buddy.BusinessLogic;
-using Study_Buddy.Presentation;
+using Study_Buddy.Presentation.Model;
 
 namespace Study_Buddy.Presentation.View
 {
@@ -162,6 +162,11 @@ namespace Study_Buddy.Presentation.View
         private void mainTableLayoutPanel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public void SetUserInfo(string name, string school, double gpa)
+        {
+            throw new NotImplementedException();
         }
     }
 }

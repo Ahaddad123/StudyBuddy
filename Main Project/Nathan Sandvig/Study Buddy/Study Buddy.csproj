@@ -95,6 +95,7 @@
     <Compile Include="Presentation\GraphUserControl.Designer.cs">
       <DependentUpon>GraphUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Model\GPAGraph.cs" />
     <Compile Include="Presentation\Model\GradeGraph.cs" />
     <Compile Include="Presentation\Model\Graph.cs" />
     <Compile Include="Presentation\Model\GraphController.cs" />

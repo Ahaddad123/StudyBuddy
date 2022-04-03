@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Study_Buddy.BusinessLogic;
 using Study_Buddy.Presentation.View;
+using Study_Buddy.Presentation.Model;
 
 namespace Study_Buddy.Presentation
 {

@@ -14,19 +14,17 @@ namespace Study_Buddy.Presentation.Model
     // is not yet implemented.
     // v1: Created the class - Peter H, 3-7-22
     //---------------------------------------------------------------------
-    public class GradeGraph : Graph
+    public class GPAGraph : Graph
     {
         //---------------------------------------------------------------------
         // Private data members:
         // datesAndAverageGrades : maps a DateTime to the course's average.
         // Will be obtained from the course, but not fully implemented yet.
         // grade on that date.
-        // course : the course whose grades are being graphed
         // datesX : a list of dates to be graphed on the X axis
         // averageGradesY : a list of avg grades to be graphed on the Y axis
         //---------------------------------------------------------------------
         //private Dictionary<DateTime, double> datesAndAverageGrades;
-        private Course course;
         private List<DateTime> datesX;
         private List<double> averageGradesY;
 
@@ -35,11 +33,12 @@ namespace Study_Buddy.Presentation.Model
         // creates default data to graph.
         // v1: Created the method - Peter H, 3-7-22
         //---------------------------------------------------------------------
-        public GradeGraph(Course course)
+        public GPAGraph(List<DateTime> datesX, List<double> averageGradesY)
         {
-            this.course = course;
-            datesX = new List<DateTime>();
-            averageGradesY = new List<double>();
+            //this.datesX = datesX;
+            //this.averageGradesY = averageGradesY;
+            this.datesX = new List<DateTime>();
+            this.averageGradesY = new List<double>();
             //Fill with default data
             GenerateTestData();
             //GetCourseData();
