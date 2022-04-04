@@ -35,6 +35,8 @@ namespace Study_Buddy.BusinessLogic
 
         public Boolean createAccount(String username, String password, String email)
         {
+            database.createTables();
+
             int acc = database.InsertAccountData(username, password, email);
 
             if (acc == -1)
