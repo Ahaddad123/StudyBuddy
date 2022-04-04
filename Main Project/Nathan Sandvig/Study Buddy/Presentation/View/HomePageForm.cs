@@ -21,8 +21,8 @@ namespace Study_Buddy.Presentation
             InitializeComponent();
             this.MaximumSize = new System.Drawing.Size(1366, 768);
             this.Size = new System.Drawing.Size(1366, 768);
-            this.mainPanel.MaximumSize = new System.Drawing.Size(1080, 720);
-            this.mainPanel.Size = new System.Drawing.Size(1080, 720);
+            //this.mainPanel.MaximumSize = new System.Drawing.Size(1080, 720);
+            //this.tableLayoutPanel2.Size = new System.Drawing.Size(1080, 720);
             this.title = "Home Page";
             this.Text = title;
             this.mainHeader.Text = title;
@@ -46,7 +46,7 @@ namespace Study_Buddy.Presentation
             int red = 235;
             int green = 131;
             int blue = 131;
-            int locationindex = 180;
+            int locationindex = 25;
             for (int i = 0; i < account.courses.Count; i++)
             {
                 //Course course = controller.getCourses()[i];
@@ -57,7 +57,7 @@ namespace Study_Buddy.Presentation
                 label.Location = new Point(40, locationindex);
                 label.Size = new Size(250, 25);
                 label.Font = new Font("Microsoft Sans Serif", 13);
-                this.mainPanel.Controls.Add(label);
+                this.panel1.Controls.Add(label);
                 double hoursStudied = 0;
                 DateTime today = DateTime.Today;
                 for (int j = 0; j <= (int)today.DayOfWeek; j++)
@@ -72,7 +72,7 @@ namespace Study_Buddy.Presentation
                 label2.Size = new Size(250, 25);
                 label2.Font = new Font("Microsoft Sans Serif", 13);
                 label2.TextAlign = ContentAlignment.TopRight;
-                this.mainPanel.Controls.Add(label2);
+                this.panel1.Controls.Add(label2);
 
                 Button button = new Button();
                 button.BackColor = Color.LightGray;
@@ -83,7 +83,7 @@ namespace Study_Buddy.Presentation
                 button.Click += new EventHandler(this.addGradeButton_Click);
                 button.Tag = course;
                 button.Margin = new Padding(0);
-                this.mainPanel.Controls.Add(button);
+                this.panel1.Controls.Add(button);
 
                 locationindex += 27;
                 if(i%3 == 0)
