@@ -10,7 +10,7 @@ namespace Algorithms
     // This class manages the first algorithm
     // v1: Created the class - Nathan S, 3-24-22
     //-------------------------------------------------------------------------
-    internal class Algorithm1 : Algorithm
+    internal class Algorithm2 : Algorithm
     {
         //---------------------------------------------------------------------
         // Attributes:
@@ -26,7 +26,7 @@ namespace Algorithms
         // Default constructor for the algorithm1 class
         // v1: Created the constructor - Nathan S, 3-24-22
         //---------------------------------------------------------------------
-        public Algorithm1(LinkedList<Tuple<double, double>> assignmentLog)
+        public Algorithm2(LinkedList<Tuple<double, double>> assignmentLog)
         {
             this.assignmentLog = assignmentLog;
         }
@@ -48,11 +48,24 @@ namespace Algorithms
                 gradeSum += pair.Item2;
             }
 
+            // Create and calculate the averages
+            double averageHours = hourSum / assignmentLog.Count;
+            double averageGrade = gradeSum / assignmentLog.Count;
+
+            // Create the numerator and denominator for the slope
+            double numerator = 0.0;
+            double denominator = 0.0;
+            foreach (Tuple<double, double> pair in assignmentLog)
+            {
+                numerator += ((pair.Item1 - averageHours) * (pair.Item2 - averageGrade));
+                denominator += ((pair.Item1 - averageHours) * (pair.Item1 - averageHours));
+            }
+
             // Calculate the slope
-            hoursPerPercent = hourSum / gradeSum;
+            hoursPerPercent = numerator / denominator;
 
             // Calculate the intercept
-            baseGrade = 0.0;
+            baseGrade = averageGrade - (hoursPerPercent * averageHours);
         }
 
         //---------------------------------------------------------------------
@@ -64,7 +77,7 @@ namespace Algorithms
         override public double HoursForGrade(double targetGrade)
         {
             CalculateFunction();
-            return (targetGrade - baseGrade) * hoursPerPercent;
+            return (targetGrade - baseGrade) / hoursPerPercent;
         }
     }
 }
