@@ -81,5 +81,10 @@ namespace Study_Buddy.Presentation.View
                 MessageBox.Show("Succesfully added " + course.name);
             }
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

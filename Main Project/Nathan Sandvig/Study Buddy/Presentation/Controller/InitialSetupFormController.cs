@@ -13,5 +13,12 @@ namespace Study_Buddy.Presentation.Controller
         {
             this.view = form;
         }
+
+        public void OpenAddCoursePopup(AddCoursePopupForm form)
+        {
+            AddCourseFormController controller = new AddCourseFormController(new AddCourseForm());
+            form.SetController(controller);
+            form.Show();
+        }
     }
 }

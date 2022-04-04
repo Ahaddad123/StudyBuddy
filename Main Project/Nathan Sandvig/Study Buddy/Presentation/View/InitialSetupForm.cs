@@ -120,5 +120,11 @@ namespace Study_Buddy.Presentation.View
         {
             FormSwitcher.OpenHomePageForm(this);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddCoursePopupForm form = new AddCoursePopupForm();
+            controller.OpenAddCoursePopup(form);
+        }
     }
 }

@@ -55,15 +55,16 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(230, 114);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(340, 223);
+            this.groupBox1.Size = new System.Drawing.Size(453, 293);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // butAddCourse
             // 
             this.butAddCourse.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.butAddCourse.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.butAddCourse.Location = new System.Drawing.Point(225, 157);
+            this.butAddCourse.Location = new System.Drawing.Point(251, 158);
             this.butAddCourse.Name = "butAddCourse";
             this.butAddCourse.Size = new System.Drawing.Size(98, 36);
             this.butAddCourse.TabIndex = 9;
@@ -73,28 +74,28 @@
             // 
             // txtCourseCredits
             // 
-            this.txtCourseCredits.Location = new System.Drawing.Point(66, 166);
+            this.txtCourseCredits.Location = new System.Drawing.Point(119, 176);
             this.txtCourseCredits.Name = "txtCourseCredits";
             this.txtCourseCredits.Size = new System.Drawing.Size(100, 31);
             this.txtCourseCredits.TabIndex = 8;
             // 
             // txtCoursePriority
             // 
-            this.txtCoursePriority.Location = new System.Drawing.Point(66, 136);
+            this.txtCoursePriority.Location = new System.Drawing.Point(119, 139);
             this.txtCoursePriority.Name = "txtCoursePriority";
             this.txtCoursePriority.Size = new System.Drawing.Size(100, 31);
             this.txtCoursePriority.TabIndex = 7;
             // 
             // txtCourseCode
             // 
-            this.txtCourseCode.Location = new System.Drawing.Point(66, 74);
+            this.txtCourseCode.Location = new System.Drawing.Point(109, 84);
             this.txtCourseCode.Name = "txtCourseCode";
             this.txtCourseCode.Size = new System.Drawing.Size(100, 31);
             this.txtCourseCode.TabIndex = 6;
             // 
             // txtCourseTitle
             // 
-            this.txtCourseTitle.Location = new System.Drawing.Point(66, 47);
+            this.txtCourseTitle.Location = new System.Drawing.Point(109, 47);
             this.txtCourseTitle.Name = "txtCourseTitle";
             this.txtCourseTitle.Size = new System.Drawing.Size(268, 31);
             this.txtCourseTitle.TabIndex = 5;
@@ -123,7 +124,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(19, 77);
+            this.label3.Location = new System.Drawing.Point(24, 90);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 25);
             this.label3.TabIndex = 1;
