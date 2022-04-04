@@ -68,24 +68,11 @@ namespace Study_Buddy.Presentation
                 valid = false;
             }
 
-            /*if(comCourses.SelectedIndex < 1)
+            if(cmbCourses.SelectedIndex == -1)
             {
-                try
-                {
-                    //List<Course> testCourses = test.courses;
-                    //courseName = testCourses[0];
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error choosing Course");
-                    valid = false;
-                }
-            }
-            else
-            {
-                MessageBox.Show("No Course was selected");
                 valid = false;
-            }*/
+                MessageBox.Show("No Course selected");
+            }
             duedate = dtpAssignDate.Value;
             if (points < 0)
             {
@@ -114,26 +101,6 @@ namespace Study_Buddy.Presentation
             {
                 cmbCourses.Items.Add(c.name);
             }
-        }
-
-        public void cmbCourses_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Account test = new Account("", "");
-            Course courseOne = new Course();
-            Course courseTwo = new Course();
-            Course courseThree = new Course();
-            test.addCourse(courseOne);
-            test.courses.Add(courseTwo);
-            test.courses.Add(courseThree);
-            Course[] courses = new Course[100];
-            for (int i = 0; i<courses.Length; i++)
-            {
-                courses[i] = test.courses[i];
-            }
-
-            BindingSource bindingSource = new BindingSource();
-            bindingSource.DataSource = courses;
-            cmbCourses.DataSource = bindingSource.DataSource;
         }
     }
 }

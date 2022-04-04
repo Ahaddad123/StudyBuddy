@@ -43,26 +43,11 @@ namespace Study_Buddy.Presentation
             Course course = new Course();
             Account test = new Account("", "");
 
-            /*if (cmbCourses.SelectedIndex < 1)
+            if(cmbCourses.SelectedIndex == -1)
             {
-                
-                try
-                {
-                    List<Course> testCourses = test.courses;
-                    course = testCourses[0];
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error choosing Course");
-                    valid = false;
-                }
-                
-            }
-            else
-            {
-                MessageBox.Show("No Course was selected");
                 valid = false;
-            }*/
+                MessageBox.Show("No course was selected");
+            }
 
             date = DTPhourDate.Value;
 
@@ -95,26 +80,6 @@ namespace Study_Buddy.Presentation
         private void button2_Click(object sender, EventArgs e)
         {
 
-        }
-
-        public void cmbCourses_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Account test = new Account("", "");
-            Course courseOne = new Course();
-            Course courseTwo = new Course();
-            Course courseThree = new Course();
-            test.addCourse(courseOne);
-            test.courses.Add(courseTwo);
-            test.courses.Add(courseThree);
-            Course[] courses = new Course[100];
-            for (int i = 0; i < courses.Length; i++)
-            {
-                courses[i] = test.courses[i];
-            }
-
-            BindingSource bindingSource = new BindingSource();
-            bindingSource.DataSource = courses;
-            cmbCourses.DataSource = bindingSource.DataSource;
         }
 
         private void StudyLogForm_Load(object sender, EventArgs e)

@@ -63,10 +63,6 @@ namespace Study_Buddy.DataAccess
             String createTables6 = "CREATE TABLE \"StudyHours\" (\"Hours\" INTEGER NOT NULL, \"Course ID\" INTEGER NOT NULL, \"Date\" INTEGER NOT NULL)";
             checkAccounts.CommandText = createTables6;
             checkAccounts.ExecuteNonQuery();
-
-            String createTables7 = "CREATE TABLE \"sqlite_sequence\" (\"name\", \"seq\")";
-            checkAccounts.CommandText = createTables7;
-            checkAccounts.ExecuteNonQuery();
         }
 
         public int checkAccount(String username, String password) 
