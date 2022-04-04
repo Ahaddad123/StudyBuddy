@@ -28,39 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.mainPanel = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtNameAssign = new System.Windows.Forms.ComboBox();
             this.butAddAssig = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPointsAssign = new System.Windows.Forms.TextBox();
-            this.mainPanel.SuspendLayout();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // mainPanel
-            // 
-            this.mainPanel.BackColor = System.Drawing.Color.White;
-            this.mainPanel.Controls.Add(this.groupBox1);
-            this.mainPanel.Location = new System.Drawing.Point(324, 111);
-            this.mainPanel.Margin = new System.Windows.Forms.Padding(2);
-            this.mainPanel.MaximumSize = new System.Drawing.Size(810, 585);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(611, 405);
-            this.mainPanel.TabIndex = 1;
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.groupBox1.Controls.Add(this.txtNameAssign);
             this.groupBox1.Controls.Add(this.butAddAssig);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtPointsAssign);
-            this.groupBox1.Location = new System.Drawing.Point(115, 105);
+            this.groupBox1.Location = new System.Drawing.Point(159, 126);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(353, 149);
+            this.groupBox1.Size = new System.Drawing.Size(353, 150);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
@@ -110,34 +100,50 @@
             this.txtPointsAssign.Size = new System.Drawing.Size(100, 20);
             this.txtPointsAssign.TabIndex = 1;
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.BackColor = System.Drawing.Color.White;
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.12963F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.87037F));
+            this.tableLayoutPanel2.Controls.Add(this.groupBox1, 0, 0);
+            this.tableLayoutPanel2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(324, 95);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.83333F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.16667F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1080, 720);
+            this.tableLayoutPanel2.TabIndex = 2;
+            // 
             // AddGradeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(150)))), ((int)(((byte)(231)))));
             this.ClientSize = new System.Drawing.Size(946, 545);
-            this.Controls.Add(this.mainPanel);
+            this.Controls.Add(this.tableLayoutPanel2);
             this.MaximumSize = new System.Drawing.Size(964, 592);
             this.MinimumSize = new System.Drawing.Size(964, 592);
             this.Name = "AddGradeForm";
             this.Text = "Form Template";
             this.Load += new System.EventHandler(this.AddGradeForm_Load);
             this.Controls.SetChildIndex(this.nav1, 0);
-            this.Controls.SetChildIndex(this.mainPanel, 0);
-            this.mainPanel.ResumeLayout(false);
+            this.Controls.SetChildIndex(this.tableLayoutPanel2, 0);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button butAddAssig;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtPointsAssign;
         private System.Windows.Forms.ComboBox txtNameAssign;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
     }
 }

@@ -21,8 +21,6 @@ namespace Study_Buddy.Presentation
             InitializeComponent();
             this.MaximumSize = new System.Drawing.Size(1366, 768);
             this.Size = new System.Drawing.Size(1366, 768);
-            //this.mainPanel.MaximumSize = new System.Drawing.Size(1080, 720);
-            //this.tableLayoutPanel2.Size = new System.Drawing.Size(1080, 720);
             this.title = "Home Page";
             this.Text = title;
             this.mainHeader.Text = title;

@@ -20,8 +20,6 @@ namespace Study_Buddy.Presentation
             InitializeComponent();
             this.MaximumSize = new System.Drawing.Size(1366, 768);
             this.Size = new System.Drawing.Size(1366, 768);
-            this.mainPanel.MaximumSize = new System.Drawing.Size(1080, 720);
-            this.mainPanel.Size = new System.Drawing.Size(1080, 720);
             this.nav1.SetCurrentForm(this);
         }
         
