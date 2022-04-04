@@ -26,9 +26,9 @@ namespace Algorithms
         // Default constructor for the algorithm1 class
         // v1: Created the constructor - Nathan S, 3-24-22
         //---------------------------------------------------------------------
-        public Algorithm1()
+        public Algorithm1(LinkedList<Tuple<double, double>> assignmentLog)
         {
-            assignmentLog = new LinkedList<Tuple<double, double>>();
+            this.assignmentLog = assignmentLog;
         }
 
         //---------------------------------------------------------------------
