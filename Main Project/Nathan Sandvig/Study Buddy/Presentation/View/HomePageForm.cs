@@ -38,23 +38,16 @@ namespace Study_Buddy.Presentation
 
         private void HomePageForm_Load(object sender, EventArgs e)
         {
-            Account account = AccountController.account;
-            this.name.Text = account.username;
+            this.name.Text = controller.getName();
             //this.gpa.Text = account.gpa;
             int red = 235;
             int green = 131;
             int blue = 131;
             int locationindex = 25;
-            for (int i = 0; i < account.courses.Count; i++)
+            for (int i = 0; i < controller.getCourses().Count; i++)
             {
-                //Course course = controller.getCourses()[i];
-                Course course = account.courses[i];
-                Label label = new Label();
-                label.Text = course.name;
-                label.BackColor = Color.FromArgb(red, green, blue);
-                label.Location = new Point(40, locationindex);
-                label.Size = new Size(250, 25);
-                label.Font = new Font("Microsoft Sans Serif", 13);
+                Course course = controller.getCourses()[i];
+                Label label = controller.createCourseLabel(course, locationindex, red, green, blue);
                 this.panel1.Controls.Add(label);
                 double hoursStudied = 0;
                 DateTime today = DateTime.Today;
@@ -63,24 +56,10 @@ namespace Study_Buddy.Presentation
                     DateTime date = new DateTime(today.Year, today.Month, today.Day - j);
                     hoursStudied += course.GetHoursStudied(date);
                 }
-                Label label2 = new Label();
-                label2.Text = hoursStudied + "/" + "study goal";
-                label2.BackColor = Color.FromArgb(red, green, blue);
-                label2.Location = new Point(290, locationindex);
-                label2.Size = new Size(250, 25);
-                label2.Font = new Font("Microsoft Sans Serif", 13);
-                label2.TextAlign = ContentAlignment.TopRight;
+                Label label2 = controller.createHoursLabel(course, hoursStudied, locationindex, red, green, blue);
                 this.panel1.Controls.Add(label2);
 
-                Button button = new Button();
-                button.BackColor = Color.LightGray;
-                button.Location = new Point(550, locationindex);
-                button.Size = new Size(200, 25);
-                button.Text = "Add grade for this course";
-                button.Font = new Font("Microsoft Sans Serif", 10);
-                button.Click += new EventHandler(this.addGradeButton_Click);
-                button.Tag = course;
-                button.Margin = new Padding(0);
+                Button button = controller.createAddGradeButton(course, locationindex, new EventHandler(this.addGradeButton_Click));
                 this.panel1.Controls.Add(button);
 
                 locationindex += 27;

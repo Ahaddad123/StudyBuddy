@@ -23,8 +23,10 @@ namespace Study_Buddy
             //Launching GUI application
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //HomePageForm form = new HomePageForm();
-            LoginForm form = new LoginForm();
+            HomePageForm form = new HomePageForm();
+            HomePageFormController controller = new HomePageFormController(form);
+            form.SetController(controller);
+            //LoginForm form = new LoginForm();
             form.StartPosition = FormStartPosition.Manual;
             Application.Run(form);
         }
