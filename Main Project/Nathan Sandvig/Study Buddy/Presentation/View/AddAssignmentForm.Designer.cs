@@ -33,7 +33,7 @@
             this.dtpAssignDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.comCourses = new System.Windows.Forms.ComboBox();
+            this.cmbCourses = new System.Windows.Forms.ComboBox();
             this.butAddAssig = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -62,7 +62,7 @@
             this.groupBox1.Controls.Add(this.dtpAssignDate);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.comCourses);
+            this.groupBox1.Controls.Add(this.cmbCourses);
             this.groupBox1.Controls.Add(this.butAddAssig);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -103,13 +103,13 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Course";
             // 
-            // comCourses
+            // cmbCourses
             // 
-            this.comCourses.FormattingEnabled = true;
-            this.comCourses.Location = new System.Drawing.Point(74, 96);
-            this.comCourses.Name = "comCourses";
-            this.comCourses.Size = new System.Drawing.Size(121, 21);
-            this.comCourses.TabIndex = 7;
+            this.cmbCourses.FormattingEnabled = true;
+            this.cmbCourses.Location = new System.Drawing.Point(74, 96);
+            this.cmbCourses.Name = "cmbCourses";
+            this.cmbCourses.Size = new System.Drawing.Size(121, 21);
+            this.cmbCourses.TabIndex = 7;
             // 
             // butAddAssig
             // 
@@ -205,7 +205,7 @@
         private System.Windows.Forms.TextBox txtPointsAssign;
         private System.Windows.Forms.TextBox txtNameAssign;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comCourses;
+        private System.Windows.Forms.ComboBox cmbCourses;
         private System.Windows.Forms.DateTimePicker dtpAssignDate;
         private System.Windows.Forms.Label label1;
     }

@@ -38,7 +38,7 @@ namespace Study_Buddy.Presentation
             double hours = 0;
             DateTime date;
             Course course = new Course();
-            Account test = new Account("","");
+            Account test = new Account("", "");
 
             if (cmbCourses.SelectedIndex < 1)
             {
@@ -73,7 +73,7 @@ namespace Study_Buddy.Presentation
                 valid = false;
             }
 
-            if(hours < 0)
+            if (hours < 0)
             {
                 MessageBox.Show("Invalid Hours");
                 valid = false;
@@ -92,6 +92,26 @@ namespace Study_Buddy.Presentation
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public void cmbCourses_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Account test = new Account("", "");
+            Course courseOne = new Course();
+            Course courseTwo = new Course();
+            Course courseThree = new Course();
+            test.addCourse(courseOne);
+            test.courses.Add(courseTwo);
+            test.courses.Add(courseThree);
+            Course[] courses = new Course[100];
+            for (int i = 0; i < courses.Length; i++)
+            {
+                courses[i] = test.courses[i];
+            }
+
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = courses;
+            cmbCourses.DataSource = bindingSource.DataSource;
         }
     }
 }

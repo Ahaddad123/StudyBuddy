@@ -104,7 +104,7 @@ namespace Study_Buddy.Presentation
                 // wip does not like courseName
                 //controller.AddAssignment(courseName, txtNameAssign.Text,points,weight);
                 MessageBox.Show("Assignment added");
-                controller.AddAssignment(comCourses.Text, txtNameAssign.Text, points, weight, duedate);
+                controller.AddAssignment(cmbCourses.Text, txtNameAssign.Text, points, weight, duedate);
             }
         }
 
@@ -112,8 +112,28 @@ namespace Study_Buddy.Presentation
         {
             foreach (Course c in AccountController.account.courses)
             {
-                comCourses.Items.Add(c.name);
+                cmbCourses.Items.Add(c.name);
             }
+        }
+
+        public void cmbCourses_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Account test = new Account("", "");
+            Course courseOne = new Course();
+            Course courseTwo = new Course();
+            Course courseThree = new Course();
+            test.addCourse(courseOne);
+            test.courses.Add(courseTwo);
+            test.courses.Add(courseThree);
+            Course[] courses = new Course[100];
+            for (int i = 0; i<courses.Length; i++)
+            {
+                courses[i] = test.courses[i];
+            }
+
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = courses;
+            cmbCourses.DataSource = bindingSource.DataSource;
         }
     }
 }
