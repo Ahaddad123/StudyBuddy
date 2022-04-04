@@ -8,6 +8,7 @@ using System.Data.SQLite;
 using System.Data;
 using System.Configuration;
 using Dapper;
+using Study_Buddy.BusinessLogic;
 
 namespace Study_Buddy.DataAccess
 {
@@ -127,15 +128,23 @@ namespace Study_Buddy.DataAccess
             return success;
         }
 
-        public int insertCourseData()
+        public int insertCourseData(Course course)
         {
             int success = 0;
 
             SQLiteConnection sqlite_conn;
             // Create a new database connection:
             sqlite_conn = CreateConnection();
+            
+            SQLiteCommand addCourses;
+            addCourses = sqlite_conn.CreateCommand();
+            String credits = course.credits.ToString();
 
+            String command = "INSERT INTO Courses(Course Name, Credits, Course Code) VALUES ('@name', @credits, '@code')";
+            String command1 = command.Replace("@name", course.name).Replace("@credits", credits).Replace("@code", course.code);
 
+            addCourses.CommandText = command1;
+            addCourses.ExecuteNonQuery();
 
             return success;
         }

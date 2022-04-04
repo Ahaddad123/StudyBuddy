@@ -55,6 +55,7 @@ namespace Study_Buddy.BusinessLogic
         public void addCourse(Course course) 
         {
             courses.Add(course);
+            int success = database.insertCourseData(course);
         }
 
         //---------------------------------------------------------------------
