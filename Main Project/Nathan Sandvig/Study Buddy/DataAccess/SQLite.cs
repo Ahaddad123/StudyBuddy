@@ -13,21 +13,6 @@ namespace Study_Buddy.DataAccess
 {
     public class SQLite
     {
-        static void main() 
-        {
-            SQLite db = new SQLite();
-            SQLiteConnection sqlite_connection;
-            sqlite_connection = db.CreateConnection();
-        }
-        public static List<BusinessLogic.Account> LoadAccount() 
-        {
-            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString())) 
-            {
-                var output = cnn.Query<BusinessLogic.Account>("SELECT * FROM AccountData", new DynamicParameters());
-                return output.ToList();
-            }
-        }
-
         public SQLiteConnection CreateConnection()
         {
 
@@ -48,6 +33,8 @@ namespace Study_Buddy.DataAccess
 
         public int checkAccount(String username, String password) 
         {
+            int UserExists = 0;
+            Boolean exists = false;
 
             SQLiteConnection sqlite_conn;
             // Create a new database connection:
@@ -55,58 +42,38 @@ namespace Study_Buddy.DataAccess
             SQLiteCommand checkAccounts;
             checkAccounts = sqlite_conn.CreateCommand();
 
-            String command = "SELECT * FROM AccountData WHERE(Username = @username)";
+            String command = "SELECT * FROM AccountData WHERE(Username = '@username')";
             String command1 = command.Replace("@username", username);
-            checkAccounts.CommandText = command;
-            int UserExists = (int)checkAccounts.ExecuteScalar();
+            checkAccounts.CommandText = command1;
+            UserExists = (int)checkAccounts.ExecuteNonQuery();
             return UserExists;
             
         }
 
-        public static void InsertAccountData(SQLiteConnection sqlite_conn, String username, String password, int userid) 
+        public int InsertAccountData(String username, String password,  String email) 
         {
+            SQLiteConnection sqlite_conn;
+            // Create a new database connection:
+            sqlite_conn = CreateConnection();
+
+            int success = 0;
+
             SQLiteCommand insertAccountDataa;
             insertAccountDataa = sqlite_conn.CreateCommand();
 
-            String command = "INSERT INTO AccountData(Username, Password, userid) VALUES (@username, @password, @userid)";
-            insertAccountDataa.CommandText = command;
-            insertAccountDataa.ExecuteNonQuery();
+            String command = "INSERT INTO AccountData(Username, Password, Email) VALUES ('@username', '@password', '@email')";
+            String command1 = command.Replace("@username", username).Replace("@password", password).Replace("@email", email);
+            insertAccountDataa.CommandText = command1;
+            success = insertAccountDataa.ExecuteNonQuery();
+
+            return success;
         }
 
         
-        public static void addAccount(BusinessLogic.Account account1) 
-        {
-            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
-            {
-                cnn.Execute("INSERT INTO AccountData (Username, Password, UserID) values (@Username, @Password, @UserID)", account1);
-            }
-        }
+        
 
-        private static string LoadConnectionString(string id = "Default") 
-        {
-            return System.Configuration.ConfigurationManager.ConnectionStrings[id].ConnectionString;
-        }
 
-        public static void addAccount()
-        {
-            try
-            {
-                var cb = new SqlConnectionStringBuilder();
-                cb.DataSource = "studybuddyserverintermediate2022.database.windows.net";
-                cb.UserID = "ahaddad123";
-                cb.Password = "Jiddo123";
-                cb.InitialCatalog = "StudyBuddyDatabase";
 
-                using (var connection = new SqlConnection(cb.ConnectionString))
-                {
-                    connection.Open();
 
-                }
-            }
-            catch (SqlException e)
-            {
-                Console.WriteLine(e.ToString());
-            }
-        }
     }
 }

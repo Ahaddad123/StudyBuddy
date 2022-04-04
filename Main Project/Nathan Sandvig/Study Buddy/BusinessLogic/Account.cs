@@ -22,11 +22,27 @@ namespace Study_Buddy.BusinessLogic
             password = newPassword;
         }
 
-        public int accountCreated(String username, String password)
+        public Boolean accountCreated(String username, String password)
         {
             int acc = database.checkAccount(username, password);
+            if (acc == -1)
+            {
+                return false;
+            }
+            else
+                return true;
+        }
 
-            return acc;
+        public Boolean createAccount(String username, String password, String email)
+        {
+            int acc = database.InsertAccountData(username, password, email);
+
+            if (acc == -1)
+            {
+                return false;
+            }
+            else
+                return true;
         }
 
         //---------------------------------------------------------------------

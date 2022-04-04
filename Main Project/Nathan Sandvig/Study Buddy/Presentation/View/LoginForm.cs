@@ -125,9 +125,9 @@ namespace Study_Buddy.Presentation.View
             String newPassword = textBox1.Text;
             Account acc = new Account(newUsername, newPassword);
 
-            int valid = acc.accountCreated(newUsername, newPassword);
+            Boolean valid = acc.accountCreated(newUsername, newPassword);
 
-            if (valid == 0)
+            if (!valid)
             {
                 MessageBox.Show("Invalid Username/Password or Account Does Not Exist.");
             }

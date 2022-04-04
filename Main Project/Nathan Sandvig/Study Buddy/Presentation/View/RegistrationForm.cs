@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Study_Buddy.BusinessLogic;
 using Study_Buddy.Presentation;
 using Study_Buddy.Presentation.Controller;
 
@@ -115,6 +116,17 @@ namespace Study_Buddy.Presentation.View
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            String username = textBox2.Text;
+            String password = textBox3.Text;
+            String email = textBox1.Text; 
+            
+
+            Account acc = new Account(username, password);
+            acc.createAccount(username, password, email);
+            
+            MessageBox.Show("Account has probably been created for you.");
+
+
             FormSwitcher.OpenInitialSetupForm(this);
         }
     }
