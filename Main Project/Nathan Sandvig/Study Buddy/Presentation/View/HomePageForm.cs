@@ -59,10 +59,11 @@ namespace Study_Buddy.Presentation
                 label.Font = new Font("Microsoft Sans Serif", 13);
                 this.mainPanel.Controls.Add(label);
                 double hoursStudied = 0;
-                for (int j = 0; j <= (int)DateTime.Today.DayOfWeek; j++)
+                DateTime today = DateTime.Today;
+                for (int j = 0; j <= (int)today.DayOfWeek; j++)
                 {
-                    //added dummy value
-                    hoursStudied += course.GetHoursStudied(DateTime.Now);
+                    DateTime date = new DateTime(today.Year, today.Month, today.Day - j);
+                    hoursStudied += course.GetHoursStudied(date);
                 }
                 Label label2 = new Label();
                 label2.Text = hoursStudied + "/" + "study goal";
