@@ -99,6 +99,12 @@
     <Compile Include="Presentation\Model\GradeGraph.cs" />
     <Compile Include="Presentation\Model\Graph.cs" />
     <Compile Include="Presentation\Model\GraphController.cs" />
+    <Compile Include="Presentation\View\AddCoursePopupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\View\AddCoursePopupForm.Designer.cs">
+      <DependentUpon>AddCoursePopupForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\View\InitialSetupForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\View\AddAssignmentForm.resx">
       <DependentUpon>AddAssignmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\View\AddCoursePopupForm.resx">
+      <DependentUpon>AddCoursePopupForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\View\InitialSetupForm.resx">
       <DependentUpon>InitialSetupForm.cs</DependentUpon>

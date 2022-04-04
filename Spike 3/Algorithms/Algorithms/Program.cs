@@ -19,10 +19,15 @@ namespace Algorithms
         //---------------------------------------------------------------------
         static void Main(string[] args)
         {
-            Algorithm1 algorithm = new Algorithm1();
-            algorithm.AddAssignment(4.0, 90.0);
-            algorithm.AddAssignment(3.0, 80.0);
-            algorithm.AddAssignment(2.0, 70.0);
+            LinkedList<Tuple<double, double>> assignmentLog = new LinkedList<Tuple<double, double>>();
+            assignmentLog.AddLast(new Tuple<double, double>(4.0, 90.0));
+            assignmentLog.AddLast(new Tuple<double, double>(3.0, 80.0));
+            assignmentLog.AddLast(new Tuple<double, double>(2.0, 70.0));
+
+            Algorithm algorithm = new Algorithm1(assignmentLog);
+            Console.WriteLine(algorithm.HoursForGrade(85.0));
+
+            algorithm = new Algorithm2(assignmentLog);
             Console.WriteLine(algorithm.HoursForGrade(85.0));
         }
     }

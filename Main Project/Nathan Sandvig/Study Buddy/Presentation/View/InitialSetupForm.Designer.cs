@@ -69,9 +69,9 @@
             this.tableLayoutPanel1.SetColumnSpan(this.welcomeMessage, 3);
             this.welcomeMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcomeMessage.ForeColor = System.Drawing.Color.White;
-            this.welcomeMessage.Location = new System.Drawing.Point(265, 52);
+            this.welcomeMessage.Location = new System.Drawing.Point(20, 38);
             this.welcomeMessage.Name = "welcomeMessage";
-            this.welcomeMessage.Size = new System.Drawing.Size(817, 46);
+            this.welcomeMessage.Size = new System.Drawing.Size(1307, 73);
             this.welcomeMessage.TabIndex = 0;
             this.welcomeMessage.Text = "Thanks for joining.  Let\'s set up your classes.";
             // 
@@ -134,6 +134,7 @@
             this.button1.TabIndex = 7;
             this.button1.Text = "Add Course Manually";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnDone
             // 
@@ -153,7 +154,7 @@
             // InitialSetupForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1348, 721);
+            this.ClientSize = new System.Drawing.Size(1340, 697);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4);
