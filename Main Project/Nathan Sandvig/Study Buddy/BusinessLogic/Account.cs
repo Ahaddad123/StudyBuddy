@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +24,8 @@ namespace Study_Buddy.BusinessLogic
 
         public int accountCreated(String username, String password)
         {
-            int acc = 1;
+            int acc = database.checkAccount(username, password);
+
             return acc;
         }
 

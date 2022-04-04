@@ -27,12 +27,6 @@ namespace Study_Buddy
             LoginForm form = new LoginForm();
             form.StartPosition = FormStartPosition.Manual;
             Application.Run(form);
-
-
-            //SQLite version connection
-            //SQLite db = new SQLite();
-            //SQLiteConnection sqlite_connection;
-            //sqlite_connection = db.CreateConnection();
         }
     }
 }

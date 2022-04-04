@@ -46,18 +46,21 @@ namespace Study_Buddy.DataAccess
             return sqlite_conn;
         }
 
-        public static int checkAccount(String username, String password, int userid) 
+        public int checkAccount(String username, String password) 
         {
-            using (SQLiteConnection sqlite_conn = new SQLiteConnection(LoadConnectionString())) 
-            { 
-                SQLiteCommand checkAccounts;
-                checkAccounts = sqlite_conn.CreateCommand();
 
-                String command = "SELECT * FROM AccountData WHERE(Username = @username)";
-                checkAccounts.CommandText = command;
-                int UserExists = (int)checkAccounts.ExecuteScalar();
-                return UserExists;
-            }
+            SQLiteConnection sqlite_conn;
+            // Create a new database connection:
+            sqlite_conn = CreateConnection();
+            SQLiteCommand checkAccounts;
+            checkAccounts = sqlite_conn.CreateCommand();
+
+            String command = "SELECT * FROM AccountData WHERE(Username = @username)";
+            String command1 = command.Replace("@username", username);
+            checkAccounts.CommandText = command;
+            int UserExists = (int)checkAccounts.ExecuteScalar();
+            return UserExists;
+            
         }
 
         public static void InsertAccountData(SQLiteConnection sqlite_conn, String username, String password, int userid) 
