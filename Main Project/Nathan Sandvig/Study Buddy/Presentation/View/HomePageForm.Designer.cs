@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.btnViewMyInfo = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.gpa = new System.Windows.Forms.Label();
             this.name = new System.Windows.Forms.Label();
-            this.btnViewMyInfo = new System.Windows.Forms.Button();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,6 +49,19 @@
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(611, 405);
             this.mainPanel.TabIndex = 1;
+            // 
+            // btnViewMyInfo
+            // 
+            this.btnViewMyInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewMyInfo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewMyInfo.ForeColor = System.Drawing.Color.Navy;
+            this.btnViewMyInfo.Location = new System.Drawing.Point(430, 61);
+            this.btnViewMyInfo.Name = "btnViewMyInfo";
+            this.btnViewMyInfo.Size = new System.Drawing.Size(75, 23);
+            this.btnViewMyInfo.TabIndex = 5;
+            this.btnViewMyInfo.Text = "View My info";
+            this.btnViewMyInfo.UseVisualStyleBackColor = true;
+            this.btnViewMyInfo.Click += new System.EventHandler(this.btnViewMyInfo_Click);
             // 
             // label2
             // 
@@ -79,16 +92,6 @@
             this.name.Size = new System.Drawing.Size(157, 69);
             this.name.TabIndex = 0;
             this.name.Text = "label";
-            // 
-            // btnViewMyInfo
-            // 
-            this.btnViewMyInfo.Location = new System.Drawing.Point(430, 61);
-            this.btnViewMyInfo.Name = "btnViewMyInfo";
-            this.btnViewMyInfo.Size = new System.Drawing.Size(75, 23);
-            this.btnViewMyInfo.TabIndex = 5;
-            this.btnViewMyInfo.Text = "View My info";
-            this.btnViewMyInfo.UseVisualStyleBackColor = true;
-            this.btnViewMyInfo.Click += new System.EventHandler(this.btnViewMyInfo_Click);
             // 
             // HomePageForm
             // 
