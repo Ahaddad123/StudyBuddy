@@ -59,8 +59,8 @@
             this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 61.2676F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.7324F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 137F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 85F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 90F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 132F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 204F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1348, 721);
@@ -96,7 +96,7 @@
             this.textBox1.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(438, 247);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(536, 43);
+            this.textBox1.Size = new System.Drawing.Size(429, 34);
             this.textBox1.TabIndex = 3;
             // 
             // textBox2
@@ -104,7 +104,7 @@
             this.textBox2.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(438, 153);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(536, 43);
+            this.textBox2.Size = new System.Drawing.Size(429, 34);
             this.textBox2.TabIndex = 4;
             // 
             // btnRegister
@@ -127,7 +127,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(320, 381);
+            this.label3.Location = new System.Drawing.Point(320, 334);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(112, 26);
             this.label3.TabIndex = 2;
@@ -148,10 +148,11 @@
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(438, 384);
+            this.textBox3.Location = new System.Drawing.Point(438, 337);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(536, 43);
+            this.textBox3.Size = new System.Drawing.Size(429, 34);
             this.textBox3.TabIndex = 7;
+            this.textBox3.UseSystemPasswordChar = true;
             // 
             // RegistrationForm
             // 
