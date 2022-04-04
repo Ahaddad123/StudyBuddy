@@ -73,10 +73,11 @@ namespace Study_Buddy.DataAccess
             return 1;
         }
 
-        public int checkAccount(String username, String password) 
+        public String checkAccount(String username, String password) 
         {
             int UserExists = 0;
             Boolean exists = false;
+            String usernamebro = "";
 
             SQLiteConnection sqlite_conn;
             // Create a new database connection:
@@ -90,14 +91,20 @@ namespace Study_Buddy.DataAccess
 
             try 
             {
-                UserExists = (int)checkAccounts.ExecuteNonQuery();
+                Object hello = checkAccounts.ExecuteScalar();
+                if (hello == null)
+                {
+                    return null;
+                }
+                else
+                    usernamebro = hello.ToString();
             } 
             catch (SQLiteException e) 
             {
-                return -1;
+                return null;
             }
 
-            return UserExists;
+            return usernamebro;
             
         }
 

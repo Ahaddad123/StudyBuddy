@@ -24,8 +24,8 @@ namespace Study_Buddy.BusinessLogic
 
         public Boolean accountCreated(String username, String password)
         {
-            int acc = database.checkAccount(username, password);
-            if (acc == -1)
+            String acc = database.checkAccount(username, password);
+            if (acc == null)
             {
                 return false;
             }
