@@ -31,7 +31,7 @@ namespace Study_Buddy.DataAccess
             return sqlite_conn;
         }
 
-        public void createTables()
+        public int createTables()
         {
             SQLiteConnection sqlite_conn;
             // Create a new database connection:
@@ -39,30 +39,38 @@ namespace Study_Buddy.DataAccess
             SQLiteCommand checkAccounts;
             checkAccounts = sqlite_conn.CreateCommand();
 
-            String createTables = "CREATE TABLE \"AccountData\" (\"Username\"  INTEGER NOT NULL, \"Password\"  TEXT NOT NULL, \"Email\" TEXT NOT NULL, \"UserID\"    INTEGER NOT NULL,PRIMARY KEY(\"UserID\" AUTOINCREMENT))";
-            checkAccounts.CommandText = createTables;
+            try {
+                String createTables = "CREATE TABLE \"AccountData\" (\"Username\"  INTEGER NOT NULL, \"Password\"  TEXT NOT NULL, \"Email\" TEXT NOT NULL, \"UserID\"    INTEGER NOT NULL,PRIMARY KEY(\"UserID\" AUTOINCREMENT))";
+                checkAccounts.CommandText = createTables;
 
-            checkAccounts.ExecuteNonQuery();
+                checkAccounts.ExecuteNonQuery();
 
-            String createTables2 = "CREATE TABLE \"Assignments\" (\"Course Code\"   TEXT NOT NULL, \"Assignment Name\"   TEXT NOT NULL,\"Assignment Weight\" REAL NOT NULL, \"Grade\" REAL, \"Course ID\" INTEGER, PRIMARY KEY(\"Course Code\"))";
-            checkAccounts.CommandText = createTables2;
-            checkAccounts.ExecuteNonQuery();
+                String createTables2 = "CREATE TABLE \"Assignments\" (\"Course Code\"   TEXT NOT NULL, \"Assignment Name\"   TEXT NOT NULL,\"Assignment Weight\" REAL NOT NULL, \"Grade\" REAL, \"Course ID\" INTEGER, PRIMARY KEY(\"Course Code\"))";
+                checkAccounts.CommandText = createTables2;
+                checkAccounts.ExecuteNonQuery();
 
-            String createTables3 = "CREATE TABLE \"Courses\"(\"Course Name\"   TEXT NOT NULL, \"Course ID\"   INTEGER NOT NULL, \"Credits\"   INTEGER NOT NULL, \"Course Code\"   TEXT NOT NULL, PRIMARY KEY(\"Course ID\"))";
-            checkAccounts.CommandText = createTables3;
-            checkAccounts.ExecuteNonQuery();
+                String createTables3 = "CREATE TABLE \"Courses\"(\"Course Name\"   TEXT NOT NULL, \"Course ID\"   INTEGER NOT NULL, \"Credits\"   INTEGER NOT NULL, \"Course Code\"   TEXT NOT NULL, PRIMARY KEY(\"Course ID\"))";
+                checkAccounts.CommandText = createTables3;
+                checkAccounts.ExecuteNonQuery();
 
-            String createTables4 = "CREATE TABLE \"Overall Grades\"(\"User ID\" INTEGER NOT NULL)";
-            checkAccounts.CommandText = createTables4;
-            checkAccounts.ExecuteNonQuery();
+                String createTables4 = "CREATE TABLE \"Overall Grades\"(\"User ID\" INTEGER NOT NULL)";
+                checkAccounts.CommandText = createTables4;
+                checkAccounts.ExecuteNonQuery();
 
-            String createTables5 = "CREATE TABLE \"Student Information\"(\"FName\" TEXT NOT NULL, \"LName\" TEXT NOT NULL, \"GPA\" REAL NOT NULL, \"School Name\" TEXT NOT NULL, \"Student ID\" INTEGER NOT NULL, PRIMARY KEY(\"Student ID\"))";
-            checkAccounts.CommandText = createTables5;
-            checkAccounts.ExecuteNonQuery();
+                String createTables5 = "CREATE TABLE \"Student Information\"(\"FName\" TEXT NOT NULL, \"LName\" TEXT NOT NULL, \"GPA\" REAL NOT NULL, \"School Name\" TEXT NOT NULL, \"Student ID\" INTEGER NOT NULL, PRIMARY KEY(\"Student ID\"))";
+                checkAccounts.CommandText = createTables5;
+                checkAccounts.ExecuteNonQuery();
 
-            String createTables6 = "CREATE TABLE \"StudyHours\" (\"Hours\" INTEGER NOT NULL, \"Course ID\" INTEGER NOT NULL, \"Date\" INTEGER NOT NULL)";
-            checkAccounts.CommandText = createTables6;
-            checkAccounts.ExecuteNonQuery();
+                String createTables6 = "CREATE TABLE \"StudyHours\" (\"Hours\" INTEGER NOT NULL, \"Course ID\" INTEGER NOT NULL, \"Date\" INTEGER NOT NULL)";
+                checkAccounts.CommandText = createTables6;
+                checkAccounts.ExecuteNonQuery();
+            } 
+            catch (System.Data.SQLite.SQLiteException) 
+            {
+                return -1;
+            }
+
+            return 1;
         }
 
         public int checkAccount(String username, String password) 
