@@ -159,11 +159,12 @@ namespace Study_Buddy.BusinessLogic
         //---------------------------------------------------------------------
         public void LogHours(double time, DateTime date)
         {
-            
-                
-                //Commeted it out because the format of the log was changed tests will fail
-                hourLog.AddTimeToLog(time, date);
-            
+            //Commeted it out because the format of the log was changed tests will fail
+            if(time < 0)
+            {
+                return;
+            }
+            hourLog.AddTimeToLog(time, date);
         }
 
         //---------------------------------------------------------------------

@@ -29,6 +29,7 @@ namespace Study_Buddy.BusinessLogic
         public StudyLog(DateTime date, double hours)
         {
             Log = new Dictionary<DateTime, double>();
+            Log.Add(date, hours);
         }
 
         //---------------------------------------------------------------------
