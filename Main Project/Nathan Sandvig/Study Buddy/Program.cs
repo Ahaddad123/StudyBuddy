@@ -19,7 +19,6 @@ namespace Study_Buddy
         [STAThread]
         static void Main()
         {
-
             //Launching GUI application
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

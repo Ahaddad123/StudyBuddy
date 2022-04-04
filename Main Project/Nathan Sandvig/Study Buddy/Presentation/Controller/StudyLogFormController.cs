@@ -15,9 +15,17 @@ namespace Study_Buddy.Presentation
             this.view = form;
         }
 
-        public void AddHours(Course info,DateTime date, double hours)
+        public void AddHours(String courseName,DateTime date, double hours)
         {
-            info.LogHours(hours,date);
+            Course course = null;
+            foreach (Course c in AccountController.account.courses)
+            {
+                if (c.name == courseName)
+                {
+                    course = c;
+                }
+            }
+            course.LogHours(hours,date.Date);
         }
     }
 }

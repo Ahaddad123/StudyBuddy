@@ -17,6 +17,9 @@ namespace Study_Buddy.Presentation
         private StudyLogFormController controller;
         public StudyLogForm()
         {
+            InitializeComponent();
+            this.MaximumSize = new System.Drawing.Size(1366, 768);
+            this.Size = new System.Drawing.Size(1366, 768);
             this.title = "Study Log Form";
             this.Text = title;
             this.mainHeader.Text = title;
@@ -40,9 +43,9 @@ namespace Study_Buddy.Presentation
             Course course = new Course();
             Account test = new Account("", "");
 
-            if (cmbCourses.SelectedIndex < 1)
+            /*if (cmbCourses.SelectedIndex < 1)
             {
-                /*
+                
                 try
                 {
                     List<Course> testCourses = test.courses;
@@ -53,13 +56,13 @@ namespace Study_Buddy.Presentation
                     MessageBox.Show("Error choosing Course");
                     valid = false;
                 }
-                */
+                
             }
             else
             {
                 MessageBox.Show("No Course was selected");
                 valid = false;
-            }
+            }*/
 
             date = DTPhourDate.Value;
 
@@ -85,7 +88,7 @@ namespace Study_Buddy.Presentation
                 // wip does not like courseName
                 //controller.AddAssignment(courseName, txtNameAssign.Text,points,weight);
                 MessageBox.Show("hours added");
-                //controller.AddHours(course,day,week,hours);
+                controller.AddHours(cmbCourses.Text,date,hours);
             }
         }
 
@@ -112,6 +115,14 @@ namespace Study_Buddy.Presentation
             BindingSource bindingSource = new BindingSource();
             bindingSource.DataSource = courses;
             cmbCourses.DataSource = bindingSource.DataSource;
+        }
+
+        private void StudyLogForm_Load(object sender, EventArgs e)
+        {
+            foreach (Course c in AccountController.account.courses)
+            {
+                cmbCourses.Items.Add(c.name);
+            }
         }
     }
 }
