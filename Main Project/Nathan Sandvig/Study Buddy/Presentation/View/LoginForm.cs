@@ -121,8 +121,8 @@ namespace Study_Buddy.Presentation.View
 
         private void btn_login(object sender, EventArgs e)
         {
-            String newUsername = textBox1.Text;
-            String newPassword = textBox2.Text;
+            String newUsername = textBox2.Text;
+            String newPassword = textBox1.Text;
             Account acc = new Account(newUsername, newPassword);
 
             Boolean valid = acc.accountCreated(newUsername, newPassword);

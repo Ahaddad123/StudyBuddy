@@ -29,13 +29,13 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.welcomeMessage = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.courseTablePanel = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnRegister = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnDone = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
+            this.courseTablePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -46,7 +46,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 478F));
             this.tableLayoutPanel1.Controls.Add(this.welcomeMessage, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.courseTablePanel, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnRegister, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.button1, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.btnDone, 0, 3);
@@ -69,26 +69,25 @@
             this.tableLayoutPanel1.SetColumnSpan(this.welcomeMessage, 3);
             this.welcomeMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcomeMessage.ForeColor = System.Drawing.Color.White;
-            this.welcomeMessage.Location = new System.Drawing.Point(20, 38);
+            this.welcomeMessage.Location = new System.Drawing.Point(265, 52);
             this.welcomeMessage.Name = "welcomeMessage";
-            this.welcomeMessage.Size = new System.Drawing.Size(1307, 73);
+            this.welcomeMessage.Size = new System.Drawing.Size(817, 46);
             this.welcomeMessage.TabIndex = 0;
             this.welcomeMessage.Text = "Thanks for joining.  Let\'s set up your classes.";
             // 
-            // tableLayoutPanel2
+            // courseTablePanel
             // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(438, 153);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel1.SetRowSpan(this.tableLayoutPanel2, 3);
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(429, 310);
-            this.tableLayoutPanel2.TabIndex = 6;
+            this.courseTablePanel.ColumnCount = 1;
+            this.courseTablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.courseTablePanel.Controls.Add(this.label1, 0, 0);
+            this.courseTablePanel.Location = new System.Drawing.Point(438, 153);
+            this.courseTablePanel.Name = "courseTablePanel";
+            this.courseTablePanel.RowCount = 2;
+            this.tableLayoutPanel1.SetRowSpan(this.courseTablePanel, 3);
+            this.courseTablePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.57143F));
+            this.courseTablePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71.42857F));
+            this.courseTablePanel.Size = new System.Drawing.Size(429, 310);
+            this.courseTablePanel.TabIndex = 6;
             // 
             // label1
             // 
@@ -101,7 +100,7 @@
             this.label1.ForeColor = System.Drawing.Color.Navy;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(423, 155);
+            this.label1.Size = new System.Drawing.Size(423, 88);
             this.label1.TabIndex = 0;
             this.label1.Text = "Your Courses";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -154,7 +153,7 @@
             // InitialSetupForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1340, 697);
+            this.ClientSize = new System.Drawing.Size(1348, 721);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -170,8 +169,8 @@
             this.Text = "BaseForm";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
+            this.courseTablePanel.ResumeLayout(false);
+            this.courseTablePanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -181,7 +180,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label welcomeMessage;
         private System.Windows.Forms.Button btnRegister;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel courseTablePanel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnDone;

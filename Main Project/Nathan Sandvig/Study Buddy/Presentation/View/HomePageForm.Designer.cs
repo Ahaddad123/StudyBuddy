@@ -40,12 +40,13 @@
             // btnViewMyInfo
             // 
             this.btnViewMyInfo.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnViewMyInfo.AutoSize = true;
             this.btnViewMyInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewMyInfo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewMyInfo.ForeColor = System.Drawing.Color.Navy;
-            this.btnViewMyInfo.Location = new System.Drawing.Point(811, 15);
+            this.btnViewMyInfo.Location = new System.Drawing.Point(764, 3);
             this.btnViewMyInfo.Name = "btnViewMyInfo";
-            this.btnViewMyInfo.Size = new System.Drawing.Size(75, 23);
+            this.btnViewMyInfo.Size = new System.Drawing.Size(120, 48);
             this.btnViewMyInfo.TabIndex = 5;
             this.btnViewMyInfo.Text = "View My info";
             this.btnViewMyInfo.UseVisualStyleBackColor = true;
@@ -87,9 +88,9 @@
             // 
             this.tableLayoutPanel2.BackColor = System.Drawing.Color.White;
             this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 89.98875F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.01125F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 191F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.71276F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28725F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 192F));
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.btnViewMyInfo, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.gpa, 0, 1);
@@ -109,15 +110,15 @@
             // 
             this.panel1.Location = new System.Drawing.Point(3, 150);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(794, 297);
+            this.panel1.Size = new System.Drawing.Size(755, 297);
             this.panel1.TabIndex = 6;
             // 
             // HomePageForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(150)))), ((int)(((byte)(231)))));
-            this.ClientSize = new System.Drawing.Size(945, 544);
+            this.ClientSize = new System.Drawing.Size(1186, 692);
             this.Controls.Add(this.tableLayoutPanel2);
             this.MaximumSize = new System.Drawing.Size(963, 591);
             this.MinimumSize = new System.Drawing.Size(963, 591);
