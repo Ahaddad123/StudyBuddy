@@ -110,7 +110,7 @@ namespace Study_Buddy.DataAccess
             
         }
 
-        public int InsertAccountData(String username, String password,  String email) 
+        public int InsertAccountData(string username, string password,  string email, string firstname, string lastname, string gpa, string schoolname) 
         {
             SQLiteConnection sqlite_conn;
             // Create a new database connection:
@@ -126,6 +126,11 @@ namespace Study_Buddy.DataAccess
             insertAccountDataa.CommandText = command1;
             success = insertAccountDataa.ExecuteNonQuery();
 
+            string command2 = "INSERT INTO StudentInformation(Fname, LName, GPA, SchoolName, StudentID) VALUES ('@first', '@last', '@gpa', '@schoolname')";
+            string command3 = command2.Replace("@first", firstname).Replace("@last", lastname).Replace("@gpa", gpa).Replace("@schoolname", schoolname);
+            insertAccountDataa.CommandText = command3;
+            insertAccountDataa.ExecuteNonQuery();
+            
             return success;
         }
 
@@ -208,6 +213,44 @@ namespace Study_Buddy.DataAccess
             addCourses.ExecuteNonQuery();
         }
 
-        public void readStudyHours() { }
+        public List<string> readStudyHours()
+        {
+            List<String> studyHours = new List<String>();
+            SQLiteDataReader sqlite_datareader;
+            SQLiteConnection sqlite_conn;
+            // Create a new database connection:
+            sqlite_conn = CreateConnection();
+
+            SQLiteCommand studentData = sqlite_conn.CreateCommand();
+            studentData.CommandText = "SELECT * FROM StudyHours";
+            sqlite_datareader = studentData.ExecuteReader();
+
+            while (sqlite_datareader.Read())
+            {
+                String hours = sqlite_datareader.GetString(0);
+                studyHours.Add(hours);
+            }
+
+            return studyHours;
+        }
+
+        public void removeCourse(string courseName) 
+        {
+            SQLiteConnection sqlite_conn = CreateConnection();
+
+            SQLiteCommand removeCourses;
+            removeCourses = sqlite_conn.CreateCommand();
+
+            string command = "DELETE FROM Courses WHERE CourseName = '@name'";
+            string command1 = command.Replace("@name", courseName);
+            removeCourses.CommandText = command1;
+            
+            removeCourses.ExecuteNonQuery();
+        }
+
+        public void addAssignment() 
+        {
+
+        }
     }
 }

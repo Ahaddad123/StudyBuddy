@@ -116,13 +116,17 @@ namespace Study_Buddy.Presentation.View
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            String username = textBox2.Text;
-            String password = textBox3.Text;
-            String email = textBox1.Text; 
+            string username = textBox2.Text;
+            string password = textBox3.Text;
+            string email = textBox1.Text;
+            string firstName = textBox4.Text;
+            string lastName = textBox5.Text;
+            string gpa = textBox6.Text;
+            string schoolName = textBox7.Text;
             
 
             Account acc = new Account(username, password);
-            acc.createAccount(username, password, email);
+            acc.createAccount(username, password, email, firstName, lastName, gpa, schoolName);
             
             MessageBox.Show("Account has probably been created for you.");
 
