@@ -23,7 +23,7 @@ namespace Study_Buddy.Presentation
             this.Size = new System.Drawing.Size(1366, 768);
             this.mainPanel.MaximumSize = new System.Drawing.Size(1080, 720);
             this.mainPanel.Size = new System.Drawing.Size(1080, 720);
-            this.title = "Add Course";
+            this.title = "Add/Remove Course";
             this.Text = title;
             this.mainHeader.Text = title;
             this.nav1.SetCurrentForm(this);
@@ -87,6 +87,19 @@ namespace Study_Buddy.Presentation
                 controller.addCourse(course);
                 MessageBox.Show("Succesfully added " + course.name);
             }
+        }
+
+        private void AddCourseForm_Load(object sender, EventArgs e)
+        {
+            foreach (Course c in AccountController.account.courses)
+            {
+                courseListBox.Items.Add(c.name);
+            }
+        }
+
+        private void removeCourseButton_Click(object sender, EventArgs e)
+        {
+            AccountController.account.removeCourse(courseListBox.Text);
         }
     }
 }
