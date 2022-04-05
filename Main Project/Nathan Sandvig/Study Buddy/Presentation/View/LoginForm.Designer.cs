@@ -49,11 +49,11 @@
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.button1, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.label4, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.btnCreateNewAccount, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
@@ -106,19 +106,19 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(438, 153);
+            this.textBox1.Location = new System.Drawing.Point(438, 247);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(429, 34);
             this.textBox1.TabIndex = 3;
+            this.textBox1.UseSystemPasswordChar = true;
             // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(438, 247);
+            this.textBox2.Location = new System.Drawing.Point(438, 153);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(429, 34);
             this.textBox2.TabIndex = 4;
-            this.textBox2.UseSystemPasswordChar = true;
             // 
             // button1
             // 
