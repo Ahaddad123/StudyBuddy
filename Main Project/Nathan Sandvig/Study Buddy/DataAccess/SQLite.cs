@@ -140,13 +140,57 @@ namespace Study_Buddy.DataAccess
             addCourses = sqlite_conn.CreateCommand();
             String credits = course.credits.ToString();
 
-            String command = "INSERT INTO Courses(Course Name, Credits, Course Code) VALUES ('@name', @credits, '@code')";
+            String command = "INSERT INTO Courses(CourseName, Credits, CourseCode) VALUES ('@name', @credits, '@code')";
             String command1 = command.Replace("@name", course.name).Replace("@credits", credits).Replace("@code", course.code);
 
             addCourses.CommandText = command1;
             addCourses.ExecuteNonQuery();
 
             return success;
+        }
+
+        public List<String> readCourses()
+        {
+            List<String> courses = new List<String>();
+            SQLiteDataReader sqlite_datareader;
+            SQLiteConnection sqlite_conn;
+            // Create a new database connection:
+            sqlite_conn = CreateConnection();
+
+            SQLiteCommand letsRead = sqlite_conn.CreateCommand();
+            letsRead.CommandText = "SELECT Course Name FROM Courses";
+
+            sqlite_datareader = letsRead.ExecuteReader();
+
+            while (sqlite_datareader.Read()) 
+            {
+                String course = sqlite_datareader.GetString(0);
+                courses.Add(course);
+
+            }
+
+            return courses;
+        }
+
+        public List<string> readStudentInfo()
+        {
+            List<String> studentInfo = new List<String>();
+            SQLiteDataReader sqlite_datareader;
+            SQLiteConnection sqlite_conn;
+            // Create a new database connection:
+            sqlite_conn = CreateConnection();
+
+            SQLiteCommand studentData = sqlite_conn.CreateCommand();
+            studentData.CommandText = "SELECT * Name FROM StudentInformation";
+            sqlite_datareader = studentData.ExecuteReader();
+
+            while (sqlite_datareader.Read())
+            {
+                String student = sqlite_datareader.GetString(0);
+                studentInfo.Add(student);
+            }
+
+            return studentInfo;
         }
     }
 }

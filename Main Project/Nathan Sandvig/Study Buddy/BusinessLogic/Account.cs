@@ -47,6 +47,12 @@ namespace Study_Buddy.BusinessLogic
                 return true;
         }
 
+        public void readCourses() 
+        {
+            List<String> courses = new List<String>();
+            courses = database.readCourses();
+        }
+
         //---------------------------------------------------------------------
         // Adds a course to the account
         // course: The course data being passed from the controller
