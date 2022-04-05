@@ -9,6 +9,7 @@ using System.Data;
 using System.Configuration;
 using Dapper;
 using Study_Buddy.BusinessLogic;
+using System.Windows.Forms;
 
 namespace Study_Buddy.DataAccess
 {
@@ -41,7 +42,7 @@ namespace Study_Buddy.DataAccess
             checkAccounts = sqlite_conn.CreateCommand();
 
             try {
-                String createTables = "CREATE TABLE \"AccountData\" (\"Username\"  INTEGER NOT NULL, \"Password\"  TEXT NOT NULL, \"Email\" TEXT NOT NULL, \"UserID\"    INTEGER NOT NULL,PRIMARY KEY(\"UserID\" AUTOINCREMENT))";
+                String createTables = "CREATE TABLE \"AccountData\" (\"Username\"  TEXT NOT NULL, \"Password\"  TEXT NOT NULL, \"Email\" TEXT NOT NULL, \"UserID\"    INTEGER NOT NULL,PRIMARY KEY(\"UserID\" AUTOINCREMENT))";
                 checkAccounts.CommandText = createTables;
 
                 checkAccounts.ExecuteNonQuery();
@@ -181,7 +182,7 @@ namespace Study_Buddy.DataAccess
             sqlite_conn = CreateConnection();
 
             SQLiteCommand studentData = sqlite_conn.CreateCommand();
-            studentData.CommandText = "SELECT * Name FROM StudentInformation";
+            studentData.CommandText = "SELECT * FROM StudentInformation";
             sqlite_datareader = studentData.ExecuteReader();
 
             while (sqlite_datareader.Read())
@@ -192,5 +193,21 @@ namespace Study_Buddy.DataAccess
 
             return studentInfo;
         }
+
+        public void logStudyHours(String courses, DateTimePicker date, String hours)
+        {
+            SQLiteConnection sqlite_conn = CreateConnection();
+
+            SQLiteCommand addCourses;
+            addCourses = sqlite_conn.CreateCommand();
+
+            string command = "INSERT INTO StudyHours(Hours, CourseName, Date) VALUES ('@hours', '@coursename', '@datetime')";
+            string command1 = command.Replace("@hours", hours).Replace("@coursename", courses).Replace("@datetime", date.ToString());
+
+            addCourses.CommandText = command1;
+            addCourses.ExecuteNonQuery();
+        }
+
+        public void readStudyHours() { }
     }
 }

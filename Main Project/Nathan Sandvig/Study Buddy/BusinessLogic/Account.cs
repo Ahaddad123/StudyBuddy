@@ -4,6 +4,7 @@ using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Study_Buddy.DataAccess;
 
 namespace Study_Buddy.BusinessLogic
@@ -16,6 +17,8 @@ namespace Study_Buddy.BusinessLogic
         SQLite database = new SQLite();
 
         public List<Course> courses { get; set; } = new List<Course>();
+
+        public Account() { }
 
         public Account(String newUsername, String newPassword){
             username = newUsername;
@@ -91,6 +94,11 @@ namespace Study_Buddy.BusinessLogic
             }
 
             return removed;
+        }
+
+        public void addStudyHours(String courses, DateTimePicker date, String hours) 
+        {
+            database.logStudyHours(courses, date, hours);
         }
     }
 }
