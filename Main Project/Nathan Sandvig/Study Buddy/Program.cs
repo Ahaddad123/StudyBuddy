@@ -23,6 +23,7 @@ namespace Study_Buddy
 
             Account acc = new Account();
             acc.createTables();
+            AccountController.account = acc;
 
             //Launching GUI application
             Application.EnableVisualStyles();

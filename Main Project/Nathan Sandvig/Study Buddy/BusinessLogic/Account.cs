@@ -59,8 +59,13 @@ namespace Study_Buddy.BusinessLogic
 
         public void readCourses() 
         {
-            List<String> courses = new List<String>();
-            courses = database.readCourses();
+            List<String> list = new List<String>();
+            list = database.readCourses();
+
+            foreach(String courseName in list)
+            {
+                populateCourses(new CourseBuilder().WithName(courseName).Build());
+            }
         }
 
         //---------------------------------------------------------------------
@@ -68,10 +73,29 @@ namespace Study_Buddy.BusinessLogic
         // course: The course data being passed from the controller
         // v1: Created the method - Nathan S, 3-7-22
         //---------------------------------------------------------------------
-        public void addCourse(Course course) 
+        public void addCourse(Course course)
         {
+            foreach(Course c in this.courses)
+            {
+                if (c.name.Equals(course.name))
+                {
+                    return;
+                }
+            }
             courses.Add(course);
             int success = database.insertCourseData(course);
+        }
+
+        public void populateCourses(Course course)
+        {
+            foreach (Course c in this.courses)
+            {
+                if (c.name.Equals(course.name))
+                {
+                    return;
+                }
+            }
+            courses.Add(course);
         }
 
         //---------------------------------------------------------------------
