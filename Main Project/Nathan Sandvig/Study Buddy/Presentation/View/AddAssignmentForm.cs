@@ -91,7 +91,8 @@ namespace Study_Buddy.Presentation
                 // wip does not like courseName
                 //controller.AddAssignment(courseName, txtNameAssign.Text,points,weight);
                 MessageBox.Show("Assignment added");
-                controller.AddAssignment(cmbCourses.Text, txtNameAssign.Text, points, weight, duedate);
+                Assignment addassign = new Assignment(points, txtNameAssign.Text, weight, duedate);
+                controller.AddAssignment(cmbCourses.Text, addassign);
             }
         }
 
