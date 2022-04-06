@@ -70,9 +70,9 @@ namespace Study_Buddy.BusinessLogic
         // weight: The weight of the assignment
         // v1: Created the method - Andrew V, 3-5-22
         //---------------------------------------------------------------------
-        public void AddAssignment(string name, int totalPoints, int weight, DateTime date)
+        public void AddAssignment(Assignment newAssign)
         {
-            assignments.Add(new Assignment(totalPoints, name, weight, date));
+            assignments.Add(newAssign);
         }
 
         //---------------------------------------------------------------------
