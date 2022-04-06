@@ -63,7 +63,7 @@ namespace Study_Buddy.DataAccess
                 checkAccounts.CommandText = createTables5;
                 checkAccounts.ExecuteNonQuery();
 
-                String createTables6 = "CREATE TABLE \"StudyHours\" (\"Hours\" INTEGER NOT NULL, \"CourseID\" INTEGER NOT NULL, \"Date\" INTEGER NOT NULL)";
+                String createTables6 = "CREATE TABLE \"StudyHours\" (\"Hours\" INTEGER NOT NULL, \"CourseName\" INTEGER NOT NULL, \"Date\" INTEGER NOT NULL)";
                 checkAccounts.CommandText = createTables6;
                 checkAccounts.ExecuteNonQuery();
             } 
@@ -206,7 +206,7 @@ namespace Study_Buddy.DataAccess
             SQLiteCommand addHours;
             addHours = sqlite_conn.CreateCommand();
 
-            string command = "INSERT INTO StudyHours(Hours, CourseID, Date) VALUES ('@hours', '@coursename', '@datetime')";
+            string command = "INSERT INTO StudyHours(Hours, CourseName, Date) VALUES ('@hours', '@coursename', '@datetime')";
             string command1 = command.Replace("@hours", hours).Replace("@coursename", courses).Replace("@datetime", date.ToString());
 
             addHours.CommandText = command1;
