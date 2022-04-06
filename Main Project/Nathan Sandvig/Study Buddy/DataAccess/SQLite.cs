@@ -206,7 +206,7 @@ namespace Study_Buddy.DataAccess
             SQLiteCommand addHours;
             addHours = sqlite_conn.CreateCommand();
 
-            string command = "INSERT INTO StudyHours(Hours, CourseName, Date) VALUES ('@hours', '@coursename', '@datetime')";
+            string command = "INSERT INTO StudyHours(Hours, CourseID, Date) VALUES ('@hours', '@coursename', '@datetime')";
             string command1 = command.Replace("@hours", hours).Replace("@coursename", courses).Replace("@datetime", date.ToString());
 
             addHours.CommandText = command1;
