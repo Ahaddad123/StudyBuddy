@@ -51,7 +51,7 @@ namespace Study_Buddy.DataAccess
                 checkAccounts.CommandText = createTables2;
                 checkAccounts.ExecuteNonQuery();
 
-                String createTables3 = "CREATE TABLE \"Courses\"(\"CourseID\"   INTEGER NOT NULL, \"CourseName\"   TEXT NOT NULL, \"Credits\"   INTEGER NOT NULL, \"CourseCode\"   TEXT NOT NULL, PRIMARY KEY(\"Course ID\" AUTOINCREMENT))";
+                String createTables3 = "CREATE TABLE \"Courses\"(\"CourseID\"   INTEGER NOT NULL, \"CourseName\"   TEXT NOT NULL, \"Credits\"   INTEGER NOT NULL, \"CourseCode\"   TEXT NOT NULL, PRIMARY KEY(\"CourseID\" AUTOINCREMENT))";
                 checkAccounts.CommandText = createTables3;
                 checkAccounts.ExecuteNonQuery();
 
