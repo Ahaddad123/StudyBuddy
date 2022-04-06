@@ -107,5 +107,10 @@ namespace Study_Buddy.BusinessLogic
         {
             database.logStudyHours(courses, date, hours);
         }
+
+        public void addAssignment(string coursename, string name, string grade, string weight,  string duedate) 
+        {
+            database.addAssignment(coursename, name, grade, weight, duedate);
+        }
     }
 }

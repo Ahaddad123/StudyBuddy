@@ -203,14 +203,14 @@ namespace Study_Buddy.DataAccess
         {
             SQLiteConnection sqlite_conn = CreateConnection();
 
-            SQLiteCommand addCourses;
-            addCourses = sqlite_conn.CreateCommand();
+            SQLiteCommand addHours;
+            addHours = sqlite_conn.CreateCommand();
 
             string command = "INSERT INTO StudyHours(Hours, CourseName, Date) VALUES ('@hours', '@coursename', '@datetime')";
             string command1 = command.Replace("@hours", hours).Replace("@coursename", courses).Replace("@datetime", date.ToString());
 
-            addCourses.CommandText = command1;
-            addCourses.ExecuteNonQuery();
+            addHours.CommandText = command1;
+            addHours.ExecuteNonQuery();
         }
 
         public List<string> readStudyHours()
@@ -248,9 +248,19 @@ namespace Study_Buddy.DataAccess
             removeCourses.ExecuteNonQuery();
         }
 
-        public void addAssignment() 
+        public void addAssignment(string courseName, string assignmentName, string assignmentWeight, string grade, string duedate) 
         {
+            SQLiteConnection sqlite_conn = CreateConnection();
 
+            SQLiteCommand addAssignment;
+            addAssignment = sqlite_conn.CreateCommand();
+
+
+            string command = "INSERT INTO Assignments(CourseName, AssignmentName, AssignmentWeight, Grade, DueDate) VALUES ('@course', '@assignmentname','@assignmentweight', '@grade', '@duedate')";
+            string command1 = command.Replace("@course", courseName).Replace("@assignmentname", assignmentName).Replace("@assignmentweight", assignmentWeight).Replace("@grade", grade).Replace("@duedate", duedate);
+
+            addAssignment.CommandText = command1;
+            addAssignment.ExecuteNonQuery();
         }
     }
 }
