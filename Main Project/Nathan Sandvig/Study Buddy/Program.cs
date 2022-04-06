@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using Study_Buddy.Presentation;
 using Study_Buddy.DataAccess;
 using Study_Buddy.Presentation.View;
+using Study_Buddy.BusinessLogic;
 
 namespace Study_Buddy
 {
@@ -19,6 +20,10 @@ namespace Study_Buddy
         [STAThread]
         static void Main()
         {
+
+            Account acc = new Account();
+            acc.createTables();
+
             //Launching GUI application
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

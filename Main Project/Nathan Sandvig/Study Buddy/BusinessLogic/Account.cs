@@ -36,9 +36,16 @@ namespace Study_Buddy.BusinessLogic
                 return true;
         }
 
-        public Boolean createAccount(String username, String password, String email, string firstname, string lastname, string gpa, string schoolname)
+        public int createTables() 
         {
             int success = database.createTables();
+
+            return success;
+        }
+
+        public Boolean createAccount(String username, String password, String email, string firstname, string lastname, string gpa, string schoolname)
+        {
+            //int success = database.createTables();
 
             int acc = database.InsertAccountData(username, password, email, firstname, lastname, gpa, schoolname);
 

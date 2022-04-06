@@ -126,6 +126,9 @@ namespace Study_Buddy.Presentation.View
             
 
             Account acc = new Account(username, password);
+
+            //acc.createTables();
+
             acc.createAccount(username, password, email, firstName, lastName, gpa, schoolName);
             
             MessageBox.Show("Account has probably been created for you.");
