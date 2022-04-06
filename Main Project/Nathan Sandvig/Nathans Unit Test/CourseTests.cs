@@ -31,7 +31,7 @@ namespace Nathans_Unit_Test
         public void AddAssignmentTest()
         {
             Course course = new Course();
-            course.AddAssignment("testAssignment", 100, 30, DateTime.Today);
+            course.AddAssignment(new Assignment(100, "testAssignment", 30, DateTime.Today));
 
             Assert.IsTrue(course.RemoveAssignment("testAssignment"));
         }
@@ -40,7 +40,7 @@ namespace Nathans_Unit_Test
         public void RemoveAssignmentTest()
         {
             Course course = new Course();
-            course.AddAssignment("testAssignment", 100, 30, DateTime.Today);
+            course.AddAssignment(new Assignment(100, "testAssignment", 30, DateTime.Today));
             course.RemoveAssignment("testAssignment");
 
             Assert.IsFalse(course.RemoveAssignment("testAssignment"));
@@ -50,7 +50,7 @@ namespace Nathans_Unit_Test
         public void GradeAssignmentTest()
         {
             Course course = new Course();
-            course.AddAssignment("testAssignment", 100, 100, DateTime.Today);
+            course.AddAssignment(new Assignment(100, "testAssignment", 100, DateTime.Today));
 
             course.GradeAssignment("testAssignment", 70);
 
@@ -68,8 +68,8 @@ namespace Nathans_Unit_Test
         public void CalculateGradeTest_Negative()
         {
             Course course = new Course();
-            course.AddAssignment("testAssignment1", 100, 50, DateTime.Today);
-            course.AddAssignment("testAssignment2", 100, 50, DateTime.Today);
+            course.AddAssignment(new Assignment(100, "testAssignment1", 50, DateTime.Today));
+            course.AddAssignment(new Assignment(100, "testAssignment2", 50, DateTime.Today));
 
             course.GradeAssignment("testAssignment1", -10);
             course.GradeAssignment("testAssignment2", -28);
@@ -81,8 +81,8 @@ namespace Nathans_Unit_Test
         public void CalculateGradeTest_Zero()
         {
             Course course = new Course();
-            course.AddAssignment("testAssignment1", 100, 50, DateTime.Today);
-            course.AddAssignment("testAssignment2", 100, 50, DateTime.Today);
+            course.AddAssignment(new Assignment(100, "testAssignment1", 50, DateTime.Today));
+            course.AddAssignment(new Assignment(100, "testAssignment2", 50, DateTime.Today));
 
             course.GradeAssignment("testAssignment1", 10);
             course.GradeAssignment("testAssignment2", -10);
@@ -94,8 +94,8 @@ namespace Nathans_Unit_Test
         public void CalculateGradeTest_Positive()
         {
             Course course = new Course();
-            course.AddAssignment("testAssignment1", 100, 50, DateTime.Today);
-            course.AddAssignment("testAssignment2", 100, 50, DateTime.Today);
+            course.AddAssignment(new Assignment(100, "testAssignment1", 50, DateTime.Today));
+            course.AddAssignment(new Assignment(100, "testAssignment2", 50, DateTime.Today));
 
             course.GradeAssignment("testAssignment1", 20);
             course.GradeAssignment("testAssignment2", 28);
@@ -107,8 +107,8 @@ namespace Nathans_Unit_Test
         public void CalculateGradeTest_Over100()
         {
             Course course = new Course();
-            course.AddAssignment("testAssignment1", 100, 50, DateTime.Today);
-            course.AddAssignment("testAssignment2", 100, 50, DateTime.Today);
+            course.AddAssignment(new Assignment(100, "testAssignment1", 50, DateTime.Today));
+            course.AddAssignment(new Assignment(100, "testAssignment2", 50, DateTime.Today));
 
             course.GradeAssignment("testAssignment1", 100);
             course.GradeAssignment("testAssignment2", 230);
