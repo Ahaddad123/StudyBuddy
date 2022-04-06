@@ -55,15 +55,15 @@ namespace Study_Buddy.DataAccess
                 checkAccounts.CommandText = createTables3;
                 checkAccounts.ExecuteNonQuery();
 
-                String createTables4 = "CREATE TABLE \"Overall Grades\"(\"User ID\" INTEGER NOT NULL)";
+                String createTables4 = "CREATE TABLE \"OverallGrades\"(\"User ID\" INTEGER NOT NULL)";
                 checkAccounts.CommandText = createTables4;
                 checkAccounts.ExecuteNonQuery();
 
-                String createTables5 = "CREATE TABLE \"Student Information\"(\"FName\" TEXT NOT NULL, \"LName\" TEXT NOT NULL, \"GPA\" REAL NOT NULL, \"School Name\" TEXT NOT NULL, \"Student ID\" INTEGER NOT NULL, PRIMARY KEY(\"Student ID\"))";
+                String createTables5 = "CREATE TABLE \"StudentInformation\"(\"StudentID\" INTEGER NOT NULL, \"FName\" TEXT NOT NULL, \"LName\" TEXT NOT NULL, \"GPA\" REAL NOT NULL, \"School Name\" TEXT NOT NULL, PRIMARY KEY(\"Student ID\"))";
                 checkAccounts.CommandText = createTables5;
                 checkAccounts.ExecuteNonQuery();
 
-                String createTables6 = "CREATE TABLE \"StudyHours\" (\"Hours\" INTEGER NOT NULL, \"Course ID\" INTEGER NOT NULL, \"Date\" INTEGER NOT NULL)";
+                String createTables6 = "CREATE TABLE \"StudyHours\" (\"Hours\" INTEGER NOT NULL, \"CourseID\" INTEGER NOT NULL, \"Date\" INTEGER NOT NULL)";
                 checkAccounts.CommandText = createTables6;
                 checkAccounts.ExecuteNonQuery();
             } 
@@ -126,7 +126,7 @@ namespace Study_Buddy.DataAccess
             insertAccountDataa.CommandText = command1;
             success = insertAccountDataa.ExecuteNonQuery();
 
-            string command2 = "INSERT INTO StudentInformation(Fname, LName, GPA, SchoolName, StudentID) VALUES ('@first', '@last', '@gpa', '@schoolname')";
+            string command2 = "INSERT INTO StudentInformation(Fname, LName, GPA, SchoolName) VALUES ('@first', '@last', '@gpa', '@schoolname')";
             string command3 = command2.Replace("@first", firstname).Replace("@last", lastname).Replace("@gpa", gpa).Replace("@schoolname", schoolname);
             insertAccountDataa.CommandText = command3;
             insertAccountDataa.ExecuteNonQuery();
