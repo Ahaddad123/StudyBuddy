@@ -42,16 +42,16 @@ namespace Study_Buddy.DataAccess
             checkAccounts = sqlite_conn.CreateCommand();
 
             try {
+
                 String createTables = "CREATE TABLE \"AccountData\" (\"Username\"  TEXT NOT NULL, \"Password\"  TEXT NOT NULL, \"Email\" TEXT NOT NULL, \"UserID\"    INTEGER NOT NULL,PRIMARY KEY(\"UserID\" AUTOINCREMENT))";
                 checkAccounts.CommandText = createTables;
-
                 checkAccounts.ExecuteNonQuery();
 
-                String createTables2 = "CREATE TABLE \"Assignments\" (\"Course Code\"   TEXT NOT NULL, \"Assignment Name\"   TEXT NOT NULL,\"Assignment Weight\" REAL NOT NULL, \"Grade\" REAL, \"Course ID\" INTEGER, PRIMARY KEY(\"Course Code\"))";
+                String createTables2 = "CREATE TABLE \"Assignments\" (\"CourseName\"   TEXT NOT NULL, \"AssignmentName\"   TEXT NOT NULL, \"AssignmentWeight\" REAL NOT NULL, \"Grade\" REAL, \"DueDate\" INTEGER, PRIMARY KEY(\"CourseName\"))";
                 checkAccounts.CommandText = createTables2;
                 checkAccounts.ExecuteNonQuery();
 
-                String createTables3 = "CREATE TABLE \"Courses\"(\"Course Name\"   TEXT NOT NULL, \"Course ID\"   INTEGER NOT NULL, \"Credits\"   INTEGER NOT NULL, \"Course Code\"   TEXT NOT NULL, PRIMARY KEY(\"Course ID\"))";
+                String createTables3 = "CREATE TABLE \"Courses\"(\"CourseID\"   INTEGER NOT NULL, \"CourseName\"   TEXT NOT NULL, \"Credits\"   INTEGER NOT NULL, \"CourseCode\"   TEXT NOT NULL, PRIMARY KEY(\"Course ID\" AUTOINCREMENT))";
                 checkAccounts.CommandText = createTables3;
                 checkAccounts.ExecuteNonQuery();
 
@@ -59,7 +59,7 @@ namespace Study_Buddy.DataAccess
                 checkAccounts.CommandText = createTables4;
                 checkAccounts.ExecuteNonQuery();
 
-                String createTables5 = "CREATE TABLE \"StudentInformation\"(\"StudentID\" INTEGER NOT NULL, \"FName\" TEXT NOT NULL, \"LName\" TEXT NOT NULL, \"GPA\" REAL NOT NULL, \"School Name\" TEXT NOT NULL, PRIMARY KEY(\"Student ID\"))";
+                String createTables5 = "CREATE TABLE \"StudentInformation\"(\"StudentID\" INTEGER NOT NULL, \"FName\" TEXT NOT NULL, \"LName\" TEXT NOT NULL, \"GPA\" REAL NOT NULL, \"SchoolName\" TEXT NOT NULL, PRIMARY KEY(\"StudentID\" AUTOINCREMENT))";
                 checkAccounts.CommandText = createTables5;
                 checkAccounts.ExecuteNonQuery();
 
