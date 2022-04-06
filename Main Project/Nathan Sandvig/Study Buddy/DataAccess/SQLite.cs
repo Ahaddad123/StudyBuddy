@@ -164,7 +164,7 @@ namespace Study_Buddy.DataAccess
             sqlite_conn = CreateConnection();
 
             SQLiteCommand letsRead = sqlite_conn.CreateCommand();
-            letsRead.CommandText = "SELECT Course Name FROM Courses";
+            letsRead.CommandText = "SELECT CourseName FROM Courses";
 
             sqlite_datareader = letsRead.ExecuteReader();
 
