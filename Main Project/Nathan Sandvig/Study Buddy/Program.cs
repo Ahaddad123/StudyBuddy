@@ -21,6 +21,11 @@ namespace Study_Buddy
         static void Main()
         {
 
+            //---------------------------------------------------------------------
+            // Creating the conection to the database then checking if tables have 
+            // been created for the table, and if they have, do not recreate, move
+            // on to open the application.
+            //---------------------------------------------------------------------
             Account acc = new Account();
             acc.createTables();
             AccountController.account = acc;
