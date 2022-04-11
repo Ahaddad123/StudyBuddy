@@ -30,6 +30,11 @@
         {
             this.mainPanel = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.weightErrorMessageLabel = new System.Windows.Forms.Label();
+            this.successLabel = new System.Windows.Forms.Label();
+            this.nameErrorMessageLabel = new System.Windows.Forms.Label();
+            this.courseErrorMessageLabel = new System.Windows.Forms.Label();
+            this.totalPointsErrorMessageLabel = new System.Windows.Forms.Label();
             this.dtpAssignDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -59,6 +64,11 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.groupBox1.Controls.Add(this.weightErrorMessageLabel);
+            this.groupBox1.Controls.Add(this.successLabel);
+            this.groupBox1.Controls.Add(this.nameErrorMessageLabel);
+            this.groupBox1.Controls.Add(this.courseErrorMessageLabel);
+            this.groupBox1.Controls.Add(this.totalPointsErrorMessageLabel);
             this.groupBox1.Controls.Add(this.dtpAssignDate);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label5);
@@ -72,14 +82,64 @@
             this.groupBox1.Controls.Add(this.txtNameAssign);
             this.groupBox1.Location = new System.Drawing.Point(68, 51);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(509, 303);
+            this.groupBox1.Size = new System.Drawing.Size(509, 351);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
+            // 
+            // weightErrorMessageLabel
+            // 
+            this.weightErrorMessageLabel.AutoSize = true;
+            this.weightErrorMessageLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.weightErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
+            this.weightErrorMessageLabel.Location = new System.Drawing.Point(154, 230);
+            this.weightErrorMessageLabel.Name = "weightErrorMessageLabel";
+            this.weightErrorMessageLabel.Size = new System.Drawing.Size(0, 19);
+            this.weightErrorMessageLabel.TabIndex = 15;
+            // 
+            // successLabel
+            // 
+            this.successLabel.AutoSize = true;
+            this.successLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.successLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.successLabel.Location = new System.Drawing.Point(38, 315);
+            this.successLabel.Name = "successLabel";
+            this.successLabel.Size = new System.Drawing.Size(0, 23);
+            this.successLabel.TabIndex = 14;
+            // 
+            // nameErrorMessageLabel
+            // 
+            this.nameErrorMessageLabel.AutoSize = true;
+            this.nameErrorMessageLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
+            this.nameErrorMessageLabel.Location = new System.Drawing.Point(154, 60);
+            this.nameErrorMessageLabel.Name = "nameErrorMessageLabel";
+            this.nameErrorMessageLabel.Size = new System.Drawing.Size(0, 19);
+            this.nameErrorMessageLabel.TabIndex = 13;
+            // 
+            // courseErrorMessageLabel
+            // 
+            this.courseErrorMessageLabel.AutoSize = true;
+            this.courseErrorMessageLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.courseErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
+            this.courseErrorMessageLabel.Location = new System.Drawing.Point(154, 174);
+            this.courseErrorMessageLabel.Name = "courseErrorMessageLabel";
+            this.courseErrorMessageLabel.Size = new System.Drawing.Size(0, 19);
+            this.courseErrorMessageLabel.TabIndex = 12;
+            // 
+            // totalPointsErrorMessageLabel
+            // 
+            this.totalPointsErrorMessageLabel.AutoSize = true;
+            this.totalPointsErrorMessageLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalPointsErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
+            this.totalPointsErrorMessageLabel.Location = new System.Drawing.Point(154, 119);
+            this.totalPointsErrorMessageLabel.Name = "totalPointsErrorMessageLabel";
+            this.totalPointsErrorMessageLabel.Size = new System.Drawing.Size(0, 19);
+            this.totalPointsErrorMessageLabel.TabIndex = 11;
             // 
             // dtpAssignDate
             // 
             this.dtpAssignDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpAssignDate.Location = new System.Drawing.Point(158, 191);
+            this.dtpAssignDate.Location = new System.Drawing.Point(158, 258);
             this.dtpAssignDate.Name = "dtpAssignDate";
             this.dtpAssignDate.Size = new System.Drawing.Size(332, 30);
             this.dtpAssignDate.TabIndex = 10;
@@ -89,7 +149,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(30, 191);
+            this.label1.Location = new System.Drawing.Point(30, 258);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 23);
             this.label1.TabIndex = 9;
@@ -100,7 +160,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(30, 107);
+            this.label5.Location = new System.Drawing.Point(30, 143);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 23);
             this.label5.TabIndex = 8;
@@ -110,7 +170,7 @@
             // 
             this.cmbCourses.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCourses.FormattingEnabled = true;
-            this.cmbCourses.Location = new System.Drawing.Point(158, 104);
+            this.cmbCourses.Location = new System.Drawing.Point(158, 140);
             this.cmbCourses.Name = "cmbCourses";
             this.cmbCourses.Size = new System.Drawing.Size(121, 31);
             this.cmbCourses.TabIndex = 7;
@@ -121,7 +181,7 @@
             this.butAddAssig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butAddAssig.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butAddAssig.ForeColor = System.Drawing.Color.Navy;
-            this.butAddAssig.Location = new System.Drawing.Point(363, 243);
+            this.butAddAssig.Location = new System.Drawing.Point(361, 304);
             this.butAddAssig.Name = "butAddAssig";
             this.butAddAssig.Size = new System.Drawing.Size(105, 30);
             this.butAddAssig.TabIndex = 6;
@@ -134,7 +194,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(29, 149);
+            this.label3.Location = new System.Drawing.Point(29, 197);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 23);
             this.label3.TabIndex = 5;
@@ -145,7 +205,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(28, 71);
+            this.label2.Location = new System.Drawing.Point(28, 93);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 23);
             this.label2.TabIndex = 4;
@@ -165,7 +225,7 @@
             // txtPriority
             // 
             this.txtPriority.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPriority.Location = new System.Drawing.Point(158, 149);
+            this.txtPriority.Location = new System.Drawing.Point(158, 197);
             this.txtPriority.Name = "txtPriority";
             this.txtPriority.Size = new System.Drawing.Size(125, 30);
             this.txtPriority.TabIndex = 2;
@@ -173,7 +233,7 @@
             // txtPointsAssign
             // 
             this.txtPointsAssign.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPointsAssign.Location = new System.Drawing.Point(158, 64);
+            this.txtPointsAssign.Location = new System.Drawing.Point(158, 86);
             this.txtPointsAssign.Name = "txtPointsAssign";
             this.txtPointsAssign.Size = new System.Drawing.Size(125, 30);
             this.txtPointsAssign.TabIndex = 1;
@@ -191,7 +251,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(150)))), ((int)(((byte)(231)))));
-            this.ClientSize = new System.Drawing.Size(756, 436);
+            this.ClientSize = new System.Drawing.Size(946, 545);
             this.Controls.Add(this.mainPanel);
             this.MaximumSize = new System.Drawing.Size(964, 592);
             this.MinimumSize = new System.Drawing.Size(964, 592);
@@ -221,5 +281,10 @@
         private System.Windows.Forms.ComboBox cmbCourses;
         private System.Windows.Forms.DateTimePicker dtpAssignDate;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label weightErrorMessageLabel;
+        private System.Windows.Forms.Label successLabel;
+        private System.Windows.Forms.Label nameErrorMessageLabel;
+        private System.Windows.Forms.Label courseErrorMessageLabel;
+        private System.Windows.Forms.Label totalPointsErrorMessageLabel;
     }
 }

@@ -46,7 +46,7 @@ namespace Study_Buddy.Presentation
             //test.addCourse(testC);
             if (txtNameAssign.Text.Equals(""))
             {
-                MessageBox.Show("Invalid Name");
+                nameErrorMessageLabel.Text = "Invalid Name";
                 valid = false;
             }
             try
@@ -55,7 +55,7 @@ namespace Study_Buddy.Presentation
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Invalid Total Points");
+                totalPointsErrorMessageLabel.Text = "Invalid Total Points";
                 valid = false;
             }
             try
@@ -64,24 +64,24 @@ namespace Study_Buddy.Presentation
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Invalid Weight");
+                weightErrorMessageLabel.Text = "Invalid Weight";
                 valid = false;
             }
 
             if(cmbCourses.SelectedIndex == -1)
             {
                 valid = false;
-                MessageBox.Show("No Course selected");
+                courseErrorMessageLabel.Text = "No Course selected";
             }
             duedate = dtpAssignDate.Value;
             if (points < 0)
             {
-                MessageBox.Show("Invalid Total Points");
+                totalPointsErrorMessageLabel.Text = "Invalid Total Points";
                 valid = false;
             }
             if (weight < 0)
             {
-                MessageBox.Show("Invalid Weight");
+                weightErrorMessageLabel.Text = "Invalid Weight";
                 valid = false;
             }
 
@@ -90,7 +90,7 @@ namespace Study_Buddy.Presentation
                 // Add assignment
                 // wip does not like courseName
                 //controller.AddAssignment(courseName, txtNameAssign.Text,points,weight);
-                MessageBox.Show("Assignment added");
+                successLabel.Text = "Assignment added";
                 Assignment addassign = new Assignment(points, txtNameAssign.Text, weight, duedate);
                 controller.AddAssignment(cmbCourses.Text, addassign);
             }
