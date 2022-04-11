@@ -129,7 +129,7 @@ namespace Study_Buddy.Presentation.View
 
             if (!valid)
             {
-                this.errorMessageLabel.Text = "Invalid Username/Password or Account Does Not Exist.";
+                this.errorMessageLabel.Text = "Invalid Login Credentials.  Please try again.";
             }
             else
                 FormSwitcher.OpenHomePageForm(this);

@@ -31,12 +31,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.btnCreateNewAccount = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.errorMessageLabel = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,22 +106,30 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Password";
             // 
-            // textBox1
+            // btnCreateNewAccount
             // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(438, 146);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(429, 34);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.UseSystemPasswordChar = true;
+            this.btnCreateNewAccount.BackColor = System.Drawing.Color.White;
+            this.btnCreateNewAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateNewAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateNewAccount.ForeColor = System.Drawing.Color.Navy;
+            this.btnCreateNewAccount.Location = new System.Drawing.Point(438, 540);
+            this.btnCreateNewAccount.Name = "btnCreateNewAccount";
+            this.btnCreateNewAccount.Size = new System.Drawing.Size(276, 54);
+            this.btnCreateNewAccount.TabIndex = 7;
+            this.btnCreateNewAccount.Text = "Create New Account";
+            this.btnCreateNewAccount.UseVisualStyleBackColor = false;
+            this.btnCreateNewAccount.Click += new System.EventHandler(this.btnCreateNewAccount_Click);
             // 
-            // textBox2
+            // label4
             // 
-            this.textBox2.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(438, 236);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(429, 34);
-            this.textBox2.TabIndex = 4;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(438, 504);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(293, 26);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "No account?  Register now!";
             // 
             // button1
             // 
@@ -138,40 +146,32 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.btn_login);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(438, 504);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(293, 26);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "No account?  Register now!";
-            // 
-            // btnCreateNewAccount
-            // 
-            this.btnCreateNewAccount.BackColor = System.Drawing.Color.White;
-            this.btnCreateNewAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreateNewAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateNewAccount.ForeColor = System.Drawing.Color.Navy;
-            this.btnCreateNewAccount.Location = new System.Drawing.Point(438, 540);
-            this.btnCreateNewAccount.Name = "btnCreateNewAccount";
-            this.btnCreateNewAccount.Size = new System.Drawing.Size(276, 54);
-            this.btnCreateNewAccount.TabIndex = 7;
-            this.btnCreateNewAccount.Text = "Create New Account";
-            this.btnCreateNewAccount.UseVisualStyleBackColor = false;
-            this.btnCreateNewAccount.Click += new System.EventHandler(this.btnCreateNewAccount_Click);
-            // 
             // errorMessageLabel
             // 
             this.errorMessageLabel.AutoSize = true;
             this.errorMessageLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorMessageLabel.ForeColor = System.Drawing.Color.White;
+            this.errorMessageLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.errorMessageLabel.Location = new System.Drawing.Point(438, 312);
             this.errorMessageLabel.Name = "errorMessageLabel";
             this.errorMessageLabel.Size = new System.Drawing.Size(0, 23);
             this.errorMessageLabel.TabIndex = 8;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(438, 236);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(429, 34);
+            this.textBox2.TabIndex = 4;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(438, 146);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(429, 34);
+            this.textBox1.TabIndex = 3;
+            this.textBox1.UseSystemPasswordChar = true;
             // 
             // LoginForm
             // 
