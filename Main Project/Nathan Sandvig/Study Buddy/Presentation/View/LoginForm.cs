@@ -121,17 +121,17 @@ namespace Study_Buddy.Presentation.View
 
         private void btn_login(object sender, EventArgs e)
         {
-            String newUsername = textBox2.Text;
-            String newPassword = textBox1.Text;
+            String newUsername = passwordTextBox.Text;
+            String newPassword = nameTextBox.Text;
             Account acc = new Account(newUsername, newPassword);
 
             Boolean valid = acc.accountCreated(newUsername, newPassword);
 
-            if (!valid)
+            /*if (!valid)
             {
                 this.errorMessageLabel.Text = "Invalid Login Credentials.  Please try again.";
             }
-            else
+            else*/
                 FormSwitcher.OpenHomePageForm(this);
         }
     }

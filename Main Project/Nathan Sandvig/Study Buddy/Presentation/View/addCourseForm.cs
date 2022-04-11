@@ -45,7 +45,7 @@ namespace Study_Buddy.Presentation
             double courseCredit = 0;
             if (txtCourseTitle.Text.Equals(""))
             {
-                MessageBox.Show("Invalid Name");
+                nameErrorMessageLabel.Text = "Invalid Name";
                 valid = false;
             }
             try
@@ -57,7 +57,7 @@ namespace Study_Buddy.Presentation
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Invalid Priority");
+                PriorityErrorMessageLabel.Text = "Invalid Priority";
                 valid = false;
             }
             try
@@ -66,17 +66,17 @@ namespace Study_Buddy.Presentation
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Invalid Credits");
+                creditsErrorMessageLabel.Text = "Invalid Credits";
                 valid = false;
             }
             if (coursePriority < 0)
             {
-                MessageBox.Show("Invalid Priority");
+                PriorityErrorMessageLabel.Text = "Invalid Priority";
                 valid = false;
             }
             if (courseCredit < 0)
             {
-                MessageBox.Show("Invalid Credits");
+                creditsErrorMessageLabel.Text = "Invalid Credits";
                 valid = false;
             }
 
@@ -85,7 +85,11 @@ namespace Study_Buddy.Presentation
                 Course course = new CourseBuilder().WithName(txtCourseTitle.Text).WithCode(txtCourseCode.Text).WithCredits(courseCredit).WithPriority(coursePriority).Build();
                 //TODO: Call this in the AddCourseFormController
                 controller.addCourse(course);
-                MessageBox.Show("Succesfully added " + course.name);
+                nameErrorMessageLabel.Text = "";
+                CodeErrorMessageLabel.Text = "";
+                PriorityErrorMessageLabel.Text = "";
+                creditsErrorMessageLabel.Text = "";
+                successLabel.Text = "Succesfully added " + course.name;
             }
         }
 

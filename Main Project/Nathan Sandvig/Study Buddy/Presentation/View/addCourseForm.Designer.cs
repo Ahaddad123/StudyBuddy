@@ -45,6 +45,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.removeCourseLabel = new System.Windows.Forms.Label();
             this.addCourseLabel = new System.Windows.Forms.Label();
+            this.nameErrorMessageLabel = new System.Windows.Forms.Label();
+            this.PriorityErrorMessageLabel = new System.Windows.Forms.Label();
+            this.creditsErrorMessageLabel = new System.Windows.Forms.Label();
+            this.CodeErrorMessageLabel = new System.Windows.Forms.Label();
+            this.successLabel = new System.Windows.Forms.Label();
             this.mainPanel.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -81,7 +86,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(85, 89);
+            this.label1.Location = new System.Drawing.Point(71, 89);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 23);
             this.label1.TabIndex = 17;
@@ -100,18 +105,26 @@
             // 
             // removeCourseButton
             // 
+            this.removeCourseButton.BackColor = System.Drawing.Color.White;
+            this.removeCourseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeCourseButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.removeCourseButton.ForeColor = System.Drawing.Color.Navy;
             this.removeCourseButton.Location = new System.Drawing.Point(131, 147);
             this.removeCourseButton.Name = "removeCourseButton";
-            this.removeCourseButton.Size = new System.Drawing.Size(75, 23);
+            this.removeCourseButton.Size = new System.Drawing.Size(124, 44);
             this.removeCourseButton.TabIndex = 16;
             this.removeCourseButton.Text = "Remove";
-            this.removeCourseButton.UseVisualStyleBackColor = true;
+            this.removeCourseButton.UseVisualStyleBackColor = false;
             this.removeCourseButton.Click += new System.EventHandler(this.removeCourseButton_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.groupBox1.Controls.Add(this.successLabel);
+            this.groupBox1.Controls.Add(this.CodeErrorMessageLabel);
+            this.groupBox1.Controls.Add(this.creditsErrorMessageLabel);
+            this.groupBox1.Controls.Add(this.PriorityErrorMessageLabel);
+            this.groupBox1.Controls.Add(this.nameErrorMessageLabel);
             this.groupBox1.Controls.Add(this.butAddCourse);
             this.groupBox1.Controls.Add(this.txtCourseCredits);
             this.groupBox1.Controls.Add(this.txtCoursePriority);
@@ -123,7 +136,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(67, 83);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(488, 259);
+            this.groupBox1.Size = new System.Drawing.Size(488, 319);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             // 
@@ -132,7 +145,7 @@
             this.butAddCourse.BackColor = System.Drawing.Color.White;
             this.butAddCourse.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butAddCourse.ForeColor = System.Drawing.Color.Navy;
-            this.butAddCourse.Location = new System.Drawing.Point(338, 157);
+            this.butAddCourse.Location = new System.Drawing.Point(338, 223);
             this.butAddCourse.Name = "butAddCourse";
             this.butAddCourse.Size = new System.Drawing.Size(98, 36);
             this.butAddCourse.TabIndex = 9;
@@ -143,7 +156,7 @@
             // txtCourseCredits
             // 
             this.txtCourseCredits.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCourseCredits.Location = new System.Drawing.Point(101, 161);
+            this.txtCourseCredits.Location = new System.Drawing.Point(98, 223);
             this.txtCourseCredits.Name = "txtCourseCredits";
             this.txtCourseCredits.Size = new System.Drawing.Size(125, 30);
             this.txtCourseCredits.TabIndex = 8;
@@ -151,7 +164,7 @@
             // txtCoursePriority
             // 
             this.txtCoursePriority.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCoursePriority.Location = new System.Drawing.Point(101, 122);
+            this.txtCoursePriority.Location = new System.Drawing.Point(101, 165);
             this.txtCoursePriority.Name = "txtCoursePriority";
             this.txtCoursePriority.Size = new System.Drawing.Size(125, 30);
             this.txtCoursePriority.TabIndex = 7;
@@ -159,7 +172,7 @@
             // txtCourseCode
             // 
             this.txtCourseCode.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCourseCode.Location = new System.Drawing.Point(101, 83);
+            this.txtCourseCode.Location = new System.Drawing.Point(101, 106);
             this.txtCourseCode.Name = "txtCourseCode";
             this.txtCourseCode.Size = new System.Drawing.Size(125, 30);
             this.txtCourseCode.TabIndex = 6;
@@ -177,7 +190,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(20, 161);
+            this.label6.Location = new System.Drawing.Point(23, 230);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 23);
             this.label6.TabIndex = 4;
@@ -188,7 +201,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(20, 129);
+            this.label5.Location = new System.Drawing.Point(23, 172);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 23);
             this.label5.TabIndex = 3;
@@ -199,7 +212,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(19, 86);
+            this.label3.Location = new System.Drawing.Point(19, 113);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 23);
             this.label3.TabIndex = 1;
@@ -236,9 +249,59 @@
             this.addCourseLabel.TabIndex = 13;
             this.addCourseLabel.Text = "Add Course";
             // 
+            // nameErrorMessageLabel
+            // 
+            this.nameErrorMessageLabel.AutoSize = true;
+            this.nameErrorMessageLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
+            this.nameErrorMessageLabel.Location = new System.Drawing.Point(97, 80);
+            this.nameErrorMessageLabel.Name = "nameErrorMessageLabel";
+            this.nameErrorMessageLabel.Size = new System.Drawing.Size(0, 23);
+            this.nameErrorMessageLabel.TabIndex = 10;
+            // 
+            // PriorityErrorMessageLabel
+            // 
+            this.PriorityErrorMessageLabel.AutoSize = true;
+            this.PriorityErrorMessageLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PriorityErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
+            this.PriorityErrorMessageLabel.Location = new System.Drawing.Point(98, 198);
+            this.PriorityErrorMessageLabel.Name = "PriorityErrorMessageLabel";
+            this.PriorityErrorMessageLabel.Size = new System.Drawing.Size(0, 23);
+            this.PriorityErrorMessageLabel.TabIndex = 11;
+            // 
+            // creditsErrorMessageLabel
+            // 
+            this.creditsErrorMessageLabel.AutoSize = true;
+            this.creditsErrorMessageLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.creditsErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
+            this.creditsErrorMessageLabel.Location = new System.Drawing.Point(98, 256);
+            this.creditsErrorMessageLabel.Name = "creditsErrorMessageLabel";
+            this.creditsErrorMessageLabel.Size = new System.Drawing.Size(0, 23);
+            this.creditsErrorMessageLabel.TabIndex = 12;
+            // 
+            // CodeErrorMessageLabel
+            // 
+            this.CodeErrorMessageLabel.AutoSize = true;
+            this.CodeErrorMessageLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CodeErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
+            this.CodeErrorMessageLabel.Location = new System.Drawing.Point(98, 139);
+            this.CodeErrorMessageLabel.Name = "CodeErrorMessageLabel";
+            this.CodeErrorMessageLabel.Size = new System.Drawing.Size(0, 23);
+            this.CodeErrorMessageLabel.TabIndex = 13;
+            // 
+            // successLabel
+            // 
+            this.successLabel.AutoSize = true;
+            this.successLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.successLabel.ForeColor = System.Drawing.Color.White;
+            this.successLabel.Location = new System.Drawing.Point(96, 293);
+            this.successLabel.Name = "successLabel";
+            this.successLabel.Size = new System.Drawing.Size(0, 23);
+            this.successLabel.TabIndex = 14;
+            // 
             // AddCourseForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(150)))), ((int)(((byte)(231)))));
             this.ClientSize = new System.Drawing.Size(1348, 721);
@@ -278,5 +341,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label CodeErrorMessageLabel;
+        private System.Windows.Forms.Label creditsErrorMessageLabel;
+        private System.Windows.Forms.Label PriorityErrorMessageLabel;
+        private System.Windows.Forms.Label nameErrorMessageLabel;
+        private System.Windows.Forms.Label successLabel;
     }
 }
