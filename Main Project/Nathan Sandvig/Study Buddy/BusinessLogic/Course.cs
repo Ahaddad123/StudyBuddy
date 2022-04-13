@@ -12,6 +12,7 @@ namespace Study_Buddy.BusinessLogic
     //-------------------------------------------------------------------------
     // This class manages course objects within an account
     // v1: Created the class - Nathan S, 3-6-22
+    // v2: Created couresTimes - Andrew V, 4-12-22
     //-------------------------------------------------------------------------
     public class Course
     {
@@ -24,6 +25,7 @@ namespace Study_Buddy.BusinessLogic
         // code: The code of the course
         // priority: How important the course is
         // credits: The number of credits the course is worth
+        // courseTimes: days and times where you have class
         //---------------------------------------------------------------------
         public List<Assignment> assignments { get; set; }
         private StudyLog hourLog;
@@ -32,10 +34,12 @@ namespace Study_Buddy.BusinessLogic
         public string code { get; set; }
         public double priority { get; set; }
         public double credits { get; set; }
+        public List<List<DateTime>> courseTimes { get; set; }
 
         //---------------------------------------------------------------------
         // Default constructor for the Course class
         // v1: Created the method - Nathan S, 3-6-22
+        // v2: Created couresTimes - Andrew V, 4-12-22
         //---------------------------------------------------------------------
         public Course()
         {
@@ -46,11 +50,13 @@ namespace Study_Buddy.BusinessLogic
             this.code = "CourseCode";
             this.priority = -1.0;
             this.credits = 3.0;
+            courseTimes = new List<List<DateTime>> { new List<DateTime>() };
         }
 
         //---------------------------------------------------------------------
         // Builder constructor for the Course class
         // v1: Created the method - Nathan S, 3-6-22
+        // v2: Created couresTimes - Andrew V, 4-12-22
         //---------------------------------------------------------------------
         public Course(CourseBuilder builder)
         {
@@ -61,6 +67,7 @@ namespace Study_Buddy.BusinessLogic
             this.code = builder.code;
             this.priority = builder.priority;
             this.credits = builder.credits;
+            courseTimes = new List<List<DateTime>> { new List<DateTime>() };
         }
 
         //---------------------------------------------------------------------

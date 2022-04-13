@@ -81,6 +81,7 @@
     <Compile Include="Presentation\Controller\AddAssignmentFormController.cs" />
     <Compile Include="Presentation\Controller\AddCourseFormController.cs" />
     <Compile Include="Presentation\Controller\AddGradeFormController.cs" />
+    <Compile Include="Presentation\Controller\CalenderFoemController.cs" />
     <Compile Include="Presentation\Controller\InitialSetupFormController.cs" />
     <Compile Include="Presentation\Controller\RegistrationFormController.cs" />
     <Compile Include="Presentation\Controller\LoginFormController.cs" />
