@@ -34,7 +34,7 @@ namespace Study_Buddy.Presentation
             double points = 0;
             if (txtNameAssign.Text.Equals(""))
             {
-                MessageBox.Show("Invalid Name");
+                nameErrorMessageLabel.Text = "Invalid Name";
                 valid = false;
             }
             try
@@ -43,13 +43,13 @@ namespace Study_Buddy.Presentation
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Invalid Score");
+                scoreErrorMessageLabel.Text = "Invalid Score";
                 valid = false;
             }
             if (valid)
             {
                 controller.AddGrade(txtNameAssign.Text, points);
-                MessageBox.Show("Successfully added grade");
+                successMessageLabel.Text = "Successfully added grade";
             }
         }
 
