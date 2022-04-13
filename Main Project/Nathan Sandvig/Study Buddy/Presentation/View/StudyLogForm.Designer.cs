@@ -39,6 +39,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.courseErrorMessageLabel = new System.Windows.Forms.Label();
+            this.dateErrorMessageLabel = new System.Windows.Forms.Label();
+            this.hoursErrorMessageLabel = new System.Windows.Forms.Label();
+            this.successMessageLabel = new System.Windows.Forms.Label();
             this.mainPanel.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -62,6 +66,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.groupBox1.Controls.Add(this.successMessageLabel);
+            this.groupBox1.Controls.Add(this.hoursErrorMessageLabel);
+            this.groupBox1.Controls.Add(this.dateErrorMessageLabel);
+            this.groupBox1.Controls.Add(this.courseErrorMessageLabel);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.DTPhourDate);
             this.groupBox1.Controls.Add(this.cmbCourses);
@@ -71,9 +79,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(80, 75);
+            this.groupBox1.Location = new System.Drawing.Point(52, 75);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(452, 262);
+            this.groupBox1.Size = new System.Drawing.Size(480, 310);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             // 
@@ -81,10 +89,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(24, 94);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(31, 114);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 29);
+            this.label4.Size = new System.Drawing.Size(52, 23);
             this.label4.TabIndex = 14;
             this.label4.Text = "Date";
             // 
@@ -96,7 +104,7 @@
             this.DTPhourDate.CalendarTitleForeColor = System.Drawing.Color.Navy;
             this.DTPhourDate.CalendarTrailingForeColor = System.Drawing.Color.CornflowerBlue;
             this.DTPhourDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DTPhourDate.Location = new System.Drawing.Point(94, 94);
+            this.DTPhourDate.Location = new System.Drawing.Point(89, 114);
             this.DTPhourDate.Name = "DTPhourDate";
             this.DTPhourDate.Size = new System.Drawing.Size(327, 30);
             this.DTPhourDate.TabIndex = 13;
@@ -116,7 +124,7 @@
             this.butAddHours.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butAddHours.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butAddHours.ForeColor = System.Drawing.Color.Navy;
-            this.butAddHours.Location = new System.Drawing.Point(246, 149);
+            this.butAddHours.Location = new System.Drawing.Point(313, 180);
             this.butAddHours.Name = "butAddHours";
             this.butAddHours.Size = new System.Drawing.Size(98, 36);
             this.butAddHours.TabIndex = 9;
@@ -127,17 +135,17 @@
             // txtHours
             // 
             this.txtHours.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHours.Location = new System.Drawing.Point(94, 147);
+            this.txtHours.Location = new System.Drawing.Point(89, 187);
             this.txtHours.Name = "txtHours";
-            this.txtHours.Size = new System.Drawing.Size(125, 38);
+            this.txtHours.Size = new System.Drawing.Size(125, 30);
             this.txtHours.TabIndex = 8;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(19, 147);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(23, 187);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 23);
             this.label6.TabIndex = 4;
@@ -147,10 +155,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(11, 47);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(15, 48);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 29);
+            this.label2.Size = new System.Drawing.Size(73, 23);
             this.label2.TabIndex = 0;
             this.label2.Text = "Course";
             // 
@@ -173,6 +181,46 @@
             this.label3.Size = new System.Drawing.Size(43, 16);
             this.label3.TabIndex = 1;
             this.label3.Text = "Week";
+            // 
+            // courseErrorMessageLabel
+            // 
+            this.courseErrorMessageLabel.AutoSize = true;
+            this.courseErrorMessageLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.courseErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
+            this.courseErrorMessageLabel.Location = new System.Drawing.Point(90, 74);
+            this.courseErrorMessageLabel.Name = "courseErrorMessageLabel";
+            this.courseErrorMessageLabel.Size = new System.Drawing.Size(0, 29);
+            this.courseErrorMessageLabel.TabIndex = 15;
+            // 
+            // dateErrorMessageLabel
+            // 
+            this.dateErrorMessageLabel.AutoSize = true;
+            this.dateErrorMessageLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
+            this.dateErrorMessageLabel.Location = new System.Drawing.Point(90, 147);
+            this.dateErrorMessageLabel.Name = "dateErrorMessageLabel";
+            this.dateErrorMessageLabel.Size = new System.Drawing.Size(0, 29);
+            this.dateErrorMessageLabel.TabIndex = 16;
+            // 
+            // hoursErrorMessageLabel
+            // 
+            this.hoursErrorMessageLabel.AutoSize = true;
+            this.hoursErrorMessageLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hoursErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
+            this.hoursErrorMessageLabel.Location = new System.Drawing.Point(90, 219);
+            this.hoursErrorMessageLabel.Name = "hoursErrorMessageLabel";
+            this.hoursErrorMessageLabel.Size = new System.Drawing.Size(0, 29);
+            this.hoursErrorMessageLabel.TabIndex = 17;
+            // 
+            // successMessageLabel
+            // 
+            this.successMessageLabel.AutoSize = true;
+            this.successMessageLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.successMessageLabel.ForeColor = System.Drawing.Color.White;
+            this.successMessageLabel.Location = new System.Drawing.Point(90, 258);
+            this.successMessageLabel.Name = "successMessageLabel";
+            this.successMessageLabel.Size = new System.Drawing.Size(0, 29);
+            this.successMessageLabel.TabIndex = 18;
             // 
             // StudyLogForm
             // 
@@ -208,5 +256,9 @@
         private System.Windows.Forms.ComboBox cmbCourses;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker DTPhourDate;
+        private System.Windows.Forms.Label successMessageLabel;
+        private System.Windows.Forms.Label hoursErrorMessageLabel;
+        private System.Windows.Forms.Label dateErrorMessageLabel;
+        private System.Windows.Forms.Label courseErrorMessageLabel;
     }
 }

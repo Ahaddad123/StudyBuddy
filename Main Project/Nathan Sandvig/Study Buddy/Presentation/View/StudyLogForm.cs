@@ -46,7 +46,7 @@ namespace Study_Buddy.Presentation
             if(cmbCourses.SelectedIndex == -1)
             {
                 valid = false;
-                MessageBox.Show("No course was selected");
+                courseErrorMessageLabel.Text = "No course was selected";
             }
 
             date = DTPhourDate.Value;
@@ -57,13 +57,13 @@ namespace Study_Buddy.Presentation
             }
             catch
             {
-                MessageBox.Show("Invalid Hours");
+                hoursErrorMessageLabel.Text = "Invalid Hours";
                 valid = false;
             }
 
             if (hours < 0)
             {
-                MessageBox.Show("Invalid Hours");
+                hoursErrorMessageLabel.Text = "Invalid Hours";
                 valid = false;
             }
 
@@ -78,7 +78,9 @@ namespace Study_Buddy.Presentation
                 Account account = new Account();
                 account.addStudyHours(courses, DTPhourDate, hourss);
 
-                MessageBox.Show("hours added");
+                successMessageLabel.Text = hours + " hours added for " + course.name;
+                hoursErrorMessageLabel.Text = "";
+                courseErrorMessageLabel.Text = "";
                 controller.AddHours(cmbCourses.Text,date,hours);
             }
         }

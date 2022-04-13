@@ -130,8 +130,6 @@ namespace Study_Buddy.Presentation.View
             //acc.createTables();
 
             acc.createAccount(username, password, email, firstName, lastName, gpa, schoolName);
-            
-            MessageBox.Show("Account has probably been created for you.");
 
 
             FormSwitcher.OpenInitialSetupForm(this);
