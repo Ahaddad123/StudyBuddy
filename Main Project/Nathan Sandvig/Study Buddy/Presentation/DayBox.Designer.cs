@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.labelDays = new System.Windows.Forms.Label();
+            this.eventLabel1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelDays
@@ -40,10 +41,21 @@
             this.labelDays.TabIndex = 0;
             this.labelDays.Text = "00";
             // 
+            // eventLabel1
+            // 
+            this.eventLabel1.AutoSize = true;
+            this.eventLabel1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eventLabel1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eventLabel1.Location = new System.Drawing.Point(3, 66);
+            this.eventLabel1.Name = "eventLabel1";
+            this.eventLabel1.Size = new System.Drawing.Size(0, 16);
+            this.eventLabel1.TabIndex = 1;
+            // 
             // DayBox
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.eventLabel1);
             this.Controls.Add(this.labelDays);
             this.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Navy;
@@ -60,5 +72,6 @@
         #endregion
 
         private System.Windows.Forms.Label labelDays;
+        private System.Windows.Forms.Label eventLabel1;
     }
 }

@@ -18,7 +18,8 @@ namespace Study_Buddy.Presentation
     public partial class CalendarForm : BaseForm, IView
     {
         private CalendarFormController controller;
-        private int month, year;
+        public int year { get; set; }
+        public string monthName { get; set; }
         public CalendarForm()
         {
             InitializeComponent();
@@ -35,119 +36,36 @@ namespace Study_Buddy.Presentation
 
         private void CalendarForm_Load(object sender, EventArgs e)
         {
-            DisplayDays();
+            controller.DrawCalendar();
+            dateLabel.Text = monthName + " " + year;
         }
 
-        private void DisplayDays()
+        public void DrawBlank()
         {
-            DateTime now = DateTime.Now;
-            month = now.Month;
-            year = now.Year;
+            Blank blank = new Blank();
+            dayContainer.Controls.Add(blank);
+        }
 
-            String monthName = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
-            dateLabel.Text = monthName + " " + year;
+        public void DrawDay(int dayOfWeek)
+        {
+            DayBox dayBox = new DayBox();
+            dayBox.days(dayOfWeek);
+            dayContainer.Controls.Add(dayBox);
 
-            //get first day of month
-            DateTime startOfMonth = new DateTime(year, month, 1);
-
-            //get count of days in month
-            int days = DateTime.DaysInMonth(year, month);
-
-            //convert startOfMonth to integer
-            int dayOfTheWeek = Convert.ToInt32(startOfMonth.DayOfWeek.ToString("d"));
-
-            //Fill in blanks for the week up until first day of month
-            for (int i = 0; i < dayOfTheWeek; i++)
-            {
-                Blank blank = new Blank();
-                dayContainer.Controls.Add(blank);
-            }
-
-            for (int i = 1; i <= days; i++)
-            {
-                DayBox dayBox = new DayBox();
-                dayBox.days(i);
-                dayContainer.Controls.Add(dayBox);
-            }
         }
 
         private void btnPrev_Click(object sender, EventArgs e)
         {
-            //clear container
             dayContainer.Controls.Clear();
-            //decrement month
-            month--;
-            if (month == 0)
-            {
-                month = 12;
-                year--;
-            }
-
-            String monthName = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
+            controller.ChangeMonth(-1);
             dateLabel.Text = monthName + " " + year;
-
-            //get first day of month
-            DateTime startOfMonth = new DateTime(year, month, 1);
-
-            //get count of days in month
-            int days = DateTime.DaysInMonth(year, month);
-
-            //convert startOfMonth to integer
-            int dayOfTheWeek = Convert.ToInt32(startOfMonth.DayOfWeek.ToString("d"));
-
-            //Fill in blanks for the week up until first day of month
-            for (int i = 0; i < dayOfTheWeek; i++)
-            {
-                Blank blank = new Blank();
-                dayContainer.Controls.Add(blank);
-            }
-
-            for (int i = 1; i <= days; i++)
-            {
-                DayBox dayBox = new DayBox();
-                dayBox.days(i);
-                dayContainer.Controls.Add(dayBox);
-            }
-
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            //clear container
             dayContainer.Controls.Clear();
-            //increment month
-            month++;
-            if (month == 13)
-            {
-                month = 1;
-                year++;
-            }
-
-            String monthName = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
+            controller.ChangeMonth(1);
             dateLabel.Text = monthName + " " + year;
-
-            //get first day of month
-            DateTime startOfMonth = new DateTime(year, month, 1);
-
-            //get count of days in month
-            int days = DateTime.DaysInMonth(year, month);
-
-            //convert startOfMonth to integer
-            int dayOfTheWeek = Convert.ToInt32(startOfMonth.DayOfWeek.ToString("d"));
-
-            //Fill in blanks for the week up until first day of month
-            for (int i = 0; i < dayOfTheWeek; i++)
-            {
-                Blank blank = new Blank();
-                dayContainer.Controls.Add(blank);
-            }
-
-            for (int i = 1; i <= days; i++)
-            {
-                DayBox dayBox = new DayBox();
-                dayBox.days(i);
-                dayContainer.Controls.Add(dayBox);
-            }
         }
     }
 }
