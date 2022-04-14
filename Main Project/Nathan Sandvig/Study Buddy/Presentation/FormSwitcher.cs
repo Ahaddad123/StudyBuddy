@@ -93,6 +93,16 @@ namespace Study_Buddy.Presentation
             form.ShowDialog();
             currentForm.Close();
         }
+        public static void OpenCalendarForm(Form currentForm)
+        {
+            currentForm.Hide();
+            CalendarForm form = new CalendarForm();
+            form.StartPosition = FormStartPosition.Manual;
+            CalendarFormController controller = new CalendarFormController(form);
+            form.SetController(controller);
+            form.ShowDialog();
+            currentForm.Close();
+        }
 
         //Below methods used for opening forms that do not inherit BaseForm
         public static void OpenRegistrationForm(Form currentForm)

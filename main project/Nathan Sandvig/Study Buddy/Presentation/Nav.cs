@@ -45,7 +45,7 @@ namespace Study_Buddy.Presentation
 
         private void btnCalendar_Click(object sender, EventArgs e)
         {
-
+            FormSwitcher.OpenCalendarForm(currentForm);
         }
 
         private void btnVisualizeMyData_Click(object sender, EventArgs e)

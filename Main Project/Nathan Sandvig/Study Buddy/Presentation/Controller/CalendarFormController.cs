@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Study_Buddy.Presentation.Controller
 {
-    internal class CalenderFoemController
+    internal class CalendarFormController : FormController
     {
+        public CalendarFormController(CalendarForm form)
+        {
+            this.view = form;
+        }
     }
 }

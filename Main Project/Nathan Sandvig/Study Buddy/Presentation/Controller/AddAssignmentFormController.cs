@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Study_Buddy.BusinessLogic;
 
-namespace Study_Buddy.Presentation
+namespace Study_Buddy.Presentation.Controller
 {
     internal class AddAssignmentFormController : FormController
     {

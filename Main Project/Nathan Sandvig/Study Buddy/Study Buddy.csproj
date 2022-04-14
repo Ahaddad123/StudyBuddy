@@ -81,7 +81,7 @@
     <Compile Include="Presentation\Controller\AddAssignmentFormController.cs" />
     <Compile Include="Presentation\Controller\AddCourseFormController.cs" />
     <Compile Include="Presentation\Controller\AddGradeFormController.cs" />
-    <Compile Include="Presentation\Controller\CalenderFoemController.cs" />
+    <Compile Include="Presentation\Controller\CalendarFormController.cs" />
     <Compile Include="Presentation\Controller\InitialSetupFormController.cs" />
     <Compile Include="Presentation\Controller\RegistrationFormController.cs" />
     <Compile Include="Presentation\Controller\LoginFormController.cs" />
@@ -100,6 +100,10 @@
     <Compile Include="Presentation\Model\GradeGraph.cs" />
     <Compile Include="Presentation\Model\Graph.cs" />
     <Compile Include="Presentation\Model\GraphController.cs" />
+    <Compile Include="Presentation\View\AddAssignmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\View\AddAssignmentForm.Designer.cs" />
     <Compile Include="Presentation\View\AddCoursePopupForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,11 +141,11 @@
       <DependentUpon>StudyLogForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\View\IGraphView.cs" />
-    <Compile Include="Presentation\View\AddAssignmentForm.cs">
+    <Compile Include="Presentation\View\CalendarForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\View\AddAssignmentForm.Designer.cs">
-      <DependentUpon>AddAssignmentForm.cs</DependentUpon>
+    <Compile Include="Presentation\View\CalendarForm.Designer.cs">
+      <DependentUpon>CalendarForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\View\AddCourseForm.cs">
       <SubType>Form</SubType>
@@ -205,8 +209,9 @@
     <EmbeddedResource Include="Presentation\GraphUserControl.resx">
       <DependentUpon>GraphUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\View\AddAssignmentForm.resx">
-      <DependentUpon>AddAssignmentForm.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\View\AddAssignmentForm.resx" />
+    <EmbeddedResource Include="Presentation\View\CalendarForm.resx">
+      <DependentUpon>CalendarForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\View\AddCoursePopupForm.resx">
       <DependentUpon>AddCoursePopupForm.cs</DependentUpon>
