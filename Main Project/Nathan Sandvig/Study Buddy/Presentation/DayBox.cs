@@ -17,6 +17,13 @@ namespace Study_Buddy.Presentation
             InitializeComponent();
         }
 
+        public void setToday()
+        {
+            this.BackColor = Color.RoyalBlue;
+            this.labelDays.ForeColor = Color.White;
+            this.eventLabel1.ForeColor = Color.White;
+        }
+
         private void DayBox_Load(object sender, EventArgs e)
         {
 

@@ -48,7 +48,12 @@ namespace Study_Buddy.Presentation
 
         public void DrawDay(int dayOfWeek)
         {
-            DayBox dayBox = new DayBox();
+            DayBox dayBox;
+            dayBox = new DayBox();
+            if (controller.isCurrentYear() && controller.isCurrentMonth() && dayOfWeek == controller.day)
+            {
+                dayBox.setToday();
+            }
             dayBox.days(dayOfWeek);
             dayContainer.Controls.Add(dayBox);
 

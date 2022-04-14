@@ -9,7 +9,9 @@ namespace Study_Buddy.Presentation.Controller
 {
     internal class CalendarFormController : FormController
     {
-        private int day, month, year;
+        public int day { get; set; }   
+        private int month { get; set; }
+        private int year { get; set; }
         private String monthName;
         public CalendarFormController(CalendarForm form)
         {
@@ -23,7 +25,6 @@ namespace Study_Buddy.Presentation.Controller
 
             //Get month Name as string
             monthName = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
-
         }
 
         public void DrawCalendar()
@@ -73,6 +74,24 @@ namespace Study_Buddy.Presentation.Controller
                 year++;
             }
             DrawCalendar();
+        }
+
+
+        public bool isCurrentMonth()
+        {
+            if (DateTime.Now.Month == month)
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool isCurrentYear()
+        {
+            if (DateTime.Now.Year == year)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
