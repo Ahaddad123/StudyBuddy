@@ -11,12 +11,14 @@ using Study_Buddy.DataAccess;
 using Study_Buddy.BusinessLogic;
 using Study_Buddy.Presentation.View;
 using Study_Buddy.Presentation.Controller;
+using System.Globalization;
 
 namespace Study_Buddy.Presentation
 {
     public partial class CalendarForm : BaseForm, IView
     {
         private CalendarFormController controller;
+        private int month, year;
         public CalendarForm()
         {
             InitializeComponent();
@@ -39,12 +41,56 @@ namespace Study_Buddy.Presentation
         private void DisplayDays()
         {
             DateTime now = DateTime.Now;
+            month = now.Month;
+            year = now.Year;
+
+            String monthName = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
+            dateLabel.Text = monthName + " " + year;
 
             //get first day of month
-            DateTime startOfMonth = new DateTime(now.Year, now.Month, 1);
+            DateTime startOfMonth = new DateTime(year, month, 1);
 
             //get count of days in month
-            int days = DateTime.DaysInMonth(now.Year, now.Month);
+            int days = DateTime.DaysInMonth(year, month);
+
+            //convert startOfMonth to integer
+            int dayOfTheWeek = Convert.ToInt32(startOfMonth.DayOfWeek.ToString("d"));
+
+            //Fill in blanks for the week up until first day of month
+            for (int i = 0; i < dayOfTheWeek; i++)
+            {
+                Blank blank = new Blank();
+                dayContainer.Controls.Add(blank);
+            }
+
+            for (int i = 1; i <= days; i++)
+            {
+                DayBox dayBox = new DayBox();
+                dayBox.days(i);
+                dayContainer.Controls.Add(dayBox);
+            }
+        }
+
+        private void btnPrev_Click(object sender, EventArgs e)
+        {
+            //clear container
+            dayContainer.Controls.Clear();
+            //decrement month
+            month--;
+            if (month == 0)
+            {
+                month = 12;
+                year--;
+            }
+
+            String monthName = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
+            dateLabel.Text = monthName + " " + year;
+
+            //get first day of month
+            DateTime startOfMonth = new DateTime(year, month, 1);
+
+            //get count of days in month
+            int days = DateTime.DaysInMonth(year, month);
 
             //convert startOfMonth to integer
             int dayOfTheWeek = Convert.ToInt32(startOfMonth.DayOfWeek.ToString("d"));
@@ -63,7 +109,45 @@ namespace Study_Buddy.Presentation
                 dayContainer.Controls.Add(dayBox);
             }
 
+        }
 
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            //clear container
+            dayContainer.Controls.Clear();
+            //increment month
+            month++;
+            if (month == 13)
+            {
+                month = 1;
+                year++;
+            }
+
+            String monthName = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
+            dateLabel.Text = monthName + " " + year;
+
+            //get first day of month
+            DateTime startOfMonth = new DateTime(year, month, 1);
+
+            //get count of days in month
+            int days = DateTime.DaysInMonth(year, month);
+
+            //convert startOfMonth to integer
+            int dayOfTheWeek = Convert.ToInt32(startOfMonth.DayOfWeek.ToString("d"));
+
+            //Fill in blanks for the week up until first day of month
+            for (int i = 0; i < dayOfTheWeek; i++)
+            {
+                Blank blank = new Blank();
+                dayContainer.Controls.Add(blank);
+            }
+
+            for (int i = 1; i <= days; i++)
+            {
+                DayBox dayBox = new DayBox();
+                dayBox.days(i);
+                dayContainer.Controls.Add(dayBox);
+            }
         }
     }
 }
