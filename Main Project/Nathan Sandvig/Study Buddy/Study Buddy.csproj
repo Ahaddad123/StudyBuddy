@@ -86,6 +86,12 @@
     <Compile Include="Presentation\Controller\RegistrationFormController.cs" />
     <Compile Include="Presentation\Controller\LoginFormController.cs" />
     <Compile Include="Presentation\Controller\UserInfoFormController.cs" />
+    <Compile Include="Presentation\DayBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\DayBox.Designer.cs">
+      <DependentUpon>DayBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\FormController.cs" />
     <Compile Include="Presentation\Controller\CourseInfoFormController.cs" />
     <Compile Include="BusinessLogic\Account.cs" />
@@ -109,6 +115,12 @@
     </Compile>
     <Compile Include="Presentation\View\AddCoursePopupForm.Designer.cs">
       <DependentUpon>AddCoursePopupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Blank.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\Blank.Designer.cs">
+      <DependentUpon>Blank.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\View\InitialSetupForm.cs">
       <SubType>Form</SubType>
@@ -206,6 +218,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\DayBox.resx">
+      <DependentUpon>DayBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\GraphUserControl.resx">
       <DependentUpon>GraphUserControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\View\AddCoursePopupForm.resx">
       <DependentUpon>AddCoursePopupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Blank.resx">
+      <DependentUpon>Blank.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\View\InitialSetupForm.resx">
       <DependentUpon>InitialSetupForm.cs</DependentUpon>
