@@ -15,7 +15,7 @@ namespace Study_Buddy.Presentation.View
         public Blank()
         {
             InitializeComponent();
-            this.Size = new System.Drawing.Size(138, 105);
+            this.Size = new System.Drawing.Size(138, 85);
         }
 
     }

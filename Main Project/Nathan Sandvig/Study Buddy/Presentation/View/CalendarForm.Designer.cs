@@ -43,30 +43,36 @@
             // 
             // dayContainer
             // 
-            this.dayContainer.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dayContainer.Location = new System.Drawing.Point(318, 141);
+            this.dayContainer.BackColor = System.Drawing.SystemColors.Control;
+            this.dayContainer.Location = new System.Drawing.Point(318, 164);
             this.dayContainer.Name = "dayContainer";
-            this.dayContainer.Size = new System.Drawing.Size(1008, 554);
+            this.dayContainer.Size = new System.Drawing.Size(1015, 543);
             this.dayContainer.TabIndex = 1;
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(1251, 701);
+            this.btnNext.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.ForeColor = System.Drawing.Color.White;
+            this.btnNext.Location = new System.Drawing.Point(368, 101);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(75, 23);
+            this.btnNext.Size = new System.Drawing.Size(45, 25);
             this.btnNext.TabIndex = 2;
-            this.btnNext.Text = "Next";
-            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Text = ">";
+            this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnPrev
             // 
-            this.btnPrev.Location = new System.Drawing.Point(1170, 701);
+            this.btnPrev.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrev.ForeColor = System.Drawing.Color.White;
+            this.btnPrev.Location = new System.Drawing.Point(319, 101);
             this.btnPrev.Name = "btnPrev";
-            this.btnPrev.Size = new System.Drawing.Size(75, 23);
+            this.btnPrev.Size = new System.Drawing.Size(45, 25);
             this.btnPrev.TabIndex = 3;
-            this.btnPrev.Text = "Previous";
-            this.btnPrev.UseVisualStyleBackColor = true;
+            this.btnPrev.Text = "<";
+            this.btnPrev.UseVisualStyleBackColor = false;
             this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
             // 
             // sundayLabel
@@ -75,7 +81,7 @@
             this.sundayLabel.BackColor = System.Drawing.Color.Transparent;
             this.sundayLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sundayLabel.ForeColor = System.Drawing.Color.Navy;
-            this.sundayLabel.Location = new System.Drawing.Point(348, 115);
+            this.sundayLabel.Location = new System.Drawing.Point(348, 138);
             this.sundayLabel.Name = "sundayLabel";
             this.sundayLabel.Size = new System.Drawing.Size(65, 19);
             this.sundayLabel.TabIndex = 4;
@@ -88,7 +94,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Location = new System.Drawing.Point(492, 115);
+            this.label1.Location = new System.Drawing.Point(492, 138);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 19);
             this.label1.TabIndex = 5;
@@ -101,7 +107,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Navy;
-            this.label2.Location = new System.Drawing.Point(637, 115);
+            this.label2.Location = new System.Drawing.Point(637, 138);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 19);
             this.label2.TabIndex = 6;
@@ -114,7 +120,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Navy;
-            this.label3.Location = new System.Drawing.Point(767, 115);
+            this.label3.Location = new System.Drawing.Point(767, 138);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 19);
             this.label3.TabIndex = 7;
@@ -127,7 +133,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Navy;
-            this.label4.Location = new System.Drawing.Point(924, 115);
+            this.label4.Location = new System.Drawing.Point(924, 138);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 19);
             this.label4.TabIndex = 8;
@@ -140,7 +146,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Navy;
-            this.label5.Location = new System.Drawing.Point(1076, 115);
+            this.label5.Location = new System.Drawing.Point(1076, 138);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 19);
             this.label5.TabIndex = 9;
@@ -153,7 +159,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Navy;
-            this.label6.Location = new System.Drawing.Point(1208, 115);
+            this.label6.Location = new System.Drawing.Point(1208, 138);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(75, 19);
             this.label6.TabIndex = 10;
@@ -166,11 +172,11 @@
             this.dateLabel.BackColor = System.Drawing.Color.Transparent;
             this.dateLabel.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateLabel.ForeColor = System.Drawing.Color.Navy;
-            this.dateLabel.Location = new System.Drawing.Point(347, 89);
+            this.dateLabel.Location = new System.Drawing.Point(422, 100);
             this.dateLabel.Name = "dateLabel";
-            this.dateLabel.Size = new System.Drawing.Size(74, 26);
+            this.dateLabel.Size = new System.Drawing.Size(184, 26);
             this.dateLabel.TabIndex = 11;
-            this.dateLabel.Text = "Month";
+            this.dateLabel.Text = "September YYYY";
             this.dateLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // CalendarForm
@@ -199,8 +205,8 @@
             this.Controls.SetChildIndex(this.label4, 0);
             this.Controls.SetChildIndex(this.label5, 0);
             this.Controls.SetChildIndex(this.label6, 0);
-            this.Controls.SetChildIndex(this.nav1, 0);
             this.Controls.SetChildIndex(this.dateLabel, 0);
+            this.Controls.SetChildIndex(this.nav1, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 

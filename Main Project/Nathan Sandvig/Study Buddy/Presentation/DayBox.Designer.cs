@@ -47,10 +47,10 @@
             this.Controls.Add(this.labelDays);
             this.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Navy;
-            this.MaximumSize = new System.Drawing.Size(138, 105);
-            this.MinimumSize = new System.Drawing.Size(138, 105);
+            this.MaximumSize = new System.Drawing.Size(138, 85);
+            this.MinimumSize = new System.Drawing.Size(138, 85);
             this.Name = "DayBox";
-            this.Size = new System.Drawing.Size(138, 104);
+            this.Size = new System.Drawing.Size(138, 85);
             this.Load += new System.EventHandler(this.DayBox_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

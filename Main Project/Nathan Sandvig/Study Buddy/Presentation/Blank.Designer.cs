@@ -34,10 +34,10 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.MaximumSize = new System.Drawing.Size(138, 105);
-            this.MinimumSize = new System.Drawing.Size(138, 105);
+            this.MaximumSize = new System.Drawing.Size(138, 85);
+            this.MinimumSize = new System.Drawing.Size(138, 85);
             this.Name = "Blank";
-            this.Size = new System.Drawing.Size(138, 105);
+            this.Size = new System.Drawing.Size(138, 85);
             this.ResumeLayout(false);
 
         }
