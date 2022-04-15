@@ -26,6 +26,7 @@ namespace Study_Buddy.BusinessLogic
         public string code;
         public double priority;
         public double credits;
+        public List<List<DateTime>> courseTimes;
 
         //-----------------------------------------------------------------
         // Default constructor for the CourseBuilder class
@@ -93,6 +94,18 @@ namespace Study_Buddy.BusinessLogic
         public CourseBuilder WithCredits(double credits)
         {
             this.credits = credits;
+            return this;
+        }
+
+        //-----------------------------------------------------------------
+        // Wither method for the courseHours attribute
+        // credits: The credits being set in the builder
+        // return: The builder for build chains
+        // v1: Created the method - Andrew V, 4-14-22
+        //-----------------------------------------------------------------
+        public CourseBuilder WithCourseHours(List<List<DateTime>> hours)
+        {
+            this.courseTimes = hours;
             return this;
         }
 
