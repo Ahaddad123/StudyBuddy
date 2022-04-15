@@ -123,9 +123,9 @@ namespace Study_Buddy.Presentation.View
         {
             String newUsername = passwordTextBox.Text;
             String newPassword = nameTextBox.Text;
-            Account acc = new Account(newUsername, newPassword);
+            AccountController acc = new AccountController();
 
-            Boolean valid = acc.accountCreated(newUsername, newPassword);
+            Boolean valid = acc.accountCreated(passwordTextBox.Text, nameTextBox.Text);
 
             /*if (!valid)
             {

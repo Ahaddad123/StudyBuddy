@@ -125,9 +125,7 @@ namespace Study_Buddy.Presentation.View
             string schoolName = textBox7.Text;
             
 
-            Account acc = new Account(username, password);
-
-            //acc.createTables();
+            AccountController acc = new AccountController();
 
             acc.createAccount(username, password, email, firstName, lastName, gpa, schoolName);
 

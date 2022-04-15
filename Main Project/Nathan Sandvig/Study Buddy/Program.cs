@@ -26,9 +26,11 @@ namespace Study_Buddy
             // been created for the table, and if they have, do not recreate, move
             // on to open the application.
             //---------------------------------------------------------------------
-            Account acc = new Account();
+            AccountController acc = new AccountController();
             acc.createTables();
-            AccountController.account = acc;
+
+
+            //AccountController.account = acc;
 
             //Launching GUI application
             Application.EnableVisualStyles();
