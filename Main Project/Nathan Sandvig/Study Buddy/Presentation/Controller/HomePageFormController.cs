@@ -27,6 +27,7 @@ namespace Study_Buddy.Presentation
         public String getName()
         {
             return AccountController.account.username;
+            
         }
 
         public Label createCourseLabel(Course course, int locationindex, int red, int green, int blue)
