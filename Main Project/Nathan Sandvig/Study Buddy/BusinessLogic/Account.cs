@@ -13,12 +13,23 @@ namespace Study_Buddy.BusinessLogic
     {
         internal String username; //Login username
         internal String password; //Login password
+        internal string fname;
+        internal string lname;
+        internal string GPA1;
+        internal string sName;
         //internal int userID; //This is the ID for the database to track accounts
         SQLite database = new SQLite();
 
         public List<Course> courses { get; set; } = new List<Course>();
 
         public Account() { }
+
+        public Account(string firstName, string lastName, string gpa, string schoolName) {
+            fname = firstName;
+            lname = lastName;
+            GPA1 = gpa;
+            sName = schoolName;
+        }
 
         public Account(String newUsername, String newPassword){
             username = newUsername;
