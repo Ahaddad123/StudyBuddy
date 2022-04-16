@@ -80,8 +80,21 @@ namespace Study_Buddy.Presentation
                 creditsErrorMessageLabel.Text = "Invalid Credits";
                 valid = false;
             }
+            //add course times for Sunday
+            if (dtpSunStart.Value > dtpSunEnd.Value)
+            {
+                creditsErrorMessageLabel.Text = "Invalid sunday times";
+                valid = false;
+            }
+            else
+            {
+                List<DateTime> sundae = new List<DateTime>();
+                sundae.Add(dtpSunStart.Value);
+                sundae.Add(dtpSunEnd.Value);
+                dateTimes.Add(sundae);
+            }
             //add course times for monday
-            if(dtpMonStart.Value > dtpMonEnd.Value)
+            if (dtpMonStart.Value > dtpMonEnd.Value)
             {
                 creditsErrorMessageLabel.Text = "Invalid monday times";
                 valid = false;
@@ -157,19 +170,6 @@ namespace Study_Buddy.Presentation
                 satdae.Add(dtpSatStart.Value);
                 satdae.Add(dtpSatEnd.Value);
                 dateTimes.Add(satdae);
-            }
-            //add course times for Sunday
-            if (dtpSunStart.Value > dtpSunEnd.Value)
-            {
-                creditsErrorMessageLabel.Text = "Invalid sunday times";
-                valid = false;
-            }
-            else
-            {
-                List<DateTime> sundae = new List<DateTime>();
-                sundae.Add(dtpSunStart.Value);
-                sundae.Add(dtpSunEnd.Value);
-                dateTimes.Add(sundae);
             }
 
             if (valid)
