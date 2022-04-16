@@ -22,6 +22,7 @@ namespace Study_Buddy.BusinessLogic
 
         public Boolean createAccount(String username, String password, String email, string firstname, string lastname, string gpa, string schoolname)
         {
+            Account account = new Account(firstname, lastname, gpa, schoolname);
             int acc = database.InsertAccountData(username, password, email, firstname, lastname, gpa, schoolname);
 
             if (acc == -1)
