@@ -117,5 +117,10 @@ namespace Study_Buddy.BusinessLogic
         {
             database.addAssignment(coursename, name, grade, weight, duedate);
         }
+
+        public void getAccountData()
+        {
+
+        }
     }
 }

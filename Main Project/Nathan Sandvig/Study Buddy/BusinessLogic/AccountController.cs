@@ -20,7 +20,7 @@ namespace Study_Buddy.BusinessLogic
             return success;
         }
 
-        public Boolean createAccount(String username, String password, String email, string firstname, string lastname, string gpa, string schoolname)
+        public Boolean createAccount(string username, string password, string email, string firstname, string lastname, string gpa, string schoolname)
         {
             account = new Account(username, password, firstname, lastname, gpa, schoolname);
             int acc = database.InsertAccountData(username, password, email, firstname, lastname, gpa, schoolname);
@@ -33,15 +33,19 @@ namespace Study_Buddy.BusinessLogic
                 return true;
         }
 
-        public Boolean accountCreated(String username, String password)
+        public Boolean accountCreated(string username, string password)
         {
-            String acc = database.checkAccount(username, password);
+            string acc = database.checkAccount(username, password);
+
             if (acc == null)
             {
                 return false;
             }
             else
+            {
+                account = new Account(username, password);
                 return true;
+            }
         }
     }
 }
