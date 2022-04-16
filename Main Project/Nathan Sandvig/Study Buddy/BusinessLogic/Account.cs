@@ -11,8 +11,8 @@ namespace Study_Buddy.BusinessLogic
 {
     public class Account
     {
-        internal String username; //Login username
-        internal String password; //Login password
+        internal string username; //Login username
+        internal string password; //Login password
         internal string fname;
         internal string lname;
         internal string GPA1;
@@ -24,7 +24,9 @@ namespace Study_Buddy.BusinessLogic
 
         public Account() { }
 
-        public Account(string firstName, string lastName, string gpa, string schoolName) {
+        public Account(string nameuser, string pass, string firstName, string lastName, string gpa, string schoolName) {
+            username = nameuser;
+            password = pass;
             fname = firstName;
             lname = lastName;
             GPA1 = gpa;
