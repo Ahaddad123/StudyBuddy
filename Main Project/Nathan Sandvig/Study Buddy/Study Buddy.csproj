@@ -85,6 +85,7 @@
     <Compile Include="Presentation\Controller\InitialSetupFormController.cs" />
     <Compile Include="Presentation\Controller\RegistrationFormController.cs" />
     <Compile Include="Presentation\Controller\LoginFormController.cs" />
+    <Compile Include="Presentation\Controller\ScheduleFormController.cs" />
     <Compile Include="Presentation\Controller\UserInfoFormController.cs" />
     <Compile Include="Presentation\DayBox.cs">
       <SubType>UserControl</SubType>
@@ -110,6 +111,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentation\View\AddAssignmentForm.Designer.cs" />
+    <Compile Include="Presentation\View\ScheduleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\View\ScheduleForm.Designer.cs">
+      <DependentUpon>ScheduleForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\View\AddCoursePopupForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +232,9 @@
       <DependentUpon>GraphUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\View\AddAssignmentForm.resx" />
+    <EmbeddedResource Include="Presentation\View\ScheduleForm.resx">
+      <DependentUpon>ScheduleForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\View\CalendarForm.resx">
       <DependentUpon>CalendarForm.cs</DependentUpon>
     </EmbeddedResource>
