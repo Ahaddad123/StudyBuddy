@@ -40,12 +40,26 @@ namespace Study_Buddy.BusinessLogic
 
         public void readCourses() 
         {
-            List<String> list = new List<String>();
+            List<String> list;
             list = database.readCourses();
-
-            foreach(String courseName in list)
+            for(int i = 0; i < list.Count; i+=3)
             {
-                populateCourses(new CourseBuilder().WithName(courseName).Build());
+                populateCourses(new CourseBuilder().WithName(list.ElementAt(i)).WithCredits(Double.Parse(list.ElementAt(i+1))).WithCode(list.ElementAt(i+2)).Build());
+            }
+
+            List<String> list2;
+            list2 = database.readAssignments();
+            for(int i = 0; i < list2.Count; i += 5)
+            {
+                foreach(Course course in courses)
+                {
+                    if (course.name.Equals(list2.ElementAt(i)))
+                    {
+                        Assignment assignment = new Assignment(0, list2.ElementAt(i + 1), Int32.Parse(list2.ElementAt(i + 2)), DateTime.Today);
+                        course.AddAssignment(assignment);
+                        course.GradeAssignment(assignment.name, Double.Parse(list2.ElementAt(i + 3)));
+                    }
+                }
             }
         }
 

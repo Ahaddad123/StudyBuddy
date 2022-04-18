@@ -39,7 +39,6 @@ namespace Study_Buddy.Presentation
         private void HomePageForm_Load(object sender, EventArgs e)
         {
             this.name.Text = controller.getName();
-            //this.gpa.Text = account.gpa;
             int red = 235;
             int green = 131;
             int blue = 131;
