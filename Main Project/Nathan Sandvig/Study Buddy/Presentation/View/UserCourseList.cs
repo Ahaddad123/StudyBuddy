@@ -44,7 +44,8 @@ namespace Study_Buddy.Presentation.View
             button.Width = Parent.Width;
             button.Height = 50;
             button.FlatStyle = FlatStyle.Flat;
-            button.Font = new Font("Microsoft Sans Serif", 14);
+            button.Font = new Font("Arial", 14);
+            button.ForeColor = Color.Navy;
             button.Click += new EventHandler(this.courseButtonClick);
 
 
