@@ -96,5 +96,15 @@ namespace Study_Buddy.Presentation
                 cmbCourses.Items.Add(c.name);
             }
         }
+
+        private void btnUndo_Click(object sender, EventArgs e)
+        {
+            controller.Undo();
+        }
+
+        private void btnRedo_Click(object sender, EventArgs e)
+        {
+            controller.Redo();
+        }
     }
 }

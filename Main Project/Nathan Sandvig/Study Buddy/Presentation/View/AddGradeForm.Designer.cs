@@ -38,6 +38,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtPointsAssign = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnUndo = new System.Windows.Forms.Button();
+            this.btnRedo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -46,6 +48,8 @@
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.groupBox1.Controls.Add(this.btnRedo);
+            this.groupBox1.Controls.Add(this.btnUndo);
             this.groupBox1.Controls.Add(this.successMessageLabel);
             this.groupBox1.Controls.Add(this.scoreErrorMessageLabel);
             this.groupBox1.Controls.Add(this.nameErrorMessageLabel);
@@ -157,6 +161,34 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1080, 720);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
+            // btnUndo
+            // 
+            this.btnUndo.BackColor = System.Drawing.Color.White;
+            this.btnUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUndo.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUndo.ForeColor = System.Drawing.Color.Navy;
+            this.btnUndo.Location = new System.Drawing.Point(20, 215);
+            this.btnUndo.Name = "btnUndo";
+            this.btnUndo.Size = new System.Drawing.Size(75, 23);
+            this.btnUndo.TabIndex = 10;
+            this.btnUndo.Text = "Undo";
+            this.btnUndo.UseVisualStyleBackColor = false;
+            this.btnUndo.Click += new System.EventHandler(this.btnUndo_Click);
+            // 
+            // btnRedo
+            // 
+            this.btnRedo.BackColor = System.Drawing.Color.White;
+            this.btnRedo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRedo.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRedo.ForeColor = System.Drawing.Color.Navy;
+            this.btnRedo.Location = new System.Drawing.Point(101, 215);
+            this.btnRedo.Name = "btnRedo";
+            this.btnRedo.Size = new System.Drawing.Size(75, 23);
+            this.btnRedo.TabIndex = 11;
+            this.btnRedo.Text = "Redo";
+            this.btnRedo.UseVisualStyleBackColor = false;
+            this.btnRedo.Click += new System.EventHandler(this.btnRedo_Click);
+            // 
             // AddGradeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -189,5 +221,7 @@
         private System.Windows.Forms.Label nameErrorMessageLabel;
         private System.Windows.Forms.Label scoreErrorMessageLabel;
         private System.Windows.Forms.Label successMessageLabel;
+        private System.Windows.Forms.Button btnRedo;
+        private System.Windows.Forms.Button btnUndo;
     }
 }
