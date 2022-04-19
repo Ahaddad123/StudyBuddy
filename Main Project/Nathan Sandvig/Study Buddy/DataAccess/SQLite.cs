@@ -339,5 +339,19 @@ namespace Study_Buddy.DataAccess
             addAssignment.CommandText = command1;
             addAssignment.ExecuteNonQuery();
         }
+
+        public void addGrade(string assignmentName, string grade)
+        {
+            SQLiteConnection sqlite_conn = CreateConnection();
+
+            SQLiteCommand addGrade;
+            addGrade = sqlite_conn.CreateCommand();
+
+            string command = "UPDATE Assignments SET Grade='@grade' WHERE AssignmentName = '@assignmentname'";
+            string command1 = command.Replace("@assignmentname", assignmentName).Replace("@grade", grade);
+
+            addGrade.CommandText = command1;
+            addGrade.ExecuteNonQuery();
+        }
     }
 }

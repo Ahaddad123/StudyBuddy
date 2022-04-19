@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.successMessageLabel = new System.Windows.Forms.Label();
+            this.scoreErrorMessageLabel = new System.Windows.Forms.Label();
+            this.nameErrorMessageLabel = new System.Windows.Forms.Label();
             this.txtNameAssign = new System.Windows.Forms.ComboBox();
             this.butAddAssig = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPointsAssign = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.nameErrorMessageLabel = new System.Windows.Forms.Label();
-            this.scoreErrorMessageLabel = new System.Windows.Forms.Label();
-            this.successMessageLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -59,6 +59,36 @@
             this.groupBox1.Size = new System.Drawing.Size(490, 259);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
+            // 
+            // successMessageLabel
+            // 
+            this.successMessageLabel.AutoSize = true;
+            this.successMessageLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.successMessageLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.successMessageLabel.Location = new System.Drawing.Point(55, 212);
+            this.successMessageLabel.Name = "successMessageLabel";
+            this.successMessageLabel.Size = new System.Drawing.Size(0, 23);
+            this.successMessageLabel.TabIndex = 9;
+            // 
+            // scoreErrorMessageLabel
+            // 
+            this.scoreErrorMessageLabel.AutoSize = true;
+            this.scoreErrorMessageLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scoreErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
+            this.scoreErrorMessageLabel.Location = new System.Drawing.Point(223, 124);
+            this.scoreErrorMessageLabel.Name = "scoreErrorMessageLabel";
+            this.scoreErrorMessageLabel.Size = new System.Drawing.Size(0, 23);
+            this.scoreErrorMessageLabel.TabIndex = 8;
+            // 
+            // nameErrorMessageLabel
+            // 
+            this.nameErrorMessageLabel.AutoSize = true;
+            this.nameErrorMessageLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
+            this.nameErrorMessageLabel.Location = new System.Drawing.Point(223, 67);
+            this.nameErrorMessageLabel.Name = "nameErrorMessageLabel";
+            this.nameErrorMessageLabel.Size = new System.Drawing.Size(0, 23);
+            this.nameErrorMessageLabel.TabIndex = 7;
             // 
             // txtNameAssign
             // 
@@ -126,36 +156,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.16667F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1080, 720);
             this.tableLayoutPanel2.TabIndex = 2;
-            // 
-            // nameErrorMessageLabel
-            // 
-            this.nameErrorMessageLabel.AutoSize = true;
-            this.nameErrorMessageLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
-            this.nameErrorMessageLabel.Location = new System.Drawing.Point(223, 67);
-            this.nameErrorMessageLabel.Name = "nameErrorMessageLabel";
-            this.nameErrorMessageLabel.Size = new System.Drawing.Size(0, 29);
-            this.nameErrorMessageLabel.TabIndex = 7;
-            // 
-            // scoreErrorMessageLabel
-            // 
-            this.scoreErrorMessageLabel.AutoSize = true;
-            this.scoreErrorMessageLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scoreErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
-            this.scoreErrorMessageLabel.Location = new System.Drawing.Point(223, 124);
-            this.scoreErrorMessageLabel.Name = "scoreErrorMessageLabel";
-            this.scoreErrorMessageLabel.Size = new System.Drawing.Size(0, 29);
-            this.scoreErrorMessageLabel.TabIndex = 8;
-            // 
-            // successMessageLabel
-            // 
-            this.successMessageLabel.AutoSize = true;
-            this.successMessageLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.successMessageLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.successMessageLabel.Location = new System.Drawing.Point(55, 212);
-            this.successMessageLabel.Name = "successMessageLabel";
-            this.successMessageLabel.Size = new System.Drawing.Size(0, 29);
-            this.successMessageLabel.TabIndex = 9;
             // 
             // AddGradeForm
             // 

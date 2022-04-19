@@ -19,7 +19,7 @@ namespace Study_Buddy.Presentation
 
         public void AddGrade(String name, double points)
         {
-            course.GradeAssignment(name, points);
+            AccountController.account.addGrade(course.name, name, points);
         }
     }
 }

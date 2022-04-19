@@ -129,7 +129,19 @@ namespace Study_Buddy.BusinessLogic
 
         public void addAssignment(string coursename, string name, string grade, string weight,  string duedate) 
         {
-            database.addAssignment(coursename, name, grade, weight, duedate);
+            database.addAssignment(coursename, name, weight, grade, duedate);
+        }
+
+        public void addGrade(string coursename, string assignmentname, double grade)
+        {
+            foreach (Course c in this.courses)
+            {
+                if (c.name.Equals(coursename))
+                {
+                    c.GradeAssignment(assignmentname, grade);
+                    database.addGrade(assignmentname, grade + "");
+                }
+            }
         }
 
         public void getAccountData()
