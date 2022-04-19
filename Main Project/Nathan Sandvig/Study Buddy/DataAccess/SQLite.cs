@@ -297,21 +297,21 @@ namespace Study_Buddy.DataAccess
 
         public void logStudyHours(String courses, DateTime date, String hours)
         {
-            SQLiteConnection sqlite_conn = CreateConnection();
+            /*SQLiteConnection sqlite_conn = CreateConnection();
 
             SQLiteCommand addHours;
             addHours = sqlite_conn.CreateCommand();
-
-            string command = "INSERT INTO StudyHours(Hours, CourseName, Date) VALUES ('@hours', '@coursename', '@datetime')";
-            string command1 = command.Replace("@hours", hours).Replace("@coursename", courses).Replace("@datetime", date.ToString());
+            int value = readHour(courses, date) + Int32.Parse(hours);
+            string command = "IF EXISTS(SELECT 1 FROM StudyHours WHERE CourseName = '@coursename' AND Date = '@date') BEGIN UPDATE StudyHours SET Hours='@value' WHERE CourseName = '@coursename' AND Date = '@date' END ELSE BEGIN INSERT INTO StudyHours(Hours, CourseName, Date) VALUES ('@hours', '@coursename', '@datetime') END";
+            string command1 = command.Replace("@hours", hours).Replace("@coursename", courses).Replace("@datetime", date.ToString()).Replace("@value", value + "");
 
             addHours.CommandText = command1;
-            addHours.ExecuteNonQuery();
+            addHours.ExecuteNonQuery();*/
         }
 
         public void removeStudyHours(String course, DateTime date, String hours)
         {
-            SQLiteConnection sqlite_conn = CreateConnection();
+            /*SQLiteConnection sqlite_conn = CreateConnection();
 
             SQLiteCommand removeHours;
             removeHours = sqlite_conn.CreateCommand();
@@ -322,7 +322,7 @@ namespace Study_Buddy.DataAccess
             string command1 = command.Replace("@coursename", course).Replace("@hours", value + "").Replace("@date", date.ToString());
 
             removeHours.CommandText = command1;
-            removeHours.ExecuteNonQuery();
+            removeHours.ExecuteNonQuery();*/
         }
 
         public int readHour(String course, DateTime date)

@@ -11,8 +11,8 @@ namespace Study_Buddy.Presentation
     internal class AddGradeFormController : FormController
     {
         public Course course { get; set; }
-        private Stack<AddGrade> done;
-        private Stack<AddGrade> undone;
+        private Stack<AddGrade> done = new Stack<AddGrade>();
+        private Stack<AddGrade> undone = new Stack<AddGrade>();
         public AddGradeFormController(AddGradeForm form, Course course)
         {
             this.view = form;

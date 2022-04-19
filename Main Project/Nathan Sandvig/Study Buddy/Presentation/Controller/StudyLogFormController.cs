@@ -10,8 +10,8 @@ namespace Study_Buddy.Presentation
 {
     internal class StudyLogFormController : FormController
     {
-        private Stack<AddStudyHours> done;
-        private Stack<AddStudyHours> undone;
+        private Stack<AddStudyHours> done = new Stack<AddStudyHours>();
+        private Stack<AddStudyHours> undone = new Stack<AddStudyHours>();
         public StudyLogFormController(StudyLogForm form)
         {
             this.view = form;
