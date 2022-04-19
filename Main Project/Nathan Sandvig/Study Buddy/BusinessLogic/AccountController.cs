@@ -43,8 +43,16 @@ namespace Study_Buddy.BusinessLogic
             }
             else
             {
-                account = new Account(username, password);
-                return true;
+                string accpass = database.checkPassword(password);
+                if (accpass == null)
+                {
+                    return false;
+                }
+                else
+                {
+                    account = new Account(username, password);
+                    return true;
+                }
             }
         }
     }
