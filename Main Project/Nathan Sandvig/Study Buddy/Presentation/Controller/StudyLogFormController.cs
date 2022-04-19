@@ -10,6 +10,8 @@ namespace Study_Buddy.Presentation
 {
     internal class StudyLogFormController : FormController
     {
+        private Stack<AddStudyHours> done;
+        private Stack<AddStudyHours> undone;
         public StudyLogFormController(StudyLogForm form)
         {
             this.view = form;
@@ -17,15 +19,23 @@ namespace Study_Buddy.Presentation
 
         public void AddHours(String courseName,DateTime date, double hours)
         {
-            Course course = null;
-            foreach (Course c in AccountController.account.courses)
-            {
-                if (c.name == courseName)
-                {
-                    course = c;
-                }
-            }
-            course.LogHours(hours,date.Date);
+            AddStudyHours addStudyHours = new AddStudyHours(courseName, date, hours);
+            addStudyHours.execute();
+            done.Push(addStudyHours);
+        }
+
+        public void Undo()
+        {
+            AddStudyHours addStudyHours = done.Pop();
+            addStudyHours.unexecute();
+            undone.Push(addStudyHours);
+        }
+
+        public void Redo()
+        {
+            AddStudyHours addStudyHours = undone.Pop();
+            addStudyHours.execute();
+            done.Push(addStudyHours);
         }
     }
 }

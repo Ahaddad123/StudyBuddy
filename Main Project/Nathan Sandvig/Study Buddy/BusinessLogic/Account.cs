@@ -122,9 +122,28 @@ namespace Study_Buddy.BusinessLogic
             return removed;
         }
 
-        public void addStudyHours(String courses, DateTimePicker date, String hours) 
+        public void addStudyHours(String course, DateTime date, double hours) 
         {
-            database.logStudyHours(courses, date, hours);
+            foreach (Course c in this.courses)
+            {
+                if (c.name.Equals(course))
+                {
+                    c.LogHours(hours, date);
+                }
+            }
+            database.logStudyHours(course, date, hours + "");
+        }
+
+        public void removeStudyHours(String course, DateTime date, double hours)
+        {
+            foreach (Course c in this.courses)
+            {
+                if (c.name.Equals(course))
+                {
+                    c.RemoveHours(hours, date);
+                }
+            }
+            database.removeStudyHours(course, date, hours + "");
         }
 
         public void addAssignment(string coursename, string name, string grade, string weight,  string duedate) 
@@ -140,6 +159,18 @@ namespace Study_Buddy.BusinessLogic
                 {
                     c.GradeAssignment(assignmentname, grade);
                     database.addGrade(assignmentname, grade + "");
+                }
+            }
+        }
+
+        public void removeGrade(string coursename, string assignmentname)
+        {
+            foreach(Course c in this.courses)
+            {
+                if (c.name.Equals(coursename))
+                {
+                    c.GradeAssignment(assignmentname, 0);
+                    database.addGrade(assignmentname, 0 + "");
                 }
             }
         }

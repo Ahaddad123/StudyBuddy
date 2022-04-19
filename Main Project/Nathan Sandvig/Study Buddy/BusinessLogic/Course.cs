@@ -181,6 +181,15 @@ namespace Study_Buddy.BusinessLogic
             hourLog.AddTimeToLog(time, date);
         }
 
+        public void RemoveHours(double time, DateTime date)
+        {
+            if(time < 0)
+            {
+                return;
+            }
+            hourLog.RemoveTimeFromLog(time, date);
+        }
+
         //---------------------------------------------------------------------
         // Finds the number of hours studied on a given day
         // day: The date being checked for hours studied

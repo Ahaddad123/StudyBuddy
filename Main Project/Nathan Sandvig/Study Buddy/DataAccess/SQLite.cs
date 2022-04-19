@@ -265,7 +265,7 @@ namespace Study_Buddy.DataAccess
         // Query for inserting logged study hours into the database
         //---------------------------------------------------------------------
 
-        public void logStudyHours(String courses, DateTimePicker date, String hours)
+        public void logStudyHours(String courses, DateTime date, String hours)
         {
             SQLiteConnection sqlite_conn = CreateConnection();
 
@@ -277,6 +277,45 @@ namespace Study_Buddy.DataAccess
 
             addHours.CommandText = command1;
             addHours.ExecuteNonQuery();
+        }
+
+        public void removeStudyHours(String course, DateTime date, String hours)
+        {
+            SQLiteConnection sqlite_conn = CreateConnection();
+
+            SQLiteCommand removeHours;
+            removeHours = sqlite_conn.CreateCommand();
+
+            int value = readHour(course, date) - Int32.Parse(hours);
+
+            string command = "UPDATE StudyHours SET Hours='@hours' WHERE CourseName = '@coursename' AND Date = '@date'";
+            string command1 = command.Replace("@coursename", course).Replace("@hours", value + "").Replace("@date", date.ToString());
+
+            removeHours.CommandText = command1;
+            removeHours.ExecuteNonQuery();
+        }
+
+        public int readHour(String course, DateTime date)
+        {
+            int studyHours = 0;
+            SQLiteDataReader sqlite_datareader;
+            SQLiteConnection sqlite_conn;
+            // Create a new database connection:
+            sqlite_conn = CreateConnection();
+
+            SQLiteCommand studentData = sqlite_conn.CreateCommand();
+            string command = "SELECT Hours FROM StudyHours WHERE CourseName = '@coursename' AND Date = '@date'";
+            string command1 = command.Replace("@coursename", course).Replace("@date", date.ToString());
+            studentData.CommandText = command1;
+            sqlite_datareader = studentData.ExecuteReader();
+
+            while (sqlite_datareader.Read())
+            {
+                int hours = sqlite_datareader.GetInt32(0);
+                studyHours = hours;
+            }
+
+            return studyHours;
         }
 
         //---------------------------------------------------------------------

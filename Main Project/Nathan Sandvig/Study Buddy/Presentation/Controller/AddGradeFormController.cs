@@ -11,6 +11,8 @@ namespace Study_Buddy.Presentation
     internal class AddGradeFormController : FormController
     {
         public Course course { get; set; }
+        private Stack<AddGrade> done;
+        private Stack<AddGrade> undone;
         public AddGradeFormController(AddGradeForm form, Course course)
         {
             this.view = form;
@@ -19,7 +21,23 @@ namespace Study_Buddy.Presentation
 
         public void AddGrade(String name, double points)
         {
-            AccountController.account.addGrade(course.name, name, points);
+            AddGrade addGrade = new AddGrade(course.name, name, points);
+            addGrade.execute();
+            done.Push(addGrade);
+        }
+
+        public void Undo()
+        {
+            AddGrade addGrade = done.Pop();
+            addGrade.unexecute();
+            undone.Push(addGrade);
+        }
+
+        public void Redo()
+        {
+            AddGrade addGrade = undone.Pop();
+            addGrade.execute();
+            done.Push(addGrade);
         }
     }
 }

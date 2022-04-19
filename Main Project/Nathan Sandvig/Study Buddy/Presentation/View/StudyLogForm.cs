@@ -73,10 +73,9 @@ namespace Study_Buddy.Presentation
                 // wip does not like courseName
                 //controller.AddAssignment(courseName, txtNameAssign.Text,points,weight);
                 string courses = cmbCourses.Text;
-                string hourss = txtHours.Text;
 
                 Account account = new Account();
-                account.addStudyHours(courses, DTPhourDate, hourss);
+                account.addStudyHours(courses, date, hours);
 
                 successMessageLabel.Text = hours + " hours added for " + course.name;
                 hoursErrorMessageLabel.Text = "";

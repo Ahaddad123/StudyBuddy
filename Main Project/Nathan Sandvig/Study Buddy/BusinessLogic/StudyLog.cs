@@ -51,6 +51,14 @@ namespace Study_Buddy.BusinessLogic
             }
         }
 
+        public void RemoveTimeFromLog(double newTime, DateTime date)
+        {
+            if (Log.ContainsKey(date))
+            {
+                Log[date] = Log[date] - newTime;
+            }
+        }
+
         //---------------------------------------------------------------------
         // returns study hours for that date
         // day: date of hours being returned
