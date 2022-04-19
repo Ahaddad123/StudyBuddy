@@ -81,7 +81,7 @@ namespace Study_Buddy.Presentation
                 valid = false;
             }
             //add course times for Sunday
-            if (dtpSunStart.Value > dtpSunEnd.Value)
+            /*if (dtpSunStart.Value > dtpSunEnd.Value)
             {
                 creditsErrorMessageLabel.Text = "Invalid sunday times";
                 valid = false;
@@ -170,7 +170,7 @@ namespace Study_Buddy.Presentation
                 satdae.Add(dtpSatStart.Value);
                 satdae.Add(dtpSatEnd.Value);
                 dateTimes.Add(satdae);
-            }
+            }*/
 
             if (valid)
             {

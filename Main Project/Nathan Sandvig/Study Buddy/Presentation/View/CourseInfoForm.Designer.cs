@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.hoursLoggedChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.gradesChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -42,6 +42,7 @@
             this.WeekPlus = new System.Windows.Forms.Button();
             this.courseListPanel = new System.Windows.Forms.TableLayoutPanel();
             this.yourCoursesLabel = new System.Windows.Forms.Label();
+            this.userCourseList1 = new Study_Buddy.Presentation.View.UserCourseList();
             ((System.ComponentModel.ISupportInitialize)(this.hoursLoggedChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gradesChart)).BeginInit();
             this.mainTableLayoutPanel.SuspendLayout();
@@ -56,11 +57,11 @@
             // hoursLoggedChart
             // 
             this.hoursLoggedChart.BackColor = System.Drawing.SystemColors.Control;
-            chartArea1.Name = "ChartArea1";
-            this.hoursLoggedChart.ChartAreas.Add(chartArea1);
+            chartArea3.Name = "ChartArea1";
+            this.hoursLoggedChart.ChartAreas.Add(chartArea3);
             this.mainTableLayoutPanel.SetColumnSpan(this.hoursLoggedChart, 2);
-            legend2.Name = "Legend1";
-            this.hoursLoggedChart.Legends.Add(legend2);
+            legend3.Name = "Legend1";
+            this.hoursLoggedChart.Legends.Add(legend3);
             this.hoursLoggedChart.Location = new System.Drawing.Point(3, 34);
             this.hoursLoggedChart.Name = "hoursLoggedChart";
             this.hoursLoggedChart.Size = new System.Drawing.Size(678, 258);
@@ -70,11 +71,11 @@
             // gradesChart
             // 
             this.gradesChart.BackColor = System.Drawing.SystemColors.Control;
-            chartArea2.Name = "ChartArea1";
-            this.gradesChart.ChartAreas.Add(chartArea2);
+            chartArea4.Name = "ChartArea1";
+            this.gradesChart.ChartAreas.Add(chartArea4);
             this.mainTableLayoutPanel.SetColumnSpan(this.gradesChart, 2);
-            legend1.Name = "Legend1";
-            this.gradesChart.Legends.Add(legend1);
+            legend4.Name = "Legend1";
+            this.gradesChart.Legends.Add(legend4);
             this.gradesChart.Location = new System.Drawing.Point(3, 346);
             this.gradesChart.Name = "gradesChart";
             this.gradesChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
@@ -182,11 +183,12 @@
             this.courseListPanel.ColumnCount = 1;
             this.courseListPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.courseListPanel.Controls.Add(this.yourCoursesLabel, 0, 0);
+            this.courseListPanel.Controls.Add(this.userCourseList1, 0, 1);
             this.courseListPanel.Location = new System.Drawing.Point(1002, 95);
             this.courseListPanel.Name = "courseListPanel";
             this.courseListPanel.RowCount = 2;
-            this.courseListPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.courseListPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.courseListPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8F));
+            this.courseListPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92F));
             this.courseListPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.courseListPanel.Size = new System.Drawing.Size(338, 625);
             this.courseListPanel.TabIndex = 8;
@@ -201,6 +203,15 @@
             this.yourCoursesLabel.Size = new System.Drawing.Size(193, 35);
             this.yourCoursesLabel.TabIndex = 0;
             this.yourCoursesLabel.Text = "Your Courses";
+            // 
+            // userCourseList1
+            // 
+            this.userCourseList1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.userCourseList1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.userCourseList1.Location = new System.Drawing.Point(3, 53);
+            this.userCourseList1.Name = "userCourseList1";
+            this.userCourseList1.Size = new System.Drawing.Size(332, 569);
+            this.userCourseList1.TabIndex = 1;
             // 
             // CourseInfoForm
             // 
@@ -237,5 +248,6 @@
         private System.Windows.Forms.Button WeekPlus;
         private System.Windows.Forms.TableLayoutPanel courseListPanel;
         private System.Windows.Forms.Label yourCoursesLabel;
+        private UserCourseList userCourseList1;
     }
 }

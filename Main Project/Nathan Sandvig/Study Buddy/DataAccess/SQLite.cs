@@ -189,18 +189,51 @@ namespace Study_Buddy.DataAccess
             sqlite_conn = CreateConnection();
 
             SQLiteCommand letsRead = sqlite_conn.CreateCommand();
-            letsRead.CommandText = "SELECT CourseName FROM Courses";
+            letsRead.CommandText = "SELECT CourseName, Credits, CourseCode FROM Courses";
 
             sqlite_datareader = letsRead.ExecuteReader();
 
             while (sqlite_datareader.Read()) 
             {
                 String course = sqlite_datareader.GetString(0);
+                int credits = sqlite_datareader.GetInt32(1);
+                String code = sqlite_datareader.GetString(2);
                 courses.Add(course);
-
+                courses.Add(credits + "");
+                courses.Add(code);
             }
 
             return courses;
+        }
+
+        public List<String> readAssignments()
+        {
+            List<String> assignments = new List<String>();
+            SQLiteDataReader sqlite_datareader;
+            SQLiteConnection sqlite_conn;
+            // Create a new database connection:
+            sqlite_conn = CreateConnection();
+
+            SQLiteCommand letsRead = sqlite_conn.CreateCommand();
+            letsRead.CommandText = "SELECT CourseName, AssignmentName, AssignmentWeight, Grade, DueDate FROM Assignments";
+
+            sqlite_datareader = letsRead.ExecuteReader();
+
+            while (sqlite_datareader.Read())
+            {
+                String course = sqlite_datareader.GetString(0);
+                String assignment = sqlite_datareader.GetString(1);
+                double weight = sqlite_datareader.GetDouble(2);
+                double grade = sqlite_datareader.GetDouble(3);
+                String date = sqlite_datareader.GetString(4);
+                assignments.Add(course);
+                assignments.Add(assignment);
+                assignments.Add(weight + "");
+                assignments.Add(grade + "");
+                assignments.Add(date);
+            }
+
+            return assignments;
         }
 
         //---------------------------------------------------------------------

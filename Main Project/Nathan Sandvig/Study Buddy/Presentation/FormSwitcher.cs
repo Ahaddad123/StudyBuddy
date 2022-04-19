@@ -103,6 +103,16 @@ namespace Study_Buddy.Presentation
             form.ShowDialog();
             currentForm.Close();
         }
+        public static void OpenScheduleForm(Form currentForm)
+        {
+            currentForm.Hide();
+            ScheduleForm form = new ScheduleForm();
+            form.StartPosition = FormStartPosition.Manual;
+            ScheduleFormController controller = new ScheduleFormController(form);
+            form.SetController(controller);
+            form.ShowDialog();
+            currentForm.Close();
+        }
 
         //Below methods used for opening forms that do not inherit BaseForm
         public static void OpenRegistrationForm(Form currentForm)

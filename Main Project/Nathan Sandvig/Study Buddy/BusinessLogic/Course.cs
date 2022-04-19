@@ -79,6 +79,13 @@ namespace Study_Buddy.BusinessLogic
         //---------------------------------------------------------------------
         public void AddAssignment(Assignment newAssign)
         {
+            foreach (Assignment a in this.assignments)
+            {
+                if (a.name.Equals(newAssign.name))
+                {
+                    return;
+                }
+            }
             assignments.Add(newAssign);
         }
 

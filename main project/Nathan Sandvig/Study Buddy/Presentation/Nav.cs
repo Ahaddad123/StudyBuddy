@@ -56,7 +56,7 @@ namespace Study_Buddy.Presentation
 
         private void btnMySchedule_Click(object sender, EventArgs e)
         {
-
+            FormSwitcher.OpenScheduleForm(currentForm);
         }
 
         private void btnSettings_Click(object sender, EventArgs e)

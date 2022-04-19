@@ -127,11 +127,11 @@ namespace Study_Buddy.Presentation.View
 
             Boolean valid = acc.accountCreated(nameTextBox.Text, passwordTextBox.Text);
 
-            /*if (!valid)
+            if (!valid)
             {
                 this.errorMessageLabel.Text = "Invalid Login Credentials.  Please try again.";
             }
-            else*/
+            else
                 FormSwitcher.OpenHomePageForm(this);
         }
     }
