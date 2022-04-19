@@ -85,5 +85,10 @@ namespace Study_Buddy.Presentation
         {
             FormSwitcher.OpenUserInfoForm(this);
         }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
