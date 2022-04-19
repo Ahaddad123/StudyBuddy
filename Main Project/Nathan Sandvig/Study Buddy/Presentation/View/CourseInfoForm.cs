@@ -48,7 +48,7 @@ namespace Study_Buddy.Presentation.View
 
 
             //Default for now, need to pass actual data
-            this.course = new Course();
+            this.course = this.userCourseList1.currentCourse;
             this.title = course.name;
             this.Text = title;
             this.mainHeader.Text = title;
@@ -56,9 +56,15 @@ namespace Study_Buddy.Presentation.View
             gradesSeriesID = "Your grades for " + course.name;
             hoursSeriesID = "Your study hours for week 0";
             gradesChart.Series.Add(gradesSeriesID);
-
+            this.userCourseList1.StatusUpdated += new EventHandler(MyEventHandlerFunction_StatusUpdated);
         }
 
+        public void MyEventHandlerFunction_StatusUpdated(object sender, EventArgs e)
+        {
+            this.course = this.userCourseList1.currentCourse;
+            this.title = course.name;
+            this.mainHeader.Text = course.name;    
+        }
 
         //---------------------------------------------------------------------
         // Sets the form's controller

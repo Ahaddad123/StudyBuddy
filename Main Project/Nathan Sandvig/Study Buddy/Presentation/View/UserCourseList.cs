@@ -14,21 +14,29 @@ namespace Study_Buddy.Presentation.View
     public partial class UserCourseList : UserControl
     {
         private List<Course> courses;
-        private Course currentCourse;
+        public Course currentCourse { get; set; }
+
+        public EventHandler StatusUpdated { get; set; }
         public UserCourseList()
         {
+            //Get courses from account
             courses = AccountController.account.courses;
+            //Current course defaults to first in list
+            if (courses.Count > 0)
+                currentCourse = courses[0];
+            //Placeholder course in case none exists
+            else
+                currentCourse = new Course();
             InitializeComponent();
         }
 
-        public String getName()
-        {
-            return AccountController.account.username;
-        }
 
         public Button createCourseButton(Course course, int locationindex, int red, int green, int blue)
         {
             Button button = new Button();
+            //IMPORTANT- for purpose of changing current course, course name is stored in button text.
+            //Seems hackish, but I don't know a better way of passing this info to a dynamically generated event handler
+            //Sue me.
             button.Text = course.name;
             button.Name = course.name + "Btn";
             button.BackColor = Color.FromArgb(red, green, blue);
@@ -39,6 +47,7 @@ namespace Study_Buddy.Presentation.View
             button.Font = new Font("Microsoft Sans Serif", 14);
             button.Click += new EventHandler(this.courseButtonClick);
 
+
             return button;
         }
 
@@ -46,7 +55,13 @@ namespace Study_Buddy.Presentation.View
         void courseButtonClick(object sender, EventArgs e)
         {
             Button currentButton = (Button)sender;
-            MessageBox.Show(currentButton.Name.ToString());
+            //
+            for (int i = 0; i < courses.Count; i++)
+            {
+                if (courses[i].name == currentButton.Text)
+                    currentCourse = courses[i];
+            }
+            this.StatusUpdated(this, new EventArgs());
         }
 
         private void UserCourseList_Load(object sender, EventArgs e)
