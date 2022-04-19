@@ -75,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLogic\AccountController.cs" />
+    <Compile Include="BusinessLogic\Algorithm.cs" />
     <Compile Include="BusinessLogic\Notifications.cs" />
     <Compile Include="BusinessLogic\SystemController.cs" />
     <Compile Include="DataAccess\SQLite.cs" />
