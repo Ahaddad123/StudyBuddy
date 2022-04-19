@@ -64,5 +64,15 @@ namespace Study_Buddy.Presentation
             this.Text = title;
             this.mainHeader.Text = title;
         }
+
+        private void btnUndo_Click(object sender, EventArgs e)
+        {
+            controller.Undo();
+        }
+
+        private void btnRedo_Click(object sender, EventArgs e)
+        {
+            controller.Redo();
+        }
     }
 }

@@ -30,6 +30,10 @@
         {
             this.mainPanel = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.successMessageLabel = new System.Windows.Forms.Label();
+            this.hoursErrorMessageLabel = new System.Windows.Forms.Label();
+            this.dateErrorMessageLabel = new System.Windows.Forms.Label();
+            this.courseErrorMessageLabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.DTPhourDate = new System.Windows.Forms.DateTimePicker();
             this.cmbCourses = new System.Windows.Forms.ComboBox();
@@ -39,10 +43,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.courseErrorMessageLabel = new System.Windows.Forms.Label();
-            this.dateErrorMessageLabel = new System.Windows.Forms.Label();
-            this.hoursErrorMessageLabel = new System.Windows.Forms.Label();
-            this.successMessageLabel = new System.Windows.Forms.Label();
+            this.btnRedo = new System.Windows.Forms.Button();
+            this.btnUndo = new System.Windows.Forms.Button();
             this.mainPanel.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -66,6 +68,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.groupBox1.Controls.Add(this.btnRedo);
+            this.groupBox1.Controls.Add(this.btnUndo);
             this.groupBox1.Controls.Add(this.successMessageLabel);
             this.groupBox1.Controls.Add(this.hoursErrorMessageLabel);
             this.groupBox1.Controls.Add(this.dateErrorMessageLabel);
@@ -84,6 +88,46 @@
             this.groupBox1.Size = new System.Drawing.Size(480, 310);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
+            // 
+            // successMessageLabel
+            // 
+            this.successMessageLabel.AutoSize = true;
+            this.successMessageLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.successMessageLabel.ForeColor = System.Drawing.Color.White;
+            this.successMessageLabel.Location = new System.Drawing.Point(90, 258);
+            this.successMessageLabel.Name = "successMessageLabel";
+            this.successMessageLabel.Size = new System.Drawing.Size(0, 23);
+            this.successMessageLabel.TabIndex = 18;
+            // 
+            // hoursErrorMessageLabel
+            // 
+            this.hoursErrorMessageLabel.AutoSize = true;
+            this.hoursErrorMessageLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hoursErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
+            this.hoursErrorMessageLabel.Location = new System.Drawing.Point(90, 219);
+            this.hoursErrorMessageLabel.Name = "hoursErrorMessageLabel";
+            this.hoursErrorMessageLabel.Size = new System.Drawing.Size(0, 23);
+            this.hoursErrorMessageLabel.TabIndex = 17;
+            // 
+            // dateErrorMessageLabel
+            // 
+            this.dateErrorMessageLabel.AutoSize = true;
+            this.dateErrorMessageLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
+            this.dateErrorMessageLabel.Location = new System.Drawing.Point(90, 147);
+            this.dateErrorMessageLabel.Name = "dateErrorMessageLabel";
+            this.dateErrorMessageLabel.Size = new System.Drawing.Size(0, 23);
+            this.dateErrorMessageLabel.TabIndex = 16;
+            // 
+            // courseErrorMessageLabel
+            // 
+            this.courseErrorMessageLabel.AutoSize = true;
+            this.courseErrorMessageLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.courseErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
+            this.courseErrorMessageLabel.Location = new System.Drawing.Point(90, 74);
+            this.courseErrorMessageLabel.Name = "courseErrorMessageLabel";
+            this.courseErrorMessageLabel.Size = new System.Drawing.Size(0, 23);
+            this.courseErrorMessageLabel.TabIndex = 15;
             // 
             // label4
             // 
@@ -182,45 +226,33 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Week";
             // 
-            // courseErrorMessageLabel
+            // btnRedo
             // 
-            this.courseErrorMessageLabel.AutoSize = true;
-            this.courseErrorMessageLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.courseErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
-            this.courseErrorMessageLabel.Location = new System.Drawing.Point(90, 74);
-            this.courseErrorMessageLabel.Name = "courseErrorMessageLabel";
-            this.courseErrorMessageLabel.Size = new System.Drawing.Size(0, 29);
-            this.courseErrorMessageLabel.TabIndex = 15;
+            this.btnRedo.BackColor = System.Drawing.Color.White;
+            this.btnRedo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRedo.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRedo.ForeColor = System.Drawing.Color.Navy;
+            this.btnRedo.Location = new System.Drawing.Point(110, 265);
+            this.btnRedo.Name = "btnRedo";
+            this.btnRedo.Size = new System.Drawing.Size(75, 23);
+            this.btnRedo.TabIndex = 13;
+            this.btnRedo.Text = "Redo";
+            this.btnRedo.UseVisualStyleBackColor = false;
+            this.btnRedo.Click += new System.EventHandler(this.btnRedo_Click);
             // 
-            // dateErrorMessageLabel
+            // btnUndo
             // 
-            this.dateErrorMessageLabel.AutoSize = true;
-            this.dateErrorMessageLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
-            this.dateErrorMessageLabel.Location = new System.Drawing.Point(90, 147);
-            this.dateErrorMessageLabel.Name = "dateErrorMessageLabel";
-            this.dateErrorMessageLabel.Size = new System.Drawing.Size(0, 29);
-            this.dateErrorMessageLabel.TabIndex = 16;
-            // 
-            // hoursErrorMessageLabel
-            // 
-            this.hoursErrorMessageLabel.AutoSize = true;
-            this.hoursErrorMessageLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hoursErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
-            this.hoursErrorMessageLabel.Location = new System.Drawing.Point(90, 219);
-            this.hoursErrorMessageLabel.Name = "hoursErrorMessageLabel";
-            this.hoursErrorMessageLabel.Size = new System.Drawing.Size(0, 29);
-            this.hoursErrorMessageLabel.TabIndex = 17;
-            // 
-            // successMessageLabel
-            // 
-            this.successMessageLabel.AutoSize = true;
-            this.successMessageLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.successMessageLabel.ForeColor = System.Drawing.Color.White;
-            this.successMessageLabel.Location = new System.Drawing.Point(90, 258);
-            this.successMessageLabel.Name = "successMessageLabel";
-            this.successMessageLabel.Size = new System.Drawing.Size(0, 29);
-            this.successMessageLabel.TabIndex = 18;
+            this.btnUndo.BackColor = System.Drawing.Color.White;
+            this.btnUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUndo.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUndo.ForeColor = System.Drawing.Color.Navy;
+            this.btnUndo.Location = new System.Drawing.Point(29, 265);
+            this.btnUndo.Name = "btnUndo";
+            this.btnUndo.Size = new System.Drawing.Size(75, 23);
+            this.btnUndo.TabIndex = 12;
+            this.btnUndo.Text = "Undo";
+            this.btnUndo.UseVisualStyleBackColor = false;
+            this.btnUndo.Click += new System.EventHandler(this.btnUndo_Click);
             // 
             // StudyLogForm
             // 
@@ -260,5 +292,7 @@
         private System.Windows.Forms.Label hoursErrorMessageLabel;
         private System.Windows.Forms.Label dateErrorMessageLabel;
         private System.Windows.Forms.Label courseErrorMessageLabel;
+        private System.Windows.Forms.Button btnRedo;
+        private System.Windows.Forms.Button btnUndo;
     }
 }
