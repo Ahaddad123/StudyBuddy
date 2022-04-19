@@ -216,7 +216,7 @@ namespace Study_Buddy.DataAccess
             sqlite_conn = CreateConnection();
 
             SQLiteCommand studentData = sqlite_conn.CreateCommand();
-            studentData.CommandText = "SELECT FName FROM StudentInformation";
+            studentData.CommandText = "SELECT * FROM StudentInformation";
             sqlite_datareader = studentData.ExecuteReader();
 
             while (sqlite_datareader.Read())
