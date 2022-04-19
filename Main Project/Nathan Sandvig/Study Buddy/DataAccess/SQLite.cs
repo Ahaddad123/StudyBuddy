@@ -123,6 +123,36 @@ namespace Study_Buddy.DataAccess
             
         }
 
+        public string checkPassword(string password) {
+            string password1;
+            
+            SQLiteConnection sqlite_conn;
+            // Create a new database connection:
+            sqlite_conn = CreateConnection();
+            SQLiteCommand checkAccounts;
+            checkAccounts = sqlite_conn.CreateCommand();
+
+            String command = "SELECT Password FROM AccountData WHERE(Password = '@password')";
+            String command1 = command.Replace("@password", password);
+            checkAccounts.CommandText = command1;
+
+            try
+            {
+                Object hello = checkAccounts.ExecuteScalar();
+                if (hello == null)
+                {
+                    return null;
+                }
+                else
+                    password1 = hello.ToString();
+            }
+            catch (SQLiteException e)
+            {
+                return null;
+            }
+
+            return password1;
+        }
         //---------------------------------------------------------------------
         // Query for creating an account by inserting the account data into
         // the table.
