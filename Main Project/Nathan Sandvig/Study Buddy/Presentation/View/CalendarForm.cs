@@ -56,7 +56,21 @@ namespace Study_Buddy.Presentation
             }
             dayBox.days(dayOfWeek);
             dayContainer.Controls.Add(dayBox);
-
+            //Wip add assignment due dates
+            int indexOflabel = 10;
+            foreach(Course c in AccountController.account.courses)
+            {
+                foreach(Assignment assignment in c.assignments)
+                {
+                    
+                    if(dayOfWeek == assignment.dueDate.Day)
+                    {
+                        dayBox.addDueDate(dayOfWeek, assignment.name);
+                        indexOflabel += 10;
+                    }
+                    
+                }
+            }
         }
 
         private void btnPrev_Click(object sender, EventArgs e)

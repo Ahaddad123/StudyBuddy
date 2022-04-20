@@ -24,6 +24,15 @@ namespace Study_Buddy.Presentation
             this.eventLabel1.ForeColor = Color.White;
         }
 
+        public void addDueDate(int dueDate, string assignmentName)
+        {
+            Label labelDays = new Label();
+            labelDays.Text = assignmentName;
+            labelDays.ForeColor = Color.White;
+            labelDays.Size = new Size(5, 10);
+            labelDays.Font = new Font("Microsoft Sans Serif", 13);
+        }
+
         private void DayBox_Load(object sender, EventArgs e)
         {
 
