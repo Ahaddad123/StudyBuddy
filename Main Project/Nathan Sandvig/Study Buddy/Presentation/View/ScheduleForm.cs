@@ -58,16 +58,28 @@ namespace Study_Buddy.Presentation
                 this.tableLayoutPanel2.Controls.Add(label, 0, i);
             }
 
-            //for(int i = 0; i < tableLayoutPanel2.RowCount; i++)
-            //{
-                Label label2 = new Label();
-                label2.Text = "courseName";
-                label2.BackColor = Color.CornflowerBlue;
-                label2.AutoSize = true;
-                label2.Dock = DockStyle.Fill;
-                this.tableLayoutPanel2.Controls.Add(label2, 3, 3);
-                this.tableLayoutPanel2.SetRowSpan(label2, 2);
-            //}
+            int red = 235;
+            int green = 131;
+            int blue = 131;
+            for (int i = 0; i < controller.getCourses().Count; i++)
+            {
+                Course course = controller.getCourses()[i];
+                Label label = controller.createCourseLabel(course, red, green, blue);
+                this.tableLayoutPanel2.Controls.Add(label, i + 1, i + 1); //need to update indices
+                this.tableLayoutPanel2.SetRowSpan(label, 2); //need to update span
+                if (i % 3 == 0)
+                {
+                    green = red;
+                }
+                else if (i % 3 == 1)
+                {
+                    red = blue;
+                }
+                else if (i % 3 == 2)
+                {
+                    blue = green;
+                }
+            }
         }
     }
 }

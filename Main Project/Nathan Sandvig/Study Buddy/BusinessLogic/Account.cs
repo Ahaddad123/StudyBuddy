@@ -129,6 +129,7 @@ namespace Study_Buddy.BusinessLogic
             if (index != -1)
             {
                 courses.RemoveAt(index);
+                database.removeCourse(courseName);
                 removed = true;
             }
 
