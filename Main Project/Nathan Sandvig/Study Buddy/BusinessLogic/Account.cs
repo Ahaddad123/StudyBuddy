@@ -55,7 +55,7 @@ namespace Study_Buddy.BusinessLogic
                 {
                     if (course.name.Equals(list2.ElementAt(i)))
                     {
-                        Assignment assignment = new Assignment(0, list2.ElementAt(i + 1), Int32.Parse(list2.ElementAt(i + 2)), DateTime.Parse(list2.ElementAt(i+4)));
+                        Assignment assignment = new Assignment(Int32.Parse(list2.ElementAt(i+4)), list2.ElementAt(i + 1), Int32.Parse(list2.ElementAt(i + 2)), DateTime.Parse(list2.ElementAt(i+5)));
                         course.AddAssignment(assignment);
                         course.GradeAssignment(assignment.name, Double.Parse(list2.ElementAt(i + 3)));
                     }
@@ -166,9 +166,9 @@ namespace Study_Buddy.BusinessLogic
             database.removeStudyHours(course, date.Date, hours + "");
         }
 
-        public void addAssignment(string coursename, string name, string grade, string weight,  string duedate) 
+        public void addAssignment(string coursename, string name, string grade, string weight, string points, string duedate) 
         {
-            database.addAssignment(coursename, name, weight, grade, duedate);
+            database.addAssignment(coursename, name, weight, grade, points, duedate);
         }
 
         public void addGrade(string coursename, string assignmentname, double grade)

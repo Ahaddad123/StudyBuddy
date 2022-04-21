@@ -57,7 +57,7 @@ namespace Study_Buddy.DataAccess
                 checkAccounts.CommandText = createTables;
                 checkAccounts.ExecuteNonQuery();
 
-                String createTables2 = "CREATE TABLE \"Assignments\" (\"CourseID\" INTEGER NOT NULL,\"CourseName\"   TEXT NOT NULL, \"AssignmentName\"   TEXT NOT NULL, \"AssignmentWeight\" REAL NOT NULL, \"Grade\" REAL, \"DueDate\" INTEGER, PRIMARY KEY(\"CourseID\" AUTOINCREMENT))";
+                String createTables2 = "CREATE TABLE \"Assignments\" (\"CourseID\" INTEGER NOT NULL,\"CourseName\"   TEXT NOT NULL, \"AssignmentName\"   TEXT NOT NULL, \"AssignmentWeight\" REAL NOT NULL, \"Grade\" REAL, \"Points\" REAL NOT NULL, \"DueDate\" INTEGER, PRIMARY KEY(\"CourseID\" AUTOINCREMENT))";
                 checkAccounts.CommandText = createTables2;
                 checkAccounts.ExecuteNonQuery();
 
@@ -245,7 +245,7 @@ namespace Study_Buddy.DataAccess
             sqlite_conn = CreateConnection();
 
             SQLiteCommand letsRead = sqlite_conn.CreateCommand();
-            letsRead.CommandText = "SELECT CourseName, AssignmentName, AssignmentWeight, Grade, DueDate FROM Assignments";
+            letsRead.CommandText = "SELECT CourseName, AssignmentName, AssignmentWeight, Grade, Points, DueDate FROM Assignments";
 
             sqlite_datareader = letsRead.ExecuteReader();
 
@@ -255,11 +255,13 @@ namespace Study_Buddy.DataAccess
                 String assignment = sqlite_datareader.GetString(1);
                 double weight = sqlite_datareader.GetDouble(2);
                 double grade = sqlite_datareader.GetDouble(3);
-                String date = sqlite_datareader.GetString(4);
+                double points = sqlite_datareader.GetDouble(4);
+                String date = sqlite_datareader.GetString(5);
                 assignments.Add(course);
                 assignments.Add(assignment);
                 assignments.Add(weight + "");
                 assignments.Add(grade + "");
+                assignments.Add(points + "");
                 assignments.Add(date);
             }
 
@@ -420,7 +422,7 @@ namespace Study_Buddy.DataAccess
         //---------------------------------------------------------------------
         // Query for adding an assignment to the assignment list
         //---------------------------------------------------------------------
-        public void addAssignment(string courseName, string assignmentName, string assignmentWeight, string grade, string duedate) 
+        public void addAssignment(string courseName, string assignmentName, string assignmentWeight, string grade, string points, string duedate) 
         {
             SQLiteConnection sqlite_conn = CreateConnection();
 
@@ -428,8 +430,8 @@ namespace Study_Buddy.DataAccess
             addAssignment = sqlite_conn.CreateCommand();
 
 
-            string command = "INSERT INTO Assignments(CourseName, AssignmentName, AssignmentWeight, Grade, DueDate) VALUES ('@course', '@assignmentname','@assignmentweight', '@grade', '@duedate')";
-            string command1 = command.Replace("@course", courseName).Replace("@assignmentname", assignmentName).Replace("@assignmentweight", assignmentWeight).Replace("@grade", grade).Replace("@duedate", duedate);
+            string command = "INSERT INTO Assignments(CourseName, AssignmentName, AssignmentWeight, Grade, Points, DueDate) VALUES ('@course', '@assignmentname','@assignmentweight', '@grade', '@points', '@duedate')";
+            string command1 = command.Replace("@course", courseName).Replace("@assignmentname", assignmentName).Replace("@assignmentweight", assignmentWeight).Replace("@grade", grade).Replace("@points", points).Replace("@duedate", duedate);
 
             addAssignment.CommandText = command1;
             addAssignment.ExecuteNonQuery();
