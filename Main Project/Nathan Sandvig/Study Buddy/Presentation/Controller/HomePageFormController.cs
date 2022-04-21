@@ -25,8 +25,18 @@ namespace Study_Buddy.Presentation
 
         public String getName()
         {
-            return AccountController.account.username;
-            
+            List<String> info = AccountController.account.getStudentInfo();
+            return info[0] + " " + info[1];
+        }
+
+        public String getGPA()
+        {
+            return AccountController.account.getStudentInfo()[2];
+        }
+
+        public String getSchoolName()
+        {
+            return AccountController.account.getStudentInfo()[3];
         }
 
         public Label createCourseLabel(Course course, int locationindex, int red, int green, int blue)

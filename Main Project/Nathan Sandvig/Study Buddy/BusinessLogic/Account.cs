@@ -195,9 +195,9 @@ namespace Study_Buddy.BusinessLogic
             }
         }
 
-        public void getAccountData()
+        public List<String> getStudentInfo()
         {
-
+            return database.readStudentInfo();
         }
     }
 }

@@ -279,13 +279,19 @@ namespace Study_Buddy.DataAccess
             sqlite_conn = CreateConnection();
 
             SQLiteCommand studentData = sqlite_conn.CreateCommand();
-            studentData.CommandText = "SELECT * FROM StudentInformation";
+            studentData.CommandText = "SELECT FName, LName, GPA, SchoolName FROM StudentInformation";
             sqlite_datareader = studentData.ExecuteReader();
 
             while (sqlite_datareader.Read())
             {
-                String student = sqlite_datareader.GetString(0);
-                studentInfo.Add(student);
+                String studentFirstName = sqlite_datareader.GetString(0);
+                String studentLastName = sqlite_datareader.GetString(1);
+                double studentGpa = sqlite_datareader.GetDouble(2);
+                String studentSchoolName = sqlite_datareader.GetString(3);
+                studentInfo.Add(studentFirstName);
+                studentInfo.Add(studentLastName);
+                studentInfo.Add(studentGpa + "");
+                studentInfo.Add(studentSchoolName);
             }
 
             return studentInfo;
