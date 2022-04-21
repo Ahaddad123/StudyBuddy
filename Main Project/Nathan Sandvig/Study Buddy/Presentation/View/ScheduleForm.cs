@@ -39,6 +39,11 @@ namespace Study_Buddy.Presentation
 
         private void ScheduleForm_Load(object sender, EventArgs e)
         {
+            double[] hoursStudied = new double[7];
+            for(int i = 0; i < 7; i++)
+            {
+                hoursStudied[i] = 0;
+            }
             for(int i = 0; i < this.tableLayoutPanel2.RowCount; i++)
             {
                 Label label = new Label();
@@ -79,7 +84,22 @@ namespace Study_Buddy.Presentation
                 {
                     blue = green;
                 }
+
+                DateTime today = DateTime.Today.Date;
+                DateTime sunday = new DateTime(today.Year, today.Month, today.Day - (int)today.DayOfWeek);
+                for (int j = 0; j < 7; j++)
+                {
+                    hoursStudied[(int)sunday.DayOfWeek] += course.GetHoursStudied(sunday.Date);
+                    sunday = sunday.AddDays(1);
+                }
             }
+            sunday.Text = hoursStudied[0] + "/study goal";
+            monday.Text = hoursStudied[1] + "/study goal";
+            tuesday.Text = hoursStudied[2] + "/study goal";
+            wednesday.Text = hoursStudied[3] + "/study goal";
+            thursday.Text = hoursStudied[4] + "/study goal";
+            friday.Text = hoursStudied[5] + "/study goal";
+            saturday.Text = hoursStudied[6] + "/study goal";
         }
     }
 }

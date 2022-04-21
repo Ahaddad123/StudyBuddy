@@ -51,10 +51,11 @@ namespace Study_Buddy.Presentation
                 this.panel1.Controls.Add(label);
                 double hoursStudied = 0;
                 DateTime today = DateTime.Today.Date;
-                for (int j = 0; j <= (int)today.DayOfWeek; j++)
+                DateTime sunday = new DateTime(today.Year, today.Month, today.Day - (int)today.DayOfWeek);
+                for(int j = 0; j < 7; j++)
                 {
-                    DateTime date = new DateTime(today.Year, today.Month, today.Day - j);
-                    hoursStudied += course.GetHoursStudied(date.Date);
+                    hoursStudied += course.GetHoursStudied(sunday.Date);
+                    sunday = sunday.AddDays(1);
                 }
                 Label label2 = controller.createHoursLabel(course, hoursStudied, locationindex, red, green, blue);
                 this.panel1.Controls.Add(label2);
