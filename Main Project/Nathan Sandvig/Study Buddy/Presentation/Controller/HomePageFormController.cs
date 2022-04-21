@@ -20,7 +20,6 @@ namespace Study_Buddy.Presentation
 
         public List<Course> getCourses()
         {
-            AccountController.account.readCourses();
             return AccountController.account.courses;
         }
 

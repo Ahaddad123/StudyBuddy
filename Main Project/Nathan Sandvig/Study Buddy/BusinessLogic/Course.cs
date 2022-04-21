@@ -28,7 +28,7 @@ namespace Study_Buddy.BusinessLogic
         // courseTimes: days and times where you have class
         //---------------------------------------------------------------------
         public List<Assignment> assignments { get; set; }
-        private StudyLog hourLog;
+        public StudyLog hourLog { get; set; }
         public string name { get; set; }
         public double grade { get; set; }
         public string code { get; set; }
@@ -178,7 +178,7 @@ namespace Study_Buddy.BusinessLogic
             {
                 return;
             }
-            hourLog.AddTimeToLog(time, date);
+            hourLog.AddTimeToLog(time, date.Date);
         }
 
         public void RemoveHours(double time, DateTime date)
@@ -187,7 +187,7 @@ namespace Study_Buddy.BusinessLogic
             {
                 return;
             }
-            hourLog.RemoveTimeFromLog(time, date);
+            hourLog.RemoveTimeFromLog(time, date.Date);
         }
 
         //---------------------------------------------------------------------
@@ -198,7 +198,7 @@ namespace Study_Buddy.BusinessLogic
         //---------------------------------------------------------------------
         public double GetHoursStudied(DateTime date)
         {
-            return hourLog.GetHours(date);
+            return hourLog.GetHours(date.Date);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Study_Buddy.BusinessLogic
 {
     public class StudyLog
     {
-        Dictionary<DateTime, double> Log = new Dictionary<DateTime, double>();
+        public Dictionary<DateTime, double> Log { get; set; }
 
         //---------------------------------------------------------------------
         // default constructor for studylog

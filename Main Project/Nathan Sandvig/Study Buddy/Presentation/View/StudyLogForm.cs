@@ -74,13 +74,10 @@ namespace Study_Buddy.Presentation
                 //controller.AddAssignment(courseName, txtNameAssign.Text,points,weight);
                 string courses = cmbCourses.Text;
 
-                Account account = new Account();
-                account.addStudyHours(courses, date, hours);
-
                 successMessageLabel.Text = hours + " hours added for " + course.name;
                 hoursErrorMessageLabel.Text = "";
                 courseErrorMessageLabel.Text = "";
-                controller.AddHours(cmbCourses.Text,date,hours);
+                controller.AddHours(cmbCourses.Text,date.Date,hours);
             }
         }
 

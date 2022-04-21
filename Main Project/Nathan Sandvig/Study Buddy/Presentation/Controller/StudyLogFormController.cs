@@ -19,7 +19,7 @@ namespace Study_Buddy.Presentation
 
         public void AddHours(String courseName,DateTime date, double hours)
         {
-            AddStudyHours addStudyHours = new AddStudyHours(courseName, date, hours);
+            AddStudyHours addStudyHours = new AddStudyHours(courseName, date.Date, hours);
             addStudyHours.execute();
             done.Push(addStudyHours);
         }

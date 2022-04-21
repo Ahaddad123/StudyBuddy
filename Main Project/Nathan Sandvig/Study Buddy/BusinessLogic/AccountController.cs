@@ -23,6 +23,7 @@ namespace Study_Buddy.BusinessLogic
         public Boolean createAccount(string username, string password, string email, string firstname, string lastname, string gpa, string schoolname)
         {
             account = new Account(username, password, firstname, lastname, gpa, schoolname);
+            account.readCourses();
             int acc = database.InsertAccountData(username, password, email, firstname, lastname, gpa, schoolname);
 
             if (acc == -1)
@@ -51,6 +52,7 @@ namespace Study_Buddy.BusinessLogic
                 else
                 {
                     account = new Account(username, password);
+                    account.readCourses();
                     return true;
                 }
             }

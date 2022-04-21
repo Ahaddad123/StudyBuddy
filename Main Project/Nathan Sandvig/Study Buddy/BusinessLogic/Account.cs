@@ -55,9 +55,22 @@ namespace Study_Buddy.BusinessLogic
                 {
                     if (course.name.Equals(list2.ElementAt(i)))
                     {
-                        Assignment assignment = new Assignment(0, list2.ElementAt(i + 1), Int32.Parse(list2.ElementAt(i + 2)), DateTime.Today);
+                        Assignment assignment = new Assignment(0, list2.ElementAt(i + 1), Int32.Parse(list2.ElementAt(i + 2)), DateTime.Parse(list2.ElementAt(i+4)));
                         course.AddAssignment(assignment);
                         course.GradeAssignment(assignment.name, Double.Parse(list2.ElementAt(i + 3)));
+                    }
+                }
+            }
+
+            List<String> list3;
+            list3 = database.readStudyHours();
+            for (int i = 0; i < list3.Count; i += 3)
+            {
+                foreach (Course course in courses)
+                {
+                    if (course.name.Equals(list3.ElementAt(i+1)))
+                    {
+                        course.LogHours(Int32.Parse(list3.ElementAt(i)), DateTime.Parse(list3.ElementAt(i + 2)));
                     }
                 }
             }
@@ -128,10 +141,17 @@ namespace Study_Buddy.BusinessLogic
             {
                 if (c.name.Equals(course))
                 {
-                    c.LogHours(hours, date);
+                    if (c.hourLog.Log.ContainsKey(date.Date))
+                    {
+                        database.addStudyHours(course, date.Date, hours + "");
+                    }
+                    else
+                    {
+                        database.logStudyHours(course, date.Date, hours + "");
+                    }
+                    c.LogHours(hours, date.Date);
                 }
             }
-            database.logStudyHours(course, date, hours + "");
         }
 
         public void removeStudyHours(String course, DateTime date, double hours)
@@ -140,10 +160,10 @@ namespace Study_Buddy.BusinessLogic
             {
                 if (c.name.Equals(course))
                 {
-                    c.RemoveHours(hours, date);
+                    c.RemoveHours(hours, date.Date);
                 }
             }
-            database.removeStudyHours(course, date, hours + "");
+            database.removeStudyHours(course, date.Date, hours + "");
         }
 
         public void addAssignment(string coursename, string name, string grade, string weight,  string duedate) 
