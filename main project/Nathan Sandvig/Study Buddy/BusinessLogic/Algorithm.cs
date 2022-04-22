@@ -38,27 +38,33 @@ namespace Study_Buddy.BusinessLogic
         private static void ImportCourseData(Course course)
         {
             assignmentLog.Clear();
-            List<Assignment> assignmentList = new List<Assignment>(course.assignments);
+            List<Assignment> assignmentList = new List<Assignment>();
+            foreach (Assignment assignment in course.assignments)
+                if (assignment.grade != 0)
+                    assignmentList.Add(assignment);
             assignmentList.Sort(delegate (Assignment a1, Assignment a2) { return a1.dueDate.CompareTo(a2.dueDate); });
-
-            DateTime previousDate = assignmentList.First().dueDate.Subtract(new TimeSpan(120, 0, 0, 0));
-            double hours = 0.0;
-            while (hours == 0.0)
+            
+            if (assignmentList.Count > 0)
             {
-                previousDate = previousDate.AddDays(1);
-                hours = course.hourLog.GetHours(previousDate);
-            }
+                DateTime previousDate = assignmentList.First().dueDate.Subtract(new TimeSpan(120, 0, 0, 0));
+                double hours = 0.0;
+                while (hours == 0.0 && previousDate <= assignmentList.First().dueDate)
+                {
+                    previousDate = previousDate.AddDays(1);
+                    hours = course.hourLog.GetHours(previousDate);
+                }
 
-            foreach(Assignment assignment in assignmentList) if (assignment.grade != 0)
-            {
-                double hoursStudied = 0.0;
-                DateTime currentDate = assignment.dueDate;
-                for (DateTime date = previousDate; date <= currentDate; date = date.AddDays(1))
-                    hoursStudied += course.hourLog.GetHours(date);
-                double weeks = (currentDate - previousDate).Days / 7.0;
-                double hoursPerWeek = hoursStudied / weeks;
-                assignmentLog.AddLast((hoursPerWeek, assignment.grade));
-                previousDate = currentDate;
+                foreach (Assignment assignment in assignmentList)
+                {
+                    double hoursStudied = 0.0;
+                    DateTime currentDate = assignment.dueDate;
+                    for (DateTime date = previousDate; date <= currentDate; date = date.AddDays(1))
+                        hoursStudied += course.hourLog.GetHours(date);
+                    double weeks = (currentDate - previousDate).Days / 7.0;
+                    double hoursPerWeek = hoursStudied / weeks;
+                    assignmentLog.AddLast((hoursPerWeek, assignment.grade));
+                    previousDate = currentDate;
+                }
             }
         }
 
