@@ -54,6 +54,9 @@ namespace Study_Buddy.BusinessLogic
                     hours = course.hourLog.GetHours(previousDate);
                 }
 
+                while (previousDate.DayOfWeek != assignmentList.First().dueDate.DayOfWeek)
+                    previousDate = previousDate.Subtract(new TimeSpan(1, 0, 0, 0));
+
                 foreach (Assignment assignment in assignmentList)
                 {
                     double hoursStudied = 0.0;
