@@ -28,7 +28,7 @@ namespace Study_Buddy.Presentation
         {
             Label labelDays = new Label();
             labelDays.Text = assignmentName;
-            labelDays.ForeColor = Color.White;
+            labelDays.ForeColor = Color.Black;
             labelDays.Size = new Size(5, 10);
             labelDays.Font = new Font("Microsoft Sans Serif", 13);
         }

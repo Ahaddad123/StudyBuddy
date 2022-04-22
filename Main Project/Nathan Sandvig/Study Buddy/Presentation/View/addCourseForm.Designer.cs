@@ -34,6 +34,20 @@
             this.courseListBox = new System.Windows.Forms.ComboBox();
             this.removeCourseButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.successLabel = new System.Windows.Forms.Label();
             this.CodeErrorMessageLabel = new System.Windows.Forms.Label();
             this.creditsErrorMessageLabel = new System.Windows.Forms.Label();
@@ -50,34 +64,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.removeCourseLabel = new System.Windows.Forms.Label();
             this.addCourseLabel = new System.Windows.Forms.Label();
-            this.dtpMonStart = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dtpTueStart = new System.Windows.Forms.DateTimePicker();
-            this.label8 = new System.Windows.Forms.Label();
-            this.dtpMonEnd = new System.Windows.Forms.DateTimePicker();
-            this.dtpTueEnd = new System.Windows.Forms.DateTimePicker();
-            this.dtpWenStart = new System.Windows.Forms.DateTimePicker();
-            this.dtpWenEnd = new System.Windows.Forms.DateTimePicker();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dtpThuStart = new System.Windows.Forms.DateTimePicker();
-            this.dtpThuEnd = new System.Windows.Forms.DateTimePicker();
-            this.label10 = new System.Windows.Forms.Label();
-            this.dtpFriStart = new System.Windows.Forms.DateTimePicker();
-            this.dtpFriEnd = new System.Windows.Forms.DateTimePicker();
-            this.label11 = new System.Windows.Forms.Label();
-            this.dtpSatStart = new System.Windows.Forms.DateTimePicker();
-            this.dtpSatEnd = new System.Windows.Forms.DateTimePicker();
-            this.label12 = new System.Windows.Forms.Label();
-            this.dtpSunStart = new System.Windows.Forms.DateTimePicker();
-            this.dtpSunEnd = new System.Windows.Forms.DateTimePicker();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
+            this.cmbMonStart = new System.Windows.Forms.ComboBox();
+            this.cmbTueStart = new System.Windows.Forms.ComboBox();
+            this.cmbWenStart = new System.Windows.Forms.ComboBox();
+            this.cmbMonEnd = new System.Windows.Forms.ComboBox();
+            this.cmbTueEnd = new System.Windows.Forms.ComboBox();
+            this.cmbWenEnd = new System.Windows.Forms.ComboBox();
+            this.cmbThuStart = new System.Windows.Forms.ComboBox();
+            this.cmbFriStart = new System.Windows.Forms.ComboBox();
+            this.cmbSatStart = new System.Windows.Forms.ComboBox();
+            this.cmbThuEnd = new System.Windows.Forms.ComboBox();
+            this.cmbFriEnd = new System.Windows.Forms.ComboBox();
+            this.cmbSatEnd = new System.Windows.Forms.ComboBox();
+            this.cmbSunStart = new System.Windows.Forms.ComboBox();
+            this.cmbSunEnd = new System.Windows.Forms.ComboBox();
             this.mainPanel.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -148,6 +148,20 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.groupBox1.Controls.Add(this.cmbSunEnd);
+            this.groupBox1.Controls.Add(this.cmbSunStart);
+            this.groupBox1.Controls.Add(this.cmbSatEnd);
+            this.groupBox1.Controls.Add(this.cmbFriEnd);
+            this.groupBox1.Controls.Add(this.cmbThuEnd);
+            this.groupBox1.Controls.Add(this.cmbSatStart);
+            this.groupBox1.Controls.Add(this.cmbFriStart);
+            this.groupBox1.Controls.Add(this.cmbThuStart);
+            this.groupBox1.Controls.Add(this.cmbWenEnd);
+            this.groupBox1.Controls.Add(this.cmbTueEnd);
+            this.groupBox1.Controls.Add(this.cmbMonEnd);
+            this.groupBox1.Controls.Add(this.cmbWenStart);
+            this.groupBox1.Controls.Add(this.cmbTueStart);
+            this.groupBox1.Controls.Add(this.cmbMonStart);
             this.groupBox1.Controls.Add(this.label19);
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.label17);
@@ -155,27 +169,13 @@
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.dtpSunEnd);
-            this.groupBox1.Controls.Add(this.dtpSunStart);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.dtpSatEnd);
-            this.groupBox1.Controls.Add(this.dtpSatStart);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.dtpFriEnd);
-            this.groupBox1.Controls.Add(this.dtpFriStart);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.dtpThuEnd);
-            this.groupBox1.Controls.Add(this.dtpThuStart);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.dtpWenEnd);
-            this.groupBox1.Controls.Add(this.dtpWenStart);
-            this.groupBox1.Controls.Add(this.dtpTueEnd);
-            this.groupBox1.Controls.Add(this.dtpMonEnd);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.dtpTueStart);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.dtpMonStart);
             this.groupBox1.Controls.Add(this.successLabel);
             this.groupBox1.Controls.Add(this.CodeErrorMessageLabel);
             this.groupBox1.Controls.Add(this.creditsErrorMessageLabel);
@@ -195,6 +195,160 @@
             this.groupBox1.Size = new System.Drawing.Size(555, 467);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Arial", 8F);
+            this.label19.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label19.Location = new System.Drawing.Point(12, 428);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(68, 14);
+            this.label19.TabIndex = 38;
+            this.label19.Text = "Sunday End:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Arial", 8F);
+            this.label18.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label18.Location = new System.Drawing.Point(191, 368);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(61, 14);
+            this.label18.TabIndex = 37;
+            this.label18.Text = "Friday End:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Arial", 8F);
+            this.label17.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label17.Location = new System.Drawing.Point(353, 368);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(75, 14);
+            this.label17.TabIndex = 36;
+            this.label17.Text = "Saterday End:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Arial", 8F);
+            this.label16.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label16.Location = new System.Drawing.Point(351, 303);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(77, 14);
+            this.label16.TabIndex = 35;
+            this.label16.Text = "Wensday End:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Arial", 8F);
+            this.label15.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label15.Location = new System.Drawing.Point(179, 303);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(73, 14);
+            this.label15.TabIndex = 34;
+            this.label15.Text = "Tuesday End:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Arial", 8F);
+            this.label14.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label14.Location = new System.Drawing.Point(3, 368);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(77, 14);
+            this.label14.TabIndex = 33;
+            this.label14.Text = "Thursday End:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Arial", 8F);
+            this.label13.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label13.Location = new System.Drawing.Point(11, 303);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(69, 14);
+            this.label13.TabIndex = 32;
+            this.label13.Text = "Monday End:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Arial", 8F);
+            this.label12.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label12.Location = new System.Drawing.Point(7, 402);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(73, 14);
+            this.label12.TabIndex = 29;
+            this.label12.Text = "Sunday Start:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial", 8F);
+            this.label11.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label11.Location = new System.Drawing.Point(348, 342);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(80, 14);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "Saterday Start:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 8F);
+            this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label10.Location = new System.Drawing.Point(186, 342);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(66, 14);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "Friday Start:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 8F);
+            this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label9.Location = new System.Drawing.Point(-2, 342);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(82, 14);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "Thursday Start:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 8F);
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label8.Location = new System.Drawing.Point(346, 277);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(82, 14);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Wensday Start:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 8F);
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label7.Location = new System.Drawing.Point(174, 277);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(78, 14);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Tuesday Start:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 8F);
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label4.Location = new System.Drawing.Point(6, 277);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(74, 14);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Monday Start:";
             // 
             // successLabel
             // 
@@ -355,271 +509,117 @@
             this.addCourseLabel.TabIndex = 13;
             this.addCourseLabel.Text = "Add Course";
             // 
-            // dtpMonStart
+            // cmbMonStart
             // 
-            this.dtpMonStart.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpMonStart.Location = new System.Drawing.Point(86, 277);
-            this.dtpMonStart.Name = "dtpMonStart";
-            this.dtpMonStart.Size = new System.Drawing.Size(82, 20);
-            this.dtpMonStart.TabIndex = 15;
+            this.cmbMonStart.FormattingEnabled = true;
+            this.cmbMonStart.Location = new System.Drawing.Point(86, 274);
+            this.cmbMonStart.Name = "cmbMonStart";
+            this.cmbMonStart.Size = new System.Drawing.Size(82, 21);
+            this.cmbMonStart.TabIndex = 39;
             // 
-            // label4
+            // cmbTueStart
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 8F);
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(6, 277);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 14);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Monday Start:";
+            this.cmbTueStart.FormattingEnabled = true;
+            this.cmbTueStart.Location = new System.Drawing.Point(258, 274);
+            this.cmbTueStart.Name = "cmbTueStart";
+            this.cmbTueStart.Size = new System.Drawing.Size(82, 21);
+            this.cmbTueStart.TabIndex = 40;
             // 
-            // label7
+            // cmbWenStart
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 8F);
-            this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label7.Location = new System.Drawing.Point(174, 277);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 14);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Tuesday Start:";
+            this.cmbWenStart.FormattingEnabled = true;
+            this.cmbWenStart.Location = new System.Drawing.Point(434, 274);
+            this.cmbWenStart.Name = "cmbWenStart";
+            this.cmbWenStart.Size = new System.Drawing.Size(82, 21);
+            this.cmbWenStart.TabIndex = 41;
             // 
-            // dtpTueStart
+            // cmbMonEnd
             // 
-            this.dtpTueStart.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpTueStart.Location = new System.Drawing.Point(258, 277);
-            this.dtpTueStart.Name = "dtpTueStart";
-            this.dtpTueStart.Size = new System.Drawing.Size(82, 20);
-            this.dtpTueStart.TabIndex = 16;
+            this.cmbMonEnd.FormattingEnabled = true;
+            this.cmbMonEnd.Location = new System.Drawing.Point(86, 300);
+            this.cmbMonEnd.Name = "cmbMonEnd";
+            this.cmbMonEnd.Size = new System.Drawing.Size(82, 21);
+            this.cmbMonEnd.TabIndex = 42;
             // 
-            // label8
+            // cmbTueEnd
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 8F);
-            this.label8.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label8.Location = new System.Drawing.Point(346, 277);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(82, 14);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Wensday Start:";
+            this.cmbTueEnd.FormattingEnabled = true;
+            this.cmbTueEnd.Location = new System.Drawing.Point(258, 300);
+            this.cmbTueEnd.Name = "cmbTueEnd";
+            this.cmbTueEnd.Size = new System.Drawing.Size(82, 21);
+            this.cmbTueEnd.TabIndex = 43;
             // 
-            // dtpMonEnd
+            // cmbWenEnd
             // 
-            this.dtpMonEnd.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpMonEnd.Location = new System.Drawing.Point(86, 303);
-            this.dtpMonEnd.Name = "dtpMonEnd";
-            this.dtpMonEnd.Size = new System.Drawing.Size(82, 20);
-            this.dtpMonEnd.TabIndex = 17;
+            this.cmbWenEnd.FormattingEnabled = true;
+            this.cmbWenEnd.Location = new System.Drawing.Point(434, 300);
+            this.cmbWenEnd.Name = "cmbWenEnd";
+            this.cmbWenEnd.Size = new System.Drawing.Size(82, 21);
+            this.cmbWenEnd.TabIndex = 44;
             // 
-            // dtpTueEnd
+            // cmbThuStart
             // 
-            this.dtpTueEnd.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpTueEnd.Location = new System.Drawing.Point(258, 303);
-            this.dtpTueEnd.Name = "dtpTueEnd";
-            this.dtpTueEnd.Size = new System.Drawing.Size(82, 20);
-            this.dtpTueEnd.TabIndex = 18;
+            this.cmbThuStart.FormattingEnabled = true;
+            this.cmbThuStart.Location = new System.Drawing.Point(86, 339);
+            this.cmbThuStart.Name = "cmbThuStart";
+            this.cmbThuStart.Size = new System.Drawing.Size(82, 21);
+            this.cmbThuStart.TabIndex = 45;
             // 
-            // dtpWenStart
+            // cmbFriStart
             // 
-            this.dtpWenStart.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpWenStart.Location = new System.Drawing.Point(434, 277);
-            this.dtpWenStart.Name = "dtpWenStart";
-            this.dtpWenStart.Size = new System.Drawing.Size(82, 20);
-            this.dtpWenStart.TabIndex = 19;
+            this.cmbFriStart.FormattingEnabled = true;
+            this.cmbFriStart.Location = new System.Drawing.Point(258, 339);
+            this.cmbFriStart.Name = "cmbFriStart";
+            this.cmbFriStart.Size = new System.Drawing.Size(82, 21);
+            this.cmbFriStart.TabIndex = 46;
             // 
-            // dtpWenEnd
+            // cmbSatStart
             // 
-            this.dtpWenEnd.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpWenEnd.Location = new System.Drawing.Point(434, 303);
-            this.dtpWenEnd.Name = "dtpWenEnd";
-            this.dtpWenEnd.Size = new System.Drawing.Size(82, 20);
-            this.dtpWenEnd.TabIndex = 16;
+            this.cmbSatStart.FormattingEnabled = true;
+            this.cmbSatStart.Location = new System.Drawing.Point(434, 339);
+            this.cmbSatStart.Name = "cmbSatStart";
+            this.cmbSatStart.Size = new System.Drawing.Size(82, 21);
+            this.cmbSatStart.TabIndex = 47;
             // 
-            // label9
+            // cmbThuEnd
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 8F);
-            this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label9.Location = new System.Drawing.Point(-2, 342);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(82, 14);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "Thursday Start:";
+            this.cmbThuEnd.FormattingEnabled = true;
+            this.cmbThuEnd.Location = new System.Drawing.Point(86, 365);
+            this.cmbThuEnd.Name = "cmbThuEnd";
+            this.cmbThuEnd.Size = new System.Drawing.Size(82, 21);
+            this.cmbThuEnd.TabIndex = 48;
             // 
-            // dtpThuStart
+            // cmbFriEnd
             // 
-            this.dtpThuStart.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpThuStart.Location = new System.Drawing.Point(86, 342);
-            this.dtpThuStart.Name = "dtpThuStart";
-            this.dtpThuStart.Size = new System.Drawing.Size(82, 20);
-            this.dtpThuStart.TabIndex = 21;
+            this.cmbFriEnd.FormattingEnabled = true;
+            this.cmbFriEnd.Location = new System.Drawing.Point(258, 365);
+            this.cmbFriEnd.Name = "cmbFriEnd";
+            this.cmbFriEnd.Size = new System.Drawing.Size(82, 21);
+            this.cmbFriEnd.TabIndex = 49;
             // 
-            // dtpThuEnd
+            // cmbSatEnd
             // 
-            this.dtpThuEnd.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpThuEnd.Location = new System.Drawing.Point(86, 368);
-            this.dtpThuEnd.Name = "dtpThuEnd";
-            this.dtpThuEnd.Size = new System.Drawing.Size(82, 20);
-            this.dtpThuEnd.TabIndex = 22;
+            this.cmbSatEnd.FormattingEnabled = true;
+            this.cmbSatEnd.Location = new System.Drawing.Point(434, 365);
+            this.cmbSatEnd.Name = "cmbSatEnd";
+            this.cmbSatEnd.Size = new System.Drawing.Size(82, 21);
+            this.cmbSatEnd.TabIndex = 50;
             // 
-            // label10
+            // cmbSunStart
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial", 8F);
-            this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label10.Location = new System.Drawing.Point(186, 342);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(66, 14);
-            this.label10.TabIndex = 23;
-            this.label10.Text = "Friday Start:";
+            this.cmbSunStart.FormattingEnabled = true;
+            this.cmbSunStart.Location = new System.Drawing.Point(86, 399);
+            this.cmbSunStart.Name = "cmbSunStart";
+            this.cmbSunStart.Size = new System.Drawing.Size(82, 21);
+            this.cmbSunStart.TabIndex = 51;
             // 
-            // dtpFriStart
+            // cmbSunEnd
             // 
-            this.dtpFriStart.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpFriStart.Location = new System.Drawing.Point(258, 342);
-            this.dtpFriStart.Name = "dtpFriStart";
-            this.dtpFriStart.Size = new System.Drawing.Size(82, 20);
-            this.dtpFriStart.TabIndex = 24;
-            // 
-            // dtpFriEnd
-            // 
-            this.dtpFriEnd.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpFriEnd.Location = new System.Drawing.Point(258, 368);
-            this.dtpFriEnd.Name = "dtpFriEnd";
-            this.dtpFriEnd.Size = new System.Drawing.Size(82, 20);
-            this.dtpFriEnd.TabIndex = 25;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial", 8F);
-            this.label11.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label11.Location = new System.Drawing.Point(348, 342);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(80, 14);
-            this.label11.TabIndex = 26;
-            this.label11.Text = "Saterday Start:";
-            // 
-            // dtpSatStart
-            // 
-            this.dtpSatStart.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpSatStart.Location = new System.Drawing.Point(434, 342);
-            this.dtpSatStart.Name = "dtpSatStart";
-            this.dtpSatStart.Size = new System.Drawing.Size(82, 20);
-            this.dtpSatStart.TabIndex = 27;
-            // 
-            // dtpSatEnd
-            // 
-            this.dtpSatEnd.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpSatEnd.Location = new System.Drawing.Point(434, 368);
-            this.dtpSatEnd.Name = "dtpSatEnd";
-            this.dtpSatEnd.Size = new System.Drawing.Size(82, 20);
-            this.dtpSatEnd.TabIndex = 28;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Arial", 8F);
-            this.label12.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label12.Location = new System.Drawing.Point(7, 402);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(73, 14);
-            this.label12.TabIndex = 29;
-            this.label12.Text = "Sunday Start:";
-            // 
-            // dtpSunStart
-            // 
-            this.dtpSunStart.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpSunStart.Location = new System.Drawing.Point(86, 402);
-            this.dtpSunStart.Name = "dtpSunStart";
-            this.dtpSunStart.Size = new System.Drawing.Size(82, 20);
-            this.dtpSunStart.TabIndex = 30;
-            // 
-            // dtpSunEnd
-            // 
-            this.dtpSunEnd.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpSunEnd.Location = new System.Drawing.Point(86, 428);
-            this.dtpSunEnd.Name = "dtpSunEnd";
-            this.dtpSunEnd.Size = new System.Drawing.Size(82, 20);
-            this.dtpSunEnd.TabIndex = 31;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Arial", 8F);
-            this.label13.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label13.Location = new System.Drawing.Point(11, 303);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(69, 14);
-            this.label13.TabIndex = 32;
-            this.label13.Text = "Monday End:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Arial", 8F);
-            this.label14.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label14.Location = new System.Drawing.Point(3, 368);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(77, 14);
-            this.label14.TabIndex = 33;
-            this.label14.Text = "Thursday End:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Arial", 8F);
-            this.label15.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label15.Location = new System.Drawing.Point(179, 303);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(73, 14);
-            this.label15.TabIndex = 34;
-            this.label15.Text = "Tuesday End:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Arial", 8F);
-            this.label16.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label16.Location = new System.Drawing.Point(351, 303);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(77, 14);
-            this.label16.TabIndex = 35;
-            this.label16.Text = "Wensday End:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Arial", 8F);
-            this.label17.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label17.Location = new System.Drawing.Point(353, 368);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(75, 14);
-            this.label17.TabIndex = 36;
-            this.label17.Text = "Saterday End:";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Arial", 8F);
-            this.label18.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label18.Location = new System.Drawing.Point(191, 368);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(61, 14);
-            this.label18.TabIndex = 37;
-            this.label18.Text = "Friday End:";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Arial", 8F);
-            this.label19.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label19.Location = new System.Drawing.Point(12, 428);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(68, 14);
-            this.label19.TabIndex = 38;
-            this.label19.Text = "Sunday End:";
+            this.cmbSunEnd.FormattingEnabled = true;
+            this.cmbSunEnd.Location = new System.Drawing.Point(86, 425);
+            this.cmbSunEnd.Name = "cmbSunEnd";
+            this.cmbSunEnd.Size = new System.Drawing.Size(82, 21);
+            this.cmbSunEnd.TabIndex = 52;
             // 
             // AddCourseForm
             // 
@@ -675,26 +675,26 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DateTimePicker dtpSunEnd;
-        private System.Windows.Forms.DateTimePicker dtpSunStart;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DateTimePicker dtpSatEnd;
-        private System.Windows.Forms.DateTimePicker dtpSatStart;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DateTimePicker dtpFriEnd;
-        private System.Windows.Forms.DateTimePicker dtpFriStart;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DateTimePicker dtpThuEnd;
-        private System.Windows.Forms.DateTimePicker dtpThuStart;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DateTimePicker dtpWenEnd;
-        private System.Windows.Forms.DateTimePicker dtpWenStart;
-        private System.Windows.Forms.DateTimePicker dtpTueEnd;
-        private System.Windows.Forms.DateTimePicker dtpMonEnd;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DateTimePicker dtpTueStart;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dtpMonStart;
+        private System.Windows.Forms.ComboBox cmbSunEnd;
+        private System.Windows.Forms.ComboBox cmbSunStart;
+        private System.Windows.Forms.ComboBox cmbSatEnd;
+        private System.Windows.Forms.ComboBox cmbFriEnd;
+        private System.Windows.Forms.ComboBox cmbThuEnd;
+        private System.Windows.Forms.ComboBox cmbSatStart;
+        private System.Windows.Forms.ComboBox cmbFriStart;
+        private System.Windows.Forms.ComboBox cmbThuStart;
+        private System.Windows.Forms.ComboBox cmbWenEnd;
+        private System.Windows.Forms.ComboBox cmbTueEnd;
+        private System.Windows.Forms.ComboBox cmbMonEnd;
+        private System.Windows.Forms.ComboBox cmbWenStart;
+        private System.Windows.Forms.ComboBox cmbTueStart;
+        private System.Windows.Forms.ComboBox cmbMonStart;
     }
 }
