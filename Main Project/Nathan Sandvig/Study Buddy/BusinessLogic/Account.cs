@@ -49,7 +49,7 @@ namespace Study_Buddy.BusinessLogic
 
             List<String> list2;
             list2 = database.readAssignments();
-            for(int i = 0; i < list2.Count; i += 5)
+            for(int i = 0; i < list2.Count; i += 6)
             {
                 foreach(Course course in courses)
                 {
