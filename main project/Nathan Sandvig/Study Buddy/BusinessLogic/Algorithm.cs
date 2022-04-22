@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Algorithms
+namespace Study_Buddy.BusinessLogic
 {
     //-------------------------------------------------------------------------
     // This class manages the study hours algorithm
@@ -26,36 +26,57 @@ namespace Algorithms
         // baseGrade: The grade the user would get with 0 hours of studying
         // hoursPerPercent: The number of hours per percentage increase in grade
         //---------------------------------------------------------------------
-        private LinkedList<Tuple<double, double>> assignmentLog;
-        private double baseGrade;
-        private double hoursPerPercent;
+        private static LinkedList<(double, double)> assignmentLog = new LinkedList<(double, double)>();
+        private static double baseGrade = DEFAULT_BASE;
+        private static double hoursPerPercent = DEFAULT_HOURS;
 
         //---------------------------------------------------------------------
-        // Default constructor for the algorithm1 class
-        // v1: Created the constructor - Nathan S, 4-19-22
+        // Imports course data for the specified course
+        // course: The course being imported
+        // v1: Created the method - Nathan S, 4-21-22
         //---------------------------------------------------------------------
-        public Algorithm()
+        private static void ImportCourseData(Course course)
         {
-            assignmentLog = new LinkedList<Tuple<double, double>>();
-            baseGrade = DEFAULT_BASE;
-            hoursPerPercent = DEFAULT_HOURS;
+            assignmentLog.Clear();
+            List<Assignment> assignmentList = new List<Assignment>(course.assignments);
+            assignmentList.Sort(delegate (Assignment a1, Assignment a2) { return a1.dueDate.CompareTo(a2.dueDate); });
+
+            DateTime previousDate = assignmentList.First().dueDate.Subtract(new TimeSpan(120, 0, 0, 0));
+            double hours = 0.0;
+            while (hours == 0.0)
+            {
+                previousDate = previousDate.AddDays(1);
+                hours = course.hourLog.GetHours(previousDate);
+            }
+
+            foreach(Assignment assignment in assignmentList) if (assignment.grade != 0)
+            {
+                double hoursStudied = 0.0;
+                DateTime currentDate = assignment.dueDate;
+                for (DateTime date = previousDate; date <= currentDate; date = date.AddDays(1))
+                    hoursStudied += course.hourLog.GetHours(date);
+                double weeks = (currentDate - previousDate).Days / 7.0;
+                double hoursPerWeek = hoursStudied / weeks;
+                assignmentLog.AddLast((hoursPerWeek, assignment.grade));
+                previousDate = currentDate;
+            }
         }
 
         //---------------------------------------------------------------------
         // Calculates the grade function
         // v1: Created the method - Nathan S, 4-19-22
         //---------------------------------------------------------------------
-        private void CalculateFunction()
+        private static void CalculateFunction()
         {
             // Create and initialize the sums
             double hourSum = 0.0;
             double gradeSum = 0.0;
 
             // Add to each sum
-            foreach(Tuple<double, double> pair in assignmentLog)
+            foreach((double hours, double grade) assignment in assignmentLog)
             {
-                hourSum += pair.Item1;
-                gradeSum += pair.Item2;
+                hourSum += assignment.hours;
+                gradeSum += assignment.grade;
             }
 
             // Create and calculate the averages
@@ -65,30 +86,39 @@ namespace Algorithms
             // Create the numerator and denominator for the slope
             double numerator = 0.0;
             double denominator = 0.0;
-            foreach (Tuple<double, double> pair in assignmentLog)
+            foreach ((double hours, double grade) assignment in assignmentLog)
             {
-                numerator += ((pair.Item1 - averageHours) * (pair.Item2 - averageGrade));
-                denominator += ((pair.Item1 - averageHours) * (pair.Item1 - averageHours));
+                numerator += ((assignment.hours - averageHours) * (assignment.grade - averageGrade));
+                denominator += ((assignment.hours - averageHours) * (assignment.hours - averageHours));
             }
 
             // Calculate the slope
-            hoursPerPercent = numerator / denominator;
+            if (denominator != 0.0)
+                hoursPerPercent = numerator / denominator;
+            if (hoursPerPercent <= 0)
+                hoursPerPercent = DEFAULT_HOURS;
 
             // Calculate the intercept
             baseGrade = averageGrade - (hoursPerPercent * averageHours);
+            if (baseGrade < 0 || baseGrade > 100)
+                baseGrade = DEFAULT_BASE;
         }
 
         //---------------------------------------------------------------------
-        // Calculates the number of hours needed to get a target grade
+        // Calculates the number of hours needed per week to get a target grade
         // targetGrade: The grade the user wishes to achieve
         // return: The number of hours needed for the grade
         // v1: Created the method - Nathan S, 4-19-22
         //---------------------------------------------------------------------
-        public double HoursForGrade(double targetGrade)
+        public static double HoursForGrade(Course course, double targetGrade)
         {
+            ImportCourseData(course);
             if (assignmentLog.Count > 0)
                 CalculateFunction();
-            return (targetGrade - baseGrade) / hoursPerPercent;
+            double hours = (targetGrade - baseGrade) / hoursPerPercent;
+            if (hours < 0)
+                hours = 0;
+            return hours;
         }
     }
 }

@@ -53,7 +53,8 @@ namespace Study_Buddy.Presentation
         public Label createHoursLabel(Course course, double hoursStudied, int locationindex, int red, int green, int blue)
         {
             Label label = new Label();
-            label.Text = hoursStudied + "/" + "study goal";
+            double studyGoal = Math.Round(Algorithm.HoursForGrade(course, 95), 2);
+            label.Text = hoursStudied + "/" + studyGoal;
             label.BackColor = Color.FromArgb(red, green, blue);
             label.Location = new Point(290, locationindex);
             label.Size = new Size(250, 25);

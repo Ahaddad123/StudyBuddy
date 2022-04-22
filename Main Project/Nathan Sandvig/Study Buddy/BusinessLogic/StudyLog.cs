@@ -29,7 +29,7 @@ namespace Study_Buddy.BusinessLogic
         public StudyLog(DateTime date, double hours)
         {
             Log = new Dictionary<DateTime, double>();
-            Log.Add(date, hours);
+            Log.Add(date.Date, hours);
         }
 
         //---------------------------------------------------------------------
@@ -41,21 +41,21 @@ namespace Study_Buddy.BusinessLogic
         //---------------------------------------------------------------------
         public void AddTimeToLog(double newTime, DateTime date)
         {
-            if(Log.ContainsKey(date))
+            if(Log.ContainsKey(date.Date))
             {
-                Log[date] = Log[date] + newTime;
+                Log[date.Date] = Log[date.Date] + newTime;
             }
             else
             {
-                Log.Add(date, newTime);
+                Log.Add(date.Date, newTime);
             }
         }
 
         public void RemoveTimeFromLog(double newTime, DateTime date)
         {
-            if (Log.ContainsKey(date))
+            if (Log.ContainsKey(date.Date))
             {
-                Log[date] = Log[date] - newTime;
+                Log[date.Date] = Log[date.Date] - newTime;
             }
         }
 
@@ -67,9 +67,9 @@ namespace Study_Buddy.BusinessLogic
         //---------------------------------------------------------------------
         public double GetHours(DateTime date)
          {
-            if (Log.ContainsKey(date))
+            if (Log.ContainsKey(date.Date))
             {
-                return Log[date];
+                return Log[date.Date];
             }
             else { return 0.0; }
          }
