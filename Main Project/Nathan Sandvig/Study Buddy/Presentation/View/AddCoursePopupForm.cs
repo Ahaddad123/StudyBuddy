@@ -19,6 +19,46 @@ namespace Study_Buddy.Presentation.View
         public AddCoursePopupForm()
         {
             InitializeComponent();
+
+            cmbMonStart.Items.AddRange(new Object[] { });
+            cmbMonEnd.Items.AddRange(new Object[] { });
+            cmbTueStart.Items.AddRange(new Object[] { });
+            cmbTueEnd.Items.AddRange(new Object[] { });
+            cmbWenStart.Items.AddRange(new Object[] { });
+            cmbWenEnd.Items.AddRange(new Object[] { });
+            cmbThuStart.Items.AddRange(new Object[] { });
+            cmbThuEnd.Items.AddRange(new Object[] { });
+            cmbFriStart.Items.AddRange(new Object[] { });
+            cmbFriEnd.Items.AddRange(new Object[] { });
+            cmbSatStart.Items.AddRange(new Object[] { });
+            cmbSatEnd.Items.AddRange(new Object[] { });
+            cmbSunStart.Items.AddRange(new Object[] { });
+            cmbSunEnd.Items.AddRange(new Object[] { });
+
+            TimeSpan startingTime = new TimeSpan(0, 0, 0);
+            DateTime startingDate = new DateTime(DateTime.MinValue.Ticks);
+
+            for (int x = 0; x < 48; x++)
+            {
+                int mins = 30 * x;
+                TimeSpan addedTime = new TimeSpan(0, mins, 0);
+                TimeSpan algTime = startingTime.Add(addedTime);
+                DateTime resDate = startingDate + algTime;
+                cmbMonStart.Items.Add(resDate.TimeOfDay);
+                cmbMonEnd.Items.Add(resDate.TimeOfDay);
+                cmbTueStart.Items.Add(resDate.TimeOfDay);
+                cmbTueEnd.Items.Add(resDate.TimeOfDay);
+                cmbWenStart.Items.Add(resDate.TimeOfDay);
+                cmbWenEnd.Items.Add(resDate.TimeOfDay);
+                cmbThuStart.Items.Add(resDate.TimeOfDay);
+                cmbThuEnd.Items.Add(resDate.TimeOfDay);
+                cmbFriStart.Items.Add(resDate.TimeOfDay);
+                cmbFriEnd.Items.Add(resDate.TimeOfDay);
+                cmbSatStart.Items.Add(resDate.TimeOfDay);
+                cmbSatEnd.Items.Add(resDate.TimeOfDay);
+                cmbSunStart.Items.Add(resDate.TimeOfDay);
+                cmbSunEnd.Items.Add(resDate.TimeOfDay);
+            }
         }
 
         private void AddCoursePopupForm_Load(object sender, EventArgs e)
@@ -73,8 +113,10 @@ namespace Study_Buddy.Presentation.View
                 MessageBox.Show("Invalid Credits");
                 valid = false;
             }
+
+            /*
             //add course times for Sunday
-            if (dtpSunStart.Value > dtpSunEnd.Value)
+            if (cmbSunStart-> > cmbSunEnd.SelectedValue)
             {
                 //creditsErrorMessageLabel.Text = "Invalid sunday times";
                 valid = false;
@@ -164,6 +206,7 @@ namespace Study_Buddy.Presentation.View
                 satdae.Add(dtpSatEnd.Value);
                 dateTimes.Add(satdae);
             }
+            */
 
             if (valid)
             {

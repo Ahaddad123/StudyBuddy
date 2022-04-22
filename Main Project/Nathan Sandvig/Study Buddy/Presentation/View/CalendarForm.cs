@@ -63,7 +63,7 @@ namespace Study_Buddy.Presentation
                 foreach(Assignment assignment in c.assignments)
                 {
                     
-                    if(dayOfWeek == assignment.dueDate.Day)
+                    if(monthName == assignment.dueDate.Month.ToString() && dayOfWeek == assignment.dueDate.Day)
                     {
                         dayBox.addDueDate(dayOfWeek, assignment.name);
                         indexOflabel += 10;
