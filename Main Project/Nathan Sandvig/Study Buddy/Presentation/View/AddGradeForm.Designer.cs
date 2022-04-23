@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnRedo = new System.Windows.Forms.Button();
+            this.btnUndo = new System.Windows.Forms.Button();
             this.successMessageLabel = new System.Windows.Forms.Label();
             this.scoreErrorMessageLabel = new System.Windows.Forms.Label();
             this.nameErrorMessageLabel = new System.Windows.Forms.Label();
@@ -38,8 +40,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtPointsAssign = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnUndo = new System.Windows.Forms.Button();
-            this.btnRedo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -64,14 +64,42 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
+            // btnRedo
+            // 
+            this.btnRedo.BackColor = System.Drawing.Color.White;
+            this.btnRedo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRedo.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRedo.ForeColor = System.Drawing.Color.Navy;
+            this.btnRedo.Location = new System.Drawing.Point(101, 215);
+            this.btnRedo.Name = "btnRedo";
+            this.btnRedo.Size = new System.Drawing.Size(75, 23);
+            this.btnRedo.TabIndex = 11;
+            this.btnRedo.Text = "Redo";
+            this.btnRedo.UseVisualStyleBackColor = false;
+            this.btnRedo.Click += new System.EventHandler(this.btnRedo_Click);
+            // 
+            // btnUndo
+            // 
+            this.btnUndo.BackColor = System.Drawing.Color.White;
+            this.btnUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUndo.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUndo.ForeColor = System.Drawing.Color.Navy;
+            this.btnUndo.Location = new System.Drawing.Point(20, 215);
+            this.btnUndo.Name = "btnUndo";
+            this.btnUndo.Size = new System.Drawing.Size(75, 23);
+            this.btnUndo.TabIndex = 10;
+            this.btnUndo.Text = "Undo";
+            this.btnUndo.UseVisualStyleBackColor = false;
+            this.btnUndo.Click += new System.EventHandler(this.btnUndo_Click);
+            // 
             // successMessageLabel
             // 
             this.successMessageLabel.AutoSize = true;
             this.successMessageLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.successMessageLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.successMessageLabel.Location = new System.Drawing.Point(55, 212);
+            this.successMessageLabel.Location = new System.Drawing.Point(55, 173);
             this.successMessageLabel.Name = "successMessageLabel";
-            this.successMessageLabel.Size = new System.Drawing.Size(0, 23);
+            this.successMessageLabel.Size = new System.Drawing.Size(0, 18);
             this.successMessageLabel.TabIndex = 9;
             // 
             // scoreErrorMessageLabel
@@ -81,7 +109,7 @@
             this.scoreErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
             this.scoreErrorMessageLabel.Location = new System.Drawing.Point(223, 124);
             this.scoreErrorMessageLabel.Name = "scoreErrorMessageLabel";
-            this.scoreErrorMessageLabel.Size = new System.Drawing.Size(0, 23);
+            this.scoreErrorMessageLabel.Size = new System.Drawing.Size(0, 18);
             this.scoreErrorMessageLabel.TabIndex = 8;
             // 
             // nameErrorMessageLabel
@@ -91,7 +119,7 @@
             this.nameErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
             this.nameErrorMessageLabel.Location = new System.Drawing.Point(223, 67);
             this.nameErrorMessageLabel.Name = "nameErrorMessageLabel";
-            this.nameErrorMessageLabel.Size = new System.Drawing.Size(0, 23);
+            this.nameErrorMessageLabel.Size = new System.Drawing.Size(0, 18);
             this.nameErrorMessageLabel.TabIndex = 7;
             // 
             // txtNameAssign
@@ -99,7 +127,7 @@
             this.txtNameAssign.FormattingEnabled = true;
             this.txtNameAssign.Location = new System.Drawing.Point(227, 40);
             this.txtNameAssign.Name = "txtNameAssign";
-            this.txtNameAssign.Size = new System.Drawing.Size(209, 24);
+            this.txtNameAssign.Size = new System.Drawing.Size(209, 21);
             this.txtNameAssign.TabIndex = 4;
             // 
             // butAddAssig
@@ -123,7 +151,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label2.Location = new System.Drawing.Point(152, 100);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 23);
+            this.label2.Size = new System.Drawing.Size(50, 18);
             this.label2.TabIndex = 4;
             this.label2.Text = "Score";
             // 
@@ -134,7 +162,7 @@
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label4.Location = new System.Drawing.Point(55, 40);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(168, 23);
+            this.label4.Size = new System.Drawing.Size(136, 18);
             this.label4.TabIndex = 3;
             this.label4.Text = "Assignment Name";
             // 
@@ -142,7 +170,7 @@
             // 
             this.txtPointsAssign.Location = new System.Drawing.Point(227, 100);
             this.txtPointsAssign.Name = "txtPointsAssign";
-            this.txtPointsAssign.Size = new System.Drawing.Size(100, 22);
+            this.txtPointsAssign.Size = new System.Drawing.Size(100, 20);
             this.txtPointsAssign.TabIndex = 1;
             // 
             // tableLayoutPanel2
@@ -161,40 +189,12 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1080, 720);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
-            // btnUndo
-            // 
-            this.btnUndo.BackColor = System.Drawing.Color.White;
-            this.btnUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUndo.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUndo.ForeColor = System.Drawing.Color.Navy;
-            this.btnUndo.Location = new System.Drawing.Point(20, 215);
-            this.btnUndo.Name = "btnUndo";
-            this.btnUndo.Size = new System.Drawing.Size(75, 23);
-            this.btnUndo.TabIndex = 10;
-            this.btnUndo.Text = "Undo";
-            this.btnUndo.UseVisualStyleBackColor = false;
-            this.btnUndo.Click += new System.EventHandler(this.btnUndo_Click);
-            // 
-            // btnRedo
-            // 
-            this.btnRedo.BackColor = System.Drawing.Color.White;
-            this.btnRedo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRedo.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRedo.ForeColor = System.Drawing.Color.Navy;
-            this.btnRedo.Location = new System.Drawing.Point(101, 215);
-            this.btnRedo.Name = "btnRedo";
-            this.btnRedo.Size = new System.Drawing.Size(75, 23);
-            this.btnRedo.TabIndex = 11;
-            this.btnRedo.Text = "Redo";
-            this.btnRedo.UseVisualStyleBackColor = false;
-            this.btnRedo.Click += new System.EventHandler(this.btnRedo_Click);
-            // 
             // AddGradeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(150)))), ((int)(((byte)(231)))));
-            this.ClientSize = new System.Drawing.Size(946, 545);
+            this.ClientSize = new System.Drawing.Size(948, 553);
             this.Controls.Add(this.tableLayoutPanel2);
             this.MaximumSize = new System.Drawing.Size(964, 592);
             this.MinimumSize = new System.Drawing.Size(964, 592);
