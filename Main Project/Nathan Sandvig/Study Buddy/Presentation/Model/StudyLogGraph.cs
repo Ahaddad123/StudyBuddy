@@ -153,5 +153,31 @@ namespace Study_Buddy.Presentation.Model
                 weekID++;
             }
         }
+
+        public void gatherRealData()
+        {
+            DateTime currDate = new DateTime(DateTime.Now.Year, 1, 1);
+            DateTime endDate = DateTime.Now;
+            int curWeek = 0;
+
+            while(currDate < endDate)
+            {
+                Dictionary<DayOfWeek, int> daysAndHoursStudied = new Dictionary<DayOfWeek, int>();
+
+                //For every day in week, add hours studied
+                for (int j = 0; j < 7; j++)
+                {
+                    int hours = (int)studyLog.GetHours(currDate);
+                    daysAndHoursStudied.Add(currDate.DayOfWeek, hours);
+                    //Increment date by 1
+                    currDate = currDate.AddDays(1);
+                }
+                //Add new entry into weeks
+                weeks.Add(curWeek, daysAndHoursStudied);
+
+                //Increment weekID
+                curWeek++;
+            }
+        }
     }
 }

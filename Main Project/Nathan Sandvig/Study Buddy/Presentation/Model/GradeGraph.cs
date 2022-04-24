@@ -54,12 +54,17 @@ namespace Study_Buddy.Presentation.Model
         {
             //TODO, Course needs "private Dictionary<DateTime, double>
             //datesAndAverageGrades" of dates and grades
-            /*for (int i = 0; i < course.datesAndAverageGrades.Count ; i++)
+            DateTime endDate = DateTime.Now;
+            DateTime currDate = new DateTime(endDate.Year, 1, 1);
+            List<DateTime> dates = new List<DateTime>();
+            for (int i = 0; i < course.datesAndAverageGrades.Count ; i++)
             {
-                datesX[i] = datesAndAverageGrades[i];
+                //DateTime addDate = course.datesAndAverageGrades;
+                //datesX.Add(addDate);
                 //TODO doesn't work, figure out how to get key by value
-                averageGradesY[i] = course.datesAndAverageGrades.KeyAtindex(); 
-            }*/
+                averageGradesY.Add(course.datesAndAverageGrades[currDate]);
+                currDate.AddDays(1);
+            }
         }
 
         //---------------------------------------------------------------------

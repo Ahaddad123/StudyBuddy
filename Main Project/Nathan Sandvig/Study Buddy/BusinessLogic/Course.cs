@@ -35,6 +35,7 @@ namespace Study_Buddy.BusinessLogic
         public double priority { get; set; }
         public double credits { get; set; }
         public List<List<DateTime>> courseTimes { get; set; }
+        public Dictionary<DateTime, Double> datesAndAverageGrades { get; set; }
 
         //---------------------------------------------------------------------
         // Default constructor for the Course class
