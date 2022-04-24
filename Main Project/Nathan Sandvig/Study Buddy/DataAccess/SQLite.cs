@@ -100,7 +100,7 @@ namespace Study_Buddy.DataAccess
         {
             int UserExists = 0;
             Boolean exists = false;
-            String usernamebro = "";
+            String checkUser = "";
 
             SQLiteConnection sqlite_conn;
             // Create a new database connection:
@@ -120,19 +120,19 @@ namespace Study_Buddy.DataAccess
                     return null;
                 }
                 else
-                    usernamebro = hello.ToString();
+                    checkUser = hello.ToString();
             } 
             catch (SQLiteException e) 
             {
                 return null;
             }
 
-            return usernamebro;
+            return checkUser;
             
         }
 
         public string checkPassword(string password) {
-            string password1;
+            string checkPasswords;
             
             SQLiteConnection sqlite_conn;
             // Create a new database connection:
@@ -152,14 +152,14 @@ namespace Study_Buddy.DataAccess
                     return null;
                 }
                 else
-                    password1 = hello.ToString();
+                    checkPasswords = hello.ToString();
             }
             catch (SQLiteException e)
             {
                 return null;
             }
 
-            return password1;
+            return checkPasswords;
         }
         //---------------------------------------------------------------------
         // Query for creating an account by inserting the account data into
