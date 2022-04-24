@@ -29,36 +29,33 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.welcomeMessage = new System.Windows.Forms.Label();
-            this.courseTablePanel = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnRegister = new System.Windows.Forms.Button();
+            this.addCourseBox1 = new Study_Buddy.Presentation.View.AddCourseBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btnDone = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
-            this.courseTablePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.CornflowerBlue;
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 478F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.30034F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.69965F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 344F));
             this.tableLayoutPanel1.Controls.Add(this.welcomeMessage, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.courseTablePanel, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.btnRegister, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.btnDone, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.button1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btnDone, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.addCourseBox1, 1, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 61.2676F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.7324F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 137F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 85F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 92F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 130F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 215F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1348, 721);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -69,56 +66,19 @@
             this.tableLayoutPanel1.SetColumnSpan(this.welcomeMessage, 3);
             this.welcomeMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcomeMessage.ForeColor = System.Drawing.Color.White;
-            this.welcomeMessage.Location = new System.Drawing.Point(265, 52);
+            this.welcomeMessage.Location = new System.Drawing.Point(265, 45);
             this.welcomeMessage.Name = "welcomeMessage";
             this.welcomeMessage.Size = new System.Drawing.Size(817, 46);
             this.welcomeMessage.TabIndex = 0;
             this.welcomeMessage.Text = "Thanks for joining.  Let\'s set up your classes.";
             // 
-            // courseTablePanel
+            // addCourseBox1
             // 
-            this.courseTablePanel.ColumnCount = 1;
-            this.courseTablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.courseTablePanel.Controls.Add(this.label1, 0, 0);
-            this.courseTablePanel.Location = new System.Drawing.Point(438, 153);
-            this.courseTablePanel.Name = "courseTablePanel";
-            this.courseTablePanel.RowCount = 2;
-            this.tableLayoutPanel1.SetRowSpan(this.courseTablePanel, 3);
-            this.courseTablePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.57143F));
-            this.courseTablePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71.42857F));
-            this.courseTablePanel.Size = new System.Drawing.Size(429, 310);
-            this.courseTablePanel.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(423, 88);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Your Courses";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnRegister
-            // 
-            this.btnRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegister.BackColor = System.Drawing.Color.White;
-            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegister.ForeColor = System.Drawing.Color.Navy;
-            this.btnRegister.Location = new System.Drawing.Point(200, 153);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(232, 48);
-            this.btnRegister.TabIndex = 5;
-            this.btnRegister.Text = "Import from Canvas";
-            this.btnRegister.UseVisualStyleBackColor = false;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            this.addCourseBox1.Location = new System.Drawing.Point(317, 140);
+            this.addCourseBox1.Name = "addCourseBox1";
+            this.tableLayoutPanel1.SetRowSpan(this.addCourseBox1, 6);
+            this.addCourseBox1.Size = new System.Drawing.Size(683, 546);
+            this.addCourseBox1.TabIndex = 9;
             // 
             // button1
             // 
@@ -127,7 +87,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Navy;
-            this.button1.Location = new System.Drawing.Point(200, 247);
+            this.button1.Location = new System.Drawing.Point(79, 140);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(232, 48);
             this.button1.TabIndex = 7;
@@ -142,7 +102,7 @@
             this.btnDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDone.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDone.ForeColor = System.Drawing.Color.Navy;
-            this.btnDone.Location = new System.Drawing.Point(200, 384);
+            this.btnDone.Location = new System.Drawing.Point(79, 227);
             this.btnDone.Name = "btnDone";
             this.btnDone.Size = new System.Drawing.Size(232, 48);
             this.btnDone.TabIndex = 8;
@@ -169,8 +129,6 @@
             this.Text = "BaseForm";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.courseTablePanel.ResumeLayout(false);
-            this.courseTablePanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -179,9 +137,7 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label welcomeMessage;
-        private System.Windows.Forms.Button btnRegister;
-        private System.Windows.Forms.TableLayoutPanel courseTablePanel;
-        private System.Windows.Forms.Label label1;
+        private AddCourseBox addCourseBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnDone;
     }
