@@ -45,7 +45,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -111,6 +113,12 @@
     <Compile Include="Presentation\Model\GradeGraph.cs" />
     <Compile Include="Presentation\Model\Graph.cs" />
     <Compile Include="Presentation\Model\GraphController.cs" />
+    <Compile Include="Presentation\View\AddCourseBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\View\AddCourseBox.Designer.cs">
+      <DependentUpon>AddCourseBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\View\AddAssignmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\GraphUserControl.resx">
       <DependentUpon>GraphUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\View\AddCourseBox.resx">
+      <DependentUpon>AddCourseBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\View\AddAssignmentForm.resx" />
     <EmbeddedResource Include="Presentation\View\ScheduleForm.resx">
