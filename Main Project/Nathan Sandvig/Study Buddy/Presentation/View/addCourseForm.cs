@@ -40,17 +40,31 @@ namespace Study_Buddy.Presentation
         }
 
 
-        private void AddCourseForm_Load(object sender, EventArgs e)
+        private void btnAddCourse_Click(object sender, EventArgs e)
         {
-            foreach (Course c in AccountController.account.courses)
-            {
-                courseListBox.Items.Add(c.name);
-            }
+            this.btnAddCourse.BackColor = Color.White;
+            this.btnAddCourse.ForeColor = Color.Navy;
+            this.btnRemoveCourse.BackColor = Color.Navy;
+            this.btnRemoveCourse.ForeColor = Color.White;
+            this.addCourseBox1.Visible = true;
+            this.removeCourseBox1.Visible = false;
+            //this.editCourseBox1.Visible = false;
         }
 
-        private void removeCourseButton_Click(object sender, EventArgs e)
+        private void btnRemoveCourse_Click(object sender, EventArgs e)
         {
-            AccountController.account.removeCourse(courseListBox.Text);
+            this.btnRemoveCourse.BackColor = Color.White;
+            this.btnRemoveCourse.ForeColor = Color.Navy;
+            this.btnAddCourse.BackColor = Color.Navy;
+            this.btnAddCourse.ForeColor = Color.White;
+            this.removeCourseBox1.Visible = true;
+            this.addCourseBox1.Visible = false;
+            //IMPORTANT - Make sure course list is updated
+            this.removeCourseBox1.LoadCourses();
+            //this.editCourseBox1.Visible = false;
         }
+
+
+        //TDO: Add method for editing course
     }
 }
