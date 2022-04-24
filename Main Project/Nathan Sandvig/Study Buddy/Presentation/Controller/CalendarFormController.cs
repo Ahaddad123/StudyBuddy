@@ -10,7 +10,7 @@ namespace Study_Buddy.Presentation.Controller
     internal class CalendarFormController : FormController
     {
         public int day { get; set; }   
-        private int month { get; set; }
+        public int month { get; set; }
         private int year { get; set; }
         private String monthName;
         public CalendarFormController(CalendarForm form)

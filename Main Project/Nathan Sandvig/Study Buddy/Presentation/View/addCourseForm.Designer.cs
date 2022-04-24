@@ -34,6 +34,20 @@
             this.courseListBox = new System.Windows.Forms.ComboBox();
             this.removeCourseButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbSunEnd = new System.Windows.Forms.ComboBox();
+            this.cmbSunStart = new System.Windows.Forms.ComboBox();
+            this.cmbSatEnd = new System.Windows.Forms.ComboBox();
+            this.cmbFriEnd = new System.Windows.Forms.ComboBox();
+            this.cmbThuEnd = new System.Windows.Forms.ComboBox();
+            this.cmbSatStart = new System.Windows.Forms.ComboBox();
+            this.cmbFriStart = new System.Windows.Forms.ComboBox();
+            this.cmbThuStart = new System.Windows.Forms.ComboBox();
+            this.cmbWenEnd = new System.Windows.Forms.ComboBox();
+            this.cmbTueEnd = new System.Windows.Forms.ComboBox();
+            this.cmbMonEnd = new System.Windows.Forms.ComboBox();
+            this.cmbWenStart = new System.Windows.Forms.ComboBox();
+            this.cmbTueStart = new System.Windows.Forms.ComboBox();
+            this.cmbMonStart = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -64,20 +78,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.removeCourseLabel = new System.Windows.Forms.Label();
             this.addCourseLabel = new System.Windows.Forms.Label();
-            this.cmbMonStart = new System.Windows.Forms.ComboBox();
-            this.cmbTueStart = new System.Windows.Forms.ComboBox();
-            this.cmbWenStart = new System.Windows.Forms.ComboBox();
-            this.cmbMonEnd = new System.Windows.Forms.ComboBox();
-            this.cmbTueEnd = new System.Windows.Forms.ComboBox();
-            this.cmbWenEnd = new System.Windows.Forms.ComboBox();
-            this.cmbThuStart = new System.Windows.Forms.ComboBox();
-            this.cmbFriStart = new System.Windows.Forms.ComboBox();
-            this.cmbSatStart = new System.Windows.Forms.ComboBox();
-            this.cmbThuEnd = new System.Windows.Forms.ComboBox();
-            this.cmbFriEnd = new System.Windows.Forms.ComboBox();
-            this.cmbSatEnd = new System.Windows.Forms.ComboBox();
-            this.cmbSunStart = new System.Windows.Forms.ComboBox();
-            this.cmbSunEnd = new System.Windows.Forms.ComboBox();
             this.mainPanel.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -195,6 +195,118 @@
             this.groupBox1.Size = new System.Drawing.Size(555, 467);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
+            // 
+            // cmbSunEnd
+            // 
+            this.cmbSunEnd.FormattingEnabled = true;
+            this.cmbSunEnd.Location = new System.Drawing.Point(86, 425);
+            this.cmbSunEnd.Name = "cmbSunEnd";
+            this.cmbSunEnd.Size = new System.Drawing.Size(82, 21);
+            this.cmbSunEnd.TabIndex = 52;
+            // 
+            // cmbSunStart
+            // 
+            this.cmbSunStart.FormattingEnabled = true;
+            this.cmbSunStart.Location = new System.Drawing.Point(86, 399);
+            this.cmbSunStart.Name = "cmbSunStart";
+            this.cmbSunStart.Size = new System.Drawing.Size(82, 21);
+            this.cmbSunStart.TabIndex = 51;
+            // 
+            // cmbSatEnd
+            // 
+            this.cmbSatEnd.FormattingEnabled = true;
+            this.cmbSatEnd.Location = new System.Drawing.Point(434, 365);
+            this.cmbSatEnd.Name = "cmbSatEnd";
+            this.cmbSatEnd.Size = new System.Drawing.Size(82, 21);
+            this.cmbSatEnd.TabIndex = 50;
+            // 
+            // cmbFriEnd
+            // 
+            this.cmbFriEnd.FormattingEnabled = true;
+            this.cmbFriEnd.Location = new System.Drawing.Point(258, 365);
+            this.cmbFriEnd.Name = "cmbFriEnd";
+            this.cmbFriEnd.Size = new System.Drawing.Size(82, 21);
+            this.cmbFriEnd.TabIndex = 49;
+            // 
+            // cmbThuEnd
+            // 
+            this.cmbThuEnd.FormattingEnabled = true;
+            this.cmbThuEnd.Location = new System.Drawing.Point(86, 365);
+            this.cmbThuEnd.Name = "cmbThuEnd";
+            this.cmbThuEnd.Size = new System.Drawing.Size(82, 21);
+            this.cmbThuEnd.TabIndex = 48;
+            // 
+            // cmbSatStart
+            // 
+            this.cmbSatStart.FormattingEnabled = true;
+            this.cmbSatStart.Location = new System.Drawing.Point(434, 339);
+            this.cmbSatStart.Name = "cmbSatStart";
+            this.cmbSatStart.Size = new System.Drawing.Size(82, 21);
+            this.cmbSatStart.TabIndex = 47;
+            // 
+            // cmbFriStart
+            // 
+            this.cmbFriStart.FormattingEnabled = true;
+            this.cmbFriStart.Location = new System.Drawing.Point(258, 339);
+            this.cmbFriStart.Name = "cmbFriStart";
+            this.cmbFriStart.Size = new System.Drawing.Size(82, 21);
+            this.cmbFriStart.TabIndex = 46;
+            // 
+            // cmbThuStart
+            // 
+            this.cmbThuStart.FormattingEnabled = true;
+            this.cmbThuStart.Location = new System.Drawing.Point(86, 339);
+            this.cmbThuStart.Name = "cmbThuStart";
+            this.cmbThuStart.Size = new System.Drawing.Size(82, 21);
+            this.cmbThuStart.TabIndex = 45;
+            // 
+            // cmbWenEnd
+            // 
+            this.cmbWenEnd.FormattingEnabled = true;
+            this.cmbWenEnd.Location = new System.Drawing.Point(434, 300);
+            this.cmbWenEnd.Name = "cmbWenEnd";
+            this.cmbWenEnd.Size = new System.Drawing.Size(82, 21);
+            this.cmbWenEnd.TabIndex = 44;
+            // 
+            // cmbTueEnd
+            // 
+            this.cmbTueEnd.FormattingEnabled = true;
+            this.cmbTueEnd.Location = new System.Drawing.Point(258, 300);
+            this.cmbTueEnd.Name = "cmbTueEnd";
+            this.cmbTueEnd.Size = new System.Drawing.Size(82, 21);
+            this.cmbTueEnd.TabIndex = 43;
+            // 
+            // cmbMonEnd
+            // 
+            this.cmbMonEnd.FormattingEnabled = true;
+            this.cmbMonEnd.Location = new System.Drawing.Point(86, 300);
+            this.cmbMonEnd.Name = "cmbMonEnd";
+            this.cmbMonEnd.Size = new System.Drawing.Size(82, 21);
+            this.cmbMonEnd.TabIndex = 42;
+            // 
+            // cmbWenStart
+            // 
+            this.cmbWenStart.FormattingEnabled = true;
+            this.cmbWenStart.Location = new System.Drawing.Point(434, 274);
+            this.cmbWenStart.Name = "cmbWenStart";
+            this.cmbWenStart.Size = new System.Drawing.Size(82, 21);
+            this.cmbWenStart.TabIndex = 41;
+            // 
+            // cmbTueStart
+            // 
+            this.cmbTueStart.FormattingEnabled = true;
+            this.cmbTueStart.Location = new System.Drawing.Point(258, 274);
+            this.cmbTueStart.Name = "cmbTueStart";
+            this.cmbTueStart.Size = new System.Drawing.Size(82, 21);
+            this.cmbTueStart.TabIndex = 40;
+            // 
+            // cmbMonStart
+            // 
+            this.cmbMonStart.FormattingEnabled = true;
+            this.cmbMonStart.Location = new System.Drawing.Point(86, 274);
+            this.cmbMonStart.Name = "cmbMonStart";
+            this.cmbMonStart.Size = new System.Drawing.Size(82, 21);
+            this.cmbMonStart.TabIndex = 39;
             // 
             // label19
             // 
@@ -375,7 +487,7 @@
             this.creditsErrorMessageLabel.AutoSize = true;
             this.creditsErrorMessageLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.creditsErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
-            this.creditsErrorMessageLabel.Location = new System.Drawing.Point(98, 256);
+            this.creditsErrorMessageLabel.Location = new System.Drawing.Point(278, 226);
             this.creditsErrorMessageLabel.Name = "creditsErrorMessageLabel";
             this.creditsErrorMessageLabel.Size = new System.Drawing.Size(0, 18);
             this.creditsErrorMessageLabel.TabIndex = 12;
@@ -508,118 +620,6 @@
             this.addCourseLabel.Size = new System.Drawing.Size(111, 24);
             this.addCourseLabel.TabIndex = 13;
             this.addCourseLabel.Text = "Add Course";
-            // 
-            // cmbMonStart
-            // 
-            this.cmbMonStart.FormattingEnabled = true;
-            this.cmbMonStart.Location = new System.Drawing.Point(86, 274);
-            this.cmbMonStart.Name = "cmbMonStart";
-            this.cmbMonStart.Size = new System.Drawing.Size(82, 21);
-            this.cmbMonStart.TabIndex = 39;
-            // 
-            // cmbTueStart
-            // 
-            this.cmbTueStart.FormattingEnabled = true;
-            this.cmbTueStart.Location = new System.Drawing.Point(258, 274);
-            this.cmbTueStart.Name = "cmbTueStart";
-            this.cmbTueStart.Size = new System.Drawing.Size(82, 21);
-            this.cmbTueStart.TabIndex = 40;
-            // 
-            // cmbWenStart
-            // 
-            this.cmbWenStart.FormattingEnabled = true;
-            this.cmbWenStart.Location = new System.Drawing.Point(434, 274);
-            this.cmbWenStart.Name = "cmbWenStart";
-            this.cmbWenStart.Size = new System.Drawing.Size(82, 21);
-            this.cmbWenStart.TabIndex = 41;
-            // 
-            // cmbMonEnd
-            // 
-            this.cmbMonEnd.FormattingEnabled = true;
-            this.cmbMonEnd.Location = new System.Drawing.Point(86, 300);
-            this.cmbMonEnd.Name = "cmbMonEnd";
-            this.cmbMonEnd.Size = new System.Drawing.Size(82, 21);
-            this.cmbMonEnd.TabIndex = 42;
-            // 
-            // cmbTueEnd
-            // 
-            this.cmbTueEnd.FormattingEnabled = true;
-            this.cmbTueEnd.Location = new System.Drawing.Point(258, 300);
-            this.cmbTueEnd.Name = "cmbTueEnd";
-            this.cmbTueEnd.Size = new System.Drawing.Size(82, 21);
-            this.cmbTueEnd.TabIndex = 43;
-            // 
-            // cmbWenEnd
-            // 
-            this.cmbWenEnd.FormattingEnabled = true;
-            this.cmbWenEnd.Location = new System.Drawing.Point(434, 300);
-            this.cmbWenEnd.Name = "cmbWenEnd";
-            this.cmbWenEnd.Size = new System.Drawing.Size(82, 21);
-            this.cmbWenEnd.TabIndex = 44;
-            // 
-            // cmbThuStart
-            // 
-            this.cmbThuStart.FormattingEnabled = true;
-            this.cmbThuStart.Location = new System.Drawing.Point(86, 339);
-            this.cmbThuStart.Name = "cmbThuStart";
-            this.cmbThuStart.Size = new System.Drawing.Size(82, 21);
-            this.cmbThuStart.TabIndex = 45;
-            // 
-            // cmbFriStart
-            // 
-            this.cmbFriStart.FormattingEnabled = true;
-            this.cmbFriStart.Location = new System.Drawing.Point(258, 339);
-            this.cmbFriStart.Name = "cmbFriStart";
-            this.cmbFriStart.Size = new System.Drawing.Size(82, 21);
-            this.cmbFriStart.TabIndex = 46;
-            // 
-            // cmbSatStart
-            // 
-            this.cmbSatStart.FormattingEnabled = true;
-            this.cmbSatStart.Location = new System.Drawing.Point(434, 339);
-            this.cmbSatStart.Name = "cmbSatStart";
-            this.cmbSatStart.Size = new System.Drawing.Size(82, 21);
-            this.cmbSatStart.TabIndex = 47;
-            // 
-            // cmbThuEnd
-            // 
-            this.cmbThuEnd.FormattingEnabled = true;
-            this.cmbThuEnd.Location = new System.Drawing.Point(86, 365);
-            this.cmbThuEnd.Name = "cmbThuEnd";
-            this.cmbThuEnd.Size = new System.Drawing.Size(82, 21);
-            this.cmbThuEnd.TabIndex = 48;
-            // 
-            // cmbFriEnd
-            // 
-            this.cmbFriEnd.FormattingEnabled = true;
-            this.cmbFriEnd.Location = new System.Drawing.Point(258, 365);
-            this.cmbFriEnd.Name = "cmbFriEnd";
-            this.cmbFriEnd.Size = new System.Drawing.Size(82, 21);
-            this.cmbFriEnd.TabIndex = 49;
-            // 
-            // cmbSatEnd
-            // 
-            this.cmbSatEnd.FormattingEnabled = true;
-            this.cmbSatEnd.Location = new System.Drawing.Point(434, 365);
-            this.cmbSatEnd.Name = "cmbSatEnd";
-            this.cmbSatEnd.Size = new System.Drawing.Size(82, 21);
-            this.cmbSatEnd.TabIndex = 50;
-            // 
-            // cmbSunStart
-            // 
-            this.cmbSunStart.FormattingEnabled = true;
-            this.cmbSunStart.Location = new System.Drawing.Point(86, 399);
-            this.cmbSunStart.Name = "cmbSunStart";
-            this.cmbSunStart.Size = new System.Drawing.Size(82, 21);
-            this.cmbSunStart.TabIndex = 51;
-            // 
-            // cmbSunEnd
-            // 
-            this.cmbSunEnd.FormattingEnabled = true;
-            this.cmbSunEnd.Location = new System.Drawing.Point(86, 425);
-            this.cmbSunEnd.Name = "cmbSunEnd";
-            this.cmbSunEnd.Size = new System.Drawing.Size(82, 21);
-            this.cmbSunEnd.TabIndex = 52;
             // 
             // AddCourseForm
             // 

@@ -55,22 +55,23 @@ namespace Study_Buddy.Presentation
                 dayBox.setToday();
             }
             dayBox.days(dayOfWeek);
-            dayContainer.Controls.Add(dayBox);
-            //Wip add assignment due dates
-            int indexOflabel = 10;
-            foreach(Course c in AccountController.account.courses)
+
+            int indexOflabel = 13;
+            foreach (Course c in AccountController.account.courses)
             {
-                foreach(Assignment assignment in c.assignments)
+                foreach (Assignment assignment in c.assignments)
                 {
-                    
-                    if(dayOfWeek == assignment.dueDate.Day)
+
+                    if (controller.month == assignment.dueDate.Month && dayOfWeek == assignment.dueDate.Day)
                     {
-                        dayBox.addDueDate(dayOfWeek, assignment.name);
+                        Label label = dayBox.addDueDate(indexOflabel, assignment.name);
+                        dayBox.Controls.Add(label);
                         indexOflabel += 10;
                     }
-                    
+
                 }
             }
+            dayContainer.Controls.Add(dayBox);
         }
 
         private void btnPrev_Click(object sender, EventArgs e)

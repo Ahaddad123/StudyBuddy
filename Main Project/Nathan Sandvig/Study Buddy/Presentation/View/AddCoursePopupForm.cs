@@ -19,6 +19,46 @@ namespace Study_Buddy.Presentation.View
         public AddCoursePopupForm()
         {
             InitializeComponent();
+
+            cmbMonStart.Items.AddRange(new Object[] { });
+            cmbMonEnd.Items.AddRange(new Object[] { });
+            cmbTueStart.Items.AddRange(new Object[] { });
+            cmbTueEnd.Items.AddRange(new Object[] { });
+            cmbWenStart.Items.AddRange(new Object[] { });
+            cmbWenEnd.Items.AddRange(new Object[] { });
+            cmbThuStart.Items.AddRange(new Object[] { });
+            cmbThuEnd.Items.AddRange(new Object[] { });
+            cmbFriStart.Items.AddRange(new Object[] { });
+            cmbFriEnd.Items.AddRange(new Object[] { });
+            cmbSatStart.Items.AddRange(new Object[] { });
+            cmbSatEnd.Items.AddRange(new Object[] { });
+            cmbSunStart.Items.AddRange(new Object[] { });
+            cmbSunEnd.Items.AddRange(new Object[] { });
+
+            TimeSpan startingTime = new TimeSpan(0, 0, 0);
+            DateTime startingDate = new DateTime(DateTime.MinValue.Ticks);
+
+            for (int x = 0; x < 48; x++)
+            {
+                int mins = 30 * x;
+                TimeSpan addedTime = new TimeSpan(0, mins, 0);
+                TimeSpan algTime = startingTime.Add(addedTime);
+                DateTime resDate = startingDate + algTime;
+                cmbMonStart.Items.Add(resDate.TimeOfDay);
+                cmbMonEnd.Items.Add(resDate.TimeOfDay);
+                cmbTueStart.Items.Add(resDate.TimeOfDay);
+                cmbTueEnd.Items.Add(resDate.TimeOfDay);
+                cmbWenStart.Items.Add(resDate.TimeOfDay);
+                cmbWenEnd.Items.Add(resDate.TimeOfDay);
+                cmbThuStart.Items.Add(resDate.TimeOfDay);
+                cmbThuEnd.Items.Add(resDate.TimeOfDay);
+                cmbFriStart.Items.Add(resDate.TimeOfDay);
+                cmbFriEnd.Items.Add(resDate.TimeOfDay);
+                cmbSatStart.Items.Add(resDate.TimeOfDay);
+                cmbSatEnd.Items.Add(resDate.TimeOfDay);
+                cmbSunStart.Items.Add(resDate.TimeOfDay);
+                cmbSunEnd.Items.Add(resDate.TimeOfDay);
+            }
         }
 
         private void AddCoursePopupForm_Load(object sender, EventArgs e)
@@ -73,96 +113,97 @@ namespace Study_Buddy.Presentation.View
                 MessageBox.Show("Invalid Credits");
                 valid = false;
             }
+
             //add course times for Sunday
-            if (dtpSunStart.Value > dtpSunEnd.Value)
+            if ((double)cmbSunStart.SelectedValue > (double)cmbSunEnd.SelectedValue)
             {
-                //creditsErrorMessageLabel.Text = "Invalid sunday times";
+                creditsErrorMessageLabel.Text = "Invalid sunday times";
                 valid = false;
             }
             else
             {
-                List<DateTime> sundae = new List<DateTime>();
-                sundae.Add(dtpSunStart.Value);
-                sundae.Add(dtpSunEnd.Value);
-                dateTimes.Add(sundae);
+                List<DateTime> sunday = new List<DateTime>();
+                sunday.Add((DateTime)cmbSunStart.SelectedValue);
+                sunday.Add((DateTime)cmbSunEnd.SelectedValue);
+                dateTimes.Add(sunday);
             }
             //add course times for monday
-            if (dtpMonStart.Value > dtpMonEnd.Value)
+            if ((double)cmbMonStart.SelectedValue > (double)cmbMonEnd.SelectedValue)
             {
-                //creditsErrorMessageLabel.Text = "Invalid monday times";
+                creditsErrorMessageLabel.Text = "Invalid monday times";
                 valid = false;
             }
             else
             {
-                List<DateTime> mondae = new List<DateTime>();
-                mondae.Add(dtpMonStart.Value);
-                mondae.Add(dtpMonEnd.Value);
-                dateTimes.Add(mondae);
+                List<DateTime> monday = new List<DateTime>();
+                monday.Add((DateTime)cmbMonStart.SelectedValue);
+                monday.Add((DateTime)cmbMonEnd.SelectedValue);
+                dateTimes.Add(monday);
             }
             //add course times for tuesday
-            if (dtpTueStart.Value > dtpTueEnd.Value)
+            if ((double)cmbTueStart.SelectedValue > (double)cmbTueEnd.SelectedValue)
             {
-                //creditsErrorMessageLabel.Text = "Invalid tuesday times";
+                creditsErrorMessageLabel.Text = "Invalid tuesday times";
                 valid = false;
             }
             else
             {
-                List<DateTime> tuedae = new List<DateTime>();
-                tuedae.Add(dtpTueStart.Value);
-                tuedae.Add(dtpTueEnd.Value);
-                dateTimes.Add(tuedae);
+                List<DateTime> tueday = new List<DateTime>();
+                tueday.Add((DateTime)cmbTueStart.SelectedValue);
+                tueday.Add((DateTime)cmbTueEnd.SelectedValue);
+                dateTimes.Add(tueday);
             }
             //add course times for wensday
-            if (dtpWenStart.Value > dtpWenEnd.Value)
+            if ((double)cmbWenStart.SelectedValue > (double)cmbWenEnd.SelectedValue)
             {
-                //creditsErrorMessageLabel.Text = "Invalid wensday times";
+                creditsErrorMessageLabel.Text = "Invalid wensday times";
                 valid = false;
             }
             else
             {
-                List<DateTime> wendae = new List<DateTime>();
-                wendae.Add(dtpWenStart.Value);
-                wendae.Add(dtpWenEnd.Value);
-                dateTimes.Add(wendae);
+                List<DateTime> wenday = new List<DateTime>();
+                wenday.Add((DateTime)cmbWenStart.SelectedValue);
+                wenday.Add((DateTime)cmbWenEnd.SelectedValue);
+                dateTimes.Add(wenday);
             }
             //add course times for Thursday
-            if (dtpThuStart.Value > dtpThuEnd.Value)
+            if ((double)cmbThuStart.SelectedValue > (double)cmbThuEnd.SelectedValue)
             {
-                //creditsErrorMessageLabel.Text = "Invalid Thursday times";
+                creditsErrorMessageLabel.Text = "Invalid Thursday times";
                 valid = false;
             }
             else
             {
-                List<DateTime> thudae = new List<DateTime>();
-                thudae.Add(dtpThuStart.Value);
-                thudae.Add(dtpThuEnd.Value);
-                dateTimes.Add(thudae);
+                List<DateTime> thuday = new List<DateTime>();
+                thuday.Add((DateTime)cmbThuStart.SelectedValue);
+                thuday.Add((DateTime)cmbThuEnd.SelectedValue);
+                dateTimes.Add(thuday);
             }
             //add course times for Friday
-            if (dtpFriStart.Value > dtpFriEnd.Value)
+            if ((double)cmbFriStart.SelectedValue > (double)cmbFriEnd.SelectedValue)
             {
-                //creditsErrorMessageLabel.Text = "Invalid friday times";
+                creditsErrorMessageLabel.Text = "Invalid friday times";
                 valid = false;
             }
             else
             {
-                List<DateTime> fridae = new List<DateTime>();
-                fridae.Add(dtpMonStart.Value);
-                fridae.Add(dtpMonEnd.Value);
-                dateTimes.Add(fridae);
+                List<DateTime> friday = new List<DateTime>();
+                friday.Add((DateTime)cmbMonStart.SelectedValue);
+                friday.Add((DateTime)cmbMonEnd.SelectedValue);
+                dateTimes.Add(friday);
             }
             //add course times for Saturday
-            if (dtpSatStart.Value > dtpSatEnd.Value)
+            if ((double)cmbSatStart.SelectedValue > (double)cmbSatEnd.SelectedValue)
             {
-                //creditsErrorMessageLabel.Text = "Invalid saterday times";
+                creditsErrorMessageLabel.Text = "Invalid saterday times";
                 valid = false;
             }
             else
             {
-                List<DateTime> satdae = new List<DateTime>();
-                satdae.Add(dtpSatStart.Value);
-                satdae.Add(dtpSatEnd.Value);
-                dateTimes.Add(satdae);
+                List<DateTime> satday = new List<DateTime>();
+                satday.Add((DateTime)cmbSatStart.SelectedValue);
+                satday.Add((DateTime)cmbSatEnd.SelectedValue);
+                dateTimes.Add(satday);
             }
 
             if (valid)
