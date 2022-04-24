@@ -76,6 +76,14 @@ namespace Study_Buddy.DataAccess
                 String createTables6 = "CREATE TABLE \"StudyHours\" (\"Hours\" INTEGER NOT NULL, \"CourseName\" INTEGER NOT NULL, \"Date\" INTEGER NOT NULL)";
                 checkAccounts.CommandText = createTables6;
                 checkAccounts.ExecuteNonQuery();
+
+                string createTables7 = "CREATE TABLE \"GPAData\" (\"Number\" INTEGER NOT NULL, \"GPA\" INTEGER NOT NULL, PRIMARY KEY(\"Number\" AUTO INCREMENT))";
+                checkAccounts.CommandText = createTables7;
+                checkAccounts.ExecuteNonQuery();
+
+                string createTables8 = "CREATE TABLE \"ClassTimes\" (\"CourseID\" INTEGER NOT NULL, \"Sunday\" TEXT, \"Monday\" TEXT, \"Tuesday\" TEXT, \"Wednesday\" TEXT, \"Thursday\" TEXT, \"Friday\" TEXT, \"Saturday\" TEXT, PRIMARY KEY(CourseID))";
+                checkAccounts.CommandText = createTables8;
+                checkAccounts.ExecuteNonQuery();
             } 
             catch (System.Data.SQLite.SQLiteException) 
             {
