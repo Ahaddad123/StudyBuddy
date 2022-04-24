@@ -172,9 +172,8 @@
             this.nameErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
             this.nameErrorMessageLabel.Location = new System.Drawing.Point(448, 35);
             this.nameErrorMessageLabel.Name = "nameErrorMessageLabel";
-            this.nameErrorMessageLabel.Size = new System.Drawing.Size(58, 23);
+            this.nameErrorMessageLabel.Size = new System.Drawing.Size(0, 23);
             this.nameErrorMessageLabel.TabIndex = 10;
-            this.nameErrorMessageLabel.Text = "name";
             // 
             // PriorityErrorMessageLabel
             // 
@@ -183,9 +182,8 @@
             this.PriorityErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
             this.PriorityErrorMessageLabel.Location = new System.Drawing.Point(448, 104);
             this.PriorityErrorMessageLabel.Name = "PriorityErrorMessageLabel";
-            this.PriorityErrorMessageLabel.Size = new System.Drawing.Size(50, 23);
+            this.PriorityErrorMessageLabel.Size = new System.Drawing.Size(0, 23);
             this.PriorityErrorMessageLabel.TabIndex = 11;
-            this.PriorityErrorMessageLabel.Text = "prior";
             // 
             // creditsErrorMessageLabel
             // 
@@ -194,9 +192,8 @@
             this.creditsErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
             this.creditsErrorMessageLabel.Location = new System.Drawing.Point(447, 140);
             this.creditsErrorMessageLabel.Name = "creditsErrorMessageLabel";
-            this.creditsErrorMessageLabel.Size = new System.Drawing.Size(49, 23);
+            this.creditsErrorMessageLabel.Size = new System.Drawing.Size(0, 23);
             this.creditsErrorMessageLabel.TabIndex = 12;
-            this.creditsErrorMessageLabel.Text = "cred";
             // 
             // CodeErrorMessageLabel
             // 
@@ -205,9 +202,8 @@
             this.CodeErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
             this.CodeErrorMessageLabel.Location = new System.Drawing.Point(448, 68);
             this.CodeErrorMessageLabel.Name = "CodeErrorMessageLabel";
-            this.CodeErrorMessageLabel.Size = new System.Drawing.Size(53, 23);
+            this.CodeErrorMessageLabel.Size = new System.Drawing.Size(0, 23);
             this.CodeErrorMessageLabel.TabIndex = 13;
-            this.CodeErrorMessageLabel.Text = "code";
             // 
             // successLabel
             // 
@@ -597,9 +593,8 @@
             this.monErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
             this.monErrorMessageLabel.Location = new System.Drawing.Point(445, 289);
             this.monErrorMessageLabel.Name = "monErrorMessageLabel";
-            this.monErrorMessageLabel.Size = new System.Drawing.Size(49, 23);
+            this.monErrorMessageLabel.Size = new System.Drawing.Size(0, 23);
             this.monErrorMessageLabel.TabIndex = 39;
-            this.monErrorMessageLabel.Text = "cred";
             // 
             // satErrorMessageLabel
             // 
@@ -608,9 +603,8 @@
             this.satErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
             this.satErrorMessageLabel.Location = new System.Drawing.Point(445, 454);
             this.satErrorMessageLabel.Name = "satErrorMessageLabel";
-            this.satErrorMessageLabel.Size = new System.Drawing.Size(49, 23);
+            this.satErrorMessageLabel.Size = new System.Drawing.Size(0, 23);
             this.satErrorMessageLabel.TabIndex = 40;
-            this.satErrorMessageLabel.Text = "cred";
             // 
             // friErrorMessageLabel
             // 
@@ -619,9 +613,8 @@
             this.friErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
             this.friErrorMessageLabel.Location = new System.Drawing.Point(445, 421);
             this.friErrorMessageLabel.Name = "friErrorMessageLabel";
-            this.friErrorMessageLabel.Size = new System.Drawing.Size(49, 23);
+            this.friErrorMessageLabel.Size = new System.Drawing.Size(0, 23);
             this.friErrorMessageLabel.TabIndex = 41;
-            this.friErrorMessageLabel.Text = "cred";
             // 
             // thuErrorMessageLabel
             // 
@@ -630,9 +623,8 @@
             this.thuErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
             this.thuErrorMessageLabel.Location = new System.Drawing.Point(445, 388);
             this.thuErrorMessageLabel.Name = "thuErrorMessageLabel";
-            this.thuErrorMessageLabel.Size = new System.Drawing.Size(49, 23);
+            this.thuErrorMessageLabel.Size = new System.Drawing.Size(0, 23);
             this.thuErrorMessageLabel.TabIndex = 42;
-            this.thuErrorMessageLabel.Text = "cred";
             // 
             // wedErrorMessageLabel
             // 
@@ -641,9 +633,8 @@
             this.wedErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
             this.wedErrorMessageLabel.Location = new System.Drawing.Point(445, 355);
             this.wedErrorMessageLabel.Name = "wedErrorMessageLabel";
-            this.wedErrorMessageLabel.Size = new System.Drawing.Size(49, 23);
+            this.wedErrorMessageLabel.Size = new System.Drawing.Size(0, 23);
             this.wedErrorMessageLabel.TabIndex = 43;
-            this.wedErrorMessageLabel.Text = "cred";
             // 
             // tueErrorMessageLabel
             // 
@@ -652,9 +643,8 @@
             this.tueErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
             this.tueErrorMessageLabel.Location = new System.Drawing.Point(445, 322);
             this.tueErrorMessageLabel.Name = "tueErrorMessageLabel";
-            this.tueErrorMessageLabel.Size = new System.Drawing.Size(49, 23);
+            this.tueErrorMessageLabel.Size = new System.Drawing.Size(0, 23);
             this.tueErrorMessageLabel.TabIndex = 44;
-            this.tueErrorMessageLabel.Text = "cred";
             // 
             // sunErrorMessageLabel
             // 
@@ -663,9 +653,8 @@
             this.sunErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
             this.sunErrorMessageLabel.Location = new System.Drawing.Point(445, 256);
             this.sunErrorMessageLabel.Name = "sunErrorMessageLabel";
-            this.sunErrorMessageLabel.Size = new System.Drawing.Size(49, 23);
+            this.sunErrorMessageLabel.Size = new System.Drawing.Size(0, 23);
             this.sunErrorMessageLabel.TabIndex = 45;
-            this.sunErrorMessageLabel.Text = "cred";
             // 
             // AddCourseBox
             // 
