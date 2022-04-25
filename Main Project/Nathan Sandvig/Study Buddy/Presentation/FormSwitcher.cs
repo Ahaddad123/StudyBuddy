@@ -28,6 +28,9 @@ namespace Study_Buddy.Presentation
             form.SetController(controller);
             controller.DrawGradeGraph();
             controller.DrawStudyLogGraph();
+            DateTime currTime = DateTime.Now;
+            int currWeek = currTime.DayOfYear / 7;
+            controller.ChangeCurrentWeekID(currWeek);
             form.ShowDialog();
             currentForm.Close();
         }

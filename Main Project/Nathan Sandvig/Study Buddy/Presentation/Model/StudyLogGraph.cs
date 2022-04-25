@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Study_Buddy.BusinessLogic;
+using System.Globalization;
 
 namespace Study_Buddy.Presentation.Model
 {
@@ -46,10 +47,13 @@ namespace Study_Buddy.Presentation.Model
             this.studyLog = studyLog;
             hours = new List<int>();
             daysOfWeek = new List<string>();
-            GenerateTestData();
-            //GatherRealData();
-            //DateTime currWeek = DateTime.now.week;
-            SelectWeek(0);
+            //GenerateTestData();
+            GatherRealData();
+            DateTime currWeek = DateTime.Now;
+            int weekID = currWeek.DayOfYear / DAYS_IN_WEEK;
+            //System.Globalization.Calendar.GetWeekOfYear(currWeek, CalendarWeekRule.);
+            
+            SelectWeek(weekID);
         }
 
         //---------------------------------------------------------------------
@@ -156,6 +160,12 @@ namespace Study_Buddy.Presentation.Model
             }
         }
 
+        //---------------------------------------------------------------------
+        // Gathers the data from the study log of the selected course.
+        // The date coloected is the hours studied on each day from the start
+        // of the year untill the current date
+        // v1: Created the method - Andrew V, 4-24-22
+        //---------------------------------------------------------------------
         public void GatherRealData()
         {
             DateTime currDate = new DateTime(DateTime.Now.Year, 1, 1);

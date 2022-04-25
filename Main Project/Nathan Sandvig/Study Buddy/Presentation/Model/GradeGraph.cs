@@ -112,5 +112,28 @@ namespace Study_Buddy.Presentation.Model
                 dateTime = dateTime.AddDays(1);
             }
         }
+
+        //---------------------------------------------------------------------
+        // gathers real data for the graph
+        // v1: Created the method - Andrew V, 4-25-22
+        //---------------------------------------------------------------------
+        private void GenerateRealData()
+        {
+            //Calculate days since semester began (arbitrarily 1/24/2022
+            DateTime semesterStart = new DateTime(2022, 1, 1);
+            DateTime today = DateTime.Now;
+            int daysSinceStartOfSemester = ((int)(today - semesterStart).TotalDays);
+
+            DateTime dateTime = semesterStart;
+            Random random = new Random();
+
+            //Populate lists with test data
+            for (int i = 0; i < daysSinceStartOfSemester; i++)
+            {
+                averageGradesY.Add(random.NextDouble() * 100);
+                datesX.Add(dateTime);
+                dateTime.AddDays(1);
+            }
+        }
     }
 }
