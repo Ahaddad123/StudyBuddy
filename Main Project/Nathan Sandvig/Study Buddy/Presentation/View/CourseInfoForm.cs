@@ -63,7 +63,12 @@ namespace Study_Buddy.Presentation.View
         {
             this.course = this.userCourseList1.currentCourse;
             this.title = course.name;
-            this.mainHeader.Text = course.name;    
+            this.mainHeader.Text = course.name;
+            Course newCourse = this.userCourseList1.currentCourse;
+            this.controller.course = newCourse;
+            this.controller.studyLog = newCourse.hourLog;
+            
+            controller.DrawGradeGraph();
         }
 
         //---------------------------------------------------------------------
