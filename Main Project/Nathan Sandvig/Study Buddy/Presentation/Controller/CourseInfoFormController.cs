@@ -39,7 +39,7 @@ namespace Study_Buddy.Presentation
             this.studyLog = studyLog;
             this.view = form;
             this.gradeGraph = new GradeGraph(this.course);
-            this.studyLogGraph = new StudyLogGraph(this.studyLog);
+            this.studyLogGraph = new StudyLogGraph(course.hourLog);
             view.SetController(this);
             weekID = 0;
         }
