@@ -81,7 +81,7 @@ namespace Study_Buddy.DataAccess
                 checkAccounts.CommandText = createTables7;
                 checkAccounts.ExecuteNonQuery();
 
-                string createTables8 = "CREATE TABLE \"ClassTimes\" (\"CourseID\" INTEGER NOT NULL, \"Sunday\" TEXT, \"Monday\" TEXT, \"Tuesday\" TEXT, \"Wednesday\" TEXT, \"Thursday\" TEXT, \"Friday\" TEXT, \"Saturday\" TEXT, PRIMARY KEY(CourseID))";
+                string createTables8 = "CREATE TABLE \"ClassTimes\" (\"CourseID\" INTEGER NOT NULL, \"SundayStart\" TEXT, \"SundayEnd\" TEXT, \"MondayStart\" TEXT, \"MondayEnd\" TEXT, \"TuesdayStart\" TEXT, \"TuesdayEnd\" TEXT, \"WednesdayStart\" TEXT, \"WednesdayEnd\" TEXT, \"ThursdayStart\" TEXT, \"ThursdayEnd\" TEXT, \"FridayStart\" TEXT, \"FridayEnd\" TEXT, \"SaturdayStart\" TEXT, \"SaturdayEnd\" TEXT, PRIMARY KEY(CourseID))";
                 checkAccounts.CommandText = createTables8;
                 checkAccounts.ExecuteNonQuery();
             } 
