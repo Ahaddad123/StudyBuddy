@@ -91,6 +91,7 @@ namespace Study_Buddy.Presentation
         private void exitButton_Click(object sender, EventArgs e)
         {
             this.Close();
+            System.Environment.Exit(0);
         }
     }
 }
