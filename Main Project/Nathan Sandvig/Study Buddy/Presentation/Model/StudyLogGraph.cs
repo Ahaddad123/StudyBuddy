@@ -47,6 +47,8 @@ namespace Study_Buddy.Presentation.Model
             hours = new List<int>();
             daysOfWeek = new List<string>();
             GenerateTestData();
+            //GatherRealData();
+            //DateTime currWeek = DateTime.now.week;
             SelectWeek(0);
         }
 
@@ -154,7 +156,7 @@ namespace Study_Buddy.Presentation.Model
             }
         }
 
-        public void gatherRealData()
+        public void GatherRealData()
         {
             DateTime currDate = new DateTime(DateTime.Now.Year, 1, 1);
             DateTime endDate = DateTime.Now;
