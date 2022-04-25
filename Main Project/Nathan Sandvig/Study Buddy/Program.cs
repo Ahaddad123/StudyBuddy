@@ -41,6 +41,9 @@ namespace Study_Buddy
             LoginForm form = new LoginForm();
             form.StartPosition = FormStartPosition.Manual;
             Application.Run(form);
+
+            System.Environment.Exit(0);
+
         }
     }
 }
