@@ -397,27 +397,37 @@ namespace Study_Buddy.Presentation.View
             {
                 Course course = new CourseBuilder().WithName(txtCourseTitle.Text).WithCode(txtCourseCode.Text).WithCredits(courseCredit).WithPriority(coursePriority).WithCourseHours(dateTimes).Build();
                 AccountController.account.addCourse(course);
-                nameErrorMessageLabel.Text = "";
-                CodeErrorMessageLabel.Text = "";
-                PriorityErrorMessageLabel.Text = "";
-                creditsErrorMessageLabel.Text = "";
-                sunErrorMessageLabel.Text = "";
-                monErrorMessageLabel.Text = "";
-                tueErrorMessageLabel.Text = "";
-                wedErrorMessageLabel.Text = "";
-                thuErrorMessageLabel.Text = "";
-                friErrorMessageLabel.Text = "";
-                satErrorMessageLabel.Text = "";
-                checkBoxSun.Checked = false;
-                checkBoxMon.Checked = false;
-                checkBoxTue.Checked = false;
-                checkBoxWed.Checked = false;
-                checkBoxThu.Checked = false;
-                checkBoxFri.Checked = false;
-                checkBoxSat.Checked = false;
+                Clear();
                 successLabel.Text = "Succesfully added " + course.name;
                 this.StatusUpdated(this, new EventArgs());
             }
+        }
+        public void Clear()
+        {
+            txtCourseCode.Text = "";
+            txtCourseCredits.Text = "";
+            txtCoursePriority.Text = "";
+            txtCourseTitle.Text = "";
+            nameErrorMessageLabel.Text = "";
+            CodeErrorMessageLabel.Text = "";
+            PriorityErrorMessageLabel.Text = "";
+            creditsErrorMessageLabel.Text = "";
+            sunErrorMessageLabel.Text = "";
+            monErrorMessageLabel.Text = "";
+            tueErrorMessageLabel.Text = "";
+            wedErrorMessageLabel.Text = "";
+            thuErrorMessageLabel.Text = "";
+            friErrorMessageLabel.Text = "";
+            satErrorMessageLabel.Text = "";
+            successLabel.Text = "";
+            checkBoxSun.Checked = false;
+            checkBoxMon.Checked = false;
+            checkBoxTue.Checked = false;
+            checkBoxWed.Checked = false;
+            checkBoxThu.Checked = false;
+            checkBoxFri.Checked = false;
+            checkBoxSat.Checked = false;
+
         }
     }
 }
