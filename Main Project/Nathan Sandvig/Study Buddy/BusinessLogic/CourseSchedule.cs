@@ -14,5 +14,10 @@ namespace Study_Buddy.BusinessLogic
         {
             this.times = times;
         }
+
+        public double getCourseHours(DayOfWeek date)
+        {
+            return (times[date].endTime - times[date].startTime).TotalHours;
+        }
     }
 }

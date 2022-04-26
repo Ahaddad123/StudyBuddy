@@ -420,6 +420,7 @@ namespace Study_Buddy.Presentation.View
             //All the checkboxes checked out
             if (valid)
             {
+                string courseName = txtCourseTitle.Text;
                 CourseSchedule course1 = new CourseSchedule(times);
                 AccountController.account.addTheCourseTimes(times);
 
