@@ -443,6 +443,10 @@ namespace Study_Buddy.Presentation.View
 
         private void removeCourseButton_Click(object sender, EventArgs e)
         {
+            //Bubble event to parent form
+            this.StatusUpdated(this.courseListBox.Text, new EventArgs());
+
+            //TODO: move this logic to parent form
             Course course = AccountController.account.getCourseByName(courseListBox.Text);
             if (course != null)
             {

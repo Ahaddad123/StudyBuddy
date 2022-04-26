@@ -32,6 +32,12 @@ namespace Study_Buddy.Presentation
             this.addCourseBox1.StatusUpdated += new EventHandler(ChildControlEvent_AddCourseBoxAddCourseButtonClicked);
             this.removeCourseBox1.LoadCourses(AccountController.account.courses);
             this.removeCourseBox1.StatusUpdated += new EventHandler(Event_RemoveCourseButtonClick);
+            this.editCourseBox1.StatusUpdated += new EventHandler(Event_EditCourseButtonClick);
+
+        }
+
+        public void Event_EditCourseButtonClick(Object sender, EventArgs e)
+        {
 
         }
 
