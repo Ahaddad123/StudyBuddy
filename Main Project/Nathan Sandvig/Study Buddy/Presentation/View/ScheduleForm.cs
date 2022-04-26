@@ -71,6 +71,16 @@ namespace Study_Buddy.Presentation
             {
                 Course course = controller.getCourses()[i];
                 Label label = controller.createCourseLabel(course, red, green, blue);
+                int index = 0;
+                foreach(List<DateTime> days in course.courseTimes)
+                {
+                    if(days != null)
+                    {
+                        this.tableLayoutPanel2.Controls.Add(label, index + 1, days.ElementAt(0).Hour - 6);
+                        this.tableLayoutPanel2.SetRowSpan(label, days.ElementAt(1).Hour - days.ElementAt(0).Hour);
+                    }
+                    index++;
+                }
                 this.tableLayoutPanel2.Controls.Add(label, i + 1, i + 1); //need to update indices
                 this.tableLayoutPanel2.SetRowSpan(label, 2); //need to update span
                 if (i % 3 == 0)

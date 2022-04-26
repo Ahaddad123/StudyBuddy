@@ -451,6 +451,56 @@ namespace Study_Buddy.Presentation.View
                 this.txtCourseCredits.Text = course.credits.ToString();
                 this.txtCourseCode.Text = course.code;
             }
+            int index = 0;
+            foreach(List<DateTime> days in course.courseTimes)
+            {
+                if(days != null)
+                {
+                    if (index == 0)
+                    {
+                        checkBoxSun.Checked = true;
+                        comboBoxSunStart.SelectedIndex = days.ElementAt(0).Hour;
+                        comboBoxSunEnd.SelectedIndex = days.ElementAt(1).Hour;
+                    }
+                    else if (index == 1)
+                    {
+                        checkBoxMon.Checked = true;
+                        comboBoxMonStart.SelectedIndex = days.ElementAt(0).Hour;
+                        comboBoxMonEnd.SelectedIndex = days.ElementAt(1).Hour;
+                    }
+                    else if (index == 2)
+                    {
+                        checkBoxTue.Checked = true;
+                        comboBoxTueStart.SelectedIndex = days.ElementAt(0).Hour;
+                        comboBoxTueEnd.SelectedIndex = days.ElementAt(1).Hour;
+                    }
+                    else if (index == 3)
+                    {
+                        checkBoxWed.Checked = true;
+                        comboBoxWedStart.SelectedIndex = days.ElementAt(0).Hour;
+                        comboBoxWedEnd.SelectedIndex = days.ElementAt(1).Hour;
+                    }
+                    else if (index == 4)
+                    {
+                        checkBoxThu.Checked = true;
+                        comboBoxThuStart.SelectedIndex = days.ElementAt(0).Hour;
+                        comboBoxThuEnd.SelectedIndex = days.ElementAt(1).Hour;
+                    }
+                    else if (index == 5)
+                    {
+                        checkBoxFri.Checked = true;
+                        comboBoxFriStart.SelectedIndex = days.ElementAt(0).Hour;
+                        comboBoxFriEnd.SelectedIndex = days.ElementAt(1).Hour;
+                    }
+                    else if (index == 6)
+                    {
+                        checkBoxSat.Checked = true;
+                        comboBoxSatStart.SelectedIndex = days.ElementAt(0).Hour;
+                        comboBoxSatEnd.SelectedIndex = days.ElementAt(1).Hour;
+                    }
+                }
+                index++;
+            }
         }
     }
 }
