@@ -13,17 +13,19 @@ namespace Study_Buddy.Presentation.View
 {
     public partial class EditCourseBox : UserControl
     {
+        private Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)> times;
         public EventHandler StatusUpdated;
         public EditCourseBox()
         {
             InitializeComponent();
+            times = new Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)>();
 
             TimeSpan startingTime = new TimeSpan(0, 0, 0);
             DateTime startingDate = new DateTime(DateTime.MinValue.Ticks);
 
-            for (int x = 0; x < 48; x++)
+            for (int x = 6; x < 26; x++)
             {
-                int mins = 30 * x;
+                int mins = 60 * x;
                 TimeSpan addedTime = new TimeSpan(0, mins, 0);
                 TimeSpan algTime = startingTime.Add(addedTime);
                 DateTime resDate = startingDate + algTime;
@@ -206,6 +208,7 @@ namespace Study_Buddy.Presentation.View
                     }
                     else
                     {
+                        times.Add(DayOfWeek.Sunday, (DateTime.Parse(comboBoxSunStart.SelectedItem.ToString()), DateTime.Parse(comboBoxSunEnd.SelectedItem.ToString())));
                         List<DateTime> sunday = new List<DateTime>();
                         sunday.Add(DateTime.Parse(comboBoxSunStart.SelectedItem.ToString()));
                         sunday.Add(DateTime.Parse(comboBoxSunEnd.SelectedItem.ToString()));
@@ -234,6 +237,7 @@ namespace Study_Buddy.Presentation.View
                     }
                     else
                     {
+                        times.Add(DayOfWeek.Monday, (DateTime.Parse(comboBoxMonStart.SelectedItem.ToString()), DateTime.Parse(comboBoxMonEnd.SelectedItem.ToString())));
                         List<DateTime> monday = new List<DateTime>();
                         monday.Add(DateTime.Parse(comboBoxMonStart.SelectedItem.ToString()));
                         monday.Add(DateTime.Parse(comboBoxMonEnd.SelectedItem.ToString()));
@@ -262,6 +266,7 @@ namespace Study_Buddy.Presentation.View
                     }
                     else
                     {
+                        times.Add(DayOfWeek.Tuesday, (DateTime.Parse(comboBoxTueStart.SelectedItem.ToString()), DateTime.Parse(comboBoxTueEnd.SelectedItem.ToString())));
                         List<DateTime> tuesday = new List<DateTime>();
                         tuesday.Add(DateTime.Parse(comboBoxTueStart.SelectedItem.ToString()));
                         tuesday.Add(DateTime.Parse(comboBoxTueEnd.SelectedItem.ToString()));
@@ -290,6 +295,7 @@ namespace Study_Buddy.Presentation.View
                     }
                     else
                     {
+                        times.Add(DayOfWeek.Wednesday, (DateTime.Parse(comboBoxWedStart.SelectedItem.ToString()), DateTime.Parse(comboBoxWedEnd.SelectedItem.ToString())));
                         List<DateTime> wednesday = new List<DateTime>();
                         wednesday.Add(DateTime.Parse(comboBoxWedStart.SelectedItem.ToString()));
                         wednesday.Add(DateTime.Parse(comboBoxWedEnd.SelectedItem.ToString()));
@@ -318,6 +324,7 @@ namespace Study_Buddy.Presentation.View
                     }
                     else
                     {
+                        times.Add(DayOfWeek.Thursday, (DateTime.Parse(comboBoxThuStart.SelectedItem.ToString()), DateTime.Parse(comboBoxThuEnd.SelectedItem.ToString())));
                         List<DateTime> thursday = new List<DateTime>();
                         thursday.Add(DateTime.Parse(comboBoxThuStart.SelectedItem.ToString()));
                         thursday.Add(DateTime.Parse(comboBoxThuEnd.SelectedItem.ToString()));
@@ -346,6 +353,7 @@ namespace Study_Buddy.Presentation.View
                     }
                     else
                     {
+                        times.Add(DayOfWeek.Friday, (DateTime.Parse(comboBoxFriStart.SelectedItem.ToString()), DateTime.Parse(comboBoxFriEnd.SelectedItem.ToString())));
                         List<DateTime> friday = new List<DateTime>();
                         friday.Add(DateTime.Parse(comboBoxFriStart.SelectedItem.ToString()));
                         friday.Add(DateTime.Parse(comboBoxFriEnd.SelectedItem.ToString()));
@@ -374,6 +382,7 @@ namespace Study_Buddy.Presentation.View
                     }
                     else
                     {
+                        times.Add(DayOfWeek.Saturday, (DateTime.Parse(comboBoxSatStart.SelectedItem.ToString()), DateTime.Parse(comboBoxSatEnd.SelectedItem.ToString())));
                         List<DateTime> saturday = new List<DateTime>();
                         saturday.Add(DateTime.Parse(comboBoxSatStart.SelectedItem.ToString()));
                         saturday.Add(DateTime.Parse(comboBoxSatEnd.SelectedItem.ToString()));
@@ -390,11 +399,13 @@ namespace Study_Buddy.Presentation.View
             //All the checkboxes checked out
             if (valid)
             {
-                Course course = new CourseBuilder().WithName(courseListBox.Text).WithCode(txtCourseCode.Text).WithCredits(courseCredit).WithPriority(coursePriority).WithCourseHours(dateTimes).Build();
+                CourseSchedule schedule = new CourseSchedule(times);
+                AccountController.account.addTheCourseTimes(times);
+                Course course = new CourseBuilder().WithName(courseListBox.Text).WithCode(txtCourseCode.Text).WithCredits(courseCredit).WithPriority(coursePriority).WithSchedule(schedule).Build();
                 AccountController.account.getCourseByName(course.name).code = course.code;
                 AccountController.account.getCourseByName(course.name).credits = course.credits;
                 AccountController.account.getCourseByName(course.name).priority = course.priority;
-                AccountController.account.getCourseByName(course.name).courseTimes = course.courseTimes;
+                AccountController.account.getCourseByName(course.name).schedule = course.schedule;
                 AccountController.account.database.removeCourse(course.name);
                 AccountController.account.database.insertCourseData(course);
                 nameErrorMessageLabel.Text = "";
@@ -413,6 +424,7 @@ namespace Study_Buddy.Presentation.View
                 checkBoxThu.Checked = false;
                 checkBoxFri.Checked = false;
                 checkBoxSat.Checked = false;
+                times = new Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)>();
             }
         }
 
@@ -429,7 +441,7 @@ namespace Study_Buddy.Presentation.View
                 this.txtCourseCredits.Text = course.credits.ToString();
                 this.txtCourseCode.Text = course.code;
             }
-            /*for (int index = 0; index < 7; index++)
+            for (int index = 0; index < 7; index++)
             {
                 DayOfWeek day = (DayOfWeek)index;
                 if (course.schedule.times.ContainsKey(day))
@@ -479,7 +491,7 @@ namespace Study_Buddy.Presentation.View
                         comboBoxSatEnd.SelectedIndex = endTime;
                     }
                 }
-            }*/
+            }
             /*foreach (List<DateTime> days in course.courseTimes)
             {
                 if (days != null)

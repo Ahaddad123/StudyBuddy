@@ -24,9 +24,9 @@ namespace Study_Buddy.Presentation.View
             DateTime startingDate = new DateTime(DateTime.MinValue.Ticks);
 
 
-            for (int x = 0; x < 48; x++)
+            for (int x = 6; x < 23; x++)
             {
-                int mins = 30 * x;
+                int mins = 60 * x;
                 TimeSpan addedTime = new TimeSpan(0, mins, 0);
                 TimeSpan algTime = startingTime.Add(addedTime);
                 DateTime resDate = startingDate + algTime;
@@ -422,9 +422,9 @@ namespace Study_Buddy.Presentation.View
             {
                 string courseName = txtCourseTitle.Text;
                 CourseSchedule course1 = new CourseSchedule(times);
-                course1.addCourseTime(courseName);
+                AccountController.account.addTheCourseTimes(times);
 
-                Course course = new CourseBuilder().WithName(txtCourseTitle.Text).WithCode(txtCourseCode.Text).WithCredits(courseCredit).WithPriority(coursePriority).WithCourseHours(dateTimes).Build();
+                Course course = new CourseBuilder().WithName(txtCourseTitle.Text).WithCode(txtCourseCode.Text).WithCredits(courseCredit).WithPriority(coursePriority).WithSchedule(new CourseSchedule(times)).Build();
                 AccountController.account.addCourse(course);
                 
                 Clear();
