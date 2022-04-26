@@ -157,15 +157,10 @@ namespace Study_Buddy.Presentation.View
             }
         }
 
-        private void EditCourseBox_Load(object sender, EventArgs e)
-        {
-            LoadCourses();
-        }
-
-        public void LoadCourses()
+        public void LoadCourses(List<Course> courses)
         {
             courseListBox.Items.Clear();
-            foreach (Course c in AccountController.account.courses)
+            foreach (Course c in courses)
             {
                 courseListBox.Items.Add(c.name);
             }
@@ -445,20 +440,21 @@ namespace Study_Buddy.Presentation.View
         {
             //Bubble event to parent form
             this.StatusUpdated(this.courseListBox.Text, new EventArgs());
+        }
 
-            //TODO: move this logic to parent form
-            Course course = AccountController.account.getCourseByName(courseListBox.Text);
+        public void UpdateData(Course course)
+        {
             if (course != null)
             {
-                this.txtCourseTitle.Text = course.name;
+                txtCourseTitle.Text = course.name;
                 this.txtCoursePriority.Text = course.priority.ToString();
                 this.txtCourseCredits.Text = course.credits.ToString();
                 this.txtCourseCode.Text = course.code;
             }
             int index = 0;
-            foreach(List<DateTime> days in course.courseTimes)
+            /*foreach (List<DateTime> days in course.courseTimes)
             {
-                if(days != null)
+                if (days != null)
                 {
                     if (index == 0)
                     {
@@ -504,7 +500,7 @@ namespace Study_Buddy.Presentation.View
                     }
                 }
                 index++;
-            }
+            }*/
         }
     }
 }
