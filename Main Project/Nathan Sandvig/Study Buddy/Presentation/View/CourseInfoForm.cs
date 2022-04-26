@@ -103,7 +103,7 @@ namespace Study_Buddy.Presentation.View
             gradesChart.Series[gradesSeriesID].ChartType =
                 System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             gradesChart.Series[gradesSeriesID].MarkerStyle =
-                System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+                System.Windows.Forms.DataVisualization.Charting.MarkerStyle.None;
             gradesChart.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
             gradesChart.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
             gradesChart.ChartAreas[0].AxisX.Interval = 30;  //TODO Figure out how to label this properly
@@ -134,7 +134,7 @@ namespace Study_Buddy.Presentation.View
             hoursLoggedChart.Series[hoursSeriesID].ChartType =
                 System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
             hoursLoggedChart.Series[hoursSeriesID].MarkerStyle =
-                System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+                System.Windows.Forms.DataVisualization.Charting.MarkerStyle.None;
             hoursLoggedChart.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
             hoursLoggedChart.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
             hoursLoggedChart.ChartAreas[0].AxisX.Interval = 1;  //TODO Figure out how to label this properly
