@@ -30,7 +30,7 @@ namespace Study_Buddy.Presentation.View
         // displayed on the hoursLogged chart
         //---------------------------------------------------------------------
         private CourseInfoFormController controller;
-        private Course currentCourse;
+        public Course currentCourse { get; set; }
         private string gradesSeriesID;
         private string hoursSeriesID;
 
@@ -44,18 +44,24 @@ namespace Study_Buddy.Presentation.View
             InitializeComponent();
             this.Size = new System.Drawing.Size(1366, 768);
 
+            //Draw courses on the userCourseList
             this.userCourseList1.DrawCourses(AccountController.account.courses);
 
-            this.currentCourse = new Course();
+            this.nav1.SetCurrentForm(this);
+            this.userCourseList1.ChangePanelWidth(this.courseListPanel.Width);
+            this.userCourseList1.DynamicEvent_CourseButtonClicked += new EventHandler(Event_UserCourseListButtonClicked);
+        }
+        public void SetInfo()
+        {
+            this.currentCourse = controller.currentCourse;
             this.title = currentCourse.name;
             this.Text = title;
             this.mainHeader.Text = title;
-            this.nav1.SetCurrentForm(this);
+
+
             gradesSeriesID = "Your grades for " + currentCourse.name;
             hoursSeriesID = "Your study hours for week 0";
             gradesChart.Series.Add(gradesSeriesID);
-            this.userCourseList1.ChangePanelWidth(this.courseListPanel.Width);
-            this.userCourseList1.DynamicEvent_CourseButtonClicked += new EventHandler(Event_UserCourseListButtonClicked);
         }
 
         public void Event_UserCourseListButtonClicked(object sender, EventArgs e)
@@ -67,7 +73,7 @@ namespace Study_Buddy.Presentation.View
                     currentCourse = AccountController.account.courses[i];
             }
             //pass current course to controller
-            this.controller.course = currentCourse;
+            this.controller.currentCourse = currentCourse;
             this.controller.studyLog = currentCourse.hourLog;
             //Set display to match current course
             this.title = currentCourse.name;

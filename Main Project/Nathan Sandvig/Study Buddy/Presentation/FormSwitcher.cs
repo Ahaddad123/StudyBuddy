@@ -34,6 +34,7 @@ namespace Study_Buddy.Presentation
                 controller = new CourseInfoFormController(form, AccountController.account.courses[0], AccountController.account.courses[0].hourLog);
             }
             form.SetController(controller);
+            controller.SetCourseInfo();
             controller.DrawGradeGraph();
             controller.DrawStudyLogGraph();
             DateTime currTime = DateTime.Now;

@@ -13,8 +13,7 @@ namespace Study_Buddy.Presentation.View
 {
     public partial class UserCourseList : UserControl
     {
-        public Course currentCourse;
-
+        //Event that is "bubbled" to parent form for handling
         public EventHandler DynamicEvent_CourseButtonClicked;
         public UserCourseList()
         {
