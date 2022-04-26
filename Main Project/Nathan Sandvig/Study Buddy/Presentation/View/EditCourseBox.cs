@@ -11,20 +11,15 @@ using Study_Buddy.BusinessLogic;
 
 namespace Study_Buddy.Presentation.View
 {
-    public partial class AddCourseBox : UserControl
+    public partial class EditCourseBox : UserControl
     {
-<<<<<<< HEAD
-        private Dictionary<DayOfWeek, (String startTime, String endTime)> times;
-=======
         public EventHandler StatusUpdated;
->>>>>>> a88922516c0cc9711b00c38420143d4deea3f0aa
-        public AddCourseBox()
+        public EditCourseBox()
         {
             InitializeComponent();
 
             TimeSpan startingTime = new TimeSpan(0, 0, 0);
             DateTime startingDate = new DateTime(DateTime.MinValue.Ticks);
-
 
             for (int x = 0; x < 48; x++)
             {
@@ -162,6 +157,21 @@ namespace Study_Buddy.Presentation.View
             }
         }
 
+        private void EditCourseBox_Load(object sender, EventArgs e)
+        {
+            LoadCourses();
+        }
+
+        public void LoadCourses()
+        {
+            courseListBox.Items.Clear();
+            foreach (Course c in AccountController.account.courses)
+            {
+                courseListBox.Items.Add(c.name);
+            }
+
+        }
+
         private void butAddCourse_Click(object sender, EventArgs e)
         {
 
@@ -214,7 +224,7 @@ namespace Study_Buddy.Presentation.View
                 //If sunday times have values
                 if (!string.IsNullOrEmpty(comboBoxSunStart.Text) && !string.IsNullOrEmpty(comboBoxSunEnd.Text))
                 {
-
+                                  
                     //add course times for Sunday
                     if (DateTime.Parse(comboBoxSunStart.SelectedItem.ToString()) > DateTime.Parse(comboBoxSunEnd.SelectedItem.ToString()))
                     {
@@ -223,14 +233,11 @@ namespace Study_Buddy.Presentation.View
                     }
                     else
                     {
-                        times.Add(DayOfWeek.Sunday, (DateTime.Parse(comboBoxSunStart.SelectedItem.ToString()).ToString(), DateTime.Parse(comboBoxSunEnd.SelectedItem.ToString()).ToString()));
-
-
                         List<DateTime> sunday = new List<DateTime>();
                         sunday.Add(DateTime.Parse(comboBoxSunStart.SelectedItem.ToString()));
                         sunday.Add(DateTime.Parse(comboBoxSunEnd.SelectedItem.ToString()));
                         dateTimes.Add(sunday);
-                    }
+                    }  
                 }
                 else
                 {
@@ -238,8 +245,6 @@ namespace Study_Buddy.Presentation.View
                     valid = false;
                 }
             }
-            else
-                times.Add(DayOfWeek.Sunday, (null, null));
 
             //Check out if Monday checkbox is checked
             if (checkBoxMon.Checked)
@@ -256,8 +261,6 @@ namespace Study_Buddy.Presentation.View
                     }
                     else
                     {
-                        times.Add(DayOfWeek.Monday, (DateTime.Parse(comboBoxMonStart.SelectedItem.ToString()).ToString(), DateTime.Parse(comboBoxMonEnd.SelectedItem.ToString()).ToString()));
-
                         List<DateTime> monday = new List<DateTime>();
                         monday.Add(DateTime.Parse(comboBoxMonStart.SelectedItem.ToString()));
                         monday.Add(DateTime.Parse(comboBoxMonEnd.SelectedItem.ToString()));
@@ -270,8 +273,6 @@ namespace Study_Buddy.Presentation.View
                     valid = false;
                 }
             }
-            else
-                times.Add(DayOfWeek.Monday, (null, null));
 
             //Check out if Tuesday checkbox is checked
             if (checkBoxTue.Checked)
@@ -288,8 +289,6 @@ namespace Study_Buddy.Presentation.View
                     }
                     else
                     {
-                        times.Add(DayOfWeek.Tuesday, (DateTime.Parse(comboBoxTueStart.SelectedItem.ToString()).ToString(), DateTime.Parse(comboBoxTueEnd.SelectedItem.ToString()).ToString()));
-                        
                         List<DateTime> tuesday = new List<DateTime>();
                         tuesday.Add(DateTime.Parse(comboBoxTueStart.SelectedItem.ToString()));
                         tuesday.Add(DateTime.Parse(comboBoxTueEnd.SelectedItem.ToString()));
@@ -302,8 +301,6 @@ namespace Study_Buddy.Presentation.View
                     valid = false;
                 }
             }
-            else
-                times.Add(DayOfWeek.Tuesday, (null, null));
 
             //Check out if Wednesday checkbox is checked
             if (checkBoxWed.Checked)
@@ -320,8 +317,6 @@ namespace Study_Buddy.Presentation.View
                     }
                     else
                     {
-                        times.Add(DayOfWeek.Wednesday, (DateTime.Parse(comboBoxWedStart.SelectedItem.ToString()).ToString(), DateTime.Parse(comboBoxWedEnd.SelectedItem.ToString()).ToString()));
-
                         List<DateTime> wednesday = new List<DateTime>();
                         wednesday.Add(DateTime.Parse(comboBoxWedStart.SelectedItem.ToString()));
                         wednesday.Add(DateTime.Parse(comboBoxWedEnd.SelectedItem.ToString()));
@@ -334,8 +329,6 @@ namespace Study_Buddy.Presentation.View
                     valid = false;
                 }
             }
-            else
-                times.Add(DayOfWeek.Wednesday, (null, null));
 
             //Check out if Thursday checkbox is checked
             if (checkBoxThu.Checked)
@@ -352,8 +345,6 @@ namespace Study_Buddy.Presentation.View
                     }
                     else
                     {
-                        times.Add(DayOfWeek.Thursday, (DateTime.Parse(comboBoxThuStart.SelectedItem.ToString()).ToString(), DateTime.Parse(comboBoxThuEnd.SelectedItem.ToString()).ToString()));
-                        
                         List<DateTime> thursday = new List<DateTime>();
                         thursday.Add(DateTime.Parse(comboBoxThuStart.SelectedItem.ToString()));
                         thursday.Add(DateTime.Parse(comboBoxThuEnd.SelectedItem.ToString()));
@@ -366,8 +357,6 @@ namespace Study_Buddy.Presentation.View
                     valid = false;
                 }
             }
-            else
-                times.Add(DayOfWeek.Thursday, (null, null));
 
             //Check out if Friday checkbox is checked
             if (checkBoxFri.Checked)
@@ -384,8 +373,6 @@ namespace Study_Buddy.Presentation.View
                     }
                     else
                     {
-                        times.Add(DayOfWeek.Friday, (DateTime.Parse(comboBoxFriStart.SelectedItem.ToString()).ToString(), DateTime.Parse(comboBoxFriEnd.SelectedItem.ToString()).ToString()));
-
                         List<DateTime> friday = new List<DateTime>();
                         friday.Add(DateTime.Parse(comboBoxFriStart.SelectedItem.ToString()));
                         friday.Add(DateTime.Parse(comboBoxFriEnd.SelectedItem.ToString()));
@@ -398,8 +385,6 @@ namespace Study_Buddy.Presentation.View
                     valid = false;
                 }
             }
-            else
-                times.Add(DayOfWeek.Friday, (null, null));
 
             //Check out if Saturday checkbox is checked
             if (checkBoxSat.Checked)
@@ -416,8 +401,6 @@ namespace Study_Buddy.Presentation.View
                     }
                     else
                     {
-                        times.Add(DayOfWeek.Saturday, (DateTime.Parse(comboBoxSatStart.SelectedItem.ToString()).ToString(), DateTime.Parse(comboBoxSatEnd.SelectedItem.ToString()).ToString()));
-
                         List<DateTime> saturday = new List<DateTime>();
                         saturday.Add(DateTime.Parse(comboBoxSatStart.SelectedItem.ToString()));
                         saturday.Add(DateTime.Parse(comboBoxSatEnd.SelectedItem.ToString()));
@@ -430,17 +413,13 @@ namespace Study_Buddy.Presentation.View
                     valid = false;
                 }
             }
-            else
-                times.Add(DayOfWeek.Saturday, (null, null));
 
             //All the checkboxes checked out
             if (valid)
             {
-                CourseSchedule course1 = new CourseSchedule(times);
                 Course course = new CourseBuilder().WithName(txtCourseTitle.Text).WithCode(txtCourseCode.Text).WithCredits(courseCredit).WithPriority(coursePriority).WithCourseHours(dateTimes).Build();
+                AccountController.account.removeCourse(courseListBox.Text);
                 AccountController.account.addCourse(course);
-<<<<<<< HEAD
-                course1.addCourseTimes(times);
                 nameErrorMessageLabel.Text = "";
                 CodeErrorMessageLabel.Text = "";
                 PriorityErrorMessageLabel.Text = "";
@@ -459,38 +438,69 @@ namespace Study_Buddy.Presentation.View
                 checkBoxThu.Checked = false;
                 checkBoxFri.Checked = false;
                 checkBoxSat.Checked = false;
-=======
-                Clear();
->>>>>>> a88922516c0cc9711b00c38420143d4deea3f0aa
-                successLabel.Text = "Succesfully added " + course.name;
             }
         }
-        public void Clear()
-        {
-            txtCourseCode.Text = "";
-            txtCourseCredits.Text = "";
-            txtCoursePriority.Text = "";
-            txtCourseTitle.Text = "";
-            nameErrorMessageLabel.Text = "";
-            CodeErrorMessageLabel.Text = "";
-            PriorityErrorMessageLabel.Text = "";
-            creditsErrorMessageLabel.Text = "";
-            sunErrorMessageLabel.Text = "";
-            monErrorMessageLabel.Text = "";
-            tueErrorMessageLabel.Text = "";
-            wedErrorMessageLabel.Text = "";
-            thuErrorMessageLabel.Text = "";
-            friErrorMessageLabel.Text = "";
-            satErrorMessageLabel.Text = "";
-            successLabel.Text = "";
-            checkBoxSun.Checked = false;
-            checkBoxMon.Checked = false;
-            checkBoxTue.Checked = false;
-            checkBoxWed.Checked = false;
-            checkBoxThu.Checked = false;
-            checkBoxFri.Checked = false;
-            checkBoxSat.Checked = false;
 
+        private void removeCourseButton_Click(object sender, EventArgs e)
+        {
+            Course course = AccountController.account.getCourseByName(courseListBox.Text);
+            if (course != null)
+            {
+                this.txtCourseTitle.Text = course.name;
+                this.txtCoursePriority.Text = course.priority.ToString();
+                this.txtCourseCredits.Text = course.credits.ToString();
+                this.txtCourseCode.Text = course.code;
+            }
+            int index = 0;
+            foreach(List<DateTime> days in course.courseTimes)
+            {
+                if(days != null)
+                {
+                    if (index == 0)
+                    {
+                        checkBoxSun.Checked = true;
+                        comboBoxSunStart.SelectedIndex = days.ElementAt(0).Hour;
+                        comboBoxSunEnd.SelectedIndex = days.ElementAt(1).Hour;
+                    }
+                    else if (index == 1)
+                    {
+                        checkBoxMon.Checked = true;
+                        comboBoxMonStart.SelectedIndex = days.ElementAt(0).Hour;
+                        comboBoxMonEnd.SelectedIndex = days.ElementAt(1).Hour;
+                    }
+                    else if (index == 2)
+                    {
+                        checkBoxTue.Checked = true;
+                        comboBoxTueStart.SelectedIndex = days.ElementAt(0).Hour;
+                        comboBoxTueEnd.SelectedIndex = days.ElementAt(1).Hour;
+                    }
+                    else if (index == 3)
+                    {
+                        checkBoxWed.Checked = true;
+                        comboBoxWedStart.SelectedIndex = days.ElementAt(0).Hour;
+                        comboBoxWedEnd.SelectedIndex = days.ElementAt(1).Hour;
+                    }
+                    else if (index == 4)
+                    {
+                        checkBoxThu.Checked = true;
+                        comboBoxThuStart.SelectedIndex = days.ElementAt(0).Hour;
+                        comboBoxThuEnd.SelectedIndex = days.ElementAt(1).Hour;
+                    }
+                    else if (index == 5)
+                    {
+                        checkBoxFri.Checked = true;
+                        comboBoxFriStart.SelectedIndex = days.ElementAt(0).Hour;
+                        comboBoxFriEnd.SelectedIndex = days.ElementAt(1).Hour;
+                    }
+                    else if (index == 6)
+                    {
+                        checkBoxSat.Checked = true;
+                        comboBoxSatStart.SelectedIndex = days.ElementAt(0).Hour;
+                        comboBoxSatEnd.SelectedIndex = days.ElementAt(1).Hour;
+                    }
+                }
+                index++;
+            }
         }
     }
 }

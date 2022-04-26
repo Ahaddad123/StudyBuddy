@@ -33,7 +33,7 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(423, 750);
@@ -46,7 +46,7 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "UserCourseList";
-            this.Size = new System.Drawing.Size(423, 750);
+            this.Size = new System.Drawing.Size(338, 600);
             this.Load += new System.EventHandler(this.UserCourseList_Load);
             this.ResumeLayout(false);
 

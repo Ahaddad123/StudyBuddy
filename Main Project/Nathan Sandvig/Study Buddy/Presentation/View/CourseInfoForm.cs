@@ -56,6 +56,7 @@ namespace Study_Buddy.Presentation.View
             gradesSeriesID = "Your grades for " + course.name;
             hoursSeriesID = "Your study hours for week 0";
             gradesChart.Series.Add(gradesSeriesID);
+            this.userCourseList1.ChangePanelWidth(this.courseListPanel.Width);
             this.userCourseList1.StatusUpdated += new EventHandler(MyEventHandlerFunction_StatusUpdated);
         }
 
@@ -63,7 +64,12 @@ namespace Study_Buddy.Presentation.View
         {
             this.course = this.userCourseList1.currentCourse;
             this.title = course.name;
-            this.mainHeader.Text = course.name;    
+            this.mainHeader.Text = course.name;
+            Course newCourse = this.userCourseList1.currentCourse;
+            this.controller.course = newCourse;
+            this.controller.studyLog = newCourse.hourLog;
+            
+            controller.DrawGradeGraph();
         }
 
         //---------------------------------------------------------------------

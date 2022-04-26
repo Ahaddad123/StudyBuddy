@@ -24,7 +24,15 @@ namespace Study_Buddy.Presentation
             CourseInfoForm form = new CourseInfoForm();
             form.StartPosition = FormStartPosition.Manual;
             //TODO, pass in actual course and studyLog
-            CourseInfoFormController controller = new CourseInfoFormController(form, new Course(), new StudyLog());
+            CourseInfoFormController controller;
+            if (AccountController.account.courses.Count == 0)
+            {
+                controller = new CourseInfoFormController(form, new Course(), new StudyLog());
+            }
+            else
+            {
+                controller = new CourseInfoFormController(form, AccountController.account.courses[0], AccountController.account.courses[0].hourLog);
+            }
             form.SetController(controller);
             controller.DrawGradeGraph();
             controller.DrawStudyLogGraph();

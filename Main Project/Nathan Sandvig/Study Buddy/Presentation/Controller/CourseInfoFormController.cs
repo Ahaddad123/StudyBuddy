@@ -23,8 +23,8 @@ namespace Study_Buddy.Presentation
         // weekID : the current week for which study data is being viewed.
         //---------------------------------------------------------------------
         //-------------------------------------------------------------------------
-        private Course course;
-        private StudyLog studyLog;
+        public Course course { get; set; }
+        public StudyLog studyLog { get; set; }
         private GradeGraph gradeGraph;
         private StudyLogGraph studyLogGraph;
         private int weekID;
@@ -39,7 +39,7 @@ namespace Study_Buddy.Presentation
             this.studyLog = studyLog;
             this.view = form;
             this.gradeGraph = new GradeGraph(this.course);
-            this.studyLogGraph = new StudyLogGraph(this.studyLog);
+            this.studyLogGraph = new StudyLogGraph(course.hourLog);
             view.SetController(this);
             weekID = 0;
         }

@@ -61,7 +61,7 @@ namespace Study_Buddy.Presentation
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            FormSwitcher.OpenUserInfoForm(currentForm);
+            //FormSwitcher.OpenUserInfoForm(currentForm);
         }
 
         private void btnAddDropCourse_Click(object sender, EventArgs e)

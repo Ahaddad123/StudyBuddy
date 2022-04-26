@@ -22,6 +22,19 @@ namespace Study_Buddy.Presentation.View
             InitializeComponent();
             this.MaximumSize = new System.Drawing.Size(1366, 768);
             this.Size = new System.Drawing.Size(1366, 768);
+            this.addCourseBox1.StatusUpdated += new EventHandler(ChildControlEvent_AddCourseBoxAddCourseButtonClicked);
+            this.userCourseList1.StatusUpdated += new EventHandler(ChildControlEvent_CourseListButtonClicked);
+        }
+
+        public void ChildControlEvent_CourseListButtonClicked(object sender, EventArgs e)
+        {
+            MessageBox.Show("CourseListButtonClicked");
+        }
+        public void ChildControlEvent_AddCourseBoxAddCourseButtonClicked(object sender, EventArgs e)
+        {
+            this.userCourseList1.UnDrawCourses();
+            this.userCourseList1.LoadCourses();
+            this.userCourseList1.DrawCourses();
         }
 
         public void SetController(FormController controller)
@@ -123,8 +136,8 @@ namespace Study_Buddy.Presentation.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AddCoursePopupForm form = new AddCoursePopupForm();
-            controller.OpenAddCoursePopup(form);
+            //Clear the old addCourse info
+            this.addCourseBox1.Clear();
         }
     }
 }

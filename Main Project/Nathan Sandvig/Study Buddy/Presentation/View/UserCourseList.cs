@@ -14,13 +14,14 @@ namespace Study_Buddy.Presentation.View
     public partial class UserCourseList : UserControl
     {
         private List<Course> courses;
-        public Course currentCourse { get; set; }
+        public Course currentCourse;
 
-        public EventHandler StatusUpdated { get; set; }
+        public EventHandler StatusUpdated;
         public UserCourseList()
         {
             //Get courses from account
-            courses = AccountController.account.courses;
+            courses = new List<Course>();
+            LoadCourses();
             //Current course defaults to first in list
             if (courses.Count > 0)
                 currentCourse = courses[0];
@@ -30,6 +31,12 @@ namespace Study_Buddy.Presentation.View
             InitializeComponent();
         }
 
+        public void LoadCourses()
+        {
+            //For whatever reason, the winform designer throws a hissy fit over this line of code, even though it runs perfectly fine.
+            //Comment it out to make the designer work. 
+            courses = AccountController.account.courses;
+        }
 
         public Button createCourseButton(Course course, int locationindex, int red, int green, int blue)
         {
@@ -41,18 +48,16 @@ namespace Study_Buddy.Presentation.View
             button.Name = course.name + "Btn";
             button.BackColor = Color.FromArgb(red, green, blue);
             button.Location = new Point(40, locationindex);
-            button.Width = Parent.Width;
+            button.Width = 250;
             button.Height = 50;
             button.FlatStyle = FlatStyle.Flat;
             button.Font = new Font("Arial", 14);
             button.ForeColor = Color.Navy;
             button.Click += new EventHandler(this.courseButtonClick);
-
-
             return button;
         }
 
-        //Dynamic event handler for each dynamically generated button
+        //Dynamic event handler for each dynamically generated button, changes the current course
         void courseButtonClick(object sender, EventArgs e)
         {
             Button currentButton = (Button)sender;
@@ -67,6 +72,21 @@ namespace Study_Buddy.Presentation.View
 
         private void UserCourseList_Load(object sender, EventArgs e)
         {
+            DrawCourses();
+        }
+
+        public void UnDrawCourses()
+        {
+            flowLayoutPanel1.Controls.Clear();
+        }
+
+        public void ChangePanelWidth(int width)
+        {
+            this.flowLayoutPanel1.Width = width;
+        }
+
+        public void DrawCourses()
+        {
             int red = 235;
             int green = 131;
             int blue = 131;
@@ -77,6 +97,7 @@ namespace Study_Buddy.Presentation.View
                 //Create a label for the course and add it to the parent
                 Course course = courses[i];
                 Button button = createCourseButton(course, locationindex, red, green, blue);
+                button.Width = flowLayoutPanel1.Width - 20;
                 this.flowLayoutPanel1.Controls.Add(button);
 
                 locationindex += 27;
