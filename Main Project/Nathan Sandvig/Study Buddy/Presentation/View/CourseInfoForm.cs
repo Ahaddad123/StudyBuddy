@@ -56,6 +56,7 @@ namespace Study_Buddy.Presentation.View
             gradesSeriesID = "Your grades for " + course.name;
             hoursSeriesID = "Your study hours for week 0";
             gradesChart.Series.Add(gradesSeriesID);
+            this.userCourseList1.ChangePanelWidth(this.courseListPanel.Width);
             this.userCourseList1.StatusUpdated += new EventHandler(MyEventHandlerFunction_StatusUpdated);
         }
 

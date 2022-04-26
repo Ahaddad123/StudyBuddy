@@ -207,10 +207,10 @@
             // userCourseList1
             // 
             this.userCourseList1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.userCourseList1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.userCourseList1.Location = new System.Drawing.Point(3, 53);
             this.userCourseList1.Name = "userCourseList1";
             this.userCourseList1.Size = new System.Drawing.Size(332, 569);
+            this.userCourseList1.Width = this.courseListPanel.Width;
             this.userCourseList1.TabIndex = 1;
             // 
             // CourseInfoForm

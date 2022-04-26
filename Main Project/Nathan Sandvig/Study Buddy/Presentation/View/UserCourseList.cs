@@ -57,7 +57,7 @@ namespace Study_Buddy.Presentation.View
             return button;
         }
 
-        //Dynamic event handler for each dynamically generated button
+        //Dynamic event handler for each dynamically generated button, changes the current course
         void courseButtonClick(object sender, EventArgs e)
         {
             Button currentButton = (Button)sender;
@@ -80,6 +80,11 @@ namespace Study_Buddy.Presentation.View
             flowLayoutPanel1.Controls.Clear();
         }
 
+        public void ChangePanelWidth(int width)
+        {
+            this.flowLayoutPanel1.Width = width;
+        }
+
         public void DrawCourses()
         {
             int red = 235;
@@ -92,7 +97,7 @@ namespace Study_Buddy.Presentation.View
                 //Create a label for the course and add it to the parent
                 Course course = courses[i];
                 Button button = createCourseButton(course, locationindex, red, green, blue);
-                button.Width = flowLayoutPanel1.Width - 5;
+                button.Width = flowLayoutPanel1.Width - 20;
                 this.flowLayoutPanel1.Controls.Add(button);
 
                 locationindex += 27;
