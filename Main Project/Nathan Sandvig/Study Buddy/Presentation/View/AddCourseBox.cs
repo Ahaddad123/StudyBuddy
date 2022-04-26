@@ -13,16 +13,12 @@ namespace Study_Buddy.Presentation.View
 {
     public partial class AddCourseBox : UserControl
     {
-<<<<<<< HEAD
         private Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)> times;
-=======
-        private Dictionary<DayOfWeek, (String startTime, String endTime)> times;
->>>>>>> 826b79ca9fde0a90b0bc4d0a9fbf39548a1495f6
         public EventHandler StatusUpdated;
         public AddCourseBox()
         {
             InitializeComponent();
-            times = new Dictionary<DayOfWeek, (String, String)>();
+            times = new Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)>();
 
             TimeSpan startingTime = new TimeSpan(0, 0, 0);
             DateTime startingDate = new DateTime(DateTime.MinValue.Ticks);
@@ -425,34 +421,13 @@ namespace Study_Buddy.Presentation.View
             if (valid)
             {
                 CourseSchedule course1 = new CourseSchedule(times);
+                course1.addCourseTime();
 
                 Course course = new CourseBuilder().WithName(txtCourseTitle.Text).WithCode(txtCourseCode.Text).WithCredits(courseCredit).WithPriority(coursePriority).WithCourseHours(dateTimes).Build();
                 AccountController.account.addCourse(course);
-<<<<<<< HEAD
                 
-                nameErrorMessageLabel.Text = "";
-                CodeErrorMessageLabel.Text = "";
-                PriorityErrorMessageLabel.Text = "";
-                creditsErrorMessageLabel.Text = "";
-                sunErrorMessageLabel.Text = "";
-                monErrorMessageLabel.Text = "";
-                tueErrorMessageLabel.Text = "";
-                wedErrorMessageLabel.Text = "";
-                thuErrorMessageLabel.Text = "";
-                friErrorMessageLabel.Text = "";
-                satErrorMessageLabel.Text = "";
-                checkBoxSun.Checked = false;
-                checkBoxMon.Checked = false;
-                checkBoxTue.Checked = false;
-                checkBoxWed.Checked = false;
-                checkBoxThu.Checked = false;
-                checkBoxFri.Checked = false;
-                checkBoxSat.Checked = false;
                 Clear();
-=======
-                Clear();
-                times = new Dictionary<DayOfWeek, (string startTime, string endTime)>();
->>>>>>> 826b79ca9fde0a90b0bc4d0a9fbf39548a1495f6
+                times = new Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)>();
                 successLabel.Text = "Succesfully added " + course.name;
                 this.StatusUpdated(sender, new EventArgs());
             }
