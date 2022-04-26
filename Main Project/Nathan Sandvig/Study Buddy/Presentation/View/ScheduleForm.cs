@@ -70,17 +70,17 @@ namespace Study_Buddy.Presentation
             for (int i = 0; i < controller.getCourses().Count; i++)
             {
                 Course course = controller.getCourses()[i];
-                Label label = controller.createCourseLabel(course, red, green, blue);
                 //int index = 0;
-                /*for(int j = 0; j < 7; j++)
+                for(int j = 0; j < 7; j++)
                 {
                     DayOfWeek day = (DayOfWeek)j;
                     if (course.schedule.times.ContainsKey(day))
                     {
-                        this.tableLayoutPanel2.Controls.Add(label, j + 1, course.schedule.times[day].startTime.Hour - 6);
+                        Label label = controller.createCourseLabel(course, red, green, blue);
+                        this.tableLayoutPanel2.Controls.Add(label, j + 1, course.schedule.times[day].startTime.Hour-6);
                         this.tableLayoutPanel2.SetRowSpan(label, course.schedule.times[day].endTime.Hour - course.schedule.times[day].startTime.Hour);
                     }
-                }*/
+                }
                 /*foreach(List<DateTime> days in course.courseTimes)
                 {
                     if(days != null)

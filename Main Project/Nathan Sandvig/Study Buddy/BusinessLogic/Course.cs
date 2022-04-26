@@ -34,7 +34,6 @@ namespace Study_Buddy.BusinessLogic
         public string code { get; set; }
         public double priority { get; set; }
         public double credits { get; set; }
-        public List<List<DateTime>> courseTimes { get; set; }
         public Dictionary<DateTime, Double> datesAndAverageGrades { get; set; }
 
         public CourseSchedule schedule { get; set; }
@@ -53,7 +52,6 @@ namespace Study_Buddy.BusinessLogic
             this.code = "CourseCode";
             this.priority = -1.0;
             this.credits = 3.0;
-            courseTimes = new List<List<DateTime>> { new List<DateTime>() };
         }
 
         //---------------------------------------------------------------------
@@ -70,7 +68,7 @@ namespace Study_Buddy.BusinessLogic
             this.code = builder.code;
             this.priority = builder.priority;
             this.credits = builder.credits;
-            courseTimes = new List<List<DateTime>> { new List<DateTime>() };
+            this.schedule = builder.schedule;
         }
 
         //---------------------------------------------------------------------

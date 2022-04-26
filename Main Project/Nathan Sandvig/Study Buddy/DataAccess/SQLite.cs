@@ -462,8 +462,66 @@ namespace Study_Buddy.DataAccess
         public void addTimesCourse(Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)> times, string courseName) 
         {
             string command = "INSERT INTO ClassTimes(CourseID, SundayStart, SundayEnd, MondayStart, MondayEnd, TuesdayStart, TuesdayEnd, WednesdayStart, WednesdayEnd, ThursdayStart, ThursdayEnd, FridayStart, FridayEnd, SaturdayStart, SaturdayEnd) VALUES ('course', 'SundayStart','SundayEnd', 'MondayStart', 'MondayEnd', 'TuesdayStart', 'TuesdayEnd', 'WednesdayStart', 'WednesdayEnd', 'ThursdayStart', 'ThursdayEnd', 'FridayStart', 'FridayEnd', 'SaturdayStart', 'SaturdayEnd')";
-            //string SundayStart = times.[DayOfWeek.Sunday].startTime;
-            //string command1 = command.Replace("course", courseName).Replace("SundayStart", times.[DayOfWeek.Sunday].startTime).Replace("SundayEnd", times.[DayOfWeek.Sunday].endTime).Replace("MondayStart", times.[DayOfWeek.Monday].startTime).Replace("MondayEnd", times.[DayOfWeek.Monday].endTime).Replace("TuesdayStart", times.[DayOfWeek.Tuesday].startTime).Replace("TuesdayEnd", times.[DayOfWeek.Tuesday].endTime).Replace("WednesdayStart", times.[DayOfWeek.Wednesday].startTime).Replace("WednesdayEnd", times.[DayOfWeek.Wednesday].endTime).Replace("ThursdayStart", times.[DayOfWeek.Thursday].startTime).Replace("ThursdayEnd", times.[DayOfWeek.Thursday].startTime).Replace("FridayStart", times.[DayOfWeek.Friday].startTime).Replace("FridayEnd", times.[DayOfWeek.Friday].endTime).Replace("SaturdayStart", times.[DayOfWeek.Saturday].startTime).Replace("SaturdayEnd", times.[DayOfWeek.Saturday].endTime);
+            string command1 = command;
+
+            if (times.ContainsKey(DayOfWeek.Sunday))
+            {
+                command1 = command.Replace("SundayStart", (times[DayOfWeek.Sunday].startTime).ToString()).Replace("SundayEnd", (times[DayOfWeek.Sunday].endTime).ToString());
+            }
+            else 
+            {
+                command1 = command.Replace("SundayStart", null).Replace("SundayEnd", null);
+            }
+
+            if (times.ContainsKey(DayOfWeek.Monday)) {
+                command1 = command.Replace("MondayStart", (times[DayOfWeek.Monday].startTime).ToString()).Replace("MondayEnd", (times[DayOfWeek.Monday].endTime).ToString());
+            }
+            else
+            {
+                command1 = command.Replace("MondayStart", null).Replace("MondayEnd", null);
+            }
+
+            if (times.ContainsKey(DayOfWeek.Tuesday)) {
+                command1 = command.Replace("TuesdayStart", (times[DayOfWeek.Tuesday].startTime).ToString()).Replace("TuesdayEnd", (times[DayOfWeek.Tuesday].endTime).ToString());
+            }
+            else
+            {
+                command1 = command.Replace("TuesdayStart", null).Replace("TuesdayEnd", null);
+            }
+
+            if (times.ContainsKey(DayOfWeek.Wednesday)) {
+                command1 = command.Replace("WednesdayStart", (times[DayOfWeek.Wednesday].startTime).ToString()).Replace("WednesdayEnd", (times[DayOfWeek.Wednesday].endTime).ToString());
+            }
+            else
+            {
+                command1 = command.Replace("WednesdayStart", null).Replace("WednesdayEnd", null);
+            }
+
+            if (times.ContainsKey(DayOfWeek.Thursday)) {
+                command1 = command.Replace("ThursdayStart", (times[DayOfWeek.Thursday].startTime).ToString()).Replace("ThursdayEnd", (times[DayOfWeek.Thursday].endTime).ToString());
+            }
+            else
+            {
+                command1 = command.Replace("ThursdayStart", null).Replace("ThursdayEnd", null);
+            }
+
+            if (times.ContainsKey(DayOfWeek.Friday)) {
+                command1 = command.Replace("FridayStart", (times[DayOfWeek.Friday].startTime).ToString()).Replace("FridayEnd", (times[DayOfWeek.Friday].endTime).ToString());
+            }
+            else
+            {
+                command1 = command.Replace("FridayStart", null).Replace("FridayEnd", null);
+            }
+
+            if (times.ContainsKey(DayOfWeek.Saturday)) {
+                command1 = command.Replace("SaturdayStart", (times[DayOfWeek.Saturday].startTime).ToString()).Replace("SaturdayEnd", (times[DayOfWeek.Saturday].endTime).ToString());
+            }
+            else
+            {
+                command1 = command.Replace("SaturdayStart", null).Replace("SaturdayEnd", null);
+            }
+
+            //command.Replace("course", courseName).Replace("SundayStart", (times[DayOfWeek.Sunday].startTime).ToString()).Replace("SundayEnd", (times[DayOfWeek.Sunday].endTime).ToString()).Replace("MondayStart", (times[DayOfWeek.Monday].startTime).ToString()).Replace("MondayEnd", (times[DayOfWeek.Monday].endTime).ToString()).Replace("TuesdayStart", (times[DayOfWeek.Tuesday].startTime).ToString()).Replace("TuesdayEnd", (times[DayOfWeek.Tuesday].endTime).ToString()).Replace("WednesdayStart", (times[DayOfWeek.Wednesday].startTime).ToString()).Replace("WednesdayEnd", (times[DayOfWeek.Wednesday].endTime).ToString()).Replace("ThursdayStart", (times[DayOfWeek.Thursday].startTime).ToString()).Replace("ThursdayEnd", (times[DayOfWeek.Thursday].startTime).ToString()).Replace("FridayStart", (times[DayOfWeek.Friday].startTime).ToString()).Replace("FridayEnd", (times[DayOfWeek.Friday].endTime).ToString()).Replace("SaturdayStart", (times[DayOfWeek.Saturday].startTime).ToString()).Replace("SaturdayEnd", (times[DayOfWeek.Saturday].endTime).ToString());
         }
     }
 }
