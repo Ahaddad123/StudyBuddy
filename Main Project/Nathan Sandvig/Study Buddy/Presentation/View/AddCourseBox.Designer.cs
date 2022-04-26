@@ -81,7 +81,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(91, 59);
+            this.label2.Location = new System.Drawing.Point(6, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 23);
             this.label2.TabIndex = 0;
@@ -92,7 +92,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(91, 123);
+            this.label3.Location = new System.Drawing.Point(6, 123);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 23);
             this.label3.TabIndex = 1;
@@ -103,7 +103,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(91, 185);
+            this.label5.Location = new System.Drawing.Point(6, 185);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 23);
             this.label5.TabIndex = 3;
@@ -114,7 +114,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(91, 245);
+            this.label6.Location = new System.Drawing.Point(6, 245);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 23);
             this.label6.TabIndex = 4;
@@ -123,7 +123,7 @@
             // txtCourseTitle
             // 
             this.txtCourseTitle.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCourseTitle.Location = new System.Drawing.Point(181, 59);
+            this.txtCourseTitle.Location = new System.Drawing.Point(96, 59);
             this.txtCourseTitle.Name = "txtCourseTitle";
             this.txtCourseTitle.Size = new System.Drawing.Size(218, 30);
             this.txtCourseTitle.TabIndex = 5;
@@ -131,7 +131,7 @@
             // txtCourseCode
             // 
             this.txtCourseCode.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCourseCode.Location = new System.Drawing.Point(181, 124);
+            this.txtCourseCode.Location = new System.Drawing.Point(96, 124);
             this.txtCourseCode.Name = "txtCourseCode";
             this.txtCourseCode.Size = new System.Drawing.Size(125, 30);
             this.txtCourseCode.TabIndex = 6;
@@ -139,7 +139,7 @@
             // txtCoursePriority
             // 
             this.txtCoursePriority.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCoursePriority.Location = new System.Drawing.Point(181, 186);
+            this.txtCoursePriority.Location = new System.Drawing.Point(96, 186);
             this.txtCoursePriority.Name = "txtCoursePriority";
             this.txtCoursePriority.Size = new System.Drawing.Size(125, 30);
             this.txtCoursePriority.TabIndex = 7;
@@ -147,7 +147,7 @@
             // txtCourseCredits
             // 
             this.txtCourseCredits.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCourseCredits.Location = new System.Drawing.Point(181, 245);
+            this.txtCourseCredits.Location = new System.Drawing.Point(96, 245);
             this.txtCourseCredits.Name = "txtCourseCredits";
             this.txtCourseCredits.Size = new System.Drawing.Size(125, 30);
             this.txtCourseCredits.TabIndex = 8;
@@ -158,7 +158,7 @@
             this.butAddCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butAddCourse.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butAddCourse.ForeColor = System.Drawing.Color.Navy;
-            this.butAddCourse.Location = new System.Drawing.Point(826, 451);
+            this.butAddCourse.Location = new System.Drawing.Point(655, 451);
             this.butAddCourse.Name = "butAddCourse";
             this.butAddCourse.Size = new System.Drawing.Size(98, 36);
             this.butAddCourse.TabIndex = 9;
@@ -171,7 +171,7 @@
             this.nameErrorMessageLabel.AutoSize = true;
             this.nameErrorMessageLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
-            this.nameErrorMessageLabel.Location = new System.Drawing.Point(177, 92);
+            this.nameErrorMessageLabel.Location = new System.Drawing.Point(92, 92);
             this.nameErrorMessageLabel.Name = "nameErrorMessageLabel";
             this.nameErrorMessageLabel.Size = new System.Drawing.Size(0, 19);
             this.nameErrorMessageLabel.TabIndex = 10;
@@ -181,7 +181,7 @@
             this.PriorityErrorMessageLabel.AutoSize = true;
             this.PriorityErrorMessageLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PriorityErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
-            this.PriorityErrorMessageLabel.Location = new System.Drawing.Point(177, 219);
+            this.PriorityErrorMessageLabel.Location = new System.Drawing.Point(92, 219);
             this.PriorityErrorMessageLabel.Name = "PriorityErrorMessageLabel";
             this.PriorityErrorMessageLabel.Size = new System.Drawing.Size(0, 19);
             this.PriorityErrorMessageLabel.TabIndex = 11;
@@ -191,7 +191,7 @@
             this.creditsErrorMessageLabel.AutoSize = true;
             this.creditsErrorMessageLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.creditsErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
-            this.creditsErrorMessageLabel.Location = new System.Drawing.Point(177, 278);
+            this.creditsErrorMessageLabel.Location = new System.Drawing.Point(92, 278);
             this.creditsErrorMessageLabel.Name = "creditsErrorMessageLabel";
             this.creditsErrorMessageLabel.Size = new System.Drawing.Size(0, 19);
             this.creditsErrorMessageLabel.TabIndex = 12;
@@ -201,7 +201,7 @@
             this.CodeErrorMessageLabel.AutoSize = true;
             this.CodeErrorMessageLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CodeErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
-            this.CodeErrorMessageLabel.Location = new System.Drawing.Point(177, 157);
+            this.CodeErrorMessageLabel.Location = new System.Drawing.Point(92, 157);
             this.CodeErrorMessageLabel.Name = "CodeErrorMessageLabel";
             this.CodeErrorMessageLabel.Size = new System.Drawing.Size(0, 19);
             this.CodeErrorMessageLabel.TabIndex = 13;
@@ -213,7 +213,7 @@
             this.successLabel.ForeColor = System.Drawing.Color.White;
             this.successLabel.Location = new System.Drawing.Point(91, 464);
             this.successLabel.Name = "successLabel";
-            this.successLabel.Size = new System.Drawing.Size(0, 29);
+            this.successLabel.Size = new System.Drawing.Size(0, 23);
             this.successLabel.TabIndex = 14;
             // 
             // groupBox1
@@ -274,7 +274,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(91, 18);
+            this.label4.Location = new System.Drawing.Point(6, 18);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(163, 26);
             this.label4.TabIndex = 46;
@@ -285,7 +285,7 @@
             this.sunErrorMessageLabel.AutoSize = true;
             this.sunErrorMessageLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sunErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
-            this.sunErrorMessageLabel.Location = new System.Drawing.Point(680, 88);
+            this.sunErrorMessageLabel.Location = new System.Drawing.Point(509, 92);
             this.sunErrorMessageLabel.Name = "sunErrorMessageLabel";
             this.sunErrorMessageLabel.Size = new System.Drawing.Size(0, 19);
             this.sunErrorMessageLabel.TabIndex = 45;
@@ -295,7 +295,7 @@
             this.tueErrorMessageLabel.AutoSize = true;
             this.tueErrorMessageLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tueErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
-            this.tueErrorMessageLabel.Location = new System.Drawing.Point(680, 199);
+            this.tueErrorMessageLabel.Location = new System.Drawing.Point(509, 203);
             this.tueErrorMessageLabel.Name = "tueErrorMessageLabel";
             this.tueErrorMessageLabel.Size = new System.Drawing.Size(0, 19);
             this.tueErrorMessageLabel.TabIndex = 44;
@@ -305,7 +305,7 @@
             this.wedErrorMessageLabel.AutoSize = true;
             this.wedErrorMessageLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wedErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
-            this.wedErrorMessageLabel.Location = new System.Drawing.Point(680, 255);
+            this.wedErrorMessageLabel.Location = new System.Drawing.Point(509, 259);
             this.wedErrorMessageLabel.Name = "wedErrorMessageLabel";
             this.wedErrorMessageLabel.Size = new System.Drawing.Size(0, 19);
             this.wedErrorMessageLabel.TabIndex = 43;
@@ -315,7 +315,7 @@
             this.thuErrorMessageLabel.AutoSize = true;
             this.thuErrorMessageLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thuErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
-            this.thuErrorMessageLabel.Location = new System.Drawing.Point(680, 311);
+            this.thuErrorMessageLabel.Location = new System.Drawing.Point(509, 315);
             this.thuErrorMessageLabel.Name = "thuErrorMessageLabel";
             this.thuErrorMessageLabel.Size = new System.Drawing.Size(0, 19);
             this.thuErrorMessageLabel.TabIndex = 42;
@@ -325,7 +325,7 @@
             this.friErrorMessageLabel.AutoSize = true;
             this.friErrorMessageLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.friErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
-            this.friErrorMessageLabel.Location = new System.Drawing.Point(680, 367);
+            this.friErrorMessageLabel.Location = new System.Drawing.Point(509, 371);
             this.friErrorMessageLabel.Name = "friErrorMessageLabel";
             this.friErrorMessageLabel.Size = new System.Drawing.Size(0, 19);
             this.friErrorMessageLabel.TabIndex = 41;
@@ -345,7 +345,7 @@
             this.monErrorMessageLabel.AutoSize = true;
             this.monErrorMessageLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.monErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
-            this.monErrorMessageLabel.Location = new System.Drawing.Point(680, 146);
+            this.monErrorMessageLabel.Location = new System.Drawing.Point(509, 150);
             this.monErrorMessageLabel.Name = "monErrorMessageLabel";
             this.monErrorMessageLabel.Size = new System.Drawing.Size(0, 19);
             this.monErrorMessageLabel.TabIndex = 39;
@@ -355,7 +355,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(535, 14);
+            this.label1.Location = new System.Drawing.Point(364, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(186, 26);
             this.label1.TabIndex = 38;
@@ -370,7 +370,7 @@
             this.comboBoxSunEnd.ForeColor = System.Drawing.Color.Navy;
             this.comboBoxSunEnd.FormattingEnabled = true;
             this.comboBoxSunEnd.ItemHeight = 23;
-            this.comboBoxSunEnd.Location = new System.Drawing.Point(807, 54);
+            this.comboBoxSunEnd.Location = new System.Drawing.Point(636, 58);
             this.comboBoxSunEnd.Name = "comboBoxSunEnd";
             this.comboBoxSunEnd.Size = new System.Drawing.Size(117, 31);
             this.comboBoxSunEnd.TabIndex = 37;
@@ -385,7 +385,7 @@
             this.comboBoxFriEnd.ForeColor = System.Drawing.Color.Navy;
             this.comboBoxFriEnd.FormattingEnabled = true;
             this.comboBoxFriEnd.ItemHeight = 23;
-            this.comboBoxFriEnd.Location = new System.Drawing.Point(807, 332);
+            this.comboBoxFriEnd.Location = new System.Drawing.Point(636, 336);
             this.comboBoxFriEnd.Name = "comboBoxFriEnd";
             this.comboBoxFriEnd.Size = new System.Drawing.Size(117, 31);
             this.comboBoxFriEnd.TabIndex = 36;
@@ -400,7 +400,7 @@
             this.comboBoxSatEnd.ForeColor = System.Drawing.Color.Navy;
             this.comboBoxSatEnd.FormattingEnabled = true;
             this.comboBoxSatEnd.ItemHeight = 23;
-            this.comboBoxSatEnd.Location = new System.Drawing.Point(807, 388);
+            this.comboBoxSatEnd.Location = new System.Drawing.Point(636, 392);
             this.comboBoxSatEnd.Name = "comboBoxSatEnd";
             this.comboBoxSatEnd.Size = new System.Drawing.Size(117, 31);
             this.comboBoxSatEnd.TabIndex = 35;
@@ -415,7 +415,7 @@
             this.comboBoxWedEnd.ForeColor = System.Drawing.Color.Navy;
             this.comboBoxWedEnd.FormattingEnabled = true;
             this.comboBoxWedEnd.ItemHeight = 23;
-            this.comboBoxWedEnd.Location = new System.Drawing.Point(807, 220);
+            this.comboBoxWedEnd.Location = new System.Drawing.Point(636, 224);
             this.comboBoxWedEnd.Name = "comboBoxWedEnd";
             this.comboBoxWedEnd.Size = new System.Drawing.Size(117, 31);
             this.comboBoxWedEnd.TabIndex = 34;
@@ -430,7 +430,7 @@
             this.comboBoxThuEnd.ForeColor = System.Drawing.Color.Navy;
             this.comboBoxThuEnd.FormattingEnabled = true;
             this.comboBoxThuEnd.ItemHeight = 23;
-            this.comboBoxThuEnd.Location = new System.Drawing.Point(807, 276);
+            this.comboBoxThuEnd.Location = new System.Drawing.Point(636, 280);
             this.comboBoxThuEnd.Name = "comboBoxThuEnd";
             this.comboBoxThuEnd.Size = new System.Drawing.Size(117, 31);
             this.comboBoxThuEnd.TabIndex = 33;
@@ -445,7 +445,7 @@
             this.comboBoxMonEnd.ForeColor = System.Drawing.Color.Navy;
             this.comboBoxMonEnd.FormattingEnabled = true;
             this.comboBoxMonEnd.ItemHeight = 23;
-            this.comboBoxMonEnd.Location = new System.Drawing.Point(807, 111);
+            this.comboBoxMonEnd.Location = new System.Drawing.Point(636, 115);
             this.comboBoxMonEnd.Name = "comboBoxMonEnd";
             this.comboBoxMonEnd.Size = new System.Drawing.Size(117, 31);
             this.comboBoxMonEnd.TabIndex = 32;
@@ -460,7 +460,7 @@
             this.comboBoxTueEnd.ForeColor = System.Drawing.Color.Navy;
             this.comboBoxTueEnd.FormattingEnabled = true;
             this.comboBoxTueEnd.ItemHeight = 23;
-            this.comboBoxTueEnd.Location = new System.Drawing.Point(807, 164);
+            this.comboBoxTueEnd.Location = new System.Drawing.Point(636, 168);
             this.comboBoxTueEnd.Name = "comboBoxTueEnd";
             this.comboBoxTueEnd.Size = new System.Drawing.Size(117, 31);
             this.comboBoxTueEnd.TabIndex = 31;
@@ -475,7 +475,7 @@
             this.comboBoxSunStart.ForeColor = System.Drawing.Color.Navy;
             this.comboBoxSunStart.FormattingEnabled = true;
             this.comboBoxSunStart.ItemHeight = 23;
-            this.comboBoxSunStart.Location = new System.Drawing.Point(684, 54);
+            this.comboBoxSunStart.Location = new System.Drawing.Point(513, 58);
             this.comboBoxSunStart.Name = "comboBoxSunStart";
             this.comboBoxSunStart.Size = new System.Drawing.Size(117, 31);
             this.comboBoxSunStart.TabIndex = 30;
@@ -490,7 +490,7 @@
             this.comboBoxFriStart.ForeColor = System.Drawing.Color.Navy;
             this.comboBoxFriStart.FormattingEnabled = true;
             this.comboBoxFriStart.ItemHeight = 23;
-            this.comboBoxFriStart.Location = new System.Drawing.Point(684, 333);
+            this.comboBoxFriStart.Location = new System.Drawing.Point(513, 337);
             this.comboBoxFriStart.Name = "comboBoxFriStart";
             this.comboBoxFriStart.Size = new System.Drawing.Size(117, 31);
             this.comboBoxFriStart.TabIndex = 29;
@@ -505,7 +505,7 @@
             this.comboBoxSatStart.ForeColor = System.Drawing.Color.Navy;
             this.comboBoxSatStart.FormattingEnabled = true;
             this.comboBoxSatStart.ItemHeight = 23;
-            this.comboBoxSatStart.Location = new System.Drawing.Point(684, 389);
+            this.comboBoxSatStart.Location = new System.Drawing.Point(513, 393);
             this.comboBoxSatStart.Name = "comboBoxSatStart";
             this.comboBoxSatStart.Size = new System.Drawing.Size(117, 31);
             this.comboBoxSatStart.TabIndex = 28;
@@ -520,7 +520,7 @@
             this.comboBoxWedStart.ForeColor = System.Drawing.Color.Navy;
             this.comboBoxWedStart.FormattingEnabled = true;
             this.comboBoxWedStart.ItemHeight = 23;
-            this.comboBoxWedStart.Location = new System.Drawing.Point(684, 221);
+            this.comboBoxWedStart.Location = new System.Drawing.Point(513, 225);
             this.comboBoxWedStart.Name = "comboBoxWedStart";
             this.comboBoxWedStart.Size = new System.Drawing.Size(117, 31);
             this.comboBoxWedStart.TabIndex = 27;
@@ -535,7 +535,7 @@
             this.comboBoxThuStart.ForeColor = System.Drawing.Color.Navy;
             this.comboBoxThuStart.FormattingEnabled = true;
             this.comboBoxThuStart.ItemHeight = 23;
-            this.comboBoxThuStart.Location = new System.Drawing.Point(684, 277);
+            this.comboBoxThuStart.Location = new System.Drawing.Point(513, 281);
             this.comboBoxThuStart.Name = "comboBoxThuStart";
             this.comboBoxThuStart.Size = new System.Drawing.Size(117, 31);
             this.comboBoxThuStart.TabIndex = 26;
@@ -550,7 +550,7 @@
             this.comboBoxMonStart.ForeColor = System.Drawing.Color.Navy;
             this.comboBoxMonStart.FormattingEnabled = true;
             this.comboBoxMonStart.ItemHeight = 23;
-            this.comboBoxMonStart.Location = new System.Drawing.Point(684, 112);
+            this.comboBoxMonStart.Location = new System.Drawing.Point(513, 116);
             this.comboBoxMonStart.Name = "comboBoxMonStart";
             this.comboBoxMonStart.Size = new System.Drawing.Size(117, 31);
             this.comboBoxMonStart.TabIndex = 25;
@@ -565,7 +565,7 @@
             this.comboBoxTueStart.ForeColor = System.Drawing.Color.Navy;
             this.comboBoxTueStart.FormattingEnabled = true;
             this.comboBoxTueStart.ItemHeight = 23;
-            this.comboBoxTueStart.Location = new System.Drawing.Point(684, 165);
+            this.comboBoxTueStart.Location = new System.Drawing.Point(513, 169);
             this.comboBoxTueStart.Name = "comboBoxTueStart";
             this.comboBoxTueStart.Size = new System.Drawing.Size(117, 31);
             this.comboBoxTueStart.TabIndex = 24;
@@ -577,7 +577,7 @@
             this.checkBoxSun.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBoxSun.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxSun.ForeColor = System.Drawing.Color.White;
-            this.checkBoxSun.Location = new System.Drawing.Point(542, 54);
+            this.checkBoxSun.Location = new System.Drawing.Point(371, 58);
             this.checkBoxSun.Name = "checkBoxSun";
             this.checkBoxSun.Size = new System.Drawing.Size(93, 27);
             this.checkBoxSun.TabIndex = 21;
@@ -591,7 +591,7 @@
             this.checkBoxSat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBoxSat.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxSat.ForeColor = System.Drawing.Color.White;
-            this.checkBoxSat.Location = new System.Drawing.Point(542, 388);
+            this.checkBoxSat.Location = new System.Drawing.Point(371, 392);
             this.checkBoxSat.Name = "checkBoxSat";
             this.checkBoxSat.Size = new System.Drawing.Size(107, 27);
             this.checkBoxSat.TabIndex = 20;
@@ -605,7 +605,7 @@
             this.checkBoxFri.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBoxFri.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxFri.ForeColor = System.Drawing.Color.White;
-            this.checkBoxFri.Location = new System.Drawing.Point(542, 332);
+            this.checkBoxFri.Location = new System.Drawing.Point(371, 336);
             this.checkBoxFri.Name = "checkBoxFri";
             this.checkBoxFri.Size = new System.Drawing.Size(83, 27);
             this.checkBoxFri.TabIndex = 19;
@@ -619,7 +619,7 @@
             this.checkBoxThu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBoxThu.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxThu.ForeColor = System.Drawing.Color.White;
-            this.checkBoxThu.Location = new System.Drawing.Point(542, 276);
+            this.checkBoxThu.Location = new System.Drawing.Point(371, 280);
             this.checkBoxThu.Name = "checkBoxThu";
             this.checkBoxThu.Size = new System.Drawing.Size(109, 27);
             this.checkBoxThu.TabIndex = 18;
@@ -633,7 +633,7 @@
             this.checkBoxWed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBoxWed.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxWed.ForeColor = System.Drawing.Color.White;
-            this.checkBoxWed.Location = new System.Drawing.Point(542, 220);
+            this.checkBoxWed.Location = new System.Drawing.Point(371, 224);
             this.checkBoxWed.Name = "checkBoxWed";
             this.checkBoxWed.Size = new System.Drawing.Size(132, 27);
             this.checkBoxWed.TabIndex = 17;
@@ -647,7 +647,7 @@
             this.checkBoxTue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBoxTue.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxTue.ForeColor = System.Drawing.Color.White;
-            this.checkBoxTue.Location = new System.Drawing.Point(542, 164);
+            this.checkBoxTue.Location = new System.Drawing.Point(371, 168);
             this.checkBoxTue.Name = "checkBoxTue";
             this.checkBoxTue.Size = new System.Drawing.Size(102, 27);
             this.checkBoxTue.TabIndex = 16;
@@ -661,7 +661,7 @@
             this.checkBoxMon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBoxMon.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxMon.ForeColor = System.Drawing.Color.White;
-            this.checkBoxMon.Location = new System.Drawing.Point(542, 111);
+            this.checkBoxMon.Location = new System.Drawing.Point(371, 115);
             this.checkBoxMon.Name = "checkBoxMon";
             this.checkBoxMon.Size = new System.Drawing.Size(98, 27);
             this.checkBoxMon.TabIndex = 15;

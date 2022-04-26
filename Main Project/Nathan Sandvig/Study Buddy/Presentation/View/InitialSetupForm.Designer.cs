@@ -27,41 +27,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.welcomeMessage = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnDone = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.welcomeMessage = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.addCourseBox1 = new Study_Buddy.Presentation.View.AddCourseBox();
+            this.userCourseList1 = new Study_Buddy.Presentation.View.UserCourseList();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // welcomeMessage
-            // 
-            this.welcomeMessage.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.welcomeMessage.AutoSize = true;
-            this.welcomeMessage.BackColor = System.Drawing.Color.Transparent;
-            this.welcomeMessage.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcomeMessage.ForeColor = System.Drawing.Color.White;
-            this.welcomeMessage.Location = new System.Drawing.Point(225, 16);
-            this.welcomeMessage.Name = "welcomeMessage";
-            this.welcomeMessage.Size = new System.Drawing.Size(797, 45);
-            this.welcomeMessage.TabIndex = 0;
-            this.welcomeMessage.Text = "Thanks for joining.  Let\'s set up your classes.";
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Navy;
-            this.button1.Location = new System.Drawing.Point(240, 67);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(173, 48);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Add A Course";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnDone
             // 
@@ -78,9 +51,38 @@
             this.btnDone.UseVisualStyleBackColor = false;
             this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Navy;
+            this.button1.Location = new System.Drawing.Point(240, 67);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(173, 48);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Add A Course";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // welcomeMessage
+            // 
+            this.welcomeMessage.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.welcomeMessage.AutoSize = true;
+            this.welcomeMessage.BackColor = System.Drawing.Color.Transparent;
+            this.welcomeMessage.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.welcomeMessage.ForeColor = System.Drawing.Color.White;
+            this.welcomeMessage.Location = new System.Drawing.Point(225, 16);
+            this.welcomeMessage.Name = "welcomeMessage";
+            this.welcomeMessage.Size = new System.Drawing.Size(797, 45);
+            this.welcomeMessage.TabIndex = 0;
+            this.welcomeMessage.Text = "Thanks for joining.  Let\'s set up your classes.";
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel1.Controls.Add(this.userCourseList1);
             this.panel1.Controls.Add(this.addCourseBox1);
             this.panel1.Controls.Add(this.welcomeMessage);
             this.panel1.Controls.Add(this.button1);
@@ -94,8 +96,17 @@
             // 
             this.addCourseBox1.Location = new System.Drawing.Point(3, 121);
             this.addCourseBox1.Name = "addCourseBox1";
-            this.addCourseBox1.Size = new System.Drawing.Size(1001, 583);
+            this.addCourseBox1.Size = new System.Drawing.Size(900, 583);
             this.addCourseBox1.TabIndex = 9;
+            // 
+            // userCourseList1
+            // 
+            this.userCourseList1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.userCourseList1.BackColor = System.Drawing.Color.Transparent;
+            this.userCourseList1.Location = new System.Drawing.Point(906, 121);
+            this.userCourseList1.Name = "userCourseList1";
+            this.userCourseList1.Size = new System.Drawing.Size(423, 750);
+            this.userCourseList1.TabIndex = 10;
             // 
             // InitialSetupForm
             // 
@@ -121,10 +132,11 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label welcomeMessage;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnDone;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label welcomeMessage;
         private System.Windows.Forms.Panel panel1;
         private AddCourseBox addCourseBox1;
+        private UserCourseList userCourseList1;
     }
 }

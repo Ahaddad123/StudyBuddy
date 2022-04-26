@@ -22,6 +22,14 @@ namespace Study_Buddy.Presentation.View
             InitializeComponent();
             this.MaximumSize = new System.Drawing.Size(1366, 768);
             this.Size = new System.Drawing.Size(1366, 768);
+            this.addCourseBox1.StatusUpdated += new EventHandler(MyEventHandlerFunction_StatusUpdated);
+        }
+        public void MyEventHandlerFunction_StatusUpdated(object sender, EventArgs e)
+        {
+            MessageBox.Show("Yo");
+            this.userCourseList1.UnDrawCourses();
+            this.userCourseList1.LoadCourses();
+            this.userCourseList1.DrawCourses();
         }
 
         public void SetController(FormController controller)

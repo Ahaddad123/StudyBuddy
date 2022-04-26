@@ -13,23 +13,10 @@ namespace Study_Buddy.Presentation.View
 {
     public partial class AddCourseBox : UserControl
     {
+        public EventHandler StatusUpdated;
         public AddCourseBox()
         {
             InitializeComponent();
-            /*comboBoxMonStart.Items.AddRange(new Object[] { });
-            comboBoxMonEnd.Items.AddRange(new Object[] { });
-            comboBoxTueStart.Items.AddRange(new Object[] { });
-            comboBoxTueEnd.Items.AddRange(new Object[] { });
-            comboBoxWedStart.Items.AddRange(new Object[] { });
-            comboBoxWedEnd.Items.AddRange(new Object[] { });
-            comboBoxThuStart.Items.AddRange(new Object[] { });
-            comboBoxThuEnd.Items.AddRange(new Object[] { });
-            comboBoxFriStart.Items.AddRange(new Object[] { });
-            comboBoxFriEnd.Items.AddRange(new Object[] { });
-            comboBoxSatStart.Items.AddRange(new Object[] { });
-            comboBoxSatEnd.Items.AddRange(new Object[] { });
-            comboBoxSunStart.Items.AddRange(new Object[] { });
-            comboBoxSunEnd.Items.AddRange(new Object[] { });*/
 
             TimeSpan startingTime = new TimeSpan(0, 0, 0);
             DateTime startingDate = new DateTime(DateTime.MinValue.Ticks);
@@ -429,6 +416,7 @@ namespace Study_Buddy.Presentation.View
                 checkBoxFri.Checked = false;
                 checkBoxSat.Checked = false;
                 successLabel.Text = "Succesfully added " + course.name;
+                this.StatusUpdated(this, new EventArgs());
             }
         }
     }
