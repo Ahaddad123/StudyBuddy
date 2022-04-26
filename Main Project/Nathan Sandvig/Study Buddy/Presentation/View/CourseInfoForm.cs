@@ -44,12 +44,12 @@ namespace Study_Buddy.Presentation.View
             InitializeComponent();
             this.Size = new System.Drawing.Size(1366, 768);
 
+
+            this.userCourseList1.ChangePanelWidth(this.courseListPanel.Width);
             //Draw courses on the userCourseList
             this.userCourseList1.DrawCourses(AccountController.account.courses);
-
-            this.nav1.SetCurrentForm(this);
-            this.userCourseList1.ChangePanelWidth(this.courseListPanel.Width);
             this.userCourseList1.DynamicEvent_CourseButtonClicked += new EventHandler(Event_UserCourseListButtonClicked);
+            this.nav1.SetCurrentForm(this); ;
         }
         public void SetInfo()
         {

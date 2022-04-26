@@ -17,6 +17,7 @@ namespace Study_Buddy.Presentation.View
         public RemoveCourseBox()
         {
             InitializeComponent();
+            this.groupBox2.Size = new System.Drawing.Size(1000, 545);
         }
 
         private void removeCourseButton_Click(object sender, EventArgs e)

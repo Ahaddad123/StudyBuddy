@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.successMessage = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.courseListBox = new System.Windows.Forms.ComboBox();
             this.removeCourseButton = new System.Windows.Forms.Button();
-            this.successMessage = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +48,16 @@
             this.groupBox2.Size = new System.Drawing.Size(1001, 545);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
+            // 
+            // successMessage
+            // 
+            this.successMessage.AutoSize = true;
+            this.successMessage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.successMessage.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.successMessage.Location = new System.Drawing.Point(41, 178);
+            this.successMessage.Name = "successMessage";
+            this.successMessage.Size = new System.Drawing.Size(0, 23);
+            this.successMessage.TabIndex = 18;
             // 
             // label1
             // 
@@ -85,16 +95,6 @@
             this.removeCourseButton.Text = "Remove";
             this.removeCourseButton.UseVisualStyleBackColor = false;
             this.removeCourseButton.Click += new System.EventHandler(this.removeCourseButton_Click);
-            // 
-            // successMessage
-            // 
-            this.successMessage.AutoSize = true;
-            this.successMessage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.successMessage.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.successMessage.Location = new System.Drawing.Point(41, 178);
-            this.successMessage.Name = "successMessage";
-            this.successMessage.Size = new System.Drawing.Size(0, 29);
-            this.successMessage.TabIndex = 18;
             // 
             // RemoveCourseBox
             // 

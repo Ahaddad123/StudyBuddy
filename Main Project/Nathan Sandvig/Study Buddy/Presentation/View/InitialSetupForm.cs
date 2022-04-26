@@ -20,7 +20,9 @@ namespace Study_Buddy.Presentation.View
         public InitialSetupForm()
         {
             InitializeComponent();
-
+            
+            this.userCourseList1.ChangePanelWidth(this.courseListPanel.Width);
+            //Draw courses on the userCourseList
             this.userCourseList1.DrawCourses(AccountController.account.courses);
 
             this.MaximumSize = new System.Drawing.Size(1366, 768);
