@@ -26,7 +26,7 @@ namespace Study_Buddy.BusinessLogic
         public string code;
         public double priority;
         public double credits;
-        public List<List<DateTime>> courseTimes;
+        public CourseSchedule schedule;
 
         //-----------------------------------------------------------------
         // Default constructor for the CourseBuilder class
@@ -103,9 +103,9 @@ namespace Study_Buddy.BusinessLogic
         // return: The builder for build chains
         // v1: Created the method - Andrew V, 4-14-22
         //-----------------------------------------------------------------
-        public CourseBuilder WithCourseHours(List<List<DateTime>> hours)
+        public CourseBuilder WithSchedule(CourseSchedule schedule)
         {
-            this.courseTimes = hours;
+            this.schedule = schedule;
             return this;
         }
 
