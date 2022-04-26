@@ -27,6 +27,7 @@ namespace Study_Buddy.Presentation
             this.Text = title;
             this.mainHeader.Text = title;
             this.nav1.SetCurrentForm(this);
+            this.mainPanel.Controls.Add(this.editCourseBox1);
 
         }
 
@@ -46,9 +47,11 @@ namespace Study_Buddy.Presentation
             this.btnAddCourse.ForeColor = Color.Navy;
             this.btnRemoveCourse.BackColor = Color.Navy;
             this.btnRemoveCourse.ForeColor = Color.White;
+            this.btnEditCourse.BackColor = Color.Navy;
+            this.btnEditCourse.ForeColor = Color.White;
             this.addCourseBox1.Visible = true;
             this.removeCourseBox1.Visible = false;
-            //this.editCourseBox1.Visible = false;
+            this.editCourseBox1.Visible = false;
         }
 
         private void btnRemoveCourse_Click(object sender, EventArgs e)
@@ -57,14 +60,27 @@ namespace Study_Buddy.Presentation
             this.btnRemoveCourse.ForeColor = Color.Navy;
             this.btnAddCourse.BackColor = Color.Navy;
             this.btnAddCourse.ForeColor = Color.White;
+            this.btnEditCourse.BackColor = Color.Navy;
+            this.btnEditCourse.ForeColor = Color.White;
             this.removeCourseBox1.Visible = true;
             this.addCourseBox1.Visible = false;
+            this.editCourseBox1.Visible= false;
             //IMPORTANT - Make sure course list is updated
             this.removeCourseBox1.LoadCourses();
-            //this.editCourseBox1.Visible = false;
         }
 
-
-        //TDO: Add method for editing course
+        private void btnEditCourse_Click(object sender, EventArgs e)
+        {
+            this.btnRemoveCourse.BackColor = Color.Navy;
+            this.btnRemoveCourse.ForeColor = Color.White;
+            this.btnAddCourse.BackColor = Color.Navy;
+            this.btnAddCourse.ForeColor = Color.White;
+            this.btnEditCourse.BackColor = Color.White;
+            this.btnEditCourse.ForeColor = Color.Navy;
+            this.removeCourseBox1.Visible = false;
+            this.addCourseBox1.Visible = false;
+            this.editCourseBox1.Visible = true;
+            this.editCourseBox1.LoadCourses();
+        }
     }
 }

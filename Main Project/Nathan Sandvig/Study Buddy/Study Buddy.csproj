@@ -113,6 +113,12 @@
     <Compile Include="Presentation\Model\GradeGraph.cs" />
     <Compile Include="Presentation\Model\Graph.cs" />
     <Compile Include="Presentation\Model\GraphController.cs" />
+    <Compile Include="Presentation\View\EditCourseBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentation\View\EditCourseBox.Designer.cs">
+      <DependentUpon>EditCourseBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\View\AddCourseBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -254,6 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\GraphUserControl.resx">
       <DependentUpon>GraphUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\View\EditCourseBox.resx">
+      <DependentUpon>EditCourseBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\View\AddCourseBox.resx">
       <DependentUpon>AddCourseBox.cs</DependentUpon>

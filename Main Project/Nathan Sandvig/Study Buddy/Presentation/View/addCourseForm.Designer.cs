@@ -34,12 +34,14 @@
             this.btnRemoveCourse = new System.Windows.Forms.Button();
             this.btnAddCourse = new System.Windows.Forms.Button();
             this.addCourseBox1 = new Study_Buddy.Presentation.View.AddCourseBox();
+            this.editCourseBox1 = new Study_Buddy.Presentation.View.EditCourseBox();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainPanel
             // 
             this.mainPanel.BackColor = System.Drawing.Color.White;
+            //this.mainPanel.Controls.Add(this.editCourseBox1);
             this.mainPanel.Controls.Add(this.removeCourseBox1);
             this.mainPanel.Controls.Add(this.btnEditCourse);
             this.mainPanel.Controls.Add(this.btnRemoveCourse);
@@ -51,6 +53,14 @@
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(1029, 585);
             this.mainPanel.TabIndex = 1;
+            // 
+            // editCourseBox1
+            // 
+            this.editCourseBox1.Location = new System.Drawing.Point(15, 65);
+            this.editCourseBox1.Name = "editCourseBox1";
+            this.editCourseBox1.Size = new System.Drawing.Size(1001, 499);
+            //this.editCourseBox1.TabIndex = 24;
+            this.editCourseBox1.Visible = false;
             // 
             // removeCourseBox1
             // 
@@ -72,6 +82,7 @@
             this.btnEditCourse.TabIndex = 22;
             this.btnEditCourse.Text = "Edit Course";
             this.btnEditCourse.UseVisualStyleBackColor = false;
+            this.btnEditCourse.Click += new System.EventHandler(this.btnEditCourse_Click);
             // 
             // btnRemoveCourse
             // 
@@ -133,5 +144,6 @@
         private System.Windows.Forms.Button btnRemoveCourse;
         private System.Windows.Forms.Button btnAddCourse;
         private View.RemoveCourseBox removeCourseBox1;
+        private View.EditCourseBox editCourseBox1;
     }
 }
