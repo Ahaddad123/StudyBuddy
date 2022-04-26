@@ -8,6 +8,7 @@ namespace Study_Buddy.BusinessLogic
 {
     public class CourseSchedule
     {
+        public Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)> times { get; set; }
         public CourseSchedule(Dictionary<DayOfWeek, (String startTime, String endTime)> times )
         {
             if (times.ContainsKey(DayOfWeek.Sunday))

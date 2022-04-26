@@ -71,8 +71,17 @@ namespace Study_Buddy.Presentation
             {
                 Course course = controller.getCourses()[i];
                 Label label = controller.createCourseLabel(course, red, green, blue);
-                int index = 0;
-                foreach(List<DateTime> days in course.courseTimes)
+                //int index = 0;
+                /*for(int j = 0; j < 7; j++)
+                {
+                    DayOfWeek day = (DayOfWeek)j;
+                    if (course.schedule.times.ContainsKey(day))
+                    {
+                        this.tableLayoutPanel2.Controls.Add(label, j + 1, course.schedule.times[day].startTime.Hour - 6);
+                        this.tableLayoutPanel2.SetRowSpan(label, course.schedule.times[day].endTime.Hour - course.schedule.times[day].startTime.Hour);
+                    }
+                }*/
+                /*foreach(List<DateTime> days in course.courseTimes)
                 {
                     if(days != null)
                     {
@@ -82,7 +91,7 @@ namespace Study_Buddy.Presentation
                     index++;
                 }
                 this.tableLayoutPanel2.Controls.Add(label, i + 1, i + 1); //need to update indices
-                this.tableLayoutPanel2.SetRowSpan(label, 2); //need to update span
+                this.tableLayoutPanel2.SetRowSpan(label, 2); //need to update span*/
                 if (i % 3 == 0)
                 {
                     green = red;
