@@ -13,12 +13,12 @@ namespace Study_Buddy.Presentation.View
 {
     public partial class AddCourseBox : UserControl
     {
-        private Dictionary<DayOfWeek, (String startTime, String endTime)> times;
+        private Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)> times;
         public EventHandler StatusUpdated;
         public AddCourseBox()
         {
             InitializeComponent();
-            times = new Dictionary<DayOfWeek, (String, String)>();
+            times = new Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)>();
 
             TimeSpan startingTime = new TimeSpan(0, 0, 0);
             DateTime startingDate = new DateTime(DateTime.MinValue.Ticks);
@@ -221,7 +221,7 @@ namespace Study_Buddy.Presentation.View
                     }
                     else
                     {
-                        times.Add(DayOfWeek.Sunday, (DateTime.Parse(comboBoxSunStart.SelectedItem.ToString()).ToString(), DateTime.Parse(comboBoxSunEnd.SelectedItem.ToString()).ToString()));
+                        times.Add(DayOfWeek.Sunday, (DateTime.Parse(comboBoxSunStart.SelectedItem.ToString()), DateTime.Parse(comboBoxSunEnd.SelectedItem.ToString())));
 
 
                         List<DateTime> sunday = new List<DateTime>();
@@ -236,8 +236,6 @@ namespace Study_Buddy.Presentation.View
                     valid = false;
                 }
             }
-            else
-                times.Add(DayOfWeek.Sunday, (null, null));
 
             //Check out if Monday checkbox is checked
             if (checkBoxMon.Checked)
@@ -254,7 +252,7 @@ namespace Study_Buddy.Presentation.View
                     }
                     else
                     {
-                        times.Add(DayOfWeek.Monday, (DateTime.Parse(comboBoxMonStart.SelectedItem.ToString()).ToString(), DateTime.Parse(comboBoxMonEnd.SelectedItem.ToString()).ToString()));
+                        times.Add(DayOfWeek.Monday, (DateTime.Parse(comboBoxMonStart.SelectedItem.ToString()), DateTime.Parse(comboBoxMonEnd.SelectedItem.ToString())));
 
                         List<DateTime> monday = new List<DateTime>();
                         monday.Add(DateTime.Parse(comboBoxMonStart.SelectedItem.ToString()));
@@ -268,8 +266,6 @@ namespace Study_Buddy.Presentation.View
                     valid = false;
                 }
             }
-            else
-                times.Add(DayOfWeek.Monday, (null, null));
 
             //Check out if Tuesday checkbox is checked
             if (checkBoxTue.Checked)
@@ -286,7 +282,7 @@ namespace Study_Buddy.Presentation.View
                     }
                     else
                     {
-                        times.Add(DayOfWeek.Tuesday, (DateTime.Parse(comboBoxTueStart.SelectedItem.ToString()).ToString(), DateTime.Parse(comboBoxTueEnd.SelectedItem.ToString()).ToString()));
+                        times.Add(DayOfWeek.Tuesday, (DateTime.Parse(comboBoxTueStart.SelectedItem.ToString()), DateTime.Parse(comboBoxTueEnd.SelectedItem.ToString())));
                         
                         List<DateTime> tuesday = new List<DateTime>();
                         tuesday.Add(DateTime.Parse(comboBoxTueStart.SelectedItem.ToString()));
@@ -300,8 +296,6 @@ namespace Study_Buddy.Presentation.View
                     valid = false;
                 }
             }
-            else
-                times.Add(DayOfWeek.Tuesday, (null, null));
 
             //Check out if Wednesday checkbox is checked
             if (checkBoxWed.Checked)
@@ -318,7 +312,7 @@ namespace Study_Buddy.Presentation.View
                     }
                     else
                     {
-                        times.Add(DayOfWeek.Wednesday, (DateTime.Parse(comboBoxWedStart.SelectedItem.ToString()).ToString(), DateTime.Parse(comboBoxWedEnd.SelectedItem.ToString()).ToString()));
+                        times.Add(DayOfWeek.Wednesday, (DateTime.Parse(comboBoxWedStart.SelectedItem.ToString()), DateTime.Parse(comboBoxWedEnd.SelectedItem.ToString())));
 
                         List<DateTime> wednesday = new List<DateTime>();
                         wednesday.Add(DateTime.Parse(comboBoxWedStart.SelectedItem.ToString()));
@@ -332,8 +326,6 @@ namespace Study_Buddy.Presentation.View
                     valid = false;
                 }
             }
-            else
-                times.Add(DayOfWeek.Wednesday, (null, null));
 
             //Check out if Thursday checkbox is checked
             if (checkBoxThu.Checked)
@@ -350,7 +342,7 @@ namespace Study_Buddy.Presentation.View
                     }
                     else
                     {
-                        times.Add(DayOfWeek.Thursday, (DateTime.Parse(comboBoxThuStart.SelectedItem.ToString()).ToString(), DateTime.Parse(comboBoxThuEnd.SelectedItem.ToString()).ToString()));
+                        times.Add(DayOfWeek.Thursday, (DateTime.Parse(comboBoxThuStart.SelectedItem.ToString()), DateTime.Parse(comboBoxThuEnd.SelectedItem.ToString())));
                         
                         List<DateTime> thursday = new List<DateTime>();
                         thursday.Add(DateTime.Parse(comboBoxThuStart.SelectedItem.ToString()));
@@ -364,8 +356,6 @@ namespace Study_Buddy.Presentation.View
                     valid = false;
                 }
             }
-            else
-                times.Add(DayOfWeek.Thursday, (null, null));
 
             //Check out if Friday checkbox is checked
             if (checkBoxFri.Checked)
@@ -382,7 +372,7 @@ namespace Study_Buddy.Presentation.View
                     }
                     else
                     {
-                        times.Add(DayOfWeek.Friday, (DateTime.Parse(comboBoxFriStart.SelectedItem.ToString()).ToString(), DateTime.Parse(comboBoxFriEnd.SelectedItem.ToString()).ToString()));
+                        times.Add(DayOfWeek.Friday, (DateTime.Parse(comboBoxFriStart.SelectedItem.ToString()), DateTime.Parse(comboBoxFriEnd.SelectedItem.ToString())));
 
                         List<DateTime> friday = new List<DateTime>();
                         friday.Add(DateTime.Parse(comboBoxFriStart.SelectedItem.ToString()));
@@ -396,8 +386,6 @@ namespace Study_Buddy.Presentation.View
                     valid = false;
                 }
             }
-            else
-                times.Add(DayOfWeek.Friday, (null, null));
 
             //Check out if Saturday checkbox is checked
             if (checkBoxSat.Checked)
@@ -414,7 +402,7 @@ namespace Study_Buddy.Presentation.View
                     }
                     else
                     {
-                        times.Add(DayOfWeek.Saturday, (DateTime.Parse(comboBoxSatStart.SelectedItem.ToString()).ToString(), DateTime.Parse(comboBoxSatEnd.SelectedItem.ToString()).ToString()));
+                        times.Add(DayOfWeek.Saturday, (DateTime.Parse(comboBoxSatStart.SelectedItem.ToString()), DateTime.Parse(comboBoxSatEnd.SelectedItem.ToString())));
 
                         List<DateTime> saturday = new List<DateTime>();
                         saturday.Add(DateTime.Parse(comboBoxSatStart.SelectedItem.ToString()));
@@ -428,17 +416,19 @@ namespace Study_Buddy.Presentation.View
                     valid = false;
                 }
             }
-            else
-                times.Add(DayOfWeek.Saturday, (null, null));
 
             //All the checkboxes checked out
             if (valid)
             {
+                string courseName = txtCourseTitle.Text;
                 CourseSchedule course1 = new CourseSchedule(times);
+                course1.addCourseTime(courseName);
+
                 Course course = new CourseBuilder().WithName(txtCourseTitle.Text).WithCode(txtCourseCode.Text).WithCredits(courseCredit).WithPriority(coursePriority).WithCourseHours(dateTimes).Build();
                 AccountController.account.addCourse(course);
+                
                 Clear();
-                times = new Dictionary<DayOfWeek, (string startTime, string endTime)>();
+                times = new Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)>();
                 successLabel.Text = "Succesfully added " + course.name;
                 this.StatusUpdated(sender, new EventArgs());
             }

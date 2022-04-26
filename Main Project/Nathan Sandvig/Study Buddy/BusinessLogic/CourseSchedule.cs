@@ -8,49 +8,27 @@ namespace Study_Buddy.BusinessLogic
 {
     public class CourseSchedule
     {
-        public CourseSchedule(Dictionary<DayOfWeek, (String startTime, String endTime)> times )
+        Account addCourseTimes = new Account();
+        public Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)> times{ get; set;}
+
+        public CourseSchedule(Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)> times)
         {
-            if (times.ContainsKey(DayOfWeek.Sunday))
-            { 
-                String sundayStart = times[DayOfWeek.Sunday].startTime;
-                String sundayEnd = times[DayOfWeek.Sunday].endTime;
-            }
+            this.times = times;
+        }
 
-            if (times.ContainsKey(DayOfWeek.Monday))
-            {
-                String mondayStart = times[DayOfWeek.Monday].startTime;
-                String mondayEnd = times[DayOfWeek.Monday].endTime;
-            }
+<<<<<<< HEAD
+        public void addCourseTime(string courseName) {
+            addCourseTimes.addTheCourseTimes(times, courseName);
+=======
+        public void addCourseTime() 
+        {
+            addCourseTimes.addTheCourseTimes(times);
+>>>>>>> 7575c0595ba6fc993a2766f4dec3ebc370afdf07
+        }
 
-            if (times.ContainsKey(DayOfWeek.Tuesday))
-            {
-                String tuesdayStart = times[DayOfWeek.Tuesday].startTime;
-                String tuesdayEnd = times[DayOfWeek.Tuesday].endTime;
-            }
-
-            if (times.ContainsKey(DayOfWeek.Wednesday))
-            {
-                String wednesdayStart = times[DayOfWeek.Wednesday].startTime;
-                String wednesdayEnd = times[DayOfWeek.Wednesday].endTime;
-            }
-
-            if (times.ContainsKey(DayOfWeek.Thursday))
-            {
-                String thursdayStart = times[DayOfWeek.Thursday].startTime;
-                String thursdayEnd = times[DayOfWeek.Thursday].endTime;
-            }
-
-            if (times.ContainsKey(DayOfWeek.Friday))
-            {
-                String fridayStart = times[DayOfWeek.Friday].startTime;
-                String fridayEnd = times[DayOfWeek.Friday].endTime;
-            }
-
-            if (times.ContainsKey(DayOfWeek.Saturday))
-            {
-                String saturdayStart = times[DayOfWeek.Saturday].startTime;
-                String saturdayEnd = times[DayOfWeek.Saturday].endTime;
-            }
+        public double getCourseHours(DayOfWeek date)
+        {
+            return (times[date].endTime - times[date].startTime).TotalHours;
         }
     }
 }

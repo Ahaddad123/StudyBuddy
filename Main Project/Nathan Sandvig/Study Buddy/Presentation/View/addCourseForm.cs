@@ -33,12 +33,14 @@ namespace Study_Buddy.Presentation
             this.removeCourseBox1.LoadCourses(AccountController.account.courses);
             this.removeCourseBox1.StatusUpdated += new EventHandler(Event_RemoveCourseButtonClick);
             this.editCourseBox1.StatusUpdated += new EventHandler(Event_EditCourseButtonClick);
-
+            this.editCourseBox1.LoadCourses(AccountController.account.courses);
         }
 
         public void Event_EditCourseButtonClick(Object sender, EventArgs e)
         {
-
+            //TODO: move this logic to parent form
+            Course course = AccountController.account.getCourseByName(sender.ToString());
+            this.editCourseBox1.UpdateData(course);
         }
 
         public void ChildControlEvent_AddCourseBoxAddCourseButtonClicked(Object sender, EventArgs e)
@@ -101,7 +103,7 @@ namespace Study_Buddy.Presentation
             this.removeCourseBox1.Visible = false;
             this.addCourseBox1.Visible = false;
             this.editCourseBox1.Visible = true;
-            this.editCourseBox1.LoadCourses();
+            this.editCourseBox1.LoadCourses(AccountController.account.courses);
         }
     }
 }

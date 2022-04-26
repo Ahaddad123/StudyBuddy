@@ -18,7 +18,7 @@ namespace Study_Buddy.BusinessLogic
         internal string GPA1;
         internal string sName;
         //internal int userID; //This is the ID for the database to track accounts
-        SQLite database = new SQLite();
+        public SQLite database = new SQLite();
 
         public List<Course> courses { get; set; } = new List<Course>();
 
@@ -94,9 +94,9 @@ namespace Study_Buddy.BusinessLogic
             int success = database.insertCourseData(course);
         }
 
-        public void addCourseTimes(Dictionary<DayOfWeek, (String startTime, String endTime)> times)
+        public void addTheCourseTimes(Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)> times, string courseName)
         {
-            database.addTimesCourse(times);
+            database.addTimesCourse(times, courseName);
         }
 
         public void populateCourses(Course course)
@@ -217,5 +217,6 @@ namespace Study_Buddy.BusinessLogic
             }
             return null;
         }
+
     }
 }

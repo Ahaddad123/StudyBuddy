@@ -157,15 +157,10 @@ namespace Study_Buddy.Presentation.View
             }
         }
 
-        private void EditCourseBox_Load(object sender, EventArgs e)
-        {
-            LoadCourses();
-        }
-
-        public void LoadCourses()
+        public void LoadCourses(List<Course> courses)
         {
             courseListBox.Items.Clear();
-            foreach (Course c in AccountController.account.courses)
+            foreach (Course c in courses)
             {
                 courseListBox.Items.Add(c.name);
             }
@@ -179,23 +174,6 @@ namespace Study_Buddy.Presentation.View
             double coursePriority = 0;
             double courseCredit = 0;
             List<List<DateTime>> dateTimes = new List<List<DateTime>>();
-            if (txtCourseTitle.Text.Equals(""))
-            {
-                nameErrorMessageLabel.Text = "Invalid Name";
-                valid = false;
-            }
-            try
-            {
-                if (!txtCoursePriority.Text.Equals(""))
-                {
-                    coursePriority = Double.Parse(txtCoursePriority.Text);
-                }
-            }
-            catch (Exception ex)
-            {
-                PriorityErrorMessageLabel.Text = "Invalid Priority";
-                valid = false;
-            }
             try
             {
                 courseCredit = Double.Parse(txtCourseCredits.Text);
@@ -203,11 +181,6 @@ namespace Study_Buddy.Presentation.View
             catch (Exception ex)
             {
                 creditsErrorMessageLabel.Text = "Invalid Credits";
-                valid = false;
-            }
-            if (coursePriority < 0)
-            {
-                PriorityErrorMessageLabel.Text = "Invalid Priority";
                 valid = false;
             }
             if (courseCredit < 0)
@@ -417,12 +390,14 @@ namespace Study_Buddy.Presentation.View
             //All the checkboxes checked out
             if (valid)
             {
-                Course course = new CourseBuilder().WithName(txtCourseTitle.Text).WithCode(txtCourseCode.Text).WithCredits(courseCredit).WithPriority(coursePriority).WithCourseHours(dateTimes).Build();
-                AccountController.account.removeCourse(courseListBox.Text);
-                AccountController.account.addCourse(course);
+                Course course = new CourseBuilder().WithName(courseListBox.Text).WithCode(txtCourseCode.Text).WithCredits(courseCredit).WithPriority(coursePriority).WithCourseHours(dateTimes).Build();
+                AccountController.account.getCourseByName(course.name).code = course.code;
+                AccountController.account.getCourseByName(course.name).credits = course.credits;
+                AccountController.account.getCourseByName(course.name).priority = course.priority;
+                AccountController.account.getCourseByName(course.name).courseTimes = course.courseTimes;
+                AccountController.account.database.removeCourse(course.name);
+                AccountController.account.database.insertCourseData(course);
                 nameErrorMessageLabel.Text = "";
-                CodeErrorMessageLabel.Text = "";
-                PriorityErrorMessageLabel.Text = "";
                 creditsErrorMessageLabel.Text = "";
                 sunErrorMessageLabel.Text = "";
                 monErrorMessageLabel.Text = "";
@@ -445,20 +420,69 @@ namespace Study_Buddy.Presentation.View
         {
             //Bubble event to parent form
             this.StatusUpdated(this.courseListBox.Text, new EventArgs());
+        }
 
-            //TODO: move this logic to parent form
-            Course course = AccountController.account.getCourseByName(courseListBox.Text);
+        public void UpdateData(Course course)
+        {
             if (course != null)
             {
-                this.txtCourseTitle.Text = course.name;
-                this.txtCoursePriority.Text = course.priority.ToString();
                 this.txtCourseCredits.Text = course.credits.ToString();
                 this.txtCourseCode.Text = course.code;
             }
-            int index = 0;
-            foreach(List<DateTime> days in course.courseTimes)
+            /*for (int index = 0; index < 7; index++)
             {
-                if(days != null)
+                DayOfWeek day = (DayOfWeek)index;
+                if (course.schedule.times.ContainsKey(day))
+                {
+                    int startTime = course.schedule.times[day].startTime.Hour;
+                    int endTime = course.schedule.times[day].endTime.Hour;
+                    if (index == 0)
+                    {
+                        checkBoxSun.Checked = true;
+                        comboBoxSunStart.SelectedIndex = startTime;
+                        comboBoxSunEnd.SelectedIndex = endTime;
+                    }
+                    else if (index == 1)
+                    {
+                        checkBoxMon.Checked = true;
+                        comboBoxMonStart.SelectedIndex = startTime;
+                        comboBoxMonEnd.SelectedIndex = endTime;
+                    }
+                    else if (index == 2)
+                    {
+                        checkBoxTue.Checked = true;
+                        comboBoxTueStart.SelectedIndex = startTime;
+                        comboBoxTueEnd.SelectedIndex = endTime;
+                    }
+                    else if (index == 3)
+                    {
+                        checkBoxWed.Checked = true;
+                        comboBoxWedStart.SelectedIndex = startTime;
+                        comboBoxWedEnd.SelectedIndex = endTime;
+                    }
+                    else if (index == 4)
+                    {
+                        checkBoxThu.Checked = true;
+                        comboBoxThuStart.SelectedIndex = startTime;
+                        comboBoxThuEnd.SelectedIndex = endTime;
+                    }
+                    else if (index == 5)
+                    {
+                        checkBoxFri.Checked = true;
+                        comboBoxFriStart.SelectedIndex = startTime;
+                        comboBoxFriEnd.SelectedIndex = endTime;
+                    }
+                    else if (index == 6)
+                    {
+                        checkBoxSat.Checked = true;
+                        comboBoxSatStart.SelectedIndex = startTime;
+                        comboBoxSatEnd.SelectedIndex = endTime;
+                    }
+                }
+            }*/
+            /*foreach (List<DateTime> days in course.courseTimes)
+            {
+                if (days != null)
                 {
                     if (index == 0)
                     {
@@ -504,7 +528,7 @@ namespace Study_Buddy.Presentation.View
                     }
                 }
                 index++;
-            }
+            }*/
         }
     }
 }
