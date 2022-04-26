@@ -422,11 +422,11 @@ namespace Study_Buddy.Presentation.View
             {
                 string courseName = txtCourseTitle.Text;
                 CourseSchedule course1 = new CourseSchedule(times);
-                AccountController.account.addTheCourseTimes(times);
 
                 Course course = new CourseBuilder().WithName(txtCourseTitle.Text).WithCode(txtCourseCode.Text).WithCredits(courseCredit).WithPriority(coursePriority).WithSchedule(new CourseSchedule(times)).Build();
                 AccountController.account.addCourse(course);
-                
+                AccountController.account.addTheCourseTimes(times, course.name);
+
                 Clear();
                 times = new Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)>();
                 successLabel.Text = "Succesfully added " + course.name;

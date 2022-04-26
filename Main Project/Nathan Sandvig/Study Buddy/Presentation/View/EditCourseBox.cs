@@ -400,7 +400,6 @@ namespace Study_Buddy.Presentation.View
             if (valid)
             {
                 CourseSchedule schedule = new CourseSchedule(times);
-                AccountController.account.addTheCourseTimes(times);
                 Course course = new CourseBuilder().WithName(courseListBox.Text).WithCode(txtCourseCode.Text).WithCredits(courseCredit).WithPriority(coursePriority).WithSchedule(schedule).Build();
                 AccountController.account.getCourseByName(course.name).code = course.code;
                 AccountController.account.getCourseByName(course.name).credits = course.credits;
@@ -408,6 +407,7 @@ namespace Study_Buddy.Presentation.View
                 AccountController.account.getCourseByName(course.name).schedule = course.schedule;
                 AccountController.account.database.removeCourse(course.name);
                 AccountController.account.database.insertCourseData(course);
+                AccountController.account.addTheCourseTimes(times, course.name);
                 nameErrorMessageLabel.Text = "";
                 creditsErrorMessageLabel.Text = "";
                 sunErrorMessageLabel.Text = "";
