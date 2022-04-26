@@ -200,5 +200,17 @@ namespace Study_Buddy.BusinessLogic
         {
             return database.readStudentInfo();
         }
+
+        public Course getCourseByName(String courseName)
+        {
+            foreach(Course course in this.courses)
+            {
+                if (course.name.Equals(courseName))
+                {
+                    return course;
+                }
+            }
+            return null;
+        }
     }
 }

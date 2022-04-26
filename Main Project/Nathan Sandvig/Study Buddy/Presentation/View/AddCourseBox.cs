@@ -227,6 +227,7 @@ namespace Study_Buddy.Presentation.View
                 else
                 {
                     sunErrorMessageLabel.Text = "Invalid Sunday times";
+                    valid = false;
                 }
             }
 
@@ -254,6 +255,7 @@ namespace Study_Buddy.Presentation.View
                 else
                 {
                     monErrorMessageLabel.Text = "Invalid Monday times";
+                    valid = false;
                 }
             }
 
@@ -281,6 +283,7 @@ namespace Study_Buddy.Presentation.View
                 else
                 {
                     tueErrorMessageLabel.Text = "Invalid Tuesday times";
+                    valid = false;
                 }
             }
 
@@ -308,6 +311,7 @@ namespace Study_Buddy.Presentation.View
                 else
                 {
                     wedErrorMessageLabel.Text = "Invalid Wednesday times";
+                    valid = false;
                 }
             }
 
@@ -335,6 +339,7 @@ namespace Study_Buddy.Presentation.View
                 else
                 {
                     thuErrorMessageLabel.Text = "Invalid Thursday times";
+                    valid = false;
                 }
             }
 
@@ -362,6 +367,7 @@ namespace Study_Buddy.Presentation.View
                 else
                 {
                     friErrorMessageLabel.Text = "Invalid Friday times";
+                    valid = false;
                 }
             }
 
@@ -389,6 +395,7 @@ namespace Study_Buddy.Presentation.View
                 else
                 {
                     satErrorMessageLabel.Text = "Invalid Saturday times";
+                    valid = false;
                 }
             }
 
@@ -399,7 +406,6 @@ namespace Study_Buddy.Presentation.View
                 AccountController.account.addCourse(course);
                 Clear();
                 successLabel.Text = "Succesfully added " + course.name;
-                this.StatusUpdated(this, new EventArgs());
             }
         }
         public void Clear()

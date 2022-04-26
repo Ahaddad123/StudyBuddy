@@ -242,6 +242,7 @@ namespace Study_Buddy.Presentation.View
                 else
                 {
                     sunErrorMessageLabel.Text = "Invalid Sunday times";
+                    valid = false;
                 }
             }
 
@@ -269,6 +270,7 @@ namespace Study_Buddy.Presentation.View
                 else
                 {
                     monErrorMessageLabel.Text = "Invalid Monday times";
+                    valid = false;
                 }
             }
 
@@ -296,6 +298,7 @@ namespace Study_Buddy.Presentation.View
                 else
                 {
                     tueErrorMessageLabel.Text = "Invalid Tuesday times";
+                    valid = false;
                 }
             }
 
@@ -323,6 +326,7 @@ namespace Study_Buddy.Presentation.View
                 else
                 {
                     wedErrorMessageLabel.Text = "Invalid Wednesday times";
+                    valid = false;
                 }
             }
 
@@ -350,6 +354,7 @@ namespace Study_Buddy.Presentation.View
                 else
                 {
                     thuErrorMessageLabel.Text = "Invalid Thursday times";
+                    valid = false;
                 }
             }
 
@@ -377,6 +382,7 @@ namespace Study_Buddy.Presentation.View
                 else
                 {
                     friErrorMessageLabel.Text = "Invalid Friday times";
+                    valid = false;
                 }
             }
 
@@ -404,6 +410,7 @@ namespace Study_Buddy.Presentation.View
                 else
                 {
                     satErrorMessageLabel.Text = "Invalid Saturday times";
+                    valid = false;
                 }
             }
 
@@ -411,8 +418,8 @@ namespace Study_Buddy.Presentation.View
             if (valid)
             {
                 Course course = new CourseBuilder().WithName(txtCourseTitle.Text).WithCode(txtCourseCode.Text).WithCredits(courseCredit).WithPriority(coursePriority).WithCourseHours(dateTimes).Build();
-                AccountController.account.addCourse(course);
                 AccountController.account.removeCourse(courseListBox.Text);
+                AccountController.account.addCourse(course);
                 nameErrorMessageLabel.Text = "";
                 CodeErrorMessageLabel.Text = "";
                 PriorityErrorMessageLabel.Text = "";
@@ -431,14 +438,19 @@ namespace Study_Buddy.Presentation.View
                 checkBoxThu.Checked = false;
                 checkBoxFri.Checked = false;
                 checkBoxSat.Checked = false;
-                successLabel.Text = "Succesfully added " + course.name;
-                this.StatusUpdated(this, new EventArgs());
             }
         }
 
         private void removeCourseButton_Click(object sender, EventArgs e)
         {
-            //TODO: Add code here that populates the textboxes
+            Course course = AccountController.account.getCourseByName(courseListBox.Text);
+            if (course != null)
+            {
+                this.txtCourseTitle.Text = course.name;
+                this.txtCoursePriority.Text = course.priority.ToString();
+                this.txtCourseCredits.Text = course.credits.ToString();
+                this.txtCourseCode.Text = course.code;
+            }
         }
     }
 }
