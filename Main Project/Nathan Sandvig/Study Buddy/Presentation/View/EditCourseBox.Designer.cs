@@ -730,7 +730,6 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "EditCourseBox";
             this.Size = new System.Drawing.Size(1001, 500);
-            this.Load += new System.EventHandler(this.EditCourseBox_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

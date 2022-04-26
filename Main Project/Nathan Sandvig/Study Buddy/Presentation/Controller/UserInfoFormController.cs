@@ -24,7 +24,7 @@ namespace Study_Buddy.Presentation.Controller
 
         public void SetUserInfo()
         {
-            this.view.SetUserInfo(account.username, "UW Harvard", 3.9);
+            this.view.SetUserInfo(account.username, account.sName, account.GPA1);
         }
 
         //---------------------------------------------------------------------

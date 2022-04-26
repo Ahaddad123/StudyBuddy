@@ -41,7 +41,7 @@
             // mainPanel
             // 
             this.mainPanel.BackColor = System.Drawing.Color.White;
-            //this.mainPanel.Controls.Add(this.editCourseBox1);
+            this.mainPanel.Controls.Add(this.editCourseBox1);
             this.mainPanel.Controls.Add(this.removeCourseBox1);
             this.mainPanel.Controls.Add(this.btnEditCourse);
             this.mainPanel.Controls.Add(this.btnRemoveCourse);

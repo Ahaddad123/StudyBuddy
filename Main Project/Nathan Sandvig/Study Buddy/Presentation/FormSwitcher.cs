@@ -34,6 +34,7 @@ namespace Study_Buddy.Presentation
                 controller = new CourseInfoFormController(form, AccountController.account.courses[0], AccountController.account.courses[0].hourLog);
             }
             form.SetController(controller);
+            controller.SetCourseInfo();
             controller.DrawGradeGraph();
             controller.DrawStudyLogGraph();
             DateTime currTime = DateTime.Now;
@@ -97,7 +98,7 @@ namespace Study_Buddy.Presentation
             currentForm.Hide();
             UserInfoForm form = new UserInfoForm();
             form.StartPosition = FormStartPosition.Manual;
-            UserInfoFormController controller = new UserInfoFormController(form, new Account("Billy Bob", "BillyBobsPassword"));
+            UserInfoFormController controller = new UserInfoFormController(form, AccountController.account);
             controller.DrawGPAGraph();
             controller.SetUserInfo();
             form.SetController(controller);

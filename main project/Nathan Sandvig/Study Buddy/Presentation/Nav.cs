@@ -59,10 +59,6 @@ namespace Study_Buddy.Presentation
             FormSwitcher.OpenScheduleForm(currentForm);
         }
 
-        private void btnSettings_Click(object sender, EventArgs e)
-        {
-            //FormSwitcher.OpenUserInfoForm(currentForm);
-        }
 
         private void btnAddDropCourse_Click(object sender, EventArgs e)
         {
@@ -73,11 +69,6 @@ namespace Study_Buddy.Presentation
         private void btnAddAssignment_Click(object sender, EventArgs e)
         {
             FormSwitcher.OpenAddAssignmentForm(currentForm);
-
-        }
-
-        private void btnImport_Click(object sender, EventArgs e)
-        {
 
         }
     }

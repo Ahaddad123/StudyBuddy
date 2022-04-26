@@ -13,11 +13,16 @@ namespace Study_Buddy.Presentation.View
 {
     public partial class AddCourseBox : UserControl
     {
+<<<<<<< HEAD
         private Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)> times;
+=======
+        private Dictionary<DayOfWeek, (String startTime, String endTime)> times;
+>>>>>>> 826b79ca9fde0a90b0bc4d0a9fbf39548a1495f6
         public EventHandler StatusUpdated;
         public AddCourseBox()
         {
             InitializeComponent();
+            times = new Dictionary<DayOfWeek, (String, String)>();
 
             TimeSpan startingTime = new TimeSpan(0, 0, 0);
             DateTime startingDate = new DateTime(DateTime.MinValue.Ticks);
@@ -423,6 +428,7 @@ namespace Study_Buddy.Presentation.View
 
                 Course course = new CourseBuilder().WithName(txtCourseTitle.Text).WithCode(txtCourseCode.Text).WithCredits(courseCredit).WithPriority(coursePriority).WithCourseHours(dateTimes).Build();
                 AccountController.account.addCourse(course);
+<<<<<<< HEAD
                 
                 nameErrorMessageLabel.Text = "";
                 CodeErrorMessageLabel.Text = "";
@@ -443,7 +449,12 @@ namespace Study_Buddy.Presentation.View
                 checkBoxFri.Checked = false;
                 checkBoxSat.Checked = false;
                 Clear();
+=======
+                Clear();
+                times = new Dictionary<DayOfWeek, (string startTime, string endTime)>();
+>>>>>>> 826b79ca9fde0a90b0bc4d0a9fbf39548a1495f6
                 successLabel.Text = "Succesfully added " + course.name;
+                this.StatusUpdated(sender, new EventArgs());
             }
         }
         public void Clear()

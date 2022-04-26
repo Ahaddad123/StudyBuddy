@@ -30,7 +30,7 @@ namespace Study_Buddy.Presentation.View
         // displayed on the hoursLogged chart
         //---------------------------------------------------------------------
         private CourseInfoFormController controller;
-        private Course course;
+        public Course currentCourse { get; set; }
         private string gradesSeriesID;
         private string hoursSeriesID;
 
@@ -42,34 +42,43 @@ namespace Study_Buddy.Presentation.View
         public CourseInfoForm()
         {
             InitializeComponent();
-            //this.gradesChart.Width = (800);
-            //this.hoursLoggedChart.Width = (800);
             this.Size = new System.Drawing.Size(1366, 768);
 
 
-            //Default for now, need to pass actual data
-            this.course = this.userCourseList1.currentCourse;
-            this.title = course.name;
+            this.userCourseList1.ChangePanelWidth(this.courseListPanel.Width);
+            //Draw courses on the userCourseList
+            this.userCourseList1.DrawCourses(AccountController.account.courses);
+            this.userCourseList1.DynamicEvent_CourseButtonClicked += new EventHandler(Event_UserCourseListButtonClicked);
+            this.nav1.SetCurrentForm(this); ;
+        }
+        public void SetInfo()
+        {
+            this.currentCourse = controller.currentCourse;
+            this.title = currentCourse.name;
             this.Text = title;
             this.mainHeader.Text = title;
-            this.nav1.SetCurrentForm(this);
-            gradesSeriesID = "Your grades for " + course.name;
-            hoursSeriesID = "Your study hours for week 0";
+
+
+            gradesSeriesID = "Grades for " + currentCourse.name;
+            hoursSeriesID = "Week 1";
             gradesChart.Series.Add(gradesSeriesID);
-            this.userCourseList1.ChangePanelWidth(this.courseListPanel.Width);
-            this.userCourseList1.StatusUpdated += new EventHandler(MyEventHandlerFunction_StatusUpdated);
+            controller.DrawGradeGraph();
         }
 
-        public void MyEventHandlerFunction_StatusUpdated(object sender, EventArgs e)
+        public void Event_UserCourseListButtonClicked(object sender, EventArgs e)
         {
-            this.course = this.userCourseList1.currentCourse;
-            this.title = course.name;
-            this.mainHeader.Text = course.name;
-            Course newCourse = this.userCourseList1.currentCourse;
-            this.controller.course = newCourse;
-            this.controller.studyLog = newCourse.hourLog;
-            
-            controller.DrawGradeGraph();
+            for (int i = 0; i < AccountController.account.courses.Count; i++)
+            {
+             //if course matches course name given by button text   
+                if (AccountController.account.courses[i].name == ((Button)sender).Text)
+                    currentCourse = AccountController.account.courses[i];
+            }
+            //pass current course to controller
+            this.controller.currentCourse = currentCourse;
+            this.controller.studyLog = currentCourse.hourLog;
+            //Set display to match current course
+            this.title = currentCourse.name;
+            this.mainHeader.Text = currentCourse.name;
         }
 
         //---------------------------------------------------------------------
@@ -116,7 +125,7 @@ namespace Study_Buddy.Presentation.View
         public void DrawStudyLogGraph(int weekID, List<string> datesX, List<int> hoursY)
         {
             //Initialize and format the chart
-            hoursSeriesID = "Your study hours for week " + weekID;
+            hoursSeriesID = "Week " + (weekID + 1); //Don't start count at 0
             hoursLoggedChart.Series.Add(hoursSeriesID);
 
             //If changing the sereies being graphed, remove the old one
@@ -176,7 +185,7 @@ namespace Study_Buddy.Presentation.View
 
         }
 
-        public void SetUserInfo(string name, string school, double gpa)
+        public void SetUserInfo(string name, string school, string gpa)
         {
             throw new NotImplementedException();
         }

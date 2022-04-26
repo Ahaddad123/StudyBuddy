@@ -30,9 +30,12 @@
             this.btnDone = new System.Windows.Forms.Button();
             this.welcomeMessage = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.addCourseBox1 = new Study_Buddy.Presentation.View.AddCourseBox();
+            this.courseListPanel = new System.Windows.Forms.Panel();
             this.userCourseList1 = new Study_Buddy.Presentation.View.UserCourseList();
+            this.addCourseBox1 = new Study_Buddy.Presentation.View.AddCourseBox();
+            this.labelCourses = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.courseListPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnDone
@@ -42,7 +45,7 @@
             this.btnDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDone.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDone.ForeColor = System.Drawing.Color.Navy;
-            this.btnDone.Location = new System.Drawing.Point(650, 656);
+            this.btnDone.Location = new System.Drawing.Point(1145, 647);
             this.btnDone.Name = "btnDone";
             this.btnDone.Size = new System.Drawing.Size(173, 48);
             this.btnDone.TabIndex = 8;
@@ -63,19 +66,10 @@
             this.welcomeMessage.TabIndex = 0;
             this.welcomeMessage.Text = "Thanks for joining.  Let\'s set up your classes.";
             // 
-            // userCourseList1
-            // 
-            this.userCourseList1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.userCourseList1.BackColor = System.Drawing.Color.Transparent;
-            this.userCourseList1.Location = new System.Drawing.Point(980, 75);
-            this.userCourseList1.Name = "userCourseList1";
-            this.userCourseList1.Size = new System.Drawing.Size(338, 600);
-            this.userCourseList1.TabIndex = 10;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel1.Controls.Add(this.userCourseList1);
+            this.panel1.Controls.Add(this.courseListPanel);
             this.panel1.Controls.Add(this.addCourseBox1);
             this.panel1.Controls.Add(this.welcomeMessage);
             this.panel1.Controls.Add(this.btnDone);
@@ -84,17 +78,46 @@
             this.panel1.Size = new System.Drawing.Size(1332, 719);
             this.panel1.TabIndex = 10;
             // 
+            // courseListPanel
+            // 
+            this.courseListPanel.Controls.Add(this.labelCourses);
+            this.courseListPanel.Controls.Add(this.userCourseList1);
+            this.courseListPanel.Location = new System.Drawing.Point(1011, 75);
+            this.courseListPanel.Name = "courseListPanel";
+            this.courseListPanel.Size = new System.Drawing.Size(307, 558);
+            this.courseListPanel.TabIndex = 11;
+            // 
+            // userCourseList1
+            // 
+            this.userCourseList1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.userCourseList1.BackColor = System.Drawing.Color.Transparent;
+            this.userCourseList1.Location = new System.Drawing.Point(3, 54);
+            this.userCourseList1.Name = "userCourseList1";
+            this.userCourseList1.Size = new System.Drawing.Size(304, 504);
+            this.userCourseList1.TabIndex = 10;
+            // 
             // addCourseBox1
             // 
             this.addCourseBox1.Location = new System.Drawing.Point(3, 75);
             this.addCourseBox1.Name = "addCourseBox1";
-            this.addCourseBox1.Size = new System.Drawing.Size(1019, 583);
+            this.addCourseBox1.Size = new System.Drawing.Size(1058, 558);
             this.addCourseBox1.TabIndex = 9;
+            // 
+            // labelCourses
+            // 
+            this.labelCourses.AutoSize = true;
+            this.labelCourses.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCourses.ForeColor = System.Drawing.Color.White;
+            this.labelCourses.Location = new System.Drawing.Point(78, 0);
+            this.labelCourses.Name = "labelCourses";
+            this.labelCourses.Size = new System.Drawing.Size(150, 26);
+            this.labelCourses.TabIndex = 12;
+            this.labelCourses.Text = "Your Courses";
             // 
             // InitialSetupForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1348, 721);
+            this.ClientSize = new System.Drawing.Size(1078, 576);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -110,6 +133,8 @@
             this.Text = "BaseForm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.courseListPanel.ResumeLayout(false);
+            this.courseListPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -120,5 +145,7 @@
         private System.Windows.Forms.Panel panel1;
         private AddCourseBox addCourseBox1;
         private UserCourseList userCourseList1;
+        private System.Windows.Forms.Panel courseListPanel;
+        private System.Windows.Forms.Label labelCourses;
     }
 }
