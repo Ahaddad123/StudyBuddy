@@ -17,8 +17,8 @@ namespace Study_Buddy.BusinessLogic
             this.times = times;
         }
 
-        public void addCourseTime() {
-            addCourseTimes.addTheCourseTimes(times);
+        public void addCourseTime(string courseName) {
+            addCourseTimes.addTheCourseTimes(times, courseName);
         }
     }
 }
