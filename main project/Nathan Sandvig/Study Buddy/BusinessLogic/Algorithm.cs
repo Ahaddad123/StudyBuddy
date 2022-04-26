@@ -122,7 +122,7 @@ namespace Study_Buddy.BusinessLogic
         public static double HoursForGrade(Course course, double targetGrade)
         {
             ImportCourseData(course);
-            if (assignmentLog.Count > 0)
+            if (assignmentLog.Count > 1)
                 CalculateFunction();
             double hours = (targetGrade - baseGrade) / hoursPerPercent;
             if (hours < 0)
