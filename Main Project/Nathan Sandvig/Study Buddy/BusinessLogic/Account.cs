@@ -94,9 +94,9 @@ namespace Study_Buddy.BusinessLogic
             int success = database.insertCourseData(course);
         }
 
-        public void addCourseTimes(Dictionary<DayOfWeek, (String startTime, String endTime)> times)
+        public void addTheCourseTimes(Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)> times)
         {
-            database.addTimesCourse(Dictionary < DayOfWeek, (String startTime, String endTime) > times);
+            database.addTimesCourse(times);
         }
 
         public void populateCourses(Course course)
