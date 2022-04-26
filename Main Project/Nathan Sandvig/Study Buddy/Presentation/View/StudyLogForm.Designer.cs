@@ -83,9 +83,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(52, 75);
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(480, 310);
+            this.groupBox1.Size = new System.Drawing.Size(611, 405);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             // 

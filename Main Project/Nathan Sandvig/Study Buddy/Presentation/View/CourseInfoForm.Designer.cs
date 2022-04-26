@@ -118,7 +118,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(336, 31);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Your Grades";
+            this.label1.Text = "Your Study Hours";
             // 
             // label2
             // 
@@ -127,9 +127,9 @@
             this.label2.ForeColor = System.Drawing.Color.Navy;
             this.label2.Location = new System.Drawing.Point(3, 312);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(247, 31);
+            this.label2.Size = new System.Drawing.Size(224, 39);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Your Study Hours";
+            this.label2.Text = "Your Grades";
             // 
             // panel1
             // 

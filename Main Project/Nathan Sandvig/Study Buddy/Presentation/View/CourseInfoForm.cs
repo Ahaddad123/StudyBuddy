@@ -59,8 +59,8 @@ namespace Study_Buddy.Presentation.View
             this.mainHeader.Text = title;
 
 
-            gradesSeriesID = "Your grades for " + currentCourse.name;
-            hoursSeriesID = "Your study hours for week 0";
+            gradesSeriesID = "Grades for " + currentCourse.name;
+            hoursSeriesID = "Week 1";
             gradesChart.Series.Add(gradesSeriesID);
             controller.DrawGradeGraph();
         }
@@ -125,7 +125,7 @@ namespace Study_Buddy.Presentation.View
         public void DrawStudyLogGraph(int weekID, List<string> datesX, List<int> hoursY)
         {
             //Initialize and format the chart
-            hoursSeriesID = "Your study hours for week " + weekID;
+            hoursSeriesID = "Week " + (weekID + 1); //Don't start count at 0
             hoursLoggedChart.Series.Add(hoursSeriesID);
 
             //If changing the sereies being graphed, remove the old one
