@@ -40,8 +40,9 @@ namespace Study_Buddy.Presentation.Model
             this.datesX = new List<DateTime>();
             this.averageGradesY = new List<double>();
             //Fill with default data
-            GenerateTestData();
+            //GenerateTestData();
             //GetCourseData();
+            GatherRealData();
         }
 
         //---------------------------------------------------------------------
@@ -105,6 +106,76 @@ namespace Study_Buddy.Presentation.Model
                 datesX.Add(dateTime);
                 dateTime = dateTime.AddDays(1);
             }
+        }
+
+        //---------------------------------------------------------------------
+        // Gathers data to present on gpa graph
+        // v1: Created the method - Andrew V, 4-26-22
+        //---------------------------------------------------------------------
+        private void GatherRealData()
+        {
+            DateTime currDate = new DateTime(2022, 1, 1);
+            DateTime today = DateTime.Now;
+
+            double averageGrade = 100;
+            int numAssignments = 0;
+            double total = 0;
+
+            while(currDate < today)
+            {
+                datesX.Add(currDate);
+
+                numAssignments += GetNumAssignments(currDate);
+                total += GetAssignGrade(currDate);
+
+                if(numAssignments > 0)
+                {
+                    averageGrade = total / numAssignments;
+                }
+
+                averageGradesY.Add(averageGrade);
+                currDate = currDate.AddDays(1);
+            }
+        }
+
+        //---------------------------------------------------------------------
+        // gets the number of assignments from courses
+        // v1: Created the method - Andrew V, 4-26-22
+        //---------------------------------------------------------------------
+        private int GetNumAssignments(DateTime currDate)
+        {
+            int numNewAssignment = 0;
+            foreach(Course currCourse in AccountController.account.courses)
+            {
+                foreach(Assignment currAssign in currCourse.assignments)
+                {
+                    if(currAssign.dueDate.DayOfYear == currDate.DayOfYear)
+                    {
+                        numNewAssignment++;
+                    }
+                }
+            }
+            return numNewAssignment;
+        }
+
+        //---------------------------------------------------------------------
+        // gets the total grade from courses
+        // v1: Created the method - Andrew V, 4-26-22
+        //---------------------------------------------------------------------
+        private double GetAssignGrade(DateTime currDate)
+        {
+            double sumOfGrade = 0.0;
+            foreach (Course currCourse in AccountController.account.courses)
+            {
+                foreach (Assignment currAssign in currCourse.assignments)
+                {
+                    if (currAssign.dueDate.DayOfYear == currDate.DayOfYear)
+                    {
+                        sumOfGrade += currAssign.grade;
+                    }
+                }
+            }
+            return sumOfGrade;
         }
     }
 }
