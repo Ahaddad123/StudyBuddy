@@ -13,11 +13,8 @@ namespace Study_Buddy.Presentation.View
 {
     public partial class AddCourseBox : UserControl
     {
-<<<<<<< HEAD
         private Dictionary<DayOfWeek, (String startTime, String endTime)> times;
-=======
         public EventHandler StatusUpdated;
->>>>>>> a88922516c0cc9711b00c38420143d4deea3f0aa
         public AddCourseBox()
         {
             InitializeComponent();
@@ -439,29 +436,7 @@ namespace Study_Buddy.Presentation.View
                 CourseSchedule course1 = new CourseSchedule(times);
                 Course course = new CourseBuilder().WithName(txtCourseTitle.Text).WithCode(txtCourseCode.Text).WithCredits(courseCredit).WithPriority(coursePriority).WithCourseHours(dateTimes).Build();
                 AccountController.account.addCourse(course);
-<<<<<<< HEAD
-                course1.addCourseTimes(times);
-                nameErrorMessageLabel.Text = "";
-                CodeErrorMessageLabel.Text = "";
-                PriorityErrorMessageLabel.Text = "";
-                creditsErrorMessageLabel.Text = "";
-                sunErrorMessageLabel.Text = "";
-                monErrorMessageLabel.Text = "";
-                tueErrorMessageLabel.Text = "";
-                wedErrorMessageLabel.Text = "";
-                thuErrorMessageLabel.Text = "";
-                friErrorMessageLabel.Text = "";
-                satErrorMessageLabel.Text = "";
-                checkBoxSun.Checked = false;
-                checkBoxMon.Checked = false;
-                checkBoxTue.Checked = false;
-                checkBoxWed.Checked = false;
-                checkBoxThu.Checked = false;
-                checkBoxFri.Checked = false;
-                checkBoxSat.Checked = false;
-=======
                 Clear();
->>>>>>> a88922516c0cc9711b00c38420143d4deea3f0aa
                 successLabel.Text = "Succesfully added " + course.name;
             }
         }

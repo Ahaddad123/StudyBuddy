@@ -96,7 +96,7 @@ namespace Study_Buddy.BusinessLogic
 
         public void addCourseTimes(Dictionary<DayOfWeek, (String startTime, String endTime)> times)
         {
-            database.addTimesCourse(Dictionary < DayOfWeek, (String startTime, String endTime) > times);
+            database.addTimesCourse(times);
         }
 
         public void populateCourses(Course course)
