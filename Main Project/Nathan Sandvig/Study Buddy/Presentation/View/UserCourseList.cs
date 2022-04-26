@@ -54,8 +54,6 @@ namespace Study_Buddy.Presentation.View
             button.Font = new Font("Arial", 14);
             button.ForeColor = Color.Navy;
             button.Click += new EventHandler(this.courseButtonClick);
-
-
             return button;
         }
 

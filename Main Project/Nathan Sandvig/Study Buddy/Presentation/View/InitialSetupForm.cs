@@ -22,11 +22,16 @@ namespace Study_Buddy.Presentation.View
             InitializeComponent();
             this.MaximumSize = new System.Drawing.Size(1366, 768);
             this.Size = new System.Drawing.Size(1366, 768);
-            this.addCourseBox1.StatusUpdated += new EventHandler(MyEventHandlerFunction_StatusUpdated);
+            this.addCourseBox1.StatusUpdated += new EventHandler(ChildControlEvent_AddCourseBoxAddCourseButtonClicked);
+            this.userCourseList1.StatusUpdated += new EventHandler(ChildControlEvent_CourseListButtonClicked);
         }
-        public void MyEventHandlerFunction_StatusUpdated(object sender, EventArgs e)
+
+        public void ChildControlEvent_CourseListButtonClicked(object sender, EventArgs e)
         {
-            MessageBox.Show("Yo");
+            MessageBox.Show("CourseListButtonClicked");
+        }
+        public void ChildControlEvent_AddCourseBoxAddCourseButtonClicked(object sender, EventArgs e)
+        {
             this.userCourseList1.UnDrawCourses();
             this.userCourseList1.LoadCourses();
             this.userCourseList1.DrawCourses();
