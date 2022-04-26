@@ -37,6 +37,8 @@ namespace Study_Buddy.BusinessLogic
         public List<List<DateTime>> courseTimes { get; set; }
         public Dictionary<DateTime, Double> datesAndAverageGrades { get; set; }
 
+        public CourseSchedule schedule { get; set; }
+
         //---------------------------------------------------------------------
         // Default constructor for the Course class
         // v1: Created the method - Nathan S, 3-6-22

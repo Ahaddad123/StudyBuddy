@@ -458,5 +458,10 @@ namespace Study_Buddy.DataAccess
             addGrade.CommandText = command1;
             addGrade.ExecuteNonQuery();
         }
+
+        public void addTimesCourse(Dictionary<DayOfWeek, (String startTime, String endTime)> times) 
+        {
+
+        }
     }
 }
