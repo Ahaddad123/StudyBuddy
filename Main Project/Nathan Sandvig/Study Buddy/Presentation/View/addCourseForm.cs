@@ -29,6 +29,21 @@ namespace Study_Buddy.Presentation
             this.nav1.SetCurrentForm(this);
             this.mainPanel.Controls.Add(this.editCourseBox1);
 
+            this.addCourseBox1.StatusUpdated += new EventHandler(ChildControlEvent_AddCourseBoxAddCourseButtonClicked);
+            this.removeCourseBox1.LoadCourses(AccountController.account.courses);
+            this.removeCourseBox1.StatusUpdated += new EventHandler(Event_RemoveCourseButtonClick);
+
+        }
+
+        public void ChildControlEvent_AddCourseBoxAddCourseButtonClicked(Object sender, EventArgs e)
+        {
+            
+        }
+
+        public void Event_RemoveCourseButtonClick(object sender, EventArgs e)
+        {
+            AccountController.account.removeCourse((String)sender);
+            this.removeCourseBox1.LoadCourses(AccountController.account.courses);
         }
 
         //---------------------------------------------------------------------
@@ -66,7 +81,7 @@ namespace Study_Buddy.Presentation
             this.addCourseBox1.Visible = false;
             this.editCourseBox1.Visible= false;
             //IMPORTANT - Make sure course list is updated
-            this.removeCourseBox1.LoadCourses();
+            this.removeCourseBox1.LoadCourses(AccountController.account.courses);
         }
 
         private void btnEditCourse_Click(object sender, EventArgs e)

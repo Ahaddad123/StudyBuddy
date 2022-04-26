@@ -103,7 +103,6 @@
             this.Controls.Add(this.groupBox2);
             this.Name = "RemoveCourseBox";
             this.Size = new System.Drawing.Size(1001, 545);
-            this.Load += new System.EventHandler(this.RemoveCourseBox_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);

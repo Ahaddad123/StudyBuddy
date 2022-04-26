@@ -13,6 +13,7 @@ namespace Study_Buddy.Presentation.View
 {
     public partial class RemoveCourseBox : UserControl
     {
+        public EventHandler StatusUpdated;
         public RemoveCourseBox()
         {
             InitializeComponent();
@@ -20,19 +21,16 @@ namespace Study_Buddy.Presentation.View
 
         private void removeCourseButton_Click(object sender, EventArgs e)
         {
-            AccountController.account.removeCourse(courseListBox.Text);
+            this.StatusUpdated(this.courseListBox.Text, new EventArgs());
+            this.courseListBox.Text = "";
             this.successMessage.Text = "Succesfully removed " + courseListBox.Text;
         }
 
-        private void RemoveCourseBox_Load(object sender, EventArgs e)
-        {
-            LoadCourses();
-        }
 
-        public void LoadCourses()
+        public void LoadCourses(List<Course> courses)
         {
             courseListBox.Items.Clear();
-            foreach (Course c in AccountController.account.courses)
+            foreach (Course c in courses)
             {
                 courseListBox.Items.Add(c.name);
             }
