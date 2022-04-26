@@ -20,8 +20,6 @@ namespace Study_Buddy.Presentation.View
         public UserCourseList()
         {
             //Get courses from account
-            //For whatever reason, the winform designer throws a hissy fit over this line of code, even though it runs perfectly fine.
-            //Comment it out to make the designer work. 
             courses = new List<Course>();
             LoadCourses();
             //Current course defaults to first in list
@@ -35,6 +33,8 @@ namespace Study_Buddy.Presentation.View
 
         public void LoadCourses()
         {
+            //For whatever reason, the winform designer throws a hissy fit over this line of code, even though it runs perfectly fine.
+            //Comment it out to make the designer work. 
             courses = AccountController.account.courses;
         }
 

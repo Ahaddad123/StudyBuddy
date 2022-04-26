@@ -136,8 +136,8 @@ namespace Study_Buddy.Presentation.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AddCoursePopupForm form = new AddCoursePopupForm();
-            controller.OpenAddCoursePopup(form);
+            //Clear the old addCourse info
+            this.addCourseBox1.Clear();
         }
     }
 }
