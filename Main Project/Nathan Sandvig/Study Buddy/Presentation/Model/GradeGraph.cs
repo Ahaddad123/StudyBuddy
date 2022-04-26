@@ -41,8 +41,9 @@ namespace Study_Buddy.Presentation.Model
             datesX = new List<DateTime>();
             averageGradesY = new List<double>();
             //Fill with default data
-            GenerateTestData();
+            //GenerateTestData();
             //GetCourseData();
+            GenerateRealData();
         }
 
         //---------------------------------------------------------------------
@@ -120,19 +121,29 @@ namespace Study_Buddy.Presentation.Model
         private void GenerateRealData()
         {
             //Calculate days since semester began (arbitrarily 1/24/2022
-            DateTime semesterStart = new DateTime(2022, 1, 1);
+            DateTime currDate = new DateTime(2022, 1, 1);
             DateTime today = DateTime.Now;
-            int daysSinceStartOfSemester = ((int)(today - semesterStart).TotalDays);
 
-            DateTime dateTime = semesterStart;
-            Random random = new Random();
+            double averageGrade = 100;
+            int numAssignments = 0;
+            double total = 0;
 
             //Populate lists with test data
-            for (int i = 0; i < daysSinceStartOfSemester; i++)
+            while(currDate < today)
             {
-                averageGradesY.Add(random.NextDouble() * 100);
-                datesX.Add(dateTime);
-                dateTime.AddDays(1);
+                datesX.Add(currDate);
+             
+                foreach (Assignment a in course.assignments)
+                {
+                    if (a.dueDate.DayOfYear == currDate.DayOfYear)
+                    {
+                        numAssignments++;
+                        total = total + a.grade;
+                        averageGrade = total / numAssignments;
+                    }
+                }
+                averageGradesY.Add(averageGrade);
+                currDate = currDate.AddDays(1);
             }
         }
     }
