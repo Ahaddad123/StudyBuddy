@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Study_Buddy.Presentation;
 using Study_Buddy.Presentation.Controller;
+using Study_Buddy.BusinessLogic;
 
 namespace Study_Buddy.Presentation.View
 {
@@ -18,12 +19,11 @@ namespace Study_Buddy.Presentation.View
         protected String title = "";
         public InitialSetupForm()
         {
-
             InitializeComponent();
             this.MaximumSize = new System.Drawing.Size(1366, 768);
             this.Size = new System.Drawing.Size(1366, 768);
             this.addCourseBox1.StatusUpdated += new EventHandler(ChildControlEvent_AddCourseBoxAddCourseButtonClicked);
-            this.userCourseList1.StatusUpdated += new EventHandler(ChildControlEvent_CourseListButtonClicked);
+            this.userCourseList1.DynamicEvent_CourseButtonClicked += new EventHandler(ChildControlEvent_CourseListButtonClicked);
         }
 
         public void ChildControlEvent_CourseListButtonClicked(object sender, EventArgs e)
@@ -32,9 +32,8 @@ namespace Study_Buddy.Presentation.View
         }
         public void ChildControlEvent_AddCourseBoxAddCourseButtonClicked(object sender, EventArgs e)
         {
-            this.userCourseList1.UnDrawCourses();
-            this.userCourseList1.LoadCourses();
-            this.userCourseList1.DrawCourses();
+            this.userCourseList1.ClearCourseButtons();
+            this.userCourseList1.DrawCourses(AccountController.account.courses);
         }
 
         public void SetController(FormController controller)

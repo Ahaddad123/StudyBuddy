@@ -47,7 +47,6 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "UserCourseList";
             this.Size = new System.Drawing.Size(338, 600);
-            this.Load += new System.EventHandler(this.UserCourseList_Load);
             this.ResumeLayout(false);
 
         }

@@ -30,7 +30,7 @@ namespace Study_Buddy.Presentation.View
         // displayed on the hoursLogged chart
         //---------------------------------------------------------------------
         private CourseInfoFormController controller;
-        private Course course;
+        private Course currentCourse;
         private string gradesSeriesID;
         private string hoursSeriesID;
 
@@ -42,32 +42,36 @@ namespace Study_Buddy.Presentation.View
         public CourseInfoForm()
         {
             InitializeComponent();
-            //this.gradesChart.Width = (800);
-            //this.hoursLoggedChart.Width = (800);
             this.Size = new System.Drawing.Size(1366, 768);
 
+            this.userCourseList1.DrawCourses(AccountController.account.courses);
 
-            //Default for now, need to pass actual data
-            this.course = this.userCourseList1.currentCourse;
-            this.title = course.name;
+            this.currentCourse = new Course();
+            this.title = currentCourse.name;
             this.Text = title;
             this.mainHeader.Text = title;
             this.nav1.SetCurrentForm(this);
-            gradesSeriesID = "Your grades for " + course.name;
+            gradesSeriesID = "Your grades for " + currentCourse.name;
             hoursSeriesID = "Your study hours for week 0";
             gradesChart.Series.Add(gradesSeriesID);
             this.userCourseList1.ChangePanelWidth(this.courseListPanel.Width);
-            this.userCourseList1.StatusUpdated += new EventHandler(MyEventHandlerFunction_StatusUpdated);
+            this.userCourseList1.DynamicEvent_CourseButtonClicked += new EventHandler(Event_UserCourseListButtonClicked);
         }
 
-        public void MyEventHandlerFunction_StatusUpdated(object sender, EventArgs e)
+        public void Event_UserCourseListButtonClicked(object sender, EventArgs e)
         {
-            this.course = this.userCourseList1.currentCourse;
-            this.title = course.name;
-            this.mainHeader.Text = course.name;
-            Course newCourse = this.userCourseList1.currentCourse;
-            this.controller.course = newCourse;
-            this.controller.studyLog = newCourse.hourLog;
+            for (int i = 0; i < AccountController.account.courses.Count; i++)
+            {
+             //if course matches course name given by button text   
+                if (AccountController.account.courses[i].name == ((Button)sender).Text)
+                    currentCourse = AccountController.account.courses[i];
+            }
+            //pass current course to controller
+            this.controller.course = currentCourse;
+            this.controller.studyLog = currentCourse.hourLog;
+            //Set display to match current course
+            this.title = currentCourse.name;
+            this.mainHeader.Text = currentCourse.name;
             
             controller.DrawGradeGraph();
         }

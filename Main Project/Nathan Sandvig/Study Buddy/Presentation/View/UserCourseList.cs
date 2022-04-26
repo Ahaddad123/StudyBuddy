@@ -13,29 +13,12 @@ namespace Study_Buddy.Presentation.View
 {
     public partial class UserCourseList : UserControl
     {
-        private List<Course> courses;
         public Course currentCourse;
 
-        public EventHandler StatusUpdated;
+        public EventHandler DynamicEvent_CourseButtonClicked;
         public UserCourseList()
         {
-            //Get courses from account
-            courses = new List<Course>();
-            LoadCourses();
-            //Current course defaults to first in list
-            if (courses.Count > 0)
-                currentCourse = courses[0];
-            //Placeholder course in case none exists
-            else
-                currentCourse = new Course();
             InitializeComponent();
-        }
-
-        public void LoadCourses()
-        {
-            //For whatever reason, the winform designer throws a hissy fit over this line of code, even though it runs perfectly fine.
-            //Comment it out to make the designer work. 
-            courses = AccountController.account.courses;
         }
 
         public Button createCourseButton(Course course, int locationindex, int red, int green, int blue)
@@ -61,21 +44,11 @@ namespace Study_Buddy.Presentation.View
         void courseButtonClick(object sender, EventArgs e)
         {
             Button currentButton = (Button)sender;
-            //
-            for (int i = 0; i < courses.Count; i++)
-            {
-                if (courses[i].name == currentButton.Text)
-                    currentCourse = courses[i];
-            }
-            this.StatusUpdated(this, new EventArgs());
+            this.DynamicEvent_CourseButtonClicked(currentButton, new EventArgs());
         }
 
-        private void UserCourseList_Load(object sender, EventArgs e)
-        {
-            DrawCourses();
-        }
 
-        public void UnDrawCourses()
+        public void ClearCourseButtons()
         {
             flowLayoutPanel1.Controls.Clear();
         }
@@ -85,7 +58,7 @@ namespace Study_Buddy.Presentation.View
             this.flowLayoutPanel1.Width = width;
         }
 
-        public void DrawCourses()
+        public void DrawCourses(List<Course> courses)
         {
             int red = 235;
             int green = 131;
