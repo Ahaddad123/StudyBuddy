@@ -185,7 +185,7 @@ namespace Study_Buddy.Presentation.View
 
         }
 
-        public void SetUserInfo(string name, string school, double gpa)
+        public void SetUserInfo(string name, string school, string gpa)
         {
             throw new NotImplementedException();
         }

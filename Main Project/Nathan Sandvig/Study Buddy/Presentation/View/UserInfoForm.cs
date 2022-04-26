@@ -27,12 +27,11 @@ namespace Study_Buddy.Presentation.View
             gpaChart.Series.Add(gpaSeriesID);
         }
 
-        public void SetUserInfo(string name, string school, double gpa)
+        public void SetUserInfo(string name, string school, string gpa)
         {
             this.userName.Text = name;
-            this.userSchool.Text = school;
-            this.userGPA.Text = "Your GPA: " + gpa.ToString();
-
+            this.userSchool.Text = "CHANGE ME!!!";
+            this.userGPA.Text = "Your GPA: " + "CHANGE ME!!!!!";
         }
 
         public void DrawGPAGraph(List<DateTime> datesX, List<double> averageGradesY)
@@ -53,6 +52,7 @@ namespace Study_Buddy.Presentation.View
             }
         }
 
+        //Our interfaces are not properly segregated.
         public void DrawGradeGraph(List<DateTime> xValues, List<double> yValues)
         {
             throw new NotImplementedException();

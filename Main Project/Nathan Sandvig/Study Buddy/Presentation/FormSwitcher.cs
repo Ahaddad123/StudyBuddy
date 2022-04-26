@@ -98,7 +98,7 @@ namespace Study_Buddy.Presentation
             currentForm.Hide();
             UserInfoForm form = new UserInfoForm();
             form.StartPosition = FormStartPosition.Manual;
-            UserInfoFormController controller = new UserInfoFormController(form, new Account("Billy Bob", "BillyBobsPassword"));
+            UserInfoFormController controller = new UserInfoFormController(form, AccountController.account);
             controller.DrawGPAGraph();
             controller.SetUserInfo();
             form.SetController(controller);
