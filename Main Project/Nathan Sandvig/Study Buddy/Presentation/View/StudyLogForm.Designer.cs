@@ -124,7 +124,7 @@
             this.successMessageLabel.ForeColor = System.Drawing.Color.White;
             this.successMessageLabel.Location = new System.Drawing.Point(90, 237);
             this.successMessageLabel.Name = "successMessageLabel";
-            this.successMessageLabel.Size = new System.Drawing.Size(0, 18);
+            this.successMessageLabel.Size = new System.Drawing.Size(0, 23);
             this.successMessageLabel.TabIndex = 18;
             // 
             // hoursErrorMessageLabel
@@ -134,7 +134,7 @@
             this.hoursErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
             this.hoursErrorMessageLabel.Location = new System.Drawing.Point(90, 219);
             this.hoursErrorMessageLabel.Name = "hoursErrorMessageLabel";
-            this.hoursErrorMessageLabel.Size = new System.Drawing.Size(0, 18);
+            this.hoursErrorMessageLabel.Size = new System.Drawing.Size(0, 23);
             this.hoursErrorMessageLabel.TabIndex = 17;
             // 
             // dateErrorMessageLabel
@@ -144,7 +144,7 @@
             this.dateErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
             this.dateErrorMessageLabel.Location = new System.Drawing.Point(90, 147);
             this.dateErrorMessageLabel.Name = "dateErrorMessageLabel";
-            this.dateErrorMessageLabel.Size = new System.Drawing.Size(0, 18);
+            this.dateErrorMessageLabel.Size = new System.Drawing.Size(0, 23);
             this.dateErrorMessageLabel.TabIndex = 16;
             // 
             // courseErrorMessageLabel
@@ -154,7 +154,7 @@
             this.courseErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
             this.courseErrorMessageLabel.Location = new System.Drawing.Point(90, 74);
             this.courseErrorMessageLabel.Name = "courseErrorMessageLabel";
-            this.courseErrorMessageLabel.Size = new System.Drawing.Size(0, 18);
+            this.courseErrorMessageLabel.Size = new System.Drawing.Size(0, 23);
             this.courseErrorMessageLabel.TabIndex = 15;
             // 
             // label4
@@ -164,7 +164,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(31, 114);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 18);
+            this.label4.Size = new System.Drawing.Size(52, 23);
             this.label4.TabIndex = 14;
             this.label4.Text = "Date";
             // 
@@ -178,7 +178,7 @@
             this.DTPhourDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DTPhourDate.Location = new System.Drawing.Point(89, 114);
             this.DTPhourDate.Name = "DTPhourDate";
-            this.DTPhourDate.Size = new System.Drawing.Size(327, 26);
+            this.DTPhourDate.Size = new System.Drawing.Size(327, 30);
             this.DTPhourDate.TabIndex = 13;
             // 
             // cmbCourses
@@ -187,7 +187,7 @@
             this.cmbCourses.FormattingEnabled = true;
             this.cmbCourses.Location = new System.Drawing.Point(94, 47);
             this.cmbCourses.Name = "cmbCourses";
-            this.cmbCourses.Size = new System.Drawing.Size(121, 21);
+            this.cmbCourses.Size = new System.Drawing.Size(121, 24);
             this.cmbCourses.TabIndex = 10;
             // 
             // butAddHours
@@ -209,7 +209,7 @@
             this.txtHours.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHours.Location = new System.Drawing.Point(89, 187);
             this.txtHours.Name = "txtHours";
-            this.txtHours.Size = new System.Drawing.Size(125, 26);
+            this.txtHours.Size = new System.Drawing.Size(125, 30);
             this.txtHours.TabIndex = 8;
             // 
             // label6
@@ -219,7 +219,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(23, 187);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 18);
+            this.label6.Size = new System.Drawing.Size(61, 23);
             this.label6.TabIndex = 4;
             this.label6.Text = "Hours";
             // 
@@ -230,7 +230,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(15, 48);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 18);
+            this.label2.Size = new System.Drawing.Size(73, 23);
             this.label2.TabIndex = 0;
             this.label2.Text = "Course";
             // 
@@ -240,7 +240,7 @@
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label5.Location = new System.Drawing.Point(362, 340);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(26, 13);
+            this.label5.Size = new System.Drawing.Size(32, 16);
             this.label5.TabIndex = 3;
             this.label5.Text = "Day";
             // 
@@ -250,16 +250,16 @@
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label3.Location = new System.Drawing.Point(436, 301);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 13);
+            this.label3.Size = new System.Drawing.Size(43, 16);
             this.label3.TabIndex = 1;
             this.label3.Text = "Week";
             // 
             // StudyLogForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(150)))), ((int)(((byte)(231)))));
-            this.ClientSize = new System.Drawing.Size(948, 553);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(946, 545);
             this.Controls.Add(this.mainPanel);
             this.MaximumSize = new System.Drawing.Size(964, 592);
             this.MinimumSize = new System.Drawing.Size(964, 592);
