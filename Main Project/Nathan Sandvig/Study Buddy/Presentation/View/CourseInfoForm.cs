@@ -62,6 +62,7 @@ namespace Study_Buddy.Presentation.View
             gradesSeriesID = "Your grades for " + currentCourse.name;
             hoursSeriesID = "Your study hours for week 0";
             gradesChart.Series.Add(gradesSeriesID);
+            controller.DrawGradeGraph();
         }
 
         public void Event_UserCourseListButtonClicked(object sender, EventArgs e)
@@ -78,8 +79,6 @@ namespace Study_Buddy.Presentation.View
             //Set display to match current course
             this.title = currentCourse.name;
             this.mainHeader.Text = currentCourse.name;
-            
-            controller.DrawGradeGraph();
         }
 
         //---------------------------------------------------------------------

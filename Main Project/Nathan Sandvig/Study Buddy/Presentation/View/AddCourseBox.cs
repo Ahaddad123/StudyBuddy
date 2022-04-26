@@ -18,6 +18,7 @@ namespace Study_Buddy.Presentation.View
         public AddCourseBox()
         {
             InitializeComponent();
+            times = new Dictionary<DayOfWeek, (String, String)>();
 
             TimeSpan startingTime = new TimeSpan(0, 0, 0);
             DateTime startingDate = new DateTime(DateTime.MinValue.Ticks);
@@ -437,7 +438,9 @@ namespace Study_Buddy.Presentation.View
                 Course course = new CourseBuilder().WithName(txtCourseTitle.Text).WithCode(txtCourseCode.Text).WithCredits(courseCredit).WithPriority(coursePriority).WithCourseHours(dateTimes).Build();
                 AccountController.account.addCourse(course);
                 Clear();
+                times = new Dictionary<DayOfWeek, (string startTime, string endTime)>();
                 successLabel.Text = "Succesfully added " + course.name;
+                this.StatusUpdated(sender, new EventArgs());
             }
         }
         public void Clear()

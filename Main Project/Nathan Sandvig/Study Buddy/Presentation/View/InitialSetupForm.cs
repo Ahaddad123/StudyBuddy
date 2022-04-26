@@ -20,6 +20,9 @@ namespace Study_Buddy.Presentation.View
         public InitialSetupForm()
         {
             InitializeComponent();
+
+            this.userCourseList1.DrawCourses(AccountController.account.courses);
+
             this.MaximumSize = new System.Drawing.Size(1366, 768);
             this.Size = new System.Drawing.Size(1366, 768);
             this.addCourseBox1.StatusUpdated += new EventHandler(ChildControlEvent_AddCourseBoxAddCourseButtonClicked);
@@ -28,7 +31,7 @@ namespace Study_Buddy.Presentation.View
 
         public void ChildControlEvent_CourseListButtonClicked(object sender, EventArgs e)
         {
-            MessageBox.Show("CourseListButtonClicked");
+
         }
         public void ChildControlEvent_AddCourseBoxAddCourseButtonClicked(object sender, EventArgs e)
         {
