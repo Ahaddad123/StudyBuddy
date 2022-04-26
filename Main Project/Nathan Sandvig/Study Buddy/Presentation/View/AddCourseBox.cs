@@ -420,8 +420,9 @@ namespace Study_Buddy.Presentation.View
             //All the checkboxes checked out
             if (valid)
             {
+                string courseName = txtCourseTitle.Text;
                 CourseSchedule course1 = new CourseSchedule(times);
-                course1.addCourseTime();
+                course1.addCourseTime(courseName);
 
                 Course course = new CourseBuilder().WithName(txtCourseTitle.Text).WithCode(txtCourseCode.Text).WithCredits(courseCredit).WithPriority(coursePriority).WithCourseHours(dateTimes).Build();
                 AccountController.account.addCourse(course);
