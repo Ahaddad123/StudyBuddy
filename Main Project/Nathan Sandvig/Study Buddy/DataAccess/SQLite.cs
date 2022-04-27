@@ -530,5 +530,46 @@ namespace Study_Buddy.DataAccess
 
             //command.Replace("course", courseName).Replace("SundayStart", (times[DayOfWeek.Sunday].startTime).ToString()).Replace("SundayEnd", (times[DayOfWeek.Sunday].endTime).ToString()).Replace("MondayStart", (times[DayOfWeek.Monday].startTime).ToString()).Replace("MondayEnd", (times[DayOfWeek.Monday].endTime).ToString()).Replace("TuesdayStart", (times[DayOfWeek.Tuesday].startTime).ToString()).Replace("TuesdayEnd", (times[DayOfWeek.Tuesday].endTime).ToString()).Replace("WednesdayStart", (times[DayOfWeek.Wednesday].startTime).ToString()).Replace("WednesdayEnd", (times[DayOfWeek.Wednesday].endTime).ToString()).Replace("ThursdayStart", (times[DayOfWeek.Thursday].startTime).ToString()).Replace("ThursdayEnd", (times[DayOfWeek.Thursday].startTime).ToString()).Replace("FridayStart", (times[DayOfWeek.Friday].startTime).ToString()).Replace("FridayEnd", (times[DayOfWeek.Friday].endTime).ToString()).Replace("SaturdayStart", (times[DayOfWeek.Saturday].startTime).ToString()).Replace("SaturdayEnd", (times[DayOfWeek.Saturday].endTime).ToString());
         }
+
+        public void removeTimesCourse(string courseName)
+        {
+            SQLiteConnection sqlite_conn = CreateConnection();
+
+            SQLiteCommand removeCourses;
+            removeCourses = sqlite_conn.CreateCommand();
+
+            string command = "DELETE FROM ClassTimes WHERE CourseName = '@name'";
+            string command1 = command.Replace("@name", courseName);
+            removeCourses.CommandText = command1;
+
+            removeCourses.ExecuteNonQuery();
+        }
+
+        public List<String> readTimesCourse()
+        {
+            List<String> courseTimes = new List<String>();
+            SQLiteDataReader sqlite_datareader;
+            SQLiteConnection sqlite_conn;
+            // Create a new database connection:
+            sqlite_conn = CreateConnection();
+
+            SQLiteCommand letsRead = sqlite_conn.CreateCommand();
+            letsRead.CommandText = "SELECT CourseName, SundayStart, SundayEnd, MondayStart, MondayEnd, TuesdayStart, TuesdayEnd, WednesdayStart, WednesdayEnd, ThursdayStart, ThursdayEnd, FridayStart, FridayEnd, SaturdayStart, SaturdayEnd FROM ClassTimes";
+
+            sqlite_datareader = letsRead.ExecuteReader();
+
+            while (sqlite_datareader.Read())
+            {
+                String course = sqlite_datareader.GetString(0);
+                courseTimes.Add(course);
+                for(int i = 1; i < 15; i++)
+                {
+                    String date = sqlite_datareader.GetString(i);
+                    courseTimes.Add(date);
+                }
+            }
+
+            return courseTimes;
+        }
     }
 }

@@ -15,6 +15,11 @@ namespace Study_Buddy.BusinessLogic
             this.times = times;
         }
 
+        public CourseSchedule()
+        {
+            times = new Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)>();
+        }
+
         public double getCourseHours(DayOfWeek date)
         {
             return (times[date].endTime - times[date].startTime).TotalHours;
