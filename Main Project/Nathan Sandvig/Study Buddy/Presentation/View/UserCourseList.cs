@@ -46,7 +46,6 @@ namespace Study_Buddy.Presentation.View
             this.DynamicEvent_CourseButtonClicked(currentButton, new EventArgs());
         }
 
-
         public void ClearCourseButtons()
         {
             flowLayoutPanel1.Controls.Clear();
