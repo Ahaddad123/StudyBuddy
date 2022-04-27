@@ -43,13 +43,11 @@ namespace Study_Buddy.Presentation.View
         {
             InitializeComponent();
             this.Size = new System.Drawing.Size(1366, 768);
-
-
             this.userCourseList1.ChangePanelWidth(this.courseListPanel.Width);
             //Draw courses on the userCourseList
             this.userCourseList1.DrawCourses(AccountController.account.courses);
             this.userCourseList1.DynamicEvent_CourseButtonClicked += new EventHandler(Event_UserCourseListButtonClicked);
-            this.nav1.SetCurrentForm(this); ;
+            this.nav1.SetCurrentForm(this);
         }
         public void SetInfo()
         {
@@ -57,7 +55,8 @@ namespace Study_Buddy.Presentation.View
             this.title = currentCourse.name;
             this.Text = title;
             this.mainHeader.Text = title;
-
+            gradesChart.Series.Clear();
+            hoursLoggedChart.Series.Clear();
 
             gradesSeriesID = "Grades for " + currentCourse.name;
             hoursSeriesID = "Week 1";
@@ -74,11 +73,12 @@ namespace Study_Buddy.Presentation.View
                     currentCourse = AccountController.account.courses[i];
             }
             //pass current course to controller
-            this.controller.currentCourse = currentCourse;
-            this.controller.studyLog = currentCourse.hourLog;
+            this.controller.CourseUpdated(currentCourse);
             //Set display to match current course
             this.title = currentCourse.name;
             this.mainHeader.Text = currentCourse.name;
+            this.controller.DrawGradeGraph();
+            this.controller.DrawStudyLogGraph();
         }
 
         //---------------------------------------------------------------------
