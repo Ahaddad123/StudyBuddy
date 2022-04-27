@@ -30,8 +30,8 @@ namespace Study_Buddy.Presentation.View
         public void SetUserInfo(string name, string school, string gpa)
         {
             this.userName.Text = name;
-            this.userSchool.Text = "CHANGE ME!!!";
-            this.userGPA.Text = "Your GPA: " + "CHANGE ME!!!!!";
+            this.userSchool.Text = school;
+            this.userGPA.Text = "Your GPA: " + gpa;
         }
 
         public void DrawGPAGraph(List<DateTime> datesX, List<double> averageGradesY)
