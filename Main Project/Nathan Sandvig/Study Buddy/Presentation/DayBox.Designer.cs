@@ -36,7 +36,7 @@
             this.labelDays.AutoSize = true;
             this.labelDays.Location = new System.Drawing.Point(0, 0);
             this.labelDays.Name = "labelDays";
-            this.labelDays.Size = new System.Drawing.Size(23, 16);
+            this.labelDays.Size = new System.Drawing.Size(27, 19);
             this.labelDays.TabIndex = 0;
             this.labelDays.Text = "00";
             // 

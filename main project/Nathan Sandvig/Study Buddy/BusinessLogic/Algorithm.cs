@@ -18,7 +18,7 @@ namespace Study_Buddy.BusinessLogic
         // DEFAULT_HOURS: The default hours per percentage of the user
         //---------------------------------------------------------------------
         private const double DEFAULT_BASE = 60;
-        private const double DEFAULT_HOURS = 0.1;
+        private const double DEFAULT_HOURS = 5;
 
         //---------------------------------------------------------------------
         // Attributes:

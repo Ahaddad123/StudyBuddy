@@ -23,7 +23,7 @@ namespace Study_Buddy.Presentation
             this.Size = new System.Drawing.Size(1366, 768);
             this.mainPanel.MaximumSize = new System.Drawing.Size(1080, 720);
             this.mainPanel.Size = new System.Drawing.Size(1080, 720);
-            this.title = "Add/Remove Course";
+            this.title = "Manage Courses";
             this.Text = title;
             this.mainHeader.Text = title;
             this.nav1.SetCurrentForm(this);
@@ -51,6 +51,7 @@ namespace Study_Buddy.Presentation
         public void Event_RemoveCourseButtonClick(object sender, EventArgs e)
         {
             AccountController.account.removeCourse((String)sender);
+            AccountController.account.database.removeTimesCourse((String)sender);
             this.removeCourseBox1.LoadCourses(AccountController.account.courses);
         }
 

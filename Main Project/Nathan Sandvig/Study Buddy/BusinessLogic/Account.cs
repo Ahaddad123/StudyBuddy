@@ -44,7 +44,7 @@ namespace Study_Buddy.BusinessLogic
             list = database.readCourses();
             for(int i = 0; i < list.Count; i+=3)
             {
-                populateCourses(new CourseBuilder().WithName(list.ElementAt(i)).WithCredits(Double.Parse(list.ElementAt(i+1))).WithCode(list.ElementAt(i+2)).Build());
+                populateCourses(new CourseBuilder().WithName(list.ElementAt(i)).WithCredits(Double.Parse(list.ElementAt(i+1))).WithCode(list.ElementAt(i+2)).WithSchedule(new CourseSchedule()).Build());
             }
 
             List<String> list2;
@@ -71,6 +71,49 @@ namespace Study_Buddy.BusinessLogic
                     if (course.name.Equals(list3.ElementAt(i+1)))
                     {
                         course.LogHours(Int32.Parse(list3.ElementAt(i)), DateTime.Parse(list3.ElementAt(i + 2)));
+                    }
+                }
+            }
+
+            List<String> list4;
+            list4 = database.readTimesCourse();
+            for(int i = 0; i < list4.Count; i += 15)
+            {
+                foreach(Course course in courses)
+                {
+                    if (course.name.Equals(list4.ElementAt(i)))
+                    {
+                        Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)> times;
+                        times = new Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)>();
+                        if (!list4.ElementAt(i + 1).Equals("null"))
+                        {
+                            times.Add(DayOfWeek.Sunday, (DateTime.Parse(list4.ElementAt(i + 1)), DateTime.Parse(list4.ElementAt(i + 2))));
+                        }
+                        if (!list4.ElementAt(i + 3).Equals("null"))
+                        {
+                            times.Add(DayOfWeek.Monday, (DateTime.Parse(list4.ElementAt(i + 3)), DateTime.Parse(list4.ElementAt(i + 4))));
+                        }
+                        if (!list4.ElementAt(i + 5).Equals("null"))
+                        {
+                            times.Add(DayOfWeek.Tuesday, (DateTime.Parse(list4.ElementAt(i + 5)), DateTime.Parse(list4.ElementAt(i + 6))));
+                        }
+                        if (!list4.ElementAt(i + 7).Equals("null"))
+                        {
+                            times.Add(DayOfWeek.Wednesday, (DateTime.Parse(list4.ElementAt(i + 7)), DateTime.Parse(list4.ElementAt(i + 8))));
+                        }
+                        if (!list4.ElementAt(i + 9).Equals("null"))
+                        {
+                            times.Add(DayOfWeek.Thursday, (DateTime.Parse(list4.ElementAt(i + 9)), DateTime.Parse(list4.ElementAt(i + 10))));
+                        }
+                        if (!list4.ElementAt(i + 11).Equals("null"))
+                        {
+                            times.Add(DayOfWeek.Friday, (DateTime.Parse(list4.ElementAt(i + 11)), DateTime.Parse(list4.ElementAt(i + 12))));
+                        }
+                        if (!list4.ElementAt(i + 13).Equals("null"))
+                        {
+                            times.Add(DayOfWeek.Saturday, (DateTime.Parse(list4.ElementAt(i + 13)), DateTime.Parse(list4.ElementAt(i + 14))));
+                        }
+                        course.schedule = new CourseSchedule(times);
                     }
                 }
             }
