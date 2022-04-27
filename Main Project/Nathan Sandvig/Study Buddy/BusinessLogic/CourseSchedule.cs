@@ -22,7 +22,10 @@ namespace Study_Buddy.BusinessLogic
 
         public double getCourseHours(DayOfWeek date)
         {
-            return (times[date].endTime - times[date].startTime).TotalHours;
+            double hours = 0.0;
+            if (times.ContainsKey(date))
+                hours = (times[date].endTime - times[date].startTime).TotalHours;
+            return hours;
         }
     }
 }
