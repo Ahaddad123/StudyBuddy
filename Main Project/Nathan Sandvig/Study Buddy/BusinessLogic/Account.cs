@@ -117,6 +117,16 @@ namespace Study_Buddy.BusinessLogic
                     }
                 }
             }
+
+            List<String> list5;
+            list5 = database.readStudentInfo();
+            for(int i = 0; i < list5.Count; i+=4)
+            {
+                this.fname = list5.ElementAt(i);
+                this.lname = list5.ElementAt(i+1);
+                this.GPA1 = list5.ElementAt(i+2);
+                this.sName = list5.ElementAt(i+3);
+            }
         }
 
         //---------------------------------------------------------------------
