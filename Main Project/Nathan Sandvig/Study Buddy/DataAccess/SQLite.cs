@@ -77,11 +77,11 @@ namespace Study_Buddy.DataAccess
                 checkAccounts.CommandText = createTables6;
                 checkAccounts.ExecuteNonQuery();
 
-                string createTables7 = "CREATE TABLE \"GPAData\" (\"Number\" INTEGER NOT NULL, \"GPA\" INTEGER NOT NULL, PRIMARY KEY(\"Number\" AUTO INCREMENT))";
+                String createTables7 = "CREATE TABLE \"GPAData\" (\"Number\" INTEGER NOT NULL, \"GPA\" INTEGER NOT NULL, PRIMARY KEY(\"Number\" AUTOINCREMENT))";
                 checkAccounts.CommandText = createTables7;
                 checkAccounts.ExecuteNonQuery();
 
-                string createTables8 = "CREATE TABLE \"ClassTimes\" (\"CourseID\" INTEGER NOT NULL, \"SundayStart\" TEXT, \"SundayEnd\" TEXT, \"MondayStart\" TEXT, \"MondayEnd\" TEXT, \"TuesdayStart\" TEXT, \"TuesdayEnd\" TEXT, \"WednesdayStart\" TEXT, \"WednesdayEnd\" TEXT, \"ThursdayStart\" TEXT, \"ThursdayEnd\" TEXT, \"FridayStart\" TEXT, \"FridayEnd\" TEXT, \"SaturdayStart\" TEXT, \"SaturdayEnd\" TEXT, PRIMARY KEY(CourseID))";
+                String createTables8 = "CREATE TABLE \"ClassTimes\" (\"CourseID\" INTEGER NOT NULL, \"SundayStart\" TEXT, \"SundayEnd\" TEXT, \"MondayStart\" TEXT, \"MondayEnd\" TEXT, \"TuesdayStart\" TEXT, \"TuesdayEnd\" TEXT, \"WednesdayStart\" TEXT, \"WednesdayEnd\" TEXT, \"ThursdayStart\" TEXT, \"ThursdayEnd\" TEXT, \"FridayStart\" TEXT, \"FridayEnd\" TEXT, \"SaturdayStart\" TEXT, \"SaturdayEnd\" TEXT, PRIMARY KEY(CourseID))";
                 checkAccounts.CommandText = createTables8;
                 checkAccounts.ExecuteNonQuery();
             } 
@@ -461,6 +461,10 @@ namespace Study_Buddy.DataAccess
 
         public void addTimesCourse(Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)> times, string courseName) 
         {
+            SQLiteConnection sqlite_conn = CreateConnection();
+
+            SQLiteCommand addCourseTimes;
+            addCourseTimes = sqlite_conn.CreateCommand();
             string command = "INSERT INTO ClassTimes(CourseID, SundayStart, SundayEnd, MondayStart, MondayEnd, TuesdayStart, TuesdayEnd, WednesdayStart, WednesdayEnd, ThursdayStart, ThursdayEnd, FridayStart, FridayEnd, SaturdayStart, SaturdayEnd) VALUES ('course', 'SundayStart','SundayEnd', 'MondayStart', 'MondayEnd', 'TuesdayStart', 'TuesdayEnd', 'WednesdayStart', 'WednesdayEnd', 'ThursdayStart', 'ThursdayEnd', 'FridayStart', 'FridayEnd', 'SaturdayStart', 'SaturdayEnd')";
             string command1 = command;
 
@@ -520,6 +524,9 @@ namespace Study_Buddy.DataAccess
             {
                 command1 = command.Replace("SaturdayStart", null).Replace("SaturdayEnd", null);
             }
+
+            addCourseTimes.CommandText = command1;
+            addCourseTimes.ExecuteNonQuery();
 
             //command.Replace("course", courseName).Replace("SundayStart", (times[DayOfWeek.Sunday].startTime).ToString()).Replace("SundayEnd", (times[DayOfWeek.Sunday].endTime).ToString()).Replace("MondayStart", (times[DayOfWeek.Monday].startTime).ToString()).Replace("MondayEnd", (times[DayOfWeek.Monday].endTime).ToString()).Replace("TuesdayStart", (times[DayOfWeek.Tuesday].startTime).ToString()).Replace("TuesdayEnd", (times[DayOfWeek.Tuesday].endTime).ToString()).Replace("WednesdayStart", (times[DayOfWeek.Wednesday].startTime).ToString()).Replace("WednesdayEnd", (times[DayOfWeek.Wednesday].endTime).ToString()).Replace("ThursdayStart", (times[DayOfWeek.Thursday].startTime).ToString()).Replace("ThursdayEnd", (times[DayOfWeek.Thursday].startTime).ToString()).Replace("FridayStart", (times[DayOfWeek.Friday].startTime).ToString()).Replace("FridayEnd", (times[DayOfWeek.Friday].endTime).ToString()).Replace("SaturdayStart", (times[DayOfWeek.Saturday].startTime).ToString()).Replace("SaturdayEnd", (times[DayOfWeek.Saturday].endTime).ToString());
         }
