@@ -18,31 +18,49 @@ namespace Study_Buddy.Presentation
     //---------------------------------------------------------------------
     internal static class FormSwitcher
     {
+        //---------------------------------------------------------------------
+        // Opens CourseInfoForm
+        // currentForm : The form that is currently opened
+        //---------------------------------------------------------------------
         public static void OpenCourseInfoForm(Form currentForm)
         {
+            //Hide the current form's display
             currentForm.Hide();
+
+            //Create a new form and controller
             CourseInfoForm form = new CourseInfoForm();
             form.StartPosition = FormStartPosition.Manual;
-            //TODO, pass in actual course and studyLog
             CourseInfoFormController controller;
+
+            //If no courses presently in account, instantiate controller with placeholder course
+            //as current course
             if (AccountController.account.courses.Count == 0)
-            {
                 controller = new CourseInfoFormController(form, new Course(), new StudyLog());
-            }
+
+            //Otherwise, instantiate controller with first course in user's account
             else
-            {
-                controller = new CourseInfoFormController(form, AccountController.account.courses[0], AccountController.account.courses[0].hourLog);
-            }
+                controller = new CourseInfoFormController(form, AccountController.account.courses[0], 
+                    AccountController.account.courses[0].hourLog);
+
+            //Set the controller and display info as well as graphs
             form.SetController(controller);
             controller.SetCourseInfo();
             controller.DrawGradeGraph();
             controller.DrawStudyLogGraph();
+
+            //Initialize the weekID to the current week
             DateTime currTime = DateTime.Now;
             int currWeek = currTime.DayOfYear / 7;
             controller.ChangeCurrentWeekID(currWeek);
+            //Display new form and close old form
             form.ShowDialog();
             currentForm.Close();
         }
+
+        //---------------------------------------------------------------------
+        // Opens Form
+        // currentForm : The form that is currently opened
+        //---------------------------------------------------------------------
         public static void OpenAddAssignmentForm(Form currentForm)
         {
             currentForm.Hide();
@@ -53,6 +71,11 @@ namespace Study_Buddy.Presentation
             form.ShowDialog();
             currentForm.Close();
         }
+
+        //---------------------------------------------------------------------
+        // Opens Form
+        // currentForm : The form that is currently opened
+        //---------------------------------------------------------------------
         public static void OpenAddCourseForm(Form currentForm)
         {
             currentForm.Hide();
@@ -63,6 +86,11 @@ namespace Study_Buddy.Presentation
             form.ShowDialog();
             currentForm.Close();
         }
+
+        //---------------------------------------------------------------------
+        // Opens Form
+        // currentForm : The form that is currently opened
+        //---------------------------------------------------------------------
         public static void OpenAddGradeForm(Form currentForm, Course course)
         {
             currentForm.Hide();
@@ -73,6 +101,11 @@ namespace Study_Buddy.Presentation
             form.ShowDialog();
             currentForm.Close();
         }
+
+        //---------------------------------------------------------------------
+        // Opens Form
+        // currentForm : The form that is currently opened
+        //---------------------------------------------------------------------
         public static void OpenHomePageForm(Form currentForm)
         {
             currentForm.Hide();
@@ -83,6 +116,11 @@ namespace Study_Buddy.Presentation
             form.ShowDialog();
             currentForm.Close();
         }
+
+        //---------------------------------------------------------------------
+        // Opens Form
+        // currentForm : The form that is currently opened
+        //---------------------------------------------------------------------
         public static void OpenStudyLogForm(Form currentForm)
         {
             currentForm.Hide();
@@ -93,6 +131,11 @@ namespace Study_Buddy.Presentation
             form.ShowDialog();
             currentForm.Close();
         }
+
+        //---------------------------------------------------------------------
+        // Opens Form
+        // currentForm : The form that is currently opened
+        //---------------------------------------------------------------------
         public static void OpenUserInfoForm(Form currentForm)
         {
             currentForm.Hide();
@@ -105,6 +148,11 @@ namespace Study_Buddy.Presentation
             form.ShowDialog();
             currentForm.Close();
         }
+
+        //---------------------------------------------------------------------
+        // Opens Form
+        // currentForm : The form that is currently opened
+        //---------------------------------------------------------------------
         public static void OpenCalendarForm(Form currentForm)
         {
             currentForm.Hide();
@@ -115,6 +163,11 @@ namespace Study_Buddy.Presentation
             form.ShowDialog();
             currentForm.Close();
         }
+
+        //---------------------------------------------------------------------
+        // Opens Form
+        // currentForm : The form that is currently opened
+        //---------------------------------------------------------------------
         public static void OpenScheduleForm(Form currentForm)
         {
             currentForm.Hide();
@@ -126,7 +179,12 @@ namespace Study_Buddy.Presentation
             currentForm.Close();
         }
 
-        //Below methods used for opening forms that do not inherit BaseForm
+        //Note that the below methods are used for opening forms that do not inherit from BaseForm
+
+        //---------------------------------------------------------------------
+        // Opens OpenRegistrationForm
+        // currentForm : The form that is currently opened
+        //---------------------------------------------------------------------
         public static void OpenRegistrationForm(Form currentForm)
         {
             currentForm.Hide();
@@ -137,6 +195,11 @@ namespace Study_Buddy.Presentation
             form.ShowDialog();
             currentForm.Close();
         }
+
+        //---------------------------------------------------------------------
+        // Opens InitialSetUpForm
+        // currentForm : The form that is currently opened
+        //---------------------------------------------------------------------
         public static void OpenInitialSetupForm(Form currentForm)
         {
             currentForm.Hide();

@@ -44,6 +44,7 @@ namespace Study_Buddy.Presentation.View
             gpaChart.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
             gpaChart.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
             gpaChart.ChartAreas[0].AxisX.Interval = 30;  //TODO Figure out how to label this properly
+            gpaChart.ChartAreas[0].AxisY.Maximum = 4;
 
             //Add members of data series to chart
             for (int i = 0; i < datesX.Count; i++)

@@ -107,6 +107,7 @@ namespace Study_Buddy.Presentation.View
             gradesChart.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
             gradesChart.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
             gradesChart.ChartAreas[0].AxisX.Interval = 30;  //TODO Figure out how to label this properly
+            gradesChart.ChartAreas[0].AxisY.Maximum = 100;
 
             //Add members of data series to chart
             for (int i = 0; i < datesX.Count; i++)
@@ -138,6 +139,8 @@ namespace Study_Buddy.Presentation.View
             hoursLoggedChart.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
             hoursLoggedChart.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
             hoursLoggedChart.ChartAreas[0].AxisX.Interval = 1;  //TODO Figure out how to label this properly
+
+            hoursLoggedChart.ChartAreas[0].AxisY.Maximum = 24;
 
             //Add members of data series to chart
             for (int i = 0; i < datesX.Count; i++)
