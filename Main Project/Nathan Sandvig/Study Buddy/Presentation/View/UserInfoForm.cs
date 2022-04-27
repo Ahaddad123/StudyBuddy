@@ -40,7 +40,7 @@ namespace Study_Buddy.Presentation.View
             gpaChart.Series[gpaSeriesID].ChartType =
                 System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             gpaChart.Series[gpaSeriesID].MarkerStyle =
-                System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+                System.Windows.Forms.DataVisualization.Charting.MarkerStyle.None;
             gpaChart.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
             gpaChart.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
             gpaChart.ChartAreas[0].AxisX.Interval = 30;  //TODO Figure out how to label this properly
