@@ -155,7 +155,7 @@ namespace Study_Buddy.Presentation.Model
                             averageGrade = total / numAssignments;
                         }
 
-                        newTime.AddDays(1);
+                        newTime = newTime.AddDays(1);
                     }
 
                     if (numAssignments > 0)
