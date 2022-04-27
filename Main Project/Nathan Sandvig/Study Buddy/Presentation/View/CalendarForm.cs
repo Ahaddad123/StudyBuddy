@@ -66,7 +66,7 @@ namespace Study_Buddy.Presentation
                     {
                         Label label = dayBox.addDueDate(indexOflabel, assignment.name);
                         dayBox.Controls.Add(label);
-                        indexOflabel += 10;
+                        indexOflabel += 15;
                     }
 
                 }

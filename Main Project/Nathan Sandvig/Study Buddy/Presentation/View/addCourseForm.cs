@@ -51,6 +51,7 @@ namespace Study_Buddy.Presentation
         public void Event_RemoveCourseButtonClick(object sender, EventArgs e)
         {
             AccountController.account.removeCourse((String)sender);
+            AccountController.account.database.removeTimesCourse((String)sender);
             this.removeCourseBox1.LoadCourses(AccountController.account.courses);
         }
 

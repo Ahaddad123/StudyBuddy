@@ -28,8 +28,9 @@ namespace Study_Buddy.Presentation
             Label labelDays = new Label();
             labelDays.Text = assignmentName;
             labelDays.ForeColor = Color.Navy;
-            labelDays.Font = new Font("Microsoft Sans Serif", 8);
+            labelDays.Font = new Font("Arial", 8);
             labelDays.Location = new Point(0, indexValue);
+            labelDays.Size = new Size(this.Width - 5, 15);
             return labelDays;
         }
 
