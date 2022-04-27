@@ -18,7 +18,7 @@ namespace Study_Buddy.BusinessLogic
         // DEFAULT_HOURS: The default hours per percentage of the user
         //---------------------------------------------------------------------
         private const double DEFAULT_BASE = 60;
-        private const double DEFAULT_HOURS = 5;
+        private const double DEFAULT_HOURS = 0.1;
 
         //---------------------------------------------------------------------
         // Attributes:
@@ -48,14 +48,16 @@ namespace Study_Buddy.BusinessLogic
             {
                 DateTime previousDate = assignmentList.First().dueDate.Subtract(new TimeSpan(120, 0, 0, 0));
                 double hours = 0.0;
-                while (hours == 0.0 && previousDate <= assignmentList.First().dueDate)
+                while (hours == 0.0 && previousDate < assignmentList.First().dueDate)
                 {
                     previousDate = previousDate.AddDays(1);
                     hours = course.hourLog.GetHours(previousDate);
                 }
 
-                while (previousDate.DayOfWeek != assignmentList.First().dueDate.DayOfWeek)
+                do
+                {
                     previousDate = previousDate.Subtract(new TimeSpan(1, 0, 0, 0));
+                } while (previousDate.DayOfWeek != assignmentList.First().dueDate.DayOfWeek);
 
                 foreach (Assignment assignment in assignmentList)
                 {
@@ -63,7 +65,11 @@ namespace Study_Buddy.BusinessLogic
                     DateTime currentDate = assignment.dueDate;
                     for (DateTime date = previousDate; date <= currentDate; date = date.AddDays(1))
                         hoursStudied += course.hourLog.GetHours(date);
-                    double weeks = (currentDate - previousDate).TotalDays / 7.0;
+                    double weeks = (currentDate - previousDate).Days / 7.0;
+                    if(weeks == 0)
+                    {
+                        weeks = 1;
+                    }
                     double hoursPerWeek = hoursStudied / weeks;
                     assignmentLog.AddLast((hoursPerWeek, assignment.grade));
                     previousDate = currentDate;
@@ -122,11 +128,11 @@ namespace Study_Buddy.BusinessLogic
         public static double HoursForGrade(Course course, double targetGrade)
         {
             ImportCourseData(course);
-            if (assignmentLog.Count > 1)
+            if (assignmentLog.Count > 0)
                 CalculateFunction();
             double hours = (targetGrade - baseGrade) / hoursPerPercent;
             if (hours < 0)
-                hours = course.credits * 2;
+                hours = 0;
             return hours;
         }
     }
