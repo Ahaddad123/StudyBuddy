@@ -64,7 +64,12 @@ namespace Study_Buddy.Presentation
 
                     if (controller.month == assignment.dueDate.Month && dayOfWeek == assignment.dueDate.Day)
                     {
-                        Label label = dayBox.addDueDate(indexOflabel, assignment.name);
+                        Color color = Color.Navy;
+                        if(assignment.dueDate.Day.Equals(DateTime.Today.Day))
+                        {
+                            color = Color.White;
+                        }
+                        Label label = dayBox.addDueDate(indexOflabel, assignment.name, color);
                         dayBox.Controls.Add(label);
                         indexOflabel += 15;
                     }

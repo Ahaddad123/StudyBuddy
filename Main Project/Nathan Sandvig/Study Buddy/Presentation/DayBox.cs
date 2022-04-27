@@ -23,11 +23,11 @@ namespace Study_Buddy.Presentation
             this.labelDays.ForeColor = Color.White;
         }
 
-        public Label addDueDate(int indexValue, string assignmentName)
+        public Label addDueDate(int indexValue, string assignmentName, Color color)
         {
             Label labelDays = new Label();
             labelDays.Text = assignmentName;
-            labelDays.ForeColor = Color.Navy;
+            labelDays.ForeColor = color;
             labelDays.Font = new Font("Arial", 8);
             labelDays.Location = new Point(0, indexValue);
             labelDays.Size = new Size(this.Width - 5, 15);
