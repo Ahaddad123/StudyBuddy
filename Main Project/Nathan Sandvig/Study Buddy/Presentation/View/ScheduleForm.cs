@@ -40,10 +40,11 @@ namespace Study_Buddy.Presentation
         private void ScheduleForm_Load(object sender, EventArgs e)
         {
             double[] hoursStudied = new double[7];
-            double studyGoal = 0;
+            double[] studyGoal = new double[7];
             for(int i = 0; i < 7; i++)
             {
                 hoursStudied[i] = 0;
+                studyGoal[i] = 0;
             }
             for(int i = 0; i < this.tableLayoutPanel2.RowCount; i++)
             {
@@ -112,17 +113,28 @@ namespace Study_Buddy.Presentation
                     hoursStudied[(int)sunday.DayOfWeek] += course.GetHoursStudied(sunday.Date);
                     sunday = sunday.AddDays(1);
                 }
-                studyGoal += Math.Round(Algorithm.HoursForGrade(course, 95), 2);
+                for (int j = 0; j < 7; j++)
+                    studyGoal[j] += Math.Round(Algorithm.HoursForGrade(course, 95), 2) / 7;
             }
-            studyGoal /= 7;
-            studyGoal = Math.Round(studyGoal, 0);
-            sunday.Text = hoursStudied[0] + "/" + studyGoal;
-            monday.Text = hoursStudied[1] + "/" + studyGoal;
-            tuesday.Text = hoursStudied[2] + "/" + studyGoal;
-            wednesday.Text = hoursStudied[3] + "/" + studyGoal;
-            thursday.Text = hoursStudied[4] + "/" + studyGoal;
-            friday.Text = hoursStudied[5] + "/" + studyGoal;
-            saturday.Text = hoursStudied[6] + "/" + studyGoal;
+            DayOfWeek dayOf = DayOfWeek.Sunday;
+            for (int i = 0; i < 7; i++)
+            {
+                double courseHours = 0.0;
+                for (int j = 0; j < controller.getCourses().Count; j++)
+                    courseHours += controller.getCourses()[j].schedule.getCourseHours(dayOf);
+                if (studyGoal[i] > 14 - courseHours)
+                    studyGoal[i] = 14 - courseHours;
+                studyGoal[i] = Math.Round(studyGoal[i], 0);
+                if (i != 6)
+                    dayOf++;
+            }
+            sunday.Text = hoursStudied[0] + "/" + studyGoal[0];
+            monday.Text = hoursStudied[1] + "/" + studyGoal[1];
+            tuesday.Text = hoursStudied[2] + "/" + studyGoal[2];
+            wednesday.Text = hoursStudied[3] + "/" + studyGoal[3];
+            thursday.Text = hoursStudied[4] + "/" + studyGoal[4];
+            friday.Text = hoursStudied[5] + "/" + studyGoal[5];
+            saturday.Text = hoursStudied[6] + "/" + studyGoal[6];
         }
     }
 }
