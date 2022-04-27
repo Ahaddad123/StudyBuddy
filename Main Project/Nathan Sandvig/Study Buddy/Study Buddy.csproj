@@ -82,8 +82,6 @@
     <Compile Include="BusinessLogic\Algorithm.cs" />
     <Compile Include="BusinessLogic\CourseSchedule.cs" />
     <Compile Include="BusinessLogic\ICommand.cs" />
-    <Compile Include="BusinessLogic\Notifications.cs" />
-    <Compile Include="BusinessLogic\SystemController.cs" />
     <Compile Include="DataAccess\SQLite.cs" />
     <Compile Include="Presentation\Controller\AddAssignmentFormController.cs" />
     <Compile Include="Presentation\Controller\AddCourseFormController.cs" />
@@ -192,11 +190,7 @@
       <DependentUpon>AddCourseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessLogic\Assignment.cs" />
-    <Compile Include="BusinessLogic\Calendar.cs" />
     <Compile Include="BusinessLogic\Course.cs" />
-    <Compile Include="BusinessLogic\Day,cs.cs" />
-    <Compile Include="BusinessLogic\Event.cs" />
-    <Compile Include="BusinessLogic\Settings.cs" />
     <Compile Include="BusinessLogic\StudyLog.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
