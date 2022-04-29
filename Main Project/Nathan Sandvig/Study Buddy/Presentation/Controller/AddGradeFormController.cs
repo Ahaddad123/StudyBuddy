@@ -11,33 +11,28 @@ namespace Study_Buddy.Presentation
     internal class AddGradeFormController : FormController
     {
         public Course course { get; set; }
-        private Stack<AddGrade> done = new Stack<AddGrade>();
-        private Stack<AddGrade> undone = new Stack<AddGrade>();
+        private Invoker invoker;
         public AddGradeFormController(AddGradeForm form, Course course)
         {
             this.view = form;
             this.course = course;
+            invoker = new Invoker();
         }
 
         public void AddGrade(String name, double points)
         {
             AddGrade addGrade = new AddGrade(course.name, name, points);
-            addGrade.execute();
-            done.Push(addGrade);
+            invoker.Do(addGrade);
         }
 
         public void Undo()
         {
-            AddGrade addGrade = done.Pop();
-            addGrade.unexecute();
-            undone.Push(addGrade);
+            invoker.Undo();
         }
 
         public void Redo()
         {
-            AddGrade addGrade = undone.Pop();
-            addGrade.execute();
-            done.Push(addGrade);
+            invoker.Redo();
         }
     }
 }

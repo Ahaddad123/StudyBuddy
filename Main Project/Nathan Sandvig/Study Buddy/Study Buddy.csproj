@@ -82,6 +82,7 @@
     <Compile Include="BusinessLogic\Algorithm.cs" />
     <Compile Include="BusinessLogic\CourseSchedule.cs" />
     <Compile Include="BusinessLogic\ICommand.cs" />
+    <Compile Include="BusinessLogic\Invoker.cs" />
     <Compile Include="DataAccess\SQLite.cs" />
     <Compile Include="Presentation\Controller\AddAssignmentFormController.cs" />
     <Compile Include="Presentation\Controller\AddCourseFormController.cs" />
