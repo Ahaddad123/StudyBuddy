@@ -24,15 +24,22 @@ namespace Study_Buddy.BusinessLogic
 
         public void Undo()
         {
-            ICommand command = done.Pop();
-            command.unexecute();
-            undone.Push(command);
+            if (done.Count > 0)
+            {
+                ICommand command = done.Pop();
+                command.unexecute();
+                undone.Push(command);
+            }
+
         }
         public void Redo()
         {
-            ICommand command = undone.Pop();
-            command.execute();
-            done.Push(command);
+            if (undone.Count > 0)
+            {
+                ICommand command = undone.Pop();
+                command.execute();
+                done.Push(command);
+            }
         }
     }
 }
