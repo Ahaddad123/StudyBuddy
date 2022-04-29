@@ -362,6 +362,12 @@
   <ItemGroup>
     <None Include="Resources\calendar-icon-01-01.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tooltip-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tooltip-icon-09.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

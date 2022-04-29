@@ -52,129 +52,172 @@ namespace Study_Buddy.Presentation
             DateTime currTime = DateTime.Now;
             int currWeek = currTime.DayOfYear / 7;
             controller.ChangeCurrentWeekID(currWeek);
+
             //Display new form and close old form
             form.ShowDialog();
             currentForm.Close();
         }
 
         //---------------------------------------------------------------------
-        // Opens Form
+        // Opens AddAssignmentForm
         // currentForm : The form that is currently opened
         //---------------------------------------------------------------------
         public static void OpenAddAssignmentForm(Form currentForm)
         {
+            //Hide the current form
             currentForm.Hide();
+
+            //Create a new form and controller
             AddAssignmentForm form = new AddAssignmentForm();
             form.StartPosition = FormStartPosition.Manual;
             AddAssignmentFormController controller = new AddAssignmentFormController(form);
             form.SetController(controller);
+
+            //Display new form and close old form
             form.ShowDialog();
             currentForm.Close();
         }
 
         //---------------------------------------------------------------------
-        // Opens Form
+        // Opens AddCourseForm
         // currentForm : The form that is currently opened
         //---------------------------------------------------------------------
         public static void OpenAddCourseForm(Form currentForm)
-        {
+        {            
+            //Hide the current form
             currentForm.Hide();
+
+            //Create a new form and controller
             AddCourseForm form = new AddCourseForm();
             form.StartPosition = FormStartPosition.Manual;
             AddCourseFormController controller = new AddCourseFormController(form);
             form.SetController(controller);
+
+            //Display new form and close old form
             form.ShowDialog();
             currentForm.Close();
         }
 
         //---------------------------------------------------------------------
-        // Opens Form
+        // Opens AddGradeForm
         // currentForm : The form that is currently opened
         //---------------------------------------------------------------------
         public static void OpenAddGradeForm(Form currentForm, Course course)
         {
+            //Hide the current form
             currentForm.Hide();
+
+            //Create a new form and controller
             AddGradeForm form = new AddGradeForm();
             form.StartPosition = FormStartPosition.Manual;
             AddGradeFormController controller = new AddGradeFormController(form, course);
             form.SetController(controller);
+
+            //Display new form and close old form
             form.ShowDialog();
             currentForm.Close();
         }
 
         //---------------------------------------------------------------------
-        // Opens Form
+        // Opens HomePageForm
         // currentForm : The form that is currently opened
         //---------------------------------------------------------------------
         public static void OpenHomePageForm(Form currentForm)
         {
+            //Hide the current form
             currentForm.Hide();
+
+            //Create a new form and controller
             HomePageForm form = new HomePageForm();
             form.StartPosition = FormStartPosition.Manual;
             HomePageFormController controller = new HomePageFormController(form);
             form.SetController(controller);
+
+            //Display new form and close old form
             form.ShowDialog();
             currentForm.Close();
         }
 
         //---------------------------------------------------------------------
-        // Opens Form
+        // Opens StudyLogForm
         // currentForm : The form that is currently opened
         //---------------------------------------------------------------------
         public static void OpenStudyLogForm(Form currentForm)
         {
+            //Hide the current form
             currentForm.Hide();
+
+            //Create a new form and controller
             StudyLogForm form = new StudyLogForm();
             form.StartPosition = FormStartPosition.Manual;
             StudyLogFormController controller = new StudyLogFormController(form);
             form.SetController(controller);
+
+            //Display new form and close old form
             form.ShowDialog();
             currentForm.Close();
         }
 
         //---------------------------------------------------------------------
-        // Opens Form
+        // Opens UserInfoForm
         // currentForm : The form that is currently opened
         //---------------------------------------------------------------------
         public static void OpenUserInfoForm(Form currentForm)
         {
+            //Hide the current form
             currentForm.Hide();
+
+            //Create a new form and controller
             UserInfoForm form = new UserInfoForm();
             form.StartPosition = FormStartPosition.Manual;
             UserInfoFormController controller = new UserInfoFormController(form, AccountController.account);
+            form.SetController(controller);
+
+            //Draw graph and display info
             controller.DrawGPAGraph();
             controller.SetUserInfo();
-            form.SetController(controller);
+
+            //Display new form and close old form
             form.ShowDialog();
             currentForm.Close();
         }
 
         //---------------------------------------------------------------------
-        // Opens Form
+        // Opens CalendarForm
         // currentForm : The form that is currently opened
         //---------------------------------------------------------------------
         public static void OpenCalendarForm(Form currentForm)
         {
+            //Hide the current form
             currentForm.Hide();
+
+            //Create a new form and controller
             CalendarForm form = new CalendarForm();
             form.StartPosition = FormStartPosition.Manual;
             CalendarFormController controller = new CalendarFormController(form);
             form.SetController(controller);
+
+            //Display new form and close old form
             form.ShowDialog();
             currentForm.Close();
         }
 
         //---------------------------------------------------------------------
-        // Opens Form
+        // Opens ScheduleForm
         // currentForm : The form that is currently opened
         //---------------------------------------------------------------------
         public static void OpenScheduleForm(Form currentForm)
         {
+            //Hide the current form
             currentForm.Hide();
+
+            //Create a new form and controller
             ScheduleForm form = new ScheduleForm();
             form.StartPosition = FormStartPosition.Manual;
             ScheduleFormController controller = new ScheduleFormController(form);
             form.SetController(controller);
+
+            //Display new form and close old form
             form.ShowDialog();
             currentForm.Close();
         }
@@ -187,11 +230,16 @@ namespace Study_Buddy.Presentation
         //---------------------------------------------------------------------
         public static void OpenRegistrationForm(Form currentForm)
         {
+            //Hide the current form
             currentForm.Hide();
+
+            //Create a new form and controller
             RegistrationForm form = new RegistrationForm();
             form.StartPosition = FormStartPosition.Manual;
             RegistrationFormController controller = new RegistrationFormController(form);
             form.SetController(controller);
+
+            //Display new form and close old form
             form.ShowDialog();
             currentForm.Close();
         }
@@ -202,11 +250,16 @@ namespace Study_Buddy.Presentation
         //---------------------------------------------------------------------
         public static void OpenInitialSetupForm(Form currentForm)
         {
+            //Hide the current form
             currentForm.Hide();
+
+            //Create a new form and controller
             InitialSetupForm form = new InitialSetupForm();
             form.StartPosition = FormStartPosition.Manual;
             InitialSetupFormController controller = new InitialSetupFormController(form);
             form.SetController(controller);
+
+            //Display new form and close old form
             form.ShowDialog();
             currentForm.Close();
         }

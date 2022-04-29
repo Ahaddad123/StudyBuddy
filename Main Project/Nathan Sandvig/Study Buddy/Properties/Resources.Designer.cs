@@ -149,5 +149,15 @@ namespace Study_Buddy.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tooltip_icon_09 {
+            get {
+                object obj = ResourceManager.GetObject("tooltip_icon_09", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

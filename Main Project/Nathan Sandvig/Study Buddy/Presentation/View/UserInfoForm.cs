@@ -12,10 +12,24 @@ using Study_Buddy.Presentation.Model;
 
 namespace Study_Buddy.Presentation.View
 {
+    //---------------------------------------------------------------------
+    // Displays user info including username, school, current GPA and
+    // a graph of semester GPA over entire semester.
+    //---------------------------------------------------------------------
     public partial class UserInfoForm : BaseForm, IGraphView
     {
+        //---------------------------------------------------------------------
+        // Private data members:
+        // controller : the form's controller 
+        // gpaSeriesID : the series ID of the series on the gpaChart
+        //---------------------------------------------------------------------
         private UserInfoFormController controller;
         private string gpaSeriesID;
+
+        //---------------------------------------------------------------------
+        // Default constructor.  Initializes components and other members 
+        // to starting values.
+        //---------------------------------------------------------------------
         public UserInfoForm()
         {
             InitializeComponent();
@@ -23,17 +37,28 @@ namespace Study_Buddy.Presentation.View
             this.Text = title;
             this.mainHeader.Text = title;
             this.nav1.SetCurrentForm(this);
-            this.gpaSeriesID = "Your GPA";
+            this.gpaSeriesID = "Your GPA this semester";
             gpaChart.Series.Add(gpaSeriesID);
         }
 
-        public void SetUserInfo(string name, string school, string gpa)
+        //---------------------------------------------------------------------
+        // Displays name, school and gpa passed from controller.
+        // userName : the username of the user
+        // school : the user's school/university
+        // gpa : the user's overall grade point average (not including 
+        // this semester, at least as of 4-27-2022)
+        //---------------------------------------------------------------------
+        public void DisplayUserInfo(string userName, string school, string gpa)
         {
-            this.userName.Text = name;
+            this.userName.Text = userName;
             this.userSchool.Text = school;
-            this.userGPA.Text = "Your GPA: " + gpa;
+            this.userGPA.Text = "Your Current GPA: " + gpa;
         }
-
+        //---------------------------------------------------------------------
+        // Draws a graph of the user's GPA from the provided data.
+        // datesX: the dates to be graphed on the X axis
+        // averageGradesY : the avg GPA on a given date to be graphed on the Y axis
+        //---------------------------------------------------------------------
         public void DrawGPAGraph(List<DateTime> datesX, List<double> averageGradesY)
         {
             //Initialize and format the chart
@@ -43,7 +68,7 @@ namespace Study_Buddy.Presentation.View
                 System.Windows.Forms.DataVisualization.Charting.MarkerStyle.None;
             gpaChart.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
             gpaChart.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
-            gpaChart.ChartAreas[0].AxisX.Interval = 30;  //TODO Figure out how to label this properly
+            gpaChart.ChartAreas[0].AxisX.Interval = 30;  //TODO: Figure out how to label this properly
             gpaChart.ChartAreas[0].AxisY.Maximum = 4;
 
             //Add members of data series to chart
@@ -53,17 +78,20 @@ namespace Study_Buddy.Presentation.View
             }
         }
 
-        //Our interfaces are not properly segregated.
+        //TODO: Segregate interfaces to avoid gems like this.
         public void DrawGradeGraph(List<DateTime> xValues, List<double> yValues)
         {
             throw new NotImplementedException();
         }
-
+        //TODO: See above method.
         public void DrawStudyLogGraph(int weekID, List<string> xValues, List<int> yValues)
         {
             throw new NotImplementedException();
         }
 
+        //---------------------------------------------------------------------
+        // Sets the form's controller
+        //---------------------------------------------------------------------
         public void SetController(GraphController formController)
         {
             this.controller = (UserInfoFormController)formController;

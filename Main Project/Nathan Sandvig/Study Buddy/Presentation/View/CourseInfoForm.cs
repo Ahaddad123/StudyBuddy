@@ -44,36 +44,44 @@ namespace Study_Buddy.Presentation.View
             InitializeComponent();
             this.Size = new System.Drawing.Size(1366, 768);
             this.userCourseList1.ChangePanelWidth(this.courseListPanel.Width);
+
             //Draw courses on the userCourseList
             this.userCourseList1.DrawCourses(AccountController.account.courses);
             this.userCourseList1.DynamicEvent_CourseButtonClicked += new EventHandler(Event_UserCourseListButtonClicked);
             this.nav1.SetCurrentForm(this);
         }
-        public void SetInfo()
+
+        //---------------------------------------------------------------------
+        // Displays the information for the passed course.
+        //---------------------------------------------------------------------
+        public void DisplayCourseInfo(Course currentCourse)
         {
-            this.currentCourse = controller.currentCourse;
+            this.currentCourse = currentCourse;
             this.title = currentCourse.name;
             this.Text = title;
             this.mainHeader.Text = title;
+
+            //Clear the charts 
             gradesChart.Series.Clear();
             hoursLoggedChart.Series.Clear();
 
+            //Reset and redraw charts using data from passed course
             gradesSeriesID = "Grades for " + currentCourse.name;
             hoursSeriesID = "Week 1";
             gradesChart.Series.Add(gradesSeriesID);
             controller.DrawGradeGraph();
         }
 
+        //---------------------------------------------------------------------
+        // Handles the event of a userCourseListButton being clicked.
+        // Changes the current course for whom information is being displayed.
+        //---------------------------------------------------------------------
         public void Event_UserCourseListButtonClicked(object sender, EventArgs e)
         {
-            for (int i = 0; i < AccountController.account.courses.Count; i++)
-            {
-             //if course matches course name given by button text   
-                if (AccountController.account.courses[i].name == ((Button)sender).Text)
-                    currentCourse = AccountController.account.courses[i];
-            }
-            //pass current course to controller
-            this.controller.CourseUpdated(currentCourse);
+            //Extract course name from button
+            string courseName = ((Button)sender).Text;
+            //Send course to controller
+            this.controller.UpdateCourse(courseName);
             //Set display to match current course
             this.title = currentCourse.name;
             this.mainHeader.Text = currentCourse.name;
@@ -188,7 +196,7 @@ namespace Study_Buddy.Presentation.View
 
         }
 
-        public void SetUserInfo(string name, string school, string gpa)
+        public void DisplayUserInfo(string name, string school, string gpa)
         {
             throw new NotImplementedException();
         }

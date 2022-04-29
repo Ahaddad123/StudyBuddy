@@ -214,7 +214,7 @@ namespace Study_Buddy.Presentation.View
                 {
 
                     //add course times for Sunday
-                    if (DateTime.Parse(comboBoxSunStart.SelectedItem.ToString()) > DateTime.Parse(comboBoxSunEnd.SelectedItem.ToString()))
+                    if (DateTime.Parse(comboBoxSunStart.SelectedItem.ToString()) >= DateTime.Parse(comboBoxSunEnd.SelectedItem.ToString()))
                     {
                         sunErrorMessageLabel.Text = "Invalid Sunday times";
                         valid = false;
@@ -245,7 +245,7 @@ namespace Study_Buddy.Presentation.View
                 {
 
                     //add course times for Sunday
-                    if (DateTime.Parse(comboBoxMonStart.SelectedItem.ToString()) > DateTime.Parse(comboBoxMonEnd.SelectedItem.ToString()))
+                    if (DateTime.Parse(comboBoxMonStart.SelectedItem.ToString()) >= DateTime.Parse(comboBoxMonEnd.SelectedItem.ToString()))
                     {
                         monErrorMessageLabel.Text = "Invalid Monday times";
                         valid = false;
@@ -275,7 +275,7 @@ namespace Study_Buddy.Presentation.View
                 {
 
                     //add course times for Sunday
-                    if (DateTime.Parse(comboBoxTueStart.SelectedItem.ToString()) > DateTime.Parse(comboBoxTueEnd.SelectedItem.ToString()))
+                    if (DateTime.Parse(comboBoxTueStart.SelectedItem.ToString()) >= DateTime.Parse(comboBoxTueEnd.SelectedItem.ToString()))
                     {
                         tueErrorMessageLabel.Text = "Invalid Tuesday times";
                         valid = false;
@@ -304,12 +304,13 @@ namespace Study_Buddy.Presentation.View
                 if (!string.IsNullOrEmpty(comboBoxWedStart.Text) && !string.IsNullOrEmpty(comboBoxWedEnd.Text))
                 {
 
-                    //add course times for Sunday
-                    if (DateTime.Parse(comboBoxWedStart.SelectedItem.ToString()) > DateTime.Parse(comboBoxWedEnd.SelectedItem.ToString()))
+                    //end time is before or equal to start time
+                    if (DateTime.Parse(comboBoxWedStart.SelectedItem.ToString()) >= DateTime.Parse(comboBoxWedEnd.SelectedItem.ToString()))
                     {
                         wedErrorMessageLabel.Text = "Invalid Wednesday times";
                         valid = false;
                     }
+                    //add course times for Sunday
                     else
                     {
                         times.Add(DayOfWeek.Wednesday, (DateTime.Parse(comboBoxWedStart.SelectedItem.ToString()), DateTime.Parse(comboBoxWedEnd.SelectedItem.ToString())));
@@ -334,12 +335,13 @@ namespace Study_Buddy.Presentation.View
                 if (!string.IsNullOrEmpty(comboBoxThuStart.Text) && !string.IsNullOrEmpty(comboBoxThuEnd.Text))
                 {
 
-                    //add course times for Sunday
-                    if (DateTime.Parse(comboBoxThuStart.SelectedItem.ToString()) > DateTime.Parse(comboBoxThuEnd.SelectedItem.ToString()))
+                    //end time is before or equal to start time
+                    if (DateTime.Parse(comboBoxThuStart.SelectedItem.ToString()) >= DateTime.Parse(comboBoxThuEnd.SelectedItem.ToString()))
                     {
                         thuErrorMessageLabel.Text = "Invalid Thursday times";
                         valid = false;
                     }
+                    //add course times for Thursday
                     else
                     {
                         times.Add(DayOfWeek.Thursday, (DateTime.Parse(comboBoxThuStart.SelectedItem.ToString()), DateTime.Parse(comboBoxThuEnd.SelectedItem.ToString())));
@@ -364,12 +366,12 @@ namespace Study_Buddy.Presentation.View
                 if (!string.IsNullOrEmpty(comboBoxFriStart.Text) && !string.IsNullOrEmpty(comboBoxFriEnd.Text))
                 {
 
-                    //add course times for Sunday
-                    if (DateTime.Parse(comboBoxFriStart.SelectedItem.ToString()) > DateTime.Parse(comboBoxFriEnd.SelectedItem.ToString()))
+                    if (DateTime.Parse(comboBoxFriStart.SelectedItem.ToString()) >= DateTime.Parse(comboBoxFriEnd.SelectedItem.ToString()))
                     {
                         friErrorMessageLabel.Text = "Invalid Friday times";
                         valid = false;
                     }
+                    //add course times for Friday
                     else
                     {
                         times.Add(DayOfWeek.Friday, (DateTime.Parse(comboBoxFriStart.SelectedItem.ToString()), DateTime.Parse(comboBoxFriEnd.SelectedItem.ToString())));
@@ -394,12 +396,12 @@ namespace Study_Buddy.Presentation.View
                 if (!string.IsNullOrEmpty(comboBoxSatStart.Text) && !string.IsNullOrEmpty(comboBoxSatEnd.Text))
                 {
 
-                    //add course times for Sunday
-                    if (DateTime.Parse(comboBoxSatStart.SelectedItem.ToString()) > DateTime.Parse(comboBoxSatEnd.SelectedItem.ToString()))
+                    if (DateTime.Parse(comboBoxSatStart.SelectedItem.ToString()) >= DateTime.Parse(comboBoxSatEnd.SelectedItem.ToString()))
                     {
                         satErrorMessageLabel.Text = "Invalid Saturday times";
                         valid = false;
                     }
+                    //add course times for Sunday
                     else
                     {
                         times.Add(DayOfWeek.Saturday, (DateTime.Parse(comboBoxSatStart.SelectedItem.ToString()), DateTime.Parse(comboBoxSatEnd.SelectedItem.ToString())));

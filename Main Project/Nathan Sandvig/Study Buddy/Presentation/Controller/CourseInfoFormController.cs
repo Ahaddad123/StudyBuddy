@@ -44,17 +44,16 @@ namespace Study_Buddy.Presentation
             weekID = 0;
         }
 
-        public void CourseUpdated(Course currentCourse)
+        public void UpdateCourse(string courseName)
         {
-            this.currentCourse = currentCourse;
+            this.currentCourse = AccountController.account.getCourseByName(courseName);
             this.gradeGraph = new GradeGraph(currentCourse);
             this.studyLogGraph = new StudyLogGraph(currentCourse.hourLog);
             SetCourseInfo();
         }
         public void SetCourseInfo()
         {
-            ((CourseInfoForm)view).currentCourse = currentCourse;
-            ((CourseInfoForm)view).SetInfo();
+            ((CourseInfoForm)view).DisplayCourseInfo(currentCourse);
         }
 
         //---------------------------------------------------------------------
