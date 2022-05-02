@@ -57,5 +57,9 @@ namespace Study_Buddy.BusinessLogic
                 }
             }
         }
+
+        public void scheduleCheck() {
+
+        }
     }
 }

@@ -130,12 +130,13 @@ namespace Study_Buddy.Presentation.View
         }
 
         //---------------------------------------------------------------------
-        // Handles a click of the "sign in" button
+        // Handles a click of the "sign in" button 
         //---------------------------------------------------------------------
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            String newUsername = passwordTextBox.Text;
-            String newPassword = nameTextBox.Text;
+            String newUsername = nameTextBox.Text;
+            String newPassword = passwordTextBox.Text;
+            
 
             Boolean valid = controller.Login(newUsername, newPassword); 
 
