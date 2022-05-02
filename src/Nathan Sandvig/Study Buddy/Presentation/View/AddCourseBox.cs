@@ -425,15 +425,23 @@ namespace Study_Buddy.Presentation.View
             {
                 string courseName = txtCourseTitle.Text;
                 CourseSchedule course1 = new CourseSchedule(times);
-
-                Course course = new CourseBuilder().WithName(txtCourseTitle.Text).WithCode(txtCourseCode.Text).WithCredits(courseCredit).WithPriority(coursePriority).WithSchedule(new CourseSchedule(times)).Build();
-                AccountController.account.addCourse(course);
-                AccountController.account.addTheCourseTimes(times, course.name);
-
-                Clear();
-                times = new Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)>();
-                successLabel.Text = "Succesfully added " + course.name;
-                this.StatusUpdated(sender, new EventArgs());
+                Boolean validTimes = AccountController.scheduleCheck(course1, courseName);
+                if (validTimes)
+                {
+                    Course course = new CourseBuilder().WithName(txtCourseTitle.Text).WithCode(txtCourseCode.Text).WithCredits(courseCredit).WithPriority(coursePriority).WithSchedule(new CourseSchedule(times)).Build();
+                    AccountController.account.addCourse(course);
+                    AccountController.account.addTheCourseTimes(times, course.name);
+                    successLabel.Text = "Succesfully added " + course.name;
+                    Clear();
+                    times = new Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)>();
+                    this.StatusUpdated(sender, new EventArgs());
+                }
+                else
+                {
+                    successLabel.Text = "Course cannot be at the same time as another course.";
+                    times = new Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)>();
+                    this.StatusUpdated(sender, new EventArgs());
+                }
             }
         }
         public void Clear()

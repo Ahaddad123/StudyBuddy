@@ -400,32 +400,46 @@ namespace Study_Buddy.Presentation.View
             if (valid)
             {
                 CourseSchedule schedule = new CourseSchedule(times);
-                Course course = new CourseBuilder().WithName(courseListBox.Text).WithCode(txtCourseCode.Text).WithCredits(courseCredit).WithPriority(coursePriority).WithSchedule(schedule).Build();
-                AccountController.account.getCourseByName(course.name).code = course.code;
-                AccountController.account.getCourseByName(course.name).credits = course.credits;
-                AccountController.account.getCourseByName(course.name).priority = course.priority;
-                AccountController.account.getCourseByName(course.name).schedule = course.schedule;
-                AccountController.account.database.removeCourse(course.name);
-                AccountController.account.database.insertCourseData(course);
-                AccountController.account.database.removeTimesCourse(course.name);
-                AccountController.account.addTheCourseTimes(times, course.name);
-                nameErrorMessageLabel.Text = "";
-                creditsErrorMessageLabel.Text = "";
-                sunErrorMessageLabel.Text = "";
-                monErrorMessageLabel.Text = "";
-                tueErrorMessageLabel.Text = "";
-                wedErrorMessageLabel.Text = "";
-                thuErrorMessageLabel.Text = "";
-                friErrorMessageLabel.Text = "";
-                satErrorMessageLabel.Text = "";
-                checkBoxSun.Checked = false;
-                checkBoxMon.Checked = false;
-                checkBoxTue.Checked = false;
-                checkBoxWed.Checked = false;
-                checkBoxThu.Checked = false;
-                checkBoxFri.Checked = false;
-                checkBoxSat.Checked = false;
-                times = new Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)>();
+                Boolean validTimes = AccountController.scheduleCheck(schedule, courseListBox.Text);
+                if (validTimes)
+                {
+                    Course course = new CourseBuilder().WithName(courseListBox.Text).WithCode(txtCourseCode.Text).WithCredits(courseCredit).WithPriority(coursePriority).WithSchedule(schedule).Build();
+                    AccountController.account.getCourseByName(course.name).code = course.code;
+                    AccountController.account.getCourseByName(course.name).credits = course.credits;
+                    AccountController.account.getCourseByName(course.name).priority = course.priority;
+                    AccountController.account.getCourseByName(course.name).schedule = course.schedule;
+                    AccountController.account.database.removeCourse(course.name);
+                    AccountController.account.database.insertCourseData(course);
+                    AccountController.account.database.removeTimesCourse(course.name);
+                    AccountController.account.addTheCourseTimes(times, course.name);
+                    nameErrorMessageLabel.Text = "";
+                    creditsErrorMessageLabel.Text = "";
+                    sunErrorMessageLabel.Text = "";
+                    monErrorMessageLabel.Text = "";
+                    tueErrorMessageLabel.Text = "";
+                    wedErrorMessageLabel.Text = "";
+                    thuErrorMessageLabel.Text = "";
+                    friErrorMessageLabel.Text = "";
+                    satErrorMessageLabel.Text = "";
+                    successLabel.Text = "";
+                    checkBoxSun.Checked = false;
+                    checkBoxMon.Checked = false;
+                    checkBoxTue.Checked = false;
+                    checkBoxWed.Checked = false;
+                    checkBoxThu.Checked = false;
+                    checkBoxFri.Checked = false;
+                    checkBoxSat.Checked = false;
+                    courseListBox.ResetText();
+                    txtCourseCode.Text = "";
+                    txtCourseCredits.Text = "";
+                    times = new Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)>();
+                }
+                else
+                {
+                    //TODO: change label
+                    successLabel.Text = "Course cannot be at the same time as another course.";
+                    times = new Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)>();
+                }
             }
         }
 

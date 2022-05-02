@@ -58,8 +58,30 @@ namespace Study_Buddy.BusinessLogic
             }
         }
 
-        public void scheduleCheck() {
-
+        public static bool scheduleCheck(CourseSchedule courseSchedule, String courseName) {
+            foreach(DayOfWeek date in courseSchedule.times.Keys)
+            {
+                for(int i = courseSchedule.times[date].startTime.Hour; i < courseSchedule.times[date].endTime.Hour; i++)
+                {
+                    foreach(Course course in account.courses)
+                    {
+                        if(!course.name.Equals(courseName))
+                        {
+                            if (course.schedule.times.ContainsKey(date))
+                            {
+                                for (int j = course.schedule.times[date].startTime.Hour; j < course.schedule.times[date].endTime.Hour; j++)
+                                {
+                                    if (i == j)
+                                    {
+                                        return false;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return true;
         }
     }
 }
