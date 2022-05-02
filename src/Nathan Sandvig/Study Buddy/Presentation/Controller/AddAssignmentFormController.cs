@@ -25,7 +25,7 @@ namespace Study_Buddy.Presentation.Controller
                     course = c;
                 }
             }
-            AccountController.account.addAssignment(courseName, newAssign.name, newAssign.grade.ToString(), newAssign.weight.ToString(), newAssign.totalPoints.ToString(), newAssign.dueDate.ToString());
+            AccountController.account.addAssignment(courseName, newAssign.name, newAssign.totalPoints.ToString(), newAssign.weight.ToString(), newAssign.totalPoints.ToString(), newAssign.dueDate.ToString());
             course.AddAssignment(newAssign);
         }
     }
