@@ -144,7 +144,7 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "Sign In";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.btn_login);
+            this.button1.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // errorMessageLabel
             // 
@@ -189,7 +189,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "BaseForm";
+            this.Text = "Studdy Buddy";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

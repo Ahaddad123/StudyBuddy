@@ -9,6 +9,7 @@ using Study_Buddy.Presentation;
 using Study_Buddy.DataAccess;
 using Study_Buddy.Presentation.View;
 using Study_Buddy.BusinessLogic;
+using Study_Buddy.Presentation.Controller;
 
 namespace Study_Buddy
 {
@@ -28,17 +29,12 @@ namespace Study_Buddy
             //---------------------------------------------------------------------
             AccountController acc = new AccountController();
             acc.createTables();
-
-
-            //AccountController.account = acc;
-
             //Launching GUI application
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //HomePageForm form = new HomePageForm();
-            //HomePageFormController controller = new HomePageFormController(form);
-            //form.SetController(controller);
             LoginForm form = new LoginForm();
+            LoginFormController controller = new LoginFormController(form);
+            form.SetController(controller);
             form.StartPosition = FormStartPosition.Manual;
             Application.Run(form);
 

@@ -8,6 +8,7 @@ namespace Study_Buddy.Presentation
 {
     //-------------------------------------------------------------------------
     // This class is used as a base class for form Controllers.  
+    // Used as the Controller component of MVC pattern.
     // v1: Created the class - Peter H., 3/7/2022
     //-------------------------------------------------------------------------
     public class FormController

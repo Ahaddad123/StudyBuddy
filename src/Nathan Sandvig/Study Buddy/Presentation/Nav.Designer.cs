@@ -68,7 +68,6 @@
             this.TablePanelThatMakesPeterCry.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11F));
             this.TablePanelThatMakesPeterCry.Size = new System.Drawing.Size(315, 737);
             this.TablePanelThatMakesPeterCry.TabIndex = 11;
-            this.TablePanelThatMakesPeterCry.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // btnHome
             // 
@@ -113,7 +112,7 @@
             this.btnAddDropCourse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.toolTip1.SetToolTip(this.btnAddDropCourse, "Add, remove or edit a course.");
             this.btnAddDropCourse.UseVisualStyleBackColor = false;
-            this.btnAddDropCourse.Click += new System.EventHandler(this.btnAddDropCourse_Click);
+            this.btnAddDropCourse.Click += new System.EventHandler(this.btnManageMyCourses_Click);
             // 
             // btnVisualizeMyData
             // 
@@ -139,7 +138,7 @@
             this.btnVisualizeMyData.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.toolTip1.SetToolTip(this.btnVisualizeMyData, "View data and graphs related to a course.");
             this.btnVisualizeMyData.UseVisualStyleBackColor = false;
-            this.btnVisualizeMyData.Click += new System.EventHandler(this.btnVisualizeMyData_Click);
+            this.btnVisualizeMyData.Click += new System.EventHandler(this.btnMyCourseInfo_Click);
             // 
             // btnLogHours
             // 

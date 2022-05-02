@@ -51,7 +51,6 @@
             this.MinimumSize = new System.Drawing.Size(138, 85);
             this.Name = "DayBox";
             this.Size = new System.Drawing.Size(138, 85);
-            this.Load += new System.EventHandler(this.DayBox_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

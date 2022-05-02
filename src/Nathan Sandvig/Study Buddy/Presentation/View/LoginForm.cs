@@ -12,21 +12,28 @@ using Study_Buddy.BusinessLogic;
 
 namespace Study_Buddy.Presentation.View
 {
+    //---------------------------------------------------------------------
+    // Form that allows the user to log in or create a new account
+    //---------------------------------------------------------------------
     public partial class LoginForm : Form, IView
     {
         private LoginFormController controller;
 
-        protected String title = "";
+        //---------------------------------------------------------------------
+        // Default constructor
+        //---------------------------------------------------------------------
         public LoginForm()
         {
 
             InitializeComponent();
             this.MaximumSize = new System.Drawing.Size(1366, 768);
             this.Size = new System.Drawing.Size(1366, 768);
-
-
         }
 
+        //---------------------------------------------------------------------
+        // Sets the forms controller
+        // controller : the controller being set
+        //---------------------------------------------------------------------
         public void SetController(FormController controller)
         {
             this.controller = (LoginFormController)controller;
@@ -114,18 +121,23 @@ namespace Study_Buddy.Presentation.View
 
         #endregion
 
+        //---------------------------------------------------------------------
+        // Handles a click of the "create account" button
+        //---------------------------------------------------------------------
         private void btnCreateNewAccount_Click(object sender, EventArgs e)
         {
             FormSwitcher.OpenRegistrationForm(this);
         }
 
-        private void btn_login(object sender, EventArgs e)
+        //---------------------------------------------------------------------
+        // Handles a click of the "sign in" button
+        //---------------------------------------------------------------------
+        private void btnLogin_Click(object sender, EventArgs e)
         {
             String newUsername = passwordTextBox.Text;
             String newPassword = nameTextBox.Text;
-            AccountController acc = new AccountController();
 
-            Boolean valid = acc.accountCreated(nameTextBox.Text, passwordTextBox.Text);
+            Boolean valid = controller.Login(newUsername, newPassword); 
 
             if (!valid)
             {

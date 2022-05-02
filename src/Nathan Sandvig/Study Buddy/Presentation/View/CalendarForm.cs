@@ -54,7 +54,7 @@ namespace Study_Buddy.Presentation
             {
                 dayBox.setToday();
             }
-            dayBox.days(dayOfWeek);
+            dayBox.Days(dayOfWeek);
 
             int indexOflabel = 13;
             foreach (Course c in AccountController.account.courses)
@@ -69,7 +69,7 @@ namespace Study_Buddy.Presentation
                         {
                             color = Color.White;
                         }
-                        Label label = dayBox.addDueDate(indexOflabel, assignment.name, color);
+                        Label label = dayBox.AddDueDate(indexOflabel, assignment.name, color);
                         dayBox.Controls.Add(label);
                         indexOflabel += 15;
                     }

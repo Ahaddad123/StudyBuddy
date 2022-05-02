@@ -28,7 +28,7 @@ namespace Study_Buddy.Presentation.View
             this.MaximumSize = new System.Drawing.Size(1366, 768);
             this.Size = new System.Drawing.Size(1366, 768);
             this.addCourseBox1.StatusUpdated += new EventHandler(ChildControlEvent_AddCourseBoxAddCourseButtonClicked);
-            this.userCourseList1.DynamicEvent_CourseButtonClicked += new EventHandler(ChildControlEvent_CourseListButtonClicked);
+            this.userCourseList1.StatusUpdated += new EventHandler(ChildControlEvent_CourseListButtonClicked);
         }
 
         public void ChildControlEvent_CourseListButtonClicked(object sender, EventArgs e)

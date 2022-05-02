@@ -47,7 +47,7 @@ namespace Study_Buddy.Presentation.View
 
             //Draw courses on the userCourseList
             this.userCourseList1.DrawCourses(AccountController.account.courses);
-            this.userCourseList1.DynamicEvent_CourseButtonClicked += new EventHandler(Event_UserCourseListButtonClicked);
+            this.userCourseList1.StatusUpdated += new EventHandler(Event_UserCourseListButtonClicked);
             this.nav1.SetCurrentForm(this);
         }
 

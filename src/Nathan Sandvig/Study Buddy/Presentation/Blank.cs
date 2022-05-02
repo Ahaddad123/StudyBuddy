@@ -10,8 +10,15 @@ using System.Windows.Forms;
 
 namespace Study_Buddy.Presentation.View
 {
+    //---------------------------------------------------------------------
+    // This class represents a blank day drawn on a calendar if the month
+    // starts on a day after Sunday or ends on a day before Saturday.
+    //---------------------------------------------------------------------
     public partial class Blank : UserControl
     {
+        //---------------------------------------------------------------------
+        // Default constructor
+        //---------------------------------------------------------------------
         public Blank()
         {
             InitializeComponent();

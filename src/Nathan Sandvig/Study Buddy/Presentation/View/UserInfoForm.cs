@@ -13,8 +13,8 @@ using Study_Buddy.Presentation.Model;
 namespace Study_Buddy.Presentation.View
 {
     //---------------------------------------------------------------------
-    // Displays user info including username, school, current GPA and
-    // a graph of semester GPA over entire semester.
+    // This class displays user info including username, school, current GPA
+    // and a graph of semester GPA over entire semester.
     //---------------------------------------------------------------------
     public partial class UserInfoForm : BaseForm, IView
     {
@@ -80,6 +80,7 @@ namespace Study_Buddy.Presentation.View
 
         //---------------------------------------------------------------------
         // Sets the form's controller
+        // formController : the controller being set
         //---------------------------------------------------------------------
         public void SetController(FormController formController)
         {
