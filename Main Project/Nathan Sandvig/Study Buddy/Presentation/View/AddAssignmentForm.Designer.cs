@@ -28,8 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddAssignmentForm));
             this.mainPanel = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.weightErrorMessageLabel = new System.Windows.Forms.Label();
             this.successLabel = new System.Windows.Forms.Label();
             this.nameErrorMessageLabel = new System.Windows.Forms.Label();
@@ -46,8 +51,12 @@
             this.txtPriority = new System.Windows.Forms.TextBox();
             this.txtPointsAssign = new System.Windows.Forms.TextBox();
             this.txtNameAssign = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.mainPanel.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -56,14 +65,17 @@
             this.mainPanel.Controls.Add(this.groupBox1);
             this.mainPanel.Location = new System.Drawing.Point(321, 112);
             this.mainPanel.Margin = new System.Windows.Forms.Padding(2);
-            this.mainPanel.MaximumSize = new System.Drawing.Size(810, 585);
+            this.mainPanel.MaximumSize = new System.Drawing.Size(1029, 585);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(611, 405);
+            this.mainPanel.Size = new System.Drawing.Size(1266, 731);
             this.mainPanel.TabIndex = 1;
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.pictureBox4);
+            this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.weightErrorMessageLabel);
             this.groupBox1.Controls.Add(this.successLabel);
             this.groupBox1.Controls.Add(this.nameErrorMessageLabel);
@@ -80,11 +92,43 @@
             this.groupBox1.Controls.Add(this.txtPriority);
             this.groupBox1.Controls.Add(this.txtPointsAssign);
             this.groupBox1.Controls.Add(this.txtNameAssign);
-            this.groupBox1.Location = new System.Drawing.Point(68, 51);
+            this.groupBox1.Location = new System.Drawing.Point(27, 26);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(509, 351);
+            this.groupBox1.Size = new System.Drawing.Size(968, 570);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(158, 261);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox1.TabIndex = 52;
+            this.pictureBox1.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox1, "The day the assignment is due. \r\nNote that when a grade is later entered, this is" +
+        " the day that \r\ngrade is logged as having been entered.\r\n");
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(159, 93);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox4.TabIndex = 51;
+            this.pictureBox4.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox4, "The overall number of points an assignments ");
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(159, 200);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox2.TabIndex = 49;
+            this.pictureBox2.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox2, "The percentage of the overall grade\r\nin a course that this assignment counts towa" +
+        "rds.");
             // 
             // weightErrorMessageLabel
             // 
@@ -139,7 +183,7 @@
             // dtpAssignDate
             // 
             this.dtpAssignDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpAssignDate.Location = new System.Drawing.Point(158, 258);
+            this.dtpAssignDate.Location = new System.Drawing.Point(185, 258);
             this.dtpAssignDate.Name = "dtpAssignDate";
             this.dtpAssignDate.Size = new System.Drawing.Size(332, 30);
             this.dtpAssignDate.TabIndex = 10;
@@ -170,7 +214,7 @@
             // 
             this.cmbCourses.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCourses.FormattingEnabled = true;
-            this.cmbCourses.Location = new System.Drawing.Point(158, 140);
+            this.cmbCourses.Location = new System.Drawing.Point(185, 140);
             this.cmbCourses.Name = "cmbCourses";
             this.cmbCourses.Size = new System.Drawing.Size(121, 31);
             this.cmbCourses.TabIndex = 7;
@@ -225,7 +269,7 @@
             // txtPriority
             // 
             this.txtPriority.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPriority.Location = new System.Drawing.Point(158, 197);
+            this.txtPriority.Location = new System.Drawing.Point(185, 197);
             this.txtPriority.Name = "txtPriority";
             this.txtPriority.Size = new System.Drawing.Size(125, 30);
             this.txtPriority.TabIndex = 2;
@@ -233,7 +277,7 @@
             // txtPointsAssign
             // 
             this.txtPointsAssign.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPointsAssign.Location = new System.Drawing.Point(158, 86);
+            this.txtPointsAssign.Location = new System.Drawing.Point(185, 86);
             this.txtPointsAssign.Name = "txtPointsAssign";
             this.txtPointsAssign.Size = new System.Drawing.Size(125, 30);
             this.txtPointsAssign.TabIndex = 1;
@@ -241,7 +285,7 @@
             // txtNameAssign
             // 
             this.txtNameAssign.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNameAssign.Location = new System.Drawing.Point(158, 27);
+            this.txtNameAssign.Location = new System.Drawing.Point(185, 27);
             this.txtNameAssign.Name = "txtNameAssign";
             this.txtNameAssign.Size = new System.Drawing.Size(318, 30);
             this.txtNameAssign.TabIndex = 0;
@@ -263,6 +307,9 @@
             this.mainPanel.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -286,5 +333,9 @@
         private System.Windows.Forms.Label nameErrorMessageLabel;
         private System.Windows.Forms.Label courseErrorMessageLabel;
         private System.Windows.Forms.Label totalPointsErrorMessageLabel;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

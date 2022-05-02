@@ -113,6 +113,12 @@
     <Compile Include="Presentation\Model\GradeGraph.cs" />
     <Compile Include="Presentation\Model\Graph.cs" />
     <Compile Include="Presentation\Model\GraphController.cs" />
+    <Compile Include="Presentation\View\AddAssignmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\View\AddAssignmentForm.Designer.cs">
+      <DependentUpon>AddAssignmentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\View\EditCourseBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -125,10 +131,6 @@
     <Compile Include="Presentation\View\AddCourseBox.Designer.cs">
       <DependentUpon>AddCourseBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\View\AddAssignmentForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentation\View\AddAssignmentForm.Designer.cs" />
     <Compile Include="Presentation\View\RemoveCourseBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -251,13 +253,15 @@
     <EmbeddedResource Include="Presentation\GraphUserControl.resx">
       <DependentUpon>GraphUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\View\AddAssignmentForm.resx">
+      <DependentUpon>AddAssignmentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\View\EditCourseBox.resx">
       <DependentUpon>EditCourseBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\View\AddCourseBox.resx">
       <DependentUpon>AddCourseBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\View\AddAssignmentForm.resx" />
     <EmbeddedResource Include="Presentation\View\RemoveCourseBox.resx">
       <DependentUpon>RemoveCourseBox.cs</DependentUpon>
     </EmbeddedResource>

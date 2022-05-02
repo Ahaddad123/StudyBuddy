@@ -69,7 +69,7 @@ namespace Study_Buddy.Presentation
                 valid = false;
             }
 
-            if(cmbCourses.SelectedIndex == -1)
+            if (cmbCourses.SelectedIndex == -1)
             {
                 valid = false;
                 courseErrorMessageLabel.Text = "No Course selected";
