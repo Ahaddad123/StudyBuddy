@@ -57,9 +57,9 @@
             this.mainPanel.Controls.Add(this.label3);
             this.mainPanel.Location = new System.Drawing.Point(333, 127);
             this.mainPanel.Margin = new System.Windows.Forms.Padding(2);
-            this.mainPanel.MaximumSize = new System.Drawing.Size(810, 585);
+            this.mainPanel.MaximumSize = new System.Drawing.Size(1000, 500);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(611, 405);
+            this.mainPanel.Size = new System.Drawing.Size(1013, 625);
             this.mainPanel.TabIndex = 1;
             // 
             // groupBox1
@@ -85,7 +85,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(611, 405);
+            this.groupBox1.Size = new System.Drawing.Size(1406, 828);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             // 
@@ -259,9 +259,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(946, 545);
+            this.ClientSize = new System.Drawing.Size(1690, 913);
             this.Controls.Add(this.mainPanel);
-            this.MaximumSize = new System.Drawing.Size(964, 592);
             this.MinimumSize = new System.Drawing.Size(964, 592);
             this.Name = "StudyLogForm";
             this.Text = "Form Template";
