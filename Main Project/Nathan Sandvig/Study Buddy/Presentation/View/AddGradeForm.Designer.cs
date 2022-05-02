@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddGradeForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnRedo = new System.Windows.Forms.Button();
             this.btnUndo = new System.Windows.Forms.Button();
@@ -40,14 +42,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtPointsAssign = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.btnRedo);
             this.groupBox1.Controls.Add(this.btnUndo);
             this.groupBox1.Controls.Add(this.successMessageLabel);
@@ -99,7 +105,7 @@
             this.successMessageLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.successMessageLabel.Location = new System.Drawing.Point(55, 173);
             this.successMessageLabel.Name = "successMessageLabel";
-            this.successMessageLabel.Size = new System.Drawing.Size(0, 18);
+            this.successMessageLabel.Size = new System.Drawing.Size(0, 23);
             this.successMessageLabel.TabIndex = 9;
             // 
             // scoreErrorMessageLabel
@@ -109,7 +115,7 @@
             this.scoreErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
             this.scoreErrorMessageLabel.Location = new System.Drawing.Point(223, 124);
             this.scoreErrorMessageLabel.Name = "scoreErrorMessageLabel";
-            this.scoreErrorMessageLabel.Size = new System.Drawing.Size(0, 18);
+            this.scoreErrorMessageLabel.Size = new System.Drawing.Size(0, 23);
             this.scoreErrorMessageLabel.TabIndex = 8;
             // 
             // nameErrorMessageLabel
@@ -119,15 +125,15 @@
             this.nameErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
             this.nameErrorMessageLabel.Location = new System.Drawing.Point(223, 67);
             this.nameErrorMessageLabel.Name = "nameErrorMessageLabel";
-            this.nameErrorMessageLabel.Size = new System.Drawing.Size(0, 18);
+            this.nameErrorMessageLabel.Size = new System.Drawing.Size(0, 23);
             this.nameErrorMessageLabel.TabIndex = 7;
             // 
             // txtNameAssign
             // 
             this.txtNameAssign.FormattingEnabled = true;
-            this.txtNameAssign.Location = new System.Drawing.Point(227, 40);
+            this.txtNameAssign.Location = new System.Drawing.Point(218, 41);
             this.txtNameAssign.Name = "txtNameAssign";
-            this.txtNameAssign.Size = new System.Drawing.Size(209, 21);
+            this.txtNameAssign.Size = new System.Drawing.Size(209, 24);
             this.txtNameAssign.TabIndex = 4;
             // 
             // butAddAssig
@@ -149,9 +155,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(152, 100);
+            this.label2.Location = new System.Drawing.Point(133, 100);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 18);
+            this.label2.Size = new System.Drawing.Size(62, 23);
             this.label2.TabIndex = 4;
             this.label2.Text = "Score";
             // 
@@ -160,17 +166,17 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(55, 40);
+            this.label4.Location = new System.Drawing.Point(29, 41);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(136, 18);
+            this.label4.Size = new System.Drawing.Size(168, 23);
             this.label4.TabIndex = 3;
             this.label4.Text = "Assignment Name";
             // 
             // txtPointsAssign
             // 
-            this.txtPointsAssign.Location = new System.Drawing.Point(227, 100);
+            this.txtPointsAssign.Location = new System.Drawing.Point(218, 101);
             this.txtPointsAssign.Name = "txtPointsAssign";
-            this.txtPointsAssign.Size = new System.Drawing.Size(100, 20);
+            this.txtPointsAssign.Size = new System.Drawing.Size(100, 22);
             this.txtPointsAssign.TabIndex = 1;
             // 
             // tableLayoutPanel2
@@ -189,12 +195,22 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1080, 720);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(192, 102);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox1.TabIndex = 48;
+            this.pictureBox1.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox1, "The score received on the assignment,\r\nexpressed as a percentage out of 100.");
+            // 
             // AddGradeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(150)))), ((int)(((byte)(231)))));
-            this.ClientSize = new System.Drawing.Size(948, 553);
+            this.ClientSize = new System.Drawing.Size(946, 545);
             this.Controls.Add(this.tableLayoutPanel2);
             this.MaximumSize = new System.Drawing.Size(964, 592);
             this.MinimumSize = new System.Drawing.Size(964, 592);
@@ -206,6 +222,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -223,5 +240,7 @@
         private System.Windows.Forms.Label successMessageLabel;
         private System.Windows.Forms.Button btnRedo;
         private System.Windows.Forms.Button btnUndo;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
