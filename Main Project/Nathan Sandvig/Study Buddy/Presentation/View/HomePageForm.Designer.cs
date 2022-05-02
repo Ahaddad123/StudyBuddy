@@ -36,22 +36,22 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.exitButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnViewMyInfo
             // 
             this.btnViewMyInfo.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnViewMyInfo.AutoSize = true;
+            this.btnViewMyInfo.BackColor = System.Drawing.Color.Navy;
             this.btnViewMyInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewMyInfo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewMyInfo.ForeColor = System.Drawing.Color.Navy;
-            this.btnViewMyInfo.Location = new System.Drawing.Point(761, 3);
+            this.btnViewMyInfo.ForeColor = System.Drawing.Color.White;
+            this.btnViewMyInfo.Location = new System.Drawing.Point(760, 3);
             this.btnViewMyInfo.Name = "btnViewMyInfo";
             this.btnViewMyInfo.Size = new System.Drawing.Size(120, 48);
             this.btnViewMyInfo.TabIndex = 5;
             this.btnViewMyInfo.Text = "View My info";
-            this.btnViewMyInfo.UseVisualStyleBackColor = true;
+            this.btnViewMyInfo.UseVisualStyleBackColor = false;
             this.btnViewMyInfo.Click += new System.EventHandler(this.btnViewMyInfo_Click);
             // 
             // label2
@@ -60,7 +60,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 96);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(235, 24);
+            this.label2.Size = new System.Drawing.Size(299, 29);
             this.label2.TabIndex = 4;
             this.label2.Text = "Your study hours this week";
             // 
@@ -69,9 +69,9 @@
             this.gpa.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.gpa.AutoSize = true;
             this.gpa.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpa.Location = new System.Drawing.Point(3, 58);
+            this.gpa.Location = new System.Drawing.Point(3, 54);
             this.gpa.Name = "gpa";
-            this.gpa.Size = new System.Drawing.Size(84, 33);
+            this.gpa.Size = new System.Drawing.Size(107, 42);
             this.gpa.TabIndex = 1;
             this.gpa.Text = "GPA:";
             // 
@@ -82,7 +82,7 @@
             this.name.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.name.Location = new System.Drawing.Point(3, 0);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(125, 54);
+            this.name.Size = new System.Drawing.Size(157, 54);
             this.name.TabIndex = 0;
             this.name.Text = "label";
             // 
@@ -92,12 +92,13 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.71276F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28725F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 195F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 196F));
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.btnViewMyInfo, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.gpa, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.name, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel1, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.exitButton, 2, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(318, 95);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
@@ -110,21 +111,22 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.exitButton);
             this.panel1.Location = new System.Drawing.Point(3, 150);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(752, 297);
+            this.panel1.Size = new System.Drawing.Size(751, 297);
             this.panel1.TabIndex = 6;
             // 
             // exitButton
             // 
-            this.exitButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.exitButton.BackColor = System.Drawing.Color.Navy;
             this.exitButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.exitButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitButton.Location = new System.Drawing.Point(428, 247);
+            this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitButton.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitButton.ForeColor = System.Drawing.Color.White;
+            this.exitButton.Location = new System.Drawing.Point(886, 3);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(138, 50);
+            this.exitButton.Size = new System.Drawing.Size(138, 48);
             this.exitButton.TabIndex = 0;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = false;
@@ -132,12 +134,11 @@
             // 
             // HomePageForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(150)))), ((int)(((byte)(231)))));
-            this.ClientSize = new System.Drawing.Size(947, 552);
+            this.ClientSize = new System.Drawing.Size(1348, 721);
             this.Controls.Add(this.tableLayoutPanel2);
-            this.MaximumSize = new System.Drawing.Size(963, 591);
             this.MinimumSize = new System.Drawing.Size(963, 591);
             this.Name = "HomePageForm";
             this.Text = "Form Template";
@@ -146,7 +147,6 @@
             this.Controls.SetChildIndex(this.tableLayoutPanel2, 0);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -67,7 +67,7 @@
             this.mainPanel.Margin = new System.Windows.Forms.Padding(2);
             this.mainPanel.MaximumSize = new System.Drawing.Size(1029, 585);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1266, 731);
+            this.mainPanel.Size = new System.Drawing.Size(1029, 585);
             this.mainPanel.TabIndex = 1;
             // 
             // groupBox1
@@ -295,9 +295,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(150)))), ((int)(((byte)(231)))));
-            this.ClientSize = new System.Drawing.Size(946, 545);
+            this.ClientSize = new System.Drawing.Size(1352, 730);
             this.Controls.Add(this.mainPanel);
-            this.MaximumSize = new System.Drawing.Size(964, 592);
             this.MinimumSize = new System.Drawing.Size(964, 592);
             this.Name = "AddAssignmentForm";
             this.Text = "Form Template";
