@@ -543,5 +543,10 @@ namespace Study_Buddy.Presentation.View
                 index++;
             }*/
         }
+
+        public void Clear()
+        {
+            //Clear all fields
+        }
     }
 }

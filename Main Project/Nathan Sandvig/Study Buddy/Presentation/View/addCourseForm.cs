@@ -76,6 +76,8 @@ namespace Study_Buddy.Presentation
             this.addCourseBox1.Visible = true;
             this.removeCourseBox1.Visible = false;
             this.editCourseBox1.Visible = false;
+            this.removeCourseBox1.Clear();
+            //this.editCourseBox1.Clear();
         }
 
         private void btnRemoveCourse_Click(object sender, EventArgs e)
@@ -89,6 +91,8 @@ namespace Study_Buddy.Presentation
             this.removeCourseBox1.Visible = true;
             this.addCourseBox1.Visible = false;
             this.editCourseBox1.Visible= false;
+            this.addCourseBox1.Clear();
+            this.editCourseBox1.Clear();
             //IMPORTANT - Make sure course list is updated
             this.removeCourseBox1.LoadCourses(AccountController.account.courses);
         }
@@ -105,6 +109,8 @@ namespace Study_Buddy.Presentation
             this.addCourseBox1.Visible = false;
             this.editCourseBox1.Visible = true;
             this.editCourseBox1.LoadCourses(AccountController.account.courses);
+            this.addCourseBox1.Clear();
+            this.removeCourseBox1.Clear();
         }
     }
 }

@@ -49,11 +49,7 @@
             this.panel1.SuspendLayout();
             this.courseListPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // nav1
-            // 
-            this.nav1.Load += new System.EventHandler(this.nav1_Load);
-            // 
+            //
             // hoursLoggedChart
             // 
             this.hoursLoggedChart.BackColor = System.Drawing.SystemColors.Control;
@@ -104,7 +100,6 @@
             this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.mainTableLayoutPanel.Size = new System.Drawing.Size(1028, 625);
             this.mainTableLayoutPanel.TabIndex = 6;
-            this.mainTableLayoutPanel.Click += new System.EventHandler(this.mainTableLayoutPanel_Click);
             // 
             // label1
             // 
@@ -142,7 +137,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(336, 25);
             this.panel1.TabIndex = 7;
-            this.panel1.Click += new System.EventHandler(this.panel1_Click);
             // 
             // WeekMinus
             // 

@@ -106,7 +106,6 @@
     <Compile Include="Presentation\Model\GPAGraph.cs" />
     <Compile Include="Presentation\Model\GradeGraph.cs" />
     <Compile Include="Presentation\Model\Graph.cs" />
-    <Compile Include="Presentation\Model\GraphController.cs" />
     <Compile Include="Presentation\View\AddAssignmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,7 +172,6 @@
     <Compile Include="Presentation\View\StudyLogForm.Designer.cs">
       <DependentUpon>StudyLogForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\View\IGraphView.cs" />
     <Compile Include="Presentation\View\CalendarForm.cs">
       <SubType>Form</SubType>
     </Compile>

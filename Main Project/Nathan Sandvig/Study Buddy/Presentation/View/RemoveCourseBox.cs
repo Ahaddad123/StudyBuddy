@@ -35,7 +35,11 @@ namespace Study_Buddy.Presentation.View
             {
                 courseListBox.Items.Add(c.name);
             }
+        }
 
+        public void Clear()
+        {
+            this.courseListBox.SelectedItem = null;
         }
     }
 }

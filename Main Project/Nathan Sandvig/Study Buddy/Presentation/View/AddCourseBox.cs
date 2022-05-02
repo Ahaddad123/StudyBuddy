@@ -15,6 +15,7 @@ namespace Study_Buddy.Presentation.View
     {
         private Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)> times;
         public EventHandler StatusUpdated;
+        
         public AddCourseBox()
         {
             InitializeComponent();

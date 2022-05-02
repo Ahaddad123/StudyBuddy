@@ -177,23 +177,6 @@ namespace Study_Buddy.Presentation.View
             controller.ChangeCurrentWeekID(-1);
         }
 
-        public void DrawGPAGraph(List<DateTime> xValues, List<double> yValues)
-        {
-            throw new NotImplementedException();
-        }
 
-        private void nav1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void mainTableLayoutPanel_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
