@@ -48,7 +48,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtPriority = new System.Windows.Forms.TextBox();
+            this.txtWeight = new System.Windows.Forms.TextBox();
             this.txtPointsAssign = new System.Windows.Forms.TextBox();
             this.txtNameAssign = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -89,7 +89,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtPriority);
+            this.groupBox1.Controls.Add(this.txtWeight);
             this.groupBox1.Controls.Add(this.txtPointsAssign);
             this.groupBox1.Controls.Add(this.txtNameAssign);
             this.groupBox1.Location = new System.Drawing.Point(27, 26);
@@ -266,13 +266,13 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Name";
             // 
-            // txtPriority
+            // txtWeight
             // 
-            this.txtPriority.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPriority.Location = new System.Drawing.Point(185, 197);
-            this.txtPriority.Name = "txtPriority";
-            this.txtPriority.Size = new System.Drawing.Size(125, 30);
-            this.txtPriority.TabIndex = 2;
+            this.txtWeight.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWeight.Location = new System.Drawing.Point(185, 197);
+            this.txtWeight.Name = "txtWeight";
+            this.txtWeight.Size = new System.Drawing.Size(125, 30);
+            this.txtWeight.TabIndex = 2;
             // 
             // txtPointsAssign
             // 
@@ -295,7 +295,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(150)))), ((int)(((byte)(231)))));
-            this.ClientSize = new System.Drawing.Size(1352, 730);
+            this.ClientSize = new System.Drawing.Size(1348, 721);
             this.Controls.Add(this.mainPanel);
             this.MinimumSize = new System.Drawing.Size(964, 592);
             this.Name = "AddAssignmentForm";
@@ -320,7 +320,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtPriority;
+        private System.Windows.Forms.TextBox txtWeight;
         private System.Windows.Forms.TextBox txtPointsAssign;
         private System.Windows.Forms.TextBox txtNameAssign;
         private System.Windows.Forms.Label label5;

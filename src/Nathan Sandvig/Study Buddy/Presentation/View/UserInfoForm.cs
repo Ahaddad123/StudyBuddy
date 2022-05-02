@@ -48,9 +48,9 @@ namespace Study_Buddy.Presentation.View
         // gpa : the user's overall grade point average (not including 
         // this semester, at least as of 4-27-2022)
         //---------------------------------------------------------------------
-        public void DisplayUserInfo(string userName, string school, string gpa)
+        public void DisplayUserInfo(string name, string school, string gpa)
         {
-            this.userName.Text = userName;
+            this.userName.Text = name;
             this.userSchool.Text = school;
             this.userGPA.Text = "Your Current GPA: " + gpa;
         }

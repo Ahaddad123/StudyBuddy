@@ -7,7 +7,6 @@ using Study_Buddy.BusinessLogic;
 
 namespace Study_Buddy.Presentation.Model
 {
-
     //---------------------------------------------------------------------
     // This class is the model for a graph of grades and time for a
     // given course.  Currently only graphs default values as the backend
@@ -85,7 +84,6 @@ namespace Study_Buddy.Presentation.Model
         {
             return averageGradesY;
         }
-
 
         //---------------------------------------------------------------------
         // Generates default grade data to fill in for the current length of the

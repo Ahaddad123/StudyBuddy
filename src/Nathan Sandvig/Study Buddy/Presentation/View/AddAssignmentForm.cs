@@ -61,7 +61,7 @@ namespace Study_Buddy.Presentation
             }
             try
             {
-                weight = Int32.Parse(txtPriority.Text);
+                weight = Int32.Parse(txtWeight.Text);
             }
             catch (Exception ex)
             {

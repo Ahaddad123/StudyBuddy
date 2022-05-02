@@ -175,28 +175,11 @@ namespace Study_Buddy.Presentation.View
             }
             try
             {
-                if (!txtCoursePriority.Text.Equals(""))
-                {
-                    coursePriority = Double.Parse(txtCoursePriority.Text);
-                }
-            }
-            catch (Exception ex)
-            {
-                PriorityErrorMessageLabel.Text = "Invalid Priority";
-                valid = false;
-            }
-            try
-            {
                 courseCredit = Double.Parse(txtCourseCredits.Text);
             }
             catch (Exception ex)
             {
                 creditsErrorMessageLabel.Text = "Invalid Credits";
-                valid = false;
-            }
-            if (coursePriority < 0)
-            {
-                PriorityErrorMessageLabel.Text = "Invalid Priority";
                 valid = false;
             }
             if (courseCredit < 0)
@@ -448,11 +431,9 @@ namespace Study_Buddy.Presentation.View
         {
             txtCourseCode.Text = "";
             txtCourseCredits.Text = "";
-            txtCoursePriority.Text = "";
             txtCourseTitle.Text = "";
             nameErrorMessageLabel.Text = "";
             CodeErrorMessageLabel.Text = "";
-            PriorityErrorMessageLabel.Text = "";
             creditsErrorMessageLabel.Text = "";
             sunErrorMessageLabel.Text = "";
             monErrorMessageLabel.Text = "";
