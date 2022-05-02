@@ -10,23 +10,29 @@ using Study_Buddy.Presentation;
 
 namespace Study_Buddy.Presentation.View
 {
+
+    //---------------------------------------------------------------------
+    // This class is meant to serve as a template form for all 
+    // forms within the application.
+    //---------------------------------------------------------------------
     public partial class BaseForm : Form
     {
+
+        //---------------------------------------------------------------------
+        // protected data members : 
+        // title : title of the form.  Used for display in titlebar.
+        //---------------------------------------------------------------------
         protected String title = "";
+
+        //---------------------------------------------------------------------
+        // Default constructor.  
+        //---------------------------------------------------------------------
         public BaseForm()
         {
-
             InitializeComponent();
             this.MaximumSize = new System.Drawing.Size(1366, 768);
             this.Size = new System.Drawing.Size(1366, 768);
-
-            //Get Height of titlebar
-            /*Rectangle screenRectangle = this.RectangleToScreen(this.ClientRectangle);
-            int titleHeight = screenRectangle.Top - this.Top;
-            MessageBox.Show(titleHeight.ToString());*/
         }
-
-
         #region Assembly Attribute Accessors
 
         public string AssemblyTitle
@@ -106,10 +112,5 @@ namespace Study_Buddy.Presentation.View
             }
         }
         #endregion
-
-        private void mainHeader_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -61,7 +61,6 @@
             this.mainHeader.TabIndex = 1;
             this.mainHeader.Text = "Main Header Here";
             this.mainHeader.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.mainHeader.Click += new System.EventHandler(this.mainHeader_Click);
             // 
             // nav1
             // 

@@ -7,12 +7,22 @@ using System.Threading.Tasks;
 
 namespace Study_Buddy.Presentation.Controller
 {
+    //---------------------------------------------------------------------
+    // This class controls a calendar form.
+    //---------------------------------------------------------------------
     internal class CalendarFormController : FormController
     {
+        //---------------------------------------------------------------------
+        //
+        //---------------------------------------------------------------------
         public int day { get; set; }   
         public int month { get; set; }
         private int year { get; set; }
         private String monthName;
+
+        //---------------------------------------------------------------------
+        //
+        //---------------------------------------------------------------------
         public CalendarFormController(CalendarForm form)
         {
             this.view = form;
@@ -27,6 +37,9 @@ namespace Study_Buddy.Presentation.Controller
             monthName = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
         }
 
+        //---------------------------------------------------------------------
+        //
+        //---------------------------------------------------------------------
         public void DrawCalendar()
         {
 
@@ -57,6 +70,9 @@ namespace Study_Buddy.Presentation.Controller
             }
         }
 
+        //---------------------------------------------------------------------
+        //
+        //---------------------------------------------------------------------
         public void ChangeMonth(int change)
         {
             month = month + change;
@@ -77,6 +93,9 @@ namespace Study_Buddy.Presentation.Controller
         }
 
 
+        //---------------------------------------------------------------------
+        //
+        //---------------------------------------------------------------------
         public bool isCurrentMonth()
         {
             if (DateTime.Now.Month == month)
@@ -85,6 +104,10 @@ namespace Study_Buddy.Presentation.Controller
             }
             return false;
         }
+
+        //---------------------------------------------------------------------
+        //
+        //---------------------------------------------------------------------
         public bool isCurrentYear()
         {
             if (DateTime.Now.Year == year)
