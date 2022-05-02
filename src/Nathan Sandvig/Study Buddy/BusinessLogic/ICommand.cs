@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Study_Buddy.BusinessLogic
 {
+    //---------------------------------------------------------------------
+    // Command interface.
+    // Implemented by AddGrade and AddStudyHours.
+    //---------------------------------------------------------------------
     internal interface ICommand
     {
         void execute();
