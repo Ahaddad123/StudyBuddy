@@ -13,6 +13,9 @@ using System.Windows.Forms;
 
 namespace Study_Buddy.DataAccess
 {
+    //---------------------------------------------------------------------
+    // Handles the SQLite calls to the database.
+    //---------------------------------------------------------------------
     public class SQLite
     {
 
@@ -131,6 +134,9 @@ namespace Study_Buddy.DataAccess
             
         }
 
+        //---------------------------------------------------------------------
+        // Query for checking if an account exists by password
+        //---------------------------------------------------------------------
         public string checkPassword(string password) {
             string checkPasswords;
             
@@ -244,6 +250,10 @@ namespace Study_Buddy.DataAccess
             return courses;
         }
 
+        //---------------------------------------------------------------------
+        // Query for reading assignment data from the table and inserting it into
+        // a returnable list
+        //---------------------------------------------------------------------
         public List<String> readAssignments()
         {
             List<String> assignments = new List<String>();
@@ -325,6 +335,10 @@ namespace Study_Buddy.DataAccess
             addHours.ExecuteNonQuery();
         }
 
+        //---------------------------------------------------------------------
+        // Query for adding logged study hours to an existing entry in
+        // the database
+        //---------------------------------------------------------------------
         public void addStudyHours(String course, DateTime date, String hours)
         {
             SQLiteConnection sqlite_conn = CreateConnection();
@@ -341,6 +355,10 @@ namespace Study_Buddy.DataAccess
             removeHours.ExecuteNonQuery();
         }
 
+        //---------------------------------------------------------------------
+        // Query for removing logged study hours from an existing entry
+        // in the database
+        //---------------------------------------------------------------------
         public void removeStudyHours(String course, DateTime date, String hours)
         {
             SQLiteConnection sqlite_conn = CreateConnection();
@@ -357,6 +375,10 @@ namespace Study_Buddy.DataAccess
             removeHours.ExecuteNonQuery();
         }
 
+        //---------------------------------------------------------------------
+        // Query for readin the current number of logged hours in a
+        // specific entry in the database.
+        //---------------------------------------------------------------------
         public int readHour(String course, DateTime date)
         {
             int studyHours = 0;
@@ -445,6 +467,10 @@ namespace Study_Buddy.DataAccess
             addAssignment.ExecuteNonQuery();
         }
 
+        //---------------------------------------------------------------------
+        // Query for adding a grade to an existing assignment to the
+        // assignment list.
+        //---------------------------------------------------------------------
         public void addGrade(string assignmentName, string grade)
         {
             SQLiteConnection sqlite_conn = CreateConnection();
@@ -459,6 +485,9 @@ namespace Study_Buddy.DataAccess
             addGrade.ExecuteNonQuery();
         }
 
+        //---------------------------------------------------------------------
+        // Query adding course times to the database.
+        //---------------------------------------------------------------------
         public void addTimesCourse(Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)> times, string courseName) 
         {
             SQLiteConnection sqlite_conn = CreateConnection();
@@ -531,6 +560,9 @@ namespace Study_Buddy.DataAccess
             //command.Replace("course", courseName).Replace("SundayStart", (times[DayOfWeek.Sunday].startTime).ToString()).Replace("SundayEnd", (times[DayOfWeek.Sunday].endTime).ToString()).Replace("MondayStart", (times[DayOfWeek.Monday].startTime).ToString()).Replace("MondayEnd", (times[DayOfWeek.Monday].endTime).ToString()).Replace("TuesdayStart", (times[DayOfWeek.Tuesday].startTime).ToString()).Replace("TuesdayEnd", (times[DayOfWeek.Tuesday].endTime).ToString()).Replace("WednesdayStart", (times[DayOfWeek.Wednesday].startTime).ToString()).Replace("WednesdayEnd", (times[DayOfWeek.Wednesday].endTime).ToString()).Replace("ThursdayStart", (times[DayOfWeek.Thursday].startTime).ToString()).Replace("ThursdayEnd", (times[DayOfWeek.Thursday].startTime).ToString()).Replace("FridayStart", (times[DayOfWeek.Friday].startTime).ToString()).Replace("FridayEnd", (times[DayOfWeek.Friday].endTime).ToString()).Replace("SaturdayStart", (times[DayOfWeek.Saturday].startTime).ToString()).Replace("SaturdayEnd", (times[DayOfWeek.Saturday].endTime).ToString());
         }
 
+        //---------------------------------------------------------------------
+        // Query for removing an entry from the course times table.
+        //---------------------------------------------------------------------
         public void removeTimesCourse(string courseName)
         {
             SQLiteConnection sqlite_conn = CreateConnection();
@@ -545,6 +577,10 @@ namespace Study_Buddy.DataAccess
             removeCourses.ExecuteNonQuery();
         }
 
+        //---------------------------------------------------------------------
+        // Query for reading course times data from the table and inserting
+        // it into a returnable list
+        //---------------------------------------------------------------------
         public List<String> readTimesCourse()
         {
             List<String> courseTimes = new List<String>();
