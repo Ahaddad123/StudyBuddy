@@ -201,7 +201,7 @@ namespace Study_Buddy.Presentation.View
                 {
                                   
                     //add course times for Sunday
-                    if (DateTime.Parse(comboBoxSunStart.SelectedItem.ToString()) > DateTime.Parse(comboBoxSunEnd.SelectedItem.ToString()))
+                    if (DateTime.Parse(comboBoxSunStart.SelectedItem.ToString()) >= DateTime.Parse(comboBoxSunEnd.SelectedItem.ToString()))
                     {
                         sunErrorMessageLabel.Text = "Invalid Sunday times";
                         valid = false;
@@ -230,7 +230,7 @@ namespace Study_Buddy.Presentation.View
                 {
 
                     //add course times for Sunday
-                    if (DateTime.Parse(comboBoxMonStart.SelectedItem.ToString()) > DateTime.Parse(comboBoxMonEnd.SelectedItem.ToString()))
+                    if (DateTime.Parse(comboBoxMonStart.SelectedItem.ToString()) >= DateTime.Parse(comboBoxMonEnd.SelectedItem.ToString()))
                     {
                         monErrorMessageLabel.Text = "Invalid Monday times";
                         valid = false;
@@ -259,7 +259,7 @@ namespace Study_Buddy.Presentation.View
                 {
 
                     //add course times for Sunday
-                    if (DateTime.Parse(comboBoxTueStart.SelectedItem.ToString()) > DateTime.Parse(comboBoxTueEnd.SelectedItem.ToString()))
+                    if (DateTime.Parse(comboBoxTueStart.SelectedItem.ToString()) >= DateTime.Parse(comboBoxTueEnd.SelectedItem.ToString()))
                     {
                         tueErrorMessageLabel.Text = "Invalid Tuesday times";
                         valid = false;
@@ -288,7 +288,7 @@ namespace Study_Buddy.Presentation.View
                 {
 
                     //add course times for Sunday
-                    if (DateTime.Parse(comboBoxWedStart.SelectedItem.ToString()) > DateTime.Parse(comboBoxWedEnd.SelectedItem.ToString()))
+                    if (DateTime.Parse(comboBoxWedStart.SelectedItem.ToString()) >= DateTime.Parse(comboBoxWedEnd.SelectedItem.ToString()))
                     {
                         wedErrorMessageLabel.Text = "Invalid Wednesday times";
                         valid = false;
@@ -317,7 +317,7 @@ namespace Study_Buddy.Presentation.View
                 {
 
                     //add course times for Sunday
-                    if (DateTime.Parse(comboBoxThuStart.SelectedItem.ToString()) > DateTime.Parse(comboBoxThuEnd.SelectedItem.ToString()))
+                    if (DateTime.Parse(comboBoxThuStart.SelectedItem.ToString()) >= DateTime.Parse(comboBoxThuEnd.SelectedItem.ToString()))
                     {
                         thuErrorMessageLabel.Text = "Invalid Thursday times";
                         valid = false;
@@ -346,7 +346,7 @@ namespace Study_Buddy.Presentation.View
                 {
 
                     //add course times for Sunday
-                    if (DateTime.Parse(comboBoxFriStart.SelectedItem.ToString()) > DateTime.Parse(comboBoxFriEnd.SelectedItem.ToString()))
+                    if (DateTime.Parse(comboBoxFriStart.SelectedItem.ToString()) >= DateTime.Parse(comboBoxFriEnd.SelectedItem.ToString()))
                     {
                         friErrorMessageLabel.Text = "Invalid Friday times";
                         valid = false;
@@ -375,7 +375,7 @@ namespace Study_Buddy.Presentation.View
                 {
 
                     //add course times for Sunday
-                    if (DateTime.Parse(comboBoxSatStart.SelectedItem.ToString()) > DateTime.Parse(comboBoxSatEnd.SelectedItem.ToString()))
+                    if (DateTime.Parse(comboBoxSatStart.SelectedItem.ToString()) >= DateTime.Parse(comboBoxSatEnd.SelectedItem.ToString()))
                     {
                         satErrorMessageLabel.Text = "Invalid Saturday times";
                         valid = false;
@@ -429,12 +429,6 @@ namespace Study_Buddy.Presentation.View
             }
         }
 
-        private void removeCourseButton_Click(object sender, EventArgs e)
-        {
-            //Bubble event to parent form
-            this.StatusUpdated(this.courseListBox.Text, new EventArgs());
-        }
-
         public void UpdateData(Course course)
         {
             if (course != null)
@@ -452,101 +446,57 @@ namespace Study_Buddy.Presentation.View
                     if (index == 0)
                     {
                         checkBoxSun.Checked = true;
-                        comboBoxSunStart.SelectedIndex = startTime;
-                        comboBoxSunEnd.SelectedIndex = endTime;
+                        comboBoxSunStart.SelectedIndex = startTime - 6;
+                        comboBoxSunEnd.SelectedIndex = endTime - 6;
                     }
                     else if (index == 1)
                     {
                         checkBoxMon.Checked = true;
-                        comboBoxMonStart.SelectedIndex = startTime;
-                        comboBoxMonEnd.SelectedIndex = endTime;
+                        comboBoxMonStart.SelectedIndex = startTime - 6;
+                        comboBoxMonEnd.SelectedIndex = endTime - 6;
                     }
                     else if (index == 2)
                     {
                         checkBoxTue.Checked = true;
-                        comboBoxTueStart.SelectedIndex = startTime;
-                        comboBoxTueEnd.SelectedIndex = endTime;
+                        comboBoxTueStart.SelectedIndex = startTime - 6;
+                        comboBoxTueEnd.SelectedIndex = endTime - 6;
                     }
                     else if (index == 3)
                     {
                         checkBoxWed.Checked = true;
-                        comboBoxWedStart.SelectedIndex = startTime;
-                        comboBoxWedEnd.SelectedIndex = endTime;
+                        comboBoxWedStart.SelectedIndex = startTime - 6;
+                        comboBoxWedEnd.SelectedIndex = endTime - 6;
                     }
                     else if (index == 4)
                     {
                         checkBoxThu.Checked = true;
-                        comboBoxThuStart.SelectedIndex = startTime;
-                        comboBoxThuEnd.SelectedIndex = endTime;
+                        comboBoxThuStart.SelectedIndex = startTime - 6;
+                        comboBoxThuEnd.SelectedIndex = endTime - 6;
                     }
                     else if (index == 5)
                     {
                         checkBoxFri.Checked = true;
-                        comboBoxFriStart.SelectedIndex = startTime;
-                        comboBoxFriEnd.SelectedIndex = endTime;
+                        comboBoxFriStart.SelectedIndex = startTime - 6;
+                        comboBoxFriEnd.SelectedIndex = endTime - 6;
                     }
                     else if (index == 6)
                     {
                         checkBoxSat.Checked = true;
-                        comboBoxSatStart.SelectedIndex = startTime;
-                        comboBoxSatEnd.SelectedIndex = endTime;
+                        comboBoxSatStart.SelectedIndex = startTime - 6;
+                        comboBoxSatEnd.SelectedIndex = endTime - 6;
                     }
                 }
             }
-            /*foreach (List<DateTime> days in course.courseTimes)
-            {
-                if (days != null)
-                {
-                    if (index == 0)
-                    {
-                        checkBoxSun.Checked = true;
-                        comboBoxSunStart.SelectedIndex = days.ElementAt(0).Hour;
-                        comboBoxSunEnd.SelectedIndex = days.ElementAt(1).Hour;
-                    }
-                    else if (index == 1)
-                    {
-                        checkBoxMon.Checked = true;
-                        comboBoxMonStart.SelectedIndex = days.ElementAt(0).Hour;
-                        comboBoxMonEnd.SelectedIndex = days.ElementAt(1).Hour;
-                    }
-                    else if (index == 2)
-                    {
-                        checkBoxTue.Checked = true;
-                        comboBoxTueStart.SelectedIndex = days.ElementAt(0).Hour;
-                        comboBoxTueEnd.SelectedIndex = days.ElementAt(1).Hour;
-                    }
-                    else if (index == 3)
-                    {
-                        checkBoxWed.Checked = true;
-                        comboBoxWedStart.SelectedIndex = days.ElementAt(0).Hour;
-                        comboBoxWedEnd.SelectedIndex = days.ElementAt(1).Hour;
-                    }
-                    else if (index == 4)
-                    {
-                        checkBoxThu.Checked = true;
-                        comboBoxThuStart.SelectedIndex = days.ElementAt(0).Hour;
-                        comboBoxThuEnd.SelectedIndex = days.ElementAt(1).Hour;
-                    }
-                    else if (index == 5)
-                    {
-                        checkBoxFri.Checked = true;
-                        comboBoxFriStart.SelectedIndex = days.ElementAt(0).Hour;
-                        comboBoxFriEnd.SelectedIndex = days.ElementAt(1).Hour;
-                    }
-                    else if (index == 6)
-                    {
-                        checkBoxSat.Checked = true;
-                        comboBoxSatStart.SelectedIndex = days.ElementAt(0).Hour;
-                        comboBoxSatEnd.SelectedIndex = days.ElementAt(1).Hour;
-                    }
-                }
-                index++;
-            }*/
         }
 
         public void Clear()
         {
             //Clear all fields
+        }
+
+        private void courseListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.StatusUpdated(this.courseListBox.Text, new EventArgs());
         }
     }
 }

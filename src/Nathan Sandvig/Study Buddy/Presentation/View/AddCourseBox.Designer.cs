@@ -303,8 +303,8 @@
             this.pictureBox4.Size = new System.Drawing.Size(20, 20);
             this.pictureBox4.TabIndex = 49;
             this.pictureBox4.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBox4, "How high you prioritize the course relative to others.  \r\nNo 2 courses can not ha" +
-        "ve the same priortiy.");
+            this.toolTip1.SetToolTip(this.pictureBox4, "How high you prioritize the course relative to others.  \r\nNo 2 courses can have t" +
+        "he same priortiy.");
             // 
             // pictureBox2
             // 
