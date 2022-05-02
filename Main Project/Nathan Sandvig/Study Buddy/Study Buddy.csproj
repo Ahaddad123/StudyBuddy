@@ -103,12 +103,6 @@
     <Compile Include="Presentation\Controller\CourseInfoFormController.cs" />
     <Compile Include="BusinessLogic\Account.cs" />
     <Compile Include="BusinessLogic\CourseBuilder.cs" />
-    <Compile Include="Presentation\GraphUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Presentation\GraphUserControl.Designer.cs">
-      <DependentUpon>GraphUserControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="Presentation\Model\GPAGraph.cs" />
     <Compile Include="Presentation\Model\GradeGraph.cs" />
     <Compile Include="Presentation\Model\Graph.cs" />
@@ -249,9 +243,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\DayBox.resx">
       <DependentUpon>DayBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\GraphUserControl.resx">
-      <DependentUpon>GraphUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\View\AddAssignmentForm.resx">
       <DependentUpon>AddAssignmentForm.cs</DependentUpon>

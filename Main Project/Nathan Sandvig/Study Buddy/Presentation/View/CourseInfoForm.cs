@@ -18,7 +18,7 @@ namespace Study_Buddy.Presentation.View
     // graphs of study hours and grades in that course.
     // v1: Created the class - Peter H, 3-7-22
     //---------------------------------------------------------------------
-    public partial class CourseInfoForm : BaseForm, IGraphView
+    public partial class CourseInfoForm : BaseForm, IView
     {
 
         //---------------------------------------------------------------------
@@ -93,7 +93,7 @@ namespace Study_Buddy.Presentation.View
         // Sets the form's controller
         // v1: Created the method - Peter H, 3-7-22
         //---------------------------------------------------------------------
-        public void SetController(GraphController controller)
+        public void SetController(FormController controller)
         {
             this.controller = (CourseInfoFormController)controller;
         }
@@ -105,7 +105,7 @@ namespace Study_Buddy.Presentation.View
         // averageGradesY : the grades to be graphed on the Y axis
         // v1: Created the method - Peter H, 3-7-22
         //---------------------------------------------------------------------
-        public void DrawGradeGraph(List<DateTime> datesX, List<double> averageGradesY)
+        public void DisplayGradeGraph(List<DateTime> datesX, List<double> averageGradesY)
         {
             //Initialize and format the chart
             gradesChart.Series[gradesSeriesID].ChartType =
@@ -131,7 +131,7 @@ namespace Study_Buddy.Presentation.View
         // hoursY : the hours to be graphed on the Y axis
         // v1: Created the method - Peter H, 3-7-22
         //---------------------------------------------------------------------
-        public void DrawStudyLogGraph(int weekID, List<string> datesX, List<int> hoursY)
+        public void DisplayStudyLogGraph(int weekID, List<string> datesX, List<int> hoursY)
         {
             //Initialize and format the chart
             hoursSeriesID = "Week " + (weekID + 1); //Don't start count at 0
@@ -194,11 +194,6 @@ namespace Study_Buddy.Presentation.View
         private void mainTableLayoutPanel_Click(object sender, EventArgs e)
         {
 
-        }
-
-        public void DisplayUserInfo(string name, string school, string gpa)
-        {
-            throw new NotImplementedException();
         }
     }
 }

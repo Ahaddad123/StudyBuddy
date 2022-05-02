@@ -13,7 +13,7 @@ namespace Study_Buddy.Presentation
     // This class controls a CourseInfoForm.  
     // v1: Created class - Peter H., 3-7-22
     //---------------------------------------------------------------------
-    internal class CourseInfoFormController : GraphController
+    internal class CourseInfoFormController : FormController
     {
         //---------------------------------------------------------------------
         // private data members:
@@ -62,7 +62,7 @@ namespace Study_Buddy.Presentation
         //---------------------------------------------------------------------
         public void DrawGradeGraph()
         {
-            this.view.DrawGradeGraph(gradeGraph.GetXValues(), gradeGraph.GetYValues());
+            ((CourseInfoForm)(view)).DisplayGradeGraph(gradeGraph.GetXValues(), gradeGraph.GetYValues());
         }
 
         //---------------------------------------------------------------------
@@ -71,7 +71,7 @@ namespace Study_Buddy.Presentation
         //---------------------------------------------------------------------
         public void DrawStudyLogGraph()
         {
-            this.view.DrawStudyLogGraph(weekID, studyLogGraph.GetXValues(), studyLogGraph.GetYValues());
+            ((CourseInfoForm)(view)).DisplayStudyLogGraph(weekID, studyLogGraph.GetXValues(), studyLogGraph.GetYValues());
         }
 
         //---------------------------------------------------------------------

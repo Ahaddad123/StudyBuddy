@@ -9,7 +9,7 @@ using Study_Buddy.BusinessLogic;
 
 namespace Study_Buddy.Presentation.Controller
 {
-    internal class UserInfoFormController : GraphController
+    internal class UserInfoFormController : FormController
     {
         private Account account { get; set; }
         private GPAGraph gpaGraph;
@@ -24,7 +24,7 @@ namespace Study_Buddy.Presentation.Controller
 
         public void SetUserInfo()
         {
-            this.view.DisplayUserInfo(account.username, account.sName, account.GPA1);
+            ((UserInfoForm)(this.view)).DisplayUserInfo(account.username, account.sName, account.GPA1);
         }
 
         //---------------------------------------------------------------------
@@ -33,7 +33,7 @@ namespace Study_Buddy.Presentation.Controller
         //---------------------------------------------------------------------
         public void DrawGPAGraph()
         {
-            this.view.DrawGPAGraph(gpaGraph.GetXValues(), gpaGraph.GetYValues());
+            ((UserInfoForm)view).DrawGPAGraph(gpaGraph.GetXValues(), gpaGraph.GetYValues());
         }
     }
 }

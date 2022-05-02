@@ -16,7 +16,7 @@ namespace Study_Buddy.Presentation.View
     // Displays user info including username, school, current GPA and
     // a graph of semester GPA over entire semester.
     //---------------------------------------------------------------------
-    public partial class UserInfoForm : BaseForm, IGraphView
+    public partial class UserInfoForm : BaseForm, IView
     {
         //---------------------------------------------------------------------
         // Private data members:
@@ -78,21 +78,10 @@ namespace Study_Buddy.Presentation.View
             }
         }
 
-        //TODO: Segregate interfaces to avoid gems like this.
-        public void DrawGradeGraph(List<DateTime> xValues, List<double> yValues)
-        {
-            throw new NotImplementedException();
-        }
-        //TODO: See above method.
-        public void DrawStudyLogGraph(int weekID, List<string> xValues, List<int> yValues)
-        {
-            throw new NotImplementedException();
-        }
-
         //---------------------------------------------------------------------
         // Sets the form's controller
         //---------------------------------------------------------------------
-        public void SetController(GraphController formController)
+        public void SetController(FormController formController)
         {
             this.controller = (UserInfoFormController)formController;
         }

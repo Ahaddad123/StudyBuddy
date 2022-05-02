@@ -42,7 +42,7 @@ namespace Study_Buddy.Presentation.Model
             //Fill with default data
             //GenerateTestData();
             //GetCourseData();
-            GatherRealData();
+            GetData();
         }
 
         //---------------------------------------------------------------------
@@ -112,7 +112,7 @@ namespace Study_Buddy.Presentation.Model
         // Gathers data to present on gpa graph
         // v1: Created the method - Andrew V, 4-26-22
         //---------------------------------------------------------------------
-        private void GatherRealData()
+        private void GetData()
         {
             DateTime currDate = new DateTime(2022, 1, 1);
             DateTime today = DateTime.Now;
