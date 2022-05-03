@@ -45,7 +45,7 @@ namespace Study_Buddy.Presentation
         }
 
         //---------------------------------------------------------------------
-        // 
+        // sets the controller to the parameter
         //---------------------------------------------------------------------
         public void SetController(FormController controller)
         {
@@ -91,9 +91,8 @@ namespace Study_Buddy.Presentation
             dayBox.Days(dayOfWeek);
 
             //Handle creation of assignemnt labels
-            //TODO: Andrew V. needs to put some of this code in the controller
             int yValue = 13;
-            foreach (Course c in AccountController.account.courses)
+            foreach (Course c in controller.courses)
             {
                 foreach (Assignment assignment in c.assignments)
                 {

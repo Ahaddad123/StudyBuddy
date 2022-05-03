@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Study_Buddy.BusinessLogic;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -13,15 +14,22 @@ namespace Study_Buddy.Presentation.Controller
     internal class CalendarFormController : FormController
     {
         //---------------------------------------------------------------------
-        //
+        // Variables to be used for controller
+        // day: current day being displayed on calender
+        // month: current month being displayed on calender
+        // year: current year being displayed on calender
+        // monthName: Name of the current month on calendar
+        // courses: courses of the current acount
         //---------------------------------------------------------------------
         public int day { get; set; }   
         public int month { get; set; }
         private int year { get; set; }
         private String monthName;
+        public List<Course> courses { get; set; } = new List<Course>();
 
         //---------------------------------------------------------------------
-        //
+        // Parameraterized constructer for controller
+        // form: current form of calender
         //---------------------------------------------------------------------
         public CalendarFormController(CalendarForm form)
         {
@@ -33,12 +41,18 @@ namespace Study_Buddy.Presentation.Controller
             month = now.Month;
             year = now.Year;
 
+            //Set the courses
+            foreach(Course c in AccountController.account.courses)
+            {
+                courses.Add(c);
+            }
+
             //Get month Name as string
             monthName = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
         }
 
         //---------------------------------------------------------------------
-        //
+        // Draws the calender of the current month
         //---------------------------------------------------------------------
         public void DrawCalendar()
         {
@@ -71,7 +85,8 @@ namespace Study_Buddy.Presentation.Controller
         }
 
         //---------------------------------------------------------------------
-        //
+        // changes the value of month with the parameter given
+        // change: value that will be used to change month
         //---------------------------------------------------------------------
         public void ChangeMonth(int change)
         {
@@ -94,7 +109,7 @@ namespace Study_Buddy.Presentation.Controller
 
 
         //---------------------------------------------------------------------
-        //
+        // Checks to see if the value of month is the same as todays month
         //---------------------------------------------------------------------
         public bool isCurrentMonth()
         {
@@ -106,7 +121,7 @@ namespace Study_Buddy.Presentation.Controller
         }
 
         //---------------------------------------------------------------------
-        //
+        // checks to see if the value of year is the same a todays year
         //---------------------------------------------------------------------
         public bool isCurrentYear()
         {

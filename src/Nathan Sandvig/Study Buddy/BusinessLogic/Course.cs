@@ -174,20 +174,25 @@ namespace Study_Buddy.BusinessLogic
         //---------------------------------------------------------------------
         public void LogHours(double time, DateTime date)
         {
-            //Commeted it out because the format of the log was changed tests will fail
+            //checks to see if a valid value of time was entered
             if(time < 0)
             {
+                //returns if the time entered was invalid
                 return;
             }
+            //adds time to log if the value was valid
             hourLog.AddTimeToLog(time, date.Date);
         }
 
         public void RemoveHours(double time, DateTime date)
         {
-            if(time < 0)
+            //checks to see if a valid value of time was entered
+            if (time < 0)
             {
+                //returns if the time entered was invalid
                 return;
             }
+            //removes time from log if the value was valid
             hourLog.RemoveTimeFromLog(time, date.Date);
         }
 
