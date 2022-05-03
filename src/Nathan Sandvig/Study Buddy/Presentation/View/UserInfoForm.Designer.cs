@@ -52,9 +52,9 @@
             this.mainTableLayoutPanel.Location = new System.Drawing.Point(318, 95);
             this.mainTableLayoutPanel.Name = "mainTableLayoutPanel";
             this.mainTableLayoutPanel.RowCount = 4;
-            this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.16F));
             this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.96F));
+            this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.32F));
+            this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.44F));
             this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.12F));
             this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.mainTableLayoutPanel.Size = new System.Drawing.Size(1028, 625);
@@ -74,7 +74,7 @@
             // 
             this.userSchool.AutoSize = true;
             this.userSchool.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userSchool.Location = new System.Drawing.Point(3, 62);
+            this.userSchool.Location = new System.Drawing.Point(3, 56);
             this.userSchool.Name = "userSchool";
             this.userSchool.Size = new System.Drawing.Size(132, 26);
             this.userSchool.TabIndex = 1;
@@ -82,15 +82,14 @@
             // 
             // userGPA
             // 
-            this.userGPA.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.userGPA.AutoSize = true;
-            this.mainTableLayoutPanel.SetColumnSpan(this.userGPA, 2);
             this.userGPA.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userGPA.Location = new System.Drawing.Point(246, 151);
+            this.userGPA.Location = new System.Drawing.Point(3, 108);
             this.userGPA.Name = "userGPA";
             this.userGPA.Size = new System.Drawing.Size(191, 26);
             this.userGPA.TabIndex = 2;
             this.userGPA.Text = "Your Current GPA";
+            this.userGPA.Click += new System.EventHandler(this.userGPA_Click);
             // 
             // gpaChart
             // 

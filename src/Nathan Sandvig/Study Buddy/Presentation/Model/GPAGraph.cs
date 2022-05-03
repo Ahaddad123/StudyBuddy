@@ -7,7 +7,6 @@ using Study_Buddy.BusinessLogic;
 
 namespace Study_Buddy.Presentation.Model
 {
-
     //---------------------------------------------------------------------
     // This class is the model for a graph of grades and time for a
     // given course.  Currently only graphs default values as the backend
@@ -102,7 +101,12 @@ namespace Study_Buddy.Presentation.Model
             //Populate lists with test data
             for (int i = 0; i < daysSinceStartOfSemester; i++)
             {
-                averageGradesY.Add(random.NextDouble() * 100);
+                double num = 5;
+                while (num > 4)
+                {
+                    num = (random.NextDouble() * 10);
+                }
+                averageGradesY.Add(num);
                 datesX.Add(dateTime);
                 dateTime = dateTime.AddDays(1);
             }

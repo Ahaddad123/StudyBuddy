@@ -86,5 +86,10 @@ namespace Study_Buddy.Presentation.View
         {
             this.controller = (UserInfoFormController)formController;
         }
+
+        private void userGPA_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

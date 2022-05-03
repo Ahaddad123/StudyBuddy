@@ -44,34 +44,36 @@ namespace Study_Buddy.Presentation
             weekID = 0;
         }
 
-        public void UpdateCourse(string courseName)
-        {
-            this.currentCourse = AccountController.account.getCourseByName(courseName);
-            this.gradeGraph = new GradeGraph(currentCourse);
-            this.studyLogGraph = new StudyLogGraph(currentCourse.hourLog);
-            SetCourseInfo();
-        }
         public void SetCourseInfo()
         {
-            ((CourseInfoForm)view).DisplayCourseInfo(currentCourse);
+            ((CourseInfoForm)view).DisplayCourseInfo(currentCourse.name);
+            CreateGradeGraph();
+            CreateStudyLogGraph();
         }
 
-        //---------------------------------------------------------------------
-        // Draws a graph of grades in the course against time.
-        // v1: Created the method - Peter H, 3-7-22
-        //---------------------------------------------------------------------
-        public void DrawGradeGraph()
+        private void CreateGradeGraph()
         {
-            ((CourseInfoForm)(view)).DisplayGradeGraph(gradeGraph.GetXValues(), gradeGraph.GetYValues());
+            ((CourseInfoForm)(view)).DrawGradeGraph(gradeGraph.GetXValues(), gradeGraph.GetYValues());
         }
 
-        //---------------------------------------------------------------------
-        // Draws a graph of hours studied in the course for a given week
-        // v1: Created the method - Peter H, 3-7-22
-        //---------------------------------------------------------------------
-        public void DrawStudyLogGraph()
+        private void CreateStudyLogGraph()
         {
-            ((CourseInfoForm)(view)).DisplayStudyLogGraph(weekID, studyLogGraph.GetXValues(), studyLogGraph.GetYValues());
+            ((CourseInfoForm)(view)).DrawStudyLogGraph(weekID, studyLogGraph.GetXValues(), studyLogGraph.GetYValues());
+        }
+
+
+        public void UpdateCurrentCourse(string courseName)
+        {
+            DateTime currTime = DateTime.Now;
+            int currWeek = currTime.DayOfYear / 7;
+            this.weekID = currWeek;
+            //Get the current course
+            this.currentCourse = AccountController.account.getCourseByName(courseName);
+            //Get graphs for the course
+            this.gradeGraph = new GradeGraph(currentCourse);
+            this.studyLogGraph = new StudyLogGraph(currentCourse.hourLog);
+            //Update the view
+            SetCourseInfo();
         }
 
         //---------------------------------------------------------------------
@@ -89,7 +91,7 @@ namespace Study_Buddy.Presentation
                 {
                     weekID += change;
                     studyLogGraph.SelectWeek(weekID);
-                    DrawStudyLogGraph();
+                    CreateStudyLogGraph();
                 }
             }
             //Increment weekID
@@ -100,7 +102,7 @@ namespace Study_Buddy.Presentation
                 {
                     weekID += change;
                     studyLogGraph.SelectWeek(weekID);
-                    DrawStudyLogGraph();
+                    CreateStudyLogGraph();
                 }
 
             }

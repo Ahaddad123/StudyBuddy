@@ -96,7 +96,7 @@ namespace Study_Buddy.Presentation.Model
         private void GenerateTestData()
         {
             //Calculate days since semester began (arbitrarily 1/24/2022
-            DateTime semesterStart = new DateTime(2022, 1, 24);
+            DateTime semesterStart = new DateTime(2022, 1, 1);
             DateTime today = DateTime.Now;
             int daysSinceStartOfSemester = ((int)(today - semesterStart).TotalDays);
 
