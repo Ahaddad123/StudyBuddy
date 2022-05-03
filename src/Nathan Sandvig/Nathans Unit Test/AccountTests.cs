@@ -55,6 +55,7 @@ namespace Nathans_Unit_Test
         public void RemoveCourseTest_Exists()
         {
             Account account = new Account("username", "password");
+            account.database = new MockDatabase();
             CourseBuilder courseBuilder = new CourseBuilder();
             Course course1 = courseBuilder.WithName("test1").Build();
             Course course2 = courseBuilder.WithName("test2").Build();

@@ -30,5 +30,13 @@ namespace Nathans_Unit_Test
             assignment.addGrade(0);
             Assert.AreEqual(0, assignment.grade);
         }
+
+        [TestMethod]
+        public void GetDueDateTest()
+        {
+            Assignment assignment = new Assignment(100, "Exam 1", 20, new DateTime(1,1,1));
+            assignment.dueDate = DateTime.Today;
+            Assert.AreEqual(DateTime.Today, assignment.dueDate);
+        }
     }
 }

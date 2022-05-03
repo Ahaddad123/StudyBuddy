@@ -23,7 +23,7 @@ namespace Study_Buddy.DataAccess
         // Creating the connection to the database and if a database with that
         // name is not located then one will be created.
         //---------------------------------------------------------------------
-        public SQLiteConnection CreateConnection()
+        public virtual SQLiteConnection CreateConnection()
         {
 
             SQLiteConnection sqlite_conn;
@@ -46,7 +46,7 @@ namespace Study_Buddy.DataAccess
         // so the program can continue if the tables have been created
         // already.
         //---------------------------------------------------------------------
-        public int createTables()
+        public virtual int createTables()
         {
             SQLiteConnection sqlite_conn;
             // Create a new database connection:
@@ -99,7 +99,7 @@ namespace Study_Buddy.DataAccess
         //---------------------------------------------------------------------
         // Query for checking if an account exists by username
         //---------------------------------------------------------------------
-        public String checkAccount(String username, String password) 
+        public virtual String checkAccount(String username, String password) 
         {
             int UserExists = 0;
             Boolean exists = false;
@@ -137,7 +137,7 @@ namespace Study_Buddy.DataAccess
         //---------------------------------------------------------------------
         // Query for checking if an account exists by password
         //---------------------------------------------------------------------
-        public string checkPassword(string password) {
+        public virtual string checkPassword(string password) {
             string checkPasswords;
             
             SQLiteConnection sqlite_conn;
@@ -171,7 +171,7 @@ namespace Study_Buddy.DataAccess
         // Query for creating an account by inserting the account data into
         // the table.
         //---------------------------------------------------------------------
-        public int InsertAccountData(string username, string password,  string email, string firstname, string lastname, string gpa, string schoolname) 
+        public virtual int InsertAccountData(string username, string password,  string email, string firstname, string lastname, string gpa, string schoolname) 
         {
             SQLiteConnection sqlite_conn;
             // Create a new database connection:
@@ -198,7 +198,7 @@ namespace Study_Buddy.DataAccess
         //---------------------------------------------------------------------
         // Query for inserting course data into the table
         //---------------------------------------------------------------------
-        public int insertCourseData(Course course)
+        public virtual int insertCourseData(Course course)
         {
             int success = 0;
 
@@ -224,7 +224,7 @@ namespace Study_Buddy.DataAccess
         // a returnable list
         //---------------------------------------------------------------------
 
-        public List<String> readCourses()
+        public virtual List<String> readCourses()
         {
             List<String> courses = new List<String>();
             SQLiteDataReader sqlite_datareader;
@@ -254,7 +254,7 @@ namespace Study_Buddy.DataAccess
         // Query for reading assignment data from the table and inserting it into
         // a returnable list
         //---------------------------------------------------------------------
-        public List<String> readAssignments()
+        public virtual List<String> readAssignments()
         {
             List<String> assignments = new List<String>();
             SQLiteDataReader sqlite_datareader;
@@ -290,7 +290,7 @@ namespace Study_Buddy.DataAccess
         // Query for reading the students information and inserting it into a
         // returnable list
         //---------------------------------------------------------------------
-        public List<string> readStudentInfo()
+        public virtual List<string> readStudentInfo()
         {
             List<String> studentInfo = new List<String>();
             SQLiteDataReader sqlite_datareader;
@@ -321,7 +321,7 @@ namespace Study_Buddy.DataAccess
         // Query for inserting logged study hours into the database
         //---------------------------------------------------------------------
 
-        public void logStudyHours(String courses, DateTime date, String hours)
+        public virtual void logStudyHours(String courses, DateTime date, String hours)
         {
             SQLiteConnection sqlite_conn = CreateConnection();
 
@@ -339,7 +339,7 @@ namespace Study_Buddy.DataAccess
         // Query for adding logged study hours to an existing entry in
         // the database
         //---------------------------------------------------------------------
-        public void addStudyHours(String course, DateTime date, String hours)
+        public virtual void addStudyHours(String course, DateTime date, String hours)
         {
             SQLiteConnection sqlite_conn = CreateConnection();
 
@@ -359,7 +359,7 @@ namespace Study_Buddy.DataAccess
         // Query for removing logged study hours from an existing entry
         // in the database
         //---------------------------------------------------------------------
-        public void removeStudyHours(String course, DateTime date, String hours)
+        public virtual void removeStudyHours(String course, DateTime date, String hours)
         {
             SQLiteConnection sqlite_conn = CreateConnection();
 
@@ -379,7 +379,7 @@ namespace Study_Buddy.DataAccess
         // Query for readin the current number of logged hours in a
         // specific entry in the database.
         //---------------------------------------------------------------------
-        public int readHour(String course, DateTime date)
+        public virtual int readHour(String course, DateTime date)
         {
             int studyHours = 0;
             SQLiteDataReader sqlite_datareader;
@@ -405,7 +405,7 @@ namespace Study_Buddy.DataAccess
         //---------------------------------------------------------------------
         // Query for reading the study hours and seperating them by week.
         //---------------------------------------------------------------------
-        public List<string> readStudyHours()
+        public virtual List<string> readStudyHours()
         {
             List<String> studyHours = new List<String>();
             SQLiteDataReader sqlite_datareader;
@@ -433,7 +433,7 @@ namespace Study_Buddy.DataAccess
         //---------------------------------------------------------------------
         // Query to remove a course from the course list
         //---------------------------------------------------------------------
-        public void removeCourse(string courseName) 
+        public virtual void removeCourse(string courseName) 
         {
             SQLiteConnection sqlite_conn = CreateConnection();
 
@@ -452,7 +452,7 @@ namespace Study_Buddy.DataAccess
         //---------------------------------------------------------------------
         // Query for adding an assignment to the assignment list
         //---------------------------------------------------------------------
-        public void addAssignment(string courseName, string assignmentName, string assignmentWeight, string grade, string points, string duedate) 
+        public virtual void addAssignment(string courseName, string assignmentName, string assignmentWeight, string grade, string points, string duedate) 
         {
             SQLiteConnection sqlite_conn = CreateConnection();
 
@@ -471,7 +471,7 @@ namespace Study_Buddy.DataAccess
         // Query for adding a grade to an existing assignment to the
         // assignment list.
         //---------------------------------------------------------------------
-        public void addGrade(string assignmentName, string grade)
+        public virtual void addGrade(string assignmentName, string grade)
         {
             SQLiteConnection sqlite_conn = CreateConnection();
 
@@ -488,7 +488,7 @@ namespace Study_Buddy.DataAccess
         //---------------------------------------------------------------------
         // Query adding course times to the database.
         //---------------------------------------------------------------------
-        public void addTimesCourse(Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)> times, string courseName) 
+        public virtual void addTimesCourse(Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)> times, string courseName) 
         {
             SQLiteConnection sqlite_conn = CreateConnection();
 
@@ -563,7 +563,7 @@ namespace Study_Buddy.DataAccess
         //---------------------------------------------------------------------
         // Query for removing an entry from the course times table.
         //---------------------------------------------------------------------
-        public void removeTimesCourse(string courseName)
+        public virtual void removeTimesCourse(string courseName)
         {
             SQLiteConnection sqlite_conn = CreateConnection();
 
@@ -581,7 +581,7 @@ namespace Study_Buddy.DataAccess
         // Query for reading course times data from the table and inserting
         // it into a returnable list
         //---------------------------------------------------------------------
-        public List<String> readTimesCourse()
+        public virtual List<String> readTimesCourse()
         {
             List<String> courseTimes = new List<String>();
             SQLiteDataReader sqlite_datareader;
