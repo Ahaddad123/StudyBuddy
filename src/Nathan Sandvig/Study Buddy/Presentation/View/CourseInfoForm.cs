@@ -20,7 +20,6 @@ namespace Study_Buddy.Presentation.View
     //---------------------------------------------------------------------
     public partial class CourseInfoForm : BaseForm, IView
     {
-
         //---------------------------------------------------------------------
         // Private data members:
         // controller : the form's controller 
@@ -30,7 +29,7 @@ namespace Study_Buddy.Presentation.View
         // displayed on the hoursLogged chart
         //---------------------------------------------------------------------
         private CourseInfoFormController controller;
-        public Course currentCourse { get; set; }
+        public string currentCourseName { get; set; }
         private string gradesSeriesID;
         private string hoursSeriesID;
 
@@ -54,40 +53,29 @@ namespace Study_Buddy.Presentation.View
         //---------------------------------------------------------------------
         // Displays the information for the passed course.
         //---------------------------------------------------------------------
-        public void DisplayCourseInfo(Course currentCourse)
+        public void DisplayCourseInfo(string newCourseName)
         {
-            this.currentCourse = currentCourse;
-            this.title = currentCourse.name;
+            //Display info for currentCourse
+            this.currentCourseName = newCourseName;
+            this.title = newCourseName;
             this.Text = title;
             this.mainHeader.Text = title;
 
             //Clear the charts 
-            gradesChart.Series.Clear();
-            hoursLoggedChart.Series.Clear();
+            ClearCharts();
 
-            //Reset and redraw charts using data from passed course
-            gradesSeriesID = "Grades for " + currentCourse.name;
+            //Sets chart series info for passed course
+            gradesSeriesID = "Grades for " + newCourseName;
             hoursSeriesID = "Week 1";
             gradesChart.Series.Add(gradesSeriesID);
-            controller.DrawGradeGraph();
         }
 
-        //---------------------------------------------------------------------
-        // Handles the event of a userCourseListButton being clicked.
-        // Changes the current course for whom information is being displayed.
-        //---------------------------------------------------------------------
-        public void Event_UserCourseListButtonClicked(object sender, EventArgs e)
+        public void ClearCharts()
         {
-            //Extract course name from button
-            string courseName = ((Button)sender).Text;
-            //Send course to controller
-            this.controller.UpdateCourse(courseName);
-            //Set display to match current course
-            this.title = currentCourse.name;
-            this.mainHeader.Text = currentCourse.name;
-            this.controller.DrawGradeGraph();
-            this.controller.DrawStudyLogGraph();
+            gradesChart.Series.Clear();
+            hoursLoggedChart.Series.Clear();
         }
+
 
         //---------------------------------------------------------------------
         // Sets the form's controller
@@ -105,7 +93,7 @@ namespace Study_Buddy.Presentation.View
         // averageGradesY : the grades to be graphed on the Y axis
         // v1: Created the method - Peter H, 3-7-22
         //---------------------------------------------------------------------
-        public void DisplayGradeGraph(List<DateTime> datesX, List<double> averageGradesY)
+        public void DrawGradeGraph(List<DateTime> datesX, List<double> averageGradesY)
         {
             //Initialize and format the chart
             gradesChart.Series[gradesSeriesID].ChartType =
@@ -131,7 +119,7 @@ namespace Study_Buddy.Presentation.View
         // hoursY : the hours to be graphed on the Y axis
         // v1: Created the method - Peter H, 3-7-22
         //---------------------------------------------------------------------
-        public void DisplayStudyLogGraph(int weekID, List<string> datesX, List<int> hoursY)
+        public void DrawStudyLogGraph(int weekID, List<string> datesX, List<int> hoursY)
         {
             //Initialize and format the chart
             hoursSeriesID = "Week " + (weekID + 1); //Don't start count at 0
@@ -155,6 +143,21 @@ namespace Study_Buddy.Presentation.View
             {
                 hoursLoggedChart.Series[hoursSeriesID].Points.AddXY(datesX[i], hoursY[i]);
             }
+        }
+
+        //---------------------------------------------------------------------
+        // Handles the event of a userCourseListButton being clicked.
+        // Changes the current course for whom information is being displayed.
+        //---------------------------------------------------------------------
+        public void Event_UserCourseListButtonClicked(object sender, EventArgs e)
+        {
+            //Extract course name from button
+            string courseName = ((Button)sender).Text;
+            //Send course to controller
+            this.controller.UpdateCurrentCourse(courseName);
+            //Set display to match current course
+            this.title = courseName;
+            this.mainHeader.Text = courseName;
         }
 
         //---------------------------------------------------------------------

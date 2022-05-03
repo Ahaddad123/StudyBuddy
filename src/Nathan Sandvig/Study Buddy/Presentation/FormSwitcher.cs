@@ -42,16 +42,16 @@ namespace Study_Buddy.Presentation
                 controller = new CourseInfoFormController(form, AccountController.account.courses[0], 
                     AccountController.account.courses[0].hourLog);
 
-            //Set the controller and display info as well as graphs
+            //Set the controller
             form.SetController(controller);
-            controller.SetCourseInfo();
-            controller.DrawGradeGraph();
-            controller.DrawStudyLogGraph();
 
             //Initialize the weekID to the current week
             DateTime currTime = DateTime.Now;
             int currWeek = currTime.DayOfYear / 7;
             controller.ChangeCurrentWeekID(currWeek);
+
+            //Set all course information
+            controller.SetCourseInfo();
 
             //Display new form and close old form
             form.ShowDialog();
