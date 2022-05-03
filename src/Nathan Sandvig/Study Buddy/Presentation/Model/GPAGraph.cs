@@ -151,8 +151,8 @@ namespace Study_Buddy.Presentation.Model
                     averageGrade = 100;
                     while (newTime < currDate)
                     {
-                        numAssignments += GetNumAssignments(currDate, c);
-                        total += GetAssignGrade(currDate, c);
+                        numAssignments += GetNumAssignments(newTime, c);
+                        total += GetAssignGrade(newTime, c);
 
                         if (numAssignments > 0)
                         {
