@@ -17,14 +17,13 @@ namespace Study_Buddy.Presentation.Controller
         {
             this.view = form;
             this.account = account;
-            //this.gpaGraph = new GPAGraph(account.something); TODO: Get from account
             this.gpaGraph = new GPAGraph(new List<DateTime>(), new List<double>());
             view.SetController(this);
         }
 
         public void SetUserInfo()
         {
-            ((UserInfoForm)(this.view)).DisplayUserInfo(account.username, account.sName, account.GPA1);
+            ((UserInfoForm)(this.view)).DisplayUserInfo(account.fname, account.lname, account.sName, account.GPA1);
         }
 
         //---------------------------------------------------------------------

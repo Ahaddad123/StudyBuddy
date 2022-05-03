@@ -31,7 +31,7 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.userName = new System.Windows.Forms.Label();
+            this.fullName = new System.Windows.Forms.Label();
             this.userSchool = new System.Windows.Forms.Label();
             this.userGPA = new System.Windows.Forms.Label();
             this.gpaChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -45,7 +45,7 @@
             this.mainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.mainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.mainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.mainTableLayoutPanel.Controls.Add(this.userName, 0, 0);
+            this.mainTableLayoutPanel.Controls.Add(this.fullName, 0, 0);
             this.mainTableLayoutPanel.Controls.Add(this.userSchool, 0, 1);
             this.mainTableLayoutPanel.Controls.Add(this.userGPA, 0, 2);
             this.mainTableLayoutPanel.Controls.Add(this.gpaChart, 0, 3);
@@ -60,15 +60,15 @@
             this.mainTableLayoutPanel.Size = new System.Drawing.Size(1028, 625);
             this.mainTableLayoutPanel.TabIndex = 1;
             // 
-            // userName
+            // fullName
             // 
-            this.userName.AutoSize = true;
-            this.userName.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userName.Location = new System.Drawing.Point(3, 0);
-            this.userName.Name = "userName";
-            this.userName.Size = new System.Drawing.Size(161, 35);
-            this.userName.TabIndex = 0;
-            this.userName.Text = "Your Name";
+            this.fullName.AutoSize = true;
+            this.fullName.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fullName.Location = new System.Drawing.Point(3, 0);
+            this.fullName.Name = "fullName";
+            this.fullName.Size = new System.Drawing.Size(161, 35);
+            this.fullName.TabIndex = 0;
+            this.fullName.Text = "Your Name";
             // 
             // userSchool
             // 
@@ -86,7 +86,7 @@
             this.userGPA.AutoSize = true;
             this.mainTableLayoutPanel.SetColumnSpan(this.userGPA, 2);
             this.userGPA.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userGPA.Location = new System.Drawing.Point(308, 189);
+            this.userGPA.Location = new System.Drawing.Point(246, 151);
             this.userGPA.Name = "userGPA";
             this.userGPA.Size = new System.Drawing.Size(191, 26);
             this.userGPA.TabIndex = 2;
@@ -125,7 +125,7 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel mainTableLayoutPanel;
-        private System.Windows.Forms.Label userName;
+        private System.Windows.Forms.Label fullName;
         private System.Windows.Forms.Label userSchool;
         private System.Windows.Forms.Label userGPA;
         private System.Windows.Forms.DataVisualization.Charting.Chart gpaChart;
