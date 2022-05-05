@@ -10,20 +10,6 @@ namespace Nathans_Unit_Test
     public class AccountTests
     {
         [TestMethod]
-        public void CheckCreateAccount()
-        {
-            Account account = new Account("josh123", "joshpassword");
-            //account.CheckCreateAccount("josh123", "joshpassword");
-            //Assert.AreEqual(false, account.CheckCreateAccount("josh123", "joshpassword"));
-
-        }
-        [TestMethod]
-        public void CheckLogin() {
-            Account account = new Account("josh123", "joshpassword");
-            //account.Login("nathan123", "nathanpassword");
-            //Assert.AreEqual(false, account.Login("nathan123", "nathanpassword"));
-        }
-        [TestMethod]
         public void AddCourseTest()
         {
             Account account = new Account("username", "password");
