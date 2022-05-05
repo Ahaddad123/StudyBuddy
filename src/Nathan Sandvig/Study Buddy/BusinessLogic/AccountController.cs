@@ -7,6 +7,7 @@ using Study_Buddy.DataAccess;
 
 namespace Study_Buddy.BusinessLogic
 {
+    //controller for account
     public class AccountController
     {
 

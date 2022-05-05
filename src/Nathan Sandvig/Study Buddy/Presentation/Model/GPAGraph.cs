@@ -118,20 +118,22 @@ namespace Study_Buddy.Presentation.Model
         //---------------------------------------------------------------------
         private void GetData()
         {
-            DateTime currDate = new DateTime(2022, 1, 1);
-            DateTime today = DateTime.Now;
+            DateTime currDate = new DateTime(2022, 1, 1); //Starting date of semester
+            DateTime today = DateTime.Now;                //ending date
 
-            double averageGrade = 100;
-            int numAssignments = 0;
-            double total = 0;
-            double sumOfCredits = 0;
-            double gradeCredit = 0;
+            double averageGrade = 100;                    //average grade for the course
+            int numAssignments = 0;                       //assignments of a course
+            double total = 0;                             //total of grades in course
+            double sumOfCredits = 0;                      //sum of credits of courses
+            double gradeCredit = 0;                       //number that will be divided by sumOfCredits to get GPA
 
+            //Sets sumOfCredits
             foreach(Course c in AccountController.account.courses)
             {
                 sumOfCredits += c.credits;
             }
 
+            //Populates datesX
             while(currDate < today)
             {
                 datesX.Add(currDate);
@@ -149,6 +151,7 @@ namespace Study_Buddy.Presentation.Model
                     numAssignments = 0;
                     DateTime newTime = new DateTime(2022, 1, 1);
                     averageGrade = 100;
+                    //find average grade at currday
                     while (newTime < currDate)
                     {
                         numAssignments += GetNumAssignments(newTime, c);
@@ -162,8 +165,10 @@ namespace Study_Buddy.Presentation.Model
                         newTime = newTime.AddDays(1);
                     }
 
+                    //checks to see if the number of assignments is valid
                     if (numAssignments > 0)
                     {
+                        //calculates gradeCredit based on averageGrade
                         if (averageGrade >= 93)
                         {
                             gradeCredit += c.credits * 4;
