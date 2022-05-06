@@ -11,12 +11,12 @@ namespace Study_Buddy.BusinessLogic
 {
     public class Account
     {
-        internal string username; //Login username
-        internal string password; //Login password
-        internal string fname;
-        internal string lname;
-        internal string GPA1;
-        internal string sName;
+        public string username; //Login username
+        public string password; //Login password
+        public string firstName;
+        public string lastName;
+        public string GPA1;
+        public string schoolName;
         //internal int userID; //This is the ID for the database to track accounts
         public SQLite database = new SQLite();
 
@@ -24,13 +24,13 @@ namespace Study_Buddy.BusinessLogic
 
         public Account() { }
 
-        public Account(string nameuser, string pass, string firstName, string lastName, string gpa, string schoolName) {
+        public Account(string nameuser, string pass, string fname, string lname, string gpa, string sname) {
             username = nameuser;
             password = pass;
-            fname = firstName;
-            lname = lastName;
+            firstName = fname;
+            lastName = lname;
             GPA1 = gpa;
-            sName = schoolName;
+            schoolName = sname;
         }
 
         public Account(String newUsername, String newPassword){
@@ -131,10 +131,10 @@ namespace Study_Buddy.BusinessLogic
         {
             for (int i = 0; i < studentInfoData.Count; i += 4)
             {
-                this.fname = studentInfoData.ElementAt(i);
-                this.lname = studentInfoData.ElementAt(i + 1);
+                this.firstName = studentInfoData.ElementAt(i);
+                this.lastName = studentInfoData.ElementAt(i + 1);
                 this.GPA1 = studentInfoData.ElementAt(i + 2);
-                this.sName = studentInfoData.ElementAt(i + 3);
+                this.schoolName = studentInfoData.ElementAt(i + 3);
             }
         }
 

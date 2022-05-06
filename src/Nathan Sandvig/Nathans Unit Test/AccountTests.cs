@@ -160,8 +160,26 @@ namespace Nathans_Unit_Test
                 Assert.AreEqual(endTime1, account.getCourseByName(course1.name).schedule.times[day].endTime.Hour);
                 Assert.AreEqual(startTime2, account.getCourseByName(course2.name).schedule.times[day].startTime.Hour);
                 Assert.AreEqual(endTime2, account.getCourseByName(course2.name).schedule.times[day].endTime.Hour);
-            }
-            
+            }  
+        }
+
+        [TestMethod]
+        public void testPopulateStudentInfo()
+        {
+            Account account = new Account("username", "password");
+            account.database = new MockDatabase();
+            List<String> studentInfoList = new List<String>();
+            studentInfoList.Add("firstName");
+            studentInfoList.Add("lastName");
+            studentInfoList.Add("3.7");
+            studentInfoList.Add("schoolName");
+
+            account.populateStudentInfo(studentInfoList);
+
+            Assert.AreEqual("firstName", account.firstName);
+            Assert.AreEqual("lastName", account.lastName);
+            Assert.AreEqual("3.7", account.GPA1);
+            Assert.AreEqual("schoolName", account.schoolName);
         }
     }
 
