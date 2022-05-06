@@ -413,7 +413,7 @@ namespace Study_Buddy.Presentation.View
                 {
                     Course course = new CourseBuilder().WithName(txtCourseTitle.Text).WithCode(txtCourseCode.Text).WithCredits(courseCredit).WithPriority(coursePriority).WithSchedule(new CourseSchedule(times)).Build();
                     AccountController.account.addCourse(course);
-                    AccountController.account.addTheCourseTimes(times, course.name);
+                    AccountController.account.database.addTimesCourse(times, course.name);
                     successLabel.Text = "Succesfully added " + course.name;
                     Clear();
                     times = new Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)>();
