@@ -411,7 +411,7 @@ namespace Study_Buddy.Presentation.View
                     AccountController.account.database.removeCourse(course.name);
                     AccountController.account.database.insertCourseData(course);
                     AccountController.account.database.removeTimesCourse(course.name);
-                    AccountController.account.addTheCourseTimes(times, course.name);
+                    AccountController.account.database.addTimesCourse(times, course.name);
                     nameErrorMessageLabel.Text = "";
                     creditsErrorMessageLabel.Text = "";
                     sunErrorMessageLabel.Text = "";

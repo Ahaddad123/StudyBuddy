@@ -38,95 +38,16 @@ namespace Study_Buddy.BusinessLogic
             password = newPassword;
         }
 
-        public void readCourses() 
+        //---------------------------------------------------------------------
+        // Populates local data with data from the database
+        //---------------------------------------------------------------------
+        public void populateLocalData() 
         {
-            List<String> list;
-            list = database.readCourses();
-            for(int i = 0; i < list.Count; i+=3)
-            {
-                populateCourses(new CourseBuilder().WithName(list.ElementAt(i)).WithCredits(Double.Parse(list.ElementAt(i+1))).WithCode(list.ElementAt(i+2)).WithSchedule(new CourseSchedule()).Build());
-            }
-
-            List<String> list2;
-            list2 = database.readAssignments();
-            for(int i = 0; i < list2.Count; i += 6)
-            {
-                foreach(Course course in courses)
-                {
-                    if (course.name.Equals(list2.ElementAt(i)))
-                    {
-                        Assignment assignment = new Assignment(Int32.Parse(list2.ElementAt(i+4)), list2.ElementAt(i + 1), Int32.Parse(list2.ElementAt(i + 2)), DateTime.Parse(list2.ElementAt(i+5)));
-                        course.AddAssignment(assignment);
-                        course.GradeAssignment(assignment.name, Double.Parse(list2.ElementAt(i + 3)));
-                    }
-                }
-            }
-
-            List<String> list3;
-            list3 = database.readStudyHours();
-            for (int i = 0; i < list3.Count; i += 3)
-            {
-                foreach (Course course in courses)
-                {
-                    if (course.name.Equals(list3.ElementAt(i+1)))
-                    {
-                        course.LogHours(Int32.Parse(list3.ElementAt(i)), DateTime.Parse(list3.ElementAt(i + 2)));
-                    }
-                }
-            }
-
-            List<String> list4;
-            list4 = database.readTimesCourse();
-            for(int i = 0; i < list4.Count; i += 15)
-            {
-                foreach(Course course in courses)
-                {
-                    if (course.name.Equals(list4.ElementAt(i)))
-                    {
-                        Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)> times;
-                        times = new Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)>();
-                        if (!list4.ElementAt(i + 1).Equals("null"))
-                        {
-                            times.Add(DayOfWeek.Sunday, (DateTime.Parse(list4.ElementAt(i + 1)), DateTime.Parse(list4.ElementAt(i + 2))));
-                        }
-                        if (!list4.ElementAt(i + 3).Equals("null"))
-                        {
-                            times.Add(DayOfWeek.Monday, (DateTime.Parse(list4.ElementAt(i + 3)), DateTime.Parse(list4.ElementAt(i + 4))));
-                        }
-                        if (!list4.ElementAt(i + 5).Equals("null"))
-                        {
-                            times.Add(DayOfWeek.Tuesday, (DateTime.Parse(list4.ElementAt(i + 5)), DateTime.Parse(list4.ElementAt(i + 6))));
-                        }
-                        if (!list4.ElementAt(i + 7).Equals("null"))
-                        {
-                            times.Add(DayOfWeek.Wednesday, (DateTime.Parse(list4.ElementAt(i + 7)), DateTime.Parse(list4.ElementAt(i + 8))));
-                        }
-                        if (!list4.ElementAt(i + 9).Equals("null"))
-                        {
-                            times.Add(DayOfWeek.Thursday, (DateTime.Parse(list4.ElementAt(i + 9)), DateTime.Parse(list4.ElementAt(i + 10))));
-                        }
-                        if (!list4.ElementAt(i + 11).Equals("null"))
-                        {
-                            times.Add(DayOfWeek.Friday, (DateTime.Parse(list4.ElementAt(i + 11)), DateTime.Parse(list4.ElementAt(i + 12))));
-                        }
-                        if (!list4.ElementAt(i + 13).Equals("null"))
-                        {
-                            times.Add(DayOfWeek.Saturday, (DateTime.Parse(list4.ElementAt(i + 13)), DateTime.Parse(list4.ElementAt(i + 14))));
-                        }
-                        course.schedule = new CourseSchedule(times);
-                    }
-                }
-            }
-
-            List<String> list5;
-            list5 = database.readStudentInfo();
-            for(int i = 0; i < list5.Count; i+=4)
-            {
-                this.fname = list5.ElementAt(i);
-                this.lname = list5.ElementAt(i+1);
-                this.GPA1 = list5.ElementAt(i+2);
-                this.sName = list5.ElementAt(i+3);
-            }
+            populateCourseList(database.readCourses());
+            populateAssignments(database.readAssignments());
+            populateStudyHours(database.readStudyHours());
+            populateSchedules(database.readTimesCourse());
+            populateStudentInfo(database.readStudentInfo());  
         }
 
         //---------------------------------------------------------------------
@@ -136,23 +57,88 @@ namespace Study_Buddy.BusinessLogic
         //---------------------------------------------------------------------
         public void addCourse(Course course)
         {
-            foreach(Course c in this.courses)
-            {
-                if (c.name.Equals(course.name))
-                {
-                    return;
-                }
-            }
-            courses.Add(course);
+            populateCourse(course);
             int success = database.insertCourseData(course);
         }
 
-        public void addTheCourseTimes(Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)> times, string courseName)
+        public void populateCourseList(List<String> courseData)
         {
-            database.addTimesCourse(times, courseName);
+            for (int i = 0; i < courseData.Count; i += 3)
+            {
+                populateCourse(new CourseBuilder().WithName(courseData.ElementAt(i)).WithCredits(Double.Parse(courseData.ElementAt(i + 1))).WithCode(courseData.ElementAt(i + 2)).WithSchedule(new CourseSchedule()).Build());
+            }
         }
 
-        public void populateCourses(Course course)
+        public void populateStudyHours(List<String> studyHourData)
+        {
+            for (int i = 0; i < studyHourData.Count; i += 3)
+            {
+                foreach (Course course in courses)
+                {
+                    if (course.name.Equals(studyHourData.ElementAt(i + 1)))
+                    {
+                        course.LogHours(Int32.Parse(studyHourData.ElementAt(i)), DateTime.Parse(studyHourData.ElementAt(i + 2)));
+                    }
+                }
+            }
+        }
+
+        public void populateSchedules(List<String> scheduleData)
+        {
+            for (int i = 0; i < scheduleData.Count; i += 15)
+            {
+                foreach (Course course in courses)
+                {
+                    if (course.name.Equals(scheduleData.ElementAt(i)))
+                    {
+                        Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)> times;
+                        times = new Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)>();
+                        if (!scheduleData.ElementAt(i + 1).Equals("null"))
+                        {
+                            times.Add(DayOfWeek.Sunday, (DateTime.Parse(scheduleData.ElementAt(i + 1)), DateTime.Parse(scheduleData.ElementAt(i + 2))));
+                        }
+                        if (!scheduleData.ElementAt(i + 3).Equals("null"))
+                        {
+                            times.Add(DayOfWeek.Monday, (DateTime.Parse(scheduleData.ElementAt(i + 3)), DateTime.Parse(scheduleData.ElementAt(i + 4))));
+                        }
+                        if (!scheduleData.ElementAt(i + 5).Equals("null"))
+                        {
+                            times.Add(DayOfWeek.Tuesday, (DateTime.Parse(scheduleData.ElementAt(i + 5)), DateTime.Parse(scheduleData.ElementAt(i + 6))));
+                        }
+                        if (!scheduleData.ElementAt(i + 7).Equals("null"))
+                        {
+                            times.Add(DayOfWeek.Wednesday, (DateTime.Parse(scheduleData.ElementAt(i + 7)), DateTime.Parse(scheduleData.ElementAt(i + 8))));
+                        }
+                        if (!scheduleData.ElementAt(i + 9).Equals("null"))
+                        {
+                            times.Add(DayOfWeek.Thursday, (DateTime.Parse(scheduleData.ElementAt(i + 9)), DateTime.Parse(scheduleData.ElementAt(i + 10))));
+                        }
+                        if (!scheduleData.ElementAt(i + 11).Equals("null"))
+                        {
+                            times.Add(DayOfWeek.Friday, (DateTime.Parse(scheduleData.ElementAt(i + 11)), DateTime.Parse(scheduleData.ElementAt(i + 12))));
+                        }
+                        if (!scheduleData.ElementAt(i + 13).Equals("null"))
+                        {
+                            times.Add(DayOfWeek.Saturday, (DateTime.Parse(scheduleData.ElementAt(i + 13)), DateTime.Parse(scheduleData.ElementAt(i + 14))));
+                        }
+                        course.schedule = new CourseSchedule(times);
+                    }
+                }
+            }
+        }
+
+        public void populateStudentInfo(List<String> studentInfoData)
+        {
+            for (int i = 0; i < studentInfoData.Count; i += 4)
+            {
+                this.fname = studentInfoData.ElementAt(i);
+                this.lname = studentInfoData.ElementAt(i + 1);
+                this.GPA1 = studentInfoData.ElementAt(i + 2);
+                this.sName = studentInfoData.ElementAt(i + 3);
+            }
+        }
+
+        public void populateCourse(Course course)
         {
             foreach (Course c in this.courses)
             {
@@ -162,6 +148,22 @@ namespace Study_Buddy.BusinessLogic
                 }
             }
             courses.Add(course);
+        }
+
+        public void populateAssignments(List<String> assignmentData)
+        {
+            for (int i = 0; i < assignmentData.Count; i += 6)
+            {
+                foreach (Course course in courses)
+                {
+                    if (course.name.Equals(assignmentData.ElementAt(i)))
+                    {
+                        Assignment assignment = new Assignment(Int32.Parse(assignmentData.ElementAt(i + 4)), assignmentData.ElementAt(i + 1), Int32.Parse(assignmentData.ElementAt(i + 2)), DateTime.Parse(assignmentData.ElementAt(i + 5)));
+                        course.AddAssignment(assignment);
+                        course.GradeAssignment(assignment.name, Double.Parse(assignmentData.ElementAt(i + 3)));
+                    }
+                }
+            }
         }
 
         //---------------------------------------------------------------------
