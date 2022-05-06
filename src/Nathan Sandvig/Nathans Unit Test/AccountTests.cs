@@ -181,6 +181,50 @@ namespace Nathans_Unit_Test
             Assert.AreEqual("3.7", account.GPA1);
             Assert.AreEqual("schoolName", account.schoolName);
         }
+
+        [TestMethod]
+        public void testPopulateAssignments()
+        {
+            double weight1 = 10.0;
+            double weight2 = 20.0;
+            double grade1 = 74.0;
+            double grade2 = 83.0;
+            double points1 = 95.0;
+            double points2 = 100.0;
+            Account account = new Account("username", "password");
+            account.database = new MockDatabase();
+            CourseBuilder courseBuilder = new CourseBuilder();
+            Course course1 = courseBuilder.WithName("test1").Build();
+            Course course2 = courseBuilder.WithName("test2").Build();
+            account.courses.Add(course1);
+            account.courses.Add(course2);
+            List<String> assignmentList = new List<String>();
+            assignmentList.Add(course1.name);
+            assignmentList.Add("assignmentName1");
+            assignmentList.Add(weight1 + "");
+            assignmentList.Add(grade1 + "");
+            assignmentList.Add(points1 + "");
+            assignmentList.Add(DateTime.Today.ToString());
+            assignmentList.Add(course2.name);
+            assignmentList.Add("assignmentName2");
+            assignmentList.Add(weight2 + "");
+            assignmentList.Add(grade2 + "");
+            assignmentList.Add(points2 + "");
+            assignmentList.Add(DateTime.Today.ToString());
+
+            account.populateAssignments(assignmentList);
+
+            Assert.AreEqual("assignmentName1", account.getCourseByName(course1.name).assignments[0].name);
+            Assert.AreEqual(weight1, account.getCourseByName(course1.name).assignments[0].weight);
+            Assert.AreEqual(grade1 / points1 * 100, account.getCourseByName(course1.name).assignments[0].grade);
+            Assert.AreEqual(points1, account.getCourseByName(course1.name).assignments[0].totalPoints);
+            Assert.AreEqual(DateTime.Today, account.getCourseByName(course1.name).assignments[0].dueDate);
+            Assert.AreEqual("assignmentName2", account.getCourseByName(course2.name).assignments[0].name);
+            Assert.AreEqual(weight2, account.getCourseByName(course2.name).assignments[0].weight);
+            Assert.AreEqual(grade2 / points2 * 100, account.getCourseByName(course2.name).assignments[0].grade);
+            Assert.AreEqual(points2, account.getCourseByName(course2.name).assignments[0].totalPoints);
+            Assert.AreEqual(DateTime.Today, account.getCourseByName(course2.name).assignments[0].dueDate);
+        }
     }
 
 }
