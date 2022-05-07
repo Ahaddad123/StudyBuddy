@@ -181,7 +181,7 @@ namespace Nathans_Unit_Test
             int addHours = 3;
             int removeHours = 2;
             Course course = new Course();
-            course.LogHours(addHours,DateTime.Today);
+            course.LogHours(addHours, DateTime.Today);
 
             course.RemoveHours(removeHours, DateTime.Today);
 
@@ -199,6 +199,13 @@ namespace Nathans_Unit_Test
             course.RemoveHours(removeHours, DateTime.Today);
 
             Assert.AreEqual(addHours, course.GetHoursStudied(DateTime.Today));
+        }
+
+        [TestMethod]
+        public void TestDatesAndAverageGrades()
+        {
+            Course course = new Course();
+            course.datesAndAverageGrades = new Dictionary<DateTime, double>();
         }
     }
 }
