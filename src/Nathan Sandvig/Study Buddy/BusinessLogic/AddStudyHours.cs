@@ -9,7 +9,7 @@ namespace Study_Buddy.BusinessLogic
     //---------------------------------------------------------------------
     // Concrete command for undoing and redoing adding study hours.
     //---------------------------------------------------------------------
-    internal class AddStudyHours : ICommand
+    public class AddStudyHours : ICommand
     {
         private string course;
         private DateTime date;

@@ -9,7 +9,7 @@ namespace Study_Buddy.BusinessLogic
     //---------------------------------------------------------------------
     // Concrete command for undoing and redoing adding a grade.
     //---------------------------------------------------------------------
-    internal class AddGrade : ICommand
+    public class AddGrade : ICommand
     {
         private string course;
         private string assignment;

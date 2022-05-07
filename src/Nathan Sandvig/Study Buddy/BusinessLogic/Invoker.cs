@@ -9,17 +9,17 @@ namespace Study_Buddy.BusinessLogic
     //---------------------------------------------------------------------
     // Invoker of the Command pattern used for adding grades and study hours.
     //---------------------------------------------------------------------
-    internal class Invoker
+    public class Invoker
     {
         //---------------------------------------------------------------------
         // Stack of the commands done or redone.
         //---------------------------------------------------------------------
-        private Stack<ICommand> done = new Stack<ICommand>();
+        public Stack<ICommand> done = new Stack<ICommand>();
 
         //---------------------------------------------------------------------
         // Stack of the commands undone.
         //---------------------------------------------------------------------
-        private Stack<ICommand> undone = new Stack<ICommand>();
+        public Stack<ICommand> undone = new Stack<ICommand>();
 
         //---------------------------------------------------------------------
         // Invoker Constructor.

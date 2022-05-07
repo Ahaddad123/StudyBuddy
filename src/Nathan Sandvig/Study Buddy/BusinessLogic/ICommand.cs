@@ -10,7 +10,7 @@ namespace Study_Buddy.BusinessLogic
     // Command interface.
     // Implemented by AddGrade and AddStudyHours.
     //---------------------------------------------------------------------
-    internal interface ICommand
+    public interface ICommand
     {
         void execute();
         void unexecute();
