@@ -39,6 +39,7 @@
             this.creditsErrorMessageLabel = new System.Windows.Forms.Label();
             this.successLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.sameTimeLabel = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -167,6 +168,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.groupBox1.Controls.Add(this.sameTimeLabel);
             this.groupBox1.Controls.Add(this.pictureBox3);
             this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.pictureBox1);
@@ -216,6 +218,16 @@
             this.groupBox1.Size = new System.Drawing.Size(1001, 546);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
+            // 
+            // sameTimeLabel
+            // 
+            this.sameTimeLabel.AutoSize = true;
+            this.sameTimeLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sameTimeLabel.ForeColor = System.Drawing.Color.Red;
+            this.sameTimeLabel.Location = new System.Drawing.Point(45, 409);
+            this.sameTimeLabel.Name = "sameTimeLabel";
+            this.sameTimeLabel.Size = new System.Drawing.Size(0, 23);
+            this.sameTimeLabel.TabIndex = 54;
             // 
             // pictureBox3
             // 
@@ -740,5 +752,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label sameTimeLabel;
     }
 }

@@ -412,32 +412,11 @@ namespace Study_Buddy.Presentation.View
                     AccountController.account.database.insertCourseData(course);
                     AccountController.account.database.removeTimesCourse(course.name);
                     AccountController.account.database.addTimesCourse(times, course.name);
-                    nameErrorMessageLabel.Text = "";
-                    creditsErrorMessageLabel.Text = "";
-                    sunErrorMessageLabel.Text = "";
-                    monErrorMessageLabel.Text = "";
-                    tueErrorMessageLabel.Text = "";
-                    wedErrorMessageLabel.Text = "";
-                    thuErrorMessageLabel.Text = "";
-                    friErrorMessageLabel.Text = "";
-                    satErrorMessageLabel.Text = "";
-                    successLabel.Text = "";
-                    checkBoxSun.Checked = false;
-                    checkBoxMon.Checked = false;
-                    checkBoxTue.Checked = false;
-                    checkBoxWed.Checked = false;
-                    checkBoxThu.Checked = false;
-                    checkBoxFri.Checked = false;
-                    checkBoxSat.Checked = false;
-                    courseListBox.ResetText();
-                    txtCourseCode.Text = "";
-                    txtCourseCredits.Text = "";
-                    times = new Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)>();
+                    Clear();
                 }
                 else
                 {
-                    //TODO: change label
-                    successLabel.Text = "Course cannot be at the same time as another course.";
+                    sameTimeLabel.Text = "Course cannot be at the same time as another course.";
                     times = new Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)>();
                 }
             }
@@ -505,7 +484,27 @@ namespace Study_Buddy.Presentation.View
 
         public void Clear()
         {
-            //Clear all fields
+            nameErrorMessageLabel.Text = "";
+            creditsErrorMessageLabel.Text = "";
+            sunErrorMessageLabel.Text = "";
+            monErrorMessageLabel.Text = "";
+            tueErrorMessageLabel.Text = "";
+            wedErrorMessageLabel.Text = "";
+            thuErrorMessageLabel.Text = "";
+            friErrorMessageLabel.Text = "";
+            satErrorMessageLabel.Text = "";
+            sameTimeLabel.Text = "";
+            checkBoxSun.Checked = false;
+            checkBoxMon.Checked = false;
+            checkBoxTue.Checked = false;
+            checkBoxWed.Checked = false;
+            checkBoxThu.Checked = false;
+            checkBoxFri.Checked = false;
+            checkBoxSat.Checked = false;
+            courseListBox.ResetText();
+            txtCourseCode.Text = "";
+            txtCourseCredits.Text = "";
+            times = new Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)>();
         }
 
         private void courseListBox_SelectedIndexChanged(object sender, EventArgs e)

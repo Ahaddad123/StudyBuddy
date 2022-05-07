@@ -417,13 +417,12 @@ namespace Study_Buddy.Presentation.View
                     successLabel.Text = "Succesfully added " + course.name;
                     Clear();
                     times = new Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)>();
-                    this.StatusUpdated(sender, new EventArgs());
                 }
                 else
                 {
+                    successLabel.ForeColor = Color.Red;
                     successLabel.Text = "Course cannot be at the same time as another course.";
                     times = new Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)>();
-                    this.StatusUpdated(sender, new EventArgs());
                 }
             }
         }
@@ -443,6 +442,7 @@ namespace Study_Buddy.Presentation.View
             friErrorMessageLabel.Text = "";
             satErrorMessageLabel.Text = "";
             successLabel.Text = "";
+            successLabel.ForeColor = Color.White;
             checkBoxSun.Checked = false;
             checkBoxMon.Checked = false;
             checkBoxTue.Checked = false;

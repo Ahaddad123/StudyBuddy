@@ -41,10 +41,7 @@ namespace Study_Buddy.Presentation
             int points = 0;
             int weight = 0;
             DateTime duedate;
-            //Course courseName = new Course();
-            //Course testC = new Course();
-            //Account test = new Account("","",1);
-            //test.addCourse(testC);
+
             if (txtNameAssign.Text.Equals(""))
             {
                 nameErrorMessageLabel.Text = "Invalid Name";
@@ -88,9 +85,6 @@ namespace Study_Buddy.Presentation
 
             if (valid)
             {
-                // Add assignment
-                // wip does not like courseName
-                //controller.AddAssignment(courseName, txtNameAssign.Text,points,weight);
                 successLabel.Text = "Assignment added";
                 Assignment addassign = new Assignment(points, txtNameAssign.Text, weight, duedate);
                 controller.AddAssignment(cmbCourses.Text, addassign);

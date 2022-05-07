@@ -29,7 +29,6 @@ namespace Study_Buddy.Presentation
             this.nav1.SetCurrentForm(this);
             this.mainPanel.Controls.Add(this.editCourseBox1);
 
-            this.addCourseBox1.StatusUpdated += new EventHandler(ChildControlEvent_AddCourseBoxAddCourseButtonClicked);
             this.removeCourseBox1.LoadCourses(AccountController.account.courses);
             this.removeCourseBox1.StatusUpdated += new EventHandler(Event_RemoveCourseButtonClick);
             this.editCourseBox1.StatusUpdated += new EventHandler(Event_EditCourseButtonClick);
@@ -38,14 +37,8 @@ namespace Study_Buddy.Presentation
 
         public void Event_EditCourseButtonClick(Object sender, EventArgs e)
         {
-            //TODO: move this logic to parent form
             Course course = AccountController.account.getCourseByName(sender.ToString());
             this.editCourseBox1.UpdateData(course);
-        }
-
-        public void ChildControlEvent_AddCourseBoxAddCourseButtonClicked(Object sender, EventArgs e)
-        {
-            
         }
 
         public void Event_RemoveCourseButtonClick(object sender, EventArgs e)
@@ -77,7 +70,6 @@ namespace Study_Buddy.Presentation
             this.removeCourseBox1.Visible = false;
             this.editCourseBox1.Visible = false;
             this.removeCourseBox1.Clear();
-            //this.editCourseBox1.Clear();
         }
 
         private void btnRemoveCourse_Click(object sender, EventArgs e)
@@ -93,7 +85,6 @@ namespace Study_Buddy.Presentation
             this.editCourseBox1.Visible= false;
             this.addCourseBox1.Clear();
             this.editCourseBox1.Clear();
-            //IMPORTANT - Make sure course list is updated
             this.removeCourseBox1.LoadCourses(AccountController.account.courses);
         }
 
