@@ -225,6 +225,111 @@ namespace Nathans_Unit_Test
             Assert.AreEqual(points2, account.getCourseByName(course2.name).assignments[0].totalPoints);
             Assert.AreEqual(DateTime.Today, account.getCourseByName(course2.name).assignments[0].dueDate);
         }
+        
+        [TestMethod]
+        public void testAddStudyHours()
+        {
+            double hours1 = 4.5;
+            double hours2 = 5.7;
+            Account account = new Account("username", "password");
+            account.database = new MockDatabase();
+            CourseBuilder courseBuilder = new CourseBuilder();
+            Course course1 = courseBuilder.WithName("test1").Build();
+            Course course2 = courseBuilder.WithName("test2").Build();
+            account.courses.Add(course1);
+            account.courses.Add(course2);
+
+            account.addStudyHours("test1", DateTime.Today, hours1);
+            account.addStudyHours("test2", DateTime.Today, hours2);
+            account.addStudyHours("test2", DateTime.Today, hours2);
+
+            Assert.AreEqual(hours1, account.getCourseByName("test1").GetHoursStudied(DateTime.Today));
+            Assert.AreEqual(hours2 + hours2, account.getCourseByName("test2").GetHoursStudied(DateTime.Today));
+            Assert.AreEqual(0, account.getCourseByName("test1").GetHoursStudied(new DateTime(1,1,1)));
+        }
+
+        [TestMethod]
+        public void testRemoveStudyHours()
+        {
+            double hours2 = 5.7;
+            Account account = new Account("username", "password");
+            account.database = new MockDatabase();
+            CourseBuilder courseBuilder = new CourseBuilder();
+            Course course2 = courseBuilder.WithName("test2").Build();
+            account.courses.Add(course2);
+            account.addStudyHours("test2", DateTime.Today, hours2);
+            account.addStudyHours("test2", DateTime.Today, hours2);
+
+            account.removeStudyHours("test2", DateTime.Today, hours2);
+
+            Assert.AreEqual(hours2, account.getCourseByName("test2").GetHoursStudied(DateTime.Today));
+        }
+
+        [TestMethod]
+        public void testGetCourseByName_NotFound()
+        {
+            Account account = new Account("username", "password");
+            account.database = new MockDatabase();
+            CourseBuilder courseBuilder = new CourseBuilder();
+            Course course1 = courseBuilder.WithName("test1").Build();
+            account.courses.Add(course1);
+            account.courses = new List<Course>();
+
+            Assert.IsNull(account.getCourseByName("test1"));
+        }
+
+        [TestMethod]
+        public void testAddGrade()
+        {
+            int totalPoints1 = 90;
+            int totalPoints2 = 50;
+            double grade1 = 80;
+            double grade2 = 30;
+            Account account = new Account("username", "password");
+            account.database = new MockDatabase();
+            CourseBuilder courseBuilder = new CourseBuilder();
+            Course course1 = courseBuilder.WithName("test1").Build();
+            Course course2 = courseBuilder.WithName("test2").Build();
+            account.courses.Add(course1);
+            account.courses.Add(course2);
+            account.courses[0].AddAssignment(new Assignment(totalPoints1, "assignment1", 20, DateTime.Today));
+            account.courses[1].AddAssignment(new Assignment(totalPoints2, "assignment2", 30, DateTime.Today));
+
+            account.addGrade("test1", "assignment1", grade1);
+            account.addGrade("test2", "assignment2", grade2);
+
+            Assert.AreEqual(grade1 / totalPoints1 * 100, account.getCourseByName("test1").assignments[0].grade);
+            Assert.AreEqual(grade2 / totalPoints2 * 100, account.getCourseByName("test2").assignments[0].grade);
+        }
+
+        [TestMethod]
+        public void testRemoveGrade()
+        {
+            int totalPoints1 = 90;
+            double grade1 = 80;
+            Account account = new Account("username", "password");
+            account.database = new MockDatabase();
+            CourseBuilder courseBuilder = new CourseBuilder();
+            Course course1 = courseBuilder.WithName("test1").Build();
+            account.courses.Add(course1);
+            account.courses[0].AddAssignment(new Assignment(totalPoints1, "assignment1", 20, DateTime.Today));
+            account.addGrade("test1", "assignment1", grade1);
+
+            account.removeGrade("test1", "assignment1");
+
+            Assert.AreEqual(0, account.getCourseByName("test1").assignments[0].grade);
+        }
+
+        [TestMethod]
+        public void testPopulateLocalData()
+        {
+            Account account = new Account("username", "password");
+            account.database = new MockDatabase();
+
+            account.populateLocalData();
+
+            Assert.AreEqual(0, account.courses.Count);
+        }
     }
 
 }

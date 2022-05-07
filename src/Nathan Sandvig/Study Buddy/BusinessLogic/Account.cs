@@ -227,11 +227,6 @@ namespace Study_Buddy.BusinessLogic
             database.removeStudyHours(course, date.Date, hours + "");
         }
 
-        public void addAssignment(string coursename, string name, string grade, string weight, string points, string duedate) 
-        {
-            database.addAssignment(coursename, name, weight, grade, points, duedate);
-        }
-
         public void addGrade(string coursename, string assignmentname, double grade)
         {
             foreach (Course c in this.courses)
@@ -254,11 +249,6 @@ namespace Study_Buddy.BusinessLogic
                     database.addGrade(assignmentname, 0 + "");
                 }
             }
-        }
-
-        public List<String> getStudentInfo()
-        {
-            return database.readStudentInfo();
         }
 
         public Course getCourseByName(String courseName)
