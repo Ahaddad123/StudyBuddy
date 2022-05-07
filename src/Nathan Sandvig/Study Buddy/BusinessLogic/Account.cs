@@ -253,7 +253,7 @@ namespace Study_Buddy.BusinessLogic
                     }
                     c.LogHours(hours, date.Date);
                 }
-            }
+            };
         }
 
         //---------------------------------------------------------------------

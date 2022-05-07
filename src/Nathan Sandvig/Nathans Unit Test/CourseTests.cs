@@ -200,12 +200,5 @@ namespace Nathans_Unit_Test
 
             Assert.AreEqual(addHours, course.GetHoursStudied(DateTime.Today));
         }
-
-        [TestMethod]
-        public void TestDatesAndAverageGrades()
-        {
-            Course course = new Course();
-            course.datesAndAverageGrades = new Dictionary<DateTime, double>();
-        }
     }
 }

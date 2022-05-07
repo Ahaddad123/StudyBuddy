@@ -19,39 +19,6 @@ namespace Nathans_Unit_Test
     class MockDatabase : SQLite
     {
 
-        public override SQLiteConnection CreateConnection()
-        {
-            return null;
-        }
-
-        //---------------------------------------------------------------------
-        // Query for checking if an account exists by username
-        //---------------------------------------------------------------------
-        public override String checkAccount(String username, String password)
-        {
-            return "";
-        }
-        public override int createTables()
-        {
-            return 1;
-        }
-
-        //---------------------------------------------------------------------
-        // Query for checking if an account exists by password
-        //---------------------------------------------------------------------
-        public override string checkPassword(string password)
-        {
-            return "";
-        }
-        //---------------------------------------------------------------------
-        // Query for creating an account by inserting the account data into
-        // the table.
-        //---------------------------------------------------------------------
-        public override int InsertAccountData(string username, string password, string email, string firstname, string lastname, string gpa, string schoolname)
-        {
-            return 1;
-        }
-
         //---------------------------------------------------------------------
         // Query for inserting course data into the table
         //---------------------------------------------------------------------
@@ -115,15 +82,6 @@ namespace Nathans_Unit_Test
         }
 
         //---------------------------------------------------------------------
-        // Query for readin the current number of logged hours in a
-        // specific entry in the database.
-        //---------------------------------------------------------------------
-        public override int readHour(String course, DateTime date)
-        {
-            return 1;
-        }
-
-        //---------------------------------------------------------------------
         // Query for reading the study hours and seperating them by week.
         //---------------------------------------------------------------------
         public override List<string> readStudyHours()
@@ -139,33 +97,11 @@ namespace Nathans_Unit_Test
         }
 
         //---------------------------------------------------------------------
-        // Query for adding an assignment to the assignment list
-        //---------------------------------------------------------------------
-        public override void addAssignment(string courseName, string assignmentName, string assignmentWeight, string grade, string points, string duedate)
-        {
-        }
-
-        //---------------------------------------------------------------------
         // Query for adding a grade to an existing assignment to the
         // assignment list.
         //---------------------------------------------------------------------
         public override void addGrade(string assignmentName, string grade)
         {
-        }
-
-        //---------------------------------------------------------------------
-        // Query adding course times to the database.
-        //---------------------------------------------------------------------
-        public override void addTimesCourse(Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)> times, string courseName)
-        {
-        }
-
-        //---------------------------------------------------------------------
-        // Query for removing an entry from the course times table.
-        //---------------------------------------------------------------------
-        public override void removeTimesCourse(string courseName)
-        {
-
         }
 
         //---------------------------------------------------------------------

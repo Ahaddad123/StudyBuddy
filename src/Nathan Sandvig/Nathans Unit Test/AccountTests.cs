@@ -201,15 +201,15 @@ namespace Nathans_Unit_Test
             List<String> assignmentList = new List<String>();
             assignmentList.Add(course1.name);
             assignmentList.Add("assignmentName1");
-            assignmentList.Add(weight1 + "");
-            assignmentList.Add(grade1 + "");
-            assignmentList.Add(points1 + "");
+            assignmentList.Add(weight1.ToString());
+            assignmentList.Add(grade1.ToString());
+            assignmentList.Add(points1.ToString());
             assignmentList.Add(DateTime.Today.ToString());
             assignmentList.Add(course2.name);
             assignmentList.Add("assignmentName2");
-            assignmentList.Add(weight2 + "");
-            assignmentList.Add(grade2 + "");
-            assignmentList.Add(points2 + "");
+            assignmentList.Add(weight2.ToString());
+            assignmentList.Add(grade2.ToString());
+            assignmentList.Add(points2.ToString());
             assignmentList.Add(DateTime.Today.ToString());
 
             account.populateAssignments(assignmentList);
