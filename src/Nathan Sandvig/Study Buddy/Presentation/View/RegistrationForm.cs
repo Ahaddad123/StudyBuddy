@@ -12,21 +12,29 @@ using Study_Buddy.Presentation.Controller;
 
 namespace Study_Buddy.Presentation.View
 {
+    //---------------------------------------------------------------------
+    // Windows Form to create an account
+    //---------------------------------------------------------------------
     public partial class RegistrationForm : Form, IView
     {
         private RegistrationFormController controller;
 
         protected String title = "";
+
+        //---------------------------------------------------------------------
+        // Initializes the structure of the RegistrationForm
+        //---------------------------------------------------------------------
         public RegistrationForm()
         {
-
             InitializeComponent();
             this.MaximumSize = new System.Drawing.Size(1366, 768);
             this.Size = new System.Drawing.Size(1366, 768);
-
-
         }
 
+        //---------------------------------------------------------------------
+        // Sets the controller of the form
+        // controller: controller for RegistrationForm
+        //---------------------------------------------------------------------
         public void SetController(FormController controller)
         {
             this.controller = (RegistrationFormController)controller;
@@ -114,6 +122,10 @@ namespace Study_Buddy.Presentation.View
 
         #endregion
 
+        //---------------------------------------------------------------------
+        // Event for when the create account button is clicked.
+        // Validates the information entered and creates the account if valid.
+        //---------------------------------------------------------------------
         private void btnRegister_Click(object sender, EventArgs e)
         {
             Clear();
@@ -182,6 +194,9 @@ namespace Study_Buddy.Presentation.View
             }
         }
 
+        //---------------------------------------------------------------------
+        // Clears all of the error messages.
+        //---------------------------------------------------------------------
         private void Clear()
         {
             usernameLabel.Visible=false;

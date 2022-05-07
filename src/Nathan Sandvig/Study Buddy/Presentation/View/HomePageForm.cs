@@ -13,9 +13,16 @@ using Study_Buddy.Presentation.View;
 
 namespace Study_Buddy.Presentation
 {
+    //---------------------------------------------------------------------
+    // Windows Form to display the home page information
+    //---------------------------------------------------------------------
     public partial class HomePageForm : BaseForm, IView
     {
         private HomePageFormController controller;
+
+        //---------------------------------------------------------------------
+        // Initializes the structure of the HomePageForm
+        //---------------------------------------------------------------------
         public HomePageForm()
         {
             InitializeComponent();
@@ -36,6 +43,10 @@ namespace Study_Buddy.Presentation
             this.controller = (HomePageFormController)controller;
         }
 
+        //---------------------------------------------------------------------
+        // Event for when the HomePageForm is loaded.
+        // Adds the necessary labels and buttons for each course in Account
+        //---------------------------------------------------------------------
         private void HomePageForm_Load(object sender, EventArgs e)
         {
             this.name.Text = controller.getName();
@@ -77,17 +88,29 @@ namespace Study_Buddy.Presentation
             }
         }
 
+        //---------------------------------------------------------------------
+        // Event for when an add grade button is clicked.
+        // Opens the AddGradeForm for the specified course.
+        //---------------------------------------------------------------------
         private void addGradeButton_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
             FormSwitcher.OpenAddGradeForm(this, (Course)button.Tag);
         }
 
+        //---------------------------------------------------------------------
+        // Event for when the view my info button is clicked.
+        // Opens the UserInfoForm
+        //---------------------------------------------------------------------
         private void btnViewMyInfo_Click(object sender, EventArgs e)
         {
             FormSwitcher.OpenUserInfoForm(this);
         }
 
+        //---------------------------------------------------------------------
+        // Event for when the exit button is clicked.
+        // Closes the program.
+        //---------------------------------------------------------------------
         private void exitButton_Click(object sender, EventArgs e)
         {
             this.Close();

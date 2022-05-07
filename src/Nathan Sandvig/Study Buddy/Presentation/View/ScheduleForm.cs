@@ -14,9 +14,16 @@ using Study_Buddy.Presentation.Controller;
 
 namespace Study_Buddy.Presentation
 {
+    //---------------------------------------------------------------------
+    // Windows Form to show the course schedule
+    //---------------------------------------------------------------------
     public partial class ScheduleForm : BaseForm, IView
     {
         private ScheduleFormController controller;
+
+        //---------------------------------------------------------------------
+        // Initializes the structure of the ScheduleForm
+        //---------------------------------------------------------------------
         public ScheduleForm()
         {
             InitializeComponent();
@@ -37,6 +44,10 @@ namespace Study_Buddy.Presentation
             this.controller = (ScheduleFormController)controller;
         }
 
+        //---------------------------------------------------------------------
+        // Event for when the form is opened.
+        // Adds the course labels that show when they are to the form.
+        //---------------------------------------------------------------------
         private void ScheduleForm_Load(object sender, EventArgs e)
         {
             double[] hoursStudied = new double[7];
