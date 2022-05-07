@@ -9,21 +9,29 @@ using Study_Buddy.DataAccess;
 
 namespace Study_Buddy.BusinessLogic
 {
+    //---------------------------------------------------------------------
+    // Holds all data needed to use Study Buddy and makes calls to SQLite
+    // read and write data to the database.
+    //---------------------------------------------------------------------
     public class Account
     {
-        public string username; //Login username
-        public string password; //Login password
+        public string username;
+        public string password;
         public string firstName;
         public string lastName;
         public string GPA1;
         public string schoolName;
-        //internal int userID; //This is the ID for the database to track accounts
         public SQLite database = new SQLite();
-
         public List<Course> courses { get; set; } = new List<Course>();
 
+        //---------------------------------------------------------------------
+        // Default Constructor for Account
+        //---------------------------------------------------------------------
         public Account() { }
 
+        //---------------------------------------------------------------------
+        // Constructor for Account that initializes student information
+        //---------------------------------------------------------------------
         public Account(string nameuser, string pass, string fname, string lname, string gpa, string sname) {
             username = nameuser;
             password = pass;
@@ -33,6 +41,9 @@ namespace Study_Buddy.BusinessLogic
             schoolName = sname;
         }
 
+        //---------------------------------------------------------------------
+        // Constructor for Account the initializes username and password
+        //---------------------------------------------------------------------
         public Account(String newUsername, String newPassword){
             username = newUsername;
             password = newPassword;
@@ -61,6 +72,10 @@ namespace Study_Buddy.BusinessLogic
             int success = database.insertCourseData(course);
         }
 
+        //---------------------------------------------------------------------
+        // Populates the list of courses in Account
+        // courseData: list of course data from the database
+        //---------------------------------------------------------------------
         public void populateCourseList(List<String> courseData)
         {
             for (int i = 0; i < courseData.Count; i += 3)
@@ -69,6 +84,10 @@ namespace Study_Buddy.BusinessLogic
             }
         }
 
+        //---------------------------------------------------------------------
+        // Adds study hours logged in the database to the specified Courses in Account
+        // studyHourData: list of study hour data from the database
+        //---------------------------------------------------------------------
         public void populateStudyHours(List<String> studyHourData)
         {
             for (int i = 0; i < studyHourData.Count; i += 3)
@@ -83,6 +102,10 @@ namespace Study_Buddy.BusinessLogic
             }
         }
 
+        //---------------------------------------------------------------------
+        // Sets the schedule of the Course objects in Account
+        // scheduleData: list of course time data from the database
+        //---------------------------------------------------------------------
         public void populateSchedules(List<String> scheduleData)
         {
             for (int i = 0; i < scheduleData.Count; i += 15)
@@ -127,6 +150,10 @@ namespace Study_Buddy.BusinessLogic
             }
         }
 
+        //---------------------------------------------------------------------
+        // Populates the student info in Account
+        // studentInfoData: list of student info data from the database
+        //---------------------------------------------------------------------
         public void populateStudentInfo(List<String> studentInfoData)
         {
             for (int i = 0; i < studentInfoData.Count; i += 4)
@@ -138,6 +165,10 @@ namespace Study_Buddy.BusinessLogic
             }
         }
 
+        //---------------------------------------------------------------------
+        // Adds a Course object to the local data in Account
+        // course: Course object to be added
+        //---------------------------------------------------------------------
         public void populateCourse(Course course)
         {
             foreach (Course c in this.courses)
@@ -150,6 +181,10 @@ namespace Study_Buddy.BusinessLogic
             courses.Add(course);
         }
 
+        //---------------------------------------------------------------------
+        // Populates the assignments in the specified Course in Account
+        // assignmentData: list of assignment data from the database
+        //---------------------------------------------------------------------
         public void populateAssignments(List<String> assignmentData)
         {
             for (int i = 0; i < assignmentData.Count; i += 6)
@@ -196,6 +231,12 @@ namespace Study_Buddy.BusinessLogic
             return removed;
         }
 
+        //---------------------------------------------------------------------
+        // Adds study hours to the specified Course
+        // course: name of the course that the hours were logged for
+        // date: date the study hours were completed
+        // hours: number of hours studied
+        //---------------------------------------------------------------------
         public void addStudyHours(String course, DateTime date, double hours) 
         {
             foreach (Course c in this.courses)
@@ -215,6 +256,12 @@ namespace Study_Buddy.BusinessLogic
             }
         }
 
+        //---------------------------------------------------------------------
+        // Removes study hours from the specified Course
+        // course: name of the course to remove the hours from
+        // date: date the study hours need to be removed from
+        // hours: number of hours studied to be removed
+        //---------------------------------------------------------------------
         public void removeStudyHours(String course, DateTime date, double hours)
         {
             foreach (Course c in this.courses)
@@ -227,6 +274,12 @@ namespace Study_Buddy.BusinessLogic
             database.removeStudyHours(course, date.Date, hours + "");
         }
 
+        //---------------------------------------------------------------------
+        // Adds grade to the specified Assignment
+        // coursename: name of the course that the assigment is in
+        // assignmentname: name of the assignment the grade is for
+        // hours: grade received on the assignment
+        //---------------------------------------------------------------------
         public void addGrade(string coursename, string assignmentname, double grade)
         {
             foreach (Course c in this.courses)
@@ -239,6 +292,11 @@ namespace Study_Buddy.BusinessLogic
             }
         }
 
+        //---------------------------------------------------------------------
+        // Removes grade from the specified Assignment
+        // coursename: name of the course that the assigment is in
+        // assignmentname: name of the assignment to remove the grade from
+        //---------------------------------------------------------------------
         public void removeGrade(string coursename, string assignmentname)
         {
             foreach(Course c in this.courses)
@@ -251,6 +309,11 @@ namespace Study_Buddy.BusinessLogic
             }
         }
 
+        //---------------------------------------------------------------------
+        // Gets the Course object with the specified name
+        // coursename: name of the course to be returned
+        // return: the Course object
+        //---------------------------------------------------------------------
         public Course getCourseByName(String courseName)
         {
             foreach(Course course in this.courses)

@@ -59,6 +59,12 @@ namespace Study_Buddy.BusinessLogic
             }
         }
 
+        //---------------------------------------------------------------------
+        // Checks to see if the course times overlap with another course.
+        // courseSchedule: hours attempted to be set for a course
+        // courseName: name of the course that the schedule will be set for
+        // return: if the course times are overalp with another course or not.
+        //---------------------------------------------------------------------
         public static bool scheduleCheck(CourseSchedule courseSchedule, String courseName) {
             foreach(DayOfWeek date in courseSchedule.times.Keys)
             {
