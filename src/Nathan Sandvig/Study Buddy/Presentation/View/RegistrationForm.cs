@@ -116,6 +116,7 @@ namespace Study_Buddy.Presentation.View
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            Clear();
             string username = textBox2.Text;
             string password = textBox3.Text;
             string email = textBox1.Text;
@@ -123,14 +124,73 @@ namespace Study_Buddy.Presentation.View
             string lastName = textBox5.Text;
             string gpa = textBox6.Text;
             string schoolName = textBox7.Text;
-            
+            double gpa_double = 0;
 
-            AccountController acc = new AccountController();
+            bool valid = true;
 
-            acc.createAccount(username, password, email, firstName, lastName, gpa, schoolName);
+            if (username.Equals(""))
+            {
+                usernameLabel.Visible = true;
+                valid = false;
+            }
+            if (password.Equals(""))
+            {
+                passwordLabel.Visible = true;
+                valid = false;
+            }
+            if (email.Equals(""))
+            {
+                emailLabel.Visible = true;
+                valid = false;
+            }
+            if (firstName.Equals(""))
+            {
+                firstNameLabel.Visible = true;
+                valid = false;
+            }
+            if (lastName.Equals(""))
+            {
+                lastNameLabel.Visible = true;
+                valid = false;
+            }
+            if (schoolName.Equals(""))
+            {
+                schoolLabel.Visible = true;
+                valid = false;
+            }
+            try
+            {
+                gpa_double = Double.Parse(gpa);
+            }
+            catch (Exception ex)
+            {
+                gpaLabel.Visible = true;
+                valid = false;
+            }
+            if (gpa_double < 0)
+            {
+                gpaLabel.Visible = true;
+                valid = false;
+            }
 
+            if (valid)
+            {
+                AccountController acc = new AccountController();
+                acc.createAccount(username, password, email, firstName, lastName, gpa, schoolName);
+                FormSwitcher.OpenInitialSetupForm(this);
+                Clear();
+            }
+        }
 
-            FormSwitcher.OpenInitialSetupForm(this);
+        private void Clear()
+        {
+            usernameLabel.Visible=false;
+            passwordLabel.Visible=false;
+            emailLabel.Visible=false;
+            firstNameLabel.Visible=false;
+            lastNameLabel.Visible=false;
+            gpaLabel.Visible=false;
+            schoolLabel.Visible=false;
         }
     }
 }

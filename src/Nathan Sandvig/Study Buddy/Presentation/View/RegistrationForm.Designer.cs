@@ -44,6 +44,13 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
+            this.usernameLabel = new System.Windows.Forms.Label();
+            this.emailLabel = new System.Windows.Forms.Label();
+            this.passwordLabel = new System.Windows.Forms.Label();
+            this.firstNameLabel = new System.Windows.Forms.Label();
+            this.lastNameLabel = new System.Windows.Forms.Label();
+            this.gpaLabel = new System.Windows.Forms.Label();
+            this.schoolLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +61,12 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.Controls.Add(this.schoolLabel, 2, 7);
+            this.tableLayoutPanel1.Controls.Add(this.gpaLabel, 2, 6);
+            this.tableLayoutPanel1.Controls.Add(this.lastNameLabel, 2, 5);
+            this.tableLayoutPanel1.Controls.Add(this.firstNameLabel, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.passwordLabel, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.emailLabel, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 2);
@@ -70,6 +83,7 @@
             this.tableLayoutPanel1.Controls.Add(this.textBox5, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.textBox6, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.textBox7, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.usernameLabel, 2, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 16;
@@ -260,6 +274,90 @@
             this.textBox7.Size = new System.Drawing.Size(429, 34);
             this.textBox7.TabIndex = 15;
             // 
+            // usernameLabel
+            // 
+            this.usernameLabel.AutoSize = true;
+            this.usernameLabel.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameLabel.ForeColor = System.Drawing.Color.Red;
+            this.usernameLabel.Location = new System.Drawing.Point(901, 64);
+            this.usernameLabel.Name = "usernameLabel";
+            this.usernameLabel.Size = new System.Drawing.Size(187, 26);
+            this.usernameLabel.TabIndex = 16;
+            this.usernameLabel.Text = "Invalid Username";
+            this.usernameLabel.Visible = false;
+            // 
+            // emailLabel
+            // 
+            this.emailLabel.AutoSize = true;
+            this.emailLabel.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailLabel.ForeColor = System.Drawing.Color.Red;
+            this.emailLabel.Location = new System.Drawing.Point(901, 128);
+            this.emailLabel.Name = "emailLabel";
+            this.emailLabel.Size = new System.Drawing.Size(136, 26);
+            this.emailLabel.TabIndex = 17;
+            this.emailLabel.Text = "Invalid Email";
+            this.emailLabel.Visible = false;
+            // 
+            // passwordLabel
+            // 
+            this.passwordLabel.AutoSize = true;
+            this.passwordLabel.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordLabel.ForeColor = System.Drawing.Color.Red;
+            this.passwordLabel.Location = new System.Drawing.Point(901, 192);
+            this.passwordLabel.Name = "passwordLabel";
+            this.passwordLabel.Size = new System.Drawing.Size(181, 26);
+            this.passwordLabel.TabIndex = 18;
+            this.passwordLabel.Text = "Invalid Password";
+            this.passwordLabel.Visible = false;
+            // 
+            // firstNameLabel
+            // 
+            this.firstNameLabel.AutoSize = true;
+            this.firstNameLabel.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstNameLabel.ForeColor = System.Drawing.Color.Red;
+            this.firstNameLabel.Location = new System.Drawing.Point(901, 256);
+            this.firstNameLabel.Name = "firstNameLabel";
+            this.firstNameLabel.Size = new System.Drawing.Size(193, 26);
+            this.firstNameLabel.TabIndex = 19;
+            this.firstNameLabel.Text = "Invalid First Name";
+            this.firstNameLabel.Visible = false;
+            // 
+            // lastNameLabel
+            // 
+            this.lastNameLabel.AutoSize = true;
+            this.lastNameLabel.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lastNameLabel.ForeColor = System.Drawing.Color.Red;
+            this.lastNameLabel.Location = new System.Drawing.Point(901, 320);
+            this.lastNameLabel.Name = "lastNameLabel";
+            this.lastNameLabel.Size = new System.Drawing.Size(186, 26);
+            this.lastNameLabel.TabIndex = 20;
+            this.lastNameLabel.Text = "Invalid LastName";
+            this.lastNameLabel.Visible = false;
+            // 
+            // gpaLabel
+            // 
+            this.gpaLabel.AutoSize = true;
+            this.gpaLabel.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpaLabel.ForeColor = System.Drawing.Color.Red;
+            this.gpaLabel.Location = new System.Drawing.Point(901, 384);
+            this.gpaLabel.Name = "gpaLabel";
+            this.gpaLabel.Size = new System.Drawing.Size(127, 26);
+            this.gpaLabel.TabIndex = 21;
+            this.gpaLabel.Text = "Invalid GPA";
+            this.gpaLabel.Visible = false;
+            // 
+            // schoolLabel
+            // 
+            this.schoolLabel.AutoSize = true;
+            this.schoolLabel.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.schoolLabel.ForeColor = System.Drawing.Color.Red;
+            this.schoolLabel.Location = new System.Drawing.Point(901, 448);
+            this.schoolLabel.Name = "schoolLabel";
+            this.schoolLabel.Size = new System.Drawing.Size(217, 26);
+            this.schoolLabel.TabIndex = 22;
+            this.schoolLabel.Text = "Invalid School Name";
+            this.schoolLabel.Visible = false;
+            // 
             // RegistrationForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -302,5 +400,12 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Label schoolLabel;
+        private System.Windows.Forms.Label gpaLabel;
+        private System.Windows.Forms.Label lastNameLabel;
+        private System.Windows.Forms.Label firstNameLabel;
+        private System.Windows.Forms.Label passwordLabel;
+        private System.Windows.Forms.Label emailLabel;
+        private System.Windows.Forms.Label usernameLabel;
     }
 }
