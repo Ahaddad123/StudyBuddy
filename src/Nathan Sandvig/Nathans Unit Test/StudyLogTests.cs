@@ -8,21 +8,21 @@ namespace Nathans_Unit_Test
     public class StudyLogTests
     {
         [TestMethod]
-        public void GetHours_Zero()
+        public void TestGetHours_Zero()
         {
             StudyLog testLog = new StudyLog();
             Assert.AreEqual(0, testLog.GetHours(DateTime.Today));
         }
 
         [TestMethod]
-        public void GetHours_nonZero()
+        public void TestGetHours_nonZero()
         {
             StudyLog testLog = new StudyLog(DateTime.Today, 1);
             Assert.AreEqual(1, testLog.GetHours(DateTime.Today));
         }
 
         [TestMethod]
-        public void AddHours_Zero()
+        public void TestAddHours_Zero()
         {
             StudyLog testLog = new StudyLog();
             testLog.AddTimeToLog(2.5, DateTime.Today);
@@ -30,7 +30,7 @@ namespace Nathans_Unit_Test
         }
 
         [TestMethod]
-        public void AddHours_GreaterThenZero()
+        public void TestAddHours_GreaterThenZero()
         {
             StudyLog testLog = new StudyLog();
             testLog.AddTimeToLog(0.3, DateTime.Today);
@@ -39,7 +39,7 @@ namespace Nathans_Unit_Test
         }
 
         [TestMethod]
-        public void AddHourse_MultipleDays()
+        public void TestAddHourse_MultipleDays()
         {
             StudyLog testLog = new StudyLog();
             DateTime today = DateTime.Today;

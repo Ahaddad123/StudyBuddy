@@ -8,7 +8,7 @@ namespace Nathans_Unit_Test
     public class CourseTests
     {
         [TestMethod]
-        public void BuilderTest()
+        public void TestBuilder()
         {
             CourseBuilder courseBuilder = new CourseBuilder();
             Course course = courseBuilder.
@@ -28,16 +28,30 @@ namespace Nathans_Unit_Test
         }
 
         [TestMethod]
-        public void AddAssignmentTest()
+        public void TestAddAssignment_DoesNotExist()
         {
             Course course = new Course();
-            course.AddAssignment(new Assignment(100, "testAssignment", 30, DateTime.Today));
+            Assignment assignment = new Assignment(100, "testAssignment", 30, DateTime.Today);
+            course.AddAssignment(assignment);
 
-            Assert.IsTrue(course.RemoveAssignment("testAssignment"));
+            Assert.IsTrue(course.assignments.Contains(assignment));
+            Assert.AreEqual(1, course.assignments.Count);
         }
 
         [TestMethod]
-        public void RemoveAssignmentTest()
+        public void TestAddAssignment_Exists()
+        {
+            Course course = new Course();
+            Assignment assignment = new Assignment(100, "testAssignment", 30, DateTime.Today);
+            course.AddAssignment(assignment);
+            course.AddAssignment(assignment);
+
+            Assert.IsTrue(course.assignments.Contains(assignment));
+            Assert.AreEqual(1, course.assignments.Count);
+        }
+
+        [TestMethod]
+        public void TestRemoveAssignment()
         {
             Course course = new Course();
             course.AddAssignment(new Assignment(100, "testAssignment", 30, DateTime.Today));
@@ -47,7 +61,7 @@ namespace Nathans_Unit_Test
         }
 
         [TestMethod]
-        public void GradeAssignmentTest()
+        public void TestGradeAssignment()
         {
             Course course = new Course();
             course.AddAssignment(new Assignment(100, "testAssignment", 100, DateTime.Today));
@@ -58,14 +72,14 @@ namespace Nathans_Unit_Test
         }
 
         [TestMethod]
-        public void CalculateGradeTest_Empty()
+        public void TestCalculateGrade_Empty()
         {
             Course course = new Course();
             Assert.AreEqual(100.0, course.CalculateGrade());
         }
 
         [TestMethod]
-        public void CalculateGradeTest_Negative()
+        public void TestCalculateGrade_Negative()
         {
             Course course = new Course();
             course.AddAssignment(new Assignment(100, "testAssignment1", 50, DateTime.Today));
@@ -78,7 +92,7 @@ namespace Nathans_Unit_Test
         }
 
         [TestMethod]
-        public void CalculateGradeTest_Zero()
+        public void TestCalculateGrade_Zero()
         {
             Course course = new Course();
             course.AddAssignment(new Assignment(100, "testAssignment1", 50, DateTime.Today));
@@ -91,7 +105,7 @@ namespace Nathans_Unit_Test
         }
 
         [TestMethod]
-        public void CalculateGradeTest_Positive()
+        public void TestCalculateGrade_Positive()
         {
             Course course = new Course();
             course.AddAssignment(new Assignment(100, "testAssignment1", 50, DateTime.Today));
@@ -104,7 +118,7 @@ namespace Nathans_Unit_Test
         }
 
         [TestMethod]
-        public void CalculateGradeTest_Over100()
+        public void TestCalculateGrade_Over100()
         {
             Course course = new Course();
             course.AddAssignment(new Assignment(100, "testAssignment1", 50, DateTime.Today));
@@ -117,7 +131,7 @@ namespace Nathans_Unit_Test
         }
 
         [TestMethod]
-        public void LogHoursTest_Negative()
+        public void TestLogHours_Negative()
         {
             Course course = new Course();
             course.LogHours(-3.5, DateTime.Today);
@@ -126,7 +140,7 @@ namespace Nathans_Unit_Test
         }
 
         [TestMethod]
-        public void LogHoursTest_Zero()
+        public void TestLogHours_Zero()
         {
             Course course = new Course();
             course.LogHours(0.0, DateTime.Today);
@@ -135,7 +149,7 @@ namespace Nathans_Unit_Test
         }
 
         [TestMethod]
-        public void LogHoursTest_Positive()
+        public void TestLogHours_Positive()
         {
             Course course = new Course();
             course.LogHours(4.2, DateTime.Today);
@@ -144,7 +158,7 @@ namespace Nathans_Unit_Test
         }
 
         [TestMethod]
-        public void GetHoursStudiedTest_Empty()
+        public void TestGetHoursStudied_Empty()
         {
             Course course = new Course();
 
@@ -152,13 +166,39 @@ namespace Nathans_Unit_Test
         }
 
         [TestMethod]
-        public void GetHoursStudiedTest_Filled()
+        public void TestGetHoursStudied_Filled()
         {
             Course course = new Course();
             course.LogHours(4.2, DateTime.Today);
             course.LogHours(5.1, DateTime.Today);
 
             Assert.AreEqual(9.3, course.GetHoursStudied(DateTime.Today));
+        }
+
+        [TestMethod]
+        public void TestRemoveHours_Valid()
+        {
+            int addHours = 3;
+            int removeHours = 2;
+            Course course = new Course();
+            course.LogHours(addHours,DateTime.Today);
+
+            course.RemoveHours(removeHours, DateTime.Today);
+
+            Assert.AreEqual(addHours - removeHours, course.GetHoursStudied(DateTime.Today));
+        }
+
+        [TestMethod]
+        public void TestRemoveHours_Invalid()
+        {
+            int addHours = 3;
+            int removeHours = -1;
+            Course course = new Course();
+            course.LogHours(addHours, DateTime.Today);
+
+            course.RemoveHours(removeHours, DateTime.Today);
+
+            Assert.AreEqual(addHours, course.GetHoursStudied(DateTime.Today));
         }
     }
 }

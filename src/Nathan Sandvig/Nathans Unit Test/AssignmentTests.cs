@@ -8,7 +8,7 @@ namespace Nathans_Unit_Test
     public class AssignmentTests
     {
         [TestMethod]
-        public void AddGradeTest_positive()
+        public void TestAddGrade_positive()
         {
             Assignment assignment = new Assignment(100, "Exam 1", 20, DateTime.Today);
             assignment.addGrade(50);
@@ -16,7 +16,7 @@ namespace Nathans_Unit_Test
         }
 
         [TestMethod]
-        public void AddGradeTest_negative()
+        public void TestAddGrade_negative()
         {
             Assignment assignment = new Assignment(100, "Exam 1", 20, DateTime.Today);
             assignment.addGrade(-5);
@@ -24,7 +24,7 @@ namespace Nathans_Unit_Test
         }
 
         [TestMethod]
-        public void AddGradeTest_zero()
+        public void TestAddGrade_zero()
         {
             Assignment assignment = new Assignment(100, "Exam 1", 20, DateTime.Today);
             assignment.addGrade(0);
@@ -32,7 +32,7 @@ namespace Nathans_Unit_Test
         }
 
         [TestMethod]
-        public void GetDueDateTest()
+        public void TestGetDueDate()
         {
             Assignment assignment = new Assignment(100, "Exam 1", 20, new DateTime(1,1,1));
             assignment.dueDate = DateTime.Today;

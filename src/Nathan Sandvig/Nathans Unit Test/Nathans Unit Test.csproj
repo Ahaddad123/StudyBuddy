@@ -58,7 +58,6 @@
   <ItemGroup>
     <Compile Include="AccountControllerTests.cs" />
     <Compile Include="AccountTests.cs" />
-    <Compile Include="AddGradeTests.cs" />
     <Compile Include="AssignmentTests.cs" />
     <Compile Include="InvokerTests.cs" />
     <Compile Include="MockDatabase.cs" />

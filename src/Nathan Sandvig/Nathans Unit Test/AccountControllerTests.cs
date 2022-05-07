@@ -23,6 +23,7 @@ namespace Nathans_Unit_Test
             Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)> times = new Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)>();
             times.Add(DayOfWeek.Monday, (new DateTime(1, 1, 1, 8, 0, 0), new DateTime(1, 1, 1, 11, 0, 0)));
             CourseSchedule courseSchedule = new CourseSchedule(times);
+
             Assert.IsFalse(AccountController.scheduleCheck(courseSchedule, "notCourse1"));
         }
 
@@ -38,6 +39,7 @@ namespace Nathans_Unit_Test
             Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)> times = new Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)>();
             times.Add(DayOfWeek.Monday, (new DateTime(1, 1, 1, 11, 0, 0), new DateTime(1, 1, 1, 12, 0, 0)));
             CourseSchedule courseSchedule = new CourseSchedule(times);
+
             Assert.IsTrue(AccountController.scheduleCheck(courseSchedule, "notCourse1"));
         }
     }

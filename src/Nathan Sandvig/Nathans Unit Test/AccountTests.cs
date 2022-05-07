@@ -10,7 +10,7 @@ namespace Nathans_Unit_Test
     public class AccountTests
     {
         [TestMethod]
-        public void testAddCourse_NotExists()
+        public void TestAddCourse_NotExists()
         {
             Account account = new Account("username", "password", "first", "last","3.7","UWP");
             account.database = new MockDatabase();
@@ -25,7 +25,7 @@ namespace Nathans_Unit_Test
         }
 
         [TestMethod]
-        public void testAddCourse_Exists()
+        public void TestAddCourse_Exists()
         {
             Account account = new Account("username", "password", "first", "last", "3.7", "UWP");
             account.database = new MockDatabase();
@@ -43,7 +43,7 @@ namespace Nathans_Unit_Test
         }
 
         [TestMethod]
-        public void testRemoveCourse_NotExists()
+        public void TestRemoveCourse_NotExists()
         {
             Account account = new Account("username", "password");
             account.database = new MockDatabase();
@@ -59,7 +59,7 @@ namespace Nathans_Unit_Test
         }
 
         [TestMethod]
-        public void testRemoveCourse_Exists()
+        public void TestRemoveCourse_Exists()
         {
             Account account = new Account("username", "password");
             account.database = new MockDatabase();
@@ -78,7 +78,7 @@ namespace Nathans_Unit_Test
         }
 
         [TestMethod]
-        public void testPopulateCourseList()
+        public void TestPopulateCourseList()
         {
             int numCourses = 5;
             Account account = new Account("username", "password");
@@ -97,7 +97,7 @@ namespace Nathans_Unit_Test
         }
 
         [TestMethod]
-        public void testPopulateStudyHours()
+        public void TestPopulateStudyHours()
         {
             int numHours1 = 1;
             int numHours2 = 2;
@@ -123,7 +123,7 @@ namespace Nathans_Unit_Test
         }
 
         [TestMethod]
-        public void testPopulateSchedules()
+        public void TestPopulateSchedules()
         {
             int startTime1 = 8;
             int endTime1 = 9;
@@ -164,7 +164,7 @@ namespace Nathans_Unit_Test
         }
 
         [TestMethod]
-        public void testPopulateStudentInfo()
+        public void TestPopulateStudentInfo()
         {
             Account account = new Account("username", "password");
             account.database = new MockDatabase();
@@ -183,7 +183,7 @@ namespace Nathans_Unit_Test
         }
 
         [TestMethod]
-        public void testPopulateAssignments()
+        public void TestPopulateAssignments()
         {
             double weight1 = 10.0;
             double weight2 = 20.0;
@@ -227,7 +227,7 @@ namespace Nathans_Unit_Test
         }
         
         [TestMethod]
-        public void testAddStudyHours()
+        public void TestAddStudyHours()
         {
             double hours1 = 4.5;
             double hours2 = 5.7;
@@ -249,7 +249,7 @@ namespace Nathans_Unit_Test
         }
 
         [TestMethod]
-        public void testRemoveStudyHours()
+        public void TestRemoveStudyHours()
         {
             double hours2 = 5.7;
             Account account = new Account("username", "password");
@@ -266,7 +266,7 @@ namespace Nathans_Unit_Test
         }
 
         [TestMethod]
-        public void testGetCourseByName_NotFound()
+        public void TestGetCourseByName_NotFound()
         {
             Account account = new Account("username", "password");
             account.database = new MockDatabase();
@@ -279,7 +279,7 @@ namespace Nathans_Unit_Test
         }
 
         [TestMethod]
-        public void testAddGrade()
+        public void TestAddGrade()
         {
             int totalPoints1 = 90;
             int totalPoints2 = 50;
@@ -303,7 +303,7 @@ namespace Nathans_Unit_Test
         }
 
         [TestMethod]
-        public void testRemoveGrade()
+        public void TestRemoveGrade()
         {
             int totalPoints1 = 90;
             double grade1 = 80;
@@ -321,7 +321,7 @@ namespace Nathans_Unit_Test
         }
 
         [TestMethod]
-        public void testPopulateLocalData()
+        public void TestPopulateLocalData()
         {
             Account account = new Account("username", "password");
             account.database = new MockDatabase();
