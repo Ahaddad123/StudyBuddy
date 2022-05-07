@@ -77,7 +77,7 @@ namespace Study_Buddy.Presentation
                     DayOfWeek day = (DayOfWeek)j;
                     if (course.schedule.times.ContainsKey(day))
                     {
-                        Label label = controller.createCourseLabel(course, red, green, blue);
+                        Label label = controller.createCourseLabel(course.name, red, green, blue);
                         this.tableLayoutPanel2.Controls.Add(label, j + 1, course.schedule.times[day].startTime.Hour-6);
                         this.tableLayoutPanel2.SetRowSpan(label, course.schedule.times[day].endTime.Hour - course.schedule.times[day].startTime.Hour);
                     }

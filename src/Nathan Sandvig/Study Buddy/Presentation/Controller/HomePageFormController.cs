@@ -10,39 +10,60 @@ using Study_Buddy.BusinessLogic;
 
 namespace Study_Buddy.Presentation
 {
+    //---------------------------------------------------------------------
+    // Controls the HomePageForm
+    //---------------------------------------------------------------------
     internal class HomePageFormController : FormController
     {
+        //---------------------------------------------------------------------
+        // Constructor that sets the view to the HomePageForm
+        //---------------------------------------------------------------------
         public HomePageFormController(HomePageForm form)
         {
             this.view = form;
             view.SetController(this);
         }
 
+        //---------------------------------------------------------------------
+        // Gets the list of courses from the Account
+        // return: list of courses
+        //---------------------------------------------------------------------
         public List<Course> getCourses()
         {
             return AccountController.account.courses;
         }
 
+        //---------------------------------------------------------------------
+        // Gets the student name from the Account
+        // return: student name
+        //---------------------------------------------------------------------
         public String getName()
         {
             List<String> info = AccountController.account.database.readStudentInfo();
             return info[0] + " " + info[1];
         }
 
+        //---------------------------------------------------------------------
+        // Gets the overall student gpa from the Account
+        // return: overall student gpa
+        //---------------------------------------------------------------------
         public String getGPA()
         {
             return AccountController.account.database.readStudentInfo()[2];
         }
 
-        public String getSchoolName()
-        {
-            return AccountController.account.database.readStudentInfo()[3];
-        }
-
-        public Label createCourseLabel(Course course, int locationindex, int red, int green, int blue)
+        //---------------------------------------------------------------------
+        // Creates the label with the course name on the HomePageForm
+        // courseName: name of the course to be shown on the label
+        // locationindex: y index of the label on the form
+        // red: red value in the RGB color to set the background of the label to
+        // green: green value in the RGB color to set the background of the label to
+        // blue: blue value in the RGB color to set the background of the label to
+        //---------------------------------------------------------------------
+        public Label createCourseLabel(String courseName, int locationindex, int red, int green, int blue)
         {
             Label label = new Label();
-            label.Text = course.name;
+            label.Text = courseName;
             label.BackColor = Color.FromArgb(red, green, blue);
             label.Location = new Point(40, locationindex);
             label.Size = new Size(250, 25);
@@ -50,6 +71,16 @@ namespace Study_Buddy.Presentation
             return label;
         }
 
+        //---------------------------------------------------------------------
+        // Creates the label with the number of hours studied and study goal
+        //      that week for a course
+        // course: course to get the study goal from
+        // hoursStudied: number of hours studied in a week for a course
+        // locationindex: y index of the label on the form
+        // red: red value in the RGB color to set the background of the label to
+        // green: green value in the RGB color to set the background of the label to
+        // blue: blue value in the RGB color to set the background of the label to
+        //---------------------------------------------------------------------
         public Label createHoursLabel(Course course, double hoursStudied, int locationindex, int red, int green, int blue)
         {
             Label label = new Label();
@@ -63,6 +94,12 @@ namespace Study_Buddy.Presentation
             return label;
         }
 
+        //---------------------------------------------------------------------
+        // Creates the button to add a grade to a course on the HomePageForm
+        // course : course the button is for
+        // locationindex: y index of the button on the form
+        // eventHandler: event to add to the button to go to correct AddGradeForm
+        //---------------------------------------------------------------------
         public Button createAddGradeButton(Course course, int locationindex, EventHandler eventHandler)
         {
             Button button = new Button();

@@ -7,8 +7,14 @@ using Study_Buddy.Presentation.View;
 
 namespace Study_Buddy.Presentation.Controller
 {
+    //---------------------------------------------------------------------
+    // Controls the RegistrationForm
+    //---------------------------------------------------------------------
     internal class RegistrationFormController : FormController
     {
+        //---------------------------------------------------------------------
+        // Sets the view to the RegistrationForm
+        //---------------------------------------------------------------------
         public RegistrationFormController(RegistrationForm form)
         {
             this.view = form;

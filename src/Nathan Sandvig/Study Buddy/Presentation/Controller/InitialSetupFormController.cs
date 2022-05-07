@@ -7,8 +7,14 @@ using Study_Buddy.Presentation.View;
 
 namespace Study_Buddy.Presentation.Controller
 {
+    //---------------------------------------------------------------------
+    // Controls the InitialSetupForm
+    //---------------------------------------------------------------------
     internal class InitialSetupFormController : FormController
     {
+        //---------------------------------------------------------------------
+        // Sets the view to the InitialSetupForm
+        //---------------------------------------------------------------------
         public InitialSetupFormController(InitialSetupForm form)
         {
             this.view = form;

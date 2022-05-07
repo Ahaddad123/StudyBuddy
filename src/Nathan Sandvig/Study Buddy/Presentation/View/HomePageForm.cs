@@ -47,7 +47,7 @@ namespace Study_Buddy.Presentation
             for (int i = 0; i < controller.getCourses().Count; i++)
             {
                 Course course = controller.getCourses()[i];
-                Label label = controller.createCourseLabel(course, locationindex, red, green, blue);
+                Label label = controller.createCourseLabel(course.name, locationindex, red, green, blue);
                 this.panel1.Controls.Add(label);
                 double hoursStudied = 0;
                 DateTime today = DateTime.Today.Date;
