@@ -12,9 +12,16 @@ using Study_Buddy.Presentation.View;
 
 namespace Study_Buddy.Presentation
 {
+    //---------------------------------------------------------------------
+    // Windows Form to add a grade
+    //---------------------------------------------------------------------
     public partial class AddGradeForm : BaseForm, IView
     {
         private AddGradeFormController controller;
+
+        //---------------------------------------------------------------------
+        // Initializes the structure of the AddGradeForm
+        //---------------------------------------------------------------------
         public AddGradeForm()
         {
             InitializeComponent();
@@ -22,12 +29,20 @@ namespace Study_Buddy.Presentation
             this.Size = new System.Drawing.Size(1366, 768);
             this.nav1.SetCurrentForm(this);
         }
-        
+
+        //---------------------------------------------------------------------
+        // Sets the controller of the form
+        // controller: controller for AddGradeForm
+        //---------------------------------------------------------------------
         public void SetController(FormController controller)
         {
             this.controller = (AddGradeFormController)controller;
         }
 
+        //---------------------------------------------------------------------
+        // Event for when the add grade button is clicked.
+        // Validates the information entered and adds a grade if valid.
+        //---------------------------------------------------------------------
         private void butAddAssig_Click(object sender, EventArgs e)
         {
             Boolean valid = true;
@@ -53,6 +68,9 @@ namespace Study_Buddy.Presentation
             }
         }
 
+        //---------------------------------------------------------------------
+        // Populates the assignment drop box for a specific course
+        //---------------------------------------------------------------------
         private void AddGradeForm_Load(object sender, EventArgs e)
         {
             Course course = controller.course;
@@ -65,11 +83,17 @@ namespace Study_Buddy.Presentation
             this.mainHeader.Text = title;
         }
 
+        //---------------------------------------------------------------------
+        // Undoes adding a grade when the Undo button is clicked
+        //---------------------------------------------------------------------
         private void btnUndo_Click(object sender, EventArgs e)
         {
             controller.Undo();
         }
 
+        //---------------------------------------------------------------------
+        // Redoes adding a grade when the Redo button is clicked
+        //---------------------------------------------------------------------
         private void btnRedo_Click(object sender, EventArgs e)
         {
             controller.Redo();

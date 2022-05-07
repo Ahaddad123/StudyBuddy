@@ -11,10 +11,17 @@ using Study_Buddy.BusinessLogic;
 
 namespace Study_Buddy.Presentation.View
 {
+    //---------------------------------------------------------------------
+    // Windows Form UserControl to edit a course
+    //---------------------------------------------------------------------
     public partial class EditCourseBox : UserControl
     {
         private Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)> times;
         public EventHandler StatusUpdated;
+
+        //---------------------------------------------------------------------
+        // Initializes the structure of the EditCourseBox
+        //---------------------------------------------------------------------
         public EditCourseBox()
         {
             InitializeComponent();
@@ -48,6 +55,9 @@ namespace Study_Buddy.Presentation.View
             }
         }
 
+        //---------------------------------------------------------------------
+        // Adds time drop downs if the Sunday check box is selected
+        //---------------------------------------------------------------------
         private void checkBoxSun_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxSun.Checked)
@@ -63,6 +73,10 @@ namespace Study_Buddy.Presentation.View
                 comboBoxSunEnd.Visible = false;
             }
         }
+
+        //---------------------------------------------------------------------
+        // Adds time drop downs if the Monday check box is selected
+        //---------------------------------------------------------------------
         private void checkBoxMon_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxMon.Checked)
@@ -79,6 +93,9 @@ namespace Study_Buddy.Presentation.View
             }
         }
 
+        //---------------------------------------------------------------------
+        // Adds time drop downs if the Tuesday check box is selected
+        //---------------------------------------------------------------------
         private void checkBoxTue_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxTue.Checked)
@@ -95,6 +112,9 @@ namespace Study_Buddy.Presentation.View
             }
         }
 
+        //---------------------------------------------------------------------
+        // Adds time drop downs if the Wednesday check box is selected
+        //---------------------------------------------------------------------
         private void checkBoxWed_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxWed.Checked)
@@ -111,6 +131,9 @@ namespace Study_Buddy.Presentation.View
             }
         }
 
+        //---------------------------------------------------------------------
+        // Adds time drop downs if the Thursday check box is selected
+        //---------------------------------------------------------------------
         private void checkBoxThu_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxThu.Checked)
@@ -127,6 +150,9 @@ namespace Study_Buddy.Presentation.View
             }
         }
 
+        //---------------------------------------------------------------------
+        // Adds time drop downs if the Friday check box is selected
+        //---------------------------------------------------------------------
         private void checkBoxFri_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxFri.Checked)
@@ -143,6 +169,9 @@ namespace Study_Buddy.Presentation.View
             }
         }
 
+        //---------------------------------------------------------------------
+        // Adds time drop downs if the Saturday check box is selected
+        //---------------------------------------------------------------------
         private void checkBoxSat_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxSat.Checked)
@@ -159,6 +188,9 @@ namespace Study_Buddy.Presentation.View
             }
         }
 
+        //---------------------------------------------------------------------
+        // Populates the course drop down with the Account's course list
+        //---------------------------------------------------------------------
         public void LoadCourses(List<Course> courses)
         {
             courseListBox.Items.Clear();
@@ -169,6 +201,10 @@ namespace Study_Buddy.Presentation.View
 
         }
 
+        //---------------------------------------------------------------------
+        // Event for when the save changes button is clicked.
+        // Validates the information entered and edits the course if valid.
+        //---------------------------------------------------------------------
         private void butAddCourse_Click(object sender, EventArgs e)
         {
 
@@ -422,6 +458,10 @@ namespace Study_Buddy.Presentation.View
             }
         }
 
+        //---------------------------------------------------------------------
+        // Event for when a course is selected from the drop down box.
+        // Updates the form to show the course's current data
+        //---------------------------------------------------------------------
         public void UpdateData(Course course)
         {
             if (course != null)
@@ -482,6 +522,9 @@ namespace Study_Buddy.Presentation.View
             }
         }
 
+        //---------------------------------------------------------------------
+        // Clears the form's data after a course is successfully edited.
+        //---------------------------------------------------------------------
         public void Clear()
         {
             nameErrorMessageLabel.Text = "";
@@ -507,6 +550,9 @@ namespace Study_Buddy.Presentation.View
             times = new Dictionary<DayOfWeek, (DateTime startTime, DateTime endTime)>();
         }
 
+        //---------------------------------------------------------------------
+        // Event for when the a course is selected.
+        //---------------------------------------------------------------------
         private void courseListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.StatusUpdated(this.courseListBox.Text, new EventArgs());

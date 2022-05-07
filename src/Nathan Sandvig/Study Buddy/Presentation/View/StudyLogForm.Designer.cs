@@ -59,7 +59,7 @@
             this.mainPanel.Margin = new System.Windows.Forms.Padding(2);
             this.mainPanel.MaximumSize = new System.Drawing.Size(1000, 500);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1013, 625);
+            this.mainPanel.Size = new System.Drawing.Size(1000, 500);
             this.mainPanel.TabIndex = 1;
             // 
             // groupBox1
@@ -183,6 +183,7 @@
             // 
             // cmbCourses
             // 
+            this.cmbCourses.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCourses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbCourses.FormattingEnabled = true;
             this.cmbCourses.Location = new System.Drawing.Point(94, 47);
@@ -259,7 +260,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1690, 913);
+            this.ClientSize = new System.Drawing.Size(1348, 721);
             this.Controls.Add(this.mainPanel);
             this.MinimumSize = new System.Drawing.Size(964, 592);
             this.Name = "StudyLogForm";

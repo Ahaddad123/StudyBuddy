@@ -140,6 +140,7 @@
             // 
             // txtNameAssign
             // 
+            this.txtNameAssign.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtNameAssign.FormattingEnabled = true;
             this.txtNameAssign.Location = new System.Drawing.Point(218, 41);
             this.txtNameAssign.Name = "txtNameAssign";

@@ -72,6 +72,7 @@
             // 
             // courseListBox
             // 
+            this.courseListBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.courseListBox.DropDownWidth = 121;
             this.courseListBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.courseListBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
