@@ -373,6 +373,7 @@
             // comboBoxSunEnd
             // 
             this.comboBoxSunEnd.BackColor = System.Drawing.Color.White;
+            this.comboBoxSunEnd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSunEnd.DropDownWidth = 120;
             this.comboBoxSunEnd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxSunEnd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -388,6 +389,7 @@
             // comboBoxFriEnd
             // 
             this.comboBoxFriEnd.BackColor = System.Drawing.Color.White;
+            this.comboBoxFriEnd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFriEnd.DropDownWidth = 120;
             this.comboBoxFriEnd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxFriEnd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -403,6 +405,7 @@
             // comboBoxSatEnd
             // 
             this.comboBoxSatEnd.BackColor = System.Drawing.Color.White;
+            this.comboBoxSatEnd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSatEnd.DropDownWidth = 120;
             this.comboBoxSatEnd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxSatEnd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -418,6 +421,7 @@
             // comboBoxWedEnd
             // 
             this.comboBoxWedEnd.BackColor = System.Drawing.Color.White;
+            this.comboBoxWedEnd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxWedEnd.DropDownWidth = 120;
             this.comboBoxWedEnd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxWedEnd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -433,6 +437,7 @@
             // comboBoxThuEnd
             // 
             this.comboBoxThuEnd.BackColor = System.Drawing.Color.White;
+            this.comboBoxThuEnd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxThuEnd.DropDownWidth = 120;
             this.comboBoxThuEnd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxThuEnd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -448,6 +453,7 @@
             // comboBoxMonEnd
             // 
             this.comboBoxMonEnd.BackColor = System.Drawing.Color.White;
+            this.comboBoxMonEnd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMonEnd.DropDownWidth = 120;
             this.comboBoxMonEnd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxMonEnd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -463,6 +469,7 @@
             // comboBoxTueEnd
             // 
             this.comboBoxTueEnd.BackColor = System.Drawing.Color.White;
+            this.comboBoxTueEnd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTueEnd.DropDownWidth = 120;
             this.comboBoxTueEnd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxTueEnd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -478,6 +485,7 @@
             // comboBoxSunStart
             // 
             this.comboBoxSunStart.BackColor = System.Drawing.Color.White;
+            this.comboBoxSunStart.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSunStart.DropDownWidth = 120;
             this.comboBoxSunStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxSunStart.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -493,6 +501,7 @@
             // comboBoxFriStart
             // 
             this.comboBoxFriStart.BackColor = System.Drawing.Color.White;
+            this.comboBoxFriStart.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFriStart.DropDownWidth = 120;
             this.comboBoxFriStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxFriStart.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -508,6 +517,7 @@
             // comboBoxSatStart
             // 
             this.comboBoxSatStart.BackColor = System.Drawing.Color.White;
+            this.comboBoxSatStart.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSatStart.DropDownWidth = 120;
             this.comboBoxSatStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxSatStart.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -523,6 +533,7 @@
             // comboBoxWedStart
             // 
             this.comboBoxWedStart.BackColor = System.Drawing.Color.White;
+            this.comboBoxWedStart.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxWedStart.DropDownWidth = 120;
             this.comboBoxWedStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxWedStart.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -538,6 +549,7 @@
             // comboBoxThuStart
             // 
             this.comboBoxThuStart.BackColor = System.Drawing.Color.White;
+            this.comboBoxThuStart.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxThuStart.DropDownWidth = 120;
             this.comboBoxThuStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxThuStart.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -553,6 +565,7 @@
             // comboBoxMonStart
             // 
             this.comboBoxMonStart.BackColor = System.Drawing.Color.White;
+            this.comboBoxMonStart.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMonStart.DropDownWidth = 120;
             this.comboBoxMonStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxMonStart.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -568,6 +581,7 @@
             // comboBoxTueStart
             // 
             this.comboBoxTueStart.BackColor = System.Drawing.Color.White;
+            this.comboBoxTueStart.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTueStart.DropDownWidth = 120;
             this.comboBoxTueStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxTueStart.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -14,9 +14,16 @@ using Study_Buddy.Presentation.Controller;
 
 namespace Study_Buddy.Presentation
 {
+    //---------------------------------------------------------------------
+    // Windows Form to add an assignment
+    //---------------------------------------------------------------------
     public partial class AddAssignmentForm : BaseForm, IView
     {
         private AddAssignmentFormController controller;
+
+        //---------------------------------------------------------------------
+        // Initializes the structure of the AddAssignmentForm
+        //---------------------------------------------------------------------
         public AddAssignmentForm()
         {
             InitializeComponent();
@@ -30,11 +37,19 @@ namespace Study_Buddy.Presentation
             this.nav1.SetCurrentForm(this);
         }
 
+        //---------------------------------------------------------------------
+        // Sets the controller of the form
+        // controller: controller for AddAssignmentForm
+        //---------------------------------------------------------------------
         public void SetController(FormController controller)
         {
             this.controller = (AddAssignmentFormController)controller;
         }
 
+        //---------------------------------------------------------------------
+        // Event for when the add assignment button is clicked.
+        // Validates the information entered and adds an assignment if valid.
+        //---------------------------------------------------------------------
         private void butAddAssig_Click(object sender, EventArgs e)
         {
             Boolean valid = true;
@@ -91,6 +106,9 @@ namespace Study_Buddy.Presentation
             }
         }
 
+        //---------------------------------------------------------------------
+        // Updates the course selection box to include all courses in the Account.
+        //---------------------------------------------------------------------
         private void AddAssignmentForm_Load(object sender, EventArgs e)
         {
             foreach (Course c in AccountController.account.courses)

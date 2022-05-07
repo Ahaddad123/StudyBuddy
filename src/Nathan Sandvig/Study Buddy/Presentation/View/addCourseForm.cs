@@ -32,6 +32,7 @@ namespace Study_Buddy.Presentation
             this.removeCourseBox1.LoadCourses(AccountController.account.courses);
             this.removeCourseBox1.StatusUpdated += new EventHandler(Event_RemoveCourseButtonClick);
             this.editCourseBox1.StatusUpdated += new EventHandler(Event_EditCourseButtonClick);
+            this.addCourseBox1.StatusUpdated += new EventHandler(Event_AddCourseButtonClick);
             this.editCourseBox1.LoadCourses(AccountController.account.courses);
         }
 
@@ -46,6 +47,10 @@ namespace Study_Buddy.Presentation
             AccountController.account.removeCourse((String)sender);
             AccountController.account.database.removeTimesCourse((String)sender);
             this.removeCourseBox1.LoadCourses(AccountController.account.courses);
+        }
+
+        public void Event_AddCourseButtonClick(object sender, EventArgs e)
+        {
         }
 
         //---------------------------------------------------------------------

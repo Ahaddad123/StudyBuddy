@@ -71,7 +71,6 @@ namespace Study_Buddy.Presentation
             for (int i = 0; i < controller.getCourses().Count; i++)
             {
                 Course course = controller.getCourses()[i];
-                //int index = 0;
                 for(int j = 0; j < 7; j++)
                 {
                     DayOfWeek day = (DayOfWeek)j;
@@ -82,17 +81,6 @@ namespace Study_Buddy.Presentation
                         this.tableLayoutPanel2.SetRowSpan(label, course.schedule.times[day].endTime.Hour - course.schedule.times[day].startTime.Hour);
                     }
                 }
-                /*foreach(List<DateTime> days in course.courseTimes)
-                {
-                    if(days != null)
-                    {
-                        this.tableLayoutPanel2.Controls.Add(label, index + 1, days.ElementAt(0).Hour - 6);
-                        this.tableLayoutPanel2.SetRowSpan(label, days.ElementAt(1).Hour - days.ElementAt(0).Hour);
-                    }
-                    index++;
-                }
-                this.tableLayoutPanel2.Controls.Add(label, i + 1, i + 1); //need to update indices
-                this.tableLayoutPanel2.SetRowSpan(label, 2); //need to update span*/
                 if (i % 3 == 0)
                 {
                     green = red;
