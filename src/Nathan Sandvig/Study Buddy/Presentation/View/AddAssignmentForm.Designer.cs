@@ -117,7 +117,7 @@
             this.pictureBox4.Size = new System.Drawing.Size(20, 20);
             this.pictureBox4.TabIndex = 51;
             this.pictureBox4.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBox4, "The overall number of points an assignments ");
+            this.toolTip1.SetToolTip(this.pictureBox4, "The overall number of points an assignment is worth");
             // 
             // pictureBox2
             // 

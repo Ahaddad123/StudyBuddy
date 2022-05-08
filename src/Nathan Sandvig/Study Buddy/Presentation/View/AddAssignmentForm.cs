@@ -103,7 +103,20 @@ namespace Study_Buddy.Presentation
                 successLabel.Text = "Assignment added";
                 Assignment addassign = new Assignment(points, txtNameAssign.Text, weight, duedate);
                 controller.AddAssignment(cmbCourses.Text, addassign);
+                Clear();
             }
+        }
+
+        //---------------------------------------------------------------------
+        // Clears input fields after successful entry.
+        //---------------------------------------------------------------------
+        public void Clear()
+        {
+            this.txtNameAssign.Text = null;
+            this.txtPointsAssign.Text = null;
+            this.txtWeight.Text = null;
+            this.cmbCourses.SelectedItem = null;
+            this.dtpAssignDate.Value = DateTime.Now;
         }
 
         //---------------------------------------------------------------------

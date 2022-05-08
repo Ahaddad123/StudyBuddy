@@ -120,7 +120,6 @@
     <Compile Include="BusinessLogic\CourseBuilder.cs" />
     <Compile Include="Presentation\Model\GPAGraph.cs" />
     <Compile Include="Presentation\Model\GradeGraph.cs" />
-    <Compile Include="Presentation\Model\Graph.cs" />
     <Compile Include="Presentation\View\AddAssignmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
