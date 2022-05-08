@@ -13,7 +13,7 @@ namespace Study_Buddy.Presentation.Model
     // is not yet implemented.
     // v1: Created the class - Peter H, 3-7-22
     //---------------------------------------------------------------------
-    public class GPAGraph : Graph
+    public class GPAGraph
     {
         //---------------------------------------------------------------------
         // Private data members:

@@ -62,6 +62,9 @@ namespace Study_Buddy.Presentation
         }
 
 
+        //---------------------------------------------------------------------
+        // Updates the current course
+        //---------------------------------------------------------------------
         public void UpdateCurrentCourse(string courseName)
         {
             DateTime currTime = DateTime.Now;
