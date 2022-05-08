@@ -55,6 +55,13 @@ namespace Study_Buddy.Presentation
             int green = 131;
             int blue = 131;
             int locationindex = 25;
+
+            //Create "Your study hours" label
+            Label mainlabel = controller.CreateMainCoursesLabel(locationindex);
+            locationindex += 52;
+            this.panel1.Controls.Add(mainlabel);
+
+            //Create labels for courses
             for (int i = 0; i < controller.getCourses().Count; i++)
             {
                 Course course = controller.getCourses()[i];
@@ -72,9 +79,10 @@ namespace Study_Buddy.Presentation
                 this.panel1.Controls.Add(label2);
 
                 Button button = controller.createAddGradeButton(course, locationindex, new EventHandler(this.addGradeButton_Click));
+                this.toolTip1.SetToolTip(button, "Add grade for " + label.Text);
                 this.panel1.Controls.Add(button);
 
-                locationindex += 27;
+                locationindex += 52;
                 if(i%3 == 0)
                 {
                     green = red;

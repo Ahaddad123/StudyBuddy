@@ -93,6 +93,16 @@ namespace Study_Buddy.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gpa_icon_11 {
+            get {
+                object obj = ResourceManager.GetObject("gpa_icon_11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap import_icon_08 {
             get {
                 object obj = ResourceManager.GetObject("import_icon_08", resourceCulture);
@@ -156,6 +166,36 @@ namespace Study_Buddy.Properties {
         internal static System.Drawing.Bitmap tooltip_icon_09 {
             get {
                 object obj = ResourceManager.GetObject("tooltip_icon_09", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_icon_10 {
+            get {
+                object obj = ResourceManager.GetObject("user_icon_10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_icon_white_10 {
+            get {
+                object obj = ResourceManager.GetObject("user_icon_white_10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_profile_icon_10 {
+            get {
+                object obj = ResourceManager.GetObject("user_profile_icon_10", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

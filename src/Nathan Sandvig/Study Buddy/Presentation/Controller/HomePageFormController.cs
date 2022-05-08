@@ -52,6 +52,19 @@ namespace Study_Buddy.Presentation
             return AccountController.account.database.readStudentInfo()[2];
         }
 
+        public Label CreateMainCoursesLabel(int locationindex)
+        {
+            Label label = new Label();
+            label.Text = "Your study hours this week";
+            label.BackColor = Color.RoyalBlue;
+            label.ForeColor = Color.White;
+            label.Location = new Point(40, locationindex);
+            label.Size = new Size(552, 50);
+            label.Font = new Font("Arial", 16);
+            label.TextAlign = ContentAlignment.MiddleCenter;
+            return label;
+        }
+
         //---------------------------------------------------------------------
         // Creates the label with the course name on the HomePageForm
         // courseName: name of the course to be shown on the label
@@ -65,9 +78,11 @@ namespace Study_Buddy.Presentation
             Label label = new Label();
             label.Text = courseName;
             label.BackColor = Color.FromArgb(red, green, blue);
+            label.ForeColor = Color.Navy;
             label.Location = new Point(40, locationindex);
-            label.Size = new Size(250, 25);
-            label.Font = new Font("Microsoft Sans Serif", 13);
+            label.Size = new Size(250, 50);
+            label.Font = new Font("Arial", 13);
+            label.TextAlign = ContentAlignment.MiddleLeft;
             return label;
         }
 
@@ -87,10 +102,11 @@ namespace Study_Buddy.Presentation
             double studyGoal = Math.Round(Algorithm.HoursForGrade(course, 95), 2);
             label.Text = hoursStudied + "/" + studyGoal;
             label.BackColor = Color.FromArgb(red, green, blue);
+            label.ForeColor = Color.Navy;
             label.Location = new Point(290, locationindex);
-            label.Size = new Size(250, 25);
-            label.Font = new Font("Microsoft Sans Serif", 13);
-            label.TextAlign = ContentAlignment.TopRight;
+            label.Size = new Size(250, 50);
+            label.Font = new Font("Arial", 13);
+            label.TextAlign = ContentAlignment.MiddleRight;
             return label;
         }
 
@@ -103,14 +119,16 @@ namespace Study_Buddy.Presentation
         public Button createAddGradeButton(Course course, int locationindex, EventHandler eventHandler)
         {
             Button button = new Button();
-            button.BackColor = Color.LightGray;
-            button.Location = new Point(550, locationindex);
-            button.Size = new Size(200, 25);
-            button.Text = "Add grade for this course";
-            button.Font = new Font("Microsoft Sans Serif", 10);
+            button.BackColor = Color.White;
+            button.ForeColor = Color.RoyalBlue;
+            button.Location = new Point(542, locationindex);
+            button.Size = new Size(50, 50);
+            button.Text = "+";
+            button.Font = new Font("Arial", 20);
             button.Click += eventHandler;
             button.Tag = course;
             button.Margin = new Padding(0);
+            button.FlatStyle = FlatStyle.Flat;
             return button;
         }
     }

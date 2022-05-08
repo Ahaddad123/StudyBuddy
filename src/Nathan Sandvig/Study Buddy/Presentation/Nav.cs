@@ -51,6 +51,14 @@ namespace Study_Buddy.Presentation
         }
 
         //---------------------------------------------------------------------
+        // Event handler for clicking the "My Info" button
+        //---------------------------------------------------------------------
+        private void btnMyInfo_Click(object sender, EventArgs e)
+        {
+            FormSwitcher.OpenUserInfoForm(currentForm);
+        }
+
+        //---------------------------------------------------------------------
         // Event handler for clicking the "Log Hours" button
         //---------------------------------------------------------------------
         private void btnLogHours_Click(object sender, EventArgs e)
