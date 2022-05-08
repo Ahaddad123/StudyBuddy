@@ -40,7 +40,6 @@ namespace Study_Buddy.Presentation
             Boolean valid = true;
             double hours = 0;
             DateTime date;
-            Course course = new Course();
             Account test = new Account("", "");
 
             if(cmbCourses.SelectedIndex == -1)
@@ -72,19 +71,26 @@ namespace Study_Buddy.Presentation
                 // Add assignment
                 // wip does not like courseName
                 //controller.AddAssignment(courseName, txtNameAssign.Text,points,weight);
-                string courses = cmbCourses.Text;
+                string course = cmbCourses.Text;
 
-                successMessageLabel.Text = hours + " hours added for " + course.name;
+                successMessageLabel.Text = hours + " hours added for " + course;
                 hoursErrorMessageLabel.Text = "";
                 courseErrorMessageLabel.Text = "";
                 controller.AddHours(cmbCourses.Text,date.Date,hours);
+                Clear();
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        //---------------------------------------------------------------------
+        // Clears the form's data after a course is successfully edited.
+        //---------------------------------------------------------------------
+        private void Clear()
         {
-
+            this.cmbCourses.SelectedItem = null;
+            this.DTPhourDate.Value = DateTime.Now;
+            this.txtHours.Text = null;
         }
+
 
         private void StudyLogForm_Load(object sender, EventArgs e)
         {

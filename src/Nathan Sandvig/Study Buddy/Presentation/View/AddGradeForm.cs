@@ -65,6 +65,7 @@ namespace Study_Buddy.Presentation
             {
                 controller.AddGrade(txtNameAssign.Text, points);
                 successMessageLabel.Text = "Successfully added grade";
+                Clear();
             }
         }
 
@@ -81,6 +82,15 @@ namespace Study_Buddy.Presentation
             this.title = "Add Grade for " + course.name;
             this.Text = title;
             this.mainHeader.Text = title;
+        }
+
+        //---------------------------------------------------------------------
+        // Clears the form's data after a course is successfully edited.
+        //---------------------------------------------------------------------
+        private void Clear()
+        {
+            this.txtNameAssign.SelectedItem = null;
+            this.txtPointsAssign.Text = null;
         }
 
         //---------------------------------------------------------------------

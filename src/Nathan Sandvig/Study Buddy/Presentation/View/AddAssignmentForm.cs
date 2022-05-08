@@ -110,7 +110,7 @@ namespace Study_Buddy.Presentation
         //---------------------------------------------------------------------
         // Clears input fields after successful entry.
         //---------------------------------------------------------------------
-        public void Clear()
+        private void Clear()
         {
             this.txtNameAssign.Text = null;
             this.txtPointsAssign.Text = null;
