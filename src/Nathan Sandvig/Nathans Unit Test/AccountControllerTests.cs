@@ -42,21 +42,5 @@ namespace Nathans_Unit_Test
 
             Assert.IsTrue(AccountController.scheduleCheck(courseSchedule, "notCourse1"));
         }
-
-        [TestMethod]
-        public void TestAccountCheck_EXISTS() {
-            AccountController.account = new Account("username", "password");
-            AccountController.account.database = new MockDatabase();
-        }
-
-        [TestMethod]
-        public void TestAccountCheck_NOTEXIST() {
-            AccountController.account = new Account("username", "password");
-            AccountController.account.database = new MockDatabase();
-        }
-
-        public void AccountCreated_CHECK() {
-
-        }
     }
 }

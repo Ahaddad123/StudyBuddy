@@ -34,7 +34,6 @@ namespace Study_Buddy.BusinessLogic
         public string code { get; set; }
         public double priority { get; set; }
         public double credits { get; set; }
-        public Dictionary<DateTime, Double> datesAndAverageGrades { get; set; }
 
         public CourseSchedule schedule { get; set; }
 

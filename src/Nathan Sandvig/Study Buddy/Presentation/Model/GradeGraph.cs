@@ -46,28 +46,6 @@ namespace Study_Buddy.Presentation.Model
         }
 
         //---------------------------------------------------------------------
-        // Gets the grade data from the course.  Currently empty until backend
-        // is implemented
-        // v1: Created the method - Peter H, 3-7-22
-        //---------------------------------------------------------------------
-        private void GetCourseData()
-        {
-            //TODO, Course needs "private Dictionary<DateTime, double>
-            //datesAndAverageGrades" of dates and grades
-            DateTime endDate = DateTime.Now;
-            DateTime currDate = new DateTime(endDate.Year, 1, 1);
-            List<DateTime> dates = new List<DateTime>();
-            for (int i = 0; i < course.datesAndAverageGrades.Count ; i++)
-            {
-                //DateTime addDate = course.datesAndAverageGrades;
-                //datesX.Add(addDate);
-                //TODO doesn't work, figure out how to get key by value
-                averageGradesY.Add(course.datesAndAverageGrades[currDate]);
-                currDate.AddDays(1);
-            }
-        }
-
-        //---------------------------------------------------------------------
         // Returns the dates to be displayed as X values on a chart
         // v1: Created the method - Peter H, 3-7-22
         //---------------------------------------------------------------------
