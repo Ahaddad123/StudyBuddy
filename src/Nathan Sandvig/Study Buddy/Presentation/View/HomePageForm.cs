@@ -50,7 +50,6 @@ namespace Study_Buddy.Presentation
         private void HomePageForm_Load(object sender, EventArgs e)
         {
             this.name.Text = controller.getName();
-            this.gpa.Text += " " + controller.getGPA();
             int red = 235;
             int green = 131;
             int blue = 131;
@@ -123,6 +122,11 @@ namespace Study_Buddy.Presentation
         {
             this.Close();
             System.Environment.Exit(0);
+        }
+
+        private void viewMyInfoBtn_Click(object sender, EventArgs e)
+        {
+            FormSwitcher.OpenUserInfoForm(this);
         }
     }
 }

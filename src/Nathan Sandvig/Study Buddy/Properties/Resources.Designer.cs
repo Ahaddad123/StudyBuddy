@@ -103,6 +103,16 @@ namespace Study_Buddy.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gpa_icon_30px {
+            get {
+                object obj = ResourceManager.GetObject("gpa_icon_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap import_icon_08 {
             get {
                 object obj = ResourceManager.GetObject("import_icon_08", resourceCulture);
@@ -126,6 +136,26 @@ namespace Study_Buddy.Properties {
         internal static System.Drawing.Bitmap my_schedule_icon_04 {
             get {
                 object obj = ResourceManager.GetObject("my_schedule_icon_04", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap school_icon_11 {
+            get {
+                object obj = ResourceManager.GetObject("school_icon_11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap school_icon_30px {
+            get {
+                object obj = ResourceManager.GetObject("school_icon_30px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +213,9 @@ namespace Study_Buddy.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap user_icon_white_10 {
+        internal static System.Drawing.Bitmap user_icon_30px {
             get {
-                object obj = ResourceManager.GetObject("user_icon_white_10", resourceCulture);
+                object obj = ResourceManager.GetObject("user_icon_30px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +223,9 @@ namespace Study_Buddy.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap user_profile_icon_10 {
+        internal static System.Drawing.Bitmap user_icon_white_10 {
             get {
-                object obj = ResourceManager.GetObject("user_profile_icon_10", resourceCulture);
+                object obj = ResourceManager.GetObject("user_icon_white_10", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

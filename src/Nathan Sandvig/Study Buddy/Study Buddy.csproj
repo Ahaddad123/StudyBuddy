@@ -400,6 +400,18 @@
   <ItemGroup>
     <None Include="Resources\user-icon-white-10.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\school-icon-11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-icon-101.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\school-icon-111.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gpa-icon-111.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
