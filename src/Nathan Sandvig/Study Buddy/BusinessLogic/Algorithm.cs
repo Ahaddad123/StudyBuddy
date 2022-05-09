@@ -10,7 +10,7 @@ namespace Study_Buddy.BusinessLogic
     // This class manages the study hours algorithm
     // v1: Created the class - Nathan S, 4-19-22
     //-------------------------------------------------------------------------
-    internal class Algorithm
+    public class Algorithm
     {
         //---------------------------------------------------------------------
         // Constants:
@@ -29,6 +29,17 @@ namespace Study_Buddy.BusinessLogic
         private static LinkedList<(double, double)> assignmentLog = new LinkedList<(double, double)>();
         private static double baseGrade = DEFAULT_BASE;
         private static double hoursPerPercent = DEFAULT_HOURS;
+
+        //---------------------------------------------------------------------
+        // Resets the data stored in the algorithm
+        // v1: Created the method - Nathan S, 5-9-22
+        //---------------------------------------------------------------------
+        public static void Reset()
+        {
+            assignmentLog.Clear();
+            baseGrade = DEFAULT_BASE;
+            hoursPerPercent = DEFAULT_HOURS;
+        }
 
         //---------------------------------------------------------------------
         // Imports course data for the specified course
