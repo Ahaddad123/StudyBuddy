@@ -168,7 +168,7 @@ namespace Study_Buddy.Presentation.Model
         //---------------------------------------------------------------------
         public void GatherRealData()
         {
-            DateTime currDate = new DateTime(DateTime.Now.Year, 1, 1);
+            DateTime currDate = new DateTime(DateTime.Now.Year, 1, 2);
             DateTime endDate = DateTime.Now;
             int curWeek = 0;
 
