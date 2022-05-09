@@ -45,13 +45,13 @@ namespace Nathans_Unit_Test
 
         [TestMethod]
         public void TestAccountCheck_EXISTS() {
-            AccountController.account = new Account();
+            AccountController.account = new Account("username", "password");
             AccountController.account.database = new MockDatabase();
         }
 
         [TestMethod]
         public void TestAccountCheck_NOTEXIST() {
-            AccountController.account = new Account();
+            AccountController.account = new Account("username", "password");
             AccountController.account.database = new MockDatabase();
         }
 
