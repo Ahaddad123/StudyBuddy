@@ -59,11 +59,12 @@ namespace Study_Buddy.Presentation
             label.BackColor = Color.RoyalBlue;
             label.ForeColor = Color.White;
             label.Location = new Point(40, locationindex);
-            label.Size = new Size(552, 50);
+            label.Size = new Size(502, 50);
             label.Font = new Font("Arial", 16);
             label.TextAlign = ContentAlignment.MiddleCenter;
             return label;
         }
+
 
         //---------------------------------------------------------------------
         // Creates the label with the course name on the HomePageForm
@@ -79,7 +80,7 @@ namespace Study_Buddy.Presentation
             label.Text = courseName;
             label.BackColor = Color.FromArgb(red, green, blue);
             label.ForeColor = Color.Navy;
-            label.Location = new Point(40, locationindex);
+            label.Location = new Point(0, locationindex);
             label.Size = new Size(250, 50);
             label.Font = new Font("Arial", 13);
             label.TextAlign = ContentAlignment.MiddleLeft;
@@ -103,7 +104,7 @@ namespace Study_Buddy.Presentation
             label.Text = hoursStudied + "/" + studyGoal;
             label.BackColor = Color.FromArgb(red, green, blue);
             label.ForeColor = Color.Navy;
-            label.Location = new Point(290, locationindex);
+            label.Location = new Point(250, locationindex);
             label.Size = new Size(250, 50);
             label.Font = new Font("Arial", 13);
             label.TextAlign = ContentAlignment.MiddleRight;
@@ -121,8 +122,8 @@ namespace Study_Buddy.Presentation
             Button button = new Button();
             button.BackColor = Color.White;
             button.ForeColor = Color.RoyalBlue;
-            button.Location = new Point(542, locationindex);
-            button.Size = new Size(50, 50);
+            button.Location = new Point(502, locationindex);
+            button.Size = new Size(150, 50);
             button.Text = "+";
             button.Font = new Font("Arial", 20);
             button.Click += eventHandler;

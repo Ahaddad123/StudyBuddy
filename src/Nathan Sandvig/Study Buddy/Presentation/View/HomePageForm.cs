@@ -53,12 +53,7 @@ namespace Study_Buddy.Presentation
             int red = 235;
             int green = 131;
             int blue = 131;
-            int locationindex = 25;
-
-            //Create "Your study hours" label
-            Label mainlabel = controller.CreateMainCoursesLabel(locationindex);
-            locationindex += 52;
-            this.panel1.Controls.Add(mainlabel);
+            int locationindex = 52;
 
             //Create labels for courses
             for (int i = 0; i < controller.getCourses().Count; i++)
