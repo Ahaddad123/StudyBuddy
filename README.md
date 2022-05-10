@@ -1,92 +1,29 @@
-# Project
+How to run the system from executable file:  
+1. Clone the repository 
+2. Navigate to project\src\Nathan Sandvig\Study Buddy\bin\Debug 
+3. Run the Studdy Buddy.exe file 
 
+How to build and run the system using Visual Studio: 
+1. Clone the repository if you haven’t already 
+2. Navigate to project\src\Nathan Sandvig  
+3. Open Nathan Sandvig.sln using Visual Studio 2022 
+4. Build the solution 
+5. Run the solution 
 
+How to Regenerate Test Coverage Results 
+1. Open the project in Visual Studio 2022 Enterprise. 
+2. Build the project under Build -> Build Solution. 
+3. Go to Test -> Analyze Code Coverage for All Tests 
+4. Test coverage results will be shown in the Code Coverage Results window. 
 
-## Getting started
+Known Bugs:
+Our system has no known bugs. 
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+Known Design Deficiencies: 
+The Presentation folder is organized into three MVC subfolders.  Each form represents the view, and each view has a corresponding controller class.  The only real Model classes, however, are the graph classes.  The controllers largely just obtain data directly from the AccountController.  The primary reason this was not addressed was the fact that it just seemed like overkill to implement an entire additional class for some of the datasets we would be modeling.  
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+As we intended courses to have a priority attribute, we developed the system accordingly.  As we ran out of time to properly implement the priority functionality into the study hour algorithm, we effectively cut any reference to priority from our GUI.  However, as priority was fully implemented in the Course and Course Builder classes, as well as the database- we chose to leave it in our deployment implementation.  A course’s priority is always set to 0 and is never altered or referenced.  While less than ideal, this allows the possibility of simply re-implementing the front-end functionality if we were to enhance the application in the future. 
 
-## Add your files
+The AddCourseBox and EditCourseBox user controls contain logic that would ideally be contained in the parent form’s controller (namely that it directly contacts the AccountController).  Since we use the add and edit course functionalities on multiple forms, creating a common user control seemed like the most logical way to be able to reuse code.  This was quickly implemented with the intent of later segregating this functionality to better fit the MVC pattern, but we simply ran out of time to move it. 
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin https://gitlab.com/uwplatt1/se3330-s22/1-fancy-team-name/project.git
-git branch -M main
-git push -uf origin main
-```
-
-## Integrate with your tools
-
-- [ ] [Set up project integrations](https://gitlab.com/uwplatt1/se3330-s22/1-fancy-team-name/project/-/settings/integrations)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!).  Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+The btnAddCourse_Click() method in both these classes is extremely long as it has to perform a series of validation checks for all 7 days of the week.  This would ideally be refactored into one “validateDay” method that could be called for multiple days; but we reached the point where the existing code worked properly and we didn’t want to risk creating unnecessary bugs by tampering with it. 
