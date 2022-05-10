@@ -168,7 +168,7 @@ namespace Study_Buddy.Presentation.Model
         //---------------------------------------------------------------------
         public void GatherRealData()
         {
-            DateTime currDate = new DateTime(DateTime.Now.Year, 1, 1);
+            DateTime currDate = new DateTime(DateTime.Now.Year, 1, 2);
             DateTime endDate = DateTime.Now;
             int curWeek = 0;
 
@@ -177,7 +177,7 @@ namespace Study_Buddy.Presentation.Model
                 Dictionary<DayOfWeek, int> daysAndHoursStudied = new Dictionary<DayOfWeek, int>();
 
                 //For every day in week, add hours studied
-                for (int j = (int)currDate.DayOfWeek; j < 7; j++)
+                for (int j = 0; j < 7; j++)
                 {
                     int hours = (int)studyLog.GetHours(currDate);
                     daysAndHoursStudied.Add(currDate.DayOfWeek, hours);
