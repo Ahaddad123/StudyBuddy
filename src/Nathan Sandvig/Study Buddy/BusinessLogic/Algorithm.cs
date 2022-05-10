@@ -77,10 +77,6 @@ namespace Study_Buddy.BusinessLogic
                     for (DateTime date = previousDate; date <= currentDate; date = date.AddDays(1))
                         hoursStudied += course.hourLog.GetHours(date);
                     double weeks = (currentDate - previousDate).Days / 7.0;
-                    if(weeks == 0)
-                    {
-                        weeks = 1;
-                    }
                     double hoursPerWeek = hoursStudied / weeks;
                     assignmentLog.AddLast((hoursPerWeek, assignment.grade));
                     previousDate = currentDate;
@@ -119,15 +115,10 @@ namespace Study_Buddy.BusinessLogic
             }
 
             // Calculate the slope
-            if (denominator != 0.0)
-                hoursPerPercent = numerator / denominator;
-            if (hoursPerPercent <= 0)
-                hoursPerPercent = DEFAULT_HOURS;
+            hoursPerPercent = numerator / denominator;
 
             // Calculate the intercept
             baseGrade = averageGrade - (hoursPerPercent * averageHours);
-            if (baseGrade < 0 || baseGrade > 100)
-                baseGrade = DEFAULT_BASE;
         }
 
         //---------------------------------------------------------------------
@@ -142,8 +133,6 @@ namespace Study_Buddy.BusinessLogic
             if (assignmentLog.Count > 0)
                 CalculateFunction();
             double hours = (targetGrade - baseGrade) / hoursPerPercent;
-            if (hours < 0)
-                hours = 0;
             return hours;
         }
     }
