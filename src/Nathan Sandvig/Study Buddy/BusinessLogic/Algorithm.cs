@@ -115,7 +115,8 @@ namespace Study_Buddy.BusinessLogic
             }
 
             // Calculate the slope
-            hoursPerPercent = numerator / denominator;
+            if (denominator != 0)
+                hoursPerPercent = numerator / denominator;
 
             // Calculate the intercept
             baseGrade = averageGrade - (hoursPerPercent * averageHours);
